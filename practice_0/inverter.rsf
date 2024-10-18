@@ -1,0 +1,36 @@
+;----------------------------------------------------------------------------
+; @(#)$CDS: assura version av4.1:Production:dfII23.1-64b:IC23.1-64b.ISR5.29 07/08/24 02:23 (sjfdcl1127) $
+; sub-version 4.1_USR7_main
+;----------------------------------------------------------------------------
+
+
+;----------------------------------------------------------------------------
+; avParameter Section
+; Created by the Assura UI
+;----------------------------------------------------------------------------
+
+avParameters(
+  ?inputLayout ( "df2" "lab1" )
+  ?cellName "inverter"
+  ?viewName "layout"
+  ?rulesFile "/home/tools/cadence/gpdk/gpdk045_v_6_0/assura/extract.rul"
+  ?avrpt t
+)
+
+
+
+
+;----------------------------------------------------------------------------
+; avCompareRules Section from Run Submit Form
+; Created by the Assura UI
+;----------------------------------------------------------------------------
+
+avCompareRules(
+schematic(
+netlist( dfII "/home/cinovador/Documents/practice_0/inverter.vlr" )
+)
+)
+
+
+avLVS()
+

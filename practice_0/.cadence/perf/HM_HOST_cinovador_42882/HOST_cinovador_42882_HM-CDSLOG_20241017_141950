@@ -1,0 +1,84 @@
+\# Program start time:     UTC 2024.10.17 17:19:49.352
+\# Local time: GMT-03:00 (UTC-03:00) 2024.10.17 14:19:49.352
+\o Program:		@(#)$CDS: Virtuoso Studio version IC23.1-64b 08/20/2024 22:45 (cpgbld22) $
+\o Hierarchy:		/home/tools/cadence/installs/IC231/tools.lnx86/dfII/
+\o Sub version:		sub-version  IC23.1-64b.ISR9.24  (64-bit addresses)
+\# Command line:	/home/tools/cadence/installs/IC231/tools.lnx86/dfII/bin/64bit/virtuoso .
+\# Host name (type):	cinova05.lesc.ufc.br (x86_64)
+\# Operating system:	Linux 4.18.0-553.22.1.el8_10.x86_64 #1 SMP Wed Sep 25 09:20:43 UTC 2024
+\# Linux /etc/issue:	\S
+\# Linux /etc/issue:	Kernel \r on an \m
+\# X display name (WxH):	:0 (3840x1080)
+\# Available geometry:			TL(0:0) BR(1919:1079)
+\# X server:			The X.Org Foundation
+\# Depth of Visual (Root):	24 (24)
+\# Number of Planes Used:	24
+\# X version:		11.0 (vendor release 12101003)
+\# X resource pool:	base 0x1a00000, mask 0x1fffff (2097151), shift 0
+\# 			current id 0x0, current max 0x1ffffa (2097146)
+\# Max data seg size:	     unlimited
+\# Max process size:	     unlimited
+\# Initial sbrk value:	        746 MB
+\# Available memory:	     43,989 MB
+\# System memory:	     47,556 MB
+\# Maximum memory size:	     46,984 MB
+\# Max mem available:	     44,163 MB
+\# Initial memory used:	        174 MB
+\#        process size:	      1,683 MB
+\# Thread usage limits (effective/default):	maxthreads 126051/126051 maxload 20.00/20.00
+\# Qt version:		5.15.9
+\# Window Manager:	GNOME Shell
+\# User Name:		cinovador
+\o Working Directory:	cinova05.lesc.ufc.br:/home/cinovador/Documents/practice_0
+\# Process Id:		42882
+\o 
+\o COPYRIGHT (C) 1992-2024  CADENCE DESIGN SYSTEMS INC.  ALL RIGHTS RESERVED.
+\o           (C) 1992-2024  UNIX SYSTEMS Laboratories INC.,
+\o                          Reproduced with permission.
+\o 
+\o This Cadence Design Systems program and online documentation are
+\o proprietary/confidential information and may be disclosed/used only
+\o as authorized in a license agreement controlling such use and disclosure.
+\o 
+\o           RESTRICTED RIGHTS NOTICE (SHORT FORM)
+\o Use/reproduction/disclosure is subject to restriction
+\o set forth at FAR 1252.227-19 or its equivalent.
+\o Loading geView.cxt 
+\o Loading menuBuilder.cxt 
+\o Loading im.cxt 
+\o Loading schView.cxt 
+\o Loading selectSv.cxt 
+\o Loading wireEdit.cxt 
+\o Loading pte2.cxt 
+\o Loading xlUI.cxt 
+\o Loading auCore.cxt 
+\o Loading vhdl.cxt 
+\o Loading seismic.cxt 
+\o Loading ci.cxt 
+\o Loading layers.cxt 
+\o Loading drv.cxt 
+\o Loading ams.cxt 
+\o Loading adexlDM.cxt 
+\o Loading cpf.cxt 
+\o Loading cli.cxt 
+\o Loading lp.cxt 
+\o Loading sipLayout.cxt 
+\o Loading viva.cxt 
+\o Loading diagCenter.cxt 
+\o INFO (ELI-00333) License program mode is Virtuoso.
+\# [14:19:49.200161] Configured Lic search path (23.02-s006): 5280@192.168.0.10
+\o Virtuoso Framework License (111) was checked out successfully. Total checkout time was 0.01s.
+\# Memory report: using         300 MB, process size 1,879 MB at UTC 2024.10.17 17:19:50.183
+\p > 
+\o Loading le.cxt 
+\o Loading tilp.cxt 
+\o Loading validator.cxt 
+\o Loading vrf.cxt 
+\o Loading multiTechPlugin.cxt 
+\o Loading exportDie.cxt 
+\# Loading perfDiag...
+\# (PerfDiag): Set GDB path to environment variable 'gdbPath' (gdb).
+\o The Health Monitor tool is installed. You can access it from CIW - Tools - Diagnostic Center or use the shell command 'cdsPerfDiag -p 42882' to open it when Virtuoso freezes.
+\# (PerfDiag): Use backtrace from GLIBC.
+\o 2024/10/17 14:19:50 INFO (/home/tools/cadence/installs/IC231/tools.lnx86/bin/cdnsEnvCheck): Rocky Linux release 8.10 (Green Obsidian) detected (set environment variable CDS_SKIP_OS_CHECK_ON_STARTUP=1 to suppress).
+\o 2024/10/17 14:19:50 INFO (/home/tools/cadence/installs/IC231/tools.lnx86/bin/cdnsEnvCheck): Rocky Linux release 8.10 (Green Obsidian) detected (set environment variable CDS_SKIP_OS_CHECK_ON_STARTUP=1 to suppress).

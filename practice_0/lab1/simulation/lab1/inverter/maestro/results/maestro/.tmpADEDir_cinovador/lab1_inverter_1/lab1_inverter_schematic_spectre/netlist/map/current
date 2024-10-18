@@ -1,0 +1,18 @@
+( ( nil
+  version "2.1"
+  mapType "incremental"
+  blockName "inverter"
+  repList "spectre cmos_sch cmos.sch schematic veriloga"
+  stopList "spectre"
+  globalList "vdd! gnd!"
+  hierDelim "."
+  netlistDir "/home/cinovador/Documents/practice_0/lab1/simulation/lab1/inverter/maestro/results/maestro/ExplorerRun.0/1/lab1_inverter_1/netlist"
+ )
+( net
+( "gnd!" "0" )
+ )
+( model
+( "lab1/inverter/schematic" "inverter" )
+ )
+( "inverter" "ihnl/cds0/map" )
+ )

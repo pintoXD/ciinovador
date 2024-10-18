@@ -1,0 +1,22 @@
+
+***** Begin Label Report *****
+
+ Label in cell 'inverter layout lab1':
+  info: Assign pin label "gnd!" at (-0.2425, 5.1225) to layer `metal1_conn'.
+  info: Assign pin label "in" at (-0.2950, 5.8900) to layer `metal1_conn'.
+  info: Assign pin label "out" at (0.1625, 5.9050) to layer `metal1_conn'.
+  info: Assign pin label "vdd!" at (-0.2275, 6.5775) to layer `metal1_conn'.
+
+***** End of Label Report *****
+
+
+***** Begin Label Report *****
+
+ Label in cell 'inverter layout lab1':
+  info: Assign pin label "gnd!" at (-0.2425, 5.1225) to layer `metal1_conn'.
+  info: Assign pin label "in" at (-0.2950, 5.8900) to layer `metal1_conn'.
+  info: Assign pin label "out" at (0.1625, 5.9050) to layer `metal1_conn'.
+  info: Assign pin label "vdd!" at (-0.2275, 6.5775) to layer `metal1_conn'.
+
+***** End of Label Report *****
+

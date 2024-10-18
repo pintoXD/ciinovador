@@ -1,0 +1,8 @@
+// Generated for: spectre
+// Design Netlist Generated on: Oct 17 15:20:25 2024
+// Design library name: lab1
+// Design cell name: inverter
+// Design view name: schematic
+simulator lang=spectre
+include "ade_e.scs"
+global 0 vdd!

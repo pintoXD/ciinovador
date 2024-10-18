@@ -1,0 +1,4 @@
+INCLUDE /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+DEFINE teste /home/cinovador/teste/teste
+DEFINE lab1 /home/cinovador/Documents/practice_0/lab1
+DEFINE avTech /home/tools/cadence/installs/ASSURA41/tools.lnx86/assura/etc/avtech/avTech

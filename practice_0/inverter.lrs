@@ -1,0 +1,35 @@
+@(#)$CDS: nvn_64 version av4.1:Production:dfII23.1-64b:IC23.1-64b.ISR5.29 07/08/2024 02:58 (sjfdcl1127) $
+sub-version 4.1_USR7_main, integ signature 2024-07-08-0220
+run on cinova05.lesc.ufc.br at Fri Oct 18 16:39:16 2024
+
+Schematic                     | Layout                     | Status
+-------------------------------------------------------------------------------
+inverter schematic lab1       | inverter layout lab1       | matched        
+
+Schematic and Layout Match
+
+Schematic:
+  Library:lab1
+  Cell   :inverter
+  View   :schematic
+
+Layout:
+  Library:lab1
+  Cell   :inverter
+  View   :layout
+
+
+
+Extraction  Information
+--------------------
+     0 cells have 0 mal-formed device problems
+     0 cells have 0 label short problems
+     0 cells have 0 label open problems
+
+Mismatch  Information
+--------------------
+     0 cells have 0 Net mismatches
+     0 cells have 0 Device mismatches
+     0 cells have 0 Pin mismatches
+     0 cells have 0 Parameter mismatches
+
