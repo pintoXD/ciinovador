@@ -1,0 +1,16 @@
+#
+# Edit Lock-Stake file. CAUTION: Please do not change.
+#
+# Information about current Edit Lock Owner.
+#
+LockStakeVersion               1.1
+LoginName                      cinovador
+HostName                       cinova05.lesc.ufc.br
+ProcessIdentifier              68638
+ProcessCreationTime_UTC        1729540665
+ProcessCreationTime_Readable   Mon Oct 21 16:57:45 2024 -03
+AppIdentifier                  OA File System Design Manager
+OSType                         unix
+ReasonForPlacingEditLock       OpenAccess edit lock
+FilePathUsedToEditLock         /home/cinovador/Documents/course_files/practice_0/lab1/fanout5/schematic/sch.oa.cdslck
+TimeEditLocked                 Mon Oct 21 16:58:44 2024 -03

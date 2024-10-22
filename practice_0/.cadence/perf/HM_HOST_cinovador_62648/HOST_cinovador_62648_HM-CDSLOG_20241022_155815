@@ -1,0 +1,45 @@
+\# Program start time:     UTC 2024.10.22 18:58:14.505
+\# Local time: GMT-03:00 (UTC-03:00) 2024.10.22 15:58:14.505
+\o Program:		@(#)$CDS: Virtuoso Studio version IC23.1-64b 08/20/2024 22:45 (cpgbld22) $
+\o Hierarchy:		/home/tools/cadence/installs/IC231/tools.lnx86/dfII/
+\o Sub version:		sub-version  IC23.1-64b.ISR9.24  (64-bit addresses)
+\# Command line:	/home/tools/cadence/installs/IC231/tools.lnx86/dfII/bin/64bit/virtuoso -beanhost cinova05.lesc.ufc.br -beanport 11376 -beanbinlog  -beanLogFile /home/cinovador/Documents/course_files/practice_0/logs_cinovador/logs0/amps_Service1.log -mpssession virtuoso5043 -mpshost cinova05.lesc.ufc.br -davinciService DaVinciService_5043_1729623489 -scopedPid 5043 -axlSession fnxSession0 -axlServiceIdFlag 1 -uuid e0fb6b15-22ec-49a5-bdcf-243f17c2c48d -heartbeat /dev/shm/swift-heartbeat.nPvkbPbLgj -log /home/cinovador/Documents/course_files/practice_0/logs_cinovador/logs0/Service1.log -adeBrokerAddress cinova05.lesc.ufc.br:35389 -noautostart -nographE -lscs 000175E1894CBE06FF0966E38F1FFC06BC4D7EED88199869CA2C7EEDDC43CC33CA2C39A0A173FC06867D66E38F1FFC06BC4D66E38F1FFC06BC4D01F47ADA09C3DB5A00001E90 -interactive -offlineExprEval -upfrontMode -fenixMode explorer -heartbeatTimeout  -lingerTimeout 300 -pointlifetime -1
+\# Host name (type):	cinova05.lesc.ufc.br (x86_64)
+\# Operating system:	Linux 4.18.0-553.22.1.el8_10.x86_64 #1 SMP Wed Sep 25 09:20:43 UTC 2024
+\# Linux /etc/issue:	\S
+\# Linux /etc/issue:	Kernel \r on an \m
+\# X display name (WxH):	:1165 (1024x868)
+\# Available geometry:			TL(0:0) BR(1023:867)
+\# X server:			The X.Org Foundation
+\# Depth of Visual (Root):	24 (24)
+\# Number of Planes Used:	24
+\# X version:		11.0 (vendor release 12011000)
+\# X resource pool:	base 0x400000, mask 0x1fffff (2097151), shift 0
+\# 			current id 0x0, current max 0x1ffffa (2097146)
+\# Max data seg size:	     unlimited
+\# Max process size:	     unlimited
+\# Initial sbrk value:	        726 MB
+\# Available memory:	     42,479 MB
+\# System memory:	     47,556 MB
+\# Maximum memory size:	     47,002 MB
+\# Max mem available:	     42,651 MB
+\# Initial memory used:	        172 MB
+\#        process size:	      1,683 MB
+\# Thread usage limits (effective/default):	maxthreads 126051/126051 maxload 20.00/20.00
+\# Qt version:		5.15.9
+\# Window Manager:	other
+\# User Name:		cinovador
+\o Working Directory:	cinova05.lesc.ufc.br:/home/cinovador/Documents/course_files/practice_0
+\# Process Id:		62648
+\o 
+\o COPYRIGHT (C) 1992-2024  CADENCE DESIGN SYSTEMS INC.  ALL RIGHTS RESERVED.
+\o           (C) 1992-2024  UNIX SYSTEMS Laboratories INC.,
+\o                          Reproduced with permission.
+\o 
+\o This Cadence Design Systems program and online documentation are
+\o proprietary/confidential information and may be disclosed/used only
+\o as authorized in a license agreement controlling such use and disclosure.
+\o 
+\o           RESTRICTED RIGHTS NOTICE (SHORT FORM)
+\o Use/reproduction/disclosure is subject to restriction
+\o set forth at FAR 1252.227-19 or its equivalent.

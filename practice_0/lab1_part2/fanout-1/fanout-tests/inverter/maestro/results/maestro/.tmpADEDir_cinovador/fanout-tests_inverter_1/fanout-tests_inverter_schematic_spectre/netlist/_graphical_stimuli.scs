@@ -1,0 +1,2 @@
+_vin (in 0) vsource val0=0 val1=1 period=2n width=1n type=pulse
+_vvdd! (vdd! 0) vsource dc=1 type=dc

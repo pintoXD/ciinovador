@@ -1,0 +1,1 @@
+ spectre  input.scs  +escchars +log ../psf/spectre.out  -format psfxl -raw ../psf   +aps +mt +lqtimeout 900 -maxw 5 -maxn 5 -env ade +adespetkn=adespe  -ahdllibdir /home/cinovador/Documents/course_files/practice_0/lab1_part2/fanout-1/fanout-tests/inverter/maestro/results/maestro/ExplorerRun.0/sharedData/CDS/ahdl/input.ahdlSimDB +logstatus  
