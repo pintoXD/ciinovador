@@ -34,16 +34,16 @@
 					<output>/in
 						<evalType>point</evalType>
 					</output>
-					<output>/dut_out
-						<evalType>point</evalType>
-					</output>
 					<output>/dut_in
 						<evalType>point</evalType>
 					</output>
-					<output>nil
+					<output>/dut_out
 						<evalType>point</evalType>
 					</output>
 					<output>/out
+						<evalType>point</evalType>
+					</output>
+					<output>tpd
 						<evalType>point</evalType>
 					</output>
 				</outputs>

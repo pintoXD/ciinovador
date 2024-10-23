@@ -1,0 +1,16 @@
+"issueInfoMsgOnCellRename" t
+"dspfBindingToCell" "bindToAll"
+"_dspfFullDesignInfo" nil
+"hnlProcessDifferentPmAndInstTerminalRepresentation" nil
+"printComments" (nil nil)
+"termMismatch" "default"
+"dspfBindingSummary" t
+"supportDspfMasterOption" t
+"preserveSubcktTermNamesByOrder" nil
+"setTopLevelAsSubckt" nil
+"dutlcv" "slotUnbound/slotUnbound/slotUnbound"
+"bindingSummaryCellData" nil
+"_dspfFileToEnvOptionsMapInfo" nil
+"srcFileMappingInfo" nil
+"changedSubcktNames" (("_sub7" ("fanout-tests" "fanout-question-2" "schematic")))
+"termDirectionMismatch" "default"

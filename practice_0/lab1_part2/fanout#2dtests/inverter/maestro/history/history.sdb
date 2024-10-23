@@ -3,16 +3,15 @@
 	<active>Active Setup</active>
 	<history>History
 		<historyentry assemblerOrExplorer="explorer" roOrView="view" runningOrFinished="finished">ExplorerRun.0
-			<timestamp>Oct 22 16:45:36 2024</timestamp>
-			<uuid>{9a4bd684-6ee1-4fd7-9ade-ef49b0f9c622}</uuid>
+			<timestamp>Oct 23 17:45:59 2024</timestamp>
+			<uuid>{0a9579c3-8639-416b-b31e-d0bb9bdcc90c}</uuid>
 			<locked>0</locked>
 			<mode>Single Run, Sweeps and Corners</mode>
-			<resultsisuserpath>1</resultsisuserpath>
 			<resultspsfisuserpath>1</resultspsfisuserpath>
-			<resultsname>/home/cinovador/Documents/course_files/practice_0/lab1_part2/fanout-tests/inverter/maestro/results/maestro/$AXL_HISTORY_NAME.rdb</resultsname>
-			<simresults>./lab1_part2/fanout-tests/inverter/maestro/results/maestro/$AXL_HISTORY_NAME.rdb</simresults>
-			<runlog>/home/cinovador/Documents/course_files/practice_0/lab1_part2/fanout-tests/inverter/maestro/results/maestro/$AXL_HISTORY_NAME.log</runlog>
-			<runlogfile>./lab1_part2/fanout-tests/inverter/maestro/results/maestro/$AXL_HISTORY_NAME.log</runlogfile>
+			<resultsname>/home/cinovador/Documents/course_files/practice_0/lab1_part2/fanout#2dtests/inverter/maestro/results/maestro/$AXL_HISTORY_NAME.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/maestro/$AXL_HISTORY_NAME.rdb</simresults>
+			<runlog>/home/cinovador/Documents/course_files/practice_0/lab1_part2/fanout#2dtests/inverter/maestro/results/maestro/$AXL_HISTORY_NAME.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/maestro/$AXL_HISTORY_NAME.log</runlogfile>
 			<psfdir>/home/cinovador/Documents/course_files/practice_0/lab1_part2/fanout-1/fanout-tests/inverter/maestro/results/maestro/$AXL_HISTORY_NAME</psfdir>
 			<simdir>./lab1_part2/fanout-1/fanout-tests/inverter/maestro/results/maestro/$AXL_HISTORY_NAME</simdir>
 		</historyentry>

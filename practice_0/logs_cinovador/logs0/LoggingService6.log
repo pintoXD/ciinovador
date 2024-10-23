@@ -1,0 +1,9 @@
+[Logging Service: 6]
+[2024-10-23 18:51:33.971 -0300] [INFO] [cadence.virtuoso.ade.loggingservice] - HistoryRecorderManager init {"dbBasePath": "/home/cinovador/Documents/course_files/practice_0/lab1_part2/fanout#2dtests/fanout#2dquestion#2d2/maestro/results/maestro"}
+[2024-10-23 18:51:33.971 -0300] [INFO] [cadence.virtuoso.ade.loggingservice] - useGRPC grpc service... {"brokerAddress": "cinova05.lesc.ufc.br:40285", "serviceName": "DaVinciService_5754_1729718690", "axlSession": "fnxSession2"}
+[2024-10-23 18:51:33.971 -0300] [PROCESS] [cadence.virtuoso.ade.loggingservice] - Logging Service has successfully started. Waiting for incoming messages ... {"hostname": "cinova05.lesc.ufc.br", "processid": 19995, "logfile": "/home/cinovador/Documents/course_files/practice_0/logs_cinovador/logs0/LoggingService6.log"}
+[2024-10-23 18:51:34.159 -0300] [INFO] [cadence.virtuoso.ade.loggingservice] - logging service gRPC started {"broker address": "cinova05.lesc.ufc.br:38459"}
+[2024-10-23 18:59:10.605 -0300] [INFO] [cadence.virtuoso.ade.loggingservice] - Got exit signal in processControlMessage. Will exit. {}
+[2024-10-23 18:59:11.607 -0300] [PROCESS] [cadence.virtuoso.ade.loggingservice] - Current memory used: 90.2734 MBytes, peak memory used: 90.2734 MBytes {"hostname": "cinova05.lesc.ufc.br", "processid": 19995, "logfile": "/home/cinovador/Documents/course_files/practice_0/logs_cinovador/logs0/LoggingService6.log"}
+[2024-10-23 18:59:11.607 -0300] [PROCESS] [cadence.virtuoso.ade.loggingservice] - Stopping Logging Service process. {"hostname": "cinova05.lesc.ufc.br", "processid": 19995, "logfile": "/home/cinovador/Documents/course_files/practice_0/logs_cinovador/logs0/LoggingService6.log"}
+[2024-10-23 18:59:11.607 -0300] [PROCESS] [cadence.virtuoso.ade.loggingservice] - Logging Service stop!!!! {"hostname": "cinova05.lesc.ufc.br", "processid": 19995, "logfile": "/home/cinovador/Documents/course_files/practice_0/logs_cinovador/logs0/LoggingService6.log"}

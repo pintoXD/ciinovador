@@ -1,0 +1,16 @@
+Starting Single Run, Sweeps and Corners...
+
+Current time: Wed Oct 23 19:02:53 2024 
+Best design point: 1
+Design specs: 
+	fanout-tests_fanout-question-2_1	corner	Nominal - 
+	tpdf		16.27p
+	tpdr		18.71p
+	tpd		17.49p
+Design parameters: 
+
+ExplorerRun.0
+Number of points completed: 1
+Number of simulation errors: 0
+ExplorerRun.0 completed. 
+Current time: Wed Oct 23 19:03:11 2024 

@@ -11,5 +11,5 @@ outputParameter info what=output where=rawfile
 designParamVals info what=parameters where=rawfile
 primitives info what=primitives where=rawfile
 subckts info what=subckts where=rawfile
-save in dut_out dut_in out 
+save in dut_in dut_out out 
 saveOptions options save=allpub

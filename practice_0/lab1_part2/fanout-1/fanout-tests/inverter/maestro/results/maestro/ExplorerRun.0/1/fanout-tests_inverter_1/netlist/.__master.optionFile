@@ -1,16 +1,16 @@
-"hnlProcessDifferentPmAndInstTerminalRepresentation" nil
-"_dspfFullDesignInfo" nil
-"dspfBindingToCell" "bindToAll"
 "issueInfoMsgOnCellRename" t
+"dspfBindingToCell" "bindToAll"
+"_dspfFullDesignInfo" nil
+"hnlProcessDifferentPmAndInstTerminalRepresentation" nil
 "printComments" (nil nil)
-"setTopLevelAsSubckt" nil
-"preserveSubcktTermNamesByOrder" nil
-"supportDspfMasterOption" t
-"dspfBindingSummary" t
 "termMismatch" "default"
-"srcFileMappingInfo" nil
-"_dspfFileToEnvOptionsMapInfo" nil
-"bindingSummaryCellData" nil
+"dspfBindingSummary" t
+"supportDspfMasterOption" t
+"preserveSubcktTermNamesByOrder" nil
+"setTopLevelAsSubckt" nil
 "dutlcv" "slotUnbound/slotUnbound/slotUnbound"
+"bindingSummaryCellData" nil
+"_dspfFileToEnvOptionsMapInfo" nil
+"srcFileMappingInfo" nil
 "changedSubcktNames" nil
 "termDirectionMismatch" "default"

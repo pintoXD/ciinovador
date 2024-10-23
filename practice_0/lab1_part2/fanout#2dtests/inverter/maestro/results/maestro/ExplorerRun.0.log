@@ -1,0 +1,16 @@
+Starting Single Run, Sweeps and Corners...
+
+Current time: Wed Oct 23 17:45:59 2024 
+Best design point: 1
+Design specs: 
+	fanout-tests_inverter_1	corner	Nominal - 
+	tpdf		30.51p
+	tpdr		29.93p
+	tpd		30.22p
+Design parameters: 
+
+ExplorerRun.0
+Number of points completed: 1
+Number of simulation errors: 0
+ExplorerRun.0 completed. 
+Current time: Wed Oct 23 17:46:15 2024 
