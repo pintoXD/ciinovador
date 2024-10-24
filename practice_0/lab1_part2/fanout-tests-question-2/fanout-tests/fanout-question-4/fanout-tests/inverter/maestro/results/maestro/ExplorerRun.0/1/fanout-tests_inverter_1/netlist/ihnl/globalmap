@@ -1,0 +1,11 @@
+CADENCE IHNL11140
+$model
+fanout-tests/inverter/schematic inverter
+$endmodel
+$net
+gnd! 0
+vdd! vdd!
+$endnet
+$param
+temperature temperature
+$endparam

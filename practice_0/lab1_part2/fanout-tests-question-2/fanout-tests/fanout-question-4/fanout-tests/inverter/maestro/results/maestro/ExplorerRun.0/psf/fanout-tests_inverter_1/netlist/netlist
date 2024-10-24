@@ -1,0 +1,34 @@
+
+// Library name: fanout-tests
+// Cell name: inverter
+// View name: schematic
+NM11 (out net26 0 0) g45n1svt w=(3u) l=45n nf=1 as=420f ad=420f ps=6.28u \
+        pd=6.28u nrd=46.6667m nrs=46.6667m sa=140n sb=140n sd=160n \
+        sca=51.70957 scb=0.05398 scc=0.00640 m=(25)
+NM8 (net26 dut_out 0 0) g45n1svt w=(600n) l=45n nf=1 as=84f ad=84f \
+        ps=1.48u pd=1.48u nrd=233.333m nrs=233.333m sa=140n sb=140n \
+        sd=160n sca=91.32138 scb=0.07706 scc=0.01082 m=(25)
+NM6 (dut_out dut_in 0 0) g45n1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(25)
+NM4 (dut_in net1 0 0) g45n1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(5)
+NM0 (net1 in 0 0) g45n1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f ps=520n \
+        pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+PM9 (out net26 vdd! vdd!) g45p1svt w=(6u) l=45n nf=1 as=840f ad=840f \
+        ps=12.28u pd=12.28u nrd=23.3333m nrs=23.3333m sa=140n sb=140n \
+        sd=160n sca=46.31688 scb=0.05106 scc=0.00585 m=(25)
+PM6 (net26 dut_out vdd! vdd!) g45p1svt w=(1.2u) l=45n nf=1 as=168f ad=168f \
+        ps=2.68u pd=2.68u nrd=116.667m nrs=116.667m sa=140n sb=140n \
+        sd=160n sca=67.27135 scb=0.06276 scc=0.00805 m=(25)
+PM4 (dut_out dut_in vdd! vdd!) g45p1svt w=(240n) l=45n nf=1 as=33.6f \
+        ad=33.6f ps=760n pd=760n nrd=583.333m nrs=583.333m sa=140n sb=140n \
+        sd=160n sca=151.92744 scb=0.10471 scc=0.01874 m=(25)
+PM2 (dut_in net1 vdd! vdd!) g45p1svt w=(240n) l=45n nf=1 as=33.6f ad=33.6f \
+        ps=760n pd=760n nrd=583.333m nrs=583.333m sa=140n sb=140n sd=160n \
+        sca=151.92744 scb=0.10471 scc=0.01874 m=(5)
+PM0 (net1 in vdd! vdd!) g45p1svt w=(240n) l=45n nf=1 as=33.6f ad=33.6f \
+        ps=760n pd=760n nrd=583.333m nrs=583.333m sa=140n sb=140n sd=160n \
+        sca=151.92744 scb=0.10471 scc=0.01874 m=(1)

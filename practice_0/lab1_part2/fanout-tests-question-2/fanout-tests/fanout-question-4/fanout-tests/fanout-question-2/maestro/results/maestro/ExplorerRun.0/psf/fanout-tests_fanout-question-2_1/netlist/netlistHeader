@@ -1,0 +1,8 @@
+// Generated for: spectre
+// Design Netlist Generated on: Oct 24 15:36:22 2024
+// Design library name: fanout-tests
+// Design cell name: fanout-question-2
+// Design view name: schematic
+simulator lang=spectre
+include "ade_e.scs"
+global 0 vdd!

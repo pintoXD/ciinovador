@@ -1,0 +1,298 @@
+
+Spectre (R) Circuit Simulator
+Version 23.1.0.594.isr12 64bit -- 13 Sep 2024
+Copyright (C) 1989-2024 Cadence Design Systems, Inc. All rights reserved worldwide. Cadence and Spectre are registered trademarks of Cadence Design Systems, Inc. All others are the property of their respective holders.
+
+Includes RSA BSAFE(R) Cryptographic or Security Protocol Software from RSA Security, Inc.
+
+User: cinovador   Host: cinova05.lesc.ufc.br   HostID: A8C0050F   PID: 68999
+Memory  available: 24.0127 GB  physical: 33.1098 GB
+Linux   : Rocky Linux release 8.10 (Green Obsidian)
+CPU Type: 13th Gen Intel(R) Core(TM) i5-13500
+        Socket: Processors [Frequency] (Hyperthreaded Processor)
+        0:       0 [2500.0] (  1 ),  1 [2500.0] (),  2 [2500.0] (  3 )
+                 3 [2500.0] (),  4 [2500.0] (  5 ),  5 [2500.0] (),  6 [1386.4] (  7 )
+                 7 [2500.0] (),  8 [2500.0] (  9 ),  9 [2500.0] (), 10 [2500.0] ( 11 )
+                11 [2500.0] (), 12 [2500.0] (), 13 [2500.0] (), 14 [2500.0] (), 15 [2500.0] ()
+                16 [2500.0] (), 17 [2500.0] (), 18 [2500.0] (), 19 [2500.0] ()
+        
+System load averages (1min, 5min, 15min) : 0.9 %, 1.7 %, 2.6 %
+Hyperthreading is enabled
+HPC is enabled
+
+
+Simulating `input.scs' on cinova05.lesc.ufc.br at 3:36:28 PM, Thur Oct 24, 2024 (process id: 68999).
+Current working directory: /home/cinovador/Documents/course_files/practice_0/lab1_part2/fanout-tests-question-2/fanout-tests/fanout-question-4/fanout-tests/fanout-question-2/maestro/results/maestro/ExplorerRun.0/1/fanout-tests_fanout-question-2_1/netlist
+Command line:
+    /home/tools/cadence/installs/SPECTRE231/tools.lnx86/bin/spectre -64  \
+        input.scs +escchars +log ../psf/spectre.out -format psfxl -raw  \
+        ../psf +aps +mt +lqtimeout 900 -maxw 5 -maxn 5 -env ade  \
+        +adespetkn=0001089D13A302B663E41FB550AF0DF415A679A322D5069144BF588C12F604E07EF416DC01A319B562BB63D35FE019A945A321F74DD919995FED75FB73DA4F9271CA79D15D9175FF349861DF1FFE10BC42F961DF4BA444E642F92692369474D30EA879D118F874D3349879D118F874D334981ECB8B53E778538200003699  \
+        -ahdllibdir  \
+        /home/cinovador/Documents/course_files/practice_0/./lab1_part2/fanout-tests-question-2/fanout-tests/fanout-question-4/fanout-tests/fanout-question-2/maestro/results/maestro/ExplorerRun.0/sharedData/CDS/ahdl/input.ahdlSimDB  \
+        +logstatus
+
+Simulation Id: mz8k3SkumJPcIxER
+Licensing Information:
+[15:36:29.101329] Configured Lic search path (22.01-s002): 5280@192.168.0.10
+
+Licensing Information:
+[15:36:30.136714] Periodic Lic check successful
+
+Loading /home/tools/cadence/installs/SPECTRE231/tools.lnx86/cmi/lib/64bit/5.0/libinfineon_sh.so ...
+Loading /home/tools/cadence/installs/SPECTRE231/tools.lnx86/cmi/lib/64bit/5.0/libphilips_I_sh.so ...
+Loading /home/tools/cadence/installs/SPECTRE231/tools.lnx86/cmi/lib/64bit/5.0/libphilips_sh.so ...
+Loading /home/tools/cadence/installs/SPECTRE231/tools.lnx86/cmi/lib/64bit/5.0/libsparam_sh.so ...
+Loading /home/tools/cadence/installs/SPECTRE231/tools.lnx86/cmi/lib/64bit/5.0/libstmodels_sh.so ...
+Reading file:  /home/cinovador/Documents/course_files/practice_0/lab1_part2/fanout-tests-question-2/fanout-tests/fanout-question-4/fanout-tests/fanout-question-2/maestro/results/maestro/ExplorerRun.0/1/fanout-tests_fanout-question-2_1/netlist/input.scs
+Reading file:  /home/tools/cadence/installs/SPECTRE231/tools.lnx86/spectre/etc/configs/spectre.cfg
+Reading file:  /home/cinovador/Documents/course_files/practice_0/lab1_part2/fanout-tests-question-2/fanout-tests/fanout-question-4/fanout-tests/fanout-question-2/maestro/results/maestro/ExplorerRun.0/1/fanout-tests_fanout-question-2_1/netlist/ade_e.scs
+Reading file:  /home/tools/cadence/gpdk/gpdk045_v_6_0/models/spectre/gpdk045.scs
+Reading file:  /home/tools/cadence/gpdk/gpdk045_v_6_0/models/spectre/gpdk045_mos.scs
+Reading file:  /home/tools/cadence/gpdk/gpdk045_v_6_0/models/spectre/gpdk045_diode.scs
+Reading file:  /home/tools/cadence/gpdk/gpdk045_v_6_0/models/spectre/gpdk045_bipolar.scs
+Reading file:  /home/tools/cadence/gpdk/gpdk045_v_6_0/models/spectre/gpdk045_mimcap.scs
+Reading file:  /home/tools/cadence/gpdk/gpdk045_v_6_0/models/spectre/gpdk045_moscap.scs
+Reading file:  /home/tools/cadence/gpdk/gpdk045_v_6_0/models/spectre/gpdk045_resistor.scs
+Reading file:  /home/tools/cadence/gpdk/gpdk045_v_6_0/models/spectre/gpdk045_inductor.scs
+Reading file:  /home/tools/cadence/gpdk/gpdk045_v_6_0/models/spectre/gpdk045_soa.scs
+Reading file:  /home/cinovador/Documents/course_files/practice_0/lab1_part2/fanout-tests-question-2/fanout-tests/fanout-question-4/fanout-tests/fanout-question-2/maestro/results/maestro/ExplorerRun.0/1/fanout-tests_fanout-question-2_1/netlist/_graphical_stimuli.scs
+Time for NDB Parsing: CPU = 262.856 ms, elapsed = 1.89847 s.
+Time accumulated: CPU = 299.372 ms, elapsed = 1.89847 s.
+Peak resident memory used = 188 Mbytes.
+
+Reading link:  /home/tools/cadence/installs/SPECTRE231/tools.lnx86/spectre/etc/ahdl/discipline.h
+Reading file:  /home/tools/cadence/installs/SPECTRE231/tools.lnx86/spectre/etc/ahdl/disciplines.vams
+Reading link:  /home/tools/cadence/installs/SPECTRE231/tools.lnx86/spectre/etc/ahdl/constants.h
+Reading file:  /home/tools/cadence/installs/SPECTRE231/tools.lnx86/spectre/etc/ahdl/constants.vams
+Created directory /home/cinovador/Documents/course_files/practice_0/./lab1_part2/fanout-tests-question-2/fanout-tests/fanout-question-4/fanout-tests/fanout-question-2/maestro/results/maestro/ExplorerRun.0/sharedData/CDS/ahdl/input.ahdlSimDB/input.ahdlSimDB/ (775)
+Created directory /home/cinovador/Documents/course_files/practice_0/./lab1_part2/fanout-tests-question-2/fanout-tests/fanout-question-4/fanout-tests/fanout-question-2/maestro/results/maestro/ExplorerRun.0/sharedData/CDS/ahdl/input.ahdlSimDB/input.ahdlSimDB//bsource_2b273e.va.bsource_2b273e.ahdlcmi/ (775)
+Reading file:  /home/cinovador/Documents/course_files/practice_0/lab1_part2/fanout-1/fanout-tests/inverter/maestro/results/maestro/ExplorerRun.0/sharedData/CDS/ahdl/input.ahdlSimDB/input.ahdlSimDB/bsource_2b273e.va.bsource_2b273e.ahdlcmi/Linux-64/obj/optimize/5.0/libahdlcmi_bsource_2b273e.so
+Created directory /home/cinovador/Documents/course_files/practice_0/./lab1_part2/fanout-tests-question-2/fanout-tests/fanout-question-4/fanout-tests/fanout-question-2/maestro/results/maestro/ExplorerRun.0/sharedData/CDS/ahdl/input.ahdlSimDB/input.ahdlSimDB//bsource_2b273e.va.bsource_2b273e.ahdlcmi/Linux-64/obj/optimize/5.0 
+Copying files from directory /home/cinovador/Documents/course_files/practice_0/lab1_part2/fanout-1/fanout-tests/inverter/maestro/results/maestro/ExplorerRun.0/sharedData/CDS/ahdl/input.ahdlSimDB/input.ahdlSimDB/bsource_2b273e.va.bsource_2b273e.ahdlcmi/Linux-64/ to directory /home/cinovador/Documents/course_files/practice_0/./lab1_part2/fanout-tests-question-2/fanout-tests/fanout-question-4/fanout-tests/fanout-question-2/maestro/results/maestro/ExplorerRun.0/sharedData/CDS/ahdl/input.ahdlSimDB/input.ahdlSimDB//bsource_2b273e.va.bsource_2b273e.ahdlcmi/Linux-64/
+Finished copying files from /home/cinovador/Documents/course_files/practice_0/lab1_part2/fanout-1/fanout-tests/inverter/maestro/results/maestro/ExplorerRun.0/sharedData/CDS/ahdl/input.ahdlSimDB/input.ahdlSimDB/bsource_2b273e.va.bsource_2b273e.ahdlcmi/Linux-64/ to /home/cinovador/Documents/course_files/practice_0/./lab1_part2/fanout-tests-question-2/fanout-tests/fanout-question-4/fanout-tests/fanout-question-2/maestro/results/maestro/ExplorerRun.0/sharedData/CDS/ahdl/input.ahdlSimDB/input.ahdlSimDB//bsource_2b273e.va.bsource_2b273e.ahdlcmi/Linux-64/.
+The simulator has reused the existing Verilog-A libraries for this simulation run. If you do not want to use these libraries, set the 'CDS_AHDL_REUSE_LIB' environment variable to 'NO' and rerun the simulation.
+Existing shared object for module bsource_2b273e is up to date.
+Installed compiled interface for bsource_2b273e.
+Time for Elaboration: CPU = 17.631 ms, elapsed = 22.7158 ms.
+Time accumulated: CPU = 317.054 ms, elapsed = 1.92124 s.
+Peak resident memory used = 204 Mbytes.
+
+
+Notice from spectre during hierarchy flattening.
+    The value 'psf' specified for the 'checklimitdest' option will no longer be supported in future releases. Use 'spectre -h' to see other recommended values for the 'checklimitdest' option.
+
+ Start ADE Session ID: mz8k3SkumJPcIxER
+
+Time for EDB Visiting: CPU = 602 us, elapsed = 612.974 us.
+Time accumulated: CPU = 317.7 ms, elapsed = 1.92189 s.
+Peak resident memory used = 205 Mbytes.
+
+
+Notice from spectre during initial setup.
+    Multithreading is disabled due to the size of the design being too small.
+
+Netlist title:
+        // Point Netlist Generated on: Oct 24 15:36:22 2024
+
+
+Global user options:
+         psfversion = 1.4.0
+            vabstol = 1e-06
+            iabstol = 1e-12
+               temp = 27
+               gmin = 1e-12
+             rforce = 1
+           maxnotes = 5
+           maxwarns = 5
+             digits = 5
+               cols = 80
+             pivrel = 0.001
+           sensfile = ../psf/sens.output
+     checklimitdest = psf
+               save = allpub
+             reltol = 0.001
+               tnom = 27
+             scalem = 1
+              scale = 1
+
+Scoped user options:
+
+Circuit inventory:
+              nodes 11
+              bsim4 6     
+     bsource_2b273e 6     
+            vsource 2     
+
+Analysis and control statement inventory:
+               info 7     
+               tran 1     
+
+Output statements:
+             .probe 0     
+           .measure 0     
+               save 1     
+
+Design checks inventory:
+          paramtest 1     
+
+
+Notice from spectre during initial setup.
+    Protected devices exist and are not included in the circuit inventory.
+    APS enabled.
+
+Time for parsing: CPU = 1.48 ms, elapsed = 90.4579 ms.
+Time accumulated: CPU = 319.212 ms, elapsed = 2.01238 s.
+Peak resident memory used = 205 Mbytes.
+
+~~~~~~~~~~~~~~~~~~~~~~
+Pre-Simulation Summary
+~~~~~~~~~~~~~~~~~~~~~~
+   -   (APS) Multi-threading. The recommended number of threads is 1, consider adding +mt=1 on command line.
+~~~~~~~~~~~~~~~~~~~~~~
+
+***********************************************
+Transient Analysis `tran': time = (0 s -> 4 ns)
+***********************************************
+Trying `homotopy = gmin' for initial conditions.
+DC simulation time: CPU = 1.472 ms, elapsed = 1.47486 ms.
+
+Opening the PSFXL file ../psf/tran.tran.tran ...
+Important parameter values:
+    start = 0 s
+    outputstart = 0 s
+    stop = 4 ns
+    step = 4 ps
+    maxstep = 80 ps
+    ic = all
+    useprevic = no
+    skipdc = no
+    reltol = 1e-03
+    abstol(V) = 1 uV
+    abstol(I) = 1 pA
+    temp = 27 C
+    tnom = 27 C
+    tempeffects = all
+    errpreset = moderate
+    method = traponly
+    lteratio = 3.5
+    relref = sigglobal
+    cmin = 0 F
+    gmin = 1 pS
+    rabsshort = 1 mOhm
+
+
+Notice from spectre during transient analysis `tran'.
+    Multithreading is disabled due to the size of the design being too small.
+
+
+Output and IC/nodeset summary:
+                 save   2       (current)
+                 save   11      (voltage)
+
+    tran: time = 104.5 ps    (2.61 %), step = 6.535 ps     (163 m%)
+
+Notice from spectre at time = 288.219 ps during transient analysis `tran'.
+    Found trapezoidal ringing on node _vvdd!:p.
+Notice from spectre at time = 368.219 ps during transient analysis `tran'.
+    Found trapezoidal ringing on node _vvdd!:p.
+
+    tran: time = 368.2 ps    (9.21 %), step = 80 ps           (2 %)
+
+Notice from spectre at time = 448.219 ps during transient analysis `tran'.
+    Found trapezoidal ringing on node _vvdd!:p.
+Notice from spectre at time = 528.219 ps during transient analysis `tran'.
+    Found trapezoidal ringing on node _vvdd!:p.
+
+    tran: time = 528.2 ps    (13.2 %), step = 80 ps           (2 %)
+
+Notice from spectre at time = 608.219 ps during transient analysis `tran'.
+    Found trapezoidal ringing on node _vvdd!:p.
+        Further occurrences of this notice will be suppressed.
+
+    tran: time = 768.2 ps    (19.2 %), step = 80 ps           (2 %)
+    tran: time = 928.2 ps    (23.2 %), step = 80 ps           (2 %)
+    tran: time = 1.102 ns    (27.6 %), step = 4.438 ps     (111 m%)
+    tran: time = 1.324 ns    (33.1 %), step = 74.42 ps     (1.86 %)
+    tran: time = 1.564 ns    (39.1 %), step = 80 ps           (2 %)
+    tran: time = 1.724 ns    (43.1 %), step = 80 ps           (2 %)
+    tran: time = 1.942 ns    (48.5 %), step = 58.24 ps     (1.46 %)
+    tran: time = 2.105 ns    (52.6 %), step = 6.579 ps     (164 m%)
+    tran: time = 2.372 ns    (59.3 %), step = 80 ps           (2 %)
+    tran: time = 2.532 ns    (63.3 %), step = 80 ps           (2 %)
+    tran: time = 2.772 ns    (69.3 %), step = 80 ps           (2 %)
+    tran: time = 2.932 ns    (73.3 %), step = 80 ps           (2 %)
+    tran: time = 3.103 ns    (77.6 %), step = 4.649 ps     (116 m%)
+    tran: time = 3.342 ns    (83.6 %), step = 80 ps           (2 %)
+    tran: time = 3.502 ns    (87.6 %), step = 80 ps           (2 %)
+    tran: time = 3.742 ns    (93.6 %), step = 80 ps           (2 %)
+    tran: time = 3.902 ns    (97.6 %), step = 80 ps           (2 %)
+Number of accepted tran steps =             269
+
+Notice from spectre during transient analysis `tran'.
+    Trapezoidal ringing is detected during tran analysis.
+        Please use method=trap for better results and performance.
+
+
+Maximum value achieved for any signal of each quantity: 
+V: V(out) = 1.044 V
+I: I(_vvdd!:p) = 7.103 mA
+If your circuit contains signals of the same quantity that are vastly different in size (such as high voltage circuitry combined with low voltage control circuitry), you should consider specifying global option `bin_relref=yes'.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Post-Transient Simulation Summary
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   -   To further speed up simulation, consider
+          add ++aps on command line
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+During simulation, the CPU load for active processors is :
+         0 (4.2 %)       2 (3.7 %)       4 (21.5 %)      6 (17.7 %)
+         8 (2.6 %)      10 (17.0 %)     12 (2.6 %)      13 (1.5 %)
+        14 (1.0 %)      15 (1.0 %)      
+        Total: 76.0%
+Initial condition solution time: CPU = 1.488 ms, elapsed = 1.49107 ms.
+Intrinsic tran analysis time:    CPU = 8.77 ms, elapsed = 10.7319 ms.
+Total time required for tran analysis `tran': CPU = 10.931 ms, elapsed = 12.8989 ms, util. = 84.7%.
+Time accumulated: CPU = 333.968 ms, elapsed = 2.03017 s.
+Peak resident memory used = 215 Mbytes.
+
+
+Notice from spectre.
+    45 notices suppressed.
+
+finalTimeOP: writing operating point information to rawfile.
+
+Opening the PSF file ../psf/finalTimeOP.info ...
+modelParameter: writing model parameter values to rawfile.
+
+Opening the PSF file ../psf/modelParameter.info ...
+element: writing instance parameter values to rawfile.
+
+Opening the PSF file ../psf/element.info ...
+outputParameter: writing output parameter values to rawfile.
+
+Opening the PSF file ../psf/outputParameter.info ...
+designParamVals: writing netlist parameters to rawfile.
+
+Opening the PSFASCII file ../psf/designParamVals.info ...
+primitives: writing primitives to rawfile.
+
+Opening the PSFASCII file ../psf/primitives.info.primitives ...
+subckts: writing subcircuits to rawfile.
+
+Opening the PSFASCII file ../psf/subckts.info.subckts ...
+Licensing Information:
+Lic Summary:
+[15:36:30.139275] Cdslmd servers:5280@192.168.0.10
+[15:36:30.139280] Feature usage summary:
+[15:36:30.139280] Virtuoso_Multi_mode_Simulation
+
+
+Aggregate audit (3:36:30 PM, Thur Oct 24, 2024):
+Time used: CPU = 345 ms, elapsed = 2.05 s, util. = 16.8%.
+Time spent in licensing: elapsed = 1.15 s, percentage of total = 56.3%.
+Peak memory used = 216 Mbytes.
+Simulation started at: 3:36:28 PM, Thur Oct 24, 2024, ended at: 3:36:30 PM, Thur Oct 24, 2024, with elapsed time (wall clock): 2.05 s.
+spectre completes with 0 errors, 0 warnings, and 13 notices.

@@ -1,0 +1,1 @@
+{"hierarchy":{"top_level":1,"1":{"insts":{"NM0":2,"v0":4,"PM0":3}}},"modelMap":{"vsource":[4],"g45n1svt":[2],"g45p1svt":[3]},"cellviews":[["fanout-tests","fanout-question-4","schematic"],["gpdk045","nmos1v","spectre"],["gpdk045","pmos1v","spectre"],["analogLib","vdc","spectre"]]}

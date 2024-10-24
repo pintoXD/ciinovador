@@ -1,0 +1,8 @@
+Name,Type,Output,EvalType,Plot,Save,Spec
+,net,/in,point,t,t,
+,net,/dut_in,point,t,t,
+,net,/dut_out,point,t,t,
+,net,/out,point,t,t,
+tpdf,expr,delay(?wf1 VT("/dut_in") ?value1 0.5 ?edge1 "falling" ?nth1 1 ?td1 0.0 ?tol1 nil ?wf2 VT("/dut_out") ?value2 0.5 ?edge2 "rising" ?nth2 1 ?tol2 nil ?td2 nil ?stop nil ?multiple nil),point,t,,
+tpdr,expr,delay(?wf1 VT("/dut_in") ?value1 0.5 ?edge1 "rising" ?nth1 1 ?td1 0.0 ?tol1 nil ?wf2 VT("/dut_out") ?value2 0.5 ?edge2 "falling" ?nth2 1 ?tol2 nil ?td2 nil ?stop nil ?multiple nil),point,t,,
+tpd,expr,((tpdf + tpdr) / 2),point,t,,

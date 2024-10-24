@@ -1,0 +1,10 @@
+HEADER
+"PSFversion" "1.00"
+"design" "(\"fanout-tests\" \"fanout-question-2\" \"schematic\" \"\")"
+"simulator" "spectre"
+"temperature" "27"
+"host" ""
+"date" "Oct 24 15:36:22 2024"
+"title" ""
+"analysisList" "()"
+END
