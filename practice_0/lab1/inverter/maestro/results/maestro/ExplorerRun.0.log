@@ -1,13 +1,16 @@
 Starting Single Run, Sweeps and Corners...
 
-Current time: Thu Oct 17 15:20:24 2024 
+Current time: Tue Oct 29 15:36:35 2024 
 Best design point: 1
 Design specs: 
 	lab1_inverter_1	corner	Nominal - 
+	tpdr		5.589p
+	tpdf		6.445p
+	avg		6.017p
 Design parameters: 
 
 ExplorerRun.0
 Number of points completed: 1
 Number of simulation errors: 0
 ExplorerRun.0 completed. 
-Current time: Thu Oct 17 15:20:33 2024 
+Current time: Tue Oct 29 15:36:56 2024 

@@ -98,19 +98,3 @@
 \# (PerfDiag): Set GDB path to environment variable 'gdbPath' (gdb).
 \# The Health Monitor tool is installed. You can access it from CIW - Tools - Diagnostic Center or use the shell command 'cdsPerfDiag -p 7319' to open it when Virtuoso freezes.
 \# (PerfDiag): Use backtrace from GLIBC.
-\i _axlRunServices()
-\# [15:33:46.202370] Periodic Lic check successful
-\# [15:33:46.202371] Feature usage summary:
-\o Loading simui.cxt 
-\o [2024-10-29 15:33:46.211 -0300] [PROCESS] [cadence.virtuoso.ade.services] - Netlist Service has successfully started. Waiting for incoming messages ... {"jobid": "1", "hostname": "cinova05.lesc.ufc.br", "processid": 7319, "logfile": "/home/cinovador/Documents/course_files/practice_0/logs_cinovador/logs0/Service1.log"}
-\# Memory report: using         428 MB, process size 2,368 MB at UTC 2024.10.29 18:33:48.341
-\# Available memory:         44,485 MB at UTC 2024.10.29 18:33:56.346
-\# Memory report: Maximum memory size now 44,913 MB at UTC 2024.10.29 18:33:56.346
-\# Thread usage report: 12 active threads, active load 1.40 at UTC 2024.10.29 18:33:56.346
-\o [2024-10-29 15:38:48.592 -0300] [PROCESS] [cadence.virtuoso.ade.services.netlister] - Netlist Service process exits. {"jobid": "1", "hostname": "cinova05.lesc.ufc.br", "processid": 7319, "logfile": "/home/cinovador/Documents/course_files/practice_0/logs_cinovador/logs0/Service1.log"}
-\o Loading vdsil.cxt 
-\# Lic Summary:
-\# [15:38:49.073521] Cdslmd servers:5280@192.168.0.10
-\# [15:38:49.597809] Feature usage summary:
-\# Memory report: on exit            420 MB, process size 2,360 MB at UTC 2024.10.29 18:38:49.597
-\# Memory report: peak usage         428 MB, process size 2,368 MB

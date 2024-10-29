@@ -6,11 +6,11 @@
 LockStakeVersion               1.1
 LoginName                      cinovador
 HostName                       cinova05.lesc.ufc.br
-ProcessIdentifier              31080
-ProcessCreationTime_UTC        1729786798
-ProcessCreationTime_Readable   Thu Oct 24 13:19:58 2024 -03
+ProcessIdentifier              6770
+ProcessCreationTime_UTC        1730226783
+ProcessCreationTime_Readable   Tue Oct 29 15:33:03 2024 -03
 AppIdentifier                  /home/tools/cadence/installs/IC231/tools.lnx86/dfII/bin/64bit/virtuoso
 OSType                         lnx86
 ReasonForPlacingEditLock       Lock file for generating unique number for ICRP command and log file directories.
 FilePathUsedToEditLock         /home/cinovador/Documents/course_files/practice_0/.tmp_cinovador/.unique_number_0_file
-TimeEditLocked                 Thu Oct 24 13:20:34 2024 -03
+TimeEditLocked                 Tue Oct 29 15:33:41 2024 -03

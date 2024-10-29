@@ -43,6 +43,9 @@
 					<output>/out
 						<evalType>point</evalType>
 					</output>
+					<output>avg
+						<evalType>point</evalType>
+					</output>
 				</outputs>
 			</test>
 		</tests>
