@@ -11,7 +11,7 @@ cd /home/cinovador/Documents/course_files/practice_0
 
 
 
-source /home/tools/cadence/installs/IC231/share/cdssetup/adexl/job_collection_setup.sh 3
+source /home/tools/cadence/installs/IC231/share/cdssetup/adexl/job_collection_setup.sh 5
 
 
 
@@ -69,7 +69,7 @@ trap "handle_exit" EXIT
 heartbeat=`mktemp /dev/shm/swift-heartbeat.XXXXXXXXXX`
 last_heartbeat=`stat -c %y "$heartbeat"`
 
-/home/tools/cadence/installs/IC231/tools.lnx86/dfII/bin/maeLoggingservice -beanhost "cinova05.lesc.ufc.br" -beanport 11376 -beanbinlog "" -mpssession "virtuoso4701" -mpshost "cinova05.lesc.ufc.br" -davinciService DaVinciService_4701_1730288680 -scopedPid 4701 -axlSession fnxSession1 -axlServiceIdFlag $COLLECTION_JOB_ID -uuid "${COLLECTION_JOB_UUID}" -heartbeat "$heartbeat" -log /home/cinovador/Documents/course_files/practice_0/logs_cinovador/logs0/LoggingService${COLLECTION_JOB_ID}.log   -adeBrokerAddress "cinova05.lesc.ufc.br:41511"  -dbBasePath "/home/cinovador/Documents/course_files/practice_0/lab1_part2/fanout#2dtests/fanout#2dquestion#2d2/maestro/results/maestro"   1>/dev/null  2>/dev/null  &
+/home/tools/cadence/installs/IC231/tools.lnx86/dfII/bin/maeLoggingservice -beanhost "cinova05.lesc.ufc.br" -beanport 11376 -beanbinlog "" -mpssession "virtuoso4701" -mpshost "cinova05.lesc.ufc.br" -davinciService DaVinciService_4701_1730288680 -scopedPid 4701 -axlSession fnxSession2 -axlServiceIdFlag $COLLECTION_JOB_ID -uuid "${COLLECTION_JOB_UUID}" -heartbeat "$heartbeat" -log /home/cinovador/Documents/course_files/practice_0/logs_cinovador/logs0/LoggingService${COLLECTION_JOB_ID}.log   -adeBrokerAddress "cinova05.lesc.ufc.br:41511"  -dbBasePath "/home/cinovador/Documents/course_files/practice_0/lab1_part2/fanout#2dtests/fanout#2dquestion#2d3/maestro/results/maestro"   1>/dev/null  2>/dev/null  &
 
 JOB_PID=$!
 HOST_NAME=$(hostname)
@@ -101,7 +101,7 @@ while [ -d "/proc/$JOB_PID" ]; do
   ## does not require vars to be in quotes to handle empty values and spaces.
   if [[ ! `stat -c %y $heartbeat` > $last_heartbeat && ($check_service_file == 0 || ($check_service_file != 0 && ! -e $service_file)) ]]; then
     if [[ $status == "starting" ]]; then
-      cdsmps -c 'mpsSend(mpsMakePattern("ADE-service-status-DaVinciService_4701_1730288680-fnxSession1" "{\"jobId\":3,\"status\":\"starttimeout\"}"))'
+      cdsmps -c 'mpsSend(mpsMakePattern("ADE-service-status-DaVinciService_4701_1730288680-fnxSession2" "{\"jobId\":5,\"status\":\"starttimeout\"}"))'
     fi
     # No new heartbeat since last check implies an unresponsive process
     # Non-empty file means that the heartbeat check is temporarily disabled

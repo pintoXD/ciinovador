@@ -1,14 +1,14 @@
-\# Program start time:     UTC 2024.10.30 11:51:01.909
-\# Local time: GMT-03:00 (UTC-03:00) 2024.10.30 08:51:01.909
+\# Program start time:     UTC 2024.10.30 11:56:06.698
+\# Local time: GMT-03:00 (UTC-03:00) 2024.10.30 08:56:06.698
 \o Program:		@(#)$CDS: Virtuoso Studio version IC23.1-64b 08/20/2024 22:45 (cpgbld22) $
 \o Hierarchy:		/home/tools/cadence/installs/IC231/tools.lnx86/dfII/
 \o Sub version:		sub-version  IC23.1-64b.ISR9.24  (64-bit addresses)
-\# Command line:	/home/tools/cadence/installs/IC231/tools.lnx86/dfII/bin/64bit/virtuoso -beanhost cinova05.lesc.ufc.br -beanport 11376 -beanbinlog  -beanLogFile /home/cinovador/Documents/course_files/practice_0/logs_cinovador/logs0/amps_Service4.log -mpssession virtuoso4701 -mpshost cinova05.lesc.ufc.br -davinciService DaVinciService_4701_1730288680 -scopedPid 4701 -axlSession fnxSession1 -axlServiceIdFlag 4 -uuid 21385d96-0eaf-4f4f-bec0-9f4ed8c6dbc0 -heartbeat /dev/shm/swift-heartbeat.uWxpkqgM3W -log /home/cinovador/Documents/course_files/practice_0/logs_cinovador/logs0/Service4.log -adeBrokerAddress cinova05.lesc.ufc.br:41511 -noautostart -nographE -lscs 000175E1894CBE06FF0966E38F1FFC06BC4D7EED88199869CA2C7EEDDC43CC33CA2C39A0A173FC06867D66E38F1FFC06BC4D66E38F1FFC06BC4D01C192BBE1A2DB6F00001E8C -interactive -offlineExprEval -upfrontMode -fenixMode explorer -heartbeatTimeout  -lingerTimeout 300 -pointlifetime -1
+\# Command line:	/home/tools/cadence/installs/IC231/tools.lnx86/dfII/bin/64bit/virtuoso -beanhost cinova05.lesc.ufc.br -beanport 11376 -beanbinlog  -beanLogFile /home/cinovador/Documents/course_files/practice_0/logs_cinovador/logs0/amps_Service6.log -mpssession virtuoso4701 -mpshost cinova05.lesc.ufc.br -davinciService DaVinciService_4701_1730288680 -scopedPid 4701 -axlSession fnxSession2 -axlServiceIdFlag 6 -uuid 6c0f5ebd-b4a4-4a21-b345-560162c65b56 -heartbeat /dev/shm/swift-heartbeat.JpYPwYy0e6 -log /home/cinovador/Documents/course_files/practice_0/logs_cinovador/logs0/Service6.log -adeBrokerAddress cinova05.lesc.ufc.br:41511 -noautostart -nographE -lscs 000175E1894CBE06FF0966E38F1FFC06BC4D7EED88199869CA2C7EEDDC43CC33CA2C39A0A173FC06867D66E38F1FFC06BC4D66E38F1FFC06BC4D01C191CBE2D2DB6F00001E90 -interactive -offlineExprEval -upfrontMode -fenixMode explorer -heartbeatTimeout  -lingerTimeout 300 -pointlifetime -1
 \# Host name (type):	cinova05.lesc.ufc.br (x86_64)
 \# Operating system:	Linux 4.18.0-553.22.1.el8_10.x86_64 #1 SMP Wed Sep 25 09:20:43 UTC 2024
 \# Linux /etc/issue:	\S
 \# Linux /etc/issue:	Kernel \r on an \m
-\# X display name (WxH):	:2482 (1024x868)
+\# X display name (WxH):	:6490 (1024x868)
 \# Available geometry:			TL(0:0) BR(1023:867)
 \# X server:			The X.Org Foundation
 \# Depth of Visual (Root):	24 (24)
@@ -18,11 +18,11 @@
 \# 			current id 0x0, current max 0x1ffffa (2097146)
 \# Max data seg size:	     unlimited
 \# Max process size:	     unlimited
-\# Initial sbrk value:	        733 MB
-\# Available memory:	     43,235 MB
+\# Initial sbrk value:	        732 MB
+\# Available memory:	     42,976 MB
 \# System memory:	     47,556 MB
-\# Maximum memory size:	     46,994 MB
-\# Max mem available:	     43,407 MB
+\# Maximum memory size:	     46,996 MB
+\# Max mem available:	     43,148 MB
 \# Initial memory used:	        172 MB
 \#        process size:	      1,683 MB
 \# Thread usage limits (effective/default):	maxthreads 126051/126051 maxload 20.00/20.00
@@ -30,7 +30,7 @@
 \# Window Manager:	other
 \# User Name:		cinovador
 \o Working Directory:	cinova05.lesc.ufc.br:/home/cinovador/Documents/course_files/practice_0
-\# Process Id:		9756
+\# Process Id:		12659
 \o 
 \o COPYRIGHT (C) 1992-2024  CADENCE DESIGN SYSTEMS INC.  ALL RIGHTS RESERVED.
 \o           (C) 1992-2024  UNIX SYSTEMS Laboratories INC.,
@@ -70,6 +70,10 @@
 \o Loading amps.cxt 
 \o Loading adexlCore.cxt 
 \o Loading adexl.cxt 
+\# Available memory:         42,951 MB at UTC 2024.10.30 11:56:16.670
+\# Memory report: Maximum memory size now 43,256 MB at UTC 2024.10.30 11:56:16.670
+\# Thread usage report: 11 active threads, active load 1.40 at UTC 2024.10.30 11:56:16.670
+\# Memory report: using         305 MB, process size 1,861 MB at UTC 2024.10.30 11:56:16.670
 \o *Info*    Exporting services from client ... 
 \o 
 \o Loading adexlDM.cxt 
@@ -77,14 +81,13 @@
 \o Loading cli.cxt 
 \o Loading lp.cxt 
 \o Loading sipLayout.cxt 
-\# Memory report: using         313 MB, process size 1,869 MB at UTC 2024.10.30 11:51:03.202
 \o Loading viva.cxt 
 \o Loading diagCenter.cxt 
 \o INFO (ELI-00333) License program mode is LSCS.
-\# [08:51:01.200057] Configured Lic search path (23.02-s006): 5280@192.168.0.10
+\# [08:56:06.200137] Configured Lic search path (23.02-s006): 5280@192.168.0.10
 \o INFO (ELI-00302) Connecting to parent process (session=virtuoso4701, host=cinova05.lesc.ufc.br). Connection mode is LSCS. Total timeout is 180 seconds. Connection timeout is 90 seconds.
 \o INFO (ELI-00303) Step 1: Connecting to parent. Time spent is 0 seconds.
-\o INFO (ELI-00304) The registration of the child 9756 within 90 seconds is being processed...
+\o INFO (ELI-00304) The registration of the child 12659 within 90 seconds is being processed...
 \o INFO (ELI-00305) The result of registration is true. Time spent is 0 seconds.
 \o INFO (ELI-00308) The connection has ended. Result is true. Total time spent is 0 seconds.
 \p > 
@@ -96,19 +99,12 @@
 \o Loading exportDie.cxt 
 \# Loading perfDiag...
 \# (PerfDiag): Set GDB path to environment variable 'gdbPath' (gdb).
-\# The Health Monitor tool is installed. You can access it from CIW - Tools - Diagnostic Center or use the shell command 'cdsPerfDiag -p 9756' to open it when Virtuoso freezes.
+\# The Health Monitor tool is installed. You can access it from CIW - Tools - Diagnostic Center or use the shell command 'cdsPerfDiag -p 12659' to open it when Virtuoso freezes.
 \# (PerfDiag): Use backtrace from GLIBC.
 \i _axlRunServices()
+\# [08:56:17.115928] Periodic Lic check successful
+\# [08:56:17.640217] Feature usage summary:
 \o Loading simui.cxt 
-\o [2024-10-30 08:51:03.868 -0300] [PROCESS] [cadence.virtuoso.ade.services] - Netlist Service has successfully started. Waiting for incoming messages ... {"jobid": "4", "hostname": "cinova05.lesc.ufc.br", "processid": 9756, "logfile": "/home/cinovador/Documents/course_files/practice_0/logs_cinovador/logs0/Service4.log"}
-\# Memory report: using         428 MB, process size 2,368 MB at UTC 2024.10.30 11:51:06.003
-\# Available memory:         43,187 MB at UTC 2024.10.30 11:51:14.020
-\# Memory report: Maximum memory size now 43,615 MB at UTC 2024.10.30 11:51:14.020
-\# Thread usage report: 12 active threads, active load 1.40 at UTC 2024.10.30 11:51:14.020
-\o [2024-10-30 08:56:04.269 -0300] [PROCESS] [cadence.virtuoso.ade.services.netlister] - Netlist Service process exits. {"jobid": "4", "hostname": "cinova05.lesc.ufc.br", "processid": 9756, "logfile": "/home/cinovador/Documents/course_files/practice_0/logs_cinovador/logs0/Service4.log"}
-\o Loading vdsil.cxt 
-\# Lic Summary:
-\# [08:56:05.274931] Cdslmd servers:5280@192.168.0.10
-\# [08:56:05.274936] Feature usage summary:
-\# Memory report: on exit            420 MB, process size 2,360 MB at UTC 2024.10.30 11:56:05.274
-\# Memory report: peak usage         428 MB, process size 2,368 MB
+\o [2024-10-30 08:56:17.650 -0300] [PROCESS] [cadence.virtuoso.ade.services] - Netlist Service has successfully started. Waiting for incoming messages ... {"jobid": "6", "hostname": "cinova05.lesc.ufc.br", "processid": 12659, "logfile": "/home/cinovador/Documents/course_files/practice_0/logs_cinovador/logs0/Service6.log"}
+\# Memory report: using         428 MB, process size 2,368 MB at UTC 2024.10.30 11:56:19.781
+\# Thread usage report: 12 active threads, active load 1.40 at UTC 2024.10.30 11:56:27.787

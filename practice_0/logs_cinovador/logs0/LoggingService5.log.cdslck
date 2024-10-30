@@ -11,6 +11,6 @@ ProcessCreationTime_UTC        1730288367
 ProcessCreationTime_Readable   Wed Oct 30 08:39:27 2024 -03
 AppIdentifier                  /home/tools/cadence/installs/IC231/tools.lnx86/dfII/bin/64bit/virtuoso
 OSType                         lnx86
-ReasonForPlacingEditLock       
-FilePathUsedToEditLock         /home/cinovador/Documents/course_files/practice_0/lab1_part2/fanout#2dtests/fanout#2dquestion#2d2/maestro/maestro.sdb
-TimeEditLocked                 Wed Oct 30 08:50:59 2024 -03
+ReasonForPlacingEditLock       lock for logging service log file
+FilePathUsedToEditLock         /home/cinovador/Documents/course_files/practice_0/logs_cinovador/logs0/LoggingService5.log
+TimeEditLocked                 Wed Oct 30 08:56:04 2024 -03

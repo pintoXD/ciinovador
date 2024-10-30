@@ -6,11 +6,11 @@
 LockStakeVersion               1.1
 LoginName                      cinovador
 HostName                       cinova05.lesc.ufc.br
-ProcessIdentifier              6770
-ProcessCreationTime_UTC        1730226783
-ProcessCreationTime_Readable   Tue Oct 29 15:33:03 2024 -03
+ProcessIdentifier              4701
+ProcessCreationTime_UTC        1730288367
+ProcessCreationTime_Readable   Wed Oct 30 08:39:27 2024 -03
 AppIdentifier                  /home/tools/cadence/installs/IC231/tools.lnx86/dfII/bin/64bit/virtuoso
 OSType                         lnx86
 ReasonForPlacingEditLock       lock for logging service log file
 FilePathUsedToEditLock         /home/cinovador/Documents/course_files/practice_0/logs_cinovador/logs0/LoggingService0.log
-TimeEditLocked                 Tue Oct 29 15:33:42 2024 -03
+TimeEditLocked                 Wed Oct 30 08:44:42 2024 -03
