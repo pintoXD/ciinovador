@@ -1,0 +1,11 @@
+s1(30Oct2024:16:46:43):  xrun -64bit andgate_tb.sv andgate.sv 
+s2(30Oct2024:16:47:20):  xrun -64bit andgate_tb.sv andgate.sv 
+s3(30Oct2024:16:48:41):  xrun -64bit andgate_tb.sv andgate.sv 
+s4(30Oct2024:16:49:19):  xrun -64bit andgate_tb.sv andgate.sv +gui +access+r 
+s5(30Oct2024:16:57:34):  xrun -64bit andgate_tb.sv andgate.sv +gui +access+r 
+s6(30Oct2024:17:00:17):  xrun -64bit andgate_tb.sv andgate.sv +gui +access+r 
+s7(30Oct2024:17:08:55):  xrun -64bit orgate_tb.sv orgate.sv 
+s8(30Oct2024:17:09:20):  xrun -64bit orgate_tb.sv orgate.sv 
+s9(30Oct2024:17:10:58):  xrun -64bit orgate_tb.sv orgate.sv 
+s10(30Oct2024:17:11:42):  xrun -64bit orgate_tb.sv orgate.sv 
+s11(30Oct2024:17:12:56):  xrun -64bit orgate_tb.sv orgate.sv 
