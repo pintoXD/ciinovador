@@ -1,17 +1,17 @@
 #!/bin/bash
 
-startup_timeout=300
-heartbeat_timeout=300
-terminate_timeout=30
-check_service_file=0
-service_file=`dirname /home/cinovador/Documents/course_files/practice_0/logs_cinovador/logs0/Service${COLLECTION_JOB_ID}.log`
+startup_timeout=30
+heartbeat_timeout=10
+terminate_timeout=10
+check_service_file=1
+service_file=`dirname /home/cinovador/Documents/course_files/practice_0/logs_cinovador/logs0/LoggingService${COLLECTION_JOB_ID}.log`
 service_file=$service_file/.DaVinciService_4701_1730288680
 
 cd /home/cinovador/Documents/course_files/practice_0
 
 
 
-source /home/tools/cadence/installs/IC231/share/cdssetup/adexl/job_collection_setup.sh 6
+source /home/tools/cadence/installs/IC231/share/cdssetup/adexl/job_collection_setup.sh 7
 
 
 
@@ -32,10 +32,8 @@ handle_sigchld() {
   if [ -n "$JOB_PID" -a ! -d "/proc/$JOB_PID" ]; then
     wait $JOB_PID
     EXIT_CODE=$?
-    printf "Netlist Service '$JOB_PID' stopped with exit code '$EXIT_CODE'"
-    if [ $EXIT_CODE -eq 0 ]; then  
-      test -f /home/cinovador/Documents/course_files/practice_0/logs_cinovador/logs0/Service${COLLECTION_JOB_ID}.log.err && rm -f /home/cinovador/Documents/course_files/practice_0/logs_cinovador/logs0/Service${COLLECTION_JOB_ID}.log.err 
-    fi
+    printf "Logging Service '$JOB_PID' stopped with exit code '$EXIT_CODE'"
+
     unset JOB_PID
     exit $EXIT_CODE
   fi
@@ -71,12 +69,12 @@ trap "handle_exit" EXIT
 heartbeat=`mktemp /dev/shm/swift-heartbeat.XXXXXXXXXX`
 last_heartbeat=`stat -c %y "$heartbeat"`
 
-virtuoso -beanhost "cinova05.lesc.ufc.br" -beanport 11376 -beanbinlog "" -beanLogFile "/home/cinovador/Documents/course_files/practice_0/logs_cinovador/logs0/amps_Service${COLLECTION_JOB_ID}.log"  -mpssession "virtuoso4701" -mpshost "cinova05.lesc.ufc.br" -davinciService DaVinciService_4701_1730288680 -scopedPid 4701 -axlSession fnxSession2 -axlServiceIdFlag $COLLECTION_JOB_ID -uuid "${COLLECTION_JOB_UUID}" -heartbeat "$heartbeat" -log /home/cinovador/Documents/course_files/practice_0/logs_cinovador/logs0/Service${COLLECTION_JOB_ID}.log   -adeBrokerAddress "cinova05.lesc.ufc.br:41511"  -noautostart -nograph -lscs 000175E1894CBE06FF0966E38F1FFC06BC4D7EED88199869CA2C7EEDDC43CC33CA2C39A0A173FC06867D66E38F1FFC06BC4D66E38F1FFC06BC4D01C191CBE2D2DB6F00001E90 -interactive -offlineExprEval -upfrontMode -fenixMode explorer -heartbeatTimeout "" -lingerTimeout 300 -pointlifetime -1   <<< '_axlRunServices()'  1>/dev/null  2>/home/cinovador/Documents/course_files/practice_0/logs_cinovador/logs0/Service${COLLECTION_JOB_ID}.log.err  &
+/home/tools/cadence/installs/IC231/tools.lnx86/dfII/bin/maeLoggingservice -beanhost "cinova05.lesc.ufc.br" -beanport 11376 -beanbinlog "" -mpssession "virtuoso4701" -mpshost "cinova05.lesc.ufc.br" -davinciService DaVinciService_4701_1730288680 -scopedPid 4701 -axlSession fnxSession3 -axlServiceIdFlag $COLLECTION_JOB_ID -uuid "${COLLECTION_JOB_UUID}" -heartbeat "$heartbeat" -log /home/cinovador/Documents/course_files/practice_0/logs_cinovador/logs0/LoggingService${COLLECTION_JOB_ID}.log   -adeBrokerAddress "cinova05.lesc.ufc.br:41511"  -dbBasePath "/home/cinovador/Documents/course_files/practice_0/lab1_part2/fanout#2dtests/fanout#2dquestion#2d4/maestro/results/maestro"   1>/dev/null  2>/dev/null  &
 
 JOB_PID=$!
 HOST_NAME=$(hostname)
 
-printf "Netlist Service '$JOB_PID' is starting up on host '$HOST_NAME'"
+printf "Logging Service '$JOB_PID' is starting up on host '$HOST_NAME'"
 status="starting"
 
 # Use a separate startup timeout because it can take a significant amount of time to
@@ -103,7 +101,7 @@ while [ -d "/proc/$JOB_PID" ]; do
   ## does not require vars to be in quotes to handle empty values and spaces.
   if [[ ! `stat -c %y $heartbeat` > $last_heartbeat && ($check_service_file == 0 || ($check_service_file != 0 && ! -e $service_file)) ]]; then
     if [[ $status == "starting" ]]; then
-      cdsmps -c 'mpsSend(mpsMakePattern("ADE-service-status-DaVinciService_4701_1730288680-fnxSession2" "{\"jobId\":6,\"status\":\"starttimeout\"}"))'
+      cdsmps -c 'mpsSend(mpsMakePattern("ADE-service-status-DaVinciService_4701_1730288680-fnxSession3" "{\"jobId\":7,\"status\":\"starttimeout\"}"))'
     fi
     # No new heartbeat since last check implies an unresponsive process
     # Non-empty file means that the heartbeat check is temporarily disabled
