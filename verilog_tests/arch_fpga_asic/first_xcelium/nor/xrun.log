@@ -1,0 +1,48 @@
+xrun(64): 22.09-s013: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	22.09-s013: Started on Oct 31, 2024 at 11:38:56 -03
+xrun
+	-64bit
+	norgate_tb.sv
+	norgate.sv
+file: norgate_tb.sv
+	module worklib.norgate_tb:sv
+		errors: 0, warnings: 0
+file: norgate.sv
+	module worklib.norgate:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		norgate_tb
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.norgate:sv <0x57c16a87>
+			streams:   1, words:   190
+		worklib.norgate_tb:sv <0x5db049de>
+			streams:   6, words:  6675
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		             Instances  Unique
+		Modules:             2       2
+		Registers:           4       4
+		Scalar wires:        5       -
+		Initial blocks:      2       2
+		Cont. assignments:   1       1
+		Pseudo assignments:  3       3
+	Writing initial simulation snapshot: worklib.norgate_tb:sv
+Loading snapshot worklib.norgate_tb:sv .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
+xcelium> run
+                Tempo   Entradas    Saídas
+                         a    b       c
+                ====   ==========  =======
+                   0     0    0       1
+                   5     0    1       0
+                  10     1    0       0
+                  15     1    1       0
+xmsim: *W,RNQUIE: Simulation is complete.
+xcelium> exit
+TOOL:	xrun(64)	22.09-s013: Exiting on Oct 31, 2024 at 11:39:09 -03  (total: 00:00:13)

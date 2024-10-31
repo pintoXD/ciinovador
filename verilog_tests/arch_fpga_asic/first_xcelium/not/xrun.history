@@ -1,0 +1,9 @@
+s1(31Oct2024:11:22:40):  xrun -64bit notgate_tb.sv notgate.sv 
+s2(31Oct2024:11:25:19):  xrun -64bit notgate_tb.sv notgate.sv 
+s3(31Oct2024:11:29:54):  xrun -64bit notgate_tb.sv notgate.sv 
+s4(31Oct2024:11:31:04):  xrun -64bit notgate_tb.sv notgate.sv 
+s5(31Oct2024:11:31:28):  xrun -64bit notgate_tb.sv notgate.sv 
+s6(31Oct2024:11:31:36):  xrun -64bit notgate_tb.sv notgate.sv 
+s7(31Oct2024:11:31:41):  xrun -64bit notgate_tb.sv notgate.sv 
+s8(31Oct2024:12:14:37):  xrun -64bit notgate_tb.sv notgate.sv 
+s9(31Oct2024:12:15:41):  xrun -64bit notgate_tb.sv notgate.sv orgate.sv notgate.sv andgate.sv 

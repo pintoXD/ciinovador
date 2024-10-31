@@ -1,0 +1,12 @@
+xrun(64): 22.09-s013: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	22.09-s013: Started on Oct 31, 2024 at 12:15:41 -03
+xrun
+	-64bit
+	notgate_tb.sv
+	notgate.sv
+	orgate.sv
+	notgate.sv
+	andgate.sv
+xrun: *E,FILEMIS: Cannot find the provided file orgate.sv.
+xrun: *E,FILEMIS: Cannot find the provided file andgate.sv.
+TOOL:	xrun(64)	22.09-s013: Exiting on Oct 31, 2024 at 12:15:41 -03  (total: 00:00:00)
