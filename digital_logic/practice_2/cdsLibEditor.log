@@ -1,0 +1,144 @@
+\o Program:		@(#)$CDS: cdsLibEditor version 23.1 - CAT38 08/20/2024 18:28 (cpgsrv14) $
+\o Sub version:		sub-version  s091 
+\o Arguments:		-cdslib /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib -mpssession virtuoso75136 -mpshost cinova05.lesc.ufc.br -mpsversion 23.1 
+\o Working Directory:	cinova05.lesc.ufc.br:/home/cinovador/Documents/course_files/digital_logic/practice_2
+\o 64-bit offsets
+\a nrSetWindowVisibility(cdsLibEditor "show")
+\o Qt version: 		5.15.9
+\a nrSetCurrentWindow(cdsLibEditor)
+\a nrListItemAction(cdsLibEditor->mainTable 0 0)
+\o Active cell: 0 0 "analogLib"
+\a nrResizeWindow(cdsLibEditor list(1970 77 500 400))
+\a nrResizeWindow(cdsLibEditor list(2752 132 500 400))
+\a nrListItemAction(cdsLibEditor->mainTable 4 0)
+\o Active cell: 4 0 ""
+\a nrListItemRename(cdsLibEditor->mainTable, 4 0 "lab1_inverter")
+\a nrListItemAction(cdsLibEditor->mainTable 4 1)
+\o Active cell: 4 1 ""
+\a cdsLibEditor->fileOpenButton->value = t
+\a nrListItemRename(cdsLibEditor->mainTable, 4 1 "/home/ciinovador/")
+\o QUESTION (CLE-200): The directory "/home/ciinovador/" \ndoesn't exist. If other tools use this file, \nan error will occur unless you either create \nthe directory you have specified or change the \npath to an existing directory. \n\nDo you want to create a new library? 
+\a nrSetWindowVisibility(needCreateDialog "show")
+\a nrSetCurrentWindow(needCreateDialog)
+\a nrResizeWindow(needCreateDialog list(2827 234 350 196))
+\a needCreateDialog->noButton->value = t
+\o QUESTION (CLE-205): You have made changes which have not been saved. \n\nWould you like to save your changes? 
+\a nrSetWindowVisibility(needSaveDialog "show")
+\a nrSetCurrentWindow(needSaveDialog)
+\a nrResizeWindow(needCreateDialog list(2827 197 350 196))
+\a nrResizeWindow(needSaveDialog list(2818 264 369 136))
+\a needSaveDialog->cancelButton->value = t
+\a nrSetCurrentWindow(cdsLibEditor)
+\a nrResizeWindow(needSaveDialog list(2818 227 369 136))
+\a cdsLibEditor->editAddLibButton->value = t
+\a newLibraryDialog->filePathComboBox->value = "/home/cinovador/Documents/course_files/digital_logic/practice_2"
+\a newLibraryDialog->useMappedName->value = nil
+\a nrSetWindowVisibility(newLibraryDialog "show")
+\a nrSetCurrentWindow(newLibraryDialog)
+\a nrListItemRename(cdsLibEditor->mainTable, 4 1 "/")
+\a nrResizeWindow(newLibraryDialog list(2737 75 531 513))
+\a newLibraryDialog->dirListWidget->value = ".."
+\a newLibraryDialog->filePathComboBox->value = "/home/cinovador/Documents/course_files/digital_logic/practice_2/.."
+\a nrListItemAction(newLibraryDialog->dirListWidget 0 0)
+\a newLibraryDialog->filePathComboBox->value = "/home/cinovador/Documents/course_files/digital_logic"
+\a newLibraryDialog->dirListWidget->value = nil
+\a newLibraryDialog->dirListWidget->value = ".."
+\a newLibraryDialog->filePathComboBox->value = "/home/cinovador/Documents/course_files/digital_logic/.."
+\a nrListItemAction(newLibraryDialog->dirListWidget 0 0)
+\a newLibraryDialog->filePathComboBox->value = "/home/cinovador/Documents/course_files"
+\a newLibraryDialog->dirListWidget->value = nil
+\a newLibraryDialog->dirListWidget->value = "practice_0"
+\a newLibraryDialog->filePathComboBox->value = "/home/cinovador/Documents/course_files/practice_0"
+\a nrListItemAction(newLibraryDialog->dirListWidget 2 0)
+\a newLibraryDialog->dirListWidget->value = nil
+\a newLibraryDialog->dirListWidget->value = ".."
+\a newLibraryDialog->filePathComboBox->value = "/home/cinovador/Documents/course_files/practice_0/.."
+\a nrListItemAction(newLibraryDialog->dirListWidget 0 0)
+\a newLibraryDialog->filePathComboBox->value = "/home/cinovador/Documents/course_files"
+\a newLibraryDialog->dirListWidget->value = nil
+\a newLibraryDialog->dirListWidget->value = ".."
+\a newLibraryDialog->filePathComboBox->value = "/home/cinovador/Documents/course_files/.."
+\a nrListItemAction(newLibraryDialog->dirListWidget 0 0)
+\a newLibraryDialog->filePathComboBox->value = "/home/cinovador/Documents"
+\a newLibraryDialog->dirListWidget->value = nil
+\a newLibraryDialog->dirListWidget->value = "course_files"
+\a newLibraryDialog->filePathComboBox->value = "/home/cinovador/Documents/course_files"
+\a nrListItemAction(newLibraryDialog->dirListWidget 2 0)
+\a newLibraryDialog->dirListWidget->value = nil
+\a newLibraryDialog->dirListWidget->value = "practice_0"
+\a newLibraryDialog->filePathComboBox->value = "/home/cinovador/Documents/course_files/practice_0"
+\a nrListItemAction(newLibraryDialog->dirListWidget 2 0)
+\a newLibraryDialog->dirListWidget->value = nil
+\a newLibraryDialog->dirListWidget->value = "inverter.lvsdb"
+\a newLibraryDialog->filePathComboBox->value = "/home/cinovador/Documents/course_files/practice_0/inverter.lvsdb"
+\a newLibraryDialog->dirListWidget->value = nil
+\a newLibraryDialog->filePathComboBox->value = "/home/cinovador/Documents/course_files/practice_0"
+\a nrListItemAction(newLibraryDialog->dirListWidget 1 0)
+\a newLibraryDialog->filePathComboBox->value = "/home/cinovador/Documents/course_files/practice_0/inverter.lvsdb"
+\a newLibraryDialog->dirListWidget->value = ".."
+\a newLibraryDialog->filePathComboBox->value = "/home/cinovador/Documents/course_files/practice_0/inverter.lvsdb/.."
+\a newLibraryDialog->dirListWidget->value = nil
+\a newLibraryDialog->filePathComboBox->value = "/home/cinovador/Documents/course_files/practice_0/inverter.lvsdb"
+\a nrListItemAction(newLibraryDialog->dirListWidget 0 0)
+\a newLibraryDialog->filePathComboBox->value = "/home/cinovador/Documents/course_files/practice_0"
+\a newLibraryDialog->dirListWidget->value = "inverter.lvsdb"
+\a newLibraryDialog->filePathComboBox->value = "/home/cinovador/Documents/course_files/practice_0/inverter.lvsdb"
+\a newLibraryDialog->okButton->value = t
+\o ERROR (CLE-214): Provide a library name. 
+\a nrSetWindowVisibility(errorDialog "show")
+\a nrSetCurrentWindow(errorDialog)
+\a nrResizeWindow(newLibraryDialog list(2737 38 531 513))
+\a nrResizeWindow(errorDialog list(2905 271 195 122))
+\a errorDialog->errorOkButton->value = t
+\a nrSetCurrentWindow(cdsLibEditor)
+\a nrResizeWindow(errorDialog list(2905 234 195 122))
+\a cdsLibEditor->editAddLibButton->value = t
+\a newLibraryDialog->filePathComboBox->value = "/home/cinovador/Documents/course_files/digital_logic/practice_2"
+\a newLibraryDialog->dirListWidget->value = nil
+\a nrSetCurrentWindow(newLibraryDialog)
+\a nrResizeWindow(newLibraryDialog list(2737 75 531 513))
+\a newLibraryDialog->dirListWidget->value = ".."
+\a newLibraryDialog->filePathComboBox->value = "/home/cinovador/Documents/course_files/digital_logic/practice_2/.."
+\a nrListItemAction(newLibraryDialog->dirListWidget 0 0)
+\a newLibraryDialog->filePathComboBox->value = "/home/cinovador/Documents/course_files/digital_logic"
+\a newLibraryDialog->dirListWidget->value = nil
+\a newLibraryDialog->dirListWidget->value = ".."
+\a newLibraryDialog->filePathComboBox->value = "/home/cinovador/Documents/course_files/digital_logic/.."
+\a nrListItemAction(newLibraryDialog->dirListWidget 0 0)
+\a newLibraryDialog->filePathComboBox->value = "/home/cinovador/Documents/course_files"
+\a newLibraryDialog->dirListWidget->value = nil
+\a newLibraryDialog->dirListWidget->value = "practice_0"
+\a newLibraryDialog->filePathComboBox->value = "/home/cinovador/Documents/course_files/practice_0"
+\a nrListItemAction(newLibraryDialog->dirListWidget 2 0)
+\a newLibraryDialog->dirListWidget->value = nil
+\a newLibraryDialog->dirListWidget->value = "inverter.lvsdb"
+\a newLibraryDialog->filePathComboBox->value = "/home/cinovador/Documents/course_files/practice_0/inverter.lvsdb"
+\a newLibraryDialog->dirListWidget->value = ".."
+\a newLibraryDialog->filePathComboBox->value = "/home/cinovador/Documents/course_files/practice_0/.."
+\a newLibraryDialog->libraryListBox->value = "lab1"
+\a newLibraryDialog->dirListWidget->value = nil
+\a newLibraryDialog->filePathComboBox->value = "/home/cinovador/Documents/course_files/practice_0"
+\a newLibraryDialog->useMappedName->value = t
+\a newLibraryDialog->libraryName->value = "lab1"
+\a newLibraryDialog->okButton->value = t
+\a newLibraryDialog->libraryListBox->value = nil
+\a newLibraryDialog->useMappedName->value = nil
+\a newLibraryDialog->libraryName->value = ""
+\a nrListItemAction(cdsLibEditor->mainTable 6 0)
+\o Active cell: 6 0 ""
+\a nrSetCurrentWindow(cdsLibEditor)
+\a nrResizeWindow(newLibraryDialog list(2737 38 531 513))
+\a nrListItemAction(cdsLibEditor->mainTable 4 0)
+\o Active cell: 4 0 "lab1_inverter"
+\a cdsLibEditor->editDeletePopupButton->value = t
+\a nrListItemAction(cdsLibEditor->mainTable 4 1)
+\o Active cell: 4 1 "/"
+\a nrListItemAction(cdsLibEditor->mainTable 3 1)
+\o Active cell: 3 1 "./gpdk045"
+\a nrListItemAction(cdsLibEditor->mainTable 4 0)
+\o Active cell: 4 0 "lab1"
+\a nrListItemRename(cdsLibEditor->mainTable, 4 0 "lab1_inverter")
+\a nrListItemAction(cdsLibEditor->mainTable 5 0)
+\o Active cell: 5 0 ""
+\a cdsLibEditor->fileSaveButton->value = t
+\a exit(0)

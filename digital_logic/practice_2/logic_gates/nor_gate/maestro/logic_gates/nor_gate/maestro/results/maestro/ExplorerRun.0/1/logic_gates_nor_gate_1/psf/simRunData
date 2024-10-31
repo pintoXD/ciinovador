@@ -1,0 +1,10 @@
+HEADER
+"PSFversion" "1.00"
+"design" "(\"logic_gates\" \"nor_gate\" \"schematic\" \"\")"
+"simulator" "spectre"
+"temperature" "27"
+"host" ""
+"date" "Oct 31 17:25:42 2024"
+"title" ""
+"analysisList" "()"
+END

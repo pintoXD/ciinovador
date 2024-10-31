@@ -1,0 +1,568 @@
+\o Program:		@(#)$CDS: libManager version 23.1 - CAT38 08/20/2024 18:26 (cpgsrv14) $
+\o Sub version:		sub-version  s091 
+\o Arguments:		-unmapped -mpssession virtuoso75136 -mpshost cinova05.lesc.ufc.br -masterPID 75136 -ADVM 
+\o Working Directory:	cinova05.lesc.ufc.br:/home/cinovador/Documents/course_files/digital_logic/practice_2
+\o 64-bit offsets
+\o Qt version: 		5.15.9
+\o MPS virtuoso types registered: 68
+\o changeWorkingDir("/home/cinovador/Documents/course_files/digital_logic/practice_2") unnecessary.
+\o ddSetForcedLib("") unnecessary.
+\o Session hidden cells enabled.
+\o Log file is "/home/cinovador/Documents/course_files/digital_logic/practice_2/libManager.log".
+\o Opening libManager window.
+\a nrSetWindowVisibility(cdsLibManager "show")
+\o MPS service: map window
+\w Warning: LIB analogLib from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 3 redefines
+\w LIB analogLib from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE analogLib
+\w before DEFINE analogLib
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE analogLib
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB basic from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 4 redefines
+\w LIB basic from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE basic
+\w before DEFINE basic
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE basic
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB sheets from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 5 redefines
+\w LIB sheets from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE sheets
+\w before DEFINE sheets
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE sheets
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\o Library Manager customization server connected.
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrResizeWindow(cdsLibManager list(2222 189 602 491))
+\a nrResizeWindow(cdsLibManager list(1886 215 602 491))
+\a nrSetWindowVisibility(cdsLibManager "hide")
+\a _lmgrCloseIconify("cdsLibManager" 1)
+\o MPS request: update library list
+\w Warning: LIB analogLib from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 3 redefines
+\w LIB analogLib from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE analogLib
+\w before DEFINE analogLib
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE analogLib
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB basic from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 4 redefines
+\w LIB basic from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE basic
+\w before DEFINE basic
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE basic
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB sheets from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 5 redefines
+\w LIB sheets from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE sheets
+\w before DEFINE sheets
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE sheets
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB analogLib from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 3 redefines
+\w LIB analogLib from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE analogLib
+\w before DEFINE analogLib
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE analogLib
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB basic from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 4 redefines
+\w LIB basic from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE basic
+\w before DEFINE basic
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE basic
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB sheets from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 5 redefines
+\w LIB sheets from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE sheets
+\w before DEFINE sheets
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE sheets
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB analogLib from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 3 redefines
+\w LIB analogLib from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE analogLib
+\w before DEFINE analogLib
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE analogLib
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB basic from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 4 redefines
+\w LIB basic from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE basic
+\w before DEFINE basic
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE basic
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB sheets from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 5 redefines
+\w LIB sheets from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE sheets
+\w before DEFINE sheets
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE sheets
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB analogLib from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 3 redefines
+\w LIB analogLib from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE analogLib
+\w before DEFINE analogLib
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE analogLib
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB basic from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 4 redefines
+\w LIB basic from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE basic
+\w before DEFINE basic
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE basic
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB sheets from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 5 redefines
+\w LIB sheets from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE sheets
+\w before DEFINE sheets
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE sheets
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB analogLib from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 3 redefines
+\w LIB analogLib from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE analogLib
+\w before DEFINE analogLib
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE analogLib
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB basic from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 4 redefines
+\w LIB basic from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE basic
+\w before DEFINE basic
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE basic
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB sheets from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 5 redefines
+\w LIB sheets from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE sheets
+\w before DEFINE sheets
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE sheets
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB analogLib from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 3 redefines
+\w LIB analogLib from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE analogLib
+\w before DEFINE analogLib
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE analogLib
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB basic from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 4 redefines
+\w LIB basic from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE basic
+\w before DEFINE basic
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE basic
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB sheets from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 5 redefines
+\w LIB sheets from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE sheets
+\w before DEFINE sheets
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE sheets
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB analogLib from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 3 redefines
+\w LIB analogLib from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE analogLib
+\w before DEFINE analogLib
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE analogLib
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB basic from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 4 redefines
+\w LIB basic from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE basic
+\w before DEFINE basic
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE basic
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB sheets from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 5 redefines
+\w LIB sheets from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE sheets
+\w before DEFINE sheets
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE sheets
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB analogLib from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 3 redefines
+\w LIB analogLib from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE analogLib
+\w before DEFINE analogLib
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE analogLib
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB basic from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 4 redefines
+\w LIB basic from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE basic
+\w before DEFINE basic
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE basic
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB sheets from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 5 redefines
+\w LIB sheets from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE sheets
+\w before DEFINE sheets
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE sheets
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB analogLib from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 3 redefines
+\w LIB analogLib from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE analogLib
+\w before DEFINE analogLib
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE analogLib
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB basic from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 4 redefines
+\w LIB basic from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE basic
+\w before DEFINE basic
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE basic
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB sheets from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 5 redefines
+\w LIB sheets from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE sheets
+\w before DEFINE sheets
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE sheets
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB analogLib from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 3 redefines
+\w LIB analogLib from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE analogLib
+\w before DEFINE analogLib
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE analogLib
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB basic from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 4 redefines
+\w LIB basic from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE basic
+\w before DEFINE basic
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE basic
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB sheets from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 5 redefines
+\w LIB sheets from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE sheets
+\w before DEFINE sheets
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE sheets
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB analogLib from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 3 redefines
+\w LIB analogLib from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE analogLib
+\w before DEFINE analogLib
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE analogLib
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB basic from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 4 redefines
+\w LIB basic from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE basic
+\w before DEFINE basic
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE basic
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB sheets from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 5 redefines
+\w LIB sheets from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE sheets
+\w before DEFINE sheets
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE sheets
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB analogLib from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 3 redefines
+\w LIB analogLib from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE analogLib
+\w before DEFINE analogLib
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE analogLib
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB basic from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 4 redefines
+\w LIB basic from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE basic
+\w before DEFINE basic
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE basic
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB sheets from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 5 redefines
+\w LIB sheets from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE sheets
+\w before DEFINE sheets
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE sheets
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB analogLib from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 3 redefines
+\w LIB analogLib from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE analogLib
+\w before DEFINE analogLib
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE analogLib
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB basic from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 4 redefines
+\w LIB basic from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE basic
+\w before DEFINE basic
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE basic
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB sheets from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 5 redefines
+\w LIB sheets from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE sheets
+\w before DEFINE sheets
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE sheets
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB analogLib from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 3 redefines
+\w LIB analogLib from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE analogLib
+\w before DEFINE analogLib
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE analogLib
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB basic from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 4 redefines
+\w LIB basic from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE basic
+\w before DEFINE basic
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE basic
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB sheets from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 5 redefines
+\w LIB sheets from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE sheets
+\w before DEFINE sheets
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE sheets
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB analogLib from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 3 redefines
+\w LIB analogLib from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE analogLib
+\w before DEFINE analogLib
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE analogLib
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB basic from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 4 redefines
+\w LIB basic from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE basic
+\w before DEFINE basic
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE basic
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB sheets from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 5 redefines
+\w LIB sheets from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE sheets
+\w before DEFINE sheets
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE sheets
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB analogLib from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 3 redefines
+\w LIB analogLib from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE analogLib
+\w before DEFINE analogLib
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE analogLib
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB basic from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 4 redefines
+\w LIB basic from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE basic
+\w before DEFINE basic
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE basic
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB sheets from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 5 redefines
+\w LIB sheets from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE sheets
+\w before DEFINE sheets
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE sheets
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB analogLib from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 3 redefines
+\w LIB analogLib from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE analogLib
+\w before DEFINE analogLib
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE analogLib
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB basic from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 4 redefines
+\w LIB basic from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE basic
+\w before DEFINE basic
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE basic
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB sheets from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 5 redefines
+\w LIB sheets from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE sheets
+\w before DEFINE sheets
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE sheets
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB analogLib from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 3 redefines
+\w LIB analogLib from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE analogLib
+\w before DEFINE analogLib
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE analogLib
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB basic from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 4 redefines
+\w LIB basic from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE basic
+\w before DEFINE basic
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE basic
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB sheets from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 5 redefines
+\w LIB sheets from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE sheets
+\w before DEFINE sheets
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE sheets
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\a nrResizeWindow(cdsLibManager list(0 215 602 491))
+\a nrSetWindowVisibility(cdsLibManager "show")
+\a nrResizeWindow(cdsLibManager list(1920 215 602 491))
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrResizeWindow(cdsLibManager list(1981 217 602 491))
+\a nrSetWindowVisibility(cdsLibManager "hide")
+\a _lmgrCloseIconify("cdsLibManager" 1)
+\a nrSetWindowVisibility(cdsLibManager "show")
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrSetWindowVisibility(cdsLibManager "hide")
+\a _lmgrCloseIconify("cdsLibManager" 1)
+\w Warning: LIB analogLib from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 3 redefines
+\w LIB analogLib from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE analogLib
+\w before DEFINE analogLib
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE analogLib
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB basic from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 4 redefines
+\w LIB basic from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE basic
+\w before DEFINE basic
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE basic
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB sheets from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 5 redefines
+\w LIB sheets from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE sheets
+\w before DEFINE sheets
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE sheets
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB analogLib from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 3 redefines
+\w LIB analogLib from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE analogLib
+\w before DEFINE analogLib
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE analogLib
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB basic from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 4 redefines
+\w LIB basic from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE basic
+\w before DEFINE basic
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE basic
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB sheets from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 5 redefines
+\w LIB sheets from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE sheets
+\w before DEFINE sheets
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE sheets
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB analogLib from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 3 redefines
+\w LIB analogLib from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE analogLib
+\w before DEFINE analogLib
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE analogLib
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB basic from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 4 redefines
+\w LIB basic from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE basic
+\w before DEFINE basic
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE basic
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w Warning: LIB sheets from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 5 redefines
+\w LIB sheets from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE sheets
+\w before DEFINE sheets
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE sheets
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\a nrSetWindowVisibility(cdsLibManager "show")
+\a nrSetCurrentWindow(cdsLibManager)
+\a nrSetWindowVisibility(cdsLibManager "hide")
+\a _lmgrCloseIconify("cdsLibManager" 1)
+\o MPS service: shutdown
+\o libManager is exiting.
+\a exit(0)

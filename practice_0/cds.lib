@@ -1,7 +1,10 @@
-# File Created by  at Fri Oct 18 16:58:14 2024
-# assisted by CdsLibEditor
+-- Base gpdk045 library definition file	
+
+DEFINE analogLib $(compute:THIS_TOOL_INST_ROOT)/tools/dfII//etc/cdslib/artist/analogLib
+DEFINE basic $(compute:THIS_TOOL_INST_ROOT)/tools/dfII/etc/cdslib/basic
+DEFINE sheets $(compute:THIS_TOOL_INST_ROOT)/tools/dfII/etc/cdslib/sheets/US_8ths
+
+UNDEFINE gpdk045
 INCLUDE /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
-DEFINE teste /home/cinovador/teste/teste
-DEFINE lab1 /home/cinovador/Documents/course_files/practice_0/lab1
-DEFINE avTech /home/tools/cadence/installs/ASSURA41/tools.lnx86/assura/etc/avtech/avTech
-DEFINE fanout#2dtests /home/cinovador/Documents/course_files/practice_0/lab1_part2/fanout#2dtests
+#Removed by ddDeleteObj: DEFINE not_gate /home/cinovador/Documents/course_files/practice_0/not_gate
+#Removed by ddDeleteObj: DEFINE not /home/cinovador/Documents/course_files/practice_0/not

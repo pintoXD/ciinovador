@@ -1,0 +1,15 @@
+# File Created by  at Thu Oct 31 14:48:31 2024
+# assisted by CdsLibEditor
+# Base gpdk045 library definition file	
+
+DEFINE analogLib $(compute:THIS_TOOL_INST_ROOT)/tools/dfII//etc/cdslib/artist/analogLib
+DEFINE basic $(compute:THIS_TOOL_INST_ROOT)/tools/dfII/etc/cdslib/basic
+DEFINE sheets $(compute:THIS_TOOL_INST_ROOT)/tools/dfII/etc/cdslib/sheets/US_8ths
+
+UNDEFINE gpdk045
+INCLUDE /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+#Removed by ddDeleteObj: DEFINE not_gate /home/cinovador/Documents/course_files/practice_0/not_gate
+#Removed by ddDeleteObj: DEFINE not /home/cinovador/Documents/course_files/practice_0/not
+DEFINE lab1_inverter /home/cinovador/Documents/course_files/practice_0/lab1
+DEFINE not_gate /home/cinovador/Documents/course_files/digital_logic/practice_2/not_gate
+DEFINE logic_gates /home/cinovador/Documents/course_files/digital_logic/practice_2/logic_gates

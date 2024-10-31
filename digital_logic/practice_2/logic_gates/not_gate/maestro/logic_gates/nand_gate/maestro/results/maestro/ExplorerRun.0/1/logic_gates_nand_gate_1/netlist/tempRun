@@ -1,0 +1,1 @@
+ spectre  input.scs  +escchars +log ../psf/spectre.out  -format psfxl -raw ../psf   +aps +mt +lqtimeout 900 -maxw 5 -maxn 5 -env ade +adespetkn=adespe  -ahdllibdir /home/cinovador/Documents/course_files/digital_logic/practice_2/./logic_gates/not_gate/maestro/logic_gates/nand_gate/maestro/results/maestro/ExplorerRun.0/sharedData/CDS/ahdl/input.ahdlSimDB +logstatus  

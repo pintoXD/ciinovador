@@ -1,0 +1,11 @@
+xrun(64): 22.09-s013: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	22.09-s013: Started on Oct 31, 2024 at 12:33:38 -03
+xrun
+	-64bit
+	xorgate_tb.sv
+	xorgate.sv
+	+gui
+	+access+r
+xrun: *E,FILEMIS: Cannot find the provided file xorgate_tb.sv.
+xrun: *E,FILEMIS: Cannot find the provided file xorgate.sv.
+TOOL:	xrun(64)	22.09-s013: Exiting on Oct 31, 2024 at 12:33:38 -03  (total: 00:00:00)

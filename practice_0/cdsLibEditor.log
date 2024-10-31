@@ -1,6 +1,6 @@
 \o Program:		@(#)$CDS: cdsLibEditor version 23.1 - CAT38 08/20/2024 18:28 (cpgsrv14) $
 \o Sub version:		sub-version  s091 
-\o Arguments:		-cdslib /home/cinovador/Documents/course_files/practice_0/cds.lib -mpssession virtuoso76972 -mpshost cinova05.lesc.ufc.br -mpsversion 23.1 
+\o Arguments:		-cdslib /home/cinovador/Documents/course_files/practice_0/cds.lib -mpssession virtuoso72807 -mpshost cinova05.lesc.ufc.br -mpsversion 23.1 
 \o Working Directory:	cinova05.lesc.ufc.br:/home/cinovador/Documents/course_files/practice_0
 \o 64-bit offsets
 \a nrSetWindowVisibility(cdsLibEditor "show")
@@ -9,15 +9,4 @@
 \a nrListItemAction(cdsLibEditor->mainTable 0 0)
 \o Active cell: 0 0 "analogLib"
 \a nrResizeWindow(cdsLibEditor list(1970 77 500 400))
-\a nrListItemAction(cdsLibEditor->mainTable 5 1)
-\o Active cell: 5 1 "/home/cinovador/Documents/course_files/practice_0/"
-\a nrListItemRename(cdsLibEditor->mainTable, 5 1 "/home/cinovador/Documents/course_files/practice_0/lab1")
-\a nrListItemAction(cdsLibEditor->mainTable 4 1)
-\o Active cell: 4 1 "/home/cinovador/teste/teste"
-\o QUESTION (CLE-205): You have made changes which have not been saved. \n\nWould you like to save your changes? 
-\a nrSetWindowVisibility(needSaveDialog "show")
-\a nrSetCurrentWindow(needSaveDialog)
-\a nrResizeWindow(needSaveDialog list(2026 206 369 136))
-\a nrResizeWindow(cdsLibEditor list(1970 40 500 400))
-\a needSaveDialog->yesButton->value = t
 \a exit(0)
