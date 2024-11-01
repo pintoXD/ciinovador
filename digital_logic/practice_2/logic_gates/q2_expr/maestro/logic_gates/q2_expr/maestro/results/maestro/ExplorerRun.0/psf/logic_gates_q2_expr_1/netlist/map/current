@@ -1,0 +1,18 @@
+( ( nil
+  version "2.1"
+  mapType "incremental"
+  blockName "q2_expr"
+  repList "spectre cmos_sch cmos.sch schematic veriloga"
+  stopList "spectre"
+  globalList "vdd! gnd!"
+  hierDelim "."
+  netlistDir "/home/cinovador/Documents/course_files/digital_logic/practice_2/logic_gates/q2_expr/maestro/logic_gates/q2_expr/maestro/results/maestro/ExplorerRun.0/1/logic_gates_q2_expr_1/netlist"
+ )
+( net
+( "gnd!" "0" )
+ )
+( model
+( "logic_gates/q2_expr/schematic" "q2_expr" )
+ )
+( "q2_expr" "ihnl/cds0/map" )
+ )

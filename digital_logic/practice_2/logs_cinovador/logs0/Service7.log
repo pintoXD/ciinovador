@@ -1,0 +1,140 @@
+\# Program start time:     UTC 2024.11.01 20:16:56.508
+\# Local time: GMT-03:00 (UTC-03:00) 2024.11.01 17:16:56.508
+\o Program:		@(#)$CDS: Virtuoso Studio version IC23.1-64b 08/20/2024 22:45 (cpgbld22) $
+\o Hierarchy:		/home/tools/cadence/installs/IC231/tools.lnx86/dfII/
+\o Sub version:		sub-version  IC23.1-64b.ISR9.24  (64-bit addresses)
+\# Command line:	/home/tools/cadence/installs/IC231/tools.lnx86/dfII/bin/64bit/virtuoso -beanhost cinova05.lesc.ufc.br -beanport 11865 -beanbinlog  -beanLogFile /home/cinovador/Documents/course_files/digital_logic/practice_2/logs_cinovador/logs0/amps_Service7.log -mpssession virtuoso5751 -mpshost cinova05.lesc.ufc.br -davinciService DaVinciService_5751_1730461350 -scopedPid 5751 -axlSession fnxSession4 -axlServiceIdFlag 7 -uuid 2c817ba5-8852-4ce8-9266-1c87b83e412c -heartbeat /dev/shm/swift-heartbeat.QN0VPgdbFt -log /home/cinovador/Documents/course_files/digital_logic/practice_2/logs_cinovador/logs0/Service7.log -adeBrokerAddress cinova05.lesc.ufc.br:37543 -noautostart -nographE -lscs 000175E1894CBE06FF0966E38F1FFC06BC4D7EED88199869CA2C7EEDDC43CC33CA2C39A0A173FC06867D66E38F1FFC06BC4D66E38F1FFC06BC4D01C6B829CB30DB6800001E78 -interactive -offlineExprEval -upfrontMode -fenixMode explorer -heartbeatTimeout  -lingerTimeout 300 -pointlifetime -1
+\# Host name (type):	cinova05.lesc.ufc.br (x86_64)
+\# Operating system:	Linux 4.18.0-553.22.1.el8_10.x86_64 #1 SMP Wed Sep 25 09:20:43 UTC 2024
+\# Linux /etc/issue:	\S
+\# Linux /etc/issue:	Kernel \r on an \m
+\# X display name (WxH):	:8558 (1024x868)
+\# Available geometry:			TL(0:0) BR(1023:867)
+\# X server:			The X.Org Foundation
+\# Depth of Visual (Root):	24 (24)
+\# Number of Planes Used:	24
+\# X version:		11.0 (vendor release 12011000)
+\# X resource pool:	base 0x400000, mask 0x1fffff (2097151), shift 0
+\# 			current id 0x0, current max 0x1ffffa (2097146)
+\# Max data seg size:	     unlimited
+\# Max process size:	     unlimited
+\# Initial sbrk value:	        733 MB
+\# Available memory:	     41,808 MB
+\# System memory:	     47,556 MB
+\# Maximum memory size:	     46,995 MB
+\# Max mem available:	     41,979 MB
+\# Initial memory used:	        172 MB
+\#        process size:	      1,683 MB
+\# Thread usage limits (effective/default):	maxthreads 126051/126051 maxload 20.00/20.00
+\# Qt version:		5.15.9
+\# Window Manager:	other
+\# User Name:		cinovador
+\o Working Directory:	cinova05.lesc.ufc.br:/home/cinovador/Documents/course_files/digital_logic/practice_2
+\# Process Id:		139044
+\o 
+\o COPYRIGHT (C) 1992-2024  CADENCE DESIGN SYSTEMS INC.  ALL RIGHTS RESERVED.
+\o           (C) 1992-2024  UNIX SYSTEMS Laboratories INC.,
+\o                          Reproduced with permission.
+\o 
+\o This Cadence Design Systems program and online documentation are
+\o proprietary/confidential information and may be disclosed/used only
+\o as authorized in a license agreement controlling such use and disclosure.
+\o 
+\o           RESTRICTED RIGHTS NOTICE (SHORT FORM)
+\o Use/reproduction/disclosure is subject to restriction
+\o set forth at FAR 1252.227-19 or its equivalent.
+\o Loading geView.cxt 
+\o Loading menuBuilder.cxt 
+\o Loading im.cxt 
+\o Loading schView.cxt 
+\o Loading selectSv.cxt 
+\o Loading wireEdit.cxt 
+\o Loading pte2.cxt 
+\o Loading xlUI.cxt 
+\o Loading auCore.cxt 
+\o Loading vhdl.cxt 
+\o Loading seismic.cxt 
+\o Loading ci.cxt 
+\o Loading layers.cxt 
+\o Loading drv.cxt 
+\o Loading ams.cxt 
+\o Loading oasis.cxt 
+\o Loading dal.cxt 
+\o Loading awv.cxt 
+\o Loading socket.cxt 
+\o Loading analog.cxt 
+\o Loading par.cxt 
+\o Loading asimenv.cxt 
+\o Loading alvs.cxt 
+\o Loading caa.cxt 
+\o Loading amps.cxt 
+\o Loading adexlCore.cxt 
+\# Memory report: using         289 MB, process size 1,845 MB at UTC 2024.11.01 20:16:57.138
+\o Loading adexl.cxt 
+\o *Info*    Exporting services from client ... 
+\o 
+\o Loading adexlDM.cxt 
+\o Loading cpf.cxt 
+\o Loading cli.cxt 
+\o Loading lp.cxt 
+\o Loading sipLayout.cxt 
+\o Loading viva.cxt 
+\o Loading diagCenter.cxt 
+\o INFO (ELI-00333) License program mode is LSCS.
+\# [17:16:56.200145] Configured Lic search path (23.02-s006): 5280@192.168.0.10
+\o INFO (ELI-00302) Connecting to parent process (session=virtuoso5751, host=cinova05.lesc.ufc.br). Connection mode is LSCS. Total timeout is 180 seconds. Connection timeout is 90 seconds.
+\o INFO (ELI-00303) Step 1: Connecting to parent. Time spent is 0 seconds.
+\o INFO (ELI-00304) The registration of the child 139044 within 90 seconds is being processed...
+\o INFO (ELI-00305) The result of registration is true. Time spent is 0 seconds.
+\o INFO (ELI-00308) The connection has ended. Result is true. Total time spent is 0 seconds.
+\w *WARNING* LIB analogLib from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 3 redefines
+\w LIB analogLib from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE analogLib
+\w before DEFINE analogLib
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE analogLib
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB basic from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 4 redefines
+\w LIB basic from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE basic
+\w before DEFINE basic
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE basic
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB sheets from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 5 redefines
+\w LIB sheets from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE sheets
+\w before DEFINE sheets
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE sheets
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\p > 
+\o Loading le.cxt 
+\o Loading tilp.cxt 
+\o Loading validator.cxt 
+\o Loading vrf.cxt 
+\o Loading multiTechPlugin.cxt 
+\o Loading exportDie.cxt 
+\# Loading perfDiag...
+\# (PerfDiag): Set GDB path to environment variable 'gdbPath' (gdb).
+\# The Health Monitor tool is installed. You can access it from CIW - Tools - Diagnostic Center or use the shell command 'cdsPerfDiag -p 139044' to open it when Virtuoso freezes.
+\# (PerfDiag): Use backtrace from GLIBC.
+\i _axlRunServices()
+\# [17:16:58.398123] Periodic Lic check successful
+\# [17:16:58.398128] Feature usage summary:
+\o Loading simui.cxt 
+\o [2024-11-01 17:16:58.408 -0300] [PROCESS] [cadence.virtuoso.ade.services] - Netlist Service has successfully started. Waiting for incoming messages ... {"jobid": "7", "hostname": "cinova05.lesc.ufc.br", "processid": 139044, "logfile": "/home/cinovador/Documents/course_files/digital_logic/practice_2/logs_cinovador/logs0/Service7.log"}
+\# Memory report: using         428 MB, process size 2,368 MB at UTC 2024.11.01 20:16:59.540
+\# Available memory:         41,801 MB at UTC 2024.11.01 20:17:06.560
+\# Memory report: Maximum memory size now 42,229 MB at UTC 2024.11.01 20:17:06.560
+\# Thread usage report: 12 active threads, active load 1.40 at UTC 2024.11.01 20:17:06.560
+\o [2024-11-01 17:22:00.856 -0300] [PROCESS] [cadence.virtuoso.ade.services.netlister] - Netlist Service process exits. {"jobid": "7", "hostname": "cinova05.lesc.ufc.br", "processid": 139044, "logfile": "/home/cinovador/Documents/course_files/digital_logic/practice_2/logs_cinovador/logs0/Service7.log"}
+\o Loading vdsil.cxt 
+\# Lic Summary:
+\# [17:22:01.337947] Cdslmd servers:5280@192.168.0.10
+\# [17:22:01.862240] Feature usage summary:
+\# Memory report: on exit            420 MB, process size 2,360 MB at UTC 2024.11.01 20:22:01.862
+\# Memory report: peak usage         428 MB, process size 2,368 MB

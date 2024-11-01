@@ -1,0 +1,1 @@
+{"hierarchy":{"top_level":1,"1":{"insts":{"NM12":2,"PM10":3,"IN_B":4,"PM9":3,"IN_C":4,"NM15":2,"IN_D":4,"NM11":2,"IN_A":4,"NM14":2,"PM12":3,"PM11":3}}},"modelMap":{"vsource":[4],"g45n1svt":[2],"g45p1svt":[3]},"cellviews":[["logic_gates","q1_expr","schematic"],["gpdk045","nmos1v","spectre"],["gpdk045","pmos1v","spectre"],["analogLib","vpulse","spectre"]]}

@@ -1,0 +1,13 @@
+nodes=17
+jobId=8
+idInRun=1
+host=cinova05.lesc.ufc.br
+jobLog=logs0/Job8.log
+recommendedThreads=1
+tranIntrinsicElapsedTime=0.579294
+cpuTime=0.915000
+cpuUtil=27.5
+Memory=219 M
+startTime=5:18:58 PM, Fri Nov 1, 2024
+endTime=5:19:02 PM, Fri Nov 1, 2024
+elapsedTime=3.333330

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<setupdb version="7">history
+	<active>Active Setup</active>
+	<history>History
+		<historyentry assemblerOrExplorer="explorer" roOrView="view" runningOrFinished="finished">ExplorerRun.0
+			<timestamp>Nov 1 10:37:45 2024</timestamp>
+			<uuid>{2733e482-f2c3-4dde-86d8-03caeb18eece}</uuid>
+			<locked>0</locked>
+			<mode>Single Run, Sweeps and Corners</mode>
+			<resultspsfisuserpath>1</resultspsfisuserpath>
+			<resultsname>/home/cinovador/Documents/course_files/digital_logic/practice_2/logic_gates/q1_expr/maestro/results/maestro/$AXL_HISTORY_NAME.rdb</resultsname>
+			<simresults>$AXL_SETUPDB_DIR/results/maestro/$AXL_HISTORY_NAME.rdb</simresults>
+			<runlog>/home/cinovador/Documents/course_files/digital_logic/practice_2/logic_gates/q1_expr/maestro/results/maestro/$AXL_HISTORY_NAME.log</runlog>
+			<runlogfile>$AXL_SETUPDB_DIR/results/maestro/$AXL_HISTORY_NAME.log</runlogfile>
+			<psfdir>/home/cinovador/Documents/course_files/digital_logic/practice_2/logic_gates/q1_expr/maestro/logic_gates/q1_expr/maestro/results/maestro/$AXL_HISTORY_NAME</psfdir>
+			<simdir>./logic_gates/q1_expr/maestro/logic_gates/q1_expr/maestro/results/maestro/$AXL_HISTORY_NAME</simdir>
+		</historyentry>
+	</history>
+</setupdb>
