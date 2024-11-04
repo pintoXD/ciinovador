@@ -1,0 +1,8 @@
+Begin Incremental Netlisting Nov  4 11:54:13 2024
+WARNING (OSSHNL-160): The primitive, 'analogLib/cap/spectre', was not used in
+the last netlisting session in this
+current run directory. Therefore,
+re-netlisting all cell views where this
+primitive is instantiated.
+
+End netlisting Nov  4 11:54:13 2024

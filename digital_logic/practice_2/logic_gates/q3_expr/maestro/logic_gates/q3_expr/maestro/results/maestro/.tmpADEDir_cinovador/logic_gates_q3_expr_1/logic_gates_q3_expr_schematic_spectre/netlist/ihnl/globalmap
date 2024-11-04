@@ -1,0 +1,11 @@
+CADENCE IHNL11140
+$model
+logic_gates/q3_expr/schematic q3_expr
+$endmodel
+$net
+gnd! 0
+vdd! vdd!
+$endnet
+$param
+temperature temperature
+$endparam

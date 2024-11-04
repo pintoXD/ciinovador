@@ -1,0 +1,16 @@
+#
+# Edit Lock-Stake file. CAUTION: Please do not change.
+#
+# Information about current Edit Lock Owner.
+#
+LockStakeVersion               1.1
+LoginName                      cinovador
+HostName                       cinova05.lesc.ufc.br
+ProcessIdentifier              54064
+ProcessCreationTime_UTC        1730731887
+ProcessCreationTime_Readable   Mon Nov  4 11:51:27 2024 -03
+AppIdentifier                  /home/tools/cadence/installs/IC231/tools.lnx86/dfII/bin/64bit/vds
+OSType                         lnx86
+ReasonForPlacingEditLock       Set lock by hiiLockFile
+FilePathUsedToEditLock         /home/cinovador/Documents/course_files/digital_logic/practice_2/logic_gates/q4_expr/maestro/logic_gates/q4_expr/maestro/results/maestro/ExplorerRun.0/exprOutputs.log.10.10.1
+TimeEditLocked                 Mon Nov  4 11:51:27 2024 -03
