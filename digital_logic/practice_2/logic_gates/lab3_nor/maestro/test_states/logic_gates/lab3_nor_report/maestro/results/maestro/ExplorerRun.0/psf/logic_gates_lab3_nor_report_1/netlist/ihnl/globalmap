@@ -1,0 +1,11 @@
+CADENCE IHNL11140
+$model
+logic_gates/lab3_nor_report/schematic lab3_nor_report
+$endmodel
+$net
+gnd! 0
+vdd! vdd!
+$endnet
+$param
+temperature temperature
+$endparam

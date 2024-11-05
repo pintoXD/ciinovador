@@ -1,0 +1,8 @@
+// Generated for: spectre
+// Design Netlist Generated on: Nov  5 17:19:56 2024
+// Design library name: logic_gates
+// Design cell name: lab3_nor
+// Design view name: schematic
+simulator lang=spectre
+include "ade_e.scs"
+global 0 vdd!

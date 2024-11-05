@@ -6,11 +6,11 @@
 LockStakeVersion               1.1
 LoginName                      cinovador
 HostName                       cinova05.lesc.ufc.br
-ProcessIdentifier              115782
-ProcessCreationTime_UTC        1730406347
-ProcessCreationTime_Readable   Thu Oct 31 17:25:47 2024 -03
+ProcessIdentifier              89669
+ProcessCreationTime_UTC        1730836686
+ProcessCreationTime_Readable   Tue Nov  5 16:58:06 2024 -03
 AppIdentifier                  Unknown Application
 OSType                         lnx86
 ReasonForPlacingEditLock       lock for simulation monitor log file
 FilePathUsedToEditLock         /home/cinovador/Documents/course_files/digital_logic/practice_2/logs_cinovador/logs0/Job11.log
-TimeEditLocked                 Thu Oct 31 17:25:47 2024 -03
+TimeEditLocked                 Tue Nov  5 16:58:06 2024 -03

@@ -1,0 +1,23 @@
+
+// Library name: logic_gates
+// Cell name: lab3_nor_report
+// View name: schematic
+NM3 (out in_a 0 0) g45n1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f ps=520n \
+        pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+NM0 (out in_b 0 0) g45n1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f ps=520n \
+        pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+PM1 (out in_b net1 vdd!) g45p1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+PM0 (net1 in_a vdd! vdd!) g45p1svt w=(120n) l=45n nf=1 as=16.8f ad=16.8f \
+        ps=520n pd=520n nrd=1.16667 nrs=1.16667 sa=140n sb=140n sd=160n \
+        sca=226.00151 scb=0.11734 scc=0.02767 m=(1)
+C0 (out 0) capacitor c=10f
+V3 (net5 0) vsource type=pulse val0=0 val1=1 period=900.0n delay=1p \
+        rise=100.0p fall=100.0p width=450.00n
+V0 (in_a 0) vsource type=pulse val0=0 val1=1.0 period=1u delay=1p \
+        rise=100.0p fall=100.0p width=500.0n
+V2 (in_b 0) vsource dc=0 type=dc
+V1 (net2 0) vsource dc=0 type=dc

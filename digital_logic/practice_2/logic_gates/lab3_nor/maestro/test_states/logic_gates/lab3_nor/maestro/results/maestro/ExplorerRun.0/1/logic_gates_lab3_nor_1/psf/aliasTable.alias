@@ -1,0 +1,7 @@
+# ALIAS_TABLE_V01
+# Created at: Tue Nov  5 16:47:40 2024
+#
+# aliasSignalName, realSignalName(data)
+#
+"PM0:1", "PM0:d"
+"PM0:3", "PM0:s"
