@@ -34,6 +34,9 @@
 					<output>/in_a
 						<evalType>point</evalType>
 					</output>
+					<output>/I0/vdd!
+						<evalType>point</evalType>
+					</output>
 				</outputs>
 			</test>
 		</tests>
