@@ -7,6 +7,9 @@
 -RUNMODE
 xorgate_tb.sv
 xorgate.sv
+orgate.sv
+notgate.sv
+andgate.sv
 -CDSLIB
 ./xcelium.d/run.lnx8664.22.09.d/cdsrun.lib
 -HDLVAR

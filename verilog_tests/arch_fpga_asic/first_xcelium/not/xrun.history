@@ -7,3 +7,4 @@ s6(31Oct2024:11:31:36):  xrun -64bit notgate_tb.sv notgate.sv
 s7(31Oct2024:11:31:41):  xrun -64bit notgate_tb.sv notgate.sv 
 s8(31Oct2024:12:14:37):  xrun -64bit notgate_tb.sv notgate.sv 
 s9(31Oct2024:12:15:41):  xrun -64bit notgate_tb.sv notgate.sv orgate.sv notgate.sv andgate.sv 
+s10(04Nov2024:15:52:34):  xrun -64bit notgate_tb.sv notgate.sv +gui +access+r 

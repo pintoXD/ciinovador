@@ -22,6 +22,9 @@ module nandgate_tb;
       a = 1'b1;
       b = 1'b1;
 
+      #5;
+      $finish;
+
    end
   
     initial

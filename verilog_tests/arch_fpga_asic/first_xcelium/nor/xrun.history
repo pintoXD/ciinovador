@@ -1,1 +1,3 @@
 s1(31Oct2024:11:38:56):  xrun -64bit norgate_tb.sv norgate.sv 
+s2(04Nov2024:15:45:30):  xrun -64bit xorgate_tb.sv xorgate.sv orgate.sv notgate.sv andgate.sv +gui +access+r 
+s3(04Nov2024:15:50:05):  xrun -64bit norgate_tb.sv norgate.sv +gui +access+r 

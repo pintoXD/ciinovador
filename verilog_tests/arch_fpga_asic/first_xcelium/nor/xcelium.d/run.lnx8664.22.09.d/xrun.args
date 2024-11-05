@@ -5,3 +5,5 @@
 -64bit
 norgate_tb.sv
 norgate.sv
++gui
++access+r

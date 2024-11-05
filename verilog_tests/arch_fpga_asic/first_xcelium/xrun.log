@@ -1,0 +1,11 @@
+xrun(64): 22.09-s013: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	22.09-s013: Started on Nov 04, 2024 at 15:28:49 -03
+xrun
+	-64bit
+	andgate_tb.sv
+	andgate.sv
+	+gui
+	+access+r
+xrun: *E,FILEMIS: Cannot find the provided file andgate_tb.sv.
+xrun: *E,FILEMIS: Cannot find the provided file andgate.sv.
+TOOL:	xrun(64)	22.09-s013: Exiting on Nov 04, 2024 at 15:28:49 -03  (total: 00:00:00)

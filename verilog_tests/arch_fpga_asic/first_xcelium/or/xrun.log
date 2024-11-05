@@ -1,14 +1,16 @@
 xrun(64): 22.09-s013: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	22.09-s013: Started on Oct 31, 2024 at 11:19:58 -03
+TOOL:	xrun(64)	22.09-s013: Started on Nov 04, 2024 at 15:55:02 -03
 xrun
 	-64bit
 	orgate_tb.sv
 	orgate.sv
+	+gui
+	+access+r
+Recompiling... reason: file './orgate_tb.sv' is newer than expected.
+	expected: Wed Oct 30 17:12:53 2024
+	actual:   Mon Nov  4 15:44:13 2024
 file: orgate_tb.sv
 	module worklib.orgate_tb:sv
-		errors: 0, warnings: 0
-file: orgate.sv
-	module worklib.orgate:sv
 		errors: 0, warnings: 0
 		Caching library 'worklib' ....... Done
 	Elaborating the design hierarchy:
@@ -17,10 +19,10 @@ file: orgate.sv
 xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.orgate:sv <0x366c94bb>
-			streams:   1, words:   187
-		worklib.orgate_tb:sv <0x0f1ac800>
-			streams:   6, words:  6675
+		worklib.orgate:sv <0x1ce0582b>
+			streams:   1, words:   223
+		worklib.orgate_tb:sv <0x737a7e1b>
+			streams:   6, words:  7206
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
@@ -32,9 +34,17 @@ xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-
 		Cont. assignments:   1       1
 		Pseudo assignments:  3       3
 	Writing initial simulation snapshot: worklib.orgate_tb:sv
-Loading snapshot worklib.orgate_tb:sv .................... Done
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
 xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
 xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm orgate_tb.orgt.a orgate_tb.orgt.b orgate_tb.orgt.c
+Created probe 1
 xcelium> run
                 Tempo   Entradas    Saídas
                          a    b       c
@@ -43,6 +53,8 @@ xcelium> run
                    5     0    1       1
                   10     1    0       1
                   15     1    1       1
-xmsim: *W,RNQUIE: Simulation is complete.
+Simulation complete via $finish(1) at time 20 NS + 0
+./orgate_tb.sv:26       $finish;
+xcelium> ^C
 xcelium> exit
-TOOL:	xrun(64)	22.09-s013: Exiting on Oct 31, 2024 at 11:20:12 -03  (total: 00:00:14)
+TOOL:	xrun(64)	22.09-s013: Exiting on Nov 04, 2024 at 15:56:50 -03  (total: 00:01:48)

@@ -1,4 +1,4 @@
-module orgate_tb;
+module andgate_tb;
   logic a,b;
   logic c;
   
@@ -22,6 +22,9 @@ module orgate_tb;
       a = 1'b1;
       b = 1'b1;
 
+      #5;
+
+      $finish;
    end
   
     initial

@@ -5,3 +5,5 @@
 -64bit
 orgate_tb.sv
 orgate.sv
++gui
++access+r

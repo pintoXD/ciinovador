@@ -1,3 +1,9 @@
 s1(31Oct2024:11:09:49):  xrun -64bit andgate_tb.sv andgate.sv 
 s2(31Oct2024:11:10:09):  xrun -64bit andgate_tb.sv andgate.sv 
 s3(31Oct2024:11:10:47):  xrun -64bit andgate_tb.sv andgate.sv 
+s4(04Nov2024:15:26:20):  xrun -64bit andgate_tb.sv andgate.sv +gui +access+r 
+s5(04Nov2024:15:27:21):  xrun -64bit andgate_tb.sv andgate.sv +gui +access+r 
+s6(04Nov2024:15:29:05):  xrun -64bit andgate_tb.sv andgate.sv +gui +access+r 
+s7(04Nov2024:15:34:30):  xrun -64bit andgate_tb.sv andgate.sv +gui +access+r "-s " 
+s8(04Nov2024:15:36:36):  xrun -64bit andgate_tb.sv andgate.sv +gui +access+r 
+s9(04Nov2024:15:57:23):  xrun -64bit andgate_tb.sv andgate.sv +gui +access+r 

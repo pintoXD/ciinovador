@@ -13,7 +13,8 @@ module notgate_tb;
       #10
       a = 1'b1;
       // b = 1'b0;
-      
+      #5;
+      $finish;
    end
   
     initial

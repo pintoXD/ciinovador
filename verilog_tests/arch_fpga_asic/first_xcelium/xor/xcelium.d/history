@@ -24,3 +24,5 @@ s19::(31Oct2024:12:25:35):( xrun -64bit xorgate_tb.sv xorgate.sv orgate.sv notga
 s20::(31Oct2024:12:26:14):( xrun -64bit xorgate_tb.sv xorgate.sv orgate.sv notgate.sv andgate.sv )
 s21::(31Oct2024:12:27:19):( xrun -64bit xorgate_tb.sv xorgate.sv )
 s22::(31Oct2024:12:28:22):( xrun -64bit xorgate_tb.sv xorgate.sv +gui +access+r )
+s23::(04Nov2024:15:45:40):( xrun -64bit xorgate_tb.sv xorgate.sv orgate.sv notgate.sv andgate.sv +gui +access+r )
+s24::(04Nov2024:16:15:15):( xrun -64bit xorgate_tb.sv xorgate.sv orgate.sv notgate.sv andgate.sv +gui +access+r )

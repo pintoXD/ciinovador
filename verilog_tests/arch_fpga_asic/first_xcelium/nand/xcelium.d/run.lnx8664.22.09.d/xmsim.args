@@ -2,11 +2,14 @@
 // File created by:  xrun
 // Do not modify this file
 //
++gui
++access+r
+-gui
 -MESSAGES
 +EMGRLOG
 xrun.log
 -XLSTIME
-1730386239
+1730747345
 -XLKEEP
 -XLMODE
 ./xcelium.d/run.lnx8664.22.09.d

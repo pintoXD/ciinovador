@@ -4,3 +4,6 @@
 //
 /home/cinovador/Documents/course_files/verilog_tests/arch_fpga_asic/first_xcelium/xor/xorgate_tb.sv
 /home/cinovador/Documents/course_files/verilog_tests/arch_fpga_asic/first_xcelium/xor/xorgate.sv
+/home/cinovador/Documents/course_files/verilog_tests/arch_fpga_asic/first_xcelium/xor/orgate.sv
+/home/cinovador/Documents/course_files/verilog_tests/arch_fpga_asic/first_xcelium/xor/notgate.sv
+/home/cinovador/Documents/course_files/verilog_tests/arch_fpga_asic/first_xcelium/xor/andgate.sv

@@ -5,5 +5,8 @@
 -64bit
 xorgate_tb.sv
 xorgate.sv
+orgate.sv
+notgate.sv
+andgate.sv
 +gui
 +access+r
