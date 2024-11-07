@@ -3,17 +3,16 @@
 	<active>Active Setup</active>
 	<history>History
 		<historyentry assemblerOrExplorer="explorer" roOrView="view" runningOrFinished="finished">ExplorerRun.0
-			<timestamp>Nov 7 11:19:23 2024</timestamp>
-			<uuid>{862ad0c2-8462-447b-b872-a6bbdfca634c}</uuid>
+			<timestamp>Nov 7 15:06:22 2024</timestamp>
+			<uuid>{b660cb9a-b251-4ac9-9931-b7bd4ab451e3}</uuid>
 			<locked>0</locked>
 			<mode>Single Run, Sweeps and Corners</mode>
-			<resultspsfisuserpath>1</resultspsfisuserpath>
 			<resultsname>/home/cinovador/Documents/course_files/digital_logic/practice_2/logic_gates/lab3_nor/maestro/results/maestro/$AXL_HISTORY_NAME.rdb</resultsname>
 			<simresults>$AXL_SETUPDB_DIR/results/maestro/$AXL_HISTORY_NAME.rdb</simresults>
 			<runlog>/home/cinovador/Documents/course_files/digital_logic/practice_2/logic_gates/lab3_nor/maestro/results/maestro/$AXL_HISTORY_NAME.log</runlog>
 			<runlogfile>$AXL_SETUPDB_DIR/results/maestro/$AXL_HISTORY_NAME.log</runlogfile>
-			<psfdir>/home/cinovador/Documents/course_files/digital_logic/practice_2/logic_gates/lab3_nand_report/logic_gates/lab3_nor/maestro/results/maestro/$AXL_HISTORY_NAME</psfdir>
-			<simdir>./logic_gates/lab3_nand_report/logic_gates/lab3_nor/maestro/results/maestro/$AXL_HISTORY_NAME</simdir>
+			<psfdir>/home/cinovador/simulation/logic_gates/lab3_nor/maestro/results/maestro/$AXL_HISTORY_NAME</psfdir>
+			<simdir>$AXL_PROJECT_DIR/logic_gates/lab3_nor/maestro/results/maestro/$AXL_HISTORY_NAME</simdir>
 		</historyentry>
 	</history>
 </setupdb>

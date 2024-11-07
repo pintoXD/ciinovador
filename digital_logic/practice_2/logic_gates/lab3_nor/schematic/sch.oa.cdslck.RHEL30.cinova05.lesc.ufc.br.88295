@@ -6,11 +6,11 @@
 LockStakeVersion               1.1
 LoginName                      cinovador
 HostName                       cinova05.lesc.ufc.br
-ProcessIdentifier              7767
-ProcessCreationTime_UTC        1730979562
-ProcessCreationTime_Readable   Thu Nov  7 08:39:22 2024 -03
+ProcessIdentifier              88295
+ProcessCreationTime_UTC        1731002574
+ProcessCreationTime_Readable   Thu Nov  7 15:02:54 2024 -03
 AppIdentifier                  OA File System Design Manager
 OSType                         unix
 ReasonForPlacingEditLock       OpenAccess edit lock
 FilePathUsedToEditLock         /home/cinovador/Documents/course_files/digital_logic/practice_2/logic_gates/lab3_nor/schematic/sch.oa.cdslck
-TimeEditLocked                 Thu Nov  7 10:44:31 2024 -03
+TimeEditLocked                 Thu Nov  7 15:04:17 2024 -03

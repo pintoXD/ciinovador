@@ -27,6 +27,6 @@ static power (leakage power) for in_a and in_b fixed at 0V for 100us = 41.55pW
 
 ======================================================
 
-tpdf(propagation delay for falling input) for fixed in_b = 265.95ps
-tpdr(propagation delay for rising input) for fixed in_b = 118.439ps
+tpdr(propagation delay for rising output) for fixed in_b = 265.946961ps
+tpdf(propagation delay for falling output) for fixed in_b = 118.43915ps
 
