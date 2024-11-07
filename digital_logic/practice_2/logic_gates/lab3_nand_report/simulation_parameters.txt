@@ -1,0 +1,19 @@
+for this simulation:
+total simulation time = 100u
+in_a frequency = 1MHz (1us period)
+in_a voltage = 1V
+rise_time_in_a = 100ps
+fall_time_in_a = 100ps
+
+
+in_b frequency = 900KHz (0.9us period)
+in_b voltage = 1V
+rise_time_in_b = 100ps
+fall_time_in_b = 100ps
+fixed in_b voltage = 1V
+
+tpdf(propagation delay for falling) for fixed in_b = 190.4495ps
+tpdr(propagation delay for rising) for fixed in_b = 265.1017ps
+
+tr (rising delay) in ouput for fixed in_b = 323.844ps
+tf (falling delay) in ouput for fixed in_b = 457.5766ps

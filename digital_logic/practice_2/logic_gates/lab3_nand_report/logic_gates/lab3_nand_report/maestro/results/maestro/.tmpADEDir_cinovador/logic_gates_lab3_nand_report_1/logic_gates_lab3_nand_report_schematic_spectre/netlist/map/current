@@ -1,0 +1,18 @@
+( ( nil
+  version "2.1"
+  mapType "incremental"
+  blockName "lab3_nand_report"
+  repList "spectre cmos_sch cmos.sch schematic veriloga"
+  stopList "spectre"
+  globalList "vdd! gnd!"
+  hierDelim "."
+  netlistDir "/home/cinovador/Documents/course_files/digital_logic/practice_2/logic_gates/lab3_nand_report/logic_gates/lab3_nand_report/maestro/results/maestro/ExplorerRun.0/1/logic_gates_lab3_nand_report_1/netlist"
+ )
+( net
+( "gnd!" "0" )
+ )
+( model
+( "logic_gates/lab3_nand_report/schematic" "lab3_nand_report" )
+ )
+( "lab3_nand_report" "ihnl/cds0/map" )
+ )
