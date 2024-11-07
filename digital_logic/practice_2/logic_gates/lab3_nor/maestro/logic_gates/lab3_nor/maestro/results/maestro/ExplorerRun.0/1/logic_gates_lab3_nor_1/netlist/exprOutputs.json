@@ -1,4 +1,0 @@
-{"index": 9, "analyses": false, "uniqueName": "average(IT(\"/PM0/S\"))", "name": "", "convertedExpression": "average(IT(\"/PM0/S\"))", "spec": false, "evalType": "point", "signalNames": false}
-{"index": 10, "analyses": false, "uniqueName": "(average(IT(\"/PM0/S\")) * average(VT(\"/vdd!\")))", "name": "", "convertedExpression": "(average(IT(\"/PM0/S\")) * average(VT(\"/vdd!\")))", "spec": false, "evalType": "point", "signalNames": false}
-{"index": 13, "analyses": false, "uniqueName": "average(IT(\"/PM0/S\") ?continuous nil)", "name": "", "convertedExpression": "average(IT(\"/PM0/S\") ?continuous nil)", "spec": false, "evalType": false, "signalNames": false}
-{"index": 14, "analyses": false, "uniqueName": "(average(IT(\"/PM0/S\") ?continuous nil) * average(VT(\"/vdd!\")))", "name": "", "convertedExpression": "(average(IT(\"/PM0/S\") ?continuous nil) * average(VT(\"/vdd!\")))", "spec": false, "evalType": "point", "signalNames": false}

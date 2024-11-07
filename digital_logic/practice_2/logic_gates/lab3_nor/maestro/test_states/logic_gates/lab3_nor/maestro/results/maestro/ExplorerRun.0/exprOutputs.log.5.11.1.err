@@ -1,3 +1,0 @@
-Qt Unknown Message Type: Warning: Ignoring XDG_SESSION_TYPE=wayland on Gnome. Use QT_QPA_PLATFORM=wayland to run on Wayland anyway.
-log4cxx: No appender could be found for logger (cadence.virtuoso.ade.gui).
-log4cxx: Please initialize the log4cxx system properly.

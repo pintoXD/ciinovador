@@ -32,5 +32,6 @@ asimenv.startup	remoteDir	string	""
 asimenv.startup	simulator	string	"spectre"
 asimenv.startup	host	string	""
 asimenv.startup	hostMode	string	"local"
+asimenv.startup	projectDir	string	"~/simulation"
 asimenv.window	y	int	317
 asimenv.window	x	int	1

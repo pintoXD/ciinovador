@@ -1,12 +1,12 @@
 HEADER
 "PSFversion" "1.00"
 "Log Generator" "drlLog rev. 1.0"
-"Log Time Stamp" "Tue Nov  5 16:47:40 2024"
+"Log Time Stamp" "Tue Nov  5 17:26:30 2024"
 "psfversion" "1.4.0"
 "simulator" "spectre"
 "version" "23.1.0.594.isr12"
-"date" "4:47:40 PM, Tue Nov 5, 2024"
-"design" "// Point Netlist Generated on: Nov  5 16:47:35 2024"
+"date" "5:26:30 PM, Tue Nov 5, 2024"
+"design" "// Point Netlist Generated on: Nov  5 17:26:25 2024"
 "signalNameType" "spectre"
 "simMode" "APS"
 "measdgt" 0

@@ -1,9 +1,9 @@
 HEADER
 "PSFversion" "1.00"
 "Run Generator" "drlRun rev. 1.0"
-"Run Time Stamp" "Nov  5 16:47:35 2024"
+"Run Time Stamp" "Nov  5 17:26:25 2024"
 "simulator" "spectre"
-"date" "Nov  5 16:47:35 2024"
+"date" "Nov  5 17:26:25 2024"
  "externalSweepVariableCount" 0
 "#maeTestName" "logic_gates_lab3_nor_1"
 "#maeHistoryName" "ExplorerRun.0"

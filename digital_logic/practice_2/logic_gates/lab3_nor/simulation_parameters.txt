@@ -1,0 +1,32 @@
+for this simulation:
+========== SHEET SIMULATION DATA =============
+total simulation time = 100u
+
+general vdd = 1.2V
+
+in_a frequency = 1MHz (1us period)
+in_a voltage = 0 to 1.2V
+rise_time_in_a = 100ps
+fall_time_in_a = 100ps
+
+in_b frequency = 1MHz (1us period)
+in_b voltage = 0 to 1.2V
+rise_time_in_b = 100ps
+fall_time_in_b = 100ps
+fixed in_b voltage = 0V
+
+simulation temperature = 50C
+tr (rising delay) in ouput for fixed in_b = 0.4815045ns
+tf (falling delay) in ouput for fixed in_b = 0.1850175ns
+power consumption (dynamic power) at 1MHz for 1ms = 15090pW
+static power (leakage power) for in_a and in_b fixed at 0V for 100us = 41.55pW
+
+
+
+
+
+======================================================
+
+tpdf(propagation delay for falling input) for fixed in_b = 265.95ps
+tpdr(propagation delay for rising input) for fixed in_b = 118.439ps
+
