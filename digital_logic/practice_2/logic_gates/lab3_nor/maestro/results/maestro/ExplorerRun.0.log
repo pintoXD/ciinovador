@@ -1,17 +1,17 @@
 Starting Single Run, Sweeps and Corners...
 
-Current time: Thu Nov  7 15:06:23 2024 
+Current time: Fri Nov  8 14:57:25 2024 
 Best design point: 1
 Design specs: 
 	logic_gates_lab3_nor_1	corner	Nominal - 
-	average(IT("/PM0/S"))		12.58n
-	(average(IT("/PM0/S")) * average(VT("/vdd!")))		15.09n
-	average(IT("/PM0/S") ?continuous nil)		5.869u
-	(average(IT("/PM0/S") ?continuous nil) * average(VT("/vdd!")))		7.043u
+	current_consumed		12.54n
+	power_consumed		15.05n
+	tpdf		103.6p
+	tpdr		235.4p
 Design parameters: 
 
 ExplorerRun.0
-Number of points completed: 1
+Number of points completed: 3
 Number of simulation errors: 0
 ExplorerRun.0 completed. 
-Current time: Thu Nov  7 15:06:40 2024 
+Current time: Fri Nov  8 14:57:37 2024 

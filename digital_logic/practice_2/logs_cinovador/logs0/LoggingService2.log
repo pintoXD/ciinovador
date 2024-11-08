@@ -1,5 +1,5 @@
 [Logging Service: 2]
-[2024-11-07 15:04:41.552 -0300] [INFO] [cadence.virtuoso.ade.loggingservice] - HistoryRecorderManager init {"dbBasePath": "/home/cinovador/Documents/course_files/digital_logic/practice_2/logic_gates/lab3_nor/maestro/results/maestro"}
-[2024-11-07 15:04:41.552 -0300] [INFO] [cadence.virtuoso.ade.loggingservice] - useGRPC grpc service... {"brokerAddress": "cinova05.lesc.ufc.br:40187", "serviceName": "DaVinciService_88295_1731002644", "axlSession": "fnxSession1"}
-[2024-11-07 15:04:41.553 -0300] [PROCESS] [cadence.virtuoso.ade.loggingservice] - Logging Service has successfully started. Waiting for incoming messages ... {"hostname": "cinova05.lesc.ufc.br", "processid": 89274, "logfile": "/home/cinovador/Documents/course_files/digital_logic/practice_2/logs_cinovador/logs0/LoggingService2.log"}
-[2024-11-07 15:04:41.582 -0300] [INFO] [cadence.virtuoso.ade.loggingservice] - logging service gRPC started {"broker address": "cinova05.lesc.ufc.br:39855"}
+[2024-11-08 14:48:37.322 -0300] [INFO] [cadence.virtuoso.ade.loggingservice] - HistoryRecorderManager init {"dbBasePath": "/home/cinovador/Documents/course_files/digital_logic/practice_2/logic_gates/lab3_nor/maestro/results/maestro"}
+[2024-11-08 14:48:37.322 -0300] [INFO] [cadence.virtuoso.ade.loggingservice] - useGRPC grpc service... {"brokerAddress": "cinova05.lesc.ufc.br:41593", "serviceName": "DaVinciService_15979_1731068467", "axlSession": "fnxSession1"}
+[2024-11-08 14:48:37.322 -0300] [PROCESS] [cadence.virtuoso.ade.loggingservice] - Logging Service has successfully started. Waiting for incoming messages ... {"hostname": "cinova05.lesc.ufc.br", "processid": 56551, "logfile": "/home/cinovador/Documents/course_files/digital_logic/practice_2/logs_cinovador/logs0/LoggingService2.log"}
+[2024-11-08 14:48:37.337 -0300] [INFO] [cadence.virtuoso.ade.loggingservice] - logging service gRPC started {"broker address": "cinova05.lesc.ufc.br:44853"}

@@ -46,22 +46,21 @@
 					<output>(average(IT("/PM0/D")) * average(VT("/vdd!")))
 						<evalType>point</evalType>
 					</output>
-					<output>average(IT("/PM0/S") ?continuous nil)
+					<output>power_consumed
 						<evalType>point</evalType>
 					</output>
-					<output>(average(IT("/PM0/S")) * average(VT("/vdd!")))
-						<evalType>point</evalType>
-					</output>
-					<output>average(IT("/PM0/S"))
+					<output>current_consumed
 						<evalType>point</evalType>
 					</output>
 					<output>((average(IT("/PM0/S")) ?continuous nil) * average(VT("/vdd!")))
 						<evalType>point</evalType>
 					</output>
-					<output>(average(IT("/PM0/S") ?continuous nil) * average(VT("/vdd!")))
-						<evalType>point</evalType>
-					</output>
 				</outputs>
+				<vars>
+					<var>temperature
+						<value>0:50:100</value>
+					</var>
+				</vars>
 			</test>
 		</tests>
 		<extensions>

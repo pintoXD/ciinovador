@@ -5,7 +5,7 @@ heartbeat_timeout=10
 terminate_timeout=10
 check_service_file=1
 service_file=`dirname /home/cinovador/Documents/course_files/digital_logic/practice_2/logs_cinovador/logs0/LoggingService${COLLECTION_JOB_ID}.log`
-service_file=$service_file/.DaVinciService_88295_1731002644
+service_file=$service_file/.DaVinciService_15979_1731068467
 
 cd /home/cinovador/Documents/course_files/digital_logic/practice_2
 
@@ -69,7 +69,7 @@ trap "handle_exit" EXIT
 heartbeat=`mktemp /dev/shm/swift-heartbeat.XXXXXXXXXX`
 last_heartbeat=`stat -c %y "$heartbeat"`
 
-/home/tools/cadence/installs/IC231/tools.lnx86/dfII/bin/maeLoggingservice -beanhost "cinova05.lesc.ufc.br" -beanport 11463 -beanbinlog "" -mpssession "virtuoso88295" -mpshost "cinova05.lesc.ufc.br" -davinciService DaVinciService_88295_1731002644 -scopedPid 88295 -axlSession fnxSession1 -axlServiceIdFlag $COLLECTION_JOB_ID -uuid "${COLLECTION_JOB_UUID}" -heartbeat "$heartbeat" -log /home/cinovador/Documents/course_files/digital_logic/practice_2/logs_cinovador/logs0/LoggingService${COLLECTION_JOB_ID}.log   -adeBrokerAddress "cinova05.lesc.ufc.br:40187"  -dbBasePath "/home/cinovador/Documents/course_files/digital_logic/practice_2/logic_gates/lab3_nor/maestro/results/maestro"   1>/dev/null  2>/dev/null  &
+/home/tools/cadence/installs/IC231/tools.lnx86/dfII/bin/maeLoggingservice -beanhost "cinova05.lesc.ufc.br" -beanport 11549 -beanbinlog "" -mpssession "virtuoso15979" -mpshost "cinova05.lesc.ufc.br" -davinciService DaVinciService_15979_1731068467 -scopedPid 15979 -axlSession fnxSession1 -axlServiceIdFlag $COLLECTION_JOB_ID -uuid "${COLLECTION_JOB_UUID}" -heartbeat "$heartbeat" -log /home/cinovador/Documents/course_files/digital_logic/practice_2/logs_cinovador/logs0/LoggingService${COLLECTION_JOB_ID}.log   -adeBrokerAddress "cinova05.lesc.ufc.br:41593"  -dbBasePath "/home/cinovador/Documents/course_files/digital_logic/practice_2/logic_gates/lab3_nor/maestro/results/maestro"   1>/dev/null  2>/dev/null  &
 
 JOB_PID=$!
 HOST_NAME=$(hostname)
@@ -101,7 +101,7 @@ while [ -d "/proc/$JOB_PID" ]; do
   ## does not require vars to be in quotes to handle empty values and spaces.
   if [[ ! `stat -c %y $heartbeat` > $last_heartbeat && ($check_service_file == 0 || ($check_service_file != 0 && ! -e $service_file)) ]]; then
     if [[ $status == "starting" ]]; then
-      cdsmps -c 'mpsSend(mpsMakePattern("ADE-service-status-DaVinciService_88295_1731002644-fnxSession1" "{\"jobId\":2,\"status\":\"starttimeout\"}"))'
+      cdsmps -c 'mpsSend(mpsMakePattern("ADE-service-status-DaVinciService_15979_1731068467-fnxSession1" "{\"jobId\":2,\"status\":\"starttimeout\"}"))'
     fi
     # No new heartbeat since last check implies an unresponsive process
     # Non-empty file means that the heartbeat check is temporarily disabled

@@ -1,14 +1,14 @@
-\# Program start time:     UTC 2024.11.07 18:04:42.747
-\# Local time: GMT-03:00 (UTC-03:00) 2024.11.07 15:04:42.747
+\# Program start time:     UTC 2024.11.08 17:48:38.623
+\# Local time: GMT-03:00 (UTC-03:00) 2024.11.08 14:48:38.623
 \o Program:		@(#)$CDS: Virtuoso Studio version IC23.1-64b 08/20/2024 22:45 (cpgbld22) $
 \o Hierarchy:		/home/tools/cadence/installs/IC231/tools.lnx86/dfII/
 \o Sub version:		sub-version  IC23.1-64b.ISR9.24  (64-bit addresses)
-\# Command line:	/home/tools/cadence/installs/IC231/tools.lnx86/dfII/bin/64bit/virtuoso -beanhost cinova05.lesc.ufc.br -beanport 11463 -beanbinlog  -beanLogFile /home/cinovador/Documents/course_files/digital_logic/practice_2/logs_cinovador/logs0/amps_Service3.log -mpssession virtuoso88295 -mpshost cinova05.lesc.ufc.br -davinciService DaVinciService_88295_1731002644 -scopedPid 88295 -axlSession fnxSession1 -axlServiceIdFlag 3 -uuid fd1dfa3d-d306-46ee-9350-1d67a5e56e83 -heartbeat /dev/shm/swift-heartbeat.0rPlCsUUO5 -log /home/cinovador/Documents/course_files/digital_logic/practice_2/logs_cinovador/logs0/Service3.log -adeBrokerAddress cinova05.lesc.ufc.br:40187 -noautostart -nographE -lscs 000175E1894CBE06FF0966E38F1FFC06BC4D7EED88199869CA2C7EEDDC43CC33CA2C39A0A173FC06867D66E38F1FFC06BC4D66E38F1FFC06BC4D01CE8E26FD3FDB6000001E9A -interactive -offlineExprEval -upfrontMode -fenixMode explorer -heartbeatTimeout  -lingerTimeout 300 -pointlifetime -1
+\# Command line:	/home/tools/cadence/installs/IC231/tools.lnx86/dfII/bin/64bit/virtuoso -beanhost cinova05.lesc.ufc.br -beanport 11549 -beanbinlog  -beanLogFile /home/cinovador/Documents/course_files/digital_logic/practice_2/logs_cinovador/logs0/amps_Service3.log -mpssession virtuoso15979 -mpshost cinova05.lesc.ufc.br -davinciService DaVinciService_15979_1731068467 -scopedPid 15979 -axlSession fnxSession1 -axlServiceIdFlag 3 -uuid fa882b92-4df3-44f4-ae27-6c3d40decb9d -heartbeat /dev/shm/swift-heartbeat.Vnw73A75RR -log /home/cinovador/Documents/course_files/digital_logic/practice_2/logs_cinovador/logs0/Service3.log -adeBrokerAddress cinova05.lesc.ufc.br:41593 -noautostart -nographE -lscs 000175E1894CBE06FF0966E38F1FFC06BC4D7EED88199869CA2C7EEDDC43CC33CA2C39A0A173FC06867D66E38F1FFC06BC4D66E38F1FFC06BC4D01CDC1EAB2F3DB6300001E9B -interactive -offlineExprEval -upfrontMode -fenixMode explorer -heartbeatTimeout  -lingerTimeout 300 -pointlifetime -1
 \# Host name (type):	cinova05.lesc.ufc.br (x86_64)
 \# Operating system:	Linux 4.18.0-553.22.1.el8_10.x86_64 #1 SMP Wed Sep 25 09:20:43 UTC 2024
 \# Linux /etc/issue:	\S
 \# Linux /etc/issue:	Kernel \r on an \m
-\# X display name (WxH):	:3637 (1024x868)
+\# X display name (WxH):	:2933 (1024x868)
 \# Available geometry:			TL(0:0) BR(1023:867)
 \# X server:			The X.Org Foundation
 \# Depth of Visual (Root):	24 (24)
@@ -18,11 +18,11 @@
 \# 			current id 0x0, current max 0x1ffffa (2097146)
 \# Max data seg size:	     unlimited
 \# Max process size:	     unlimited
-\# Initial sbrk value:	        729 MB
-\# Available memory:	     42,225 MB
+\# Initial sbrk value:	        740 MB
+\# Available memory:	     41,899 MB
 \# System memory:	     47,556 MB
-\# Maximum memory size:	     46,999 MB
-\# Max mem available:	     42,397 MB
+\# Maximum memory size:	     46,988 MB
+\# Max mem available:	     42,071 MB
 \# Initial memory used:	        172 MB
 \#        process size:	      1,683 MB
 \# Thread usage limits (effective/default):	maxthreads 126051/126051 maxload 20.00/20.00
@@ -30,7 +30,7 @@
 \# Window Manager:	other
 \# User Name:		cinovador
 \o Working Directory:	cinova05.lesc.ufc.br:/home/cinovador/Documents/course_files/digital_logic/practice_2
-\# Process Id:		89377
+\# Process Id:		56660
 \o 
 \o COPYRIGHT (C) 1992-2024  CADENCE DESIGN SYSTEMS INC.  ALL RIGHTS RESERVED.
 \o           (C) 1992-2024  UNIX SYSTEMS Laboratories INC.,
@@ -69,6 +69,7 @@
 \o Loading caa.cxt 
 \o Loading amps.cxt 
 \o Loading adexlCore.cxt 
+\# Memory report: using         289 MB, process size 1,840 MB at UTC 2024.11.08 17:48:39.119
 \o Loading adexl.cxt 
 \o *Info*    Exporting services from client ... 
 \o 
@@ -80,10 +81,10 @@
 \o Loading viva.cxt 
 \o Loading diagCenter.cxt 
 \o INFO (ELI-00333) License program mode is LSCS.
-\# [15:04:42.200065] Configured Lic search path (23.02-s006): 5280@192.168.0.10
-\o INFO (ELI-00302) Connecting to parent process (session=virtuoso88295, host=cinova05.lesc.ufc.br). Connection mode is LSCS. Total timeout is 180 seconds. Connection timeout is 90 seconds.
+\# [14:48:38.200161] Configured Lic search path (23.02-s006): 5280@192.168.0.10
+\o INFO (ELI-00302) Connecting to parent process (session=virtuoso15979, host=cinova05.lesc.ufc.br). Connection mode is LSCS. Total timeout is 180 seconds. Connection timeout is 90 seconds.
 \o INFO (ELI-00303) Step 1: Connecting to parent. Time spent is 0 seconds.
-\o INFO (ELI-00304) The registration of the child 89377 within 90 seconds is being processed...
+\o INFO (ELI-00304) The registration of the child 56660 within 90 seconds is being processed...
 \o INFO (ELI-00305) The result of registration is true. Time spent is 0 seconds.
 \o INFO (ELI-00308) The connection has ended. Result is true. Total time spent is 0 seconds.
 \w *WARNING* LIB analogLib from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 3 redefines
@@ -119,19 +120,602 @@
 \o Loading exportDie.cxt 
 \# Loading perfDiag...
 \# (PerfDiag): Set GDB path to environment variable 'gdbPath' (gdb).
-\# The Health Monitor tool is installed. You can access it from CIW - Tools - Diagnostic Center or use the shell command 'cdsPerfDiag -p 89377' to open it when Virtuoso freezes.
+\# The Health Monitor tool is installed. You can access it from CIW - Tools - Diagnostic Center or use the shell command 'cdsPerfDiag -p 56660' to open it when Virtuoso freezes.
 \# (PerfDiag): Use backtrace from GLIBC.
 \i _axlRunServices()
 \o Loading simui.cxt 
-\o [2024-11-07 15:04:43.768 -0300] [PROCESS] [cadence.virtuoso.ade.services] - Netlist Service has successfully started. Waiting for incoming messages ... {"jobid": "3", "hostname": "cinova05.lesc.ufc.br", "processid": 89377, "logfile": "/home/cinovador/Documents/course_files/digital_logic/practice_2/logs_cinovador/logs0/Service3.log"}
-\# Memory report: using         420 MB, process size 2,360 MB at UTC 2024.11.07 18:04:45.811
-\# Available memory:         42,258 MB at UTC 2024.11.07 18:04:53.818
-\# Memory report: Maximum memory size now 42,678 MB at UTC 2024.11.07 18:04:53.818
-\# Thread usage report: 12 active threads, active load 1.40 at UTC 2024.11.07 18:04:53.818
-\o [2024-11-07 15:09:44.115 -0300] [PROCESS] [cadence.virtuoso.ade.services.netlister] - Netlist Service process exits. {"jobid": "3", "hostname": "cinova05.lesc.ufc.br", "processid": 89377, "logfile": "/home/cinovador/Documents/course_files/digital_logic/practice_2/logs_cinovador/logs0/Service3.log"}
+\o [2024-11-08 14:48:39.871 -0300] [PROCESS] [cadence.virtuoso.ade.services] - Netlist Service has successfully started. Waiting for incoming messages ... {"jobid": "3", "hostname": "cinova05.lesc.ufc.br", "processid": 56660, "logfile": "/home/cinovador/Documents/course_files/digital_logic/practice_2/logs_cinovador/logs0/Service3.log"}
+\# Memory report: using         420 MB, process size 2,360 MB at UTC 2024.11.08 17:48:41.917
+\# Available memory:         41,965 MB at UTC 2024.11.08 17:48:49.936
+\# Memory report: Maximum memory size now 42,385 MB at UTC 2024.11.08 17:48:49.936
+\# Thread usage report: 12 active threads, active load 1.40 at UTC 2024.11.08 17:48:49.936
+\o [2024-11-08 14:49:01.959 -0300] [EVENT] [cadence.virtuoso.ade.services.netlister] - NewPoint {"jobid": "3", "history": "ExplorerRun.0", "point": 0, "testname": "logic_gates_lab3_nor_1", "event": "NewPoint", "EventSource": "Netlist Service", "HistoryName": "ExplorerRun.0", "logFile": "/home/cinovador/Documents/course_files/digital_logic/practice_2/logs_cinovador/logs0/Service3.log", "logFileSize": "7033", "category": "point-netlist"}
+\# Unzipping history /home/cinovador/Documents/course_files/digital_logic/practice_2/logic_gates/lab3_nor/maestro/history/ExplorerRun.0.zip::historyData.sdb
+\o Loading vqp.cxt 
 \o Loading vdsil.cxt 
+\o *Warning* AXL Context Manager : job 3 is already registered. 
+\o 
+\o Loading hdlPkg.cxt 
+\o 
+\o 
+\o *Info*    Configuring the session ...
+\o 
+\o 	Library      = logic_gates
+\o 	Cell         = lab3_nor
+\o 	View         = schematic
+\o 	Simulator    = spectre
+\o 	State Path   = $AXL_SETUPDB_DIR/test_states
+\o 	State Name   = ExplorerRun.0
+\o 	Results DB   = /home/cinovador/Documents/course_files/digital_logic/practice_2/logic_gates/lab3_nor/maestro/results/maestro/ExplorerRun.0.rdb
+\o 	Results Dir  = /home/cinovador/simulation/logic_gates/lab3_nor/maestro/results/maestro/ExplorerRun.0/1/logic_gates_lab3_nor_1
+\o 	Results Loc  = /home/cinovador/simulation/logic_gates/lab3_nor/maestro/results/maestro
+\o 	Project Dir  = /home/cinovador/simulation
+\o 	Setup DB loc = /home/cinovador/Documents/course_files/digital_logic/practice_2/logic_gates/lab3_nor/maestro
+\o 	File Encoding = 0
+\o 
+\o 
+\w *WARNING* LIB analogLib from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 3 redefines
+\w LIB analogLib from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE analogLib
+\w before DEFINE analogLib
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE analogLib
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB basic from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 4 redefines
+\w LIB basic from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE basic
+\w before DEFINE basic
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE basic
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\w *WARNING* LIB sheets from File /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib Line 5 redefines
+\w LIB sheets from File /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w Insert UNDEFINE sheets
+\w before DEFINE sheets
+\w     in /home/tools/cadence/gpdk/gpdk045_v_6_0/cds.lib
+\w Or remove or comment out DEFINE sheets
+\w     in /home/cinovador/Documents/course_files/digital_logic/practice_2/cds.lib
+\w to suppress this warning message.
+\o Loading gpdk045/libInit.il ...
+\o 	Loading gpdk045/loadCxt.ile ... done!
+\o 	Loading context 'gpdk045' from library 'gpdk045' ... done!
+\o 	Loading context 'pdkUtils' from library 'gpdk045' ... done!
+\o 	Loading gpdk045/gpdk045_customFilter.il ... done!
+\o 	Loading gpdk045/libInitCustomExit.il ... 
+\o 	Loading Environment Settings ...
+\o 	Loading Model Management File ...
+\o Loading spectrei.cxt 
+\o Loading devCheck.cxt 
+\o Loading relXpert.cxt 
+\o Loading hspiceD.cxt 
+\o Loading spectreinl.cxt 
+\o Loading UltraSim.cxt 
+\o Loading msgHandler.cxt 
+\o Loading AMSOSS.cxt 
+\o Loading AMS.cxt 
+\o 	Loading gpdk045/gpdk045_PDKRegistrations.il ... done!
+\o 	Initializing EAD
+\o 
+\o   *************************************************************           
+\o   *              Cadence Design Systems, Inc.                 *           
+\o   *                                                           *           
+\o   *                    Generic 45nm PDK                       *           
+\o   *                        (gpdk045)                          *           
+\o   *                                                           *           
+\o   *************************************************************           
+\o 	
+\o 
+\o 	VERSION: 6.0 (09-September-2019)
+\o 
+\o done!
+\o Loaded gpdk045/libInit.il successfully!
+\# Unzipping history /home/cinovador/Documents/course_files/digital_logic/practice_2/logic_gates/lab3_nor/maestro/history/ExplorerRun.0.zip::historyData.sdb
+\o 
+\o *Info*    The auto suspension is disabled.
+\o 
+\o Loading elec.cxt 
+\o [2024-11-08 14:49:04.004 -0300] [INFO] [cadence.virtuoso.ade.services.netlister] - Setting dspf2adeEnabled on oasis_session in _axlRunTestNetlister {"jobid": "3", "history": "ExplorerRun.0", "point": 0, "testname": "logic_gates_lab3_nor_1", "isDspf2ADEEnabled": false}
+\o [2024-11-08 14:49:04.004 -0300] [INFO] [cadence.virtuoso.ade.services.netlister] - Started preparing netlist {"jobid": "3", "history": "ExplorerRun.0", "point": 0, "testname": "logic_gates_lab3_nor_1", "testnameKey": "logic_gates_lab3_nor_1", "event": "start", "category": "design-netlist"}
+\o Resetting statistical vars
+\o 
+\o *Info*    Setting parameter values ...
+\o 
+\o Loading monte.cxt 
+\o Reusing AHDL Data dir
+\o 
+\o *Info*    Data Directory    =
+\o           /home/cinovador/simulation/logic_gates/lab3_nor/maestro/results/maestro/ExplorerRun.0/psf/logic_gates_lab3_nor_1
+\o 
+\o generate netlist...
+\o Loading hnlInit.cxt 
+\o Loading seCore.cxt 
+\# [14:49:04.025466] Periodic Lic check successful
+\# [14:49:04.025467] Feature usage summary:
+\o Initializing the control file using cp:
+\o     cp /home/tools/cadence/installs/IC231/tools.lnx86/dfII/etc/si/control.spectre /home/cinovador/simulation/logic_gates/lab3_nor/maestro/results/maestro/ExplorerRun.0/psf/logic_gates_lab3_nor_1/netlist/control
+\o Copying Spectre source file 'spectre.inp'
+\o Copying Spectre command file 'spectre.sim'
+\o Begin Incremental Netlisting Nov  8 14:49:04 2024
+\o Loading json.cxt 
+\o End netlisting Nov  8 14:49:04 2024
+\o 
+\o Netlisting Statistics:
+\o 	Number of components:    9
+\o 
+\o 	Elapsed time:          0.0s
+\o Errors: 0	Warnings: 0
+\o       ...successful.
+\o compose simulator input file...
+\o       ...successful.
+\o [2024-11-08 14:49:04.334 -0300] [INFO] [cadence.virtuoso.ade.services.netlister] - Finished preparing netlist {"jobid": "3", "history": "ExplorerRun.0", "point": 0, "testname": "logic_gates_lab3_nor_1", "testnameKey": "logic_gates_lab3_nor_1", "event": "finish", "category": "design-netlist"}
+\# Memory report: using         539 MB, process size 2,481 MB at UTC 2024.11.08 17:49:06.383
+\o [2024-11-08 14:49:06.383 -0300] [EVENT] [cadence.virtuoso.ade.services.netlister] - NewPoint {"jobid": "3", "history": "ExplorerRun.0", "point": 1, "testname": "logic_gates_lab3_nor_1", "event": "NewPoint", "EventSource": "Netlist Service", "HistoryName": "ExplorerRun.0", "logFile": "/home/cinovador/Documents/course_files/digital_logic/practice_2/logs_cinovador/logs0/Service3.log", "logFileSize": "13780", "category": "point-netlist"}
+\o [2024-11-08 14:49:06.383 -0300] [INFO] [cadence.virtuoso.ade.services.netlister] - Started netlisting {"jobid": "3", "history": "ExplorerRun.0", "point": 1, "testname": "logic_gates_lab3_nor_1", "event": "start", "category": "point-netlist"}
+\o Resetting statistical vars
+\o 
+\o *Info*    Setting parameter values ...
+\o 
+\o Setting var temperature = "0"
+\o Setting temp(T) = 0
+\o 
+\o *Info*    Netlist Directory =
+\o           /home/cinovador/simulation/logic_gates/lab3_nor/maestro/results/maestro/ExplorerRun.0/1/logic_gates_lab3_nor_1/netlist
+\o 
+\o 
+\o *Info*    Data Directory    =
+\o           /home/cinovador/simulation/logic_gates/lab3_nor/maestro/results/maestro/ExplorerRun.0/1/logic_gates_lab3_nor_1
+\o 
+\o Reusing AHDL Data dir
+\o generate netlist...
+\o Ignoring netlist creation since ignoreDesignChangesDuringRun is set to true
+\o       ...successful.
+\o compose simulator input file...
+\o       ...successful.
+\o [2024-11-08 14:49:06.709 -0300] [PROCESS] [cadence.virtuoso.ade.services.netlister] - Current memory used: 902.9023 MBytes, peak memory used: 902.9023 MBytes {"jobid": "3", "hostname": "cinova05.lesc.ufc.br", "processid": 56660, "history": "ExplorerRun.0", "testname": "logic_gates_lab3_nor_1", "point": 1, "logfile": "/home/cinovador/Documents/course_files/digital_logic/practice_2/logs_cinovador/logs0/Service3.log"}
+\o [2024-11-08 14:49:06.709 -0300] [INFO] [cadence.virtuoso.ade.services.netlister] - Finished netlisting {"jobid": "3", "history": "ExplorerRun.0", "point": 1, "testname": "logic_gates_lab3_nor_1", "event": "finish", "category": "point-netlist"}
+\o [2024-11-08 14:49:07.710 -0300] [EVENT] [cadence.virtuoso.ade.services.netlister] - NewPoint {"jobid": "3", "history": "ExplorerRun.0", "point": 2, "testname": "logic_gates_lab3_nor_1", "event": "NewPoint", "EventSource": "Netlist Service", "HistoryName": "ExplorerRun.0", "logFile": "/home/cinovador/Documents/course_files/digital_logic/practice_2/logs_cinovador/logs0/Service3.log", "logFileSize": "15819", "category": "point-netlist"}
+\o [2024-11-08 14:49:07.710 -0300] [INFO] [cadence.virtuoso.ade.services.netlister] - Started netlisting {"jobid": "3", "history": "ExplorerRun.0", "point": 2, "testname": "logic_gates_lab3_nor_1", "event": "start", "category": "point-netlist"}
+\o Resetting statistical vars
+\o 
+\o *Info*    Setting parameter values ...
+\o 
+\o Setting var temperature = "50"
+\o Setting temp(T) = 50
+\o 
+\o *Info*    Netlist Directory =
+\o           /home/cinovador/simulation/logic_gates/lab3_nor/maestro/results/maestro/ExplorerRun.0/2/logic_gates_lab3_nor_1/netlist
+\o 
+\o 
+\o *Info*    Data Directory    =
+\o           /home/cinovador/simulation/logic_gates/lab3_nor/maestro/results/maestro/ExplorerRun.0/2/logic_gates_lab3_nor_1
+\o 
+\o Reusing AHDL Data dir
+\o generate netlist...
+\o Ignoring netlist creation since ignoreDesignChangesDuringRun is set to true
+\o       ...successful.
+\o compose simulator input file...
+\o       ...successful.
+\o [2024-11-08 14:49:07.867 -0300] [PROCESS] [cadence.virtuoso.ade.services.netlister] - Current memory used: 903.3906 MBytes, peak memory used: 903.3906 MBytes {"jobid": "3", "hostname": "cinova05.lesc.ufc.br", "processid": 56660, "history": "ExplorerRun.0", "testname": "logic_gates_lab3_nor_1", "point": 2, "logfile": "/home/cinovador/Documents/course_files/digital_logic/practice_2/logs_cinovador/logs0/Service3.log"}
+\o [2024-11-08 14:49:07.867 -0300] [INFO] [cadence.virtuoso.ade.services.netlister] - Finished netlisting {"jobid": "3", "history": "ExplorerRun.0", "point": 2, "testname": "logic_gates_lab3_nor_1", "event": "finish", "category": "point-netlist"}
+\o [2024-11-08 14:49:08.869 -0300] [EVENT] [cadence.virtuoso.ade.services.netlister] - NewPoint {"jobid": "3", "history": "ExplorerRun.0", "point": 3, "testname": "logic_gates_lab3_nor_1", "event": "NewPoint", "EventSource": "Netlist Service", "HistoryName": "ExplorerRun.0", "logFile": "/home/cinovador/Documents/course_files/digital_logic/practice_2/logs_cinovador/logs0/Service3.log", "logFileSize": "17860", "category": "point-netlist"}
+\o [2024-11-08 14:49:08.869 -0300] [INFO] [cadence.virtuoso.ade.services.netlister] - Started netlisting {"jobid": "3", "history": "ExplorerRun.0", "point": 3, "testname": "logic_gates_lab3_nor_1", "event": "start", "category": "point-netlist"}
+\o Resetting statistical vars
+\o 
+\o *Info*    Setting parameter values ...
+\o 
+\o Setting var temperature = "100"
+\o Setting temp(T) = 100
+\o 
+\o *Info*    Netlist Directory =
+\o           /home/cinovador/simulation/logic_gates/lab3_nor/maestro/results/maestro/ExplorerRun.0/3/logic_gates_lab3_nor_1/netlist
+\o 
+\o 
+\o *Info*    Data Directory    =
+\o           /home/cinovador/simulation/logic_gates/lab3_nor/maestro/results/maestro/ExplorerRun.0/3/logic_gates_lab3_nor_1
+\o 
+\o Reusing AHDL Data dir
+\o generate netlist...
+\o Ignoring netlist creation since ignoreDesignChangesDuringRun is set to true
+\o       ...successful.
+\o compose simulator input file...
+\o       ...successful.
+\o [2024-11-08 14:49:09.027 -0300] [PROCESS] [cadence.virtuoso.ade.services.netlister] - Current memory used: 905.9062 MBytes, peak memory used: 905.9062 MBytes {"jobid": "3", "hostname": "cinova05.lesc.ufc.br", "processid": 56660, "history": "ExplorerRun.0", "testname": "logic_gates_lab3_nor_1", "point": 3, "logfile": "/home/cinovador/Documents/course_files/digital_logic/practice_2/logs_cinovador/logs0/Service3.log"}
+\o [2024-11-08 14:49:09.027 -0300] [INFO] [cadence.virtuoso.ade.services.netlister] - Finished netlisting {"jobid": "3", "history": "ExplorerRun.0", "point": 3, "testname": "logic_gates_lab3_nor_1", "event": "finish", "category": "point-netlist"}
+\o [2024-11-08 14:52:58.208 -0300] [EVENT] [cadence.virtuoso.ade.services.netlister] - NewPoint {"jobid": "3", "history": "ExplorerRun.0", "point": 0, "testname": "logic_gates_lab3_nor_1", "event": "NewPoint", "EventSource": "Netlist Service", "HistoryName": "ExplorerRun.0", "logFile": "/home/cinovador/Documents/course_files/digital_logic/practice_2/logs_cinovador/logs0/Service3.log", "logFileSize": "19903", "category": "point-netlist"}
+\o Simulation design variables differ from those on the cellView,
+\o they have been saved in the file "/tmp/saved-design-variables".
+\o To save future changes, copy variables to cellView before exiting.
+\# Unzipping history /home/cinovador/Documents/course_files/digital_logic/practice_2/logic_gates/lab3_nor/maestro/history/ExplorerRun.0.zip::historyData.sdb
+\o *Warning* AXL Context Manager : job 3 is already registered. 
+\o 
+\o 
+\o 
+\o *Info*    Configuring the session ...
+\o 
+\o 	Library      = logic_gates
+\o 	Cell         = lab3_nor
+\o 	View         = schematic
+\o 	Simulator    = spectre
+\o 	State Path   = $AXL_SETUPDB_DIR/test_states
+\o 	State Name   = ExplorerRun.0
+\o 	Results DB   = /home/cinovador/Documents/course_files/digital_logic/practice_2/logic_gates/lab3_nor/maestro/results/maestro/ExplorerRun.0.rdb
+\o 	Results Dir  = /home/cinovador/simulation/logic_gates/lab3_nor/maestro/results/maestro/ExplorerRun.0/1/logic_gates_lab3_nor_1
+\o 	Results Loc  = /home/cinovador/simulation/logic_gates/lab3_nor/maestro/results/maestro
+\o 	Project Dir  = /home/cinovador/simulation
+\o 	Setup DB loc = /home/cinovador/Documents/course_files/digital_logic/practice_2/logic_gates/lab3_nor/maestro
+\o 	File Encoding = 0
+\o 
+\o 
+\# Unzipping history /home/cinovador/Documents/course_files/digital_logic/practice_2/logic_gates/lab3_nor/maestro/history/ExplorerRun.0.zip::historyData.sdb
+\o 
+\o *Info*    The auto suspension is disabled.
+\o 
+\o [2024-11-08 14:52:59.557 -0300] [INFO] [cadence.virtuoso.ade.services.netlister] - Setting dspf2adeEnabled on oasis_session in _axlRunTestNetlister {"jobid": "3", "history": "ExplorerRun.0", "point": 0, "testname": "logic_gates_lab3_nor_1", "isDspf2ADEEnabled": false}
+\o [2024-11-08 14:52:59.557 -0300] [INFO] [cadence.virtuoso.ade.services.netlister] - Started preparing netlist {"jobid": "3", "history": "ExplorerRun.0", "point": 0, "testname": "logic_gates_lab3_nor_1", "testnameKey": "logic_gates_lab3_nor_1", "event": "start", "category": "design-netlist"}
+\o Resetting statistical vars
+\o 
+\o *Info*    Setting parameter values ...
+\o 
+\o Reusing AHDL Data dir
+\o 
+\o *Info*    Data Directory    =
+\o           /home/cinovador/simulation/logic_gates/lab3_nor/maestro/results/maestro/ExplorerRun.0/psf/logic_gates_lab3_nor_1
+\o 
+\o generate netlist...
+\o Initializing the control file using cp:
+\o     cp /home/tools/cadence/installs/IC231/tools.lnx86/dfII/etc/si/control.spectre /home/cinovador/simulation/logic_gates/lab3_nor/maestro/results/maestro/ExplorerRun.0/psf/logic_gates_lab3_nor_1/netlist/control
+\o Copying Spectre source file 'spectre.inp'
+\o Copying Spectre command file 'spectre.sim'
+\o Begin Incremental Netlisting Nov  8 14:52:59 2024
+\o End netlisting Nov  8 14:52:59 2024
+\o 
+\o Netlisting Statistics:
+\o 	Number of components:    9
+\o 
+\o 	Elapsed time:          0.0s
+\o Errors: 0	Warnings: 0
+\o       ...successful.
+\o compose simulator input file...
+\o       ...successful.
+\o [2024-11-08 14:52:59.806 -0300] [INFO] [cadence.virtuoso.ade.services.netlister] - Finished preparing netlist {"jobid": "3", "history": "ExplorerRun.0", "point": 0, "testname": "logic_gates_lab3_nor_1", "testnameKey": "logic_gates_lab3_nor_1", "event": "finish", "category": "design-netlist"}
+\o [2024-11-08 14:53:01.850 -0300] [EVENT] [cadence.virtuoso.ade.services.netlister] - NewPoint {"jobid": "3", "history": "ExplorerRun.0", "point": 1, "testname": "logic_gates_lab3_nor_1", "event": "NewPoint", "EventSource": "Netlist Service", "HistoryName": "ExplorerRun.0", "logFile": "/home/cinovador/Documents/course_files/digital_logic/practice_2/logs_cinovador/logs0/Service3.log", "logFileSize": "20344", "category": "point-netlist"}
+\o [2024-11-08 14:53:01.851 -0300] [INFO] [cadence.virtuoso.ade.services.netlister] - Started netlisting {"jobid": "3", "history": "ExplorerRun.0", "point": 1, "testname": "logic_gates_lab3_nor_1", "event": "start", "category": "point-netlist"}
+\o Resetting statistical vars
+\o 
+\o *Info*    Setting parameter values ...
+\o 
+\o Setting var temperature = "0"
+\o Setting temp(T) = 0
+\o 
+\o *Info*    Netlist Directory =
+\o           /home/cinovador/simulation/logic_gates/lab3_nor/maestro/results/maestro/ExplorerRun.0/1/logic_gates_lab3_nor_1/netlist
+\o 
+\o 
+\o *Info*    Data Directory    =
+\o           /home/cinovador/simulation/logic_gates/lab3_nor/maestro/results/maestro/ExplorerRun.0/1/logic_gates_lab3_nor_1
+\o 
+\o Reusing AHDL Data dir
+\o generate netlist...
+\o Ignoring netlist creation since ignoreDesignChangesDuringRun is set to true
+\o       ...successful.
+\o compose simulator input file...
+\o       ...successful.
+\o [2024-11-08 14:53:02.178 -0300] [PROCESS] [cadence.virtuoso.ade.services.netlister] - Current memory used: 923.2969 MBytes, peak memory used: 923.2969 MBytes {"jobid": "3", "hostname": "cinova05.lesc.ufc.br", "processid": 56660, "history": "ExplorerRun.0", "testname": "logic_gates_lab3_nor_1", "point": 1, "logfile": "/home/cinovador/Documents/course_files/digital_logic/practice_2/logs_cinovador/logs0/Service3.log"}
+\o [2024-11-08 14:53:02.178 -0300] [INFO] [cadence.virtuoso.ade.services.netlister] - Finished netlisting {"jobid": "3", "history": "ExplorerRun.0", "point": 1, "testname": "logic_gates_lab3_nor_1", "event": "finish", "category": "point-netlist"}
+\o [2024-11-08 14:53:03.180 -0300] [EVENT] [cadence.virtuoso.ade.services.netlister] - NewPoint {"jobid": "3", "history": "ExplorerRun.0", "point": 2, "testname": "logic_gates_lab3_nor_1", "event": "NewPoint", "EventSource": "Netlist Service", "HistoryName": "ExplorerRun.0", "logFile": "/home/cinovador/Documents/course_files/digital_logic/practice_2/logs_cinovador/logs0/Service3.log", "logFileSize": "25629", "category": "point-netlist"}
+\o [2024-11-08 14:53:03.180 -0300] [INFO] [cadence.virtuoso.ade.services.netlister] - Started netlisting {"jobid": "3", "history": "ExplorerRun.0", "point": 2, "testname": "logic_gates_lab3_nor_1", "event": "start", "category": "point-netlist"}
+\o Resetting statistical vars
+\o 
+\o *Info*    Setting parameter values ...
+\o 
+\o Setting var temperature = "50"
+\o Setting temp(T) = 50
+\o 
+\o *Info*    Netlist Directory =
+\o           /home/cinovador/simulation/logic_gates/lab3_nor/maestro/results/maestro/ExplorerRun.0/2/logic_gates_lab3_nor_1/netlist
+\o 
+\o 
+\o *Info*    Data Directory    =
+\o           /home/cinovador/simulation/logic_gates/lab3_nor/maestro/results/maestro/ExplorerRun.0/2/logic_gates_lab3_nor_1
+\o 
+\o Reusing AHDL Data dir
+\o generate netlist...
+\o Ignoring netlist creation since ignoreDesignChangesDuringRun is set to true
+\o       ...successful.
+\o compose simulator input file...
+\o       ...successful.
+\o [2024-11-08 14:53:03.378 -0300] [PROCESS] [cadence.virtuoso.ade.services.netlister] - Current memory used: 923.2969 MBytes, peak memory used: 923.2969 MBytes {"jobid": "3", "hostname": "cinova05.lesc.ufc.br", "processid": 56660, "history": "ExplorerRun.0", "testname": "logic_gates_lab3_nor_1", "point": 2, "logfile": "/home/cinovador/Documents/course_files/digital_logic/practice_2/logs_cinovador/logs0/Service3.log"}
+\o [2024-11-08 14:53:03.378 -0300] [INFO] [cadence.virtuoso.ade.services.netlister] - Finished netlisting {"jobid": "3", "history": "ExplorerRun.0", "point": 2, "testname": "logic_gates_lab3_nor_1", "event": "finish", "category": "point-netlist"}
+\o [2024-11-08 14:53:04.379 -0300] [EVENT] [cadence.virtuoso.ade.services.netlister] - NewPoint {"jobid": "3", "history": "ExplorerRun.0", "point": 3, "testname": "logic_gates_lab3_nor_1", "event": "NewPoint", "EventSource": "Netlist Service", "HistoryName": "ExplorerRun.0", "logFile": "/home/cinovador/Documents/course_files/digital_logic/practice_2/logs_cinovador/logs0/Service3.log", "logFileSize": "27670", "category": "point-netlist"}
+\o [2024-11-08 14:53:04.380 -0300] [INFO] [cadence.virtuoso.ade.services.netlister] - Started netlisting {"jobid": "3", "history": "ExplorerRun.0", "point": 3, "testname": "logic_gates_lab3_nor_1", "event": "start", "category": "point-netlist"}
+\o Resetting statistical vars
+\o 
+\o *Info*    Setting parameter values ...
+\o 
+\o Setting var temperature = "100"
+\o Setting temp(T) = 100
+\o 
+\o *Info*    Netlist Directory =
+\o           /home/cinovador/simulation/logic_gates/lab3_nor/maestro/results/maestro/ExplorerRun.0/3/logic_gates_lab3_nor_1/netlist
+\o 
+\o 
+\o *Info*    Data Directory    =
+\o           /home/cinovador/simulation/logic_gates/lab3_nor/maestro/results/maestro/ExplorerRun.0/3/logic_gates_lab3_nor_1
+\o 
+\o Reusing AHDL Data dir
+\o generate netlist...
+\o Ignoring netlist creation since ignoreDesignChangesDuringRun is set to true
+\o       ...successful.
+\o compose simulator input file...
+\o       ...successful.
+\o [2024-11-08 14:53:04.538 -0300] [PROCESS] [cadence.virtuoso.ade.services.netlister] - Current memory used: 923.2969 MBytes, peak memory used: 923.2969 MBytes {"jobid": "3", "hostname": "cinova05.lesc.ufc.br", "processid": 56660, "history": "ExplorerRun.0", "testname": "logic_gates_lab3_nor_1", "point": 3, "logfile": "/home/cinovador/Documents/course_files/digital_logic/practice_2/logs_cinovador/logs0/Service3.log"}
+\o [2024-11-08 14:53:04.538 -0300] [INFO] [cadence.virtuoso.ade.services.netlister] - Finished netlisting {"jobid": "3", "history": "ExplorerRun.0", "point": 3, "testname": "logic_gates_lab3_nor_1", "event": "finish", "category": "point-netlist"}
+\o [2024-11-08 14:54:28.400 -0300] [EVENT] [cadence.virtuoso.ade.services.netlister] - NewPoint {"jobid": "3", "history": "ExplorerRun.0", "point": 0, "testname": "logic_gates_lab3_nor_1", "event": "NewPoint", "EventSource": "Netlist Service", "HistoryName": "ExplorerRun.0", "logFile": "/home/cinovador/Documents/course_files/digital_logic/practice_2/logs_cinovador/logs0/Service3.log", "logFileSize": "29713", "category": "point-netlist"}
+\o Simulation design variables differ from those on the cellView,
+\o they have been saved in the file "/tmp/saved-design-variables".
+\o To save future changes, copy variables to cellView before exiting.
+\# Unzipping history /home/cinovador/Documents/course_files/digital_logic/practice_2/logic_gates/lab3_nor/maestro/history/ExplorerRun.0.zip::historyData.sdb
+\o *Warning* AXL Context Manager : job 3 is already registered. 
+\o 
+\o 
+\o 
+\o *Info*    Configuring the session ...
+\o 
+\o 	Library      = logic_gates
+\o 	Cell         = lab3_nor
+\o 	View         = schematic
+\o 	Simulator    = spectre
+\o 	State Path   = $AXL_SETUPDB_DIR/test_states
+\o 	State Name   = ExplorerRun.0
+\o 	Results DB   = /home/cinovador/Documents/course_files/digital_logic/practice_2/logic_gates/lab3_nor/maestro/results/maestro/ExplorerRun.0.rdb
+\o 	Results Dir  = /home/cinovador/simulation/logic_gates/lab3_nor/maestro/results/maestro/ExplorerRun.0/1/logic_gates_lab3_nor_1
+\o 	Results Loc  = /home/cinovador/simulation/logic_gates/lab3_nor/maestro/results/maestro
+\o 	Project Dir  = /home/cinovador/simulation
+\o 	Setup DB loc = /home/cinovador/Documents/course_files/digital_logic/practice_2/logic_gates/lab3_nor/maestro
+\o 	File Encoding = 0
+\o 
+\o 
+\# Unzipping history /home/cinovador/Documents/course_files/digital_logic/practice_2/logic_gates/lab3_nor/maestro/history/ExplorerRun.0.zip::historyData.sdb
+\o 
+\o *Info*    The auto suspension is disabled.
+\o 
+\o [2024-11-08 14:54:29.712 -0300] [INFO] [cadence.virtuoso.ade.services.netlister] - Setting dspf2adeEnabled on oasis_session in _axlRunTestNetlister {"jobid": "3", "history": "ExplorerRun.0", "point": 0, "testname": "logic_gates_lab3_nor_1", "isDspf2ADEEnabled": false}
+\o [2024-11-08 14:54:29.712 -0300] [INFO] [cadence.virtuoso.ade.services.netlister] - Started preparing netlist {"jobid": "3", "history": "ExplorerRun.0", "point": 0, "testname": "logic_gates_lab3_nor_1", "testnameKey": "logic_gates_lab3_nor_1", "event": "start", "category": "design-netlist"}
+\o Resetting statistical vars
+\o 
+\o *Info*    Setting parameter values ...
+\o 
+\o Reusing AHDL Data dir
+\o 
+\o *Info*    Data Directory    =
+\o           /home/cinovador/simulation/logic_gates/lab3_nor/maestro/results/maestro/ExplorerRun.0/psf/logic_gates_lab3_nor_1
+\o 
+\o generate netlist...
+\o Initializing the control file using cp:
+\o     cp /home/tools/cadence/installs/IC231/tools.lnx86/dfII/etc/si/control.spectre /home/cinovador/simulation/logic_gates/lab3_nor/maestro/results/maestro/ExplorerRun.0/psf/logic_gates_lab3_nor_1/netlist/control
+\o Copying Spectre source file 'spectre.inp'
+\o Copying Spectre command file 'spectre.sim'
+\o Begin Incremental Netlisting Nov  8 14:54:29 2024
+\o End netlisting Nov  8 14:54:30 2024
+\o 
+\o Netlisting Statistics:
+\o 	Number of components:    9
+\o 
+\o 	Elapsed time:          1.0s (9.00/s)
+\o Errors: 0	Warnings: 0
+\o       ...successful.
+\o compose simulator input file...
+\o       ...successful.
+\o [2024-11-08 14:54:30.227 -0300] [INFO] [cadence.virtuoso.ade.services.netlister] - Finished preparing netlist {"jobid": "3", "history": "ExplorerRun.0", "point": 0, "testname": "logic_gates_lab3_nor_1", "testnameKey": "logic_gates_lab3_nor_1", "event": "finish", "category": "design-netlist"}
+\o [2024-11-08 14:54:32.270 -0300] [EVENT] [cadence.virtuoso.ade.services.netlister] - NewPoint {"jobid": "3", "history": "ExplorerRun.0", "point": 1, "testname": "logic_gates_lab3_nor_1", "event": "NewPoint", "EventSource": "Netlist Service", "HistoryName": "ExplorerRun.0", "logFile": "/home/cinovador/Documents/course_files/digital_logic/practice_2/logs_cinovador/logs0/Service3.log", "logFileSize": "32899", "category": "point-netlist"}
+\o [2024-11-08 14:54:32.271 -0300] [INFO] [cadence.virtuoso.ade.services.netlister] - Started netlisting {"jobid": "3", "history": "ExplorerRun.0", "point": 1, "testname": "logic_gates_lab3_nor_1", "event": "start", "category": "point-netlist"}
+\o Resetting statistical vars
+\o 
+\o *Info*    Setting parameter values ...
+\o 
+\o Setting var temperature = "0"
+\o Setting temp(T) = 0
+\o 
+\o *Info*    Netlist Directory =
+\o           /home/cinovador/simulation/logic_gates/lab3_nor/maestro/results/maestro/ExplorerRun.0/1/logic_gates_lab3_nor_1/netlist
+\o 
+\o 
+\o *Info*    Data Directory    =
+\o           /home/cinovador/simulation/logic_gates/lab3_nor/maestro/results/maestro/ExplorerRun.0/1/logic_gates_lab3_nor_1
+\o 
+\o Reusing AHDL Data dir
+\o generate netlist...
+\o Ignoring netlist creation since ignoreDesignChangesDuringRun is set to true
+\o       ...successful.
+\o compose simulator input file...
+\o       ...successful.
+\o [2024-11-08 14:54:32.627 -0300] [PROCESS] [cadence.virtuoso.ade.services.netlister] - Current memory used: 929.8203 MBytes, peak memory used: 929.8203 MBytes {"jobid": "3", "hostname": "cinova05.lesc.ufc.br", "processid": 56660, "history": "ExplorerRun.0", "testname": "logic_gates_lab3_nor_1", "point": 1, "logfile": "/home/cinovador/Documents/course_files/digital_logic/practice_2/logs_cinovador/logs0/Service3.log"}
+\o [2024-11-08 14:54:32.627 -0300] [INFO] [cadence.virtuoso.ade.services.netlister] - Finished netlisting {"jobid": "3", "history": "ExplorerRun.0", "point": 1, "testname": "logic_gates_lab3_nor_1", "event": "finish", "category": "point-netlist"}
+\o [2024-11-08 14:54:33.630 -0300] [EVENT] [cadence.virtuoso.ade.services.netlister] - NewPoint {"jobid": "3", "history": "ExplorerRun.0", "point": 2, "testname": "logic_gates_lab3_nor_1", "event": "NewPoint", "EventSource": "Netlist Service", "HistoryName": "ExplorerRun.0", "logFile": "/home/cinovador/Documents/course_files/digital_logic/practice_2/logs_cinovador/logs0/Service3.log", "logFileSize": "35448", "category": "point-netlist"}
+\o [2024-11-08 14:54:33.630 -0300] [INFO] [cadence.virtuoso.ade.services.netlister] - Started netlisting {"jobid": "3", "history": "ExplorerRun.0", "point": 2, "testname": "logic_gates_lab3_nor_1", "event": "start", "category": "point-netlist"}
+\o Resetting statistical vars
+\o 
+\o *Info*    Setting parameter values ...
+\o 
+\o Setting var temperature = "50"
+\o Setting temp(T) = 50
+\o 
+\o *Info*    Netlist Directory =
+\o           /home/cinovador/simulation/logic_gates/lab3_nor/maestro/results/maestro/ExplorerRun.0/2/logic_gates_lab3_nor_1/netlist
+\o 
+\o 
+\o *Info*    Data Directory    =
+\o           /home/cinovador/simulation/logic_gates/lab3_nor/maestro/results/maestro/ExplorerRun.0/2/logic_gates_lab3_nor_1
+\o 
+\o Reusing AHDL Data dir
+\o generate netlist...
+\o Ignoring netlist creation since ignoreDesignChangesDuringRun is set to true
+\o       ...successful.
+\o compose simulator input file...
+\o       ...successful.
+\o [2024-11-08 14:54:33.786 -0300] [PROCESS] [cadence.virtuoso.ade.services.netlister] - Current memory used: 929.8203 MBytes, peak memory used: 929.8203 MBytes {"jobid": "3", "hostname": "cinova05.lesc.ufc.br", "processid": 56660, "history": "ExplorerRun.0", "testname": "logic_gates_lab3_nor_1", "point": 2, "logfile": "/home/cinovador/Documents/course_files/digital_logic/practice_2/logs_cinovador/logs0/Service3.log"}
+\o [2024-11-08 14:54:33.787 -0300] [INFO] [cadence.virtuoso.ade.services.netlister] - Finished netlisting {"jobid": "3", "history": "ExplorerRun.0", "point": 2, "testname": "logic_gates_lab3_nor_1", "event": "finish", "category": "point-netlist"}
+\o [2024-11-08 14:54:34.788 -0300] [EVENT] [cadence.virtuoso.ade.services.netlister] - NewPoint {"jobid": "3", "history": "ExplorerRun.0", "point": 3, "testname": "logic_gates_lab3_nor_1", "event": "NewPoint", "EventSource": "Netlist Service", "HistoryName": "ExplorerRun.0", "logFile": "/home/cinovador/Documents/course_files/digital_logic/practice_2/logs_cinovador/logs0/Service3.log", "logFileSize": "37489", "category": "point-netlist"}
+\o [2024-11-08 14:54:34.788 -0300] [INFO] [cadence.virtuoso.ade.services.netlister] - Started netlisting {"jobid": "3", "history": "ExplorerRun.0", "point": 3, "testname": "logic_gates_lab3_nor_1", "event": "start", "category": "point-netlist"}
+\o Resetting statistical vars
+\o 
+\o *Info*    Setting parameter values ...
+\o 
+\o Setting var temperature = "100"
+\o Setting temp(T) = 100
+\o 
+\o *Info*    Netlist Directory =
+\o           /home/cinovador/simulation/logic_gates/lab3_nor/maestro/results/maestro/ExplorerRun.0/3/logic_gates_lab3_nor_1/netlist
+\o 
+\o 
+\o *Info*    Data Directory    =
+\o           /home/cinovador/simulation/logic_gates/lab3_nor/maestro/results/maestro/ExplorerRun.0/3/logic_gates_lab3_nor_1
+\o 
+\o Reusing AHDL Data dir
+\o generate netlist...
+\o Ignoring netlist creation since ignoreDesignChangesDuringRun is set to true
+\o       ...successful.
+\o compose simulator input file...
+\o       ...successful.
+\o [2024-11-08 14:54:34.946 -0300] [PROCESS] [cadence.virtuoso.ade.services.netlister] - Current memory used: 929.8203 MBytes, peak memory used: 929.8203 MBytes {"jobid": "3", "hostname": "cinova05.lesc.ufc.br", "processid": 56660, "history": "ExplorerRun.0", "testname": "logic_gates_lab3_nor_1", "point": 3, "logfile": "/home/cinovador/Documents/course_files/digital_logic/practice_2/logs_cinovador/logs0/Service3.log"}
+\o [2024-11-08 14:54:34.946 -0300] [INFO] [cadence.virtuoso.ade.services.netlister] - Finished netlisting {"jobid": "3", "history": "ExplorerRun.0", "point": 3, "testname": "logic_gates_lab3_nor_1", "event": "finish", "category": "point-netlist"}
+\o [2024-11-08 14:57:26.174 -0300] [EVENT] [cadence.virtuoso.ade.services.netlister] - NewPoint {"jobid": "3", "history": "ExplorerRun.0", "point": 0, "testname": "logic_gates_lab3_nor_1", "event": "NewPoint", "EventSource": "Netlist Service", "HistoryName": "ExplorerRun.0", "logFile": "/home/cinovador/Documents/course_files/digital_logic/practice_2/logs_cinovador/logs0/Service3.log", "logFileSize": "39532", "category": "point-netlist"}
+\o Simulation design variables differ from those on the cellView,
+\o they have been saved in the file "/tmp/saved-design-variables".
+\o To save future changes, copy variables to cellView before exiting.
+\# Unzipping history /home/cinovador/Documents/course_files/digital_logic/practice_2/logic_gates/lab3_nor/maestro/history/ExplorerRun.0.zip::historyData.sdb
+\o *Warning* AXL Context Manager : job 3 is already registered. 
+\o 
+\o 
+\o 
+\o *Info*    Configuring the session ...
+\o 
+\o 	Library      = logic_gates
+\o 	Cell         = lab3_nor
+\o 	View         = schematic
+\o 	Simulator    = spectre
+\o 	State Path   = $AXL_SETUPDB_DIR/test_states
+\o 	State Name   = ExplorerRun.0
+\o 	Results DB   = /home/cinovador/Documents/course_files/digital_logic/practice_2/logic_gates/lab3_nor/maestro/results/maestro/ExplorerRun.0.rdb
+\o 	Results Dir  = /home/cinovador/simulation/logic_gates/lab3_nor/maestro/results/maestro/ExplorerRun.0/1/logic_gates_lab3_nor_1
+\o 	Results Loc  = /home/cinovador/simulation/logic_gates/lab3_nor/maestro/results/maestro
+\o 	Project Dir  = /home/cinovador/simulation
+\o 	Setup DB loc = /home/cinovador/Documents/course_files/digital_logic/practice_2/logic_gates/lab3_nor/maestro
+\o 	File Encoding = 0
+\o 
+\o 
+\# Unzipping history /home/cinovador/Documents/course_files/digital_logic/practice_2/logic_gates/lab3_nor/maestro/history/ExplorerRun.0.zip::historyData.sdb
+\o 
+\o *Info*    The auto suspension is disabled.
+\o 
+\o [2024-11-08 14:57:27.489 -0300] [INFO] [cadence.virtuoso.ade.services.netlister] - Setting dspf2adeEnabled on oasis_session in _axlRunTestNetlister {"jobid": "3", "history": "ExplorerRun.0", "point": 0, "testname": "logic_gates_lab3_nor_1", "isDspf2ADEEnabled": false}
+\o [2024-11-08 14:57:27.489 -0300] [INFO] [cadence.virtuoso.ade.services.netlister] - Started preparing netlist {"jobid": "3", "history": "ExplorerRun.0", "point": 0, "testname": "logic_gates_lab3_nor_1", "testnameKey": "logic_gates_lab3_nor_1", "event": "start", "category": "design-netlist"}
+\o Resetting statistical vars
+\o 
+\o *Info*    Setting parameter values ...
+\o 
+\o Reusing AHDL Data dir
+\o 
+\o *Info*    Data Directory    =
+\o           /home/cinovador/simulation/logic_gates/lab3_nor/maestro/results/maestro/ExplorerRun.0/psf/logic_gates_lab3_nor_1
+\o 
+\o generate netlist...
+\o Initializing the control file using cp:
+\o     cp /home/tools/cadence/installs/IC231/tools.lnx86/dfII/etc/si/control.spectre /home/cinovador/simulation/logic_gates/lab3_nor/maestro/results/maestro/ExplorerRun.0/psf/logic_gates_lab3_nor_1/netlist/control
+\o Copying Spectre source file 'spectre.inp'
+\o Copying Spectre command file 'spectre.sim'
+\o Begin Incremental Netlisting Nov  8 14:57:27 2024
+\o End netlisting Nov  8 14:57:27 2024
+\o 
+\o Netlisting Statistics:
+\o 	Number of components:    9
+\o 
+\o 	Elapsed time:          0.0s
+\o Errors: 0	Warnings: 0
+\o       ...successful.
+\o compose simulator input file...
+\o       ...successful.
+\o [2024-11-08 14:57:27.813 -0300] [INFO] [cadence.virtuoso.ade.services.netlister] - Finished preparing netlist {"jobid": "3", "history": "ExplorerRun.0", "point": 0, "testname": "logic_gates_lab3_nor_1", "testnameKey": "logic_gates_lab3_nor_1", "event": "finish", "category": "design-netlist"}
+\o [2024-11-08 14:57:29.862 -0300] [EVENT] [cadence.virtuoso.ade.services.netlister] - NewPoint {"jobid": "3", "history": "ExplorerRun.0", "point": 1, "testname": "logic_gates_lab3_nor_1", "event": "NewPoint", "EventSource": "Netlist Service", "HistoryName": "ExplorerRun.0", "logFile": "/home/cinovador/Documents/course_files/digital_logic/practice_2/logs_cinovador/logs0/Service3.log", "logFileSize": "39973", "category": "point-netlist"}
+\o [2024-11-08 14:57:29.862 -0300] [INFO] [cadence.virtuoso.ade.services.netlister] - Started netlisting {"jobid": "3", "history": "ExplorerRun.0", "point": 1, "testname": "logic_gates_lab3_nor_1", "event": "start", "category": "point-netlist"}
+\o Resetting statistical vars
+\o 
+\o *Info*    Setting parameter values ...
+\o 
+\o Setting var temperature = "0"
+\o Setting temp(T) = 0
+\o 
+\o *Info*    Netlist Directory =
+\o           /home/cinovador/simulation/logic_gates/lab3_nor/maestro/results/maestro/ExplorerRun.0/1/logic_gates_lab3_nor_1/netlist
+\o 
+\o 
+\o *Info*    Data Directory    =
+\o           /home/cinovador/simulation/logic_gates/lab3_nor/maestro/results/maestro/ExplorerRun.0/1/logic_gates_lab3_nor_1
+\o 
+\o Reusing AHDL Data dir
+\o generate netlist...
+\o Ignoring netlist creation since ignoreDesignChangesDuringRun is set to true
+\o       ...successful.
+\o compose simulator input file...
+\o       ...successful.
+\o [2024-11-08 14:57:30.225 -0300] [PROCESS] [cadence.virtuoso.ade.services.netlister] - Current memory used: 938.6797 MBytes, peak memory used: 938.6797 MBytes {"jobid": "3", "hostname": "cinova05.lesc.ufc.br", "processid": 56660, "history": "ExplorerRun.0", "testname": "logic_gates_lab3_nor_1", "point": 1, "logfile": "/home/cinovador/Documents/course_files/digital_logic/practice_2/logs_cinovador/logs0/Service3.log"}
+\o [2024-11-08 14:57:30.225 -0300] [INFO] [cadence.virtuoso.ade.services.netlister] - Finished netlisting {"jobid": "3", "history": "ExplorerRun.0", "point": 1, "testname": "logic_gates_lab3_nor_1", "event": "finish", "category": "point-netlist"}
+\o [2024-11-08 14:57:31.226 -0300] [EVENT] [cadence.virtuoso.ade.services.netlister] - NewPoint {"jobid": "3", "history": "ExplorerRun.0", "point": 2, "testname": "logic_gates_lab3_nor_1", "event": "NewPoint", "EventSource": "Netlist Service", "HistoryName": "ExplorerRun.0", "logFile": "/home/cinovador/Documents/course_files/digital_logic/practice_2/logs_cinovador/logs0/Service3.log", "logFileSize": "45258", "category": "point-netlist"}
+\o [2024-11-08 14:57:31.226 -0300] [INFO] [cadence.virtuoso.ade.services.netlister] - Started netlisting {"jobid": "3", "history": "ExplorerRun.0", "point": 2, "testname": "logic_gates_lab3_nor_1", "event": "start", "category": "point-netlist"}
+\o Resetting statistical vars
+\o 
+\o *Info*    Setting parameter values ...
+\o 
+\o Setting var temperature = "50"
+\o Setting temp(T) = 50
+\o 
+\o *Info*    Netlist Directory =
+\o           /home/cinovador/simulation/logic_gates/lab3_nor/maestro/results/maestro/ExplorerRun.0/2/logic_gates_lab3_nor_1/netlist
+\o 
+\o 
+\o *Info*    Data Directory    =
+\o           /home/cinovador/simulation/logic_gates/lab3_nor/maestro/results/maestro/ExplorerRun.0/2/logic_gates_lab3_nor_1
+\o 
+\o Reusing AHDL Data dir
+\o generate netlist...
+\o Ignoring netlist creation since ignoreDesignChangesDuringRun is set to true
+\o       ...successful.
+\o compose simulator input file...
+\o       ...successful.
+\o [2024-11-08 14:57:31.379 -0300] [PROCESS] [cadence.virtuoso.ade.services.netlister] - Current memory used: 938.6797 MBytes, peak memory used: 938.6797 MBytes {"jobid": "3", "hostname": "cinova05.lesc.ufc.br", "processid": 56660, "history": "ExplorerRun.0", "testname": "logic_gates_lab3_nor_1", "point": 2, "logfile": "/home/cinovador/Documents/course_files/digital_logic/practice_2/logs_cinovador/logs0/Service3.log"}
+\o [2024-11-08 14:57:31.380 -0300] [INFO] [cadence.virtuoso.ade.services.netlister] - Finished netlisting {"jobid": "3", "history": "ExplorerRun.0", "point": 2, "testname": "logic_gates_lab3_nor_1", "event": "finish", "category": "point-netlist"}
+\o [2024-11-08 14:57:32.381 -0300] [EVENT] [cadence.virtuoso.ade.services.netlister] - NewPoint {"jobid": "3", "history": "ExplorerRun.0", "point": 3, "testname": "logic_gates_lab3_nor_1", "event": "NewPoint", "EventSource": "Netlist Service", "HistoryName": "ExplorerRun.0", "logFile": "/home/cinovador/Documents/course_files/digital_logic/practice_2/logs_cinovador/logs0/Service3.log", "logFileSize": "47299", "category": "point-netlist"}
+\o [2024-11-08 14:57:32.381 -0300] [INFO] [cadence.virtuoso.ade.services.netlister] - Started netlisting {"jobid": "3", "history": "ExplorerRun.0", "point": 3, "testname": "logic_gates_lab3_nor_1", "event": "start", "category": "point-netlist"}
+\o Resetting statistical vars
+\o 
+\o *Info*    Setting parameter values ...
+\o 
+\o Setting var temperature = "100"
+\o Setting temp(T) = 100
+\o 
+\o *Info*    Netlist Directory =
+\o           /home/cinovador/simulation/logic_gates/lab3_nor/maestro/results/maestro/ExplorerRun.0/3/logic_gates_lab3_nor_1/netlist
+\o 
+\o 
+\o *Info*    Data Directory    =
+\o           /home/cinovador/simulation/logic_gates/lab3_nor/maestro/results/maestro/ExplorerRun.0/3/logic_gates_lab3_nor_1
+\o 
+\o Reusing AHDL Data dir
+\o generate netlist...
+\o Ignoring netlist creation since ignoreDesignChangesDuringRun is set to true
+\o       ...successful.
+\o compose simulator input file...
+\o       ...successful.
+\o [2024-11-08 14:57:32.539 -0300] [PROCESS] [cadence.virtuoso.ade.services.netlister] - Current memory used: 938.6797 MBytes, peak memory used: 938.6797 MBytes {"jobid": "3", "hostname": "cinova05.lesc.ufc.br", "processid": 56660, "history": "ExplorerRun.0", "testname": "logic_gates_lab3_nor_1", "point": 3, "logfile": "/home/cinovador/Documents/course_files/digital_logic/practice_2/logs_cinovador/logs0/Service3.log"}
+\o [2024-11-08 14:57:32.539 -0300] [INFO] [cadence.virtuoso.ade.services.netlister] - Finished netlisting {"jobid": "3", "history": "ExplorerRun.0", "point": 3, "testname": "logic_gates_lab3_nor_1", "event": "finish", "category": "point-netlist"}
+\o [2024-11-08 15:02:34.163 -0300] [PROCESS] [cadence.virtuoso.ade.services.netlister] - Netlist Service process exits. {"jobid": "3", "hostname": "cinova05.lesc.ufc.br", "processid": 56660, "history": "ExplorerRun.0", "logfile": "/home/cinovador/Documents/course_files/digital_logic/practice_2/logs_cinovador/logs0/Service3.log"}
+\o Simulation design variables differ from those on the cellView,
+\o they have been saved in the file "/tmp/saved-design-variables".
+\o To save future changes, copy variables to cellView before exiting.
 \# Lic Summary:
-\# [15:09:45.121513] Cdslmd servers:5280@192.168.0.10
-\# [15:09:45.121513] Feature usage summary:
-\# Memory report: on exit            412 MB, process size 2,352 MB at UTC 2024.11.07 18:09:45.121
-\# Memory report: peak usage         420 MB, process size 2,360 MB
+\# [15:02:35.171819] Cdslmd servers:5280@192.168.0.10
+\# [15:02:35.171832] Feature usage summary:
+\# Memory report: on exit            544 MB, process size 2,485 MB at UTC 2024.11.08 18:02:35.171
+\# Memory report: peak usage         552 MB, process size 2,493 MB
