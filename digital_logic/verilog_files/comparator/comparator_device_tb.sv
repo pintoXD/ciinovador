@@ -1,4 +1,6 @@
-module comparator_device_tb;
+`timescale 1ns/10ps
+module comparator_device_tb();
+
 
 logic [3:0] in_word; 
 logic out_result;

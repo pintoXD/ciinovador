@@ -19,3 +19,5 @@ s14::(12Nov2024:08:52:54):( xrun -64bit andgate_tb.sv andgate.sv +gui +access+r 
 s15::(12Nov2024:08:54:39):( xrun -64bit andgate_tb.sv andgate.sv )
 s16::(12Nov2024:08:56:30):( xrun -64bit andgate_tb.sv andgate.sv )
 s17::(12Nov2024:08:58:52):( xrun -64bit andgate_tb.sv andgate.sv )
+s18::(12Nov2024:18:18:35):( xrun -64bit andgate_tb.sv andgate.sv +gui +access+rw )
+s19::(12Nov2024:18:19:06):( xrun -64bit andgate_tb.sv andgate.sv +gui +access+rw )

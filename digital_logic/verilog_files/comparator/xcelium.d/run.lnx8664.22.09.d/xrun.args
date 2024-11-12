@@ -3,9 +3,8 @@
 // Do not modify this file
 //
 -64bit
-comparator_generic_tb.sv
-comparator_generic.sv
-xorgate.sv
-gates/norgate.sv
-gates/orgate.sv
-gates/andgate.sv
+comparator_device.sv
+comparator_device_tb.sv
+fast_vdd1v0_basicCells_hvt.v
++gui
++access+rw
