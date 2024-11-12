@@ -1,17 +1,9 @@
 xrun(64): 22.09-s013: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	22.09-s013: Started on Nov 04, 2024 at 15:50:04 -03
+TOOL:	xrun(64)	22.09-s013: Started on Nov 12, 2024 at 16:03:15 -03
 xrun
 	-64bit
 	norgate_tb.sv
 	norgate.sv
-	+gui
-	+access+r
-Recompiling... reason: file './norgate_tb.sv' is newer than expected.
-	expected: Thu Oct 31 11:38:41 2024
-	actual:   Mon Nov  4 15:43:46 2024
-file: norgate_tb.sv
-	module worklib.norgate_tb:sv
-		errors: 0, warnings: 0
 		Caching library 'worklib' ....... Done
 	Elaborating the design hierarchy:
 	Top level design units:
@@ -19,10 +11,8 @@ file: norgate_tb.sv
 xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.norgate:sv <0x7d4da617>
-			streams:   1, words:   226
-		worklib.norgate_tb:sv <0x5b9bae2f>
-			streams:   6, words:  7206
+		worklib.norgate_tb:sv <0x7801c86a>
+			streams:   6, words:  6882
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
@@ -34,17 +24,9 @@ xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-
 		Cont. assignments:   1       1
 		Pseudo assignments:  3       3
 	Writing initial simulation snapshot: worklib.norgate_tb:sv
-xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+Loading snapshot worklib.norgate_tb:sv .................... Done
 xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
-
--------------------------------------
-Relinquished control to SimVision...
-xcelium> 
 xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
-xcelium> database -open waves -into waves.shm -default
-Created default SHM database waves
-xcelium> probe -create -shm norgate_tb.norgt.a norgate_tb.norgt.b norgate_tb.norgt.c
-Created probe 1
 xcelium> run
                 Tempo   Entradas    Saídas
                          a    b       c
@@ -55,6 +37,5 @@ xcelium> run
                   15     1    1       0
 Simulation complete via $finish(1) at time 20 NS + 0
 ./norgate_tb.sv:26       $finish;
-xcelium> ^C
 xcelium> exit
-TOOL:	xrun(64)	22.09-s013: Exiting on Nov 04, 2024 at 15:52:17 -03  (total: 00:02:13)
+TOOL:	xrun(64)	22.09-s013: Exiting on Nov 12, 2024 at 16:03:30 -03  (total: 00:00:15)

@@ -5,6 +5,3 @@
 -64bit
 andgate_tb.sv
 andgate.sv
-+gui
-+access+r
--s

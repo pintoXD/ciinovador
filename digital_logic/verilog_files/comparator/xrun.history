@@ -1,0 +1,64 @@
+s1(31Oct2024:11:19:58):  xrun -64bit orgate_tb.sv orgate.sv 
+s2(31Oct2024:12:04:26):  xrun -64bit xorgate_tb.sv xorgate.sv 
+s3(31Oct2024:12:04:54):  xrun -64bit xorgate_tb.sv xorgate.sv 
+s4(31Oct2024:12:07:07):  xrun -64bit xorgate_tb.sv xorgate.sv 
+s5(31Oct2024:12:09:12):  xrun -64bit xorgate_tb.sv xorgate.sv 
+s6(31Oct2024:12:10:38):  xrun -64bit xorgate_tb.sv xorgate.sv 
+s7(31Oct2024:12:10:43):  xrun -64bit xorgate_tb.sv xorgate.sv 
+s8(31Oct2024:12:13:51):  xrun -64bit xorgate_tb.sv xorgate.sv 
+s9(31Oct2024:12:15:47):  xrun -64bit notgate_tb.sv notgate.sv orgate.sv notgate.sv andgate.sv 
+s10(31Oct2024:12:15:51):  xrun -64bit notgate_tb.sv notgate.sv orgate.sv notgate.sv andgate.sv 
+s11(31Oct2024:12:15:58):  xrun -64bit xorgate_tb.sv xorgate.sv orgate.sv notgate.sv andgate.sv 
+s12(31Oct2024:12:16:01):  xrun -64bit xorgate_tb.sv xorgate.sv orgate.sv notgate.sv andgate.sv 
+s13(31Oct2024:12:16:32):  xrun --help 
+s14(31Oct2024:12:18:13):  xrun -64bit xorgate_tb.sv xorgate.sv orgate.sv notgate.sv andgate.sv 
+s15(31Oct2024:12:20:16):  xrun -64bit xorgate_tb.sv xorgate.sv orgate.sv notgate.sv andgate.sv 
+s16(31Oct2024:12:23:57):  xrun -64bit xorgate_tb.sv xorgate.sv orgate.sv notgate.sv andgate.sv 
+s17(31Oct2024:12:25:02):  xrun -64bit xorgate_tb.sv xorgate.sv orgate.sv notgate.sv andgate.sv 
+s18(31Oct2024:12:25:09):  xrun -64bit xorgate_tb.sv xorgate.sv orgate.sv notgate.sv andgate.sv 
+s19(31Oct2024:12:25:35):  xrun -64bit xorgate_tb.sv xorgate.sv orgate.sv notgate.sv andgate.sv 
+s20(31Oct2024:12:26:14):  xrun -64bit xorgate_tb.sv xorgate.sv orgate.sv notgate.sv andgate.sv 
+s21(31Oct2024:12:27:19):  xrun -64bit xorgate_tb.sv xorgate.sv 
+s22(31Oct2024:12:28:22):  xrun -64bit xorgate_tb.sv xorgate.sv +gui +access+r 
+s23(04Nov2024:15:45:40):  xrun -64bit xorgate_tb.sv xorgate.sv orgate.sv notgate.sv andgate.sv +gui +access+r 
+s24(04Nov2024:16:15:15):  xrun -64bit xorgate_tb.sv xorgate.sv orgate.sv notgate.sv andgate.sv +gui +access+r 
+s25(12Nov2024:15:06:45):  xrun -64bit xorgate_tb.sv xorgate.sv 
+s26(12Nov2024:15:14:18):  xrun -64bit xorgate_tb.sv xorgate.sv 
+s27(12Nov2024:15:54:47):  xrun -64bit comparator.sv comparator_tb.sv 
+s28(12Nov2024:15:55:35):  xrun -64bit comparator.sv comparator_tb.sv 
+s29(12Nov2024:15:56:22):  xrun -64bit comparator.sv comparator_tb.sv 
+s30(12Nov2024:15:57:01):  xrun -64bit comparator.sv comparator_tb.sv 
+s31(12Nov2024:16:00:12):  xrun -64bit comparator_tb.sv comparator.sv 
+s32(12Nov2024:16:04:13):  xrun -64bit comparator_tb.sv comparator.sv gates/norgate.sv 
+s33(12Nov2024:16:04:21):  xrun -64bit comparator_tb.sv comparator.sv gates/norgate.sv 
+s34(12Nov2024:16:05:16):  xrun -64bit comparator_tb.sv comparator.sv gates/norgate.sv 
+s35(12Nov2024:16:05:17):  xrun -64bit comparator_tb.sv comparator.sv gates/norgate.sv 
+s36(12Nov2024:16:05:20):  xrun -64bit comparator_tb.sv comparator.sv gates/norgate.sv 
+s37(12Nov2024:16:05:38):  xrun -64bit comparator_tb.sv comparator.sv xorgate.sv gates/norgate.sv 
+s38(12Nov2024:16:05:45):  xrun -64bit comparator_tb.sv comparator.sv xorgate.sv gates/norgate.sv 
+s39(12Nov2024:16:11:19):  xrun -64bit comparator_tb.sv comparator.sv xorgate.sv gates/norgate.sv 
+s40(12Nov2024:16:11:58):  xrun -64bit comparator_tb.sv comparator.sv xorgate.sv gates/norgate.sv 
+s41(12Nov2024:16:12:22):  xrun -64bit comparator_tb.sv comparator.sv xorgate.sv gates/norgate.sv 
+s42(12Nov2024:16:18:16):  xrun -64bit comparator_tb.sv comparator.sv xorgate.sv gates/norgate.sv gates/orgate.sv 
+s43(12Nov2024:16:19:59):  xrun -64bit comparator_tb.sv comparator.sv xorgate.sv gates/norgate.sv gates/orgate.sv 
+s44(12Nov2024:16:51:40):  xrun -64bit comparator_tb.sv comparator.sv xorgate.sv gates/norgate.sv gates/orgate.sv 
+s45(12Nov2024:16:51:54):  xrun -64bit comparator_device_tb.sv comparator_device.sv xorgate.sv gates/norgate.sv gates/orgate.sv 
+s46(12Nov2024:16:53:06):  xrun -64bit comparator_device_tb.sv comparator_device.sv xorgate.sv gates/norgate.sv gates/orgate.sv 
+s47(12Nov2024:16:58:28):  xrun -64bit comparator_device_tb.sv comparator_device.sv xorgate.sv gates/norgate.sv gates/orgate.sv gates/andgate.sv 
+s48(12Nov2024:16:59:21):  xrun -64bit comparator_device_tb.sv comparator_device.sv xorgate.sv gates/norgate.sv gates/orgate.sv gates/andgate.sv 
+s49(12Nov2024:17:19:07):  xrun -64bit comparator_generic_tb.sv comparator_generic.sv xorgate.sv gates/norgate.sv gates/orgate.sv gates/andgate.sv 
+s50(12Nov2024:17:19:49):  xrun -64bit comparator_generic_tb.sv comparator_generic.sv xorgate.sv gates/norgate.sv gates/orgate.sv gates/andgate.sv 
+s51(12Nov2024:17:20:52):  xrun -64bit comparator_generic_tb.sv comparator_generic.sv xorgate.sv gates/norgate.sv gates/orgate.sv gates/andgate.sv 
+s52(12Nov2024:17:23:43):  xrun -64bit comparator_generic_tb.sv comparator_generic.sv xorgate.sv gates/norgate.sv gates/orgate.sv gates/andgate.sv 
+s53(12Nov2024:17:24:34):  xrun -64bit comparator_generic_tb.sv comparator_generic.sv xorgate.sv gates/norgate.sv gates/orgate.sv gates/andgate.sv 
+s54(12Nov2024:17:25:16):  xrun -64bit comparator_generic_tb.sv comparator_generic.sv xorgate.sv gates/norgate.sv gates/orgate.sv gates/andgate.sv 
+s55(12Nov2024:17:25:28):  xrun -64bit comparator_generic_tb.sv comparator_generic.sv xorgate.sv gates/norgate.sv gates/orgate.sv gates/andgate.sv 
+s56(12Nov2024:17:30:31):  xrun -64bit comparator_generic_tb.sv comparator_generic.sv xorgate.sv gates/norgate.sv gates/orgate.sv gates/andgate.sv 
+s57(12Nov2024:17:31:33):  xrun -64bit comparator_generic_tb.sv comparator_generic.sv xorgate.sv gates/norgate.sv gates/orgate.sv gates/andgate.sv 
+s58(12Nov2024:17:31:50):  xrun -64bit comparator_generic_tb.sv comparator_generic.sv xorgate.sv gates/norgate.sv gates/orgate.sv gates/andgate.sv 
+s59(12Nov2024:17:32:11):  xrun -64bit comparator_generic_tb.sv comparator_generic.sv xorgate.sv gates/norgate.sv gates/orgate.sv gates/andgate.sv 
+s60(12Nov2024:17:32:33):  xrun -64bit comparator_generic_tb.sv comparator_generic.sv xorgate.sv gates/norgate.sv gates/orgate.sv gates/andgate.sv 
+s61(12Nov2024:17:32:46):  xrun -64bit comparator_generic_tb.sv comparator_generic.sv xorgate.sv gates/norgate.sv gates/orgate.sv gates/andgate.sv 
+s62(12Nov2024:17:33:21):  xrun -64bit comparator_generic_tb.sv comparator_generic.sv xorgate.sv gates/norgate.sv gates/orgate.sv gates/andgate.sv 
+s63(12Nov2024:17:33:31):  xrun -64bit comparator_generic_tb.sv comparator_generic.sv xorgate.sv gates/norgate.sv gates/orgate.sv gates/andgate.sv 
+s64(12Nov2024:17:33:41):  xrun -64bit comparator_generic_tb.sv comparator_generic.sv xorgate.sv gates/norgate.sv gates/orgate.sv gates/andgate.sv 

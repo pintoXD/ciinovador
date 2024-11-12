@@ -1,0 +1,55 @@
+xrun(64): 22.09-s013: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	22.09-s013: Started on Nov 12, 2024 at 17:33:41 -03
+xrun
+	-64bit
+	comparator_generic_tb.sv
+	comparator_generic.sv
+	xorgate.sv
+	gates/norgate.sv
+	gates/orgate.sv
+	gates/andgate.sv
+Recompiling... reason: file './comparator_generic_tb.sv' is newer than expected.
+	expected: Tue Nov 12 17:33:30 2024
+	actual:   Tue Nov 12 17:33:40 2024
+file: comparator_generic_tb.sv
+	module worklib.comparator_generic_tb:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		comparator_generic_tb
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.comparator_generic_tb:sv <0x101a03a8>
+			streams:   6, words: 14373
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		               Instances  Unique
+		Modules:              29       7
+		Registers:            54      20
+		Scalar wires:        101       -
+		Expanded wires:        8       2
+		Initial blocks:        2       2
+		Cont. assignments:    23       4
+		Pseudo assignments:   48      21
+		Assertions:            5       5
+	Writing initial simulation snapshot: worklib.comparator_generic_tb:sv
+Loading snapshot worklib.comparator_generic_tb:sv .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
+xcelium> run
+                Tempo          Entradas            Saídas
+                        first_in    second_in       out
+                ====   ==========   ==========      ====
+                   0     0000         0000           1
+                   5     0001         0000           0
+                  10     0010         0010           1
+                  15     1111         1110           0
+                  20     1010         1010           1
+Simulation complete via $finish(1) at time 25 NS + 0
+./comparator_generic_tb.sv:42       $finish;
+xcelium> exit
+TOOL:	xrun(64)	22.09-s013: Exiting on Nov 12, 2024 at 17:33:45 -03  (total: 00:00:04)
