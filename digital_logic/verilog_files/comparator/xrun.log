@@ -569,4 +569,6 @@ xcelium> run
                   45     1100         1101           0
 Simulation complete via $finish(1) at time 50 NS + 0
 ./comparator_generic_tb.sv:76       $finish;
-xcelium> 
+xcelium> ^C
+xcelium> exit
+TOOL:	xrun(64)	22.09-s013: Exiting on Nov 13, 2024 at 09:52:06 -03  (total: 00:52:39)
