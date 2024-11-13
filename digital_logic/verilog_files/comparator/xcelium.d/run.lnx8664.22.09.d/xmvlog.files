@@ -2,6 +2,6 @@
 // File created by:  xrun
 // Do not modify this file
 //
-/home/cinovador/Documents/course_files/digital_logic/verilog_files/comparator/comparator_device.sv
-/home/cinovador/Documents/course_files/digital_logic/verilog_files/comparator/comparator_device_tb.sv
+/home/cinovador/Documents/course_files/digital_logic/verilog_files/comparator/comparator_generic_tb.sv
+/home/cinovador/Documents/course_files/digital_logic/verilog_files/comparator/comparator_generic.sv
 /home/tools/cadence/gpdk/gsclib045_all_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_all_v4.4/gsclib045_hvt/verilog/fast_vdd1v0_basicCells_hvt.v

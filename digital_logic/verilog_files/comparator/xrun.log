@@ -1,16 +1,16 @@
 xrun(64): 22.09-s013: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	22.09-s013: Started on Nov 12, 2024 at 18:21:12 -03
+TOOL:	xrun(64)	22.09-s013: Started on Nov 13, 2024 at 08:59:27 -03
 xrun
 	-64bit
-	comparator_device.sv
-	comparator_device_tb.sv
+	comparator_generic_tb.sv
+	comparator_generic.sv
 	fast_vdd1v0_basicCells_hvt.v
 	+gui
 	+access+rw
 		Caching library 'worklib' ....... Done
 	Elaborating the design hierarchy:
 	Top level design units:
-		comparator_device_tb
+		comparator_generic_tb
 		ACHCONX2HVT
 		ADDFHX1HVT
 		ADDFHX2HVT
@@ -491,314 +491,10 @@ xrun
 xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.TLATXLHVT:v <0x708acb81>
-			streams:   0, words:     0
-		worklib.TLATX4HVT:v <0x758db08c>
-			streams:   0, words:     0
-		worklib.TLATX2HVT:v <0x5b9e6a37>
-			streams:   0, words:     0
-		worklib.TLATX1HVT:v <0x212f044a>
-			streams:   0, words:     0
-		worklib.TLATSRXLHVT:v <0x752a5afd>
-			streams:   0, words:     0
-		worklib.TLATSRX4HVT:v <0x58176156>
-			streams:   0, words:     0
-		worklib.TLATSRX2HVT:v <0x42dfeb10>
-			streams:   0, words:     0
-		worklib.TLATSRX1HVT:v <0x7e5d1ea1>
-			streams:   0, words:     0
-		worklib.TLATNXLHVT:v <0x203c89c3>
-			streams:   0, words:     0
-		worklib.TLATNX4HVT:v <0x0d0fe528>
-			streams:   0, words:     0
-		worklib.TLATNX2HVT:v <0x4b915a79>
-			streams:   0, words:     0
-		worklib.TLATNX1HVT:v <0x2c736e2a>
-			streams:   0, words:     0
-		worklib.TLATNTSCAX8HVT:v <0x561eef00>
-			streams:   0, words:     0
-		worklib.TLATNTSCAX6HVT:v <0x4a91ffbe>
-			streams:   0, words:     0
-		worklib.TLATNTSCAX4HVT:v <0x30734a53>
-			streams:   0, words:     0
-		worklib.TLATNTSCAX3HVT:v <0x0fd2729e>
-			streams:   0, words:     0
-		worklib.TLATNTSCAX20HVT:v <0x185e50a7>
-			streams:   0, words:     0
-		worklib.TLATNTSCAX2HVT:v <0x07e8f301>
-			streams:   0, words:     0
-		worklib.TLATNTSCAX16HVT:v <0x57e2d0a5>
-			streams:   0, words:     0
-		worklib.TLATNTSCAX12HVT:v <0x4390d95a>
-			streams:   0, words:     0
-		worklib.TLATNSRXLHVT:v <0x7bbdc5e0>
-			streams:   0, words:     0
-		worklib.TLATNSRX4HVT:v <0x7bb555f2>
-			streams:   0, words:     0
-		worklib.TLATNSRX2HVT:v <0x240499d5>
-			streams:   0, words:     0
-		worklib.TLATNSRX1HVT:v <0x4f71143d>
-			streams:   0, words:     0
-		worklib.TLATNCAX8HVT:v <0x18e8add9>
-			streams:   0, words:     0
-		worklib.TLATNCAX6HVT:v <0x1e88076e>
-			streams:   0, words:     0
-		worklib.TLATNCAX4HVT:v <0x22096fb9>
-			streams:   0, words:     0
-		worklib.TLATNCAX3HVT:v <0x25945119>
-			streams:   0, words:     0
-		worklib.TLATNCAX20HVT:v <0x56526f95>
-			streams:   0, words:     0
-		worklib.TLATNCAX2HVT:v <0x678ad6c0>
-			streams:   0, words:     0
-		worklib.TLATNCAX16HVT:v <0x16f05d96>
-			streams:   0, words:     0
-		worklib.TLATNCAX12HVT:v <0x76a8f54d>
-			streams:   0, words:     0
-		worklib.SMDFFHQX8HVT:v <0x2e4bf39f>
-			streams:   0, words:     0
-		worklib.SMDFFHQX4HVT:v <0x1c860e87>
-			streams:   0, words:     0
-		worklib.SMDFFHQX2HVT:v <0x45e0f00b>
-			streams:   0, words:     0
-		worklib.SMDFFHQX1HVT:v <0x69538f4d>
-			streams:   0, words:     0
-		worklib.SEDFFXLHVT:v <0x5d599188>
-			streams:   0, words:     0
-		worklib.SEDFFX4HVT:v <0x7dfb5eb8>
-			streams:   0, words:     0
-		worklib.SEDFFX2HVT:v <0x20e06b68>
-			streams:   0, words:     0
-		worklib.SEDFFX1HVT:v <0x569ea9c9>
-			streams:   0, words:     0
-		worklib.SEDFFTRXLHVT:v <0x60486011>
-			streams:   0, words:     0
-		worklib.SEDFFTRX4HVT:v <0x3b0cd2a2>
-			streams:   0, words:     0
-		worklib.SEDFFTRX2HVT:v <0x2dbdb85a>
-			streams:   0, words:     0
-		worklib.SEDFFTRX1HVT:v <0x26e50d26>
-			streams:   0, words:     0
-		worklib.SEDFFHQX8HVT:v <0x6c317844>
-			streams:   0, words:     0
-		worklib.SEDFFHQX4HVT:v <0x3051ef4f>
-			streams:   0, words:     0
-		worklib.SEDFFHQX2HVT:v <0x6b2a7fa3>
-			streams:   0, words:     0
-		worklib.SEDFFHQX1HVT:v <0x0697b7d5>
-			streams:   0, words:     0
-		worklib.SDFFXLHVT:v <0x5bdc92e4>
-			streams:   0, words:     0
-		worklib.SDFFX4HVT:v <0x41c82c69>
-			streams:   0, words:     0
-		worklib.SDFFX2HVT:v <0x6da09859>
-			streams:   0, words:     0
-		worklib.SDFFX1HVT:v <0x0a7272d3>
-			streams:   0, words:     0
-		worklib.SDFFTRXLHVT:v <0x5467babd>
-			streams:   0, words:     0
-		worklib.SDFFTRX4HVT:v <0x1bb66a5e>
-			streams:   0, words:     0
-		worklib.SDFFTRX2HVT:v <0x0fe3e649>
-			streams:   0, words:     0
-		worklib.SDFFTRX1HVT:v <0x2871a362>
-			streams:   0, words:     0
-		worklib.SDFFSXLHVT:v <0x355c7e2f>
-			streams:   0, words:     0
-		worklib.SDFFSX4HVT:v <0x0e572069>
-			streams:   0, words:     0
-		worklib.SDFFSX2HVT:v <0x079f6673>
-			streams:   0, words:     0
-		worklib.SDFFSX1HVT:v <0x437b457e>
-			streams:   0, words:     0
-		worklib.SDFFSRXLHVT:v <0x506ed6a0>
-			streams:   0, words:     0
-		worklib.SDFFSRX4HVT:v <0x5fe4b228>
-			streams:   0, words:     0
-		worklib.SDFFSRX2HVT:v <0x38346137>
-			streams:   0, words:     0
-		worklib.SDFFSRX1HVT:v <0x66648b98>
-			streams:   0, words:     0
-		worklib.SDFFSRHQX8HVT:v <0x0d81d554>
-			streams:   0, words:     0
-		worklib.SDFFSRHQX4HVT:v <0x72dcdfe8>
-			streams:   0, words:     0
-		worklib.SDFFSRHQX2HVT:v <0x4d725ab6>
-			streams:   0, words:     0
-		worklib.SDFFSRHQX1HVT:v <0x6343a88b>
-			streams:   0, words:     0
-		worklib.SDFFSHQX8HVT:v <0x68920527>
-			streams:   0, words:     0
-		worklib.SDFFSHQX4HVT:v <0x239ca2b7>
-			streams:   0, words:     0
-		worklib.SDFFSHQX2HVT:v <0x77fd41ed>
-			streams:   0, words:     0
-		worklib.SDFFSHQX1HVT:v <0x74d8589b>
-			streams:   0, words:     0
-		worklib.SDFFRXLHVT:v <0x381b4766>
-			streams:   0, words:     0
-		worklib.SDFFRX4HVT:v <0x03101920>
-			streams:   0, words:     0
-		worklib.SDFFRX2HVT:v <0x0ad85f3a>
-			streams:   0, words:     0
-		worklib.SDFFRX1HVT:v <0x4e3c7c37>
-			streams:   0, words:     0
-		worklib.SDFFRHQX8HVT:v <0x3cd12463>
-			streams:   0, words:     0
-		worklib.SDFFRHQX4HVT:v <0x77df83f3>
-			streams:   0, words:     0
-		worklib.SDFFRHQX2HVT:v <0x23be60a9>
-			streams:   0, words:     0
-		worklib.SDFFRHQX1HVT:v <0x209b79df>
-			streams:   0, words:     0
-		worklib.SDFFQXLHVT:v <0x57ddd069>
-			streams:   0, words:     0
-		worklib.SDFFQX4HVT:v <0x7eba1b87>
-			streams:   0, words:     0
-		worklib.SDFFQX2HVT:v <0x12ff0901>
-			streams:   0, words:     0
-		worklib.SDFFQX1HVT:v <0x153b30d0>
-			streams:   0, words:     0
-		worklib.SDFFNSRXLHVT:v <0x7d7d6c9c>
-			streams:   0, words:     0
-		worklib.SDFFNSRX4HVT:v <0x7ca213e4>
-			streams:   0, words:     0
-		worklib.SDFFNSRX2HVT:v <0x27d98308>
-			streams:   0, words:     0
-		worklib.SDFFNSRX1HVT:v <0x4a644b7e>
-			streams:   0, words:     0
-		worklib.SDFFHQX8HVT:v <0x1c9a66b4>
-			streams:   0, words:     0
-		worklib.SDFFHQX4HVT:v <0x4bc3ce60>
-			streams:   0, words:     0
-		worklib.SDFFHQX2HVT:v <0x606f1a0a>
-			streams:   0, words:     0
-		worklib.SDFFHQX1HVT:v <0x75b9703f>
-			streams:   0, words:     0
-		worklib.MDFFHQX8HVT:v <0x31522b27>
-			streams:   0, words:     0
-		worklib.MDFFHQX4HVT:v <0x660b83f3>
-			streams:   0, words:     0
-		worklib.MDFFHQX2HVT:v <0x4da75799>
-			streams:   0, words:     0
-		worklib.MDFFHQX1HVT:v <0x58713dac>
-			streams:   0, words:     0
-		worklib.EDFFXLHVT:v <0x3ae7ecac>
-			streams:   0, words:     0
-		worklib.EDFFX4HVT:v <0x308487f4>
-			streams:   0, words:     0
-		worklib.EDFFX2HVT:v <0x01e5f008>
-			streams:   0, words:     0
-		worklib.EDFFX1HVT:v <0x01a613bf>
-			streams:   0, words:     0
-		worklib.EDFFTRXLHVT:v <0x60ef19c8>
-			streams:   0, words:     0
-		worklib.EDFFTRX4HVT:v <0x6f657d40>
-			streams:   0, words:     0
-		worklib.EDFFTRX2HVT:v <0x08b5ae5f>
-			streams:   0, words:     0
-		worklib.EDFFTRX1HVT:v <0x56e544f0>
-			streams:   0, words:     0
-		worklib.EDFFHQX8HVT:v <0x1e8639e5>
-			streams:   0, words:     0
-		worklib.EDFFHQX4HVT:v <0x492796ee>
-			streams:   0, words:     0
-		worklib.EDFFHQX2HVT:v <0x0f4fc24b>
-			streams:   0, words:     0
-		worklib.EDFFHQX1HVT:v <0x01c36b39>
-			streams:   0, words:     0
-		worklib.DFFXLHVT:v <0x7f9c11f8>
-			streams:   0, words:     0
-		worklib.DFFX4HVT:v <0x7f70d8df>
-			streams:   0, words:     0
-		worklib.DFFX2HVT:v <0x09a9eb38>
-			streams:   0, words:     0
-		worklib.DFFX1HVT:v <0x2e9b4179>
-			streams:   0, words:     0
-		worklib.DFFTRXLHVT:v <0x4ef2879b>
-			streams:   0, words:     0
-		worklib.DFFTRX4HVT:v <0x4762d202>
-			streams:   0, words:     0
-		worklib.DFFTRX2HVT:v <0x67f6d95e>
-			streams:   0, words:     0
-		worklib.DFFTRX1HVT:v <0x6f4f84b9>
-			streams:   0, words:     0
-		worklib.DFFSXLHVT:v <0x7f1dddcb>
-			streams:   0, words:     0
-		worklib.DFFSX4HVT:v <0x1953fdcf>
-			streams:   0, words:     0
-		worklib.DFFSX2HVT:v <0x280682a5>
-			streams:   0, words:     0
-		worklib.DFFSX1HVT:v <0x414a8d82>
-			streams:   0, words:     0
-		worklib.DFFSRXLHVT:v <0x241dd32e>
-			streams:   0, words:     0
-		worklib.DFFSRX4HVT:v <0x0d7a18c0>
-			streams:   0, words:     0
-		worklib.DFFSRX2HVT:v <0x613f0a46>
-			streams:   0, words:     0
-		worklib.DFFSRX1HVT:v <0x66fb3397>
-			streams:   0, words:     0
-		worklib.DFFSRHQX8HVT:v <0x2721548b>
-			streams:   0, words:     0
-		worklib.DFFSRHQX4HVT:v <0x3ef69492>
-			streams:   0, words:     0
-		worklib.DFFSRHQX2HVT:v <0x4756aff7>
-			streams:   0, words:     0
-		worklib.DFFSRHQX1HVT:v <0x563e3165>
-			streams:   0, words:     0
-		worklib.DFFSHQX8HVT:v <0x3d83327e>
-			streams:   0, words:     0
-		worklib.DFFSHQX4HVT:v <0x4209715f>
-			streams:   0, words:     0
-		worklib.DFFSHQX2HVT:v <0x5074d3ef>
-			streams:   0, words:     0
-		worklib.DFFSHQX1HVT:v <0x194a02b7>
-			streams:   0, words:     0
-		worklib.DFFRXLHVT:v <0x0f20f69f>
-			streams:   0, words:     0
-		worklib.DFFRX4HVT:v <0x696ed69b>
-			streams:   0, words:     0
-		worklib.DFFRX2HVT:v <0x583ba9f1>
-			streams:   0, words:     0
-		worklib.DFFRX1HVT:v <0x3177a6d6>
-			streams:   0, words:     0
-		worklib.DFFRHQX8HVT:v <0x7ea7f6d2>
-			streams:   0, words:     0
-		worklib.DFFRHQX4HVT:v <0x012db5f3>
-			streams:   0, words:     0
-		worklib.DFFRHQX2HVT:v <0x13501743>
-			streams:   0, words:     0
-		worklib.DFFRHQX1HVT:v <0x5a6ec61b>
-			streams:   0, words:     0
-		worklib.DFFQXLHVT:v <0x640d16a4>
-			streams:   0, words:     0
-		worklib.DFFQX4HVT:v <0x05aac6a7>
-			streams:   0, words:     0
-		worklib.DFFQX2HVT:v <0x25569dd7>
-			streams:   0, words:     0
-		worklib.DFFQX1HVT:v <0x3528b06f>
-			streams:   0, words:     0
-		worklib.DFFNSRXLHVT:v <0x56a41a2e>
-			streams:   0, words:     0
-		worklib.DFFNSRX4HVT:v <0x297936a3>
-			streams:   0, words:     0
-		worklib.DFFNSRX2HVT:v <0x6f116206>
-			streams:   0, words:     0
-		worklib.DFFNSRX1HVT:v <0x619dcb74>
-			streams:   0, words:     0
-		worklib.DFFHQX8HVT:v <0x7b57a126>
-			streams:   0, words:     0
-		worklib.DFFHQX4HVT:v <0x73bcd086>
-			streams:   0, words:     0
-		worklib.DFFHQX2HVT:v <0x77c96856>
-			streams:   0, words:     0
-		worklib.DFFHQX1HVT:v <0x75f3b43e>
-			streams:   0, words:     0
-		worklib.comparator_device:sv <0x5422f4c0>
-			streams:  11, words:  4245
-		worklib.comparator_device_tb:sv <0x24cbb708>
-			streams:   5, words: 10242
+		worklib.comparator_generic:sv <0x396c5bdc>
+			streams:   9, words:  3461
+		worklib.comparator_generic_tb:sv <0x702416c0>
+			streams:   6, words: 24765
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
@@ -807,15 +503,16 @@ xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-
 		UDPs:                     272      14
 		Primitives:              1847       6
 		Timing outputs:           572     416
-		Registers:                158     172
-		Scalar wires:            2887       -
-		Expanded wires:             4       1
-		Initial blocks:             3       3
+		Registers:                168     182
+		Scalar wires:            2883       -
+		Expanded wires:             8       2
+		Initial blocks:             2       2
 		Pseudo assignments:        12      12
 		Timing checks:           1976       -
 		Delayed tcheck signals:   536     536
+		Assertions:                10      10
 		Simulation timescale:    10ps
-	Writing initial simulation snapshot: worklib.comparator_device_tb:sv
+	Writing initial simulation snapshot: worklib.comparator_generic_tb:sv
 xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
 xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
 
@@ -823,30 +520,53 @@ xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009
 Relinquished control to SimVision...
 xcelium> 
 xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
+xcelium> run
+                Tempo          Entradas            Saídas
+                        first_in    second_in       out
+                ====   ==========   ==========      ====
+                   0     0000         0000           1
+                   5     0001         0000           0
+                  10     0010         0010           1
+                  15     1111         1110           0
+                  20     1010         1010           1
+                  25     0101         0101           1
+                  30     0110         0101           0
+                  35     1001         1000           0
+                  40     0111         0111           1
+                  45     1100         1101           0
+Simulation complete via $finish(1) at time 50 NS + 0
+./comparator_generic_tb.sv:76       $finish;
 xcelium> database -open waves -into waves.shm -default
 Created default SHM database waves
-xcelium> probe -create -shm comparator_device_tb.cmp_inst.in_word comparator_device_tb.cmp_inst.mid_out comparator_device_tb.cmp_inst.out comparator_device_tb.cmp_inst.pattern_word comparator_device_tb.cmp_inst.xor_result
+xcelium> probe -create -shm comparator_generic_tb.cmp_inst.first_word comparator_generic_tb.cmp_inst.mid_out comparator_generic_tb.cmp_inst.out comparator_generic_tb.cmp_inst.second_word comparator_generic_tb.cmp_inst.xor_result
 Created probe 1
 xcelium> run
-                Tempo   Entradas    Saídas
-                          in         out  
-                ====   ==========  =======
-                   0     0000        0
-                   5     0001        0
-                  10     0010        0
-                  15     0011        0
-                  20     0100        0
-                  25     0101        1
-                  30     0110        0
-                  35     0111        0
-                  40     1000        0
-                  45     1001        0
-                  50     1010        0
-                  55     1011        0
-                  60     1100        0
-                  65     1101        0
-                  70     1110        0
-                  75     1111        0
-Simulation complete via $finish(1) at time 80 NS + 0
-./comparator_device_tb.sv:46         $finish;
+xmsim: *E,RNFNSH: Cannot continue simulation due to a previous $finish.
+xcelium> run
+xmsim: *E,RNFNSH: Cannot continue simulation due to a previous $finish.
+xcelium> reset
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+Loaded snapshot worklib.comparator_generic_tb:sv
+xcelium> reset
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+Loaded snapshot worklib.comparator_generic_tb:sv
+xcelium> reset
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+Loaded snapshot worklib.comparator_generic_tb:sv
+xcelium> run
+                Tempo          Entradas            Saídas
+                        first_in    second_in       out
+                ====   ==========   ==========      ====
+                   0     0000         0000           1
+                   5     0001         0000           0
+                  10     0010         0010           1
+                  15     1111         1110           0
+                  20     1010         1010           1
+                  25     0101         0101           1
+                  30     0110         0101           0
+                  35     1001         1000           0
+                  40     0111         0111           1
+                  45     1100         1101           0
+Simulation complete via $finish(1) at time 50 NS + 0
+./comparator_generic_tb.sv:76       $finish;
 xcelium> 

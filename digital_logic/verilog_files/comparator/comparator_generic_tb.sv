@@ -1,3 +1,4 @@
+`timescale 1ns/10ps
 module comparator_generic_tb;
 
 logic [3:0] first_in, second_in; 
@@ -38,6 +39,39 @@ initial
       second_in = 4'b1010;
       #5;
       assert(out_result == 1'b1) else $error("Test case 5 failed");
+
+      // Test case 6
+      first_in = 4'b0101;
+      second_in = 4'b0101;
+      #5;
+      assert(out_result == 1'b1) else $error("Test case 6 failed");
+
+      // Test case 7
+      first_in = 4'b0110;
+      second_in = 4'b0101;
+      #5;
+      assert(out_result == 1'b0) else $error("Test case 7 failed");
+
+      // Test case 8
+      first_in = 4'b1001;
+      second_in = 4'b1000;
+      #5;
+      assert(out_result == 1'b0) else $error("Test case 8 failed");
+
+      // Test case 9
+      first_in = 4'b0111;
+      second_in = 4'b0111;
+      #5;
+      assert(out_result == 1'b1) else $error("Test case 9 failed");
+
+      // Test case 10
+      first_in = 4'b1100;
+      second_in = 4'b1101;
+      #5;
+      assert(out_result == 1'b0) else $error("Test case 10 failed");
+
+
+
 
       $finish;
     end
