@@ -1,0 +1,62 @@
+xrun(64): 22.09-s013: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	22.09-s013: Started on Nov 13, 2024 at 17:14:15 -03
+xrun
+	-64bit
+	LUT2_tb.sv
+	luts/lut2/LUT2.sv
+Recompiling... reason: file './LUT2_tb.sv' is newer than expected.
+	expected: Wed Nov 13 17:12:58 2024
+	actual:   Wed Nov 13 17:14:13 2024
+file: LUT2_tb.sv
+	module worklib.LUT2_tb:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		LUT2_tb
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.LUT2_tb:sv <0x6423358d>
+			streams:  14, words: 20860
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 5       2
+		Registers:              17      11
+		Scalar wires:           16       -
+		Vectored wires:          4       -
+		Always blocks:           4       1
+		Initial blocks:          2       2
+		Cont. assignments:       4       1
+		Pseudo assignments:     11      11
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.LUT2_tb:sv
+Loading snapshot worklib.LUT2_tb:sv .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
+xcelium> run
+                Tempo   Entradas LUT        Saídas
+                         A   B   C   D       OUT
+                ====   ================      =======
+                   0     0   0   0   0        0
+                  10     0   0   0   1        0
+                  20     0   0   1   0        0
+                  30     0   0   1   1        1
+                  40     0   1   0   0        0
+                  50     0   1   0   1        0
+                  60     0   1   1   0        0
+                  70     0   1   1   1        1
+                  80     1   0   0   0        0
+                  90     1   0   0   1        0
+                 100     1   0   1   0        0
+                 110     1   0   1   1        1
+                 120     1   1   0   0        0
+                 130     1   1   0   1        0
+                 140     1   1   1   0        0
+                 150     1   1   1   1        0
+Simulation complete via $finish(1) at time 160 PS + 0
+./LUT2_tb.sv:130     $finish;
+xcelium> exit
+TOOL:	xrun(64)	22.09-s013: Exiting on Nov 13, 2024 at 17:14:27 -03  (total: 00:00:12)

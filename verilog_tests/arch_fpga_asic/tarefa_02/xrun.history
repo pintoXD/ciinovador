@@ -1,0 +1,11 @@
+s1(13Nov2024:16:44:21):  xrun -64bit LUT2_tb.sv luts/lut2/LUT2.sv 
+s2(13Nov2024:16:44:42):  xrun -64bit LUT2_tb.sv luts/lut2/LUT2.sv 
+s3(13Nov2024:16:46:09):  xrun -64bit LUT2_tb.sv luts/lut2/LUT2.sv 
+s4(13Nov2024:16:46:58):  xrun -64bit LUT2_tb.sv luts/lut2/LUT2.sv 
+s5(13Nov2024:16:53:17):  xrun -64bit LUT2_tb.sv luts/lut2/LUT2.sv 
+s6(13Nov2024:17:03:21):  xrun -64bit LUT2_tb.sv luts/lut2/LUT2.sv 
+s7(13Nov2024:17:04:58):  xrun -64bit LUT2_tb.sv luts/lut2/LUT2.sv 
+s8(13Nov2024:17:06:22):  xrun -64bit LUT2_tb.sv luts/lut2/LUT2.sv 
+s9(13Nov2024:17:07:31):  xrun -64bit LUT2_tb.sv luts/lut2/LUT2.sv 
+s10(13Nov2024:17:13:00):  xrun -64bit LUT2_tb.sv luts/lut2/LUT2.sv 
+s11(13Nov2024:17:14:15):  xrun -64bit LUT2_tb.sv luts/lut2/LUT2.sv 
