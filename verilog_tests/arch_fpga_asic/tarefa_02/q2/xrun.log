@@ -1,20 +1,11 @@
 xrun(64): 22.09-s013: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	22.09-s013: Started on Nov 14, 2024 at 16:57:20 -03
+TOOL:	xrun(64)	22.09-s013: Started on Nov 14, 2024 at 17:24:12 -03
 xrun
 	-64bit
 	q2_tb.sv
 	q2.sv
 	+gui
 	+access+rw
-Recompiling... reason: file './q2.sv' is newer than expected.
-	expected: Thu Nov 14 16:43:13 2024
-	actual:   Thu Nov 14 16:56:19 2024
-file: q2_tb.sv
-	module worklib.Q2_LUT3_TB:sv
-		errors: 0, warnings: 0
-file: q2.sv
-	module worklib.Q2_LUT3:sv
-		errors: 0, warnings: 0
 		Caching library 'worklib' ....... Done
 	Elaborating the design hierarchy:
 		Caching library 'worklib' ....... Done
@@ -48,27 +39,27 @@ xcelium>
 xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
 xcelium> database -open waves -into waves.shm -default
 Created default SHM database waves
-xcelium> probe -create -shm Q2_LUT3_TB.UUT.or_0_out Q2_LUT3_TB.UUT.nor_1_out Q2_LUT3_TB.UUT.nor_0_out Q2_LUT3_TB.UUT.and_1_out Q2_LUT3_TB.UUT.and_0_out Q2_LUT3_TB.UUT.OUT Q2_LUT3_TB.UUT.A3 Q2_LUT3_TB.UUT.A2 Q2_LUT3_TB.UUT.A1 Q2_LUT3_TB.UUT.A0
+xcelium> probe -create -shm Q2_LUT3_TB.UUT.A0 Q2_LUT3_TB.UUT.A1 Q2_LUT3_TB.UUT.A2 Q2_LUT3_TB.UUT.A3 Q2_LUT3_TB.UUT.OUT Q2_LUT3_TB.UUT.and_0_out Q2_LUT3_TB.UUT.and_1_out Q2_LUT3_TB.UUT.nor_0_out Q2_LUT3_TB.UUT.nor_1_out Q2_LUT3_TB.UUT.or_0_out
 Created probe 1
 xcelium> run
                 Tempo     Entradas LUT        Saídas
-                         A3  A2  A1  A0         OUT
+                         A0  A1  A2  A3         OUT
                 ====   ================       =======
                    0     0  0  0  0               1
-                  10     0  0  0  1               1
-                  20     0  0  1  0               1
+                  10     0  0  0  1               0
+                  20     0  0  1  0               0
                   30     0  0  1  1               0
-                  40     0  1  0  0               0
+                  40     0  1  0  0               1
                   50     0  1  0  1               0
                   60     0  1  1  0               0
-                  70     0  1  1  1               0
-                  80     1  0  0  0               0
+                  70     0  1  1  1               1
+                  80     1  0  0  0               1
                   90     1  0  0  1               0
                  100     1  0  1  0               0
                  110     1  0  1  1               0
                  120     1  1  0  0               0
                  130     1  1  0  1               0
-                 140     1  1  1  0               1
+                 140     1  1  1  0               0
                  150     1  1  1  1               0
 Simulation complete via $finish(1) at time 160 PS + 0
 ./q2_tb.sv:59     $finish;

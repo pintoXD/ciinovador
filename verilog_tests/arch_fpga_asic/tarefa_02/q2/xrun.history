@@ -21,3 +21,8 @@ s20(14Nov2024:16:42:15):  xrun -64bit q2_tb.sv q2.sv
 s21(14Nov2024:16:44:04):  xrun -64bit q2_tb.sv q2.sv 
 s22(14Nov2024:16:44:30):  xrun -64bit q2_tb.sv q2.sv +gui +access+rw 
 s23(14Nov2024:16:57:20):  xrun -64bit q2_tb.sv q2.sv +gui +access+rw 
+s24(14Nov2024:17:19:58):  xrun -64bit q2_tb.sv q2.sv 
+s25(14Nov2024:17:21:08):  xrun -64bit q2_tb.sv q2.sv 
+s26(14Nov2024:17:22:00):  xrun -64bit q2_tb.sv q2.sv 
+s27(14Nov2024:17:22:47):  xrun -64bit q2_tb.sv q2.sv 
+s28(14Nov2024:17:24:12):  xrun -64bit q2_tb.sv q2.sv +gui +access+rw 
