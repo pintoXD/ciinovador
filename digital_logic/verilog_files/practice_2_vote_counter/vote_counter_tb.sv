@@ -54,6 +54,7 @@ initial begin
     in_word = 3'b111;
     #5;
     assert(out_result == 4'b1000) else $error("Test case 8 failed");
+    #5;
 
     $finish;
 

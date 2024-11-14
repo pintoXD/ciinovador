@@ -1,0 +1,8 @@
+s1(14Nov2024:14:54:36):  xrun -64bit q3_tb.sv q3.sv LUT2.sv LUT3.sv 
+s2(14Nov2024:14:55:05):  xrun -64bit q3_tb.sv q3.sv LUT2.sv LUT3.sv 
+s3(14Nov2024:14:55:11):  xrun -64bit q3_tb.sv q3.sv LUT2.sv LUT3.sv 
+s4(14Nov2024:14:55:44):  xrun -64bit q3_tb.sv q3.sv LUT2.sv LUT3.sv 
+s5(14Nov2024:14:56:11):  xrun -64bit q3_tb.sv q3.sv LUT2.sv LUT3.sv 
+s6(14Nov2024:14:56:25):  xrun -64bit q3_tb.sv q3.sv LUT2.sv LUT3.sv 
+s7(14Nov2024:14:56:45):  xrun -64bit q3_tb.sv q3.sv LUT2.sv LUT3.sv 
+s8(14Nov2024:14:57:16):  xrun -64bit q3_tb.sv q3.sv LUT2.sv LUT3.sv 

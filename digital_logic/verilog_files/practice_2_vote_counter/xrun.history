@@ -36,3 +36,4 @@ s35(14Nov2024:12:45:29):  xrun -64bit vote_counter_tb.sv vote_counter.sv fast_vd
 s36(14Nov2024:12:46:03):  xrun -64bit vote_counter_tb.sv vote_counter.sv fast_vdd1v0_basicCells_hvt.v +access+rw 
 s37(14Nov2024:12:50:26):  xrun -64bit vote_counter_tb.sv vote_counter.sv fast_vdd1v0_basicCells_hvt.v +access+rw 
 s38(14Nov2024:12:51:05):  xrun -64bit vote_counter_tb.sv vote_counter.sv fast_vdd1v0_basicCells_hvt.v +access+rw 
+s39(14Nov2024:12:52:20):  xrun -64bit vote_counter_tb.sv vote_counter.sv fast_vdd1v0_basicCells_hvt.v +gui +access+rw 

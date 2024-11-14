@@ -1,16 +1,17 @@
 xrun(64): 22.09-s013: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	22.09-s013: Started on Nov 14, 2024 at 12:51:05 -03
+TOOL:	xrun(64)	22.09-s013: Started on Nov 14, 2024 at 12:52:20 -03
 xrun
 	-64bit
 	vote_counter_tb.sv
 	vote_counter.sv
 	fast_vdd1v0_basicCells_hvt.v
+	+gui
 	+access+rw
-Recompiling... reason: file './vote_counter.sv' is newer than expected.
-	expected: Thu Nov 14 12:43:46 2024
-	actual:   Thu Nov 14 12:51:02 2024
-file: vote_counter.sv
-	module worklib.vote_counter:sv
+Recompiling... reason: file './vote_counter_tb.sv' is newer than expected.
+	expected: Thu Nov 14 11:00:55 2024
+	actual:   Thu Nov 14 12:51:58 2024
+file: vote_counter_tb.sv
+	module worklib.vote_counter_tb:sv
 		errors: 0, warnings: 0
 		Caching library 'worklib' ....... Done
 	Elaborating the design hierarchy:
@@ -495,8 +496,8 @@ file: vote_counter.sv
 xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.vote_counter:sv <0x2250d80c>
-			streams:  28, words:  7626
+		worklib.vote_counter_tb:sv <0x24ae115f>
+			streams:   5, words: 18703
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
@@ -516,9 +517,17 @@ xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-
 		Assertions:                 8       8
 		Simulation timescale:     1ps
 	Writing initial simulation snapshot: worklib.vote_counter_tb:sv
-Loading snapshot worklib.vote_counter_tb:sv .................... Done
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
 xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
 xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm vote_counter_tb.dut_counter.input_word vote_counter_tb.dut_counter.mid_bit1_and0_out vote_counter_tb.dut_counter.mid_bit1_and1_out vote_counter_tb.dut_counter.mid_bit1_and2_out vote_counter_tb.dut_counter.mid_bit1_not_a_out vote_counter_tb.dut_counter.mid_bit1_not_b_out vote_counter_tb.dut_counter.mid_bit1_not_c_out vote_counter_tb.dut_counter.mid_bit2_and0_out vote_counter_tb.dut_counter.mid_bit2_and1_out vote_counter_tb.dut_counter.mid_bit2_and2_out vote_counter_tb.dut_counter.mid_bit2_not_a_out vote_counter_tb.dut_counter.mid_bit2_not_b_out vote_counter_tb.dut_counter.mid_bit2_not_c_out vote_counter_tb.dut_counter.out_result
+Created probe 1
 xcelium> run
                 Tempo   Entradas      Saídas
                         in_word     out_result
@@ -531,7 +540,9 @@ xcelium> run
                   25        101       0100
                   30        110       0100
                   35        111       1000
-Simulation complete via $finish(1) at time 40 PS + 0
-./vote_counter_tb.sv:58     $finish;
+Simulation complete via $finish(1) at time 45 PS + 0
+./vote_counter_tb.sv:59     $finish;
+xcelium> ^C
+xcelium> ^C
 xcelium> exit
-TOOL:	xrun(64)	22.09-s013: Exiting on Nov 14, 2024 at 12:51:08 -03  (total: 00:00:03)
+TOOL:	xrun(64)	22.09-s013: Exiting on Nov 14, 2024 at 13:47:57 -03  (total: 00:55:37)

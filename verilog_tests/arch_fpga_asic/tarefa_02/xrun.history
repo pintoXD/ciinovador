@@ -9,3 +9,6 @@ s8(13Nov2024:17:06:22):  xrun -64bit LUT2_tb.sv luts/lut2/LUT2.sv
 s9(13Nov2024:17:07:31):  xrun -64bit LUT2_tb.sv luts/lut2/LUT2.sv 
 s10(13Nov2024:17:13:00):  xrun -64bit LUT2_tb.sv luts/lut2/LUT2.sv 
 s11(13Nov2024:17:14:15):  xrun -64bit LUT2_tb.sv luts/lut2/LUT2.sv 
+s12(14Nov2024:14:28:16):  xrun -64bit q1_tb.sv q1.sv luts/lut2/LUT2.sv 
+s13(14Nov2024:14:28:45):  xrun -64bit q1_tb.sv q1.sv luts/lut2/LUT2.sv 
+s14(14Nov2024:14:30:30):  xrun -64bit q1_tb.sv q1.sv luts/lut2/LUT2.sv 
