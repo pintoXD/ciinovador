@@ -1,8 +1,8 @@
 `timescale 1ps/1ps
 module vote_counter_tb();
 
-logic [3:0] in_word;
-logic [4:0] out_result;
+logic [2:0] in_word;
+logic [3:0] out_result;
 
 vote_counter dut_counter (
     .input_word(in_word),

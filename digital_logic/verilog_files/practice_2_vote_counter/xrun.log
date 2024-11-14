@@ -1,5 +1,5 @@
 xrun(64): 22.09-s013: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	22.09-s013: Started on Nov 14, 2024 at 10:37:47 -03
+TOOL:	xrun(64)	22.09-s013: Started on Nov 14, 2024 at 12:51:05 -03
 xrun
 	-64bit
 	vote_counter_tb.sv
@@ -7,8 +7,8 @@ xrun
 	fast_vdd1v0_basicCells_hvt.v
 	+access+rw
 Recompiling... reason: file './vote_counter.sv' is newer than expected.
-	expected: Thu Nov 14 09:15:18 2024
-	actual:   Thu Nov 14 10:37:44 2024
+	expected: Thu Nov 14 12:43:46 2024
+	actual:   Thu Nov 14 12:51:02 2024
 file: vote_counter.sv
 	module worklib.vote_counter:sv
 		errors: 0, warnings: 0
@@ -34,12 +34,12 @@ file: vote_counter.sv
 		AND2X4HVT
 		AND2X6HVT
 		AND2X8HVT
+		AND2XLHVT
 		AND3X1HVT
 		AND3X2HVT
 		AND3X4HVT
 		AND3X6HVT
 		AND3X8HVT
-		AND3XLHVT
 		AND4X1HVT
 		AND4X2HVT
 		AND4X4HVT
@@ -203,7 +203,6 @@ file: vote_counter.sv
 		EDFFX4HVT
 		EDFFXLHVT
 		HOLDX1HVT
-		INVX1HVT
 		INVX12HVT
 		INVX16HVT
 		INVX2HVT
@@ -288,6 +287,7 @@ file: vote_counter.sv
 		NOR2X4HVT
 		NOR2X6HVT
 		NOR2X8HVT
+		NOR2XLHVT
 		NOR3BX1HVT
 		NOR3BX2HVT
 		NOR3BX4HVT
@@ -297,7 +297,6 @@ file: vote_counter.sv
 		NOR3X4HVT
 		NOR3X6HVT
 		NOR3X8HVT
-		NOR3XLHVT
 		NOR4BBX1HVT
 		NOR4BBX2HVT
 		NOR4BBX4HVT
@@ -371,7 +370,6 @@ file: vote_counter.sv
 		OR3X4HVT
 		OR3X6HVT
 		OR3X8HVT
-		OR3XLHVT
 		OR4X1HVT
 		OR4X2HVT
 		OR4X4HVT
@@ -491,360 +489,28 @@ file: vote_counter.sv
 		XOR2X1HVT
 		XOR2X2HVT
 		XOR2X4HVT
+		XOR2XLHVT
 		XOR3X1HVT
 		XOR3XLHVT
 xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
-    comparator_generic cmp_inst_0( .first_word(input_word), .second_word(3'b000), .out(out_0));
-                                                                         |
-xmelab: *W,CUVMPW (./vote_counter.sv,61|73): port sizes differ in port connection(3/4) for the instance(vote_counter_tb.dut_counter) .
-    comparator_generic cmp_inst_1( .first_word(input_word), .second_word(3'b001), .out(out_1));
-                                                                         |
-xmelab: *W,CUVMPW (./vote_counter.sv,62|73): port sizes differ in port connection(3/4) for the instance(vote_counter_tb.dut_counter) .
-    comparator_generic cmp_inst_2( .first_word(input_word), .second_word(3'b010), .out(out_2));
-                                                                         |
-xmelab: *W,CUVMPW (./vote_counter.sv,63|73): port sizes differ in port connection(3/4) for the instance(vote_counter_tb.dut_counter) .
-    comparator_generic cmp_inst_3( .first_word(input_word), .second_word(3'b011), .out(out_3));
-                                                                         |
-xmelab: *W,CUVMPW (./vote_counter.sv,64|73): port sizes differ in port connection(3/4) for the instance(vote_counter_tb.dut_counter) .
-    comparator_generic cmp_inst_4( .first_word(input_word), .second_word(3'b100), .out(out_4));
-                                                                         |
-xmelab: *W,CUVMPW (./vote_counter.sv,65|73): port sizes differ in port connection(3/4) for the instance(vote_counter_tb.dut_counter) .
-    comparator_generic cmp_inst_5( .first_word(input_word), .second_word(3'b101), .out(out_5));
-                                                                         |
-xmelab: *W,CUVMPW (./vote_counter.sv,66|73): port sizes differ in port connection(3/4) for the instance(vote_counter_tb.dut_counter) .
-    comparator_generic cmp_inst_6( .first_word(input_word), .second_word(3'b110), .out(out_6));
-                                                                         |
-xmelab: *W,CUVMPW (./vote_counter.sv,67|73): port sizes differ in port connection(3/4) for the instance(vote_counter_tb.dut_counter) .
-    comparator_generic cmp_inst_7( .first_word(input_word), .second_word(3'b111), .out(out_7));
-                                                                         |
-xmelab: *W,CUVMPW (./vote_counter.sv,68|73): port sizes differ in port connection(3/4) for the instance(vote_counter_tb.dut_counter) .
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.TLATXLHVT:v <0x708acb81>
-			streams:   0, words:     0
-		worklib.TLATX4HVT:v <0x758db08c>
-			streams:   0, words:     0
-		worklib.TLATX2HVT:v <0x5b9e6a37>
-			streams:   0, words:     0
-		worklib.TLATX1HVT:v <0x212f044a>
-			streams:   0, words:     0
-		worklib.TLATSRXLHVT:v <0x752a5afd>
-			streams:   0, words:     0
-		worklib.TLATSRX4HVT:v <0x58176156>
-			streams:   0, words:     0
-		worklib.TLATSRX2HVT:v <0x42dfeb10>
-			streams:   0, words:     0
-		worklib.TLATSRX1HVT:v <0x7e5d1ea1>
-			streams:   0, words:     0
-		worklib.TLATNXLHVT:v <0x203c89c3>
-			streams:   0, words:     0
-		worklib.TLATNX4HVT:v <0x0d0fe528>
-			streams:   0, words:     0
-		worklib.TLATNX2HVT:v <0x4b915a79>
-			streams:   0, words:     0
-		worklib.TLATNX1HVT:v <0x2c736e2a>
-			streams:   0, words:     0
-		worklib.TLATNTSCAX8HVT:v <0x561eef00>
-			streams:   0, words:     0
-		worklib.TLATNTSCAX6HVT:v <0x4a91ffbe>
-			streams:   0, words:     0
-		worklib.TLATNTSCAX4HVT:v <0x30734a53>
-			streams:   0, words:     0
-		worklib.TLATNTSCAX3HVT:v <0x0fd2729e>
-			streams:   0, words:     0
-		worklib.TLATNTSCAX20HVT:v <0x185e50a7>
-			streams:   0, words:     0
-		worklib.TLATNTSCAX2HVT:v <0x07e8f301>
-			streams:   0, words:     0
-		worklib.TLATNTSCAX16HVT:v <0x57e2d0a5>
-			streams:   0, words:     0
-		worklib.TLATNTSCAX12HVT:v <0x4390d95a>
-			streams:   0, words:     0
-		worklib.TLATNSRXLHVT:v <0x7bbdc5e0>
-			streams:   0, words:     0
-		worklib.TLATNSRX4HVT:v <0x7bb555f2>
-			streams:   0, words:     0
-		worklib.TLATNSRX2HVT:v <0x240499d5>
-			streams:   0, words:     0
-		worklib.TLATNSRX1HVT:v <0x4f71143d>
-			streams:   0, words:     0
-		worklib.TLATNCAX8HVT:v <0x18e8add9>
-			streams:   0, words:     0
-		worklib.TLATNCAX6HVT:v <0x1e88076e>
-			streams:   0, words:     0
-		worklib.TLATNCAX4HVT:v <0x22096fb9>
-			streams:   0, words:     0
-		worklib.TLATNCAX3HVT:v <0x25945119>
-			streams:   0, words:     0
-		worklib.TLATNCAX20HVT:v <0x56526f95>
-			streams:   0, words:     0
-		worklib.TLATNCAX2HVT:v <0x678ad6c0>
-			streams:   0, words:     0
-		worklib.TLATNCAX16HVT:v <0x16f05d96>
-			streams:   0, words:     0
-		worklib.TLATNCAX12HVT:v <0x76a8f54d>
-			streams:   0, words:     0
-		worklib.SMDFFHQX8HVT:v <0x2e4bf39f>
-			streams:   0, words:     0
-		worklib.SMDFFHQX4HVT:v <0x1c860e87>
-			streams:   0, words:     0
-		worklib.SMDFFHQX2HVT:v <0x45e0f00b>
-			streams:   0, words:     0
-		worklib.SMDFFHQX1HVT:v <0x69538f4d>
-			streams:   0, words:     0
-		worklib.SEDFFXLHVT:v <0x5d599188>
-			streams:   0, words:     0
-		worklib.SEDFFX4HVT:v <0x7dfb5eb8>
-			streams:   0, words:     0
-		worklib.SEDFFX2HVT:v <0x20e06b68>
-			streams:   0, words:     0
-		worklib.SEDFFX1HVT:v <0x569ea9c9>
-			streams:   0, words:     0
-		worklib.SEDFFTRXLHVT:v <0x60486011>
-			streams:   0, words:     0
-		worklib.SEDFFTRX4HVT:v <0x3b0cd2a2>
-			streams:   0, words:     0
-		worklib.SEDFFTRX2HVT:v <0x2dbdb85a>
-			streams:   0, words:     0
-		worklib.SEDFFTRX1HVT:v <0x26e50d26>
-			streams:   0, words:     0
-		worklib.SEDFFHQX8HVT:v <0x6c317844>
-			streams:   0, words:     0
-		worklib.SEDFFHQX4HVT:v <0x3051ef4f>
-			streams:   0, words:     0
-		worklib.SEDFFHQX2HVT:v <0x6b2a7fa3>
-			streams:   0, words:     0
-		worklib.SEDFFHQX1HVT:v <0x0697b7d5>
-			streams:   0, words:     0
-		worklib.SDFFXLHVT:v <0x5bdc92e4>
-			streams:   0, words:     0
-		worklib.SDFFX4HVT:v <0x41c82c69>
-			streams:   0, words:     0
-		worklib.SDFFX2HVT:v <0x6da09859>
-			streams:   0, words:     0
-		worklib.SDFFX1HVT:v <0x0a7272d3>
-			streams:   0, words:     0
-		worklib.SDFFTRXLHVT:v <0x5467babd>
-			streams:   0, words:     0
-		worklib.SDFFTRX4HVT:v <0x1bb66a5e>
-			streams:   0, words:     0
-		worklib.SDFFTRX2HVT:v <0x0fe3e649>
-			streams:   0, words:     0
-		worklib.SDFFTRX1HVT:v <0x2871a362>
-			streams:   0, words:     0
-		worklib.SDFFSXLHVT:v <0x355c7e2f>
-			streams:   0, words:     0
-		worklib.SDFFSX4HVT:v <0x0e572069>
-			streams:   0, words:     0
-		worklib.SDFFSX2HVT:v <0x079f6673>
-			streams:   0, words:     0
-		worklib.SDFFSX1HVT:v <0x437b457e>
-			streams:   0, words:     0
-		worklib.SDFFSRXLHVT:v <0x506ed6a0>
-			streams:   0, words:     0
-		worklib.SDFFSRX4HVT:v <0x5fe4b228>
-			streams:   0, words:     0
-		worklib.SDFFSRX2HVT:v <0x38346137>
-			streams:   0, words:     0
-		worklib.SDFFSRX1HVT:v <0x66648b98>
-			streams:   0, words:     0
-		worklib.SDFFSRHQX8HVT:v <0x0d81d554>
-			streams:   0, words:     0
-		worklib.SDFFSRHQX4HVT:v <0x72dcdfe8>
-			streams:   0, words:     0
-		worklib.SDFFSRHQX2HVT:v <0x4d725ab6>
-			streams:   0, words:     0
-		worklib.SDFFSRHQX1HVT:v <0x6343a88b>
-			streams:   0, words:     0
-		worklib.SDFFSHQX8HVT:v <0x68920527>
-			streams:   0, words:     0
-		worklib.SDFFSHQX4HVT:v <0x239ca2b7>
-			streams:   0, words:     0
-		worklib.SDFFSHQX2HVT:v <0x77fd41ed>
-			streams:   0, words:     0
-		worklib.SDFFSHQX1HVT:v <0x74d8589b>
-			streams:   0, words:     0
-		worklib.SDFFRXLHVT:v <0x381b4766>
-			streams:   0, words:     0
-		worklib.SDFFRX4HVT:v <0x03101920>
-			streams:   0, words:     0
-		worklib.SDFFRX2HVT:v <0x0ad85f3a>
-			streams:   0, words:     0
-		worklib.SDFFRX1HVT:v <0x4e3c7c37>
-			streams:   0, words:     0
-		worklib.SDFFRHQX8HVT:v <0x3cd12463>
-			streams:   0, words:     0
-		worklib.SDFFRHQX4HVT:v <0x77df83f3>
-			streams:   0, words:     0
-		worklib.SDFFRHQX2HVT:v <0x23be60a9>
-			streams:   0, words:     0
-		worklib.SDFFRHQX1HVT:v <0x209b79df>
-			streams:   0, words:     0
-		worklib.SDFFQXLHVT:v <0x57ddd069>
-			streams:   0, words:     0
-		worklib.SDFFQX4HVT:v <0x7eba1b87>
-			streams:   0, words:     0
-		worklib.SDFFQX2HVT:v <0x12ff0901>
-			streams:   0, words:     0
-		worklib.SDFFQX1HVT:v <0x153b30d0>
-			streams:   0, words:     0
-		worklib.SDFFNSRXLHVT:v <0x7d7d6c9c>
-			streams:   0, words:     0
-		worklib.SDFFNSRX4HVT:v <0x7ca213e4>
-			streams:   0, words:     0
-		worklib.SDFFNSRX2HVT:v <0x27d98308>
-			streams:   0, words:     0
-		worklib.SDFFNSRX1HVT:v <0x4a644b7e>
-			streams:   0, words:     0
-		worklib.SDFFHQX8HVT:v <0x1c9a66b4>
-			streams:   0, words:     0
-		worklib.SDFFHQX4HVT:v <0x4bc3ce60>
-			streams:   0, words:     0
-		worklib.SDFFHQX2HVT:v <0x606f1a0a>
-			streams:   0, words:     0
-		worklib.SDFFHQX1HVT:v <0x75b9703f>
-			streams:   0, words:     0
-		worklib.MDFFHQX8HVT:v <0x31522b27>
-			streams:   0, words:     0
-		worklib.MDFFHQX4HVT:v <0x660b83f3>
-			streams:   0, words:     0
-		worklib.MDFFHQX2HVT:v <0x4da75799>
-			streams:   0, words:     0
-		worklib.MDFFHQX1HVT:v <0x58713dac>
-			streams:   0, words:     0
-		worklib.EDFFXLHVT:v <0x3ae7ecac>
-			streams:   0, words:     0
-		worklib.EDFFX4HVT:v <0x308487f4>
-			streams:   0, words:     0
-		worklib.EDFFX2HVT:v <0x01e5f008>
-			streams:   0, words:     0
-		worklib.EDFFX1HVT:v <0x01a613bf>
-			streams:   0, words:     0
-		worklib.EDFFTRXLHVT:v <0x60ef19c8>
-			streams:   0, words:     0
-		worklib.EDFFTRX4HVT:v <0x6f657d40>
-			streams:   0, words:     0
-		worklib.EDFFTRX2HVT:v <0x08b5ae5f>
-			streams:   0, words:     0
-		worklib.EDFFTRX1HVT:v <0x56e544f0>
-			streams:   0, words:     0
-		worklib.EDFFHQX8HVT:v <0x1e8639e5>
-			streams:   0, words:     0
-		worklib.EDFFHQX4HVT:v <0x492796ee>
-			streams:   0, words:     0
-		worklib.EDFFHQX2HVT:v <0x0f4fc24b>
-			streams:   0, words:     0
-		worklib.EDFFHQX1HVT:v <0x01c36b39>
-			streams:   0, words:     0
-		worklib.DFFXLHVT:v <0x7f9c11f8>
-			streams:   0, words:     0
-		worklib.DFFX4HVT:v <0x7f70d8df>
-			streams:   0, words:     0
-		worklib.DFFX2HVT:v <0x09a9eb38>
-			streams:   0, words:     0
-		worklib.DFFX1HVT:v <0x2e9b4179>
-			streams:   0, words:     0
-		worklib.DFFTRXLHVT:v <0x4ef2879b>
-			streams:   0, words:     0
-		worklib.DFFTRX4HVT:v <0x4762d202>
-			streams:   0, words:     0
-		worklib.DFFTRX2HVT:v <0x67f6d95e>
-			streams:   0, words:     0
-		worklib.DFFTRX1HVT:v <0x6f4f84b9>
-			streams:   0, words:     0
-		worklib.DFFSXLHVT:v <0x7f1dddcb>
-			streams:   0, words:     0
-		worklib.DFFSX4HVT:v <0x1953fdcf>
-			streams:   0, words:     0
-		worklib.DFFSX2HVT:v <0x280682a5>
-			streams:   0, words:     0
-		worklib.DFFSX1HVT:v <0x414a8d82>
-			streams:   0, words:     0
-		worklib.DFFSRXLHVT:v <0x241dd32e>
-			streams:   0, words:     0
-		worklib.DFFSRX4HVT:v <0x0d7a18c0>
-			streams:   0, words:     0
-		worklib.DFFSRX2HVT:v <0x613f0a46>
-			streams:   0, words:     0
-		worklib.DFFSRX1HVT:v <0x66fb3397>
-			streams:   0, words:     0
-		worklib.DFFSRHQX8HVT:v <0x2721548b>
-			streams:   0, words:     0
-		worklib.DFFSRHQX4HVT:v <0x3ef69492>
-			streams:   0, words:     0
-		worklib.DFFSRHQX2HVT:v <0x4756aff7>
-			streams:   0, words:     0
-		worklib.DFFSRHQX1HVT:v <0x563e3165>
-			streams:   0, words:     0
-		worklib.DFFSHQX8HVT:v <0x3d83327e>
-			streams:   0, words:     0
-		worklib.DFFSHQX4HVT:v <0x4209715f>
-			streams:   0, words:     0
-		worklib.DFFSHQX2HVT:v <0x5074d3ef>
-			streams:   0, words:     0
-		worklib.DFFSHQX1HVT:v <0x194a02b7>
-			streams:   0, words:     0
-		worklib.DFFRXLHVT:v <0x0f20f69f>
-			streams:   0, words:     0
-		worklib.DFFRX4HVT:v <0x696ed69b>
-			streams:   0, words:     0
-		worklib.DFFRX2HVT:v <0x583ba9f1>
-			streams:   0, words:     0
-		worklib.DFFRX1HVT:v <0x3177a6d6>
-			streams:   0, words:     0
-		worklib.DFFRHQX8HVT:v <0x7ea7f6d2>
-			streams:   0, words:     0
-		worklib.DFFRHQX4HVT:v <0x012db5f3>
-			streams:   0, words:     0
-		worklib.DFFRHQX2HVT:v <0x13501743>
-			streams:   0, words:     0
-		worklib.DFFRHQX1HVT:v <0x5a6ec61b>
-			streams:   0, words:     0
-		worklib.DFFQXLHVT:v <0x640d16a4>
-			streams:   0, words:     0
-		worklib.DFFQX4HVT:v <0x05aac6a7>
-			streams:   0, words:     0
-		worklib.DFFQX2HVT:v <0x25569dd7>
-			streams:   0, words:     0
-		worklib.DFFQX1HVT:v <0x3528b06f>
-			streams:   0, words:     0
-		worklib.DFFNSRXLHVT:v <0x56a41a2e>
-			streams:   0, words:     0
-		worklib.DFFNSRX4HVT:v <0x297936a3>
-			streams:   0, words:     0
-		worklib.DFFNSRX2HVT:v <0x6f116206>
-			streams:   0, words:     0
-		worklib.DFFNSRX1HVT:v <0x619dcb74>
-			streams:   0, words:     0
-		worklib.DFFHQX8HVT:v <0x7b57a126>
-			streams:   0, words:     0
-		worklib.DFFHQX4HVT:v <0x73bcd086>
-			streams:   0, words:     0
-		worklib.DFFHQX2HVT:v <0x77c96856>
-			streams:   0, words:     0
-		worklib.DFFHQX1HVT:v <0x75f3b43e>
-			streams:   0, words:     0
-		worklib.comparator_generic:sv <0x0e5cf91d>
-			streams:   9, words:  3461
-		worklib.vote_counter:sv <0x2ec4a8f0>
-			streams:  10, words:  5357
-		worklib.vote_counter_tb:sv <0x3a44eda5>
-			streams:   5, words: 18572
+		worklib.vote_counter:sv <0x2250d80c>
+			streams:  28, words:  7626
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
 		                    Instances  Unique
-		Modules:                  543     483
+		Modules:                  494     482
 		UDPs:                     272      14
-		Primitives:              1910       6
-		Timing outputs:           621     416
-		Registers:                195     188
-		Scalar wires:            3037       -
-		Expanded wires:            36       9
-		Vectored wires:             3       -
+		Primitives:              1854       6
+		Timing outputs:           580     416
+		Registers:                175     189
+		Scalar wires:            2903       -
+		Expanded wires:             3       1
+		Vectored wires:             2       -
 		Initial blocks:             2       2
-		Cont. assignments:          1       1
-		Pseudo assignments:        83      20
+		Pseudo assignments:        30      30
 		Timing checks:           1976       -
 		Delayed tcheck signals:   536     536
 		Assertions:                 8       8
@@ -857,15 +523,15 @@ xcelium> run
                 Tempo   Entradas      Saídas
                         in_word     out_result
                 ====   ==========     =======
-                   0        0000       00001
-                   5        0001       00010
-                  10        0010       00010
-                  15        0011       00100
-                  20        0100       00010
-                  25        0101       00100
-                  30        0110       00100
-                  35        0111       01000
+                   0        000       0001
+                   5        001       0010
+                  10        010       0010
+                  15        011       0100
+                  20        100       0010
+                  25        101       0100
+                  30        110       0100
+                  35        111       1000
 Simulation complete via $finish(1) at time 40 PS + 0
 ./vote_counter_tb.sv:58     $finish;
 xcelium> exit
-TOOL:	xrun(64)	22.09-s013: Exiting on Nov 14, 2024 at 10:38:42 -03  (total: 00:00:55)
+TOOL:	xrun(64)	22.09-s013: Exiting on Nov 14, 2024 at 12:51:08 -03  (total: 00:00:03)
