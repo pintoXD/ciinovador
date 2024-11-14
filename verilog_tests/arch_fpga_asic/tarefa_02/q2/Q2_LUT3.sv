@@ -1,4 +1,4 @@
-`timescale 1ps/1ps
+`timescale 1ns/1ps
 module Q2_LUT3(A3, A2, A1, A0, OUT);
 
 input logic A0, A1, A2, A3;

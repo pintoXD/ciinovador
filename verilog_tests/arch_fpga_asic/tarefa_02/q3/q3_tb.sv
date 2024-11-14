@@ -1,4 +1,4 @@
-`timescale 1ps/1ps
+`timescale 1ns/1ps
 module LUT2_Q3_tb;
   logic S, A, B, CIN, COUT;
   

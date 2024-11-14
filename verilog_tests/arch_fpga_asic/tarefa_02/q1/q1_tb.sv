@@ -1,4 +1,4 @@
-`timescale 1ps/1ps
+`timescale 1ns/1ps
 module LUT2_Q1_tb;
   logic OUT, A, B, C, D;
   Q1_LUT2 LUT2_INST( .A(A), .B(B), .C(C), .D(D), .X(OUT));

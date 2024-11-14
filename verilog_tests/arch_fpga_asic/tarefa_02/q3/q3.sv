@@ -1,4 +1,4 @@
-`timescale 1ps/1ps
+`timescale 1ns/1ps
 module Q3_MIX_LUTS(A, B, CIN, S, COUT);
 
 input logic A, B, CIN;

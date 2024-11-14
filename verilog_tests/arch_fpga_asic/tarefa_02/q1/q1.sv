@@ -1,4 +1,4 @@
-`timescale 1ps/1ps
+`timescale 1ns/1ps
 module Q1_LUT2(A, B, C, D, X);
 
   input logic A, B, C, D;

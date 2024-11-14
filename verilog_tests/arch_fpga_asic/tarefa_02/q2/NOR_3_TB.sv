@@ -1,8 +1,8 @@
-`timescale 1ps/1ps
-module OR_3_TB;
+`timescale 1ns/1ps
+module NOR_3_TB;
   logic A0, A1, A2, OUT;
   
-  OR_3 UUT(.A(A0), .B(A1), .C(A2), .OUT(OUT));
+  NOR_3 UUT(.A(A0), .B(A1), .C(A2), .OUT(OUT));
 
   
   initial

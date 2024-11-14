@@ -1,4 +1,4 @@
-`timescale 1ps/1ps
+`timescale 1ns/1ps
 module Q2_LUT3_TB;
   logic A0, A1, A2, A3, OUT;
   
@@ -7,6 +7,8 @@ module Q2_LUT3_TB;
   
   initial
     begin
+      $dumpfile("dump.vcd");
+      $dumpvars(0, UUT);
       // Test case 1
       A0 = 1'b0; A1 = 1'b0; A2 = 1'b0; A3 = 1'b0;
       #10;
@@ -54,9 +56,9 @@ module Q2_LUT3_TB;
       #10;
       // Test case 16
       A0 = 1'b1; A1 = 1'b1; A2 = 1'b1; A3 = 1'b1;
-      #10;
+      // #10;
 
-    $finish;
+    // $finish;
 
     end
   
@@ -69,3 +71,4 @@ module Q2_LUT3_TB;
     end
   
 endmodule
+

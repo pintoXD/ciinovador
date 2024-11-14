@@ -7,6 +7,9 @@ module andgate_tb;
   
   initial
     begin
+      $dumpfile("dump.vcd");
+      $dumpvars(0, andg);
+
       a = 1'b0;
       b = 1'b0;
 

@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 module NOR_3(A, B, C, OUT);
 
 input logic A, B, C;
