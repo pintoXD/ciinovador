@@ -1,0 +1,17 @@
+s1(14Nov2024:09:12:21):  xrun -64bit vote_counter_tb.sv vote_counter.sv 
+s2(14Nov2024:09:12:50):  xrun -64bit vote_counter_tb.sv vote_counter.sv 
+s3(14Nov2024:09:14:35):  xrun -64bit vote_counter_tb.sv vote_counter.sv +access+rw 
+s4(14Nov2024:09:15:23):  xrun -64bit vote_counter_tb.sv vote_counter.sv +access+rw 
+s5(14Nov2024:09:42:28):  xrun -64bit vote_counter_tb.sv vote_counter.sv +access+rw 
+s6(14Nov2024:09:42:58):  xrun -64bit vote_counter_tb.sv vote_counter.sv +access+rw 
+s7(14Nov2024:09:44:37):  xrun -64bit vote_counter_tb.sv vote_counter.sv +access+rw 
+s8(14Nov2024:09:44:46):  xrun -64bit vote_counter_tb.sv vote_counter.sv fast_vdd1v0_basicCells_hvt.v +access+rw 
+s9(14Nov2024:09:47:13):  xrun -64bit vote_counter_tb.sv vote_counter.sv fast_vdd1v0_basicCells_hvt.v +access+rw 
+s10(14Nov2024:09:48:03):  xrun -64bit vote_counter_tb.sv vote_counter.sv fast_vdd1v0_basicCells_hvt.v +access+rw 
+s11(14Nov2024:09:48:34):  xrun -64bit vote_counter_tb.sv vote_counter.sv fast_vdd1v0_basicCells_hvt.v +access+rw 
+s12(14Nov2024:10:34:37):  xrun -64bit vote_counter_tb.sv vote_counter.sv fast_vdd1v0_basicCells_hvt.v +access+rw 
+s13(14Nov2024:10:34:48):  xrun -64bit vote_counter_tb.sv vote_counter.sv fast_vdd1v0_basicCells_hvt.v +access+rw 
+s14(14Nov2024:10:35:20):  xrun -64bit vote_counter_tb.sv vote_counter.sv fast_vdd1v0_basicCells_hvt.v +access+rw 
+s15(14Nov2024:10:35:42):  xrun -64bit vote_counter_tb.sv vote_counter.sv fast_vdd1v0_basicCells_hvt.v +access+rw 
+s16(14Nov2024:10:36:49):  xrun -64bit vote_counter_tb.sv vote_counter.sv fast_vdd1v0_basicCells_hvt.v +access+rw 
+s17(14Nov2024:10:37:47):  xrun -64bit vote_counter_tb.sv vote_counter.sv fast_vdd1v0_basicCells_hvt.v +access+rw 
