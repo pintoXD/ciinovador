@@ -63,4 +63,7 @@ xcelium> run
                  150     1  1  1  1               0
 Simulation complete via $finish(1) at time 160 PS + 0
 ./q2_tb.sv:59     $finish;
-xcelium> 
+xcelium> xmsim: *W,NCTERM: Simulation received SIGTERM signal from process 1, user id 0 (/usr/lib/systemd/systemd).
+...Regained control from SimVision
+-------------------------------------
+TOOL:	xrun(64)	22.09-s013: Exiting on Nov 14, 2024 at 17:28:25 -03  (total: 00:04:13)

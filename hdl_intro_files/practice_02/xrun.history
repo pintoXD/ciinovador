@@ -1,0 +1,27 @@
+s1(18Nov2024:10:36:11):  xrun -compile shiftreg_op.sv 
+s2(18Nov2024:10:36:38):  xrun -compile shiftreg_op.sv 
+s3(18Nov2024:11:03:00):  xrun -compile shiftreg_op.sv 
+s4(18Nov2024:12:04:52):  xrun -64bit shiftreg_op_tb.sv shiftreg_op.sv 
+s5(18Nov2024:12:06:03):  xrun -64bit shiftreg_op_tb.sv shiftreg_op.sv 
+s6(18Nov2024:12:06:44):  xrun -64bit shiftreg_op_tb.sv shiftreg_op.sv 
+s7(18Nov2024:12:07:19):  xrun -64bit shiftreg_op_tb.sv shiftreg_op.sv 
+s8(18Nov2024:12:07:57):  xrun -64bit shiftreg_op_tb.sv shiftreg_op.sv 
+s9(18Nov2024:12:08:21):  xrun -64bit shiftreg_op_tb.sv shiftreg_op.sv 
+s10(18Nov2024:12:08:47):  xrun -64bit shiftreg_op_tb.sv shiftreg_op.sv 
+s11(18Nov2024:12:09:16):  xrun -64bit shiftreg_op_tb.sv shiftreg_op.sv 
+s12(18Nov2024:12:09:43):  xrun -64bit shiftreg_op_tb.sv shiftreg_op.sv 
+s13(18Nov2024:12:09:58):  xrun -64bit shiftreg_op_tb.sv shiftreg_op.sv 
+s14(18Nov2024:12:10:07):  xrun -64bit shiftreg_op_tb.sv shiftreg_op.sv 
+s15(18Nov2024:12:11:31):  xrun -64bit shiftreg_op_tb.sv shiftreg_op.sv 
+s16(18Nov2024:12:14:35):  xrun -64bit shiftreg_op_tb.sv shiftreg_op.sv 
+s17(18Nov2024:12:15:20):  xrun -64bit shiftreg_op_tb.sv shiftreg_op.sv 
+s18(18Nov2024:12:16:12):  xrun -64bit shiftreg_op_tb.sv shiftreg_op.sv 
+s19(18Nov2024:12:17:27):  xrun -64bit shiftreg_op_tb.sv shiftreg_op.sv 
+s20(18Nov2024:12:19:47):  xrun -64bit shiftreg_op_tb.sv shiftreg_op.sv 
+s21(18Nov2024:12:25:24):  xrun -64bit shiftreg_op_tb.sv shiftreg_op.sv 
+s22(18Nov2024:12:27:18):  xrun -64bit shiftreg_op_tb.sv shiftreg_op.sv 
+s23(18Nov2024:12:28:21):  xrun -64bit shiftreg_op_tb.sv shiftreg_op.sv 
+s24(18Nov2024:12:29:59):  xrun -64bit shiftreg_op_tb.sv shiftreg_op.sv 
+s25(18Nov2024:12:30:50):  xrun -64bit shiftreg_op_tb.sv shiftreg_op.sv 
+s26(18Nov2024:12:31:40):  xrun -64bit shiftreg_op_tb.sv shiftreg_op.sv 
+s27(18Nov2024:12:32:26):  xrun -64bit shiftreg_op_tb.sv shiftreg_op.sv 
