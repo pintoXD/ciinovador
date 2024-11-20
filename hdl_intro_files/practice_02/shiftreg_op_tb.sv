@@ -1,11 +1,11 @@
 `timescale 1ns/1ps
-module test_shiftreg_op();
+module shiftreg_op_tb();
 
     // Parameters
     parameter N = 4;
 
     // Inputs
-    logic enable, clk;
+    logic enable;
     logic shift_in;
     logic [N-1:0] d;
     logic [1:0] OP;
@@ -16,7 +16,7 @@ module test_shiftreg_op();
     logic shift_out_left;
 
     // Instantiate the Unit Under Test (UUT)
-    shiftreg #(N) uut (
+    shiftreg_op #(N) uut (
         .enable(enable),
         .shift_in(shift_in),
         .d(d),
@@ -33,6 +33,8 @@ module test_shiftreg_op();
 
     // Testbench variables
     initial begin
+        $dumpfile("shiftreg_dump.vcd");
+        $dumpvars(0, shiftreg_op_tb);
         // Initialize Inputs
         // enable = 1'b0;
         shift_in = 1'b0;
@@ -191,41 +193,6 @@ module test_shiftreg_op();
         // enable = 0;
         assert(q == 4'b0000 && shift_out_left == 1'b0) else $fatal("Test case 15 failed");
 
-
-
-
-
-
-        // // Test case 5: Shift right with different input
-        // shift_in = 0;
-        // OP = 2'b10;
-        // #10;
-        // assert(q == 4'b0101) else $fatal("Test case 5 failed");
-
-        // // Test case 6: Shift left with different input
-        // shift_in = 1;
-        // OP = 2'b01;
-        // #10;
-        // assert(q == 4'b1011) else $fatal("Test case 6 failed");
-
-        // // Test case 7: Load new data
-        // d = 4'b1111;
-        // OP = 2'b11;
-        // #10;
-        // assert(q == 4'b1111) else $fatal("Test case 7 failed");
-
-        // // Test case 8: Shift right with all ones
-        // shift_in = 0;
-        // OP = 2'b10;
-        // #10;
-        // assert(q == 4'b0111) else $fatal("Test case 8 failed");
-
-        // // Test case 9: Shift left with all ones
-        // shift_in = 1;
-        // OP = 2'b01;
-        // #10;
-        // assert(q == 4'b1111) else $fatal("Test case 9 failed");
-
         $display("All test cases passed.");
         $finish;
     end
@@ -237,6 +204,5 @@ module test_shiftreg_op();
       $display("                ====   ============================      ==========================================");
       $monitor($time,"       %b      %b      %b  %b          %b         %b              %b", enable, shift_in, d, OP, q, shift_out_left, shift_out_right);
     end
-
 
 endmodule

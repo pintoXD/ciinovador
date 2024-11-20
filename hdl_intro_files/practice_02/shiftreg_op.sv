@@ -1,5 +1,5 @@
 `timescale 1ns/1ps
-module shiftreg#(parameter N=4)(
+module shiftreg_op#(parameter N=4)(
 	input logic enable,
   	input logic shift_in,
   	input logic [N-1:0]d,
