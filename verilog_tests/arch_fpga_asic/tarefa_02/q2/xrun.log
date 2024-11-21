@@ -1,32 +1,74 @@
 xrun(64): 22.09-s013: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	22.09-s013: Started on Nov 14, 2024 at 17:24:12 -03
+TOOL:	xrun(64)	22.09-s013: Started on Nov 21, 2024 at 10:38:07 -03
 xrun
 	-64bit
-	q2_tb.sv
-	q2.sv
+	Q2_LUT3_TB.sv
+	Q2_LUT3.sv
+	AND_3.sv
+	NOR_3.sv
+	OR_3.sv
+	LUT3.sv
+	LUT2.sv
 	+gui
 	+access+rw
+file: Q2_LUT3_TB.sv
+	module worklib.Q2_LUT3_TB:sv
+		errors: 0, warnings: 0
+file: Q2_LUT3.sv
+	module worklib.Q2_LUT3:sv
+		errors: 0, warnings: 0
+file: AND_3.sv
+	module worklib.AND_3:sv
+		errors: 0, warnings: 0
+file: NOR_3.sv
+	module worklib.NOR_3:sv
+		errors: 0, warnings: 0
+file: OR_3.sv
+	module worklib.OR_3:sv
+		errors: 0, warnings: 0
+file: LUT3.sv
+	module worklib.LUT3:sv
+		errors: 0, warnings: 0
+file: LUT2.sv
+	module worklib.LUT2:sv
+		errors: 0, warnings: 0
 		Caching library 'worklib' ....... Done
 	Elaborating the design hierarchy:
-		Caching library 'worklib' ....... Done
 	Top level design units:
 		Q2_LUT3_TB
+		LUT2
 xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.Q2_LUT3:sv <0x7f25e827>
+		worklib.LUT2:sv <0x5c185d41>
+			streams:   2, words:   581
+		worklib.LUT3:sv <0x760fccf3>
+			streams:   2, words:  6551
+		worklib.OR_3:sv <0x36040987>
+			streams:   1, words:   404
+		worklib.LUT3:sv <0x3bef41b8>
+			streams:   2, words:  5997
+		worklib.AND_3:sv <0x53ed3bbb>
+			streams:   1, words:   404
+		worklib.LUT3:sv <0x4bd9d744>
+			streams:   2, words:  5994
+		worklib.NOR_3:sv <0x0ea8fcfe>
+			streams:   1, words:   404
+		worklib.Q2_LUT3:sv <0x1bd63fb5>
 			streams:  12, words:  2824
-		worklib.Q2_LUT3_TB:sv <0x12de02ce>
-			streams:   8, words: 21904
+		worklib.Q2_LUT3_TB:sv <0x7f60122c>
+			streams:   8, words: 21984
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
 		                 Instances  Unique
-		Modules:                14       6
-		Registers:              47      19
-		Scalar wires:           36       -
-		Always blocks:           6       1
+		Modules:                15       7
+		Registers:              49      21
+		Scalar wires:           38       -
+		Vectored wires:          1       -
+		Always blocks:           7       2
 		Initial blocks:          2       2
+		Cont. assignments:       1       1
 		Pseudo assignments:     23      20
 		Simulation timescale:  1ps
 	Writing initial simulation snapshot: worklib.Q2_LUT3_TB:sv
@@ -39,7 +81,7 @@ xcelium>
 xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
 xcelium> database -open waves -into waves.shm -default
 Created default SHM database waves
-xcelium> probe -create -shm Q2_LUT3_TB.UUT.A0 Q2_LUT3_TB.UUT.A1 Q2_LUT3_TB.UUT.A2 Q2_LUT3_TB.UUT.A3 Q2_LUT3_TB.UUT.OUT Q2_LUT3_TB.UUT.and_0_out Q2_LUT3_TB.UUT.and_1_out Q2_LUT3_TB.UUT.nor_0_out Q2_LUT3_TB.UUT.nor_1_out Q2_LUT3_TB.UUT.or_0_out
+xcelium> probe -create -shm Q2_LUT3_TB.A0 Q2_LUT3_TB.A1 Q2_LUT3_TB.A2 Q2_LUT3_TB.A3 Q2_LUT3_TB.OUT
 Created probe 1
 xcelium> run
                 Tempo     Entradas LUT        Saídas
@@ -56,14 +98,12 @@ xcelium> run
                   80     1  0  0  0               1
                   90     1  0  0  1               0
                  100     1  0  1  0               0
-                 110     1  0  1  1               0
+                 110     1  0  1  1               1
                  120     1  1  0  0               0
                  130     1  1  0  1               0
                  140     1  1  1  0               0
-                 150     1  1  1  1               0
-Simulation complete via $finish(1) at time 160 PS + 0
-./q2_tb.sv:59     $finish;
-xcelium> xmsim: *W,NCTERM: Simulation received SIGTERM signal from process 1, user id 0 (/usr/lib/systemd/systemd).
-...Regained control from SimVision
--------------------------------------
-TOOL:	xrun(64)	22.09-s013: Exiting on Nov 14, 2024 at 17:28:25 -03  (total: 00:04:13)
+                 150     1  1  1  1               1
+xmsim: *W,RNQUIE: Simulation is complete.
+xcelium> ^C
+xcelium> exit
+TOOL:	xrun(64)	22.09-s013: Exiting on Nov 21, 2024 at 10:41:27 -03  (total: 00:03:20)

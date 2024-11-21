@@ -1,0 +1,12 @@
+s1(21Nov2024:08:54:12):  xrun -64bit ff.sv +gui +access+rw 
+s2(21Nov2024:09:38:26):  xrun -64bit sync_counter_tb.sv sync_counter.sv +gui +access+rw 
+s3(21Nov2024:09:39:52):  xrun -64bit sync_counter_tb.sv sync_counter.sv +gui +access+rw 
+s4(21Nov2024:09:40:08):  xrun -64bit sync_counter_tb.sv sync_counter.sv +gui +access+rw 
+s5(21Nov2024:09:40:33):  xrun -64bit sync_counter_tb.sv sync_counter.sv +gui +access+rw 
+s6(21Nov2024:09:41:07):  xrun -64bit sync_counter_tb.sv sync_counter.sv +gui +access+rw 
+s7(21Nov2024:09:46:17):  xrun -64bit sync_counter_tb.sv sync_counter.sv +gui +access+rw 
+s8(21Nov2024:09:47:58):  xrun -64bit sync_counter_tb.sv sync_counter.sv +gui +access+rw 
+s9(21Nov2024:09:50:04):  xrun -64bit sync_counter_tb.sv sync_counter.sv +gui +access+rw 
+s10(21Nov2024:09:53:45):  xrun -64bit sync_counter_tb.sv sync_counter.sv +gui +access+rw 
+s11(21Nov2024:10:03:41):  xrun -64bit sync_counter_tb.sv sync_counter.sv +gui +access+rw 
+s12(21Nov2024:10:05:28):  xrun -64bit sync_counter_tb.sv sync_counter.sv +gui +access+rw 

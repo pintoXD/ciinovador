@@ -1,11 +1,32 @@
 xrun(64): 22.09-s013: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	22.09-s013: Started on Nov 18, 2024 at 09:24:59 -03
+TOOL:	xrun(64)	22.09-s013: Started on Nov 18, 2024 at 14:33:47 -03
 xrun
 	-64bit
 	fsm_tb.sv
 	fsm.sv
 	+gui
 	+access+rw
+Recompiling... reason: file './fsm.sv' is newer than expected.
+	expected: Mon Nov 18 08:52:20 2024
+	actual:   Mon Nov 18 13:59:06 2024
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		test
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+	Building instance overlay tables: .................... Done
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		             Instances  Unique
+		Modules:             2       2
+		Registers:           3       3
+		Scalar wires:        4       -
+		Always blocks:       1       1
+		Initial blocks:      1       1
+		Cont. assignments:   1       2
+		Pseudo assignments:  2       2
+	Writing initial simulation snapshot: worklib.test:sv
 xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
 xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
 
@@ -17,28 +38,6 @@ xcelium> database -open waves -into waves.shm -default
 Created default SHM database waves
 xcelium> probe -create -shm test.FSM.a test.FSM.clk test.FSM.out1 test.FSM.out2 test.FSM.state
 Created probe 1
-xcelium> run
-Initial out1: x, out2: x
-IDLE out1: 0, out2: 0
-STATE_1 out1: 1, out2: 0
-FINAL out1: 0, out2: 1
-FINAL out1: 0, out2: 1
-IDLE out1: 0, out2: 0
-xmsim: *W,RNQUIE: Simulation is complete.
-xcelium> scope -set test.FSM
-xcelium> run
-xmsim: *W,RNQUIE: Simulation is complete.
-xcelium> reset
-xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
-Loaded snapshot worklib.test:sv
-xcelium> run
-Initial out1: x, out2: x
-IDLE out1: 0, out2: 0
-STATE_1 out1: 1, out2: 0
-FINAL out1: 0, out2: 1
-FINAL out1: 0, out2: 1
-IDLE out1: 0, out2: 0
-xmsim: *W,RNQUIE: Simulation is complete.
-xcelium> ^C
-xcelium> exit
-TOOL:	xrun(64)	22.09-s013: Exiting on Nov 18, 2024 at 09:55:43 -03  (total: 00:30:44)
+xcelium> ...Regained control from SimVision
+-------------------------------------
+TOOL:	xrun(64)	22.09-s013: Exiting on Nov 18, 2024 at 17:05:29 -03  (total: 02:31:42)

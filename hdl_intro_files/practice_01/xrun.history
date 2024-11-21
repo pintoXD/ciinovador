@@ -1,3 +1,4 @@
 s1(18Nov2024:08:53:28):  xrun -64bit fsm_tb.sv fsm.sv +gui +access+rw 
 s2(18Nov2024:09:24:38):  xrun --help 
 s3(18Nov2024:09:24:59):  xrun -64bit fsm_tb.sv fsm.sv +gui +access+rw 
+s4(18Nov2024:14:33:47):  xrun -64bit fsm_tb.sv fsm.sv +gui +access+rw 

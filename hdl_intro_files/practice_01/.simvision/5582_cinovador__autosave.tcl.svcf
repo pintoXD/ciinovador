@@ -1,0 +1,167 @@
+
+#
+# Preferences
+#
+preferences set waveform-print-variables selected
+preferences set waveform-print-time range
+preferences set plugin-enable-svdatabrowser-new 1
+preferences set waveform-print-paper {A4 (210mm x 297mm)}
+preferences set plugin-enable-groupscope 0
+preferences set sb-display-values 1
+preferences set plugin-enable-interleaveandcompare 0
+preferences set plugin-enable-waveformfrequencyplot 0
+
+#
+# Mnemonic Maps
+#
+mmap new  -reuse -name {Boolean as Logic} -radix %b -contents {{%c=FALSE -edgepriority 1 -shape low}
+{%c=TRUE -edgepriority 1 -shape high}}
+mmap new  -reuse -name {Example Map} -radix %x -contents {{%b=11???? -bgcolor orange -label REG:%x -linecolor yellow -shape bus}
+{%x=1F -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=2C -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=* -label %x -linecolor gray -shape bus}}
+
+#
+# Design Browser windows
+#
+if {[catch {window new WatchList -name "Design Browser 1" -geometry 730x500+838+96}] != ""} {
+    window geometry "Design Browser 1" 730x500+838+96
+}
+window target "Design Browser 1" on
+browser using {Design Browser 1}
+browser set -scope  simulator::test.FSM 
+browser set \
+    -signalsort name
+browser yview see  simulator::test.FSM 
+browser timecontrol set -lock 0
+
+#
+# Waveform windows
+#
+if {[catch {window new WaveWindow -name "Waveform 1" -geometry 1010x600+106+190}] != ""} {
+    window geometry "Waveform 1" 1010x600+106+190
+}
+window target "Waveform 1" on
+waveform using {Waveform 1}
+waveform sidebar visibility partial
+waveform set \
+    -primarycursor TimeA \
+    -signalnames name \
+    -signalwidth 175 \
+    -units ns \
+    -valuewidth 75
+waveform baseline set -time 0
+
+set id [waveform add -signals  {
+	{simulator::test.FSM.FINAL[2:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::test.FSM.IDLE[2:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::test.FSM.STATE_1[2:0]}
+	} ]
+set id [waveform add -signals  {
+	simulator::test.FSM.a
+	} ]
+set id [waveform add -signals  {
+	simulator::test.FSM.clk
+	} ]
+set id [waveform add -signals  {
+	simulator::test.FSM.out1
+	} ]
+set id [waveform add -signals  {
+	simulator::test.FSM.out2
+	} ]
+set id [waveform add -signals  {
+	{simulator::test.FSM.state[2:0]}
+	} ]
+
+waveform xview limits 0 2000ns
+
+#
+# Waveform Window Links
+#
+
+#
+# Schematic Tracer windows
+#
+if {[catch {window new SchematicWindow -name "Schematic Tracer 1" -geometry 900x600+40+42}] != ""} {
+    window geometry "Schematic Tracer 1" 900x600+40+42
+}
+window target "Schematic Tracer 1" on
+schematic using "Schematic Tracer 1"
+schematic sidebar visibility partial
+schematic set \
+    -radix default \
+    -fullsignalname 0 \
+    -showvalue 1 \
+    -showstrength 0 \
+    -showgrey 0 \
+    -tracemode Single \
+    -showrtl 1 \
+    -showcells 1 \
+    -showcellpins 0
+schematic timecontrol set -lock 0
+schematic restore -state {# String saved with Nlview 6.7r2  2017-11-02 bk=1.4313 VDI=40 GEI=35 GUI=TK:8.6 non-TLS,tclcompat
+#  -string
+# non-default properties - (restore without -noprops)
+property attrcolor #40e0d0
+property attrfontsize 10
+property boxmaxwidth 400
+property boxmingap 40
+property boxminheight 40
+property boxminwidth 100
+property buscolor #00ff00
+property createnetattrdsp 2
+property fillcolor1 #000000
+property fillcolor2 #000000
+property gatecellname 1
+property netcolor #00ff00
+property objecthighlight0 #ff00aa
+property objecthighlight1 #ff00aa
+property objecthighlight2 #00ff00
+property objecthighlight3 #ffff00
+property objecthighlight9 #ffffaf
+property pinattrmax 200
+property selectionappearance 2
+property selectioncolor #ffffaf
+property sheetheight 0
+property sheetwidth 0
+property showhierpinname 1
+property showinvisibles 1
+property showmarks 1
+property showpgtype 1
+#
+module new module {}
+load symbol DAI_SOURCE_IN {} DEF port 0 input -loc -14 0 0 0 pinattrdsp @name -cr -2 -5 8i attrdsp @cell -ll -10 16 10 path 0 -6 9 -6 12 -3 12 6 0 6 0 -6 path 12 -3 9 -3 9 -6 path 2 -3 6 -3 path 2 0 10 0 path 2 3 10 3
+load symbol DAI_SOURCE_OUT {} DEF port 0 output -loc 26 0 12 0 pinattrdsp @name -cl 30 -5 8i attrdsp @cell -ll -10 16 10 path 0 -6 9 -6 12 -3 12 6 0 6 0 -6 path 12 -3 9 -3 9 -6 path 2 -3 6 -3 path 2 0 10 0 path 2 3 10 3
+#
+module new root {} -nosplit -symlib /home/tools/cadence/installs/XCELIUM2209/tools/dvgui/ams/symlib/analogLib.sym
+load symbol {fsm worklib(sv)} {} HIERBOX pin 0 input.left pin 1 input.left pin 2 output.right pin 3 output.right fillcolor 2
+load symbol rtl_Always_2 {} GEN pin 9 input.left pin 13 input.left pinBus 0 output.right 3 0 1 2 pinBus 1 input.left 3 3 4 5 pinBus 2 input.left 3 6 7 8 pinBus 3 input.left 3 10 11 12 fillcolor 1
+load inst simulator::test,FSM {fsm worklib(sv)} {} -attr @name FSM -attr @color #00ffff -pinAttr 0 @name clk=x -pinAttr 0 @color #ff0000 -pinAttr 1 @name a=x -pinAttr 1 @color #ff0000 -pinAttr 2 @name out1=x -pinAttr 2 @color #ff0000 -pinAttr 3 @name out2=x -pinAttr 3 @color #ff0000 -hierPinAttr 0 @name clk -hierPinAttr 1 @name a -hierPinAttr 2 @name out1 -hierPinAttr 3 @name out2 -pg 1 -lvl 1 -y 30
+load inst simulator::test,FSM,Always_0 rtl_Always_2 {} -hier simulator::test,FSM -attr @name Always_0 -attr @cell {} -attr @color #00ff00 -pinAttr 9 @name a=x -pinAttr 9 @color #ff0000 -pinAttr 13 @name clk=x -pinAttr 13 @color #ff0000 -pinBusAttr 0 @name {state[2:0]=x} -pinBusAttr 0 @color #ff0000 -pinBusAttr 1 @name {STATE_1[2:0]=010} -pinBusAttr 2 @name {IDLE[2:0]=001} -pinBusAttr 3 @name {FINAL[2:0]=100} -pg 1 -lvl 1 -y 100
+load net simulator::test,FSM,a -attr @name a -attr @color #666666.1 -hierPin simulator::test,FSM 1 -pin simulator::test,FSM,Always_0 9
+netloc simulator::test,FSM,a 1 0 1 NJ
+load net simulator::test,FSM,clk -attr @name clk -attr @color #666666.1 -hierPin simulator::test,FSM 0 -pin simulator::test,FSM,Always_0 13
+netloc simulator::test,FSM,clk 1 0 1 NJ
+levelinfo -pg 1 0 40 400 -top 0 -bot 190
+levelinfo -hier simulator::test,FSM * 90 *
+show
+zoom 5.768
+scrollpos -56 179
+#
+# initialize ictrl to current module root {}
+ictrl init -bulk {} ,
+}
+
+#
+# Console windows
+#
+console set -windowname Console
+window geometry Console 661x250+261+564
+
+#
+# Layout selection
+#

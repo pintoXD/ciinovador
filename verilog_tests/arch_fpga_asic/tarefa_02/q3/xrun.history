@@ -6,3 +6,4 @@ s5(14Nov2024:14:56:11):  xrun -64bit q3_tb.sv q3.sv LUT2.sv LUT3.sv
 s6(14Nov2024:14:56:25):  xrun -64bit q3_tb.sv q3.sv LUT2.sv LUT3.sv 
 s7(14Nov2024:14:56:45):  xrun -64bit q3_tb.sv q3.sv LUT2.sv LUT3.sv 
 s8(14Nov2024:14:57:16):  xrun -64bit q3_tb.sv q3.sv LUT2.sv LUT3.sv 
+s9(21Nov2024:10:42:01):  xrun -64bit q3_tb.sv q3.sv LUT3.sv LUT2.sv +gui +access+rw 

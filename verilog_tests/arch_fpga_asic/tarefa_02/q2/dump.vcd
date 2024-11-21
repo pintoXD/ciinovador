@@ -1,293 +1,430 @@
 $date
-	Sat Nov 16 11:22:12 2024
+    Nov 21, 2024  10:38:36
 $end
 $version
-	Icarus Verilog
+    TOOL:	xmsim(64)	22.09-s013
 $end
 $timescale
-	1ps
+    1 ps
 $end
+
 $scope module Q2_LUT3_TB $end
+
 $scope module UUT $end
-$var wire 1 ! A0 $end
-$var wire 1 " A1 $end
-$var wire 1 # A2 $end
-$var wire 1 $ A3 $end
-$var wire 1 % or_0_out $end
-$var wire 1 & nor_1_out $end
-$var wire 1 ' nor_0_out $end
-$var wire 1 ( and_1_out $end
-$var wire 1 ) and_0_out $end
-$var wire 1 * OUT $end
-$scope module AND_0_INST $end
-$var wire 1 " A $end
-$var wire 1 # B $end
-$var wire 1 $ C $end
-$var wire 1 ) OUT $end
-$scope module AND_0_INST $end
-$var wire 1 " I0 $end
-$var wire 1 # I1 $end
-$var wire 1 $ I2 $end
-$var parameter 8 + INIT $end
-$var reg 1 ) O $end
-$var reg 1 , tmp $end
-$scope function lut3_mux4 $end
-$var reg 4 - d [3:0] $end
-$var reg 2 . s [1:0] $end
-$upscope $end
-$upscope $end
-$upscope $end
-$scope module AND_1_INST $end
-$var wire 1 ! A $end
-$var wire 1 # B $end
-$var wire 1 $ C $end
-$var wire 1 ( OUT $end
-$scope module AND_0_INST $end
-$var wire 1 ! I0 $end
-$var wire 1 # I1 $end
-$var wire 1 $ I2 $end
-$var parameter 8 / INIT $end
-$var reg 1 ( O $end
-$var reg 1 0 tmp $end
-$scope function lut3_mux4 $end
-$var reg 4 1 d [3:0] $end
-$var reg 2 2 s [1:0] $end
-$upscope $end
-$upscope $end
-$upscope $end
+$var wire      1 !    A0  $end
+$var wire      1 "    A1  $end
+$var wire      1 #    A2  $end
+$var wire      1 $    A3  $end
+$var reg       1 %    OUT $end
+$var reg       1 &    nor_0_out $end
+$var reg       1 '    nor_1_out $end
+$var reg       1 (    and_0_out $end
+$var reg       1 )    and_1_out $end
+$var reg       1 *    or_0_out $end
+
 $scope module NOR_0_INST $end
-$var wire 1 " A $end
-$var wire 1 # B $end
-$var wire 1 $ C $end
-$var wire 1 ' OUT $end
+$var wire      1 "    A  $end
+$var wire      1 #    B  $end
+$var wire      1 $    C  $end
+$var reg       1 +    OUT $end
+
 $scope module OR_0_INST $end
-$var wire 1 " I0 $end
-$var wire 1 # I1 $end
-$var wire 1 $ I2 $end
-$var parameter 8 3 INIT $end
-$var reg 1 ' O $end
-$var reg 1 4 tmp $end
+$var parameter  8 ,    INIT $end
+$var wire      1 "    I0  $end
+$var wire      1 #    I1  $end
+$var wire      1 $    I2  $end
+$var reg       1 -    O $end
+$var reg       1 .    tmp $end
+
 $scope function lut3_mux4 $end
-$var reg 4 5 d [3:0] $end
-$var reg 2 6 s [1:0] $end
+$var reg       1 /    lut3_mux4 $end
+$var reg       4 0    d [3:0] $end
+$var reg       2 1    s [1:0] $end
 $upscope $end
+
 $upscope $end
+
 $upscope $end
+
+
+$scope module AND_0_INST $end
+$var wire      1 "    A  $end
+$var wire      1 #    B  $end
+$var wire      1 $    C  $end
+$var reg       1 2    OUT $end
+
+$scope module AND_0_INST $end
+$var parameter  8 3    INIT $end
+$var wire      1 "    I0  $end
+$var wire      1 #    I1  $end
+$var wire      1 $    I2  $end
+$var reg       1 4    O $end
+$var reg       1 5    tmp $end
+
+$scope function lut3_mux4 $end
+$var reg       1 6    lut3_mux4 $end
+$var reg       4 7    d [3:0] $end
+$var reg       2 8    s [1:0] $end
+$upscope $end
+
+$upscope $end
+
+$upscope $end
+
+
 $scope module NOR_1_INST $end
-$var wire 1 ! A $end
-$var wire 1 # B $end
-$var wire 1 $ C $end
-$var wire 1 & OUT $end
+$var wire      1 !    A  $end
+$var wire      1 #    B  $end
+$var wire      1 $    C  $end
+$var reg       1 9    OUT $end
+
 $scope module OR_0_INST $end
-$var wire 1 ! I0 $end
-$var wire 1 # I1 $end
-$var wire 1 $ I2 $end
-$var parameter 8 7 INIT $end
-$var reg 1 & O $end
-$var reg 1 8 tmp $end
+$var parameter  8 :    INIT $end
+$var wire      1 !    I0  $end
+$var wire      1 #    I1  $end
+$var wire      1 $    I2  $end
+$var reg       1 ;    O $end
+$var reg       1 <    tmp $end
+
 $scope function lut3_mux4 $end
-$var reg 4 9 d [3:0] $end
-$var reg 2 : s [1:0] $end
+$var reg       1 =    lut3_mux4 $end
+$var reg       4 >    d [3:0] $end
+$var reg       2 ?    s [1:0] $end
 $upscope $end
+
 $upscope $end
+
 $upscope $end
-$scope module OR_0_INST $end
-$var wire 1 ' A $end
-$var wire 1 ) B $end
-$var wire 1 & C $end
-$var wire 1 % OUT $end
-$scope module OR_0_INST $end
-$var wire 1 ' I0 $end
-$var wire 1 ) I1 $end
-$var wire 1 & I2 $end
-$var parameter 8 ; INIT $end
-$var reg 1 % O $end
-$var reg 1 < tmp $end
+
+
+$scope module AND_1_INST $end
+$var wire      1 !    A  $end
+$var wire      1 #    B  $end
+$var wire      1 $    C  $end
+$var reg       1 @    OUT $end
+
+$scope module AND_0_INST $end
+$var parameter  8 A    INIT $end
+$var wire      1 !    I0  $end
+$var wire      1 #    I1  $end
+$var wire      1 $    I2  $end
+$var reg       1 B    O $end
+$var reg       1 C    tmp $end
+
 $scope function lut3_mux4 $end
-$var reg 4 = d [3:0] $end
-$var reg 2 > s [1:0] $end
+$var reg       1 D    lut3_mux4 $end
+$var reg       4 E    d [3:0] $end
+$var reg       2 F    s [1:0] $end
 $upscope $end
+
 $upscope $end
+
 $upscope $end
+
+
+$scope module OR_0_INST $end
+$var wire      1 G    A  $end
+$var wire      1 H    B  $end
+$var wire      1 I    C  $end
+$var reg       1 J    OUT $end
+
+$scope module OR_0_INST $end
+$var parameter  8 K    INIT $end
+$var wire      1 G    I0  $end
+$var wire      1 H    I1  $end
+$var wire      1 I    I2  $end
+$var reg       1 L    O $end
+$var reg       1 M    tmp $end
+
+$scope function lut3_mux4 $end
+$var reg       1 N    lut3_mux4 $end
+$var reg       4 O    d [3:0] $end
+$var reg       2 P    s [1:0] $end
+$upscope $end
+
+$upscope $end
+
+$upscope $end
+
+
 $scope module OR_1_INST $end
-$var wire 1 % A $end
-$var wire 1 ( B $end
-$var wire 1 ? C $end
-$var wire 1 * OUT $end
+$var wire      1 Q    A  $end
+$var wire      1 R    B  $end
+$var wire      1 S    C  $end
+$var reg       1 T    OUT $end
+
 $scope module OR_0_INST $end
-$var wire 1 % I0 $end
-$var wire 1 ( I1 $end
-$var wire 1 ? I2 $end
-$var parameter 8 @ INIT $end
-$var reg 1 * O $end
-$var reg 1 A tmp $end
+$var parameter  8 U    INIT $end
+$var wire      1 Q    I0  $end
+$var wire      1 R    I1  $end
+$var wire      1 S    I2  $end
+$var reg       1 V    O $end
+$var reg       1 W    tmp $end
+
 $scope function lut3_mux4 $end
-$var reg 4 B d [3:0] $end
-$var reg 2 C s [1:0] $end
+$var reg       1 X    lut3_mux4 $end
+$var reg       4 Y    d [3:0] $end
+$var reg       2 Z    s [1:0] $end
 $upscope $end
+
 $upscope $end
+
 $upscope $end
+
 $upscope $end
+
 $upscope $end
+
 $enddefinitions $end
-$comment Show the parameter values. $end
-$dumpall
-b11111110 @
-b11111110 ;
-b1 7
-b1 3
-b10000000 /
-b10000000 +
-$end
-#0
 $dumpvars
-b0 C
-b1x B
-1A
-0?
-bx >
-bx =
-0<
-bx :
-bx 9
-08
-bx 6
-bx 5
-04
-bx 2
-bx 1
-00
-bx .
-bx -
-0,
-1*
-0)
-0(
-1'
-1&
-1%
-0$
-0#
-0"
+b11111110 U
+b11111110 K
+b10000000 A
+b1 :
+b10000000 3
+b1 ,
 0!
+0"
+0#
+0$
+1%
+1&
+1'
+0(
+0)
+1*
+1+
+1-
+0.
+x/
+bx 0
+bx 1
+02
+04
+05
+x6
+bx 7
+bx 8
+19
+1;
+0<
+x=
+bx >
+bx ?
+0@
+0B
+0C
+xD
+bx E
+bx F
+1G
+0H
+1I
+1J
+1L
+0M
+xN
+bx O
+bx P
+1Q
+0R
+0S
+1T
+1V
+1W
+xX
+b1x Y
+b0 Z
 $end
 #10000
-0*
-0A
-0%
-0'
-14
-1,
-0&
-18
-10
 1$
+1C
+1<
+0;
+15
+1.
+0-
+0+
+09
+0'
+0&
+0G
+0I
+0L
+0J
+0*
+0Q
+0W
+0V
+0T
+0%
 #20000
 0$
 1#
 #30000
-04
-0,
-08
-00
 1$
+0C
+0<
+05
+0.
 #40000
-1*
-1A
-1%
-1<
-1&
-1,
-14
 0$
 0#
 1"
+1;
+15
+1.
+19
+1'
+1I
+1M
+1L
+1J
+1*
+1Q
+1W
+1V
+1T
+1%
 #50000
-0*
-0A
-0%
-0<
-04
-0,
-0&
-18
-10
 1$
+1C
+1<
+0;
+05
+0.
+09
+0'
+0I
+0M
+0L
+0J
+0*
+0Q
+0W
+0V
+0T
+0%
 #60000
 0$
 1#
 #70000
-1*
-1A
-1%
-1<
-14
-1)
-1,
-08
-00
 1$
+0C
+0<
+15
+14
+1.
+12
+1(
+1H
+1M
+1L
+1J
+1*
+1Q
+1W
+1V
+1T
+1%
 #80000
-0)
-0,
-1'
-04
-10
-18
 0$
 0#
 0"
 1!
+1C
+1<
+05
+04
+0.
+1-
+1+
+02
+0(
+1&
+1G
+0H
 #90000
-0*
-0A
-0%
-0<
-0'
-14
-1,
-08
-00
 1$
+0C
+0<
+15
+1.
+0-
+0+
+0&
+0G
+0M
+0L
+0J
+0*
+0Q
+0W
+0V
+0T
+0%
 #100000
 0$
 1#
 #110000
-1*
-1A
-04
-0,
-18
-1(
-10
 1$
+1C
+1B
+1<
+05
+0.
+1@
+1)
+1R
+1W
+1V
+1T
+1%
 #120000
-0*
-0A
-0(
-1,
-14
 0$
 0#
 1"
+0B
+15
+1.
+0@
+0)
+0R
+0W
+0V
+0T
+0%
 #130000
-04
-0,
-08
-00
 1$
+0C
+0<
+05
+0.
 #140000
 0$
 1#
 #150000
-1%
-1<
-1*
-0A
-14
-1)
-1,
-18
-1(
-10
 1$
+1C
+1B
+1<
+15
+14
+1.
+12
+1@
+1)
+1(
+1H
+1R
+1M
+1L
+1W
+1V
+1T
+1J
+1*
+1%
+1Q
+0W
+#150000

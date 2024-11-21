@@ -1,0 +1,59 @@
+xrun(64): 22.09-s013: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	22.09-s013: Started on Nov 21, 2024 at 10:05:28 -03
+xrun
+	-64bit
+	sync_counter_tb.sv
+	sync_counter.sv
+	+gui
+	+access+rw
+Recompiling... reason: file './sync_counter.sv' is newer than expected.
+	expected: Thu Nov 21 09:28:09 2024
+	actual:   Thu Nov 21 10:05:12 2024
+file: sync_counter_tb.sv
+	module worklib.contador_tb:sv
+		errors: 0, warnings: 0
+file: sync_counter.sv
+	module worklib.contador:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		contador_tb
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.contador:sv <0x59967423>
+			streams:   4, words:  1123
+		worklib.contador_tb:sv <0x0c768a4d>
+			streams:   7, words:  2699
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 2       2
+		Registers:               7       7
+		Scalar wires:            4       -
+		Vectored wires:          3       -
+		Always blocks:           2       2
+		Initial blocks:          2       2
+		Cont. assignments:       1       2
+		Pseudo assignments:      5       5
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.contador_tb:sv
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm contador_tb.clk contador_tb.contagem contador_tb.fim contador_tb.reset contador_tb.valor_maximo
+Created probe 1
+xcelium> run
+Simulation complete via $finish(1) at time 760 NS + 0
+./sync_counter_tb.sv:29         $finish;
+xcelium> ^C
+xcelium> exit
+TOOL:	xrun(64)	22.09-s013: Exiting on Nov 21, 2024 at 10:34:35 -03  (total: 00:29:07)

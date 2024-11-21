@@ -1,0 +1,40 @@
+xrun(64): 22.09-s013: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	22.09-s013: Started on Nov 19, 2024 at 09:48:58 -03
+xrun
+	-64bit
+	parity_tb.sv
+	parity.sv
+Recompiling... reason: file './parity.sv' is newer than expected.
+	expected: Tue Nov 19 09:43:39 2024
+	actual:   Tue Nov 19 09:48:56 2024
+file: parity.sv
+	module worklib.cod_paridade:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		tb
+		cod_paridade
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.cod_paridade:sv <0x503b4fef>
+			streams:   0, words:     0
+		worklib.tb:sv <0x3af2f9a8>
+			streams:   0, words:     0
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		         Instances  Unique
+		Modules:         2       2
+		Registers:       3       3
+		Always blocks:   1       1
+		Initial blocks:  3       3
+	Writing initial simulation snapshot: worklib.tb:sv
+Loading snapshot worklib.tb:sv .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
+xcelium> run
+xmsim: *W,RNQUIE: Simulation is complete.
+xcelium> exit
+TOOL:	xrun(64)	22.09-s013: Exiting on Nov 19, 2024 at 09:49:38 -03  (total: 00:00:40)
