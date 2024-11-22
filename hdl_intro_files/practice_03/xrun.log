@@ -1,87 +1,73 @@
 xrun(64): 22.09-s013: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	22.09-s013: Started on Nov 21, 2024 at 17:19:56 -03
+TOOL:	xrun(64)	22.09-s013: Started on Nov 22, 2024 at 15:36:48 -03
 xrun
 	-64bit
-	register8_tb.sv
-	register8.sv
-Recompiling... reason: file './register8_tb.sv' is newer than expected.
-	expected: Thu Nov 21 17:16:55 2024
-	actual:   Thu Nov 21 17:19:53 2024
-file: register8_tb.sv
-	module worklib.register8_tb:sv
+	register8_bank_tb.sv
+	register8_bank.sv
+Recompiling... reason: file './register8_bank_tb.sv' is newer than expected.
+	expected: Fri Nov 22 15:36:06 2024
+	actual:   Fri Nov 22 15:36:46 2024
+file: register8_bank_tb.sv
+	module worklib.register8_bank_tb:sv
 		errors: 0, warnings: 0
 		Caching library 'worklib' ....... Done
 	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
 	Top level design units:
-		register8_tb
+		register8_bank_tb
 xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
-	Building instance overlay tables: ..........
-        assert(test_output == 8'h01) else $fatal("Test case 1 failed");
-                                                                    |
-xmelab: *W,STRINT (./register8_tb.sv,32|68): String literal argument supplied to integer parameter.
-        assert(test_output == 8'h02) else $fatal("Test case 2 failed");
-                                                                    |
-xmelab: *W,STRINT (./register8_tb.sv,37|68): String literal argument supplied to integer parameter.
-        assert(test_output == 8'hFF) else $fatal("Test case 3 failed");
-                                                                    |
-xmelab: *W,STRINT (./register8_tb.sv,42|68): String literal argument supplied to integer parameter.
-        assert(test_output == 8'hAF) else $fatal("Test case 4 failed");
-                                                                    |
-xmelab: *W,STRINT (./register8_tb.sv,47|68): String literal argument supplied to integer parameter.
-        assert(test_output == 8'h00) else $fatal("Test case 5 failed");
-                                                                    |
-xmelab: *W,STRINT (./register8_tb.sv,53|68): String literal argument supplied to integer parameter.
-        assert(test_output == 8'h02) else $fatal("Test case 6 failed");
-                                                                    |
-xmelab: *W,STRINT (./register8_tb.sv,62|68): String literal argument supplied to integer parameter.
-.......... Done
+	Building instance overlay tables: ..
+        assert(reg_data_1 == 8'h00 && reg_data_2 == 8'h00) else $fatal("Test Case 0 failed");
+                                                                                          |
+xmelab: *W,STRINT (./register8_bank_tb.sv,37|90): String literal argument supplied to integer parameter.
+        assert(reg_data_1 == 8'hAA && reg_data_2 == 8'h00) else $fatal("Test Case 1 failed");
+                                                                                          |
+xmelab: *W,STRINT (./register8_bank_tb.sv,48|90): String literal argument supplied to integer parameter.
+        assert(reg_data_1 == 8'hAA && reg_data_2 == 8'hAA) else $fatal("Test Case 2 failed");
+                                                                                          |
+xmelab: *W,STRINT (./register8_bank_tb.sv,60|90): String literal argument supplied to integer parameter.
+        assert(reg_data_1 == 8'hAA && reg_data_2 == 8'hAA) else $fatal("Test Case 3 failed");
+                                                                                          |
+xmelab: *W,STRINT (./register8_bank_tb.sv,66|90): String literal argument supplied to integer parameter.
+.................. Done
 	Generating native compiled code:
-		worklib.register8_tb:sv <0x63bdd062>
-			streams:   8, words: 16275
+		worklib.register8_bank_tb:sv <0x54b4a4fc>
+			streams:  13, words: 18175
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
 		                 Instances  Unique
-		Modules:                 2       2
-		Registers:              11      11
-		Scalar wires:            2       -
-		Vectored wires:          3       -
-		Always blocks:           1       1
+		Modules:                10       3
+		Registers:              39      32
+		Scalar wires:            3       -
+		Vectored wires:         32       -
+		Always blocks:          10       3
 		Initial blocks:          3       3
-		Pseudo assignments:      4       4
-		Assertions:              6       6
+		Pseudo assignments:     18      18
+		Assertions:              4       4
 		Simulation timescale:  1ps
-	Writing initial simulation snapshot: worklib.register8_tb:sv
-Loading snapshot worklib.register8_tb:sv .................... Done
+	Writing initial simulation snapshot: worklib.register8_bank_tb:sv
+Loading snapshot worklib.register8_bank_tb:sv .................... Done
 xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
 xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
 xcelium> run
-                Tempo     Entradas LUT                    Saídas
-                         clk reset test_input            test_output
-                ====   ===========================     =============
-                   0       0      1      xxxxxxxx  xxxxxxxx         
-                   5       1      1      xxxxxxxx  00000000         
-                  10       0      0      xxxxxxxx  00000000         
-                  15       1      0      xxxxxxxx  xxxxxxxx         
-                  20       0      0      00000001  xxxxxxxx         
-                  25       1      0      00000001  00000001         
-                  30       0      0      00000010  00000001         
-                  35       1      0      00000010  00000010         
-                  40       0      0      11111111  00000010         
-                  45       1      0      11111111  11111111         
-                  50       0      0      10101111  11111111         
-                  55       1      0      10101111  10101111         
-                  60       0      1      11111111  10101111         
-                  65       1      1      11111111  00000000         
-                  70       0      1      11111111  00000000         
-                  75       1      1      11111111  00000000         
-                  80       0      0      11111111  00000000         
-                  85       1      0      11111111  11111111         
-                  90       0      0      00000010  11111111         
-                  95       1      0      00000010  00000010         
-                 100       0      0      00000010  00000010         
-                 105       1      0      00000010  00000010         
-Simulation complete via $finish(1) at time 110 NS + 0
-./register8_tb.sv:64         #10 $finish;
+                Tempo               Entradas LUT                                    Saídas
+                         clk  rst  we3   wa3   ra1    ra2        wd3                rd1         rd2
+                ====   =================================================        =====================
+                   0      0    x    x    xxx   xxx    xxx      xxxxxxxx         xxxxxxxx      xxxxxxxx
+                   5      1    1    x    xxx   xxx    xxx      xxxxxxxx         00000000      00000000
+                  10      0    0    x    xxx   xxx    xxx      xxxxxxxx         00000000      00000000
+                  15      1    0    x    xxx   xxx    xxx      xxxxxxxx         00000000      00000000
+                  20      0    0    1    001   001    xxx      10101010         00000000      00000000
+                  25      1    0    1    001   001    xxx      10101010         00000000      00000000
+                  30      0    0    1    001   001    xxx      10101010         00000000      00000000
+                  35      1    0    1    001   001    xxx      10101010         10101010      00000000
+                  40      0    0    0    001   001    xxx      10101010         10101010      00000000
+                  45      1    0    0    001   001    xxx      10101010         10101010      00000000
+                  50      0    0    1    010   001    010      10101010         10101010      00000000
+                  55      1    0    0    010   001    010      10101010         10101010      00000000
+xmsim: *F,ASRTST (./register8_bank_tb.sv,60): (time 60 NS) Assertion register8_bank_tb.__assert_3 has failed
+Simulation terminated via $fatal(1) at time 60 NS + 0
+./register8_bank_tb.sv:60         assert(reg_data_1 == 8'hAA && reg_data_2 == 8'hAA) else $fatal("Test Case 2 failed");
 xcelium> exit
-TOOL:	xrun(64)	22.09-s013: Exiting on Nov 21, 2024 at 17:20:05 -03  (total: 00:00:09)
+TOOL:	xrun(64)	22.09-s013: Exiting on Nov 22, 2024 at 15:36:48 -03  (total: 00:00:00)

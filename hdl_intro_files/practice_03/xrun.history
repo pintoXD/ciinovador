@@ -4,3 +4,33 @@ s3(21Nov2024:17:14:16):  xrun -64bit register8_tb.sv register8.sv
 s4(21Nov2024:17:15:55):  xrun -64bit register8_tb.sv register8.sv 
 s5(21Nov2024:17:17:44):  xrun -64bit register8_tb.sv register8.sv 
 s6(21Nov2024:17:19:56):  xrun -64bit register8_tb.sv register8.sv 
+s7(22Nov2024:14:24:25):  xrun -64bit register8_bank_tb.sv register8_bank.sv 
+s8(22Nov2024:14:25:08):  xrun -64bit register8_bank_tb.sv register8_bank.sv 
+s9(22Nov2024:14:25:48):  xrun -64bit register8_bank_tb.sv register8_bank.sv 
+s10(22Nov2024:14:27:03):  xrun -64bit register8_bank_tb.sv register8_bank.sv 
+s11(22Nov2024:14:30:40):  xrun -64bit register8_bank_tb.sv register8_bank.sv 
+s12(22Nov2024:14:33:27):  xrun -64bit register8_bank_tb.sv register8_bank.sv 
+s13(22Nov2024:14:34:23):  xrun -64bit register8_bank_tb.sv register8_bank.sv 
+s14(22Nov2024:14:34:45):  xrun -64bit register8_bank_tb.sv register8_bank.sv 
+s15(22Nov2024:14:34:56):  xrun -64bit register8_bank_tb.sv register8_bank.sv 
+s16(22Nov2024:14:35:08):  xrun -64bit register8_bank_tb.sv register8_bank.sv 
+s17(22Nov2024:14:35:43):  xrun -64bit register8_bank_tb.sv register8_bank.sv 
+s18(22Nov2024:14:39:07):  xrun -64bit register8_bank_tb.sv register8_bank.sv 
+s19(22Nov2024:14:41:55):  xrun -64bit register8_bank_tb.sv register8_bank.sv 
+s20(22Nov2024:14:43:15):  xrun -64bit register8_bank_tb.sv register8_bank.sv 
+s21(22Nov2024:14:43:41):  xrun -64bit register8_bank_tb.sv register8_bank.sv 
+s22(22Nov2024:14:43:52):  xrun -64bit register8_bank_tb.sv register8_bank.sv 
+s23(22Nov2024:14:44:13):  xrun -64bit register8_bank_tb.sv register8_bank.sv 
+s24(22Nov2024:14:44:41):  xrun -64bit register8_bank_tb.sv register8_bank.sv 
+s25(22Nov2024:14:45:02):  xrun -64bit register8_bank_tb.sv register8_bank.sv 
+s26(22Nov2024:14:47:21):  xrun -64bit register8_bank_tb.sv register8_bank.sv 
+s27(22Nov2024:14:52:20):  xrun -64bit register8_bank_tb.sv register8_bank.sv 
+s28(22Nov2024:14:53:35):  xrun -64bit register8_bank_tb.sv register8_bank.sv 
+s29(22Nov2024:14:54:14):  xrun -64bit register8_bank_tb.sv register8_bank.sv 
+s30(22Nov2024:14:55:22):  xrun -64bit register8_bank_tb.sv register8_bank.sv +gui +access+rw 
+s31(22Nov2024:15:05:27):  xrun -64bit register8_bank_tb.sv register8_bank.sv +gui +access+rw 
+s32(22Nov2024:15:27:54):  xrun -64bit register8_bank_tb.sv register8_bank.sv +gui +access+rw 
+s33(22Nov2024:15:34:57):  xrun -64bit register8_bank_tb.sv register8_bank.sv 
+s34(22Nov2024:15:35:59):  xrun -64bit register8_bank_tb.sv register8_bank.sv 
+s35(22Nov2024:15:36:08):  xrun -64bit register8_bank_tb.sv register8_bank.sv 
+s36(22Nov2024:15:36:48):  xrun -64bit register8_bank_tb.sv register8_bank.sv 

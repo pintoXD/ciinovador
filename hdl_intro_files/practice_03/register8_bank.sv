@@ -10,7 +10,7 @@ module register8_bank(
 logic [7:0] X0_in_word, X1_in_word, X2_in_word, X3_in_word, X4_in_word, X5_in_word, X6_in_word, X7_in_word;
 logic [7:0] X0_out_word, X1_out_word, X2_out_word, X3_out_word, X4_out_word, X5_out_word, X6_out_word, X7_out_word;
 
-register8 X0(.clk(clk), .reset(1'b1), .in_word(8'b0), .out_word(X0_out_word));
+register8 X0(.clk(clk), .reset(rst), .in_word(8'b0), .out_word(X0_out_word));
 register8 X1(.clk(clk), .reset(rst), .in_word(X1_in_word), .out_word(X1_out_word));
 register8 X2(.clk(clk), .reset(rst), .in_word(X2_in_word), .out_word(X2_out_word));
 register8 X3(.clk(clk), .reset(rst), .in_word(X3_in_word), .out_word(X3_out_word));
@@ -20,7 +20,7 @@ register8 X6(.clk(clk), .reset(rst), .in_word(X6_in_word), .out_word(X6_out_word
 register8 X7(.clk(clk), .reset(rst), .in_word(X7_in_word), .out_word(X7_out_word));
 
 
-always_ff @(posedge clk) begin :
+always_ff @(posedge clk) begin
     if(rst) 
         begin
             X1_in_word <= 8'b0;
@@ -35,19 +35,19 @@ always_ff @(posedge clk) begin :
         begin
             case(write_addr)
                 3'b001:
-                    write_enable ? X1_in_word <= write_data : X1_in_word <= X1_in_word;
+                    X1_in_word <= write_data;
                 3'b010:
-                    write_enable ? X2_in_word <= write_data : X2_in_word <= X2_in_word;
+                    X2_in_word <= write_data;
                 3'b011:
-                    write_enable ? X3_in_word <= write_data : X3_in_word <= X3_in_word;
+                    X3_in_word <= write_data;
                 3'b100:
-                    write_enable ? X4_in_word <= write_data : X4_in_word <= X4_in_word;
+                    X4_in_word <= write_data;
                 3'b101:
-                    write_enable ? X5_in_word <= write_data : X5_in_word <= X5_in_word;
+                    X5_in_word <= write_data;
                 3'b110:
-                    write_enable ? X6_in_word <= write_data : X6_in_word <= X6_in_word;
+                    X6_in_word <= write_data;
                 3'b111:
-                    write_enable ? X7_in_word <= write_data : X7_in_word <= X7_in_word;
+                    X7_in_word <= write_data;
             endcase
         end
 end
@@ -72,6 +72,8 @@ begin
             reg_data_1 = X6_out_word;
         3'b111:
             reg_data_1 = X7_out_word;
+        default:
+            reg_data_1 = X0_out_word;
     endcase
 
     case(reg_addr_2)
@@ -91,6 +93,8 @@ begin
             reg_data_2 = X6_out_word;
         3'b111:
             reg_data_2 = X7_out_word;
+        default:
+            reg_data_2 = X0_out_word;
     endcase 
 
 end
