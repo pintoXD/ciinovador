@@ -38,6 +38,7 @@ module register8_bank_tb();
         #5
 
         //Test Case 1
+        @(posedge test_clk);
         write_enable = 1'b1;
         write_data = 8'hAA;
         write_addr = 3'b001;
@@ -49,17 +50,17 @@ module register8_bank_tb();
 
 
         //Test Case 2
-        #10
+        @(posedge test_clk);
         write_enable = 1'b1;
         write_data = 8'hAA;
         write_addr = 3'b010;
         reg_addr_2 = 3'b010;
-        #5
+        #20
         write_enable = 1'b0;
-        #5
         assert(reg_data_1 == 8'hAA && reg_data_2 == 8'hAA) else $fatal("Test Case 2 failed");
 
         //Test Case 3
+        @(posedge test_clk);
         write_enable = 1'b0;
         write_data = 8'hFF;
         #10
