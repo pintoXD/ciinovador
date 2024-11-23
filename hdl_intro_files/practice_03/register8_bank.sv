@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 module register8_bank(
     input logic clk, rst, write_enable,
     input logic [2:0]write_addr,
@@ -7,11 +8,8 @@ module register8_bank(
 
 );
 
-logic [7:0] X0_in_word, X1_in_word, X2_in_word, X3_in_word, X4_in_word, X5_in_word, X6_in_word, X7_in_word;
+logic [7:0] X1_in_word, X2_in_word, X3_in_word, X4_in_word, X5_in_word, X6_in_word, X7_in_word;
 logic [7:0] X0_out_word, X1_out_word, X2_out_word, X3_out_word, X4_out_word, X5_out_word, X6_out_word, X7_out_word;
-
-logic enable_ff;
-
 
 register8 X0(.clk(clk), .reset(rst), .in_word(8'b0), .out_word(X0_out_word));
 register8 X1(.clk(clk), .reset(rst), .in_word(X1_in_word), .out_word(X1_out_word));
@@ -51,6 +49,8 @@ always_ff @(posedge clk) begin
                     X6_in_word <= write_data;
                 3'b111:
                     X7_in_word <= write_data;
+                default:
+                    X1_in_word <= write_data;
             endcase
         end
 end

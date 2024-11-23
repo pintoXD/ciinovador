@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 module register8(
     input logic clk, reset,
     input logic [7:0]in_word,
