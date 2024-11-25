@@ -35,3 +35,10 @@ s34(25Nov2024:18:40:29):  xrun custom_ula_tb.sv custom_ula.sv
 s35(25Nov2024:18:40:39):  xrun custom_ula_tb.sv custom_ula.sv 
 s36(25Nov2024:18:41:32):  xrun custom_ula_tb.sv custom_ula.sv 
 s37(25Nov2024:18:41:41):  xrun custom_ula_tb.sv custom_ula.sv 
+s38(25Nov2024:18:57:01):  xrun muxULAsrc_tb.sv muxULAsrc.sv 
+s39(25Nov2024:18:57:20):  xrun muxULAsrc_tb.sv muxULAsrc.sv 
+s40(25Nov2024:18:57:22):  xrun muxULAsrc_tb.sv muxULAsrc.sv 
+s41(25Nov2024:18:57:37):  xrun muxULAsrc_tb.sv muxULAsrc.sv 
+s42(25Nov2024:18:58:03):  xrun muxULAsrc_tb.sv muxULAsrc.sv 
+s43(25Nov2024:18:58:10):  xrun muxULAsrc_tb.sv muxULAsrc.sv 
+s44(25Nov2024:18:59:11):  xrun muxULAsrc_tb.sv muxULAsrc.sv 

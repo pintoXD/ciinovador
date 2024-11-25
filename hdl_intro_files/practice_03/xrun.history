@@ -54,3 +54,6 @@ s53(25Nov2024:17:11:50):  xrun -64bit register8_bank_tb.sv register8_bank.sv
 s54(25Nov2024:17:12:26):  xrun -64bit register8_bank_tb.sv register8_bank.sv 
 s55(25Nov2024:17:12:50):  xrun -64bit register8_bank_tb.sv register8_bank.sv 
 s56(25Nov2024:17:15:32):  xrun -64bit register8_bank_tb.sv register8_bank.sv 
+s57(25Nov2024:18:47:36):  xrun -64bit register8_bank_tb.sv register8_bank.sv 
+s58(25Nov2024:18:48:09):  xrun -64bit register8.sv register8.sv 
+s59(25Nov2024:18:48:20):  xrun -64bit register8_tb.sv register8.sv 
