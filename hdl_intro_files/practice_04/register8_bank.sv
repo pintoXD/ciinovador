@@ -1,10 +1,10 @@
 `timescale 1ns/1ps
 module register8_bank(
-    input logic clk, rst, write_enable,
-    input logic [2:0]write_addr,
-    input logic [2:0]reg_addr_1, reg_addr_2,
-    input logic [7:0]write_data,
-    output logic [7:0] reg_data_1, reg_data_2
+    input logic clk, rst, we3,
+    input logic [2:0]wa3,
+    input logic [2:0]ra1, ra2,
+    input logic [7:0]wd3,
+    output logic [7:0] rd1, rd2
 
 );
 
@@ -32,25 +32,25 @@ always_ff @(posedge clk) begin
             X6_in_word <= 8'b0;
             X7_in_word <= 8'b0;
         end
-    else if(write_enable)
+    else if(we3)
         begin
-            case(write_addr)
+            case(wa3)
                 3'b001:
-                    X1_in_word <= write_data;
+                    X1_in_word <= wd3;
                 3'b010:
-                    X2_in_word <= write_data;
+                    X2_in_word <= wd3;
                 3'b011:
-                    X3_in_word <= write_data;
+                    X3_in_word <= wd3;
                 3'b100:
-                    X4_in_word <= write_data;
+                    X4_in_word <= wd3;
                 3'b101:
-                    X5_in_word <= write_data;
+                    X5_in_word <= wd3;
                 3'b110:
-                    X6_in_word <= write_data;
+                    X6_in_word <= wd3;
                 3'b111:
-                    X7_in_word <= write_data;
+                    X7_in_word <= wd3;
                 default:
-                    X1_in_word <= write_data;
+                    X1_in_word <= wd3;
             endcase
         end
 end
@@ -58,46 +58,46 @@ end
 
 always_comb 
 begin
-    case(reg_addr_1)
+    case(ra1)
         3'b000:
-            reg_data_1 = X0_out_word;
+            rd1 = X0_out_word;
         3'b001:
-            reg_data_1 = X1_out_word;
+            rd1 = X1_out_word;
         3'b010:
-            reg_data_1 = X2_out_word;
+            rd1 = X2_out_word;
         3'b011:
-            reg_data_1 = X3_out_word;
+            rd1 = X3_out_word;
         3'b100:
-            reg_data_1 = X4_out_word;
+            rd1 = X4_out_word;
         3'b101:
-            reg_data_1 = X5_out_word;
+            rd1 = X5_out_word;
         3'b110:
-            reg_data_1 = X6_out_word;
+            rd1 = X6_out_word;
         3'b111:
-            reg_data_1 = X7_out_word;
+            rd1 = X7_out_word;
         default:
-            reg_data_1 = X0_out_word;
+            rd1 = X0_out_word;
     endcase
 
-    case(reg_addr_2)
+    case(ra2)
         3'b000:
-            reg_data_2 = X0_out_word;
+            rd2 = X0_out_word;
         3'b001:
-            reg_data_2 = X1_out_word;
+            rd2 = X1_out_word;
         3'b010:
-            reg_data_2 = X2_out_word;
+            rd2 = X2_out_word;
         3'b011:
-            reg_data_2 = X3_out_word;
+            rd2 = X3_out_word;
         3'b100:
-            reg_data_2 = X4_out_word;
+            rd2 = X4_out_word;
         3'b101:
-            reg_data_2 = X5_out_word;
+            rd2 = X5_out_word;
         3'b110:
-            reg_data_2 = X6_out_word;
+            rd2 = X6_out_word;
         3'b111:
-            reg_data_2 = X7_out_word;
+            rd2 = X7_out_word;
         default:
-            reg_data_2 = X0_out_word;
+            rd2 = X0_out_word;
     endcase 
 
 end

@@ -1,22 +1,22 @@
 `timescale 1ns/1ps
 module register8_bank_tb();
 
-    logic test_clk, test_reset, write_enable;
-    logic [7:0] write_data;
-    logic [2:0] write_addr, reg_addr_1, reg_addr_2;
-    logic [7:0] reg_data_1, reg_data_2;
+    logic test_clk, test_reset, we3;
+    logic [7:0] wd3;
+    logic [2:0] wa3, ra1, ra2;
+    logic [7:0] rd1, rd2;
 
 
     register8_bank dut(
         .clk(test_clk),
         .rst(test_reset),
-        .write_enable(write_enable),
-        .write_addr(write_addr),
-        .reg_addr_1(reg_addr_1),
-        .reg_addr_2(reg_addr_2),
-        .write_data(write_data),
-        .reg_data_1(reg_data_1),
-        .reg_data_2(reg_data_2)
+        .we3(we3),
+        .wa3(wa3),
+        .ra1(ra1),
+        .ra2(ra2),
+        .wd3(wd3),
+        .rd1(rd1),
+        .rd2(rd2)
     );
 
     initial begin
@@ -37,7 +37,7 @@ module register8_bank_tb();
         #10
 
         //Test Case 0
-        assert(reg_data_1 == 8'h00 && reg_data_2 == 8'h00) else $fatal("Test Case 0 failed");
+        assert(rd1 == 8'h00 && rd2 == 8'h00) else $fatal("Test Case 0 failed");
         #10
 
 
@@ -51,92 +51,92 @@ module register8_bank_tb();
 
         //Test Case 1 - Write to register X1
         @(posedge test_clk);
-        write_enable = 1'b1;
-        write_data = 8'hAA;
-        write_addr = 3'b001;
-        reg_addr_1 = 3'b001;
+        we3 = 1'b1;
+        wd3 = 8'hAA;
+        wa3 = 3'b001;
+        ra1 = 3'b001;
         #20
-        write_enable = 1'b0;
+        we3 = 1'b0;
         // #10
-        assert(reg_data_1 == 8'hAA && reg_data_2 == 8'h00) else $fatal("Test Case 1 failed");
+        assert(rd1 == 8'hAA && rd2 == 8'h00) else $fatal("Test Case 1 failed");
 
 
         //Test Case 2 - Write to register X2
         @(posedge test_clk);
-        write_enable = 1'b1;
-        write_data = 8'hBB;
-        write_addr = 3'b010;
-        reg_addr_2 = 3'b010;
+        we3 = 1'b1;
+        wd3 = 8'hBB;
+        wa3 = 3'b010;
+        ra2 = 3'b010;
         #20
-        write_enable = 1'b0;
-        assert(reg_data_1 == 8'hAA && reg_data_2 == 8'hBB) else $fatal("Test Case 2 failed");
+        we3 = 1'b0;
+        assert(rd1 == 8'hAA && rd2 == 8'hBB) else $fatal("Test Case 2 failed");
 
         //Test Case 3 - Write to register X1 with no permission to write enabled.
         @(posedge test_clk);
-        write_enable = 1'b0;
-        write_data = 8'hFF;
-        write_addr = 3'b001;
+        we3 = 1'b0;
+        wd3 = 8'hFF;
+        wa3 = 3'b001;
         #10
-        assert(reg_data_1 == 8'hAA && reg_data_2 == 8'hBB) else $fatal("Test Case 3 failed");
+        assert(rd1 == 8'hAA && rd2 == 8'hBB) else $fatal("Test Case 3 failed");
 
-        //Test Case 4 - Write to register X3 with reg_data_2 unchanged from the previous test case.
+        //Test Case 4 - Write to register X3 with rd2 unchanged from the previous test case.
         @(posedge test_clk);
-        write_enable = 1'b1;
-        write_data = 8'hCC;
-        write_addr = 3'b011; //==> Register X3
-        reg_addr_1 = 3'b011;
+        we3 = 1'b1;
+        wd3 = 8'hCC;
+        wa3 = 3'b011; //==> Register X3
+        ra1 = 3'b011;
         #20
-        write_enable = 1'b0;
-        assert(reg_data_1 == 8'hCC && reg_data_2 == 8'hBB) else $fatal("Test Case 4 failed");
+        we3 = 1'b0;
+        assert(rd1 == 8'hCC && rd2 == 8'hBB) else $fatal("Test Case 4 failed");
 
-        //Test Case 5 - Write to register X4 with reg_data_1 unchanged from the previous test case.
+        //Test Case 5 - Write to register X4 with rd1 unchanged from the previous test case.
         @(posedge test_clk);
-        write_enable = 1'b1;
-        write_data = 8'hDD;
-        write_addr = 3'b100; //==> Register X4
-        reg_addr_2 = 3'b100;
+        we3 = 1'b1;
+        wd3 = 8'hDD;
+        wa3 = 3'b100; //==> Register X4
+        ra2 = 3'b100;
         #20
-        write_enable = 1'b0;
-        assert(reg_data_1 == 8'hCC && reg_data_2 == 8'hDD) else $fatal("Test Case 5 failed");
+        we3 = 1'b0;
+        assert(rd1 == 8'hCC && rd2 == 8'hDD) else $fatal("Test Case 5 failed");
 
 
         //Test Case 6 - Write to register X4 with no permission to write on it.
         @(posedge test_clk);
-        write_enable = 1'b0;
-        write_data = 8'hFF;
-        write_addr = 3'b100;
+        we3 = 1'b0;
+        wd3 = 8'hFF;
+        wa3 = 3'b100;
         #10
-        assert(reg_data_1 == 8'hCC && reg_data_2 == 8'hDD) else $fatal("Test Case 6 failed");
+        assert(rd1 == 8'hCC && rd2 == 8'hDD) else $fatal("Test Case 6 failed");
 
-        //Test Case 7 - Write to register X5 with reg_data_2 unchanged from X4 register writing test case.
+        //Test Case 7 - Write to register X5 with rd2 unchanged from X4 register writing test case.
         @(posedge test_clk);
-        write_enable = 1'b1;
-        write_data = 8'hEE;
-        write_addr = 3'b101; //==> Register X5
-        reg_addr_1 = 3'b101;
+        we3 = 1'b1;
+        wd3 = 8'hEE;
+        wa3 = 3'b101; //==> Register X5
+        ra1 = 3'b101;
         #20
-        write_enable = 1'b0;
-        assert(reg_data_1 == 8'hEE && reg_data_2 == 8'hDD) else $fatal("Test Case 7 failed");
+        we3 = 1'b0;
+        assert(rd1 == 8'hEE && rd2 == 8'hDD) else $fatal("Test Case 7 failed");
 
-        //Test Case 8 - Write to register X6 with reg_data_1 unchanged from the previous test case.
+        //Test Case 8 - Write to register X6 with rd1 unchanged from the previous test case.
         @(posedge test_clk);
-        write_enable = 1'b1;
-        write_data = 8'hFF;
-        write_addr = 3'b110; //==> Register X6
-        reg_addr_2 = 3'b110;
+        we3 = 1'b1;
+        wd3 = 8'hFF;
+        wa3 = 3'b110; //==> Register X6
+        ra2 = 3'b110;
         #20
-        write_enable = 1'b0;
-        assert(reg_data_1 == 8'hEE && reg_data_2 == 8'hFF) else $fatal("Test Case 8 failed");
+        we3 = 1'b0;
+        assert(rd1 == 8'hEE && rd2 == 8'hFF) else $fatal("Test Case 8 failed");
 
-        //Test Case 9 - Write to register X7 with reg_data_2 unchanged from the previous test case.
+        //Test Case 9 - Write to register X7 with rd2 unchanged from the previous test case.
         @(posedge test_clk);
-        write_enable = 1'b1;
-        write_data = 8'h11;
-        write_addr = 3'b111; //==> Register X7
-        reg_addr_1 = 3'b111;
+        we3 = 1'b1;
+        wd3 = 8'h11;
+        wa3 = 3'b111; //==> Register X7
+        ra1 = 3'b111;
         #20
-        write_enable = 1'b0;
-        assert(reg_data_1 == 8'h11 && reg_data_2 == 8'hFF) else $fatal("Test Case 9 failed");
+        we3 = 1'b0;
+        assert(rd1 == 8'h11 && rd2 == 8'hFF) else $fatal("Test Case 9 failed");
 
 
         /*
@@ -148,31 +148,31 @@ module register8_bank_tb();
 
         //Test Case 10 - Reading the current value from the registers X1 and X2
         @(posedge test_clk);
-        reg_addr_1 = 3'b001; //Register X1
-        reg_addr_2 = 3'b010; //Register X2
+        ra1 = 3'b001; //Register X1
+        ra2 = 3'b010; //Register X2
         #10
-        assert(reg_data_1 == 8'hAA && reg_data_2 == 8'hBB) else $fatal("Test Case 10 failed");
+        assert(rd1 == 8'hAA && rd2 == 8'hBB) else $fatal("Test Case 10 failed");
 
         //Test Case 11 - Reading the current value from the registers X3 and X4
         @(posedge test_clk);
-        reg_addr_1 = 3'b011; //Register X3
-        reg_addr_2 = 3'b100; //Register X4
+        ra1 = 3'b011; //Register X3
+        ra2 = 3'b100; //Register X4
         #10
-        assert(reg_data_1 == 8'hCC && reg_data_2 == 8'hDD) else $fatal("Test Case 11 failed");
+        assert(rd1 == 8'hCC && rd2 == 8'hDD) else $fatal("Test Case 11 failed");
 
         //Test Case 12 - Reading the current value from the registers X5 and X6
         @(posedge test_clk);
-        reg_addr_1 = 3'b101; //Register X5
-        reg_addr_2 = 3'b110; //Register X6
+        ra1 = 3'b101; //Register X5
+        ra2 = 3'b110; //Register X6
         #10
-        assert(reg_data_1 == 8'hEE && reg_data_2 == 8'hFF) else $fatal("Test Case 12 failed");
+        assert(rd1 == 8'hEE && rd2 == 8'hFF) else $fatal("Test Case 12 failed");
 
         //Test Case 13 - Reading the current value from the registers X7 and X0
         @(posedge test_clk);
-        reg_addr_1 = 3'b111; //Register X7
-        reg_addr_2 = 3'b000; //Register X1
+        ra1 = 3'b111; //Register X7
+        ra2 = 3'b000; //Register X1
         #10
-        assert(reg_data_1 == 8'h11 && reg_data_2 == 8'h00) else $fatal("Test Case 13 failed");
+        assert(rd1 == 8'h11 && rd2 == 8'h00) else $fatal("Test Case 13 failed");
 
         /* 
             Set#3: Resetting all the registers from the register bank
@@ -190,31 +190,31 @@ module register8_bank_tb();
 
         //Test Case 14 - Reading the current value from the registers X1 and X2 after the reset process.
         @(posedge test_clk);
-        reg_addr_1 = 3'b001; //Register X1
-        reg_addr_2 = 3'b010; //Register X2
+        ra1 = 3'b001; //Register X1
+        ra2 = 3'b010; //Register X2
         #10
-        assert(reg_data_1 == 8'h00 && reg_data_2 == 8'h00) else $fatal("Test Case 14 failed");
+        assert(rd1 == 8'h00 && rd2 == 8'h00) else $fatal("Test Case 14 failed");
 
         //Test Case 15 - Reading the current value from the registers X3 and X4 after the reset process.
         @(posedge test_clk);
-        reg_addr_1 = 3'b011; //Register X3
-        reg_addr_2 = 3'b100; //Register X4
+        ra1 = 3'b011; //Register X3
+        ra2 = 3'b100; //Register X4
         #10
-        assert(reg_data_1 == 8'h00 && reg_data_2 == 8'h00) else $fatal("Test Case 15 failed");
+        assert(rd1 == 8'h00 && rd2 == 8'h00) else $fatal("Test Case 15 failed");
 
         //Test Case 16 - Reading the current value from the registers X5 and X6 after the reset process.
         @(posedge test_clk);
-        reg_addr_1 = 3'b101; //Register X5
-        reg_addr_2 = 3'b110; //Register X6
+        ra1 = 3'b101; //Register X5
+        ra2 = 3'b110; //Register X6
         #10
-        assert(reg_data_1 == 8'h00 && reg_data_2 == 8'h00) else $fatal("Test Case 16 failed");
+        assert(rd1 == 8'h00 && rd2 == 8'h00) else $fatal("Test Case 16 failed");
 
         //Test Case 17 - Reading the current value from the registers X7 and X1 after the reset process.
         @(posedge test_clk);
-        reg_addr_1 = 3'b111; //Register X7
-        reg_addr_2 = 3'b000; //Register X0
+        ra1 = 3'b111; //Register X7
+        ra2 = 3'b000; //Register X0
         #10
-        assert(reg_data_1 == 8'h00 && reg_data_2 == 8'h00) else $fatal("Test Case 17 failed");
+        assert(rd1 == 8'h00 && rd2 == 8'h00) else $fatal("Test Case 17 failed");
 
         #10 $finish;
     end
@@ -224,15 +224,15 @@ module register8_bank_tb();
       $display("                Tempo               Entradas LUT                                    Saídas");
       $display("                         clk  rst  we3   wa3   ra1    ra2        wd3                rd1         rd2");
       $display("                ====   =================================================        =====================");
-      /* $monitor($time,"      %b    %b    %b    %b   %b    %b      %b         %b      %b", test_clk, test_reset, write_enable, 
-                                                                    write_addr, reg_addr_1, reg_addr_2, write_data, 
-                                                                    reg_data_1, reg_data_2);
+      /* $monitor($time,"      %b    %b    %b    %b   %b    %b      %b         %b      %b", test_clk, test_reset, we3, 
+                                                                    wa3, ra1, ra2, wd3, 
+                                                                    rd1, rd2);
  */    end
 
     always@(posedge test_clk)begin
-      $display($time,"      %b    %b    %b    %b   %b    %b      %b         %b      %b", test_clk, test_reset, write_enable, 
-                                                                    write_addr, reg_addr_1, reg_addr_2, write_data, 
-                                                                    reg_data_1, reg_data_2);
+      $display($time,"      %b    %b    %b    %b   %b    %b      %b         %b      %b", test_clk, test_reset, we3, 
+                                                                    wa3, ra1, ra2, wd3, 
+                                                                    rd1, rd2);
     end
 
 

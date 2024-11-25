@@ -20,58 +20,58 @@ file: register8_bank.sv
 		register8_bank_tb
 xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
 	Building instance overlay tables: ..
-        assert(reg_data_1 == 8'h00 && reg_data_2 == 8'h00) else $fatal("Test Case 0 failed");
+        assert(rd1 == 8'h00 && rd2 == 8'h00) else $fatal("Test Case 0 failed");
                                                                                           |
 xmelab: *W,STRINT (./register8_bank_tb.sv,40|90): String literal argument supplied to integer parameter.
-        assert(reg_data_1 == 8'hAA && reg_data_2 == 8'h00) else $fatal("Test Case 1 failed");
+        assert(rd1 == 8'hAA && rd2 == 8'h00) else $fatal("Test Case 1 failed");
                                                                                           |
 xmelab: *W,STRINT (./register8_bank_tb.sv,61|90): String literal argument supplied to integer parameter.
-        assert(reg_data_1 == 8'hAA && reg_data_2 == 8'hBB) else $fatal("Test Case 2 failed");
+        assert(rd1 == 8'hAA && rd2 == 8'hBB) else $fatal("Test Case 2 failed");
                                                                                           |
 xmelab: *W,STRINT (./register8_bank_tb.sv,72|90): String literal argument supplied to integer parameter.
-        assert(reg_data_1 == 8'hAA && reg_data_2 == 8'hBB) else $fatal("Test Case 3 failed");
+        assert(rd1 == 8'hAA && rd2 == 8'hBB) else $fatal("Test Case 3 failed");
                                                                                           |
 xmelab: *W,STRINT (./register8_bank_tb.sv,80|90): String literal argument supplied to integer parameter.
-        assert(reg_data_1 == 8'hCC && reg_data_2 == 8'hBB) else $fatal("Test Case 4 failed");
+        assert(rd1 == 8'hCC && rd2 == 8'hBB) else $fatal("Test Case 4 failed");
                                                                                           |
 xmelab: *W,STRINT (./register8_bank_tb.sv,90|90): String literal argument supplied to integer parameter.
-        assert(reg_data_1 == 8'hCC && reg_data_2 == 8'hDD) else $fatal("Test Case 5 failed");
+        assert(rd1 == 8'hCC && rd2 == 8'hDD) else $fatal("Test Case 5 failed");
                                                                                           |
 xmelab: *W,STRINT (./register8_bank_tb.sv,100|90): String literal argument supplied to integer parameter.
-        assert(reg_data_1 == 8'hCC && reg_data_2 == 8'hDD) else $fatal("Test Case 6 failed");
+        assert(rd1 == 8'hCC && rd2 == 8'hDD) else $fatal("Test Case 6 failed");
                                                                                           |
 xmelab: *W,STRINT (./register8_bank_tb.sv,109|90): String literal argument supplied to integer parameter.
-        assert(reg_data_1 == 8'hEE && reg_data_2 == 8'hDD) else $fatal("Test Case 7 failed");
+        assert(rd1 == 8'hEE && rd2 == 8'hDD) else $fatal("Test Case 7 failed");
                                                                                           |
 xmelab: *W,STRINT (./register8_bank_tb.sv,119|90): String literal argument supplied to integer parameter.
-        assert(reg_data_1 == 8'hEE && reg_data_2 == 8'hFF) else $fatal("Test Case 8 failed");
+        assert(rd1 == 8'hEE && rd2 == 8'hFF) else $fatal("Test Case 8 failed");
                                                                                           |
 xmelab: *W,STRINT (./register8_bank_tb.sv,129|90): String literal argument supplied to integer parameter.
-        assert(reg_data_1 == 8'h11 && reg_data_2 == 8'hFF) else $fatal("Test Case 9 failed");
+        assert(rd1 == 8'h11 && rd2 == 8'hFF) else $fatal("Test Case 9 failed");
                                                                                           |
 xmelab: *W,STRINT (./register8_bank_tb.sv,139|90): String literal argument supplied to integer parameter.
-        assert(reg_data_1 == 8'hAA && reg_data_2 == 8'hBB) else $fatal("Test Case 10 failed");
+        assert(rd1 == 8'hAA && rd2 == 8'hBB) else $fatal("Test Case 10 failed");
                                                                                            |
 xmelab: *W,STRINT (./register8_bank_tb.sv,154|91): String literal argument supplied to integer parameter.
-        assert(reg_data_1 == 8'hCC && reg_data_2 == 8'hDD) else $fatal("Test Case 11 failed");
+        assert(rd1 == 8'hCC && rd2 == 8'hDD) else $fatal("Test Case 11 failed");
                                                                                            |
 xmelab: *W,STRINT (./register8_bank_tb.sv,161|91): String literal argument supplied to integer parameter.
-        assert(reg_data_1 == 8'hEE && reg_data_2 == 8'hFF) else $fatal("Test Case 12 failed");
+        assert(rd1 == 8'hEE && rd2 == 8'hFF) else $fatal("Test Case 12 failed");
                                                                                            |
 xmelab: *W,STRINT (./register8_bank_tb.sv,168|91): String literal argument supplied to integer parameter.
-        assert(reg_data_1 == 8'h11 && reg_data_2 == 8'h00) else $fatal("Test Case 13 failed");
+        assert(rd1 == 8'h11 && rd2 == 8'h00) else $fatal("Test Case 13 failed");
                                                                                            |
 xmelab: *W,STRINT (./register8_bank_tb.sv,175|91): String literal argument supplied to integer parameter.
-        assert(reg_data_1 == 8'h00 && reg_data_2 == 8'h00) else $fatal("Test Case 14 failed");
+        assert(rd1 == 8'h00 && rd2 == 8'h00) else $fatal("Test Case 14 failed");
                                                                                            |
 xmelab: *W,STRINT (./register8_bank_tb.sv,196|91): String literal argument supplied to integer parameter.
-        assert(reg_data_1 == 8'h00 && reg_data_2 == 8'h00) else $fatal("Test Case 15 failed");
+        assert(rd1 == 8'h00 && rd2 == 8'h00) else $fatal("Test Case 15 failed");
                                                                                            |
 xmelab: *W,STRINT (./register8_bank_tb.sv,203|91): String literal argument supplied to integer parameter.
-        assert(reg_data_1 == 8'h00 && reg_data_2 == 8'h00) else $fatal("Test Case 16 failed");
+        assert(rd1 == 8'h00 && rd2 == 8'h00) else $fatal("Test Case 16 failed");
                                                                                            |
 xmelab: *W,STRINT (./register8_bank_tb.sv,210|91): String literal argument supplied to integer parameter.
-        assert(reg_data_1 == 8'h00 && reg_data_2 == 8'h00) else $fatal("Test Case 17 failed");
+        assert(rd1 == 8'h00 && rd2 == 8'h00) else $fatal("Test Case 17 failed");
                                                                                            |
 xmelab: *W,STRINT (./register8_bank_tb.sv,217|91): String literal argument supplied to integer parameter.
 .................. Done
