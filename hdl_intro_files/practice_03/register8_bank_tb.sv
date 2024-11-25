@@ -31,14 +31,14 @@ module register8_bank_tb();
         $dumpvars(0, register8_bank_tb);
 
         @(posedge test_clk);
-        test_reset = 1'b1;
-        #5 
         test_reset = 1'b0;
-        #5
+        #10 
+        test_reset = 1'b1;
+        #10
 
         //Test Case 0
         assert(reg_data_1 == 8'h00 && reg_data_2 == 8'h00) else $fatal("Test Case 0 failed");
-        #5
+        #10
 
 
         /* 
@@ -183,9 +183,9 @@ module register8_bank_tb();
 
         @(posedge test_clk);
         //Setting the reset process.
-        test_reset = 1'b1;
-        #10
         test_reset = 1'b0;
+        #10
+        test_reset = 1'b1;
         #10
 
         //Test Case 14 - Reading the current value from the registers X1 and X2 after the reset process.

@@ -22,7 +22,7 @@ register8 X7(.clk(clk), .reset(rst), .in_word(X7_in_word), .out_word(X7_out_word
 
 
 always_ff @(posedge clk) begin
-    if(~rst) 
+    if(rst) 
         begin
             X1_in_word <= 8'b0;
             X2_in_word <= 8'b0;

@@ -1,14 +1,17 @@
 xrun(64): 22.09-s013: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	22.09-s013: Started on Nov 22, 2024 at 17:08:16 -03
+TOOL:	xrun(64)	22.09-s013: Started on Nov 25, 2024 at 17:15:31 -03
 xrun
 	-64bit
 	register8_bank_tb.sv
 	register8_bank.sv
-Recompiling... reason: file './register8_bank_tb.sv' is newer than expected.
-	expected: Fri Nov 22 17:05:48 2024
-	actual:   Fri Nov 22 17:08:14 2024
+Recompiling... reason: file './register8_bank.sv' is newer than expected.
+	expected: Mon Nov 25 08:57:17 2024
+	actual:   Mon Nov 25 17:14:09 2024
 file: register8_bank_tb.sv
 	module worklib.register8_bank_tb:sv
+		errors: 0, warnings: 0
+file: register8_bank.sv
+	module worklib.register8_bank:sv
 		errors: 0, warnings: 0
 		Caching library 'worklib' ....... Done
 	Elaborating the design hierarchy:
@@ -19,59 +22,121 @@ xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-
 	Building instance overlay tables: ..
         assert(reg_data_1 == 8'h00 && reg_data_2 == 8'h00) else $fatal("Test Case 0 failed");
                                                                                           |
-xmelab: *W,STRINT (./register8_bank_tb.sv,37|90): String literal argument supplied to integer parameter.
+xmelab: *W,STRINT (./register8_bank_tb.sv,40|90): String literal argument supplied to integer parameter.
         assert(reg_data_1 == 8'hAA && reg_data_2 == 8'h00) else $fatal("Test Case 1 failed");
                                                                                           |
-xmelab: *W,STRINT (./register8_bank_tb.sv,49|90): String literal argument supplied to integer parameter.
-        assert(reg_data_1 == 8'hAA && reg_data_2 == 8'hAA) else $fatal("Test Case 2 failed");
+xmelab: *W,STRINT (./register8_bank_tb.sv,61|90): String literal argument supplied to integer parameter.
+        assert(reg_data_1 == 8'hAA && reg_data_2 == 8'hBB) else $fatal("Test Case 2 failed");
                                                                                           |
-xmelab: *W,STRINT (./register8_bank_tb.sv,60|90): String literal argument supplied to integer parameter.
-        assert(reg_data_1 == 8'hAA && reg_data_2 == 8'hAA) else $fatal("Test Case 3 failed");
+xmelab: *W,STRINT (./register8_bank_tb.sv,72|90): String literal argument supplied to integer parameter.
+        assert(reg_data_1 == 8'hAA && reg_data_2 == 8'hBB) else $fatal("Test Case 3 failed");
                                                                                           |
-xmelab: *W,STRINT (./register8_bank_tb.sv,67|90): String literal argument supplied to integer parameter.
+xmelab: *W,STRINT (./register8_bank_tb.sv,80|90): String literal argument supplied to integer parameter.
+        assert(reg_data_1 == 8'hCC && reg_data_2 == 8'hBB) else $fatal("Test Case 4 failed");
+                                                                                          |
+xmelab: *W,STRINT (./register8_bank_tb.sv,90|90): String literal argument supplied to integer parameter.
+        assert(reg_data_1 == 8'hCC && reg_data_2 == 8'hDD) else $fatal("Test Case 5 failed");
+                                                                                          |
+xmelab: *W,STRINT (./register8_bank_tb.sv,100|90): String literal argument supplied to integer parameter.
+        assert(reg_data_1 == 8'hCC && reg_data_2 == 8'hDD) else $fatal("Test Case 6 failed");
+                                                                                          |
+xmelab: *W,STRINT (./register8_bank_tb.sv,109|90): String literal argument supplied to integer parameter.
+        assert(reg_data_1 == 8'hEE && reg_data_2 == 8'hDD) else $fatal("Test Case 7 failed");
+                                                                                          |
+xmelab: *W,STRINT (./register8_bank_tb.sv,119|90): String literal argument supplied to integer parameter.
+        assert(reg_data_1 == 8'hEE && reg_data_2 == 8'hFF) else $fatal("Test Case 8 failed");
+                                                                                          |
+xmelab: *W,STRINT (./register8_bank_tb.sv,129|90): String literal argument supplied to integer parameter.
+        assert(reg_data_1 == 8'h11 && reg_data_2 == 8'hFF) else $fatal("Test Case 9 failed");
+                                                                                          |
+xmelab: *W,STRINT (./register8_bank_tb.sv,139|90): String literal argument supplied to integer parameter.
+        assert(reg_data_1 == 8'hAA && reg_data_2 == 8'hBB) else $fatal("Test Case 10 failed");
+                                                                                           |
+xmelab: *W,STRINT (./register8_bank_tb.sv,154|91): String literal argument supplied to integer parameter.
+        assert(reg_data_1 == 8'hCC && reg_data_2 == 8'hDD) else $fatal("Test Case 11 failed");
+                                                                                           |
+xmelab: *W,STRINT (./register8_bank_tb.sv,161|91): String literal argument supplied to integer parameter.
+        assert(reg_data_1 == 8'hEE && reg_data_2 == 8'hFF) else $fatal("Test Case 12 failed");
+                                                                                           |
+xmelab: *W,STRINT (./register8_bank_tb.sv,168|91): String literal argument supplied to integer parameter.
+        assert(reg_data_1 == 8'h11 && reg_data_2 == 8'h00) else $fatal("Test Case 13 failed");
+                                                                                           |
+xmelab: *W,STRINT (./register8_bank_tb.sv,175|91): String literal argument supplied to integer parameter.
+        assert(reg_data_1 == 8'h00 && reg_data_2 == 8'h00) else $fatal("Test Case 14 failed");
+                                                                                           |
+xmelab: *W,STRINT (./register8_bank_tb.sv,196|91): String literal argument supplied to integer parameter.
+        assert(reg_data_1 == 8'h00 && reg_data_2 == 8'h00) else $fatal("Test Case 15 failed");
+                                                                                           |
+xmelab: *W,STRINT (./register8_bank_tb.sv,203|91): String literal argument supplied to integer parameter.
+        assert(reg_data_1 == 8'h00 && reg_data_2 == 8'h00) else $fatal("Test Case 16 failed");
+                                                                                           |
+xmelab: *W,STRINT (./register8_bank_tb.sv,210|91): String literal argument supplied to integer parameter.
+        assert(reg_data_1 == 8'h00 && reg_data_2 == 8'h00) else $fatal("Test Case 17 failed");
+                                                                                           |
+xmelab: *W,STRINT (./register8_bank_tb.sv,217|91): String literal argument supplied to integer parameter.
 .................. Done
 	Generating native compiled code:
-		worklib.register8_bank_tb:sv <0x54b4a4fc>
-			streams:  13, words: 19324
+		worklib.register8_bank:sv <0x3a1f49c7>
+			streams:  18, words:  7023
+		worklib.register8_bank_tb:sv <0x53de94c9>
+			streams:  13, words: 53157
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
 		                 Instances  Unique
 		Modules:                10       3
-		Registers:              40      33
+		Registers:              52      45
 		Scalar wires:            3       -
 		Vectored wires:         32       -
-		Always blocks:          10       3
+		Always blocks:          11       4
 		Initial blocks:          3       3
 		Pseudo assignments:     18      18
-		Assertions:              4       4
+		Assertions:             18      18
 		Simulation timescale:  1ps
 	Writing initial simulation snapshot: worklib.register8_bank_tb:sv
 Loading snapshot worklib.register8_bank_tb:sv .................... Done
 xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
 xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
 xcelium> run
+xmsim: *W,DVEXACC: some objects excluded from $dumpvars due to access restrictions, use +access+r on command line for access to all objects.
+            File: ./register8_bank_tb.sv, line = 31, pos = 16
+           Scope: register8_bank_tb
+            Time: 0 FS + 0
+
                 Tempo               Entradas LUT                                    Saídas
                          clk  rst  we3   wa3   ra1    ra2        wd3                rd1         rd2
                 ====   =================================================        =====================
-                   0      0    x    x    xxx   xxx    xxx      xxxxxxxx         xxxxxxxx      xxxxxxxx
-                   5      1    1    x    xxx   xxx    xxx      xxxxxxxx         00000000      00000000
-                  10      0    0    x    xxx   xxx    xxx      xxxxxxxx         00000000      00000000
-                  15      1    0    x    xxx   xxx    xxx      xxxxxxxx         00000000      00000000
-                  20      0    0    x    xxx   xxx    xxx      xxxxxxxx         00000000      00000000
-                  25      1    0    1    001   001    xxx      10101010         00000000      00000000
-                  30      0    0    1    001   001    xxx      10101010         00000000      00000000
-                  35      1    0    1    001   001    xxx      10101010         10101010      00000000
-                  40      0    0    1    001   001    xxx      10101010         10101010      00000000
-                  45      1    0    1    010   001    010      10101010         10101010      00000000
-                  50      0    0    1    010   001    010      10101010         10101010      00000000
-                  55      1    0    1    010   001    010      10101010         10101010      10101010
-                  60      0    0    1    010   001    010      10101010         10101010      10101010
-                  65      1    0    0    010   001    010      11111111         10101010      10101010
-                  70      0    0    0    010   001    010      11111111         10101010      10101010
-                  75      1    0    0    010   001    010      11111111         10101010      10101010
-                  80      0    0    0    010   001    010      11111111         10101010      10101010
-Simulation complete via $finish(1) at time 85 NS + 0
-./register8_bank_tb.sv:97         #10 $finish;
+                   5      1    x    x    xxx   xxx    xxx      xxxxxxxx         xxxxxxxx      xxxxxxxx
+                  15      1    1    x    xxx   xxx    xxx      xxxxxxxx         00000000      00000000
+                  25      1    1    x    xxx   xxx    xxx      xxxxxxxx         00000000      00000000
+                  35      1    1    x    xxx   xxx    xxx      xxxxxxxx         00000000      00000000
+                  45      1    1    1    001   001    xxx      10101010         00000000      00000000
+                  55      1    1    0    001   001    xxx      10101010         10101010      00000000
+                  65      1    1    1    010   001    010      10111011         10101010      00000000
+                  75      1    1    0    010   001    010      10111011         10101010      10111011
+                  85      1    1    0    001   001    010      11111111         10101010      10111011
+                  95      1    1    1    011   011    010      11001100         00000000      10111011
+                 105      1    1    0    011   011    010      11001100         11001100      10111011
+                 115      1    1    1    100   011    100      11011101         11001100      00000000
+                 125      1    1    0    100   011    100      11011101         11001100      11011101
+                 135      1    1    0    100   011    100      11111111         11001100      11011101
+                 145      1    1    1    101   101    100      11101110         00000000      11011101
+                 155      1    1    0    101   101    100      11101110         11101110      11011101
+                 165      1    1    1    110   101    110      11111111         11101110      00000000
+                 175      1    1    0    110   101    110      11111111         11101110      11111111
+                 185      1    1    1    111   111    110      00010001         00000000      11111111
+                 195      1    1    0    111   111    110      00010001         00010001      11111111
+                 205      1    1    0    111   001    010      00010001         10101010      10111011
+                 215      1    1    0    111   011    100      00010001         11001100      11011101
+                 225      1    1    0    111   101    110      00010001         11101110      11111111
+                 235      1    1    0    111   111    000      00010001         00010001      00000000
+                 245      1    1    0    111   111    000      00010001         00000000      00000000
+                 255      1    1    0    111   111    000      00010001         00000000      00000000
+                 265      1    1    0    111   001    010      00010001         00000000      00000000
+                 275      1    1    0    111   011    100      00010001         00000000      00000000
+                 285      1    1    0    111   101    110      00010001         00000000      00000000
+                 295      1    1    0    111   111    000      00010001         00000000      00000000
+Simulation complete via $finish(1) at time 305 NS + 0
+./register8_bank_tb.sv:219         #10 $finish;
 xcelium> exit
-TOOL:	xrun(64)	22.09-s013: Exiting on Nov 22, 2024 at 17:08:25 -03  (total: 00:00:09)
+TOOL:	xrun(64)	22.09-s013: Exiting on Nov 25, 2024 at 17:16:21 -03  (total: 00:00:50)

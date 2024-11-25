@@ -21,9 +21,9 @@ module register8_tb();
     end
 
     initial begin
-        test_reset = 1'b1;
-        #10 
         test_reset = 1'b0;
+        #10 
+        test_reset = 1'b1;
         #10
 
         //Test Case 1
@@ -47,13 +47,13 @@ module register8_tb();
         assert(test_output == 8'hAF) else $fatal("Test case 4 failed");
 
         //Test Case 5
-        test_reset = 1'b1;
+        test_reset = 1'b0;
         test_input = 8'hFF;
         #10
         assert(test_output == 8'h00) else $fatal("Test case 5 failed");
         
         #10
-        test_reset = 1'b0;
+        test_reset = 1'b1;
         #10
 
         //Test Case 6
