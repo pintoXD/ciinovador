@@ -1,0 +1,97 @@
+xrun(64): 22.09-s013: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	22.09-s013: Started on Nov 25, 2024 at 18:41:41 -03
+xrun
+	custom_ula_tb.sv
+	custom_ula.sv
+Recompiling... reason: file './custom_ula_tb.sv' is newer than expected.
+	expected: Mon Nov 25 18:41:29 2024
+	actual:   Mon Nov 25 18:41:39 2024
+file: custom_ula_tb.sv
+	module worklib.custom_ula_tb:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		custom_ula_tb
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+	Building instance overlay tables: ..........
+    assert(dut_ULAResult == 8'b0 && dut_FlagZ == 1'b1) else $fatal("Test Case 1 failed");
+                                                                                      |
+xmelab: *W,STRINT (./custom_ula_tb.sv,26|86): String literal argument supplied to integer parameter.
+    assert(dut_ULAResult == 8'hB0 && dut_FlagZ == 1'b0) else $fatal("Test Case 2 failed");
+                                                                                       |
+xmelab: *W,STRINT (./custom_ula_tb.sv,33|87): String literal argument supplied to integer parameter.
+    assert(dut_ULAResult == 8'hAC && dut_FlagZ == 1'b0) else $fatal("Test Case 3 failed");
+                                                                                       |
+xmelab: *W,STRINT (./custom_ula_tb.sv,40|87): String literal argument supplied to integer parameter.
+    assert(dut_ULAResult == 8'h10 && dut_FlagZ == 1'b0) else $fatal("Test Case 4 failed");
+                                                                                       |
+xmelab: *W,STRINT (./custom_ula_tb.sv,47|87): String literal argument supplied to integer parameter.
+    assert(dut_ULAResult == 8'h00 && dut_FlagZ == 1'b1) else $fatal("Test Case 5 failed");
+                                                                                       |
+xmelab: *W,STRINT (./custom_ula_tb.sv,54|87): String literal argument supplied to integer parameter.
+    assert(dut_ULAResult == 8'hF0 && dut_FlagZ == 1'b0) else $fatal("Test Case 6 failed");
+                                                                                       |
+xmelab: *W,STRINT (./custom_ula_tb.sv,61|87): String literal argument supplied to integer parameter.
+    assert(dut_ULAResult == 8'hF0 && dut_FlagZ == 1'b0) else $fatal("Test Case 7 failed");
+                                                                                       |
+xmelab: *W,STRINT (./custom_ula_tb.sv,68|87): String literal argument supplied to integer parameter.
+    assert(dut_ULAResult == 8'hAA && dut_FlagZ == 1'b0) else $fatal("Test Case 8 failed");
+                                                                                       |
+xmelab: *W,STRINT (./custom_ula_tb.sv,75|87): String literal argument supplied to integer parameter.
+    assert(dut_ULAResult == 8'h00 && dut_FlagZ == 1'b1) else $fatal("Test Case 9 failed");
+                                                                                       |
+xmelab: *W,STRINT (./custom_ula_tb.sv,82|87): String literal argument supplied to integer parameter.
+    assert(dut_ULAResult == 8'hBB && dut_FlagZ == 1'b0) else $fatal("Test Case 10 failed");
+                                                                                        |
+xmelab: *W,STRINT (./custom_ula_tb.sv,89|88): String literal argument supplied to integer parameter.
+    assert(dut_ULAResult == 8'hAA && dut_FlagZ == 1'b0) else $fatal("Test Case 11 failed");
+                                                                                        |
+xmelab: *W,STRINT (./custom_ula_tb.sv,96|88): String literal argument supplied to integer parameter.
+    assert(dut_ULAResult == 8'hFF && dut_FlagZ == 1'b0) else $fatal("Test Case 12 failed");
+                                                                                        |
+xmelab: *W,STRINT (./custom_ula_tb.sv,103|88): String literal argument supplied to integer parameter.
+    assert(dut_ULAResult == 8'h00 && dut_FlagZ == 1'b1) else $fatal("Test Case 13 failed");
+                                                                                        |
+xmelab: *W,STRINT (./custom_ula_tb.sv,110|88): String literal argument supplied to integer parameter.
+.......... Done
+	Generating native compiled code:
+		worklib.custom_ula_tb:sv <0x5f96879e>
+			streams:   8, words: 31520
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 2       2
+		Registers:              20      20
+		Scalar wires:            2       -
+		Vectored wires:          5       -
+		Always blocks:           1       1
+		Initial blocks:          2       2
+		Pseudo assignments:      5       5
+		Assertions:             13      13
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.custom_ula_tb:sv
+Loading snapshot worklib.custom_ula_tb:sv .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
+xcelium> run
+                Tempo               Entradas ULA                                              Saídas
+                         mocked_SrcA    mocked_SrcB     mocked_ULAControl       dut_ULAResult      dut_FlagZ
+                ====   ===================================================     ===============================
+                   0          00             00            000                        00              1
+                  10          50             60            000                        b0              0
+                  20          7f             2d            000                        ac              0
+                  30          60             50            001                        10              0
+                  40          60             60            001                        00              1
+                  50          50             60            001                        f0              0
+                  70          aa             bb            010                        aa              0
+                  80          aa             00            010                        00              1
+                  90          aa             bb            011                        bb              0
+                 100          aa             00            011                        aa              0
+                 110          aa             bb            101                        ff              0
+                 120          bb             aa            101                        00              1
+Simulation complete via $finish(1) at time 140 NS + 0
+./custom_ula_tb.sv:113     $finish;
+xcelium> exit
+TOOL:	xrun(64)	22.09-s013: Exiting on Nov 25, 2024 at 18:41:41 -03  (total: 00:00:00)
