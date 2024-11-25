@@ -3,13 +3,13 @@
 module muxULAsrc_tb();
 
     logic select_src;
-    logic [7:0] w_rd2, a_const;
+    logic [7:0] w_rd2, constante;
     logic [7:0] w_SrcB;
 
     muxULAsrc DUT(
         .select_src(select_src),
         .w_rd2(w_rd2),
-        .a_const(a_const),
+        .constante(constante),
         .w_SrcB(w_SrcB)
     );
 
@@ -18,7 +18,7 @@ module muxULAsrc_tb();
         // Test Case 1
         select_src = 0;
         w_rd2 = 8'hFF;
-        a_const = 8'h00;
+        constante = 8'h00;
         #10
         assert(w_SrcB == 8'hFF) else $error("Test Case 1");
 
@@ -26,14 +26,14 @@ module muxULAsrc_tb();
         // Test Case 2
         select_src = 1;
         w_rd2 = 8'hFF;
-        a_const = 8'h00;
+        constante = 8'h00;
         #10
         assert(w_SrcB == 8'h00) else $error("Test Case 2");
 
         // Test Case 3
         select_src = 0;
         w_rd2 = 8'hA4;
-        a_const = 8'h00;
+        constante = 8'h00;
         #10
         assert(w_SrcB == 8'hA4) else $error("Test Case 3");
 
@@ -41,7 +41,7 @@ module muxULAsrc_tb();
         // Test Case 4
         select_src = 1;
         w_rd2 = 8'hFF;
-        a_const = 8'hC0;
+        constante = 8'hC0;
         #10
         assert(w_SrcB == 8'hC0) else $error("Test Case 4");
 
