@@ -1,42 +1,174 @@
 xrun(64): 22.09-s013: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	22.09-s013: Started on Nov 25, 2024 at 18:59:11 -03
+TOOL:	xrun(64)	22.09-s013: Started on Nov 26, 2024 at 16:00:14 -03
 xrun
-	muxULAsrc_tb.sv
+	datapath101_tb.sv
+	datapath101.sv
+	register8_bank.sv
+	register8.sv
 	muxULAsrc.sv
-Recompiling... reason: file './muxULAsrc_tb.sv' is newer than expected.
-	expected: Mon Nov 25 18:58:08 2024
-	actual:   Mon Nov 25 18:59:08 2024
-file: muxULAsrc_tb.sv
-	module worklib.muxULAsrc_tb:sv
+	custom_ula.sv
+Recompiling... reason: file './datapath101_tb.sv' is newer than expected.
+	expected: Tue Nov 26 15:47:16 2024
+	actual:   Tue Nov 26 16:00:10 2024
+file: datapath101_tb.sv
+	module worklib.datapath101_tb:sv
 		errors: 0, warnings: 0
 		Caching library 'worklib' ....... Done
 	Elaborating the design hierarchy:
 	Top level design units:
-		muxULAsrc_tb
+		datapath101_tb
 xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
-	Building instance overlay tables: .................... Done
+	Building instance overlay tables: .
+        assert(dut_ULAResult == 8'h00 && dut_FlagZ == 8'b1) else $fatal("Test Case 0 failed");
+                                                                                           |
+xmelab: *W,STRINT (./datapath101_tb.sv,52|91): String literal argument supplied to integer parameter.
+        assert(dut_ULAResult == 8'h00 && dut_FlagZ == 1'b1) else $fatal("Test Case 1 failed");
+                                                                                           |
+xmelab: *W,STRINT (./datapath101_tb.sv,71|91): String literal argument supplied to integer parameter.
+        assert(dut_ULAResult == 8'h00 && dut_FlagZ == 1'b1) else $fatal("Test Case 2 failed");
+                                                                                           |
+xmelab: *W,STRINT (./datapath101_tb.sv,81|91): String literal argument supplied to integer parameter.
+        assert(dut_ULAResult == 8'h00 && dut_FlagZ == 1'b1) else $fatal("Test Case 3 failed");
+                                                                                           |
+xmelab: *W,STRINT (./datapath101_tb.sv,90|91): String literal argument supplied to integer parameter.
+        assert(dut_ULAResult == 8'h00 && dut_FlagZ == 1'b1) else $fatal("Test Case 4 failed");
+                                                                                           |
+xmelab: *W,STRINT (./datapath101_tb.sv,99|91): String literal argument supplied to integer parameter.
+        assert(dut_ULAResult == 8'h00 && dut_FlagZ == 1'b1) else $fatal("Test Case 5 failed");
+                                                                                           |
+xmelab: *W,STRINT (./datapath101_tb.sv,108|91): String literal argument supplied to integer parameter.
+        assert(dut_ULAResult == 8'h00 && dut_FlagZ == 1'b1) else $fatal("Test Case 6 failed");
+                                                                                           |
+xmelab: *W,STRINT (./datapath101_tb.sv,117|91): String literal argument supplied to integer parameter.
+        assert(dut_ULAResult == 8'h00 && dut_FlagZ == 1'b1) else $fatal("Test Case 6 failed");
+                                                                                           |
+xmelab: *W,STRINT (./datapath101_tb.sv,126|91): String literal argument supplied to integer parameter.
+        assert(dut_ULAResult == 8'hB5 && dut_FlagZ == 1'b0) else $fatal("Test Case 7 failed");
+                                                                                           |
+xmelab: *W,STRINT (./datapath101_tb.sv,141|91): String literal argument supplied to integer parameter.
+        assert(dut_ULAResult == 8'hB9 && dut_FlagZ == 1'b0) else $fatal("Test Case 8 failed");
+                                                                                           |
+xmelab: *W,STRINT (./datapath101_tb.sv,150|91): String literal argument supplied to integer parameter.
+        assert(dut_ULAResult == 8'hBD && dut_FlagZ == 1'b0) else $fatal("Test Case 9 failed");
+                                                                                           |
+xmelab: *W,STRINT (./datapath101_tb.sv,159|91): String literal argument supplied to integer parameter.
+        assert(dut_ULAResult == 8'h50 && dut_FlagZ == 1'b0) else $fatal("Test Case 10 failed");
+                                                                                            |
+xmelab: *W,STRINT (./datapath101_tb.sv,168|92): String literal argument supplied to integer parameter.
+        assert(dut_ULAResult == 8'hFF && dut_FlagZ == 1'b0) else $fatal("Test Case 11 failed");
+                                                                                            |
+xmelab: *W,STRINT (./datapath101_tb.sv,177|92): String literal argument supplied to integer parameter.
+        assert(dut_ULAResult == 8'h02 && dut_FlagZ == 1'b0) else $fatal("Test Case 12 failed");
+                                                                                            |
+xmelab: *W,STRINT (./datapath101_tb.sv,192|92): String literal argument supplied to integer parameter.
+        assert(dut_ULAResult == 8'hFE && dut_FlagZ == 1'b0) else $fatal("Test Case 13 failed");
+                                                                                            |
+xmelab: *W,STRINT (./datapath101_tb.sv,201|92): String literal argument supplied to integer parameter.
+        assert(dut_ULAResult == 8'h1C && dut_FlagZ == 1'b0) else $fatal("Test Case 14 failed");
+                                                                                            |
+xmelab: *W,STRINT (./datapath101_tb.sv,211|92): String literal argument supplied to integer parameter.
+        assert(dut_ULAResult == 8'hFC && dut_FlagZ == 1'b0) else $fatal("Test Case 15 failed");
+                                                                                            |
+xmelab: *W,STRINT (./datapath101_tb.sv,221|92): String literal argument supplied to integer parameter.
+        assert(dut_ULAResult == 8'h5A && dut_FlagZ == 1'b0) else $fatal("Test Case 16 failed");
+                                                                                            |
+xmelab: *W,STRINT (./datapath101_tb.sv,237|92): String literal argument supplied to integer parameter.
+        assert(dut_ULAResult == 8'h00 && dut_FlagZ == 1'b1) else $fatal("Test Case 17 failed");
+                                                                                            |
+xmelab: *W,STRINT (./datapath101_tb.sv,246|92): String literal argument supplied to integer parameter.
+        assert(dut_ULAResult == 8'hFF && dut_FlagZ == 1'b0) else $fatal("Test Case 18 failed");
+                                                                                            |
+xmelab: *W,STRINT (./datapath101_tb.sv,256|92): String literal argument supplied to integer parameter.
+................... Done
 	Generating native compiled code:
-		worklib.muxULAsrc_tb:sv <0x754ca132>
-			streams:   2, words:  7724
+		worklib.datapath101_tb:sv <0x411a68e1>
+			streams:  24, words: 62641
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
 		                 Instances  Unique
-		Modules:                 2       2
-		Registers:               9       9
-		Scalar wires:            1       -
-		Vectored wires:          5       -
-		Initial blocks:          1       1
-		Cont. assignments:       1       1
-		Pseudo assignments:      1       1
-		Assertions:              4       4
+		Modules:                13       6
+		Registers:              65      58
+		Scalar wires:            8       -
+		Vectored wires:         43       -
+		Always blocks:          13       6
+		Initial blocks:         11      11
+		Pseudo assignments:     29      29
+		Assertions:             20      20
 		Simulation timescale:  1ps
-	Writing initial simulation snapshot: worklib.muxULAsrc_tb:sv
-Loading snapshot worklib.muxULAsrc_tb:sv .................... Done
+	Writing initial simulation snapshot: worklib.datapath101_tb:sv
+Loading snapshot worklib.datapath101_tb:sv .................... Done
 xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
 xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
 xcelium> run
-Simulation complete via $finish(1) at time 50 NS + 0
-./muxULAsrc_tb.sv:49         $finish;    
+xmsim: *W,DVEXACC: some objects excluded from $dumpvars due to access restrictions, use +access+r on command line for access to all objects.
+            File: ./datapath101_tb.sv, line = 43, pos = 16
+           Scope: datapath101_tb
+            Time: 0 FS + 0
+
+                Tempo               Entradas LUT                                                                                                                            Saídas
+                         clk  rst  mocked_we3   mocked_wa3   mocked_ra1  mocked_ra2     mocked_wd3   mock_constante    mock_select_src     mock_ULAControl              Result   FlagZ
+                ====   ====================================================================================================================================   |   ==========================
+                   5      1    x        0          000           000         000            00            00                  0                  000          |           xx      x
+                  10      0    1        0          000           000         000            00            00                  0                  000          |           00      1
+                  15      1    0        0          000           000         000            00            00                  0                  000          |           00      1
+                  20      0    0        0          000           000         000            00            00                  0                  000          |           00      1
+                  25      1    0        0          000           000         000            00            00                  0                  000          |           00      1
+                  30      0    0        0          000           000         000            00            00                  0                  000          |           00      1
+                  35      1    0        0          000           000         000            00            00                  0                  000          |           00      1
+                  40      0    0        1          001           000         000            5a            00                  0                  000          |           00      1
+                  45      1    0        1          001           000         000            5a            00                  0                  000          |           00      1
+                  50      0    0        1          001           000         000            5a            00                  0                  000          |           00      1
+                  55      1    0        0          001           000         000            5a            00                  0                  000          |           00      1
+                  60      0    0        1          010           000         000            5b            00                  0                  000          |           00      1
+                  65      1    0        1          010           000         000            5b            00                  0                  000          |           00      1
+                  70      0    0        1          010           000         000            5b            00                  0                  000          |           00      1
+                  75      1    0        0          010           000         000            5b            00                  0                  000          |           00      1
+                  80      0    0        1          011           000         000            5c            00                  0                  000          |           00      1
+                  85      1    0        1          011           000         000            5c            00                  0                  000          |           00      1
+                  90      0    0        1          011           000         000            5c            00                  0                  000          |           00      1
+                  95      1    0        0          011           000         000            5c            00                  0                  000          |           00      1
+                 100      0    0        1          100           000         000            5d            00                  0                  000          |           00      1
+                 105      1    0        1          100           000         000            5d            00                  0                  000          |           00      1
+                 110      0    0        1          100           000         000            5d            00                  0                  000          |           00      1
+                 115      1    0        0          100           000         000            5d            00                  0                  000          |           00      1
+                 120      0    0        1          101           000         000            5e            00                  0                  000          |           00      1
+                 125      1    0        1          101           000         000            5e            00                  0                  000          |           00      1
+                 130      0    0        1          101           000         000            5e            00                  0                  000          |           00      1
+                 135      1    0        0          101           000         000            5e            00                  0                  000          |           00      1
+                 140      0    0        1          110           000         000            5f            00                  0                  000          |           00      1
+                 145      1    0        1          110           000         000            5f            00                  0                  000          |           00      1
+                 150      0    0        1          110           000         000            5f            00                  0                  000          |           00      1
+                 155      1    0        0          110           000         000            5f            00                  0                  000          |           00      1
+                 160      0    0        1          111           000         000            50            00                  0                  000          |           00      1
+                 165      1    0        1          111           000         000            50            00                  0                  000          |           00      1
+                 170      0    0        1          111           000         000            50            00                  0                  000          |           00      1
+                 175      1    0        0          111           000         000            50            00                  0                  000          |           00      1
+                 180      0    0        0          111           001         010            50            00                  0                  000          |           b5      0
+                 185      1    0        0          111           001         010            50            00                  0                  000          |           b5      0
+                 190      0    0        0          111           011         100            50            00                  0                  000          |           b9      0
+                 195      1    0        0          111           011         100            50            00                  0                  000          |           b9      0
+                 200      0    0        0          111           101         110            50            00                  0                  000          |           bd      0
+                 205      1    0        0          111           101         110            50            00                  0                  000          |           bd      0
+                 210      0    0        0          111           111         000            50            00                  0                  000          |           50      0
+                 215      1    0        0          111           111         000            50            00                  0                  000          |           50      0
+                 220      0    0        0          111           111         000            50            af                  1                  000          |           ff      0
+                 225      1    0        0          111           111         000            50            af                  1                  000          |           ff      0
+                 230      0    0        0          111           011         001            50            af                  0                  001          |           02      0
+                 235      1    0        0          111           011         001            50            af                  0                  001          |           02      0
+                 240      0    0        0          111           001         011            50            af                  0                  001          |           fe      0
+                 245      1    0        0          111           001         011            50            af                  0                  001          |           fe      0
+                 250      0    0        0          111           011         011            50            40                  1                  001          |           1c      0
+                 255      1    0        0          111           011         011            50            40                  1                  001          |           1c      0
+                 260      0    0        0          111           011         011            50            60                  1                  001          |           fc      0
+                 265      1    0        0          111           011         011            50            60                  1                  001          |           fc      0
+                 270      0    0        0          111           101         010            50            60                  0                  010          |           5a      0
+                 275      1    0        0          111           101         010            50            60                  0                  010          |           5a      0
+                 280      0    0        0          111           000         101            50            60                  0                  010          |           00      1
+                 285      1    0        0          111           000         101            50            60                  0                  010          |           00      1
+                 290      0    0        0          111           100         101            50            ff                  1                  010          |           5d      0
+xmsim: *F,ASRTST (./datapath101_tb.sv,256): (time 295 NS) Assertion datapath101_tb.__assert_20 has failed
+Simulation terminated via $fatal(1) at time 295 NS + 0
+./datapath101_tb.sv:256         assert(dut_ULAResult == 8'hFF && dut_FlagZ == 1'b0) else $fatal("Test Case 18 failed");
 xcelium> exit
-TOOL:	xrun(64)	22.09-s013: Exiting on Nov 25, 2024 at 18:59:12 -03  (total: 00:00:01)
+TOOL:	xrun(64)	22.09-s013: Exiting on Nov 26, 2024 at 16:00:24 -03  (total: 00:00:10)

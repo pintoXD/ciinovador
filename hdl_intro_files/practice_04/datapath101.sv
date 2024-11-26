@@ -6,8 +6,8 @@ module datapath101(
     input logic [2:0]wa3,
     input logic we3,
     input logic [7:0]wd3,
-    input logic [7:0] constante,
-    input logic [2:0] ULAControl,
+    input logic [7:0]constante,
+    input logic [2:0]ULAControl,
     input logic select_src,
     
     input logic clk, rst,
@@ -44,7 +44,7 @@ custom_ula ula_inst(
     .SrcA(w_rd1SrcA),
     .SrcB(w_SrcB),
     .ULAControl(ULAControl),
-    .Result(ULAResult),
+    .ULAResult(ULAResult),
     .FlagZ(FlagZ)
 );
 

@@ -1,0 +1,230 @@
+xrun(64): 22.09-s013: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	22.09-s013: Started on Nov 26, 2024 at 10:02:42 -03
+xrun
+	-64bit
+	tb_uart.sv
+	codificador_UART.sv
+	+gui
+	+access+rw
+file: tb_uart.sv
+	module worklib.tb:sv
+		errors: 0, warnings: 0
+file: codificador_UART.sv
+	module worklib.codificador_UART:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		tb
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.decodificador_UART:sv <0x03ee3677>
+			streams:   3, words:  4528
+		worklib.codificador_UART:sv <0x1ad01672>
+			streams:   3, words:  5493
+		worklib.tb:sv <0x759a9503>
+			streams:  17, words: 13816
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                  Instances  Unique
+		Modules:                  3       3
+		Registers:               16      16
+		Scalar wires:            11       -
+		Vectored wires:           2       -
+		Always blocks:            9       9
+		Initial blocks:           7       7
+		Cont. assignments:        0       1
+		Pseudo assignments:       5       5
+		Simulation timescale:  10ps
+	Writing initial simulation snapshot: worklib.tb:sv
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+SVSEED default: 1
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm tb.U1.TX tb.U1.clk tb.U1.dado tb.U1.dado_valido tb.U1.etapa_atual_ff tb.U1.fim tb.U1.prox_etapa tb.U1.reset tb.U1.stop_1_2 tb.U1.transmitindo
+Created probe 1
+xcelium> run
+Comecou o teste
+xmsim: *W,OLDURR: The default algorithm for $urandom_range and randcase is used. It can have distribution problems..
+(           112.00 ns) =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+(           112.00 ns) Dado a ser codificado TX: b00011101
+(           130.00 ns) Inicio da transmissao UART. 
+(           330.00 ns) Fim da transmissao UART. 
+(           330.00 ns) Dado valido RX: Dado RX b00011101
+(           412.00 ns) =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+(           412.00 ns) Dado a ser codificado TX: b00010011
+(           430.00 ns) Inicio da transmissao UART. 
+(           630.00 ns) Fim da transmissao UART. 
+(           630.00 ns) Dado valido RX: Dado RX b00010011
+(           732.00 ns) =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+(           732.00 ns) Dado a ser codificado TX: b10100011
+(           750.00 ns) Inicio da transmissao UART. 
+(           950.00 ns) Fim da transmissao UART. 
+(           950.00 ns) Dado valido RX: Dado RX b10100011
+(          1012.00 ns) =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+(          1012.00 ns) Dado a ser codificado TX: b10000001
+(          1030.00 ns) Inicio da transmissao UART. 
+(          1230.00 ns) Fim da transmissao UART. 
+(          1230.00 ns) Dado valido RX: Dado RX b10000001
+(          1312.00 ns) =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+(          1312.00 ns) Dado a ser codificado TX: b01110101
+(          1330.00 ns) Inicio da transmissao UART. 
+(          1530.00 ns) Fim da transmissao UART. 
+(          1530.00 ns) Dado valido RX: Dado RX b01110101
+(          1592.00 ns) =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+(          1592.00 ns) Dado a ser codificado TX: b10111110
+(          1610.00 ns) Inicio da transmissao UART. 
+(          1810.00 ns) Fim da transmissao UART. 
+(          1810.00 ns) Dado valido RX: Dado RX b10111110
+(          1872.00 ns) =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+(          1872.00 ns) Dado a ser codificado TX: b10111101
+(          1890.00 ns) Inicio da transmissao UART. 
+(          2090.00 ns) Fim da transmissao UART. 
+(          2090.00 ns) Dado valido RX: Dado RX b10111101
+(          2192.00 ns) =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+(          2192.00 ns) Dado a ser codificado TX: b10101001
+(          2210.00 ns) Inicio da transmissao UART. 
+(          2410.00 ns) Fim da transmissao UART. 
+(          2410.00 ns) Dado valido RX: Dado RX b10101001
+(          2492.00 ns) =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+(          2492.00 ns) Dado a ser codificado TX: b01000111
+(          2510.00 ns) Inicio da transmissao UART. 
+(          2710.00 ns) Fim da transmissao UART. 
+(          2710.00 ns) Dado valido RX: Dado RX b01000111
+(          2792.00 ns) =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+(          2792.00 ns) Dado a ser codificado TX: b10010101
+(          2810.00 ns) Inicio da transmissao UART. 
+(          3010.00 ns) Fim da transmissao UART. 
+(          3010.00 ns) Dado valido RX: Dado RX b10010101
+(          3072.00 ns) =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+(          3072.00 ns) Dado a ser codificado TX: b00001111
+(          3090.00 ns) Inicio da transmissao UART. 
+(          3290.00 ns) Fim da transmissao UART. 
+(          3290.00 ns) Dado valido RX: Dado RX b00001111
+(          3352.00 ns) =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+(          3352.00 ns) Dado a ser codificado TX: b11010001
+(          3370.00 ns) Inicio da transmissao UART. 
+(          3570.00 ns) Fim da transmissao UART. 
+(          3570.00 ns) Dado valido RX: Dado RX b11010001
+(          3632.00 ns) =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+(          3632.00 ns) Dado a ser codificado TX: b00001110
+(          3650.00 ns) Inicio da transmissao UART. 
+(          3850.00 ns) Fim da transmissao UART. 
+(          3850.00 ns) Dado valido RX: Dado RX b00001110
+(          3932.00 ns) =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+(          3932.00 ns) Dado a ser codificado TX: b01100111
+(          3950.00 ns) Inicio da transmissao UART. 
+(          4150.00 ns) Fim da transmissao UART. 
+(          4150.00 ns) Dado valido RX: Dado RX b01100111
+(          4212.00 ns) =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+(          4212.00 ns) Dado a ser codificado TX: b10100011
+(          4230.00 ns) Inicio da transmissao UART. 
+(          4430.00 ns) Fim da transmissao UART. 
+(          4430.00 ns) Dado valido RX: Dado RX b10100011
+(          4552.00 ns) =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+(          4552.00 ns) Dado a ser codificado TX: b00000111
+(          4570.00 ns) Inicio da transmissao UART. 
+(          4770.00 ns) Fim da transmissao UART. 
+(          4770.00 ns) Dado valido RX: Dado RX b00000111
+(          4832.00 ns) =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+(          4832.00 ns) Dado a ser codificado TX: b00001000
+(          4850.00 ns) Inicio da transmissao UART. 
+(          5050.00 ns) Fim da transmissao UART. 
+(          5050.00 ns) Dado valido RX: Dado RX b00001000
+(          5112.00 ns) =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+(          5112.00 ns) Dado a ser codificado TX: b10011100
+(          5130.00 ns) Inicio da transmissao UART. 
+(          5330.00 ns) Fim da transmissao UART. 
+(          5330.00 ns) Dado valido RX: Dado RX b10011100
+(          5392.00 ns) =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+(          5392.00 ns) Dado a ser codificado TX: b00001011
+(          5410.00 ns) Inicio da transmissao UART. 
+(          5610.00 ns) Fim da transmissao UART. 
+(          5610.00 ns) Dado valido RX: Dado RX b00001011
+(          5672.00 ns) =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+(          5672.00 ns) Dado a ser codificado TX: b10010100
+(          5690.00 ns) Inicio da transmissao UART. 
+(          5890.00 ns) Fim da transmissao UART. 
+(          5890.00 ns) Dado valido RX: Dado RX b10010100
+(          5972.00 ns) =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+(          5972.00 ns) Dado a ser codificado TX: b00111111
+(          5990.00 ns) Inicio da transmissao UART. 
+(          6190.00 ns) Fim da transmissao UART. 
+(          6190.00 ns) Dado valido RX: Dado RX b00111111
+(          6252.00 ns) =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+(          6252.00 ns) Dado a ser codificado TX: b01010110
+(          6270.00 ns) Inicio da transmissao UART. 
+(          6470.00 ns) Fim da transmissao UART. 
+(          6470.00 ns) Dado valido RX: Dado RX b01010110
+(          6572.00 ns) =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+(          6572.00 ns) Dado a ser codificado TX: b01001010
+(          6590.00 ns) Inicio da transmissao UART. 
+(          6790.00 ns) Fim da transmissao UART. 
+(          6790.00 ns) Dado valido RX: Dado RX b01001010
+(          6852.00 ns) =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+(          6852.00 ns) Dado a ser codificado TX: b01011010
+(          6870.00 ns) Inicio da transmissao UART. 
+(          7070.00 ns) Fim da transmissao UART. 
+(          7070.00 ns) Dado valido RX: Dado RX b01011010
+(          7132.00 ns) =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+(          7132.00 ns) Dado a ser codificado TX: b10111010
+(          7150.00 ns) Inicio da transmissao UART. 
+(          7350.00 ns) Fim da transmissao UART. 
+(          7350.00 ns) Dado valido RX: Dado RX b10111010
+(          7432.00 ns) =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+(          7432.00 ns) Dado a ser codificado TX: b10110101
+(          7450.00 ns) Inicio da transmissao UART. 
+(          7650.00 ns) Fim da transmissao UART. 
+(          7650.00 ns) Dado valido RX: Dado RX b10110101
+(          7712.00 ns) =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+(          7712.00 ns) Dado a ser codificado TX: b11101000
+(          7730.00 ns) Inicio da transmissao UART. 
+(          7930.00 ns) Fim da transmissao UART. 
+(          7930.00 ns) Dado valido RX: Dado RX b11101000
+(          8012.00 ns) =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+(          8012.00 ns) Dado a ser codificado TX: b01011010
+(          8030.00 ns) Inicio da transmissao UART. 
+(          8230.00 ns) Fim da transmissao UART. 
+(          8230.00 ns) Dado valido RX: Dado RX b01011010
+(          8312.00 ns) =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+(          8312.00 ns) Dado a ser codificado TX: b10100011
+(          8330.00 ns) Inicio da transmissao UART. 
+(          8530.00 ns) Fim da transmissao UART. 
+(          8530.00 ns) Dado valido RX: Dado RX b10100011
+(          8652.00 ns) =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+(          8652.00 ns) Dado a ser codificado TX: b00000110
+(          8670.00 ns) Inicio da transmissao UART. 
+(          8870.00 ns) Fim da transmissao UART. 
+(          8870.00 ns) Dado valido RX: Dado RX b00000110
+(          8932.00 ns) =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+(          8932.00 ns) Dado a ser codificado TX: b11101101
+(          8950.00 ns) Inicio da transmissao UART. 
+(          9150.00 ns) Fim da transmissao UART. 
+(          9150.00 ns) Dado valido RX: Dado RX b11101101
+(          9232.00 ns) =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+(          9232.00 ns) Dado a ser codificado TX: b11000110
+(          9250.00 ns) Inicio da transmissao UART. 
+(          9450.00 ns) Fim da transmissao UART. 
+(          9450.00 ns) Dado valido RX: Dado RX b11000110
+(          9552.00 ns) =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+(          9552.00 ns) Dado a ser codificado TX: b01111111
+(          9570.00 ns) Inicio da transmissao UART. 
+(          9770.00 ns) Fim da transmissao UART. 
+(          9770.00 ns) Dado valido RX: Dado RX b01111111
+(          9852.00 ns) =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+(          9852.00 ns) Dado a ser codificado TX: b11010011
+(          9870.00 ns) Inicio da transmissao UART. 
+Simulation complete via $finish(1) at time 10 US + 0
+./tb_uart.sv:46     #(10000ns) $finish();
+xcelium> ^C
+xcelium> exit
+TOOL:	xrun(64)	22.09-s013: Exiting on Nov 26, 2024 at 10:17:05 -03  (total: 00:14:23)

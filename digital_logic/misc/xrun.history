@@ -1,0 +1,4 @@
+s1(26Nov2024:09:59:17):  xrun -64bit tb_uart.sv codificador_UART.sv decodificador_UART.sv 
+s2(26Nov2024:09:59:56):  xrun -64bit tb_uart.sv codificador_UART.sv decodificador_UART.sv 
+s3(26Nov2024:10:02:00):  xrun -64bit tb_uart.sv codificador_UART.sv decodificador_UART.sv 
+s4(26Nov2024:10:02:42):  xrun -64bit tb_uart.sv codificador_UART.sv +gui +access+rw 

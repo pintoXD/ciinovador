@@ -6,6 +6,10 @@ module muxULAsrc(
     output logic [7:0] w_SrcB
 );
 
-assign w_SrcB = select_src ? constante : w_rd2;
+always_comb 
+begin
+    w_SrcB = select_src ? constante : w_rd2;
+end
+
 
 endmodule
