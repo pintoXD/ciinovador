@@ -13,7 +13,7 @@ module datapath101_tb();
     logic test_clk, test_reset;
     logic [7:0] dut_ULAResult;
     logic dut_FlagZ;
-
+    
     datapath101 DUT(
         .ra1(mocked_ra1),
         .ra2(mocked_ra2),
@@ -256,15 +256,102 @@ module datapath101_tb();
         assert(dut_ULAResult == 8'h5D && dut_FlagZ == 1'b0) else $fatal("Test Case 18 failed");
 
         //Test Case 19 - Reading and ANDing the values from registers X4 and variable constante
-        //               where constante == 0xFF
+        //               where constante == 0x00
         @(posedge test_clk);
         mocked_ra1 = 3'b100; //==> Register X4
         mock_select_src = 1'b1; // ==> Select constante value
-        mock_constante = 8'hFF; //==> Constant value
+        mock_constante = 8'h00; //==> Constant value
         mock_ULAControl = 3'b010; //==> AND operation
         #10
-        assert(dut_ULAResult == 8'h5D && dut_FlagZ == 1'b0) else $fatal("Test Case 19 failed");
+        assert(dut_ULAResult == 8'h00 && dut_FlagZ == 1'b1) else $fatal("Test Case 19 failed");
 
+        /* 
+            Set #5: Logical OR between two numbers previously stored on registers.
+                This set of test cases aims to verify the correctness of the logical AND
+                operation between two numbers previously stored on the register bank.
+        */
+
+        //Test Case 20 - Reading and ORing the values from registers X6 and X2
+        @(posedge test_clk);
+        mocked_ra1 = 3'b110; //==> Register X6
+        mocked_ra2 = 3'b010; //==> Register X2
+        mock_select_src = 1'b0;
+        mock_ULAControl = 3'b011; //==> OR operation
+        #10
+        assert(dut_ULAResult == 8'h5F && dut_FlagZ == 1'b0) else $fatal("Test Case 20 failed");
+
+        //Test Case 21 - Reading and ORing the values from registers X1 and X4
+        @(posedge test_clk);
+        mocked_ra1 = 3'b001; //==> Register X1
+        mocked_ra2 = 3'b100; //==> Register X4
+        mock_select_src = 1'b0;
+        mock_ULAControl = 3'b011; //==> OR operation
+        #10
+        assert(dut_ULAResult == 8'h5F && dut_FlagZ == 1'b0) else $fatal("Test Case 21 failed");
+
+        //Test Case 22 - Reading and ORing the values from registers X3 and variable constante
+        //               where constante == 0xFF
+        @(posedge test_clk);
+        mocked_ra1 = 3'b011; //==> Register X3
+        mock_select_src = 1'b1; // ==> Select constante value
+        mock_constante = 8'hFF; //==> Constant value
+        mock_ULAControl = 3'b011; //==> OR operation
+        #10
+        assert(dut_ULAResult == 8'hFF && dut_FlagZ == 1'b0) else $fatal("Test Case 22 failed");
+
+        //Test Case 23 - Reading and ORing the values from registers X6 and variable constante
+        //               where constante == 0x00
+        @(posedge test_clk);
+        mocked_ra1 = 3'b110; //==> Register X6
+        mock_select_src = 1'b1; // ==> Select constante value
+        mock_constante = 8'h00; //==> Constant value
+        mock_ULAControl = 3'b011; //==> OR operation
+        #10
+        assert(dut_ULAResult == 8'h5F && dut_FlagZ == 1'b0) else $fatal("Test Case 23 failed");
+
+        /* 
+            Set #6: Sets less than (SLT) between two numbers previously stored on registers.
+                This set of test cases aims to verify the correctness of the SLT
+                operation between two numbers previously stored on the register bank.
+        */
+
+        //Test Case 24 - Reading and SLT the values from registers X6 and X4
+        @(posedge test_clk);
+        mocked_ra1 = 3'b110; //==> Register X6
+        mocked_ra2 = 3'b100; //==> Register X4
+        mock_select_src = 1'b0;
+        mock_ULAControl = 3'b101; //==> SLT operation
+        #10
+        assert(dut_ULAResult == 8'h00 && dut_FlagZ == 1'b1) else $fatal("Test Case 24 failed");
+
+        //Test Case 25 - Reading and SLT the values from registers X4 and X6
+        @(posedge test_clk);
+        mocked_ra1 = 3'b100; //==> Register X4
+        mocked_ra2 = 3'b110; //==> Register X6
+        mock_select_src = 1'b0;
+        mock_ULAControl = 3'b101; //==> SLT operation
+        #10
+        assert(dut_ULAResult == 8'hFF && dut_FlagZ == 1'b0) else $fatal("Test Case 25 failed");
+
+        //Test Case 26 - Reading and SLT the values from registers X3 and variable constante
+        //               where constante == 0xFF
+        @(posedge test_clk);
+        mocked_ra1 = 3'b011; //==> Register X3
+        mock_select_src = 1'b1; // ==> Select constante value
+        mock_constante = 8'hFF; //==> Constant value
+        mock_ULAControl = 3'b101; //==> SLT operation
+        #10
+        assert(dut_ULAResult == 8'hFF && dut_FlagZ == 1'b0) else $fatal("Test Case 26 failed");
+
+        //Test Case 27 - Reading and SLT the values from registers X7 and variable constante
+        //               where constante == 0x00
+        @(posedge test_clk);
+        mocked_ra1 = 3'b111; //==> Register X7
+        mock_select_src = 1'b1; // ==> Select constante value
+        mock_constante = 8'h00; //==> Constant value
+        mock_ULAControl = 3'b101; //==> SLT operation
+        #10
+        assert(dut_ULAResult == 8'h00 && dut_FlagZ == 1'b1) else $fatal("Test Case 27 failed");
 
         #10 $finish;
     end

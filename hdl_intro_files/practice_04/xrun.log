@@ -1,5 +1,5 @@
 xrun(64): 22.09-s013: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	22.09-s013: Started on Nov 26, 2024 at 16:00:14 -03
+TOOL:	xrun(64)	22.09-s013: Started on Nov 26, 2024 at 17:07:16 -03
 xrun
 	datapath101_tb.sv
 	datapath101.sv
@@ -8,8 +8,8 @@ xrun
 	muxULAsrc.sv
 	custom_ula.sv
 Recompiling... reason: file './datapath101_tb.sv' is newer than expected.
-	expected: Tue Nov 26 15:47:16 2024
-	actual:   Tue Nov 26 16:00:10 2024
+	expected: Tue Nov 26 16:53:56 2024
+	actual:   Tue Nov 26 17:07:11 2024
 file: datapath101_tb.sv
 	module worklib.datapath101_tb:sv
 		errors: 0, warnings: 0
@@ -76,25 +76,52 @@ xmelab: *W,STRINT (./datapath101_tb.sv,237|92): String literal argument supplied
         assert(dut_ULAResult == 8'h00 && dut_FlagZ == 1'b1) else $fatal("Test Case 17 failed");
                                                                                             |
 xmelab: *W,STRINT (./datapath101_tb.sv,246|92): String literal argument supplied to integer parameter.
-        assert(dut_ULAResult == 8'hFF && dut_FlagZ == 1'b0) else $fatal("Test Case 18 failed");
+        assert(dut_ULAResult == 8'h5D && dut_FlagZ == 1'b0) else $fatal("Test Case 18 failed");
                                                                                             |
 xmelab: *W,STRINT (./datapath101_tb.sv,256|92): String literal argument supplied to integer parameter.
+        assert(dut_ULAResult == 8'h00 && dut_FlagZ == 1'b1) else $fatal("Test Case 19 failed");
+                                                                                            |
+xmelab: *W,STRINT (./datapath101_tb.sv,266|92): String literal argument supplied to integer parameter.
+        assert(dut_ULAResult == 8'h5F && dut_FlagZ == 1'b0) else $fatal("Test Case 20 failed");
+                                                                                            |
+xmelab: *W,STRINT (./datapath101_tb.sv,281|92): String literal argument supplied to integer parameter.
+        assert(dut_ULAResult == 8'h5F && dut_FlagZ == 1'b0) else $fatal("Test Case 21 failed");
+                                                                                            |
+xmelab: *W,STRINT (./datapath101_tb.sv,290|92): String literal argument supplied to integer parameter.
+        assert(dut_ULAResult == 8'hFF && dut_FlagZ == 1'b0) else $fatal("Test Case 22 failed");
+                                                                                            |
+xmelab: *W,STRINT (./datapath101_tb.sv,300|92): String literal argument supplied to integer parameter.
+        assert(dut_ULAResult == 8'h5F && dut_FlagZ == 1'b0) else $fatal("Test Case 23 failed");
+                                                                                            |
+xmelab: *W,STRINT (./datapath101_tb.sv,310|92): String literal argument supplied to integer parameter.
+        assert(dut_ULAResult == 8'h00 && dut_FlagZ == 1'b1) else $fatal("Test Case 24 failed");
+                                                                                            |
+xmelab: *W,STRINT (./datapath101_tb.sv,325|92): String literal argument supplied to integer parameter.
+        assert(dut_ULAResult == 8'hFF && dut_FlagZ == 1'b0) else $fatal("Test Case 25 failed");
+                                                                                            |
+xmelab: *W,STRINT (./datapath101_tb.sv,334|92): String literal argument supplied to integer parameter.
+        assert(dut_ULAResult == 8'hFF && dut_FlagZ == 1'b0) else $fatal("Test Case 26 failed");
+                                                                                            |
+xmelab: *W,STRINT (./datapath101_tb.sv,344|92): String literal argument supplied to integer parameter.
+        assert(dut_ULAResult == 8'h00 && dut_FlagZ == 1'b1) else $fatal("Test Case 27 failed");
+                                                                                            |
+xmelab: *W,STRINT (./datapath101_tb.sv,354|92): String literal argument supplied to integer parameter.
 ................... Done
 	Generating native compiled code:
-		worklib.datapath101_tb:sv <0x411a68e1>
-			streams:  24, words: 62641
+		worklib.datapath101_tb:sv <0x7da76f30>
+			streams:  24, words: 86265
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
 		                 Instances  Unique
 		Modules:                13       6
-		Registers:              65      58
+		Registers:              74      67
 		Scalar wires:            8       -
 		Vectored wires:         43       -
 		Always blocks:          13       6
 		Initial blocks:         11      11
 		Pseudo assignments:     29      29
-		Assertions:             20      20
+		Assertions:             29      29
 		Simulation timescale:  1ps
 	Writing initial simulation snapshot: worklib.datapath101_tb:sv
 Loading snapshot worklib.datapath101_tb:sv .................... Done
@@ -167,8 +194,27 @@ xmsim: *W,DVEXACC: some objects excluded from $dumpvars due to access restrictio
                  280      0    0        0          111           000         101            50            60                  0                  010          |           00      1
                  285      1    0        0          111           000         101            50            60                  0                  010          |           00      1
                  290      0    0        0          111           100         101            50            ff                  1                  010          |           5d      0
-xmsim: *F,ASRTST (./datapath101_tb.sv,256): (time 295 NS) Assertion datapath101_tb.__assert_20 has failed
-Simulation terminated via $fatal(1) at time 295 NS + 0
-./datapath101_tb.sv:256         assert(dut_ULAResult == 8'hFF && dut_FlagZ == 1'b0) else $fatal("Test Case 18 failed");
+                 295      1    0        0          111           100         101            50            ff                  1                  010          |           5d      0
+                 300      0    0        0          111           100         101            50            00                  1                  010          |           00      1
+                 305      1    0        0          111           100         101            50            00                  1                  010          |           00      1
+                 310      0    0        0          111           110         010            50            00                  0                  011          |           5f      0
+                 315      1    0        0          111           110         010            50            00                  0                  011          |           5f      0
+                 320      0    0        0          111           001         100            50            00                  0                  011          |           5f      0
+                 325      1    0        0          111           001         100            50            00                  0                  011          |           5f      0
+                 330      0    0        0          111           011         100            50            ff                  1                  011          |           ff      0
+                 335      1    0        0          111           011         100            50            ff                  1                  011          |           ff      0
+                 340      0    0        0          111           110         100            50            00                  1                  011          |           5f      0
+                 345      1    0        0          111           110         100            50            00                  1                  011          |           5f      0
+                 350      0    0        0          111           110         100            50            00                  0                  101          |           00      1
+                 355      1    0        0          111           110         100            50            00                  0                  101          |           00      1
+                 360      0    0        0          111           100         110            50            00                  0                  101          |           ff      0
+                 365      1    0        0          111           100         110            50            00                  0                  101          |           ff      0
+                 370      0    0        0          111           011         110            50            ff                  1                  101          |           ff      0
+                 375      1    0        0          111           011         110            50            ff                  1                  101          |           ff      0
+                 380      0    0        0          111           111         110            50            00                  1                  101          |           00      1
+                 385      1    0        0          111           111         110            50            00                  1                  101          |           00      1
+                 390      0    0        0          111           111         110            50            00                  1                  101          |           00      1
+Simulation complete via $finish(1) at time 395 NS + 0
+./datapath101_tb.sv:356         #10 $finish;
 xcelium> exit
-TOOL:	xrun(64)	22.09-s013: Exiting on Nov 26, 2024 at 16:00:24 -03  (total: 00:00:10)
+TOOL:	xrun(64)	22.09-s013: Exiting on Nov 26, 2024 at 17:07:27 -03  (total: 00:00:11)
