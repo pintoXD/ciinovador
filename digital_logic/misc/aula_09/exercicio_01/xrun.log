@@ -1,0 +1,58 @@
+xrun(64): 22.09-s013: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	22.09-s013: Started on Nov 27, 2024 at 19:32:04 -03
+xrun
+	-64bit
+	pulse_detector_tb.sv
+	pulse_detector.sv
+	+gui
+	+access+rw
+	-s
+Recompiling... reason: file './pulse_detector_tb.sv' is newer than expected.
+	expected: Wed Nov 27 19:29:35 2024
+	actual:   Wed Nov 27 19:31:58 2024
+file: pulse_detector_tb.sv
+	module worklib.pulse_detector_tb:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		pulse_detector_tb
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.pulse_detector_tb:sv <0x24225453>
+			streams:  11, words: 10340
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 2       2
+		Registers:              12      12
+		Scalar wires:            8       -
+		Always blocks:           2       2
+		Initial blocks:          5       5
+		Pseudo assignments:      6       6
+		Simulation timescale:  1ns
+	Writing initial simulation snapshot: worklib.pulse_detector_tb:sv
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> 
+xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
+xcelium> 
+-------------------------------------
+Relinquished control to SimVision...
+# Restoring simulation environment...
+xcelium> input -quiet .reinvoke.sim
+xcelium> file delete .reinvoke.sim
+xcelium> run
+xmsim: *W,DFUSE: $dumpfile pulse_detector_tb.vcd is already in use (VCD file).
+            File: ./pulse_detector_tb.sv, line = 29, pos = 16
+           Scope: pulse_detector_tb
+            Time: 0 FS + 0
+
+xmsim: *W,VCDFUSE: Default VCD file name verilog.dump already in use (VCD file).
+            Time: 0 FS + 1
+
+Simulation complete via $finish(1) at time 87 NS + 0
+./pulse_detector_tb.sv:91         $finish;
+xcelium> 

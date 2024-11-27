@@ -10,6 +10,7 @@ O conteúdo dos arquivos enviados são os que seguem:
 * `custom_ula_tb.sv`: Testbench que implementa a ULA desenvolvida e citada anteriormente;
 * `datapath101.sv`: Módulo que implementa um datapah à partir da junção dos módulos `register8_bank`, `muxULAsrc.sv` e `custom_ula`;
 * `datapath101_tb.sv`: Testbench do módulo datapath citado anteriormente. 
+* `datapath101_tb.vcd`: Arquivo de formas de onda do módulo `datapath101`. 
 
 ## Funcionamento do módulo  `datapath101`
 

@@ -1,0 +1,28 @@
+s1(27Nov2024:18:03:27):  xrun -64bit pulse_detector_tb.sv pulse_detector.sv +gui +access+rw 
+s2(27Nov2024:18:06:03):  xrun -64bit pulse_detector_tb.sv pulse_detector.sv +gui +access+rw 
+s3(27Nov2024:18:07:28):  xrun -64bit pulse_detector_tb.sv pulse_detector.sv +gui +access+rw "-s " 
+s4(27Nov2024:18:09:04):  xrun -64bit pulse_detector_tb.sv pulse_detector.sv +gui +access+rw -s 
+s5(27Nov2024:18:09:32):  xrun -64bit pulse_detector_tb.sv pulse_detector.sv +gui +access+rw -s 
+s6(27Nov2024:18:09:49):  xrun -64bit pulse_detector_tb.sv pulse_detector.sv +gui +access+rw -s 
+s7(27Nov2024:18:16:15):  xrun -64bit pulse_detector_tb.sv pulse_detector.sv +gui +access+rw -s 
+s8(27Nov2024:18:31:31):  xrun -64bit pulse_detector_tb.sv pulse_detector.sv +gui +access+rw -s 
+s9(27Nov2024:18:36:24):  xrun -64bit pulse_detector_tb.sv pulse_detector.sv +gui +access+rw -s 
+s10(27Nov2024:18:40:11):  xrun -64bit pulse_detector_tb.sv pulse_detector.sv +gui +access+rw -s 
+s11(27Nov2024:18:42:45):  xrun -64bit pulse_detector_tb.sv pulse_detector.sv +gui +access+rw -s 
+s12(27Nov2024:18:45:30):  xrun -64bit pulse_detector_tb.sv pulse_detector.sv +gui +access+rw -s 
+s13(27Nov2024:18:48:08):  xrun -64bit pulse_detector_tb.sv pulse_detector.sv +gui +access+rw -s 
+s14(27Nov2024:18:51:15):  xrun -64bit pulse_detector_tb.sv pulse_detector.sv +gui +access+rw -s 
+s15(27Nov2024:18:54:04):  xrun -64bit pulse_detector_tb.sv pulse_detector.sv +gui +access+rw -s 
+s16(27Nov2024:18:57:08):  xrun -64bit pulse_detector_tb.sv pulse_detector.sv +gui +access+rw -s 
+s17(27Nov2024:18:59:00):  xrun -64bit pulse_detector_tb.sv pulse_detector.sv +gui +access+rw -s 
+s18(27Nov2024:19:05:12):  xrun -64bit pulse_detector_tb.sv pulse_detector.sv +gui +access+rw -s 
+s19(27Nov2024:19:08:26):  xrun -64bit pulse_detector_tb.sv pulse_detector.sv +gui +access+rw -s 
+s20(27Nov2024:19:14:11):  xrun -64bit pulse_detector_tb.sv pulse_detector.sv +gui +access+rw -s 
+s21(27Nov2024:19:18:12):  xrun -64bit pulse_detector_tb.sv pulse_detector.sv +gui +access+rw -s 
+s22(27Nov2024:19:21:17):  xrun -64bit pulse_detector_tb.sv pulse_detector.sv +gui +access+rw -s 
+s23(27Nov2024:19:22:49):  xrun -64bit pulse_detector_tb.sv pulse_detector.sv +gui +access+rw -s 
+s24(27Nov2024:19:24:47):  xrun -64bit pulse_detector_tb.sv pulse_detector.sv +gui +access+rw -s 
+s25(27Nov2024:19:26:58):  xrun -64bit pulse_detector_tb.sv pulse_detector.sv +gui +access+rw -s 
+s26(27Nov2024:19:29:43):  xrun -64bit pulse_detector_tb.sv pulse_detector.sv +gui +access+rw -s 
+s27(27Nov2024:19:31:07):  xrun -64bit pulse_detector_tb.sv pulse_detector.sv +gui +access+rw -s 
+s28(27Nov2024:19:32:04):  xrun -64bit pulse_detector_tb.sv pulse_detector.sv +gui +access+rw -s 

@@ -14,7 +14,15 @@ Cada um desses registradores possui um endereço específico definido nos requis
 
 Esse módulo possui as seguintes entradas:
 * `we3`: Habilita a escrita de dados nos registradores;
-* `wa3`: Endereço do registrador em que deve ser escrito algo;
+* `wa3`: Endereço do registrador em que deve ser escrito algo. Os enderços disponíveis são:
+  * `000`: Registrador X0 (Disponível somente para **leitura**) 
+  * `001`: Registrador X1 (Disponível para leitura e escrita) 
+  * `010`: Registrador X2 (Disponível para leitura e escrita)
+  * `011`: Registrador X3 (Disponível para leitura e escrita) 
+  * `100`: Registrador X4 (Disponível para leitura e escrita) 
+  * `101`: Registrador X5 (Disponível para leitura e escrita)
+  * `110`: Registrador X6 (Disponível para leitura e escrita)
+  * `111`: Registrador X7 (Disponível para leitura e escrita) 
 * `wd3`: Palavra de 8 bits que deve escrita no registrador escolhido;
 * `ra1` e `ra2`: Define o endereço dos registradores que devem ser exibidios em `rd1` e `rd2`, respectivamente.
 * `clk` : Recebe o clock para controlar as leituras e escritas nos registradores;
