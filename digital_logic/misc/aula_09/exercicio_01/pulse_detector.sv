@@ -10,16 +10,25 @@ module pulse_detector (
 
 
 typedef enum { INITIAL_STATE=0, COUNTS_A=1, COUNTS_B=2, WATCH_INPUTS=3,
-               SEND_SIG_A, SEND_SIG_B} internal_states;
+               SEND_SIG_A=4, SEND_SIG_B=5} internal_states;
 
 
 internal_states current_state_ff, next_state_comb;
 
 logic [2:0] count_a, count_b;
+logic rise_a, rise_b;
 
 
 always_ff @(posedge clk) begin
     current_state_ff <= next_state_comb;
+end
+
+always_ff @(posedge a_signal or negedge a_signal) begin
+    rise_a <= a_signal ? 1'b1 : 1'b0; 
+end
+
+always_ff @(posedge b_signal or negedge b_signal) begin
+    rise_b <= b_signal ? 1'b1 : 1'b0; 
 end
 
 always_comb begin
@@ -36,8 +45,8 @@ always_comb begin
     else begin
         case(current_state_ff)
             INITIAL_STATE: begin
-                count_a = 0;
-                count_b = 0;
+                count_a = '0;
+                count_b = '0;
 
                 next_state_comb = WATCH_INPUTS;                
                 // if(a_signal)
@@ -47,10 +56,14 @@ always_comb begin
             end
 
             WATCH_INPUTS: begin
-                if(a_signal)
+                if(rise_a) begin
                     next_state_comb = COUNTS_A;
-                else if(b_signal)
+                end
+                else if(rise_b) begin
                     next_state_comb = COUNTS_B;
+                end
+                else
+                    next_state_comb = WATCH_INPUTS;
             end
 
 

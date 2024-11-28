@@ -1,5 +1,5 @@
+/* verilator lint_off UNUSEDSIGNAL */
 `timescale 1ns/1ns
-
 
 module pulse_detector_tb();
 
@@ -12,7 +12,7 @@ module pulse_detector_tb();
     initial
     begin
         dut_clk = 1;
-        forever #3 dut_clk = ~dut_clk;
+        forever #1 dut_clk = ~dut_clk;
     end
 
     pulse_detector dut (
@@ -27,7 +27,7 @@ module pulse_detector_tb();
     initial
     begin
         $dumpfile("pulse_detector_tb.vcd");
-        $dumpvars(0, pulse_detector_tb);
+        $dumpvars(0, pulse_detector);
 
         mock_reset = 1;
         #2;
@@ -35,21 +35,22 @@ module pulse_detector_tb();
 
         @(posedge dut_clk);
         mock_a = 1;
-        #1;
+        #2;
         mock_a = 0;
 
         @(posedge dut_clk);
         mock_a = 1;
-        #1;
+        #2;
         mock_a = 0;
         
         @(posedge dut_clk);
         mock_a = 1;
-        #1;
+        #2;
         mock_a = 0;
         
         #10; //Changing the set of state changes
         
+        /*
         //Testing rising B
         @(posedge dut_clk);
         mock_b = 1;
@@ -67,7 +68,7 @@ module pulse_detector_tb();
         mock_b = 0;
 
         #10; //Changing the set of state changes
-        /*
+        
         @(posedge dut_clk);
         mock_a = 1; 
         #5
