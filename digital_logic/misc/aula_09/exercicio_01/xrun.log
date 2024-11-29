@@ -55,4 +55,5 @@ xmsim: *W,VCDFUSE: Default VCD file name verilog.dump already in use (VCD file).
 
 Simulation complete via $finish(1) at time 87 NS + 0
 ./pulse_detector_tb.sv:91         $finish;
-xcelium> 
+xcelium> xmsim: *W,NCTERM: Simulation received SIGTERM signal from process 1, user id 0 (/usr/lib/systemd/systemd).
+TOOL:	xrun(64)	22.09-s013: Exiting on Nov 27, 2024 at 19:33:12 -03  (total: 00:01:08)
