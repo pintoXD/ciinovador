@@ -1,0 +1,69 @@
+$date
+    Nov 29, 2024  17:43:54
+$end
+$version
+    TOOL:	xmsim(64)	22.09-s013
+$end
+$timescale
+    1 ps
+$end
+
+$scope module register8_bank_tb $end
+
+$scope module dut $end
+
+$scope begin genblk1[0] $end
+$var parameter 32 !    i $end
+$upscope $end
+
+
+$scope begin genblk1[1] $end
+$var parameter 32 "    i $end
+$upscope $end
+
+
+$scope begin genblk1[2] $end
+$var parameter 32 #    i $end
+$upscope $end
+
+
+$scope begin genblk1[3] $end
+$var parameter 32 $    i $end
+$upscope $end
+
+
+$scope begin genblk1[4] $end
+$var parameter 32 %    i $end
+$upscope $end
+
+
+$scope begin genblk1[5] $end
+$var parameter 32 &    i $end
+$upscope $end
+
+
+$scope begin genblk1[6] $end
+$var parameter 32 '    i $end
+$upscope $end
+
+
+$scope begin genblk1[7] $end
+$var parameter 32 (    i $end
+$upscope $end
+
+$upscope $end
+
+$upscope $end
+
+$enddefinitions $end
+$dumpvars
+b111 (
+b110 '
+b101 &
+b100 %
+b11 $
+b10 #
+b1 "
+b0 !
+$end
+#55000
