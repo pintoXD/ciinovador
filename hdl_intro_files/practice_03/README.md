@@ -7,6 +7,16 @@ O conteúdo dos arquivos enviados são os que seguem:
 * `register8_bank.sv`: Módulo que implementa um banco de registradores de 8-bits;
 * `register8_bank_tb.sv`: Testbench do banco de registradores de 8-bits.
 
+### Compilação
+
+  A fim de compilar o módulo datapath para testes, deve ser necessário executar o seguinte comando:
+  ```bash
+
+    xrun -64bit register8_bank_tb.sv register8_bank.sv register8.sv
+
+  ```
+
+
 ## Funcionamento do módulo  `register8_bank`
 
 O módulo `register8_bank` implementa um conjunto de oito módulos `register8`, formando assim um conjunto de oito registradores de oito bits.

@@ -12,6 +12,17 @@ O conteúdo dos arquivos enviados são os que seguem:
 * `datapath101_tb.sv`: Testbench do módulo datapath citado anteriormente. 
 * `datapath101_tb.vcd`: Arquivo de formas de onda do módulo `datapath101`. 
 
+
+### Compilação
+
+  A fim de compilar o módulo datapath para testes, deve ser necessário executar o seguinte comando:
+  ```bash
+
+    xrun -64bit datapath101_tb.sv datapath101.sv register8_bank.sv register8.sv custom_ula.sv muxULAsrc.sv
+
+  ```
+
+
 ## Funcionamento do módulo  `datapath101`
 
 O módulo `datapath101` implementa um datapath ao unir o banco de registradores de 8 bits, a ULA personalizada criada e o multiplexador de duas palavras de 8 bits. 

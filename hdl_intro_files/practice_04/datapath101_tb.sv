@@ -43,13 +43,13 @@ module datapath101_tb();
         $dumpvars(0, datapath101_tb);
 
         @(posedge test_clk);
-        test_reset = 1'b1;
-        #10 
         test_reset = 1'b0;
+        #10 
+        test_reset = 1'b1;
         #10
 
         //Test Case 0
-        assert(dut_ULAResult == 8'h00 && dut_FlagZ == 8'b1) else $fatal("Test Case 0 failed");
+        assert(dut_ULAResult == 8'h00 && dut_FlagZ == 1'b1 && DUT.w_rd1SrcA == 8'b0) else $fatal(0, "Test Case 0 failed");
         #10
 
 
@@ -66,9 +66,9 @@ module datapath101_tb();
         mocked_we3 = 1'b1;
         mocked_wd3 = 8'h5A;
         mocked_wa3 = 3'b001; //==> Register X1
-        #20
+        #30
         mocked_we3 = 1'b0;
-        assert(dut_ULAResult == 8'h00 && dut_FlagZ == 1'b1) else $fatal("Test Case 1 failed");
+        assert(dut_ULAResult == 8'h00 && dut_FlagZ == 1'b1) else $fatal(1, "Test Case 1 failed");
 
         
         //Test Case 2 - Write to register X2
@@ -78,7 +78,7 @@ module datapath101_tb();
         mocked_wa3 = 3'b010;   //==> Register X2
         #20
         mocked_we3 = 1'b0;
-        assert(dut_ULAResult == 8'h00 && dut_FlagZ == 1'b1) else $fatal("Test Case 2 failed");
+        assert(dut_ULAResult == 8'h00 && dut_FlagZ == 1'b1) else $fatal(2, "Test Case 2 failed");
 
         //Test Case 3 - Write to register X3.
         @(posedge test_clk);
@@ -87,7 +87,7 @@ module datapath101_tb();
         mocked_wa3 = 3'b011; //==> Register X3
         #20
         mocked_we3 = 1'b0;
-        assert(dut_ULAResult == 8'h00 && dut_FlagZ == 1'b1) else $fatal("Test Case 3 failed");
+        assert(dut_ULAResult == 8'h00 && dut_FlagZ == 1'b1) else $fatal(3, "Test Case 3 failed");
         
         //Test Case 4 - Write to register X4 with rd1 unchanged from the previous test case.
         @(posedge test_clk);
@@ -96,7 +96,7 @@ module datapath101_tb();
         mocked_wa3 = 3'b100; //==> Register X4
         #20
         mocked_we3 = 1'b0;
-        assert(dut_ULAResult == 8'h00 && dut_FlagZ == 1'b1) else $fatal("Test Case 4 failed");
+        assert(dut_ULAResult == 8'h00 && dut_FlagZ == 1'b1) else $fatal(4, "Test Case 4 failed");
 
         //Test Case 5 - Write to register X5.
         @(posedge test_clk);
@@ -105,7 +105,7 @@ module datapath101_tb();
         mocked_wa3 = 3'b101; //==> Register X5
         #20
         mocked_we3 = 1'b0;
-        assert(dut_ULAResult == 8'h00 && dut_FlagZ == 1'b1) else $fatal("Test Case 5 failed");
+        assert(dut_ULAResult == 8'h00 && dut_FlagZ == 1'b1) else $fatal(5, "Test Case 5 failed");
 
         //Test Case 6 - Write to register X6.
         @(posedge test_clk);
@@ -114,7 +114,7 @@ module datapath101_tb();
         mocked_wa3 = 3'b110; //==> Register X6
         #20
         mocked_we3 = 1'b0;
-        assert(dut_ULAResult == 8'h00 && dut_FlagZ == 1'b1) else $fatal("Test Case 6 failed");
+        assert(dut_ULAResult == 8'h00 && dut_FlagZ == 1'b1) else $fatal(6, "Test Case 6 failed");
 
         //Test Case 6 - Write to register X7.
         @(posedge test_clk);
@@ -123,7 +123,9 @@ module datapath101_tb();
         mocked_wa3 = 3'b111; //==> Register X7
         #20
         mocked_we3 = 1'b0;
-        assert(dut_ULAResult == 8'h00 && dut_FlagZ == 1'b1) else $fatal("Test Case 6 failed");
+        assert(dut_ULAResult == 8'h00 && dut_FlagZ == 1'b1) else $fatal(6, "Test Case 6 failed");
+
+        
 
         /*
             Set #2: Adding two numbers previously stored on registers.
@@ -137,8 +139,9 @@ module datapath101_tb();
         mocked_ra2 = 3'b010; //==> Register X2
         mock_select_src = 1'b0;
         mock_ULAControl = 3'b000; //==> Addition operation
-        #10
-        assert(dut_ULAResult == 8'hB5 && dut_FlagZ == 1'b0) else $fatal("Test Case 7 failed");
+        $display("HERE: ", $time);
+        #30
+        assert(dut_ULAResult == 8'hB5 && dut_FlagZ == 1'b0) else $fatal(7, "Test Case 7 failed ", $time);
 
         //Test Case 8 - Reading and adding the values from registers X3 and X4
         @(posedge test_clk);
@@ -147,7 +150,7 @@ module datapath101_tb();
         mock_select_src = 1'b0;
         mock_ULAControl = 3'b000; //==> Addition operation
         #10
-        assert(dut_ULAResult == 8'hB9 && dut_FlagZ == 1'b0) else $fatal("Test Case 8 failed");
+        assert(dut_ULAResult == 8'hB9 && dut_FlagZ == 1'b0) else $fatal(8, "Test Case 8 failed");
 
         //Test Case 9 - Reading and adding the values from registers X5 and X6
         @(posedge test_clk);
@@ -156,7 +159,7 @@ module datapath101_tb();
         mock_select_src = 1'b0;
         mock_ULAControl = 3'b000; //==> Addition operation
         #10
-        assert(dut_ULAResult == 8'hBD && dut_FlagZ == 1'b0) else $fatal("Test Case 9 failed");
+        assert(dut_ULAResult == 8'hBD && dut_FlagZ == 1'b0) else $fatal(9, "Test Case 9 failed");
 
         //Test Case 10 - Reading and adding the values from registers X7 and X0
         @(posedge test_clk);
@@ -165,7 +168,7 @@ module datapath101_tb();
         mock_select_src = 1'b0;
         mock_ULAControl = 3'b000; //==> Addition operation
         #10
-        assert(dut_ULAResult == 8'h50 && dut_FlagZ == 1'b0) else $fatal("Test Case 10 failed");
+        assert(dut_ULAResult == 8'h50 && dut_FlagZ == 1'b0) else $fatal(10, "Test Case 10 failed");
 
         //Test Case 11 - Reading and adding the values from registers X7 and variable constante
         @(posedge test_clk);
@@ -174,7 +177,7 @@ module datapath101_tb();
         mock_select_src = 1'b1; //==> Selecting the constant value
         mock_ULAControl = 3'b000; //==> Addition operation
         #10
-        assert(dut_ULAResult == 8'hFF && dut_FlagZ == 1'b0) else $fatal("Test Case 11 failed");
+        assert(dut_ULAResult == 8'hFF && dut_FlagZ == 1'b0) else $fatal(11, "Test Case 11 failed");
 
         /* 
             Set#3: Subtraction between two numbers previously stored on registers.
@@ -189,7 +192,7 @@ module datapath101_tb();
         mock_select_src = 1'b0;
         mock_ULAControl = 3'b001; //==> Subtraction operation
         #10
-        assert(dut_ULAResult == 8'h02 && dut_FlagZ == 1'b0) else $fatal("Test Case 12 failed");
+        assert(dut_ULAResult == 8'h02 && dut_FlagZ == 1'b0) else $fatal(12, "Test Case 12 failed");
 
         //Test Case 13 - Reading and subtracting the values from registers X1 and X3 where X1 < X3
         @(posedge test_clk);
@@ -198,7 +201,7 @@ module datapath101_tb();
         mock_select_src = 1'b0;
         mock_ULAControl = 3'b001; //==> Subtraction operation
         #10
-        assert(dut_ULAResult == 8'hFE && dut_FlagZ == 1'b0) else $fatal("Test Case 13 failed");
+        assert(dut_ULAResult == 8'hFE && dut_FlagZ == 1'b0) else $fatal(13, "Test Case 13 failed");
 
         //Test Case 14 - Reading and subtracting the values from registers X3 and variable constante
         //               where X3 > constante.
@@ -208,7 +211,7 @@ module datapath101_tb();
         mock_select_src = 1'b1; //==> Selecting the constant value
         mock_ULAControl = 3'b001; //==> Subtraction operation
         #10
-        assert(dut_ULAResult == 8'h1C && dut_FlagZ == 1'b0) else $fatal("Test Case 14 failed");
+        assert(dut_ULAResult == 8'h1C && dut_FlagZ == 1'b0) else $fatal(14, "Test Case 14 failed");
 
         //Test Case 15 - Reading and subtracting the values from registers X3 and variable constante
         //               where X3 < constante.
@@ -218,7 +221,7 @@ module datapath101_tb();
         mock_select_src = 1'b1; //==> Selecting the constant value
         mock_ULAControl = 3'b001; //==> Subtraction operation
         #10
-        assert(dut_ULAResult == 8'hFC && dut_FlagZ == 1'b0) else $fatal("Test Case 15 failed");
+        assert(dut_ULAResult == 8'hFC && dut_FlagZ == 1'b0) else $fatal(15, "Test Case 15 failed");
 
 
         /* 
@@ -234,7 +237,7 @@ module datapath101_tb();
         mock_select_src = 1'b0;
         mock_ULAControl = 3'b010; //==> AND operation
         #10
-        assert(dut_ULAResult == 8'h5A && dut_FlagZ == 1'b0) else $fatal("Test Case 16 failed");
+        assert(dut_ULAResult == 8'h5A && dut_FlagZ == 1'b0) else $fatal(16, "Test Case 16 failed");
 
         //Test Case 17 - Reading and ANDing the values from registers X0 and X5
         @(posedge test_clk);
@@ -243,7 +246,7 @@ module datapath101_tb();
         mock_select_src = 1'b0;
         mock_ULAControl = 3'b010; //==> AND operation
         #10
-        assert(dut_ULAResult == 8'h00 && dut_FlagZ == 1'b1) else $fatal("Test Case 17 failed");
+        assert(dut_ULAResult == 8'h00 && dut_FlagZ == 1'b1) else $fatal(17, "Test Case 17 failed");
 
         //Test Case 18 - Reading and ANDing the values from registers X4 and variable constante
         //               where constante == 0xFF
@@ -253,7 +256,7 @@ module datapath101_tb();
         mock_constante = 8'hFF; //==> Constant value
         mock_ULAControl = 3'b010; //==> AND operation
         #10
-        assert(dut_ULAResult == 8'h5D && dut_FlagZ == 1'b0) else $fatal("Test Case 18 failed");
+        assert(dut_ULAResult == 8'h5D && dut_FlagZ == 1'b0) else $fatal(18, "Test Case 18 failed");
 
         //Test Case 19 - Reading and ANDing the values from registers X4 and variable constante
         //               where constante == 0x00
@@ -263,7 +266,7 @@ module datapath101_tb();
         mock_constante = 8'h00; //==> Constant value
         mock_ULAControl = 3'b010; //==> AND operation
         #10
-        assert(dut_ULAResult == 8'h00 && dut_FlagZ == 1'b1) else $fatal("Test Case 19 failed");
+        assert(dut_ULAResult == 8'h00 && dut_FlagZ == 1'b1) else $fatal(19, "Test Case 19 failed");
 
         /* 
             Set #5: Logical OR between two numbers previously stored on registers.
@@ -278,7 +281,7 @@ module datapath101_tb();
         mock_select_src = 1'b0;
         mock_ULAControl = 3'b011; //==> OR operation
         #10
-        assert(dut_ULAResult == 8'h5F && dut_FlagZ == 1'b0) else $fatal("Test Case 20 failed");
+        assert(dut_ULAResult == 8'h5F && dut_FlagZ == 1'b0) else $fatal(20, "Test Case 20 failed");
 
         //Test Case 21 - Reading and ORing the values from registers X1 and X4
         @(posedge test_clk);
@@ -287,7 +290,7 @@ module datapath101_tb();
         mock_select_src = 1'b0;
         mock_ULAControl = 3'b011; //==> OR operation
         #10
-        assert(dut_ULAResult == 8'h5F && dut_FlagZ == 1'b0) else $fatal("Test Case 21 failed");
+        assert(dut_ULAResult == 8'h5F && dut_FlagZ == 1'b0) else $fatal(21, "Test Case 21 failed");
 
         //Test Case 22 - Reading and ORing the values from registers X3 and variable constante
         //               where constante == 0xFF
@@ -297,7 +300,7 @@ module datapath101_tb();
         mock_constante = 8'hFF; //==> Constant value
         mock_ULAControl = 3'b011; //==> OR operation
         #10
-        assert(dut_ULAResult == 8'hFF && dut_FlagZ == 1'b0) else $fatal("Test Case 22 failed");
+        assert(dut_ULAResult == 8'hFF && dut_FlagZ == 1'b0) else $fatal(22, "Test Case 22 failed");
 
         //Test Case 23 - Reading and ORing the values from registers X6 and variable constante
         //               where constante == 0x00
@@ -307,7 +310,7 @@ module datapath101_tb();
         mock_constante = 8'h00; //==> Constant value
         mock_ULAControl = 3'b011; //==> OR operation
         #10
-        assert(dut_ULAResult == 8'h5F && dut_FlagZ == 1'b0) else $fatal("Test Case 23 failed");
+        assert(dut_ULAResult == 8'h5F && dut_FlagZ == 1'b0) else $fatal(23, "Test Case 23 failed");
 
         /* 
             Set #6: Sets less than (SLT) between two numbers previously stored on registers.
@@ -322,7 +325,7 @@ module datapath101_tb();
         mock_select_src = 1'b0;
         mock_ULAControl = 3'b101; //==> SLT operation
         #10
-        assert(dut_ULAResult == 8'h00 && dut_FlagZ == 1'b1) else $fatal("Test Case 24 failed");
+        assert(dut_ULAResult == 8'h00 && dut_FlagZ == 1'b1) else $fatal(24, "Test Case 24 failed");
 
         //Test Case 25 - Reading and SLT the values from registers X4 and X6
         @(posedge test_clk);
@@ -331,7 +334,7 @@ module datapath101_tb();
         mock_select_src = 1'b0;
         mock_ULAControl = 3'b101; //==> SLT operation
         #10
-        assert(dut_ULAResult == 8'hFF && dut_FlagZ == 1'b0) else $fatal("Test Case 25 failed");
+        assert(dut_ULAResult == 8'hFF && dut_FlagZ == 1'b0) else $fatal(25, "Test Case 25 failed");
 
         //Test Case 26 - Reading and SLT the values from registers X3 and variable constante
         //               where constante == 0xFF
@@ -341,7 +344,7 @@ module datapath101_tb();
         mock_constante = 8'hFF; //==> Constant value
         mock_ULAControl = 3'b101; //==> SLT operation
         #10
-        assert(dut_ULAResult == 8'hFF && dut_FlagZ == 1'b0) else $fatal("Test Case 26 failed");
+        assert(dut_ULAResult == 8'hFF && dut_FlagZ == 1'b0) else $fatal(26, "Test Case 26 failed");
 
         //Test Case 27 - Reading and SLT the values from registers X7 and variable constante
         //               where constante == 0x00
@@ -351,7 +354,7 @@ module datapath101_tb();
         mock_constante = 8'h00; //==> Constant value
         mock_ULAControl = 3'b101; //==> SLT operation
         #10
-        assert(dut_ULAResult == 8'h00 && dut_FlagZ == 1'b1) else $fatal("Test Case 27 failed");
+        assert(dut_ULAResult == 8'h00 && dut_FlagZ == 1'b1) else $fatal(27, "Test Case 27 failed");
 
         #10 $finish;
     end

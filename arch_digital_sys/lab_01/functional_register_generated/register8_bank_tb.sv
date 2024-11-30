@@ -1,3 +1,4 @@
+/* verilator lint_off DECLFILENAME */
 `timescale 1ns/1ps
 module register8_bank_tb();
 
@@ -7,7 +8,7 @@ module register8_bank_tb();
     logic [7:0] rd1, rd2;
 
 
-    register8_bank dut(
+    register8_bank_v2 dut(
         .clk(test_clk),
         .rst(test_reset),
         .we3(we3),

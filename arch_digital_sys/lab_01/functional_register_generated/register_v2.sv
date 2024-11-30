@@ -1,5 +1,6 @@
+/* verilator lint_off DECLFILENAME */
 `timescale 1ns/1ps
-module register8_bank(
+module register8_bank_v2(
     input logic clk, rst, we3,
     input logic [2:0]wa3,
     input logic [2:0]ra1, ra2,
