@@ -6,7 +6,7 @@ module register8(
 );
 
 always_ff@(posedge clk)begin
-    if (reset)
+    if (~reset)
         begin
             out_word <= 8'b0;
         end

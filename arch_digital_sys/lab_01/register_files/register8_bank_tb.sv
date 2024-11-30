@@ -1,3 +1,4 @@
+/* verilator lint_off DECLFILENAME */
 `timescale 1ns/1ps
 module register8_bank_tb();
 
@@ -38,7 +39,7 @@ module register8_bank_tb();
         //Test Case 0
         // ra1 = 3'b000;
         // ra2 = 3'b000;
-        assert(rd1 == 8'h00 && rd2 == 8'h00) else $fatal("Test Case 0 failed");
+        assert(rd1 == 8'h00 && rd2 == 8'h00) else $fatal(0,"Test Case 0 failed");
         #10
 
 
@@ -58,8 +59,8 @@ module register8_bank_tb();
         ra1 = 3'b001;
         #20
         we3 = 1'b0;
-        // #10
-        assert(rd1 == 8'hAA && rd2 == 8'h00) else $fatal("Test Case 1 failed");
+        #30
+        assert(rd1 == 8'hAA && rd2 == 8'h00) else $fatal(1, "Test Case 1 failed");
 
 
         //Test Case 2 - Write to register X2
@@ -70,7 +71,7 @@ module register8_bank_tb();
         ra2 = 3'b010;
         #20
         we3 = 1'b0;
-        assert(rd1 == 8'hAA && rd2 == 8'hBB) else $fatal("Test Case 2 failed");
+        assert(rd1 == 8'hAA && rd2 == 8'hBB) else $fatal(2, "Test Case 2 failed");
 
         //Test Case 3 - Write to register X1 with no permission to write enabled.
         @(posedge test_clk);
@@ -78,7 +79,7 @@ module register8_bank_tb();
         wd3 = 8'hFF;
         wa3 = 3'b001;
         #10
-        assert(rd1 == 8'hAA && rd2 == 8'hBB) else $fatal("Test Case 3 failed");
+        assert(rd1 == 8'hAA && rd2 == 8'hBB) else $fatal(3, "Test Case 3 failed");
 
         //Test Case 4 - Write to register X3 with rd2 unchanged from the previous test case.
         @(posedge test_clk);
@@ -88,7 +89,7 @@ module register8_bank_tb();
         ra1 = 3'b011;
         #20
         we3 = 1'b0;
-        assert(rd1 == 8'hCC && rd2 == 8'hBB) else $fatal("Test Case 4 failed");
+        assert(rd1 == 8'hCC && rd2 == 8'hBB) else $fatal(4, "Test Case 4 failed");
 
         //Test Case 5 - Write to register X4 with rd1 unchanged from the previous test case.
         @(posedge test_clk);
@@ -98,7 +99,7 @@ module register8_bank_tb();
         ra2 = 3'b100;
         #20
         we3 = 1'b0;
-        assert(rd1 == 8'hCC && rd2 == 8'hDD) else $fatal("Test Case 5 failed");
+        assert(rd1 == 8'hCC && rd2 == 8'hDD) else $fatal(5, "Test Case 5 failed");
 
 
         //Test Case 6 - Write to register X4 with no permission to write on it.
@@ -217,7 +218,9 @@ module register8_bank_tb();
         #10
         assert(rd1 == 8'h00 && rd2 == 8'h00) else $fatal("Test Case 17 failed");
 
-        #10 $finish;
+        #10; 
+        
+        $finish;
     end
 
     initial
