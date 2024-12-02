@@ -1,20 +1,65 @@
 xrun(64): 22.09-s013: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	22.09-s013: Started on Dec 02, 2024 at 12:30:29 -03
+TOOL:	xrun(64)	22.09-s013: Started on Dec 02, 2024 at 16:58:06 -03
 xrun
 	-64bit
-	register32_bank_tb.sv
-	register32_bank.sv
-	register32.sv
-Loading snapshot worklib.register32_bank_tb:sv .................... Done
+	ula32_tb.sv
+	ula32.sv
+Recompiling... reason: file './ula32_tb.sv' is newer than expected.
+	expected: Mon Dec  2 16:54:37 2024
+	actual:   Mon Dec  2 16:58:03 2024
+file: ula32_tb.sv
+	module worklib.ula32_tb:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		ula32_tb
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.ula32_tb:sv <0x7092d691>
+			streams:   8, words: 48932
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 2       2
+		Registers:              27      27
+		Scalar wires:            2       -
+		Vectored wires:          5       -
+		Always blocks:           1       1
+		Initial blocks:          2       2
+		Pseudo assignments:      5       5
+		Assertions:             20      20
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.ula32_tb:sv
+Loading snapshot worklib.ula32_tb:sv .................... Done
 xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
 xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
 xcelium> run
-xmsim: *W,DVEXACC: some objects excluded from $dumpvars due to access restrictions, use +access+r on command line for access to all objects.
-            File: ./register32_bank_tb.sv, line = 40, pos = 16
-           Scope: register32_bank_tb
-            Time: 0 FS + 0
-
-Simulation complete via $finish(1) at time 1875 NS + 0
-./register32_bank_tb.sv:102         $finish;
+                Tempo               Entradas ULA                                              Saídas
+                         mocked_SrcA    mocked_SrcB     mocked_ULAControl       dut_ULAResult      dut_FlagZ
+                ====   ===================================================     ===============================
+                   0          00000000             00000000            000                        00000000              1
+                  10          00000050             00000060            000                        000000b0              0
+                  20          0000007f             0000002d            000                        000000ac              0
+                  30          00000060             00000050            001                        00000010              0
+                  40          00000060             00000060            001                        00000000              1
+                  50          00000050             00000060            001                        fffffff0              0
+                  70          000000aa             000000bb            010                        000000aa              0
+                  80          000000aa             00000000            010                        00000000              1
+                  90          000000aa             000000bb            011                        000000bb              0
+                 100          000000aa             00000000            011                        000000aa              0
+                 110          000000aa             000000bb            101                        000000ff              0
+                 120          000000bb             000000aa            101                        00000000              1
+                 130          000000bb             000000aa            100                        00000011              0
+                 140          aaaaaaaa             aaaaaaaa            100                        00000000              1
+                 150          aaaaaaaa             55555555            100                        ffffffff              0
+                 160          aabbccdd             00000004            110                        abbccdd0              0
+                 170          00000002             00000001            111                        00000001              0
+                 180          00000081             00000001            111                        00000040              0
+                 190          f0000001             00000004            111                        ff000000              0
+Simulation complete via $finish(1) at time 210 NS + 0
+./ula32_tb.sv:164     $finish;
 xcelium> exit
-TOOL:	xrun(64)	22.09-s013: Exiting on Dec 02, 2024 at 12:30:30 -03  (total: 00:00:01)
+TOOL:	xrun(64)	22.09-s013: Exiting on Dec 02, 2024 at 16:58:16 -03  (total: 00:00:10)

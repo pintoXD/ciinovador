@@ -6,11 +6,6 @@ module register32_bank_tb();
     logic [4:0] wa3, ra1, ra2;
     logic [31:0] rd1, rd2;
 
-    // logic [31:0] base_wd3;
-    // logic [4:0] base_index;
-    // logic [4:0] base_read_data_1;
-    // logic [4:0] base_read_data_2;
-
     int base_wd3;
     int base_index;
     int base_read_data_1;
@@ -71,27 +66,21 @@ module register32_bank_tb();
         base_index = 0;
         base_read_data_1 = 32'd00;
         base_read_data_2 = 32'h11;
-        // for(int i = 0; i < 4; i++)begin
-        //     $display("Current %h and %h \n", base_read_data_1, base_read_data_2);
-        //     base_read_data_1 = base_read_data_1 + 32'd17;
-        //     base_read_data_2 = base_read_data_2 + 32'd17;
-        // end
-
-        for (int i = 0; i < 30; i = i + 1) begin
+        for (int i = 0; i < 15; i = i + 1) begin
             @(posedge test_clk);
-            ra1 = i; // Reads from register 0,2,4 and so on...
-            ra2 = i + 1; // Reads from registe 1, 3, 5 and so on...
+            ra1 = i*2; // Reads from register 0,2,4 and so on...
+            ra2 = i*2 + 1; // Reads from registe 1, 3, 5 and so on...
             #20;
             assert(rd1 == (base_read_data_1) &&  rd2 == (base_read_data_2)) else begin
                 $display("Test Case %0d Failed", i);
                 $display("Reading from register %0d and %0d \n", ra1, ra2);
                 $display("Expected %0h and %0h \n", base_read_data_1, base_read_data_2);
                 $display("Got %0h and %0h \n", rd1, rd2);
-                $fatal(0, "Test Case Failed");
+                $fatal(0, "Test Case %0d Failed", i);
             end
             #30;
-            base_read_data_1 = base_read_data_1 + 32'h11; //Just a value to use in the assertion to verify in a automated way if the current reg value is correct.
-            base_read_data_2 = base_read_data_2 + 32'h11; //Just a value to use in the assertion to verify in a automated way if the current reg value is correct.
+            base_read_data_1 = base_read_data_1 + 32'h22; //Just a value to use in the assertion to verify in a automated way if the current reg value is correct.
+            base_read_data_2 = base_read_data_2 + 32'h22; //Just a value to use in the assertion to verify in a automated way if the current reg value is correct.
         end
 
 
@@ -102,21 +91,21 @@ module register32_bank_tb();
         $finish;
     end
 
-//     initial
-//     begin
-//       $display("                Tempo               Entradas LUT                                    Saídas");
-//       $display("                         clk  rst  we3   wa3   ra1    ra2        wd3                rd1         rd2");
-//       $display("                ====   =================================================        =====================");
-//       /* $monitor($time,"      %b    %b    %b    %b   %b    %b      %b         %b      %b", test_clk, test_reset, we3, 
-//                                                                     wa3, ra1, ra2, wd3, 
-//                                                                     rd1, rd2);
-//  */    end
+    initial
+    begin
+      $display("                Tempo               Entradas LUT                                    Saídas");
+      $display("                         clk  rst  we3   wa3   ra1    ra2        wd3                rd1         rd2");
+      $display("                ====   =================================================        =====================");
+      /* $monitor($time,"      %b    %b    %b    %b   %b    %b      %b         %b      %b", test_clk, test_reset, we3, 
+                                                                    wa3, ra1, ra2, wd3, 
+                                                                    rd1, rd2);
+ */    end
 
-    // always@(posedge test_clk)begin
-    //   $display($time,"      %b    %b    %b    %h   %h    %h      %h         %h      %h", test_clk, test_reset, we3, 
-    //                                                                 wa3, ra1, ra2, wd3, 
-    //                                                                 rd1, rd2);
-    // end
+    always@(posedge test_clk)begin
+      $display($time,"      %b    %b    %b    %h   %h    %h      %h         %h      %h", test_clk, test_reset, we3, 
+                                                                    wa3, ra1, ra2, wd3, 
+                                                                    rd1, rd2);
+    end
 
 
 
