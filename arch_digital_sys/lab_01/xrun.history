@@ -1,0 +1,66 @@
+s1(02Dec2024:10:41:58):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s2(02Dec2024:10:46:14):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s3(02Dec2024:10:46:54):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s4(02Dec2024:10:46:58):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s5(02Dec2024:10:49:18):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s6(02Dec2024:10:50:30):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s7(02Dec2024:10:50:50):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s8(02Dec2024:10:59:53):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s9(02Dec2024:11:02:40):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s10(02Dec2024:11:02:59):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s11(02Dec2024:11:03:23):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s12(02Dec2024:11:03:52):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s13(02Dec2024:11:04:38):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s14(02Dec2024:11:04:56):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s15(02Dec2024:11:08:03):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s16(02Dec2024:11:08:31):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s17(02Dec2024:11:09:10):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s18(02Dec2024:11:09:27):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s19(02Dec2024:11:17:09):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s20(02Dec2024:11:18:16):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s21(02Dec2024:11:27:02):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s22(02Dec2024:11:27:26):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s23(02Dec2024:11:28:19):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s24(02Dec2024:11:29:19):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s25(02Dec2024:11:32:34):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s26(02Dec2024:11:33:06):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv +gui +access+rw 
+s27(02Dec2024:11:33:44):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv +gui +access+rw "-s " 
+s28(02Dec2024:11:36:30):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv +gui +access+rw -s 
+s29(02Dec2024:11:44:06):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv +gui +access+rw 
+s30(02Dec2024:11:45:48):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv +gui +access+rw 
+s31(02Dec2024:11:47:56):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s32(02Dec2024:11:53:12):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s33(02Dec2024:11:55:56):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s34(02Dec2024:11:56:17):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s35(02Dec2024:11:56:41):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s36(02Dec2024:11:56:52):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s37(02Dec2024:11:57:09):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s38(02Dec2024:11:57:59):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s39(02Dec2024:12:01:45):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s40(02Dec2024:12:02:28):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s41(02Dec2024:12:03:01):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s42(02Dec2024:12:06:06):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s43(02Dec2024:12:06:43):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s44(02Dec2024:12:07:44):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s45(02Dec2024:12:08:19):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s46(02Dec2024:12:10:50):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s47(02Dec2024:12:11:33):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s48(02Dec2024:12:14:46):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s49(02Dec2024:12:15:26):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s50(02Dec2024:12:15:34):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s51(02Dec2024:12:15:41):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s52(02Dec2024:12:16:40):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s53(02Dec2024:12:17:08):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s54(02Dec2024:12:18:04):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s55(02Dec2024:12:19:50):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s56(02Dec2024:12:21:17):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s57(02Dec2024:12:21:44):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s58(02Dec2024:12:21:46):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s59(02Dec2024:12:21:56):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s60(02Dec2024:12:25:11):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s61(02Dec2024:12:25:48):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s62(02Dec2024:12:26:13):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s63(02Dec2024:12:27:52):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s64(02Dec2024:12:29:22):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s65(02Dec2024:12:30:21):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 
+s66(02Dec2024:12:30:30):  xrun -64bit register32_bank_tb.sv register32_bank.sv register32.sv 

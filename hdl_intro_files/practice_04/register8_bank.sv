@@ -49,8 +49,6 @@ always_ff @(posedge clk) begin
             number from 0 to 7 as an index.
         
         */
-
-
         X_in_word[wa3] <= wd3;
     end
 end

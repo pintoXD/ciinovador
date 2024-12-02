@@ -6,7 +6,7 @@ module register32(
 );
 
 always_ff@(posedge clk)begin
-    if (reset)
+    if (~reset)
         begin
             out_word <= 32'b0;
         end

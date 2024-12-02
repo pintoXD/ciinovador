@@ -1,0 +1,213 @@
+$date
+    Dec  2, 2024  12:30:30
+$end
+$version
+    TOOL:	xmsim(64)	22.09-s013
+$end
+$timescale
+    1 ps
+$end
+
+$scope module register32_bank_tb $end
+
+$scope module dut $end
+
+$scope begin genblk1[0] $end
+$var parameter 32 !    i $end
+$upscope $end
+
+
+$scope begin genblk1[1] $end
+$var parameter 32 "    i $end
+$upscope $end
+
+
+$scope begin genblk1[2] $end
+$var parameter 32 #    i $end
+$upscope $end
+
+
+$scope begin genblk1[3] $end
+$var parameter 32 $    i $end
+$upscope $end
+
+
+$scope begin genblk1[4] $end
+$var parameter 32 %    i $end
+$upscope $end
+
+
+$scope begin genblk1[5] $end
+$var parameter 32 &    i $end
+$upscope $end
+
+
+$scope begin genblk1[6] $end
+$var parameter 32 '    i $end
+$upscope $end
+
+
+$scope begin genblk1[7] $end
+$var parameter 32 (    i $end
+$upscope $end
+
+
+$scope begin genblk1[8] $end
+$var parameter 32 )    i $end
+$upscope $end
+
+
+$scope begin genblk1[9] $end
+$var parameter 32 *    i $end
+$upscope $end
+
+
+$scope begin genblk1[10] $end
+$var parameter 32 +    i $end
+$upscope $end
+
+
+$scope begin genblk1[11] $end
+$var parameter 32 ,    i $end
+$upscope $end
+
+
+$scope begin genblk1[12] $end
+$var parameter 32 -    i $end
+$upscope $end
+
+
+$scope begin genblk1[13] $end
+$var parameter 32 .    i $end
+$upscope $end
+
+
+$scope begin genblk1[14] $end
+$var parameter 32 /    i $end
+$upscope $end
+
+
+$scope begin genblk1[15] $end
+$var parameter 32 0    i $end
+$upscope $end
+
+
+$scope begin genblk1[16] $end
+$var parameter 32 1    i $end
+$upscope $end
+
+
+$scope begin genblk1[17] $end
+$var parameter 32 2    i $end
+$upscope $end
+
+
+$scope begin genblk1[18] $end
+$var parameter 32 3    i $end
+$upscope $end
+
+
+$scope begin genblk1[19] $end
+$var parameter 32 4    i $end
+$upscope $end
+
+
+$scope begin genblk1[20] $end
+$var parameter 32 5    i $end
+$upscope $end
+
+
+$scope begin genblk1[21] $end
+$var parameter 32 6    i $end
+$upscope $end
+
+
+$scope begin genblk1[22] $end
+$var parameter 32 7    i $end
+$upscope $end
+
+
+$scope begin genblk1[23] $end
+$var parameter 32 8    i $end
+$upscope $end
+
+
+$scope begin genblk1[24] $end
+$var parameter 32 9    i $end
+$upscope $end
+
+
+$scope begin genblk1[25] $end
+$var parameter 32 :    i $end
+$upscope $end
+
+
+$scope begin genblk1[26] $end
+$var parameter 32 ;    i $end
+$upscope $end
+
+
+$scope begin genblk1[27] $end
+$var parameter 32 <    i $end
+$upscope $end
+
+
+$scope begin genblk1[28] $end
+$var parameter 32 =    i $end
+$upscope $end
+
+
+$scope begin genblk1[29] $end
+$var parameter 32 >    i $end
+$upscope $end
+
+
+$scope begin genblk1[30] $end
+$var parameter 32 ?    i $end
+$upscope $end
+
+
+$scope begin genblk1[31] $end
+$var parameter 32 @    i $end
+$upscope $end
+
+$upscope $end
+
+$upscope $end
+
+$enddefinitions $end
+$dumpvars
+b11111 @
+b11110 ?
+b11101 >
+b11100 =
+b11011 <
+b11010 ;
+b11001 :
+b11000 9
+b10111 8
+b10110 7
+b10101 6
+b10100 5
+b10011 4
+b10010 3
+b10001 2
+b10000 1
+b1111 0
+b1110 /
+b1101 .
+b1100 -
+b1011 ,
+b1010 +
+b1001 *
+b1000 )
+b111 (
+b110 '
+b101 &
+b100 %
+b11 $
+b10 #
+b1 "
+b0 !
+$end
+#1875000
