@@ -1,0 +1,9 @@
+xrun(64): 22.09-s013: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	22.09-s013: Started on Dec 03, 2024 at 09:46:51 -03
+xrun
+	-64bit
+	ula32_tb.sv
+	ula32.sv
+xrun: *E,FILEMIS: Cannot find the provided file ula32_tb.sv.
+xrun: *E,FILEMIS: Cannot find the provided file ula32.sv.
+TOOL:	xrun(64)	22.09-s013: Exiting on Dec 03, 2024 at 09:46:51 -03  (total: 00:00:00)

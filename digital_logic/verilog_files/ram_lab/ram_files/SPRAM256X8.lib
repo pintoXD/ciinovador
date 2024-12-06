@@ -1,0 +1,1194 @@
+/************************************************************************
+ Copyright        : (c) All Rights Reserved
+ Company          : X-FAB Semiconductor Foundries AG 
+ Address          : Haarbergstr. 67,  D-99097 Erfurt, Germany 
+
+ File             : SPRAM256X8.lib
+ Description      : Synopsys technology library
+                  : Single Port RAM SPRAM256X8
+
+ Technology       : XH035, MOS: core MOS module
+ Model version    : V 2.4.0
+ Last Modified by : etu
+ Created by       :	X-FAB FRONTEND MEMORY COMPILER
+                  :      0.35um SPRAM XFMC V2.4
+ on               : Fri Feb 25 12:51:14 2011
+
+######################################################################################
+#  Copyright (c) X-FAB Semiconductor Foundries AG . All rights reserved.
+#  This Design Kit data and the associated documentation are
+#  confidential and proprietary to X-FAB Semiconductor Foundries AG.
+#
+#  DISCLAIMER
+#  The information contained herein is provided by X-FAB Semiconductor
+#  Foundries AG  on an "AS IS" basis without any warranty.
+#
+#  X-FAB Semiconductor Foundries AG disclaims any representation that
+#  the information does not infringe any intellectual property rights or proprietary
+#  rights of any third parties.  There are no other warranties given by
+#  X-FAB, whether express, implied or statutory, including, without limitation,
+#  implied warranties of merchantability and fitness for a particular purpose.
+#
+# In no event X-FAB will be liable or responsible for any expense, losses, damages,
+# or action incurred or undertaken as a result of the receipt of the information.
+#
+#  X-FAB Semiconductor Foundries AG  reserves the right to make changes
+#  to the information at any time and without notice.
+#
+######################################################################################
+
+************************************************************************/
+
+library(SPRAM256X8) {
+  delay_model                   : table_lookup; 
+  in_place_swap_mode            : match_footprint; 
+                            
+  date                          : "Fri Feb 25 12:51:14 2011";
+  revision                      : "V 2.4.0 ";
+  comment			: "X-FAB xh035, mos Single Port RAM SPRAM256X8, 3.3V";
+
+  time_unit                     : "1ns";
+  leakage_power_unit            : "1pW" ;
+  voltage_unit                  : "1V";
+  current_unit                  : "1uA";
+  pulling_resistance_unit       : "1kohm";
+  capacitive_load_unit          (1000.000,ff)
+                            
+  /* 
+  ---------------------------------------------
+  units :
+  
+  fanout_length unit         : "um" 
+  fanout_area   unit         : "um^2" 
+  cell_area     unit         : "um^2"
+  power table   unit         : "pJ" = "uW/MHz"
+
+
+  PVT range:
+                        best	typ	worst
+			---------------------
+  Process:              0.80    1.0     1.47	
+  Voltage [V]:          3.60    3.3     2.60
+  Temperature [grd C]:  -55      25     150
+
+  ---------------------------------------------
+  */
+
+bus_naming_style	: "%s[%d]";
+library_features	(report_delay_calculation);
+
+nom_process		      : 1;
+nom_temperature		      : 25;
+nom_voltage		      : 3.3;
+slew_lower_threshold_pct_fall : 10.00 ;
+slew_lower_threshold_pct_rise : 10.00 ;
+slew_upper_threshold_pct_fall : 90.00 ;
+slew_upper_threshold_pct_rise : 90.00 ;
+slew_derate_from_library      :  1.00 ;
+input_threshold_pct_fall      : 50.00 ;
+input_threshold_pct_rise      : 50.00 ;
+output_threshold_pct_fall     : 50.00 ;
+output_threshold_pct_rise     : 50.00 ;
+
+/* -------------- SLOW --------------- */
+
+  operating_conditions (slow_2_6V_70C) {
+    process     : 1.16;
+    temperature : 70.0 ;
+    voltage     : 2.60 ;
+    tree_type   : "worst_case_tree" ;
+  }
+
+  operating_conditions (slow_2_60V_70C) {
+    process     : 1.16;
+    temperature : 70.0 ;
+    voltage     : 2.60 ;
+    tree_type   : "worst_case_tree" ;
+  }
+
+  operating_conditions (slow_2_6V_85C) {
+    process     : 1.16;
+    temperature : 85.0 ;
+    voltage     : 2.60 ;
+    tree_type   : "worst_case_tree" ;
+  }
+
+  operating_conditions (slow_2_60V_85C) {
+    process     : 1.16;
+    temperature : 85.0 ;
+    voltage     : 2.60 ;
+    tree_type   : "worst_case_tree" ;
+  }
+
+  operating_conditions (slow_2_6V_125C) {
+    process     : 1.16;
+    temperature : 125.0 ;
+    voltage     : 2.60 ;
+    tree_type   : "worst_case_tree" ;
+  }
+
+  operating_conditions (slow_2_60V_125C) {
+    process     : 1.16;
+    temperature : 125.0 ;
+    voltage     : 2.60 ;
+    tree_type   : "worst_case_tree" ;
+  }
+
+  operating_conditions (slow_2_6V_150C) {
+    process     : 1.16;
+    temperature : 150.0 ;
+    voltage     : 2.60 ;
+    tree_type   : "worst_case_tree" ;
+  }
+
+  operating_conditions (slow_2_60V_150C) {
+    process     : 1.16;
+    temperature : 150.0 ;
+    voltage     : 2.60 ;
+    tree_type   : "worst_case_tree" ;
+  }
+
+  operating_conditions (slow_3_0V_70C) {
+    process     : 1.16;
+    temperature : 70.0 ;
+    voltage     : 3.00 ;
+    tree_type   : "worst_case_tree" ;
+  }
+
+  operating_conditions (slow_3_00V_70C) {
+    process     : 1.16;
+    temperature : 70.0 ;
+    voltage     : 3.00 ;
+    tree_type   : "worst_case_tree" ;
+  }
+
+  operating_conditions (slow_3_0V_85C) {
+    process     : 1.16;
+    temperature : 85.0 ;
+    voltage     : 3.00 ;
+    tree_type   : "worst_case_tree" ;
+  }
+
+  operating_conditions (slow_3_00V_85C) {
+    process     : 1.16;
+    temperature : 85.0 ;
+    voltage     : 3.00 ;
+    tree_type   : "worst_case_tree" ;
+  }
+
+    operating_conditions (slow_3_0V_125C) {
+    process     : 1.16;
+    temperature : 125.0 ;
+    voltage     : 3.00 ;
+    tree_type   : "worst_case_tree" ;
+  }
+
+    operating_conditions (slow_3_00V_125C) {
+    process     : 1.16;
+    temperature : 125.0 ;
+    voltage     : 3.00 ;
+    tree_type   : "worst_case_tree" ;
+  }
+
+  operating_conditions (slow_3_0V_150C) {
+    process     : 1.16;
+    temperature : 150.0 ;
+    voltage     : 3.00 ;
+    tree_type   : "worst_case_tree" ;
+  }
+
+  operating_conditions (slow_3_00V_150C) {
+    process     : 1.16;
+    temperature : 150.0 ;
+    voltage     : 3.00 ;
+    tree_type   : "worst_case_tree" ;
+  }
+
+  operating_conditions (slow_3_15V_70C) {
+    process     : 1.16;
+    temperature : 70.0 ;
+    voltage     : 3.15 ;
+    tree_type   : "worst_case_tree" ;
+  }
+
+  operating_conditions (slow_3_15V_85C) {
+    process     : 1.16;
+    temperature : 85.0 ;
+    voltage     : 3.15 ;
+    tree_type   : "worst_case_tree" ;
+  }
+
+  operating_conditions (slow_3_15V_125C) {
+    process     : 1.16;
+    temperature : 125.0 ;
+    voltage     : 3.15 ;
+    tree_type   : "worst_case_tree" ;
+  }
+
+  operating_conditions (slow_3_15V_150C) {
+    process     : 1.16;
+    temperature : 150.0 ;
+    voltage     : 3.15 ;
+    tree_type   : "worst_case_tree" ;
+  }
+
+/* -------------- TYP ---------------- */
+
+  operating_conditions (typ_3_0V_25C) {
+    process     : 1.00;
+    temperature : 25.0 ;
+    voltage     : 3.0 ;
+    tree_type   : "balanced_tree" ;
+  }
+
+  operating_conditions (typ_3_00V_25C) {
+    process     : 1.00;
+    temperature : 25.0 ;
+    voltage     : 3.0 ;
+    tree_type   : "balanced_tree" ;
+  }
+
+  operating_conditions (typ_3_0V_70C) {
+    process     : 1.00;
+    temperature : 70.00 ;
+    voltage     : 3.00 ;
+    tree_type   : "balanced_tree" ;
+  }
+
+  operating_conditions (typ_3_00V_70C) {
+    process     : 1.00;
+    temperature : 70.00 ;
+    voltage     : 3.00 ;
+    tree_type   : "balanced_tree" ;
+  }
+
+  operating_conditions (typ_3_3V_0C) {
+    process     : 1.00;
+    temperature : 0.00 ;
+    voltage     : 3.30 ;
+    tree_type   : "balanced_tree" ;
+  }
+
+  operating_conditions (typ_3_30V_0C) {
+    process     : 1.00;
+    temperature : 0.00 ;
+    voltage     : 3.30 ;
+    tree_type   : "balanced_tree" ;
+  }
+
+  operating_conditions (typ_3_3V_25C) {		/* TYPICAL , DEFAULT */
+    process     : 1.00;
+    temperature : 25.0 ;
+    voltage     : 3.30 ;
+    tree_type   : "balanced_tree" ;
+  }
+
+  operating_conditions (typ_3_30V_25C) {		/* TYPICAL , DEFAULT */
+    process     : 1.00;
+    temperature : 25.0 ;
+    voltage     : 3.30 ;
+    tree_type   : "balanced_tree" ;
+  }
+
+  operating_conditions (TYPICAL) {		/* old style compliance */
+    process     : 1.00;
+    temperature : 25.0 ;
+    voltage     : 3.30 ;
+    tree_type   : "balanced_tree" ;
+  }
+
+  operating_conditions (typ_3_3V_70C) {
+    process     : 1.00;
+    temperature : 70.00 ;
+    voltage     : 3.30 ;
+    tree_type   : "balanced_tree" ;
+  }
+
+  operating_conditions (typ_3_30V_70C) {
+    process     : 1.00;
+    temperature : 70.00 ;
+    voltage     : 3.30 ;
+    tree_type   : "balanced_tree" ;
+  }
+
+  operating_conditions (typ_3_15V_25C) {
+    process     : 1.00;
+    temperature : 25.0 ;
+    voltage     : 3.15 ;
+    tree_type   : "balanced_tree" ;
+  }
+
+  operating_conditions (typ_3_15V_70C) {
+    process     : 1.00;
+    temperature : 70.00 ;
+    voltage     : 3.15 ;
+    tree_type   : "balanced_tree" ;
+  }
+
+  operating_conditions (typ_3_45V_0C) {
+    process     : 1.00;
+    temperature : 0.00 ;
+    voltage     : 3.45 ;
+    tree_type   : "balanced_tree" ;
+  }
+
+  operating_conditions (typ_3_45V_25C) {
+    process     : 1.00;
+    temperature : 25.0 ;
+    voltage     : 3.45 ;
+    tree_type   : "balanced_tree" ;
+  }
+
+  operating_conditions (typ_3_6V_0C) {
+    process     : 1.00;
+    temperature : 0.00 ;
+    voltage     : 3.6 ;
+    tree_type   : "balanced_tree" ;
+  }
+
+  operating_conditions (typ_3_60V_0C) {
+    process     : 1.00;
+    temperature : 0.00 ;
+    voltage     : 3.6 ;
+    tree_type   : "balanced_tree" ;
+  }
+
+  operating_conditions (typ_3_6V_25C) {
+    process     : 1.00;
+    temperature : 25.0 ;
+    voltage     : 3.60 ;
+    tree_type   : "balanced_tree" ;
+  }
+
+  operating_conditions (typ_3_60V_25C) {
+    process     : 1.00;
+    temperature : 25.0 ;
+    voltage     : 3.60 ;
+    tree_type   : "balanced_tree" ;
+  }
+
+/* -------------- FAST --------------- */
+
+  operating_conditions (fast_2_4V_125C) {
+    process     : 0.92;
+    temperature : 125.0 ;
+    voltage     : 2.40 ;
+    tree_type   : "best_case_tree" ;
+  }
+
+  operating_conditions (fast_2_40V_125C) {
+    process     : 0.92;
+    temperature : 125.0 ;
+    voltage     : 2.40 ;
+    tree_type   : "best_case_tree" ;
+  }
+
+   operating_conditions (fast_2_4V_150C) {
+    process     : 0.92;
+    temperature : 150.00 ;
+    voltage     : 2.40 ;
+    tree_type   : "best_case_tree" ;
+  }
+
+   operating_conditions (fast_2_40V_150C) {
+    process     : 0.92;
+    temperature : 150.00 ;
+    voltage     : 2.40 ;
+    tree_type   : "best_case_tree" ;
+  }
+
+  operating_conditions (fast_2_6V_125C) {
+    process     : 0.92;
+    temperature : 125.0 ;
+    voltage     : 2.60 ;
+    tree_type   : "best_case_tree" ;
+  }
+
+  operating_conditions (fast_2_60V_125C) {
+    process     : 0.92;
+    temperature : 125.0 ;
+    voltage     : 2.60 ;
+    tree_type   : "best_case_tree" ;
+  }
+
+   operating_conditions (fast_2_6V_150C) {
+    process     : 0.92;
+    temperature : 150.00 ;
+    voltage     : 2.60 ;
+    tree_type   : "best_case_tree" ;
+  }
+
+   operating_conditions (fast_2_60V_150C) {
+    process     : 0.92;
+    temperature : 150.00 ;
+    voltage     : 2.60 ;
+    tree_type   : "best_case_tree" ;
+  }
+
+  operating_conditions (fast_2_65V_70C) {
+    process : 0.92;
+    temperature : 70;
+    voltage : 2.65;
+    tree_type : best_case_tree;
+  }
+
+  operating_conditions (fast_2_65V_85C) {
+    process : 0.92;
+    temperature : 85;
+    voltage : 2.65;
+    tree_type : best_case_tree;
+  }
+
+  operating_conditions (fast_2_65V_125C) {
+    process : 0.92;
+    temperature : 125;
+    voltage : 2.65;
+    tree_type : best_case_tree;
+  }
+
+  operating_conditions (fast_2_65V_150C) {
+    process : 0.92;
+    temperature : 150;
+    voltage : 2.65;
+    tree_type : best_case_tree;
+  }
+
+  operating_conditions (fast_3_45V_m55C) {
+    process     : 0.92;
+    temperature : -55.0 ;
+    voltage     : 3.45 ;
+    tree_type   : "best_case_tree" ;
+  }
+
+  operating_conditions (fast_3_45V_m40C) {
+    process     : 0.92;
+    temperature : -40.0 ;
+    voltage     : 3.45 ;
+    tree_type   : "best_case_tree" ;
+  }
+
+   operating_conditions (fast_3_45V_0C) {
+    process     : 0.92;
+    temperature : 0.00 ;
+    voltage     : 3.45 ;
+    tree_type   : "best_case_tree" ;
+  }
+
+  operating_conditions (fast_3_45V_70C) {
+    process : 0.92;
+    temperature : 70;
+    voltage : 3.45;
+    tree_type : best_case_tree;
+  }
+
+  operating_conditions (fast_3_45V_85C) {
+    process : 0.92;
+    temperature : 85;
+    voltage : 3.45;
+    tree_type : best_case_tree;
+  }
+
+  operating_conditions (fast_3_45V_125C) {
+    process     : 0.92;
+    temperature : 125.0 ;
+    voltage     : 3.45 ;
+    tree_type   : "best_case_tree" ;
+  }
+
+   operating_conditions (fast_3_45V_150C) {
+    process     : 0.92;
+    temperature : 150.00 ;
+    voltage     : 3.45 ;
+    tree_type   : "best_case_tree" ;
+  }
+
+  operating_conditions (fast_3_6V_m55C) {
+    process     : 0.92;
+    temperature : -55.0 ;
+    voltage     : 3.60 ;
+    tree_type   : "best_case_tree" ;
+  }
+
+  operating_conditions (fast_3_60V_m55C) {
+    process     : 0.92;
+    temperature : -55.0 ;
+    voltage     : 3.60 ;
+    tree_type   : "best_case_tree" ;
+  }
+
+    operating_conditions (fast_3_6V_m40C) {
+    process     : 0.92;
+    temperature : -40.0 ;
+    voltage     : 3.60 ;
+    tree_type   : "best_case_tree" ;
+  }
+
+    operating_conditions (fast_3_60V_m40C) {
+    process     : 0.92;
+    temperature : -40.0 ;
+    voltage     : 3.60 ;
+    tree_type   : "best_case_tree" ;
+  }
+
+   operating_conditions (fast_3_6V_0C) {
+    process     : 0.92;
+    temperature : 0.00 ;
+    voltage     : 3.60 ;
+    tree_type   : "best_case_tree" ;
+  }
+
+   operating_conditions (fast_3_60V_0C) {
+    process     : 0.92;
+    temperature : 0.00 ;
+    voltage     : 3.60 ;
+    tree_type   : "best_case_tree" ;
+  }
+
+   operating_conditions (fast_3_60V_25C) {
+    process     : 0.92;
+    temperature : 25.00 ;
+    voltage     : 3.60 ;
+    tree_type   : "best_case_tree" ;
+  }
+
+   operating_conditions (fast_3_60V_70C) {
+    process     : 0.92;
+    temperature : 70.00 ;
+    voltage     : 3.60 ;
+    tree_type   : "best_case_tree" ;
+  }
+
+   operating_conditions (fast_3_60V_85C) {
+    process     : 0.92;
+    temperature : 85.00 ;
+    voltage     : 3.60 ;
+    tree_type   : "best_case_tree" ;
+  }
+
+  operating_conditions (fast_3_6V_125C) {
+    process     : 0.92;
+    temperature : 125.0 ;
+    voltage     : 3.60 ;
+    tree_type   : "best_case_tree" ;
+  }
+
+  operating_conditions (fast_3_60V_125C) {
+    process     : 0.92;
+    temperature : 125.0 ;
+    voltage     : 3.60 ;
+    tree_type   : "best_case_tree" ;
+  }
+
+   operating_conditions (fast_3_6V_150C) {
+    process     : 0.92;
+    temperature : 150.00 ;
+    voltage     : 3.60 ;
+    tree_type   : "best_case_tree" ;
+  }
+
+   operating_conditions (fast_3_60V_150C) {
+    process     : 0.92;
+    temperature : 150.00 ;
+    voltage     : 3.60 ;
+    tree_type   : "best_case_tree" ;
+  }
+
+ /* ------------------------------------- */
+
+  timing_range(SLOW_RANGE) {
+    faster_factor       : 1.0;
+    slower_factor       : 1.0;
+  }
+ 
+  timing_range(FAST_RANGE) {
+    faster_factor       : 1.0;
+    slower_factor       : 1.0;
+  }
+ 
+/* -------------------------------------------------------- */
+
+  default_operating_conditions   : TYPICAL;
+  default_max_fanout             : 8;
+  default_max_transition         : 3.0 ;
+  default_fanout_load            : 0.0111;
+  default_input_pin_cap          : 0.0050;
+  default_inout_pin_cap          : 0.0050;
+  default_output_pin_cap         : 0.0001;
+
+/* -------------------------------------------------------- */
+
+  default_cell_leakage_power	 : 1;
+  default_leakage_power_density	 : 0;
+
+k_process_internal_power	: -0.01887;
+k_temp_internal_power	: 0.00046;
+k_volt_internal_power	: 0.66548;
+
+k_process_cell_leakage_power	: -16.49;
+/* k_process_cell_leakage_power	: -16.49; fast default */
+/* k_process_cell_leakage_power	: -1.83; slow */
+k_temp_cell_leakage_power	: 5.1271;
+/* k_temp_cell_leakage_power	: 0.0153;  -40 ... 25 */
+/* k_temp_cell_leakage_power	: 0.5262;   25 ... 70 */
+/* k_temp_cell_leakage_power	: 5.1271;  25 ... 125 */
+k_volt_cell_leakage_power	: 0.6263;
+
+
+k_process_cell_rise	       : 1;
+k_process_cell_fall	       : 1;
+k_process_rise_transition      : 1;
+k_process_fall_transition      : 1;
+k_process_setup_rise	       : 1;
+k_process_setup_fall	       : 1;
+k_process_hold_rise	       : 1;
+k_process_hold_fall	       : 1;
+k_process_recovery_rise        : 1;
+k_process_recovery_fall        : 1;
+k_process_min_period	       : 1;
+k_process_min_pulse_width_high : 1;
+k_process_min_pulse_width_low  : 1;
+k_process_pin_cap	       : 0;
+k_process_wire_cap	       : 0;
+k_process_wire_res	       : 0;
+
+k_temp_cell_rise	       :  0.0021;
+k_temp_cell_fall	       :  0.0021;
+k_temp_rise_transition	       :  0.0027;
+k_temp_fall_transition	       :  0.0027;
+k_temp_setup_rise	       :  0.0021;
+k_temp_setup_fall	       :  0.0021;
+k_temp_hold_rise	       :  0.0021;
+k_temp_hold_fall	       :  0.0021;
+k_temp_recovery_rise	       :  0.0021;
+k_temp_recovery_fall	       :  0.0021;
+k_temp_min_period	       :  0.0021;
+k_temp_min_pulse_width_high    :  0.0021;
+k_temp_min_pulse_width_low     :  0.0021;
+k_temp_pin_cap		       : 0;
+k_temp_wire_cap		       : 0;
+k_temp_wire_res		       : 0;
+
+k_volt_cell_rise	       :  -0.3545;
+k_volt_cell_fall	       :  -0.3545;
+k_volt_rise_transition	       :  -0.3132;
+k_volt_fall_transition	       :  -0.3132;
+k_volt_setup_rise	       :  -0.3545;
+k_volt_setup_fall	       :  -0.3545;
+k_volt_hold_rise	       :  -0.3545;
+k_volt_hold_fall	       :  -0.3545;
+k_volt_recovery_rise	       :  -0.3545;
+k_volt_recovery_fall	       :  -0.3545;
+k_volt_min_period	       :  -0.3545;
+k_volt_min_pulse_width_high    :  -0.3545;
+k_volt_min_pulse_width_low     :  -0.3545;
+k_volt_pin_cap		       : 0;
+k_volt_wire_cap		       : 0;
+k_volt_wire_res		       : 0;
+
+/* ------------------------------------- */
+
+
+power_lut_template (SLOPE) {
+   variable_1 : input_transition_time;
+   index_1("0.100, 0.500, 1.000, 3.500 ");
+}
+
+lu_table_template(SPRAM256X8_syn_delay_template) \
+  {
+  variable_1  : input_net_transition ;
+  variable_2  : total_output_net_capacitance ;
+  index_1  ("  0.100,  0.500,  1.000,  3.500");
+  index_2  ("  0.010,  0.100,  0.500,  1.000,  5.000,  10.000");
+  }
+lu_table_template(SPRAM256X8_syn_cnstr_template) \
+  {
+  variable_1  : constrained_pin_transition ;
+  variable_2  : related_pin_transition ;
+  index_1  ("  0.100,  0.500,  1.000,  3.500");
+  index_2  ("  0.100,  0.500,  1.000,  3.500");
+  }
+lu_table_template(SPRAM256X8_syn_slope_template) \
+  {
+  variable_1  : input_net_transition ;
+  variable_2  : total_output_net_capacitance ;
+  index_1  ("  0.100,  0.500,  1.000,  3.500");
+  index_2  ("  0.010,  0.100,  0.500,  1.000,  5.000,  10.000");
+  }
+
+type (SPRAM256X8_Q_BUS) {
+  base_type : array;
+  data_type : bit;
+  bit_width : 8;
+  bit_from  : 7;
+  bit_to    : 0;
+  downto    : TRUE;
+  }
+type (SPRAM256X8_D_BUS) {
+  base_type : array;
+  data_type : bit;
+  bit_width : 8;
+  bit_from  : 7;
+  bit_to    : 0;
+  downto    : TRUE;
+  }
+type (SPRAM256X8_ADR_BUS) {
+  base_type : array;
+  data_type : bit;
+  bit_width : 8;
+  bit_from  : 7;
+  bit_to    : 0;
+  downto    : TRUE;
+  }
+/* Cell definition */
+cell(SPRAM256X8)\
+  {
+  dont_touch       : true;
+  dont_use         : true;
+  area : 146775.965;
+  interface_timing : true;
+  cell_leakage_power	: 3674;
+  bus (Q) {
+    bus_type    : SPRAM256X8_Q_BUS;
+    direction   : output;
+    capacitance : 0.12;
+    max_capacitance : 0.4;
+    three_state : "OEB";
+    timing()					/* ACCESS_TIME */\
+      {
+      related_pin  : "CLK" ;
+      timing_type  : rising_edge;
+      cell_rise(SPRAM256X8_syn_delay_template)\
+        {
+	index_2 (" 0.067, 0.157, 0.557, 1.057, 5.057, 10.057");
+	values(\
+	   /*   0.010  0.100  0.500  1.000  5.000  10.000 */\
+/* 0.100 */ " 3.932 , 3.95 , 3.997 , 4.058 , 4.475 , 5 ",\
+/* 0.500 */ " 3.952 , 3.97 , 4.017 , 4.078 , 4.495 , 5.02 ",\
+/* 1.000 */ " 3.96 , 3.978 , 4.025 , 4.086 , 4.503 , 5.028 ",\
+/* 3.500 */ " 3.865 , 3.883 , 3.93 , 3.991 , 4.408 , 4.933 "\
+              );
+	}
+      cell_fall(SPRAM256X8_syn_delay_template)\
+        {
+	index_2 (" 0.067, 0.157, 0.557, 1.057, 5.057, 10.057");
+	values(\
+	   /*   0.010  0.100  0.500  1.000  5.000  10.000 */\
+/* 0.100 */ " 3.932 , 3.95 , 3.997 , 4.058 , 4.475 , 5 ",\
+/* 0.500 */ " 3.952 , 3.97 , 4.017 , 4.078 , 4.495 , 5.02 ",\
+/* 1.000 */ " 3.96 , 3.978 , 4.025 , 4.086 , 4.503 , 5.028 ",\
+/* 3.500 */ " 3.865 , 3.883 , 3.93 , 3.991 , 4.408 , 4.933 "\
+	      );
+	}
+					        /* Q_SLOPE_TIME */
+      rise_transition(SPRAM256X8_syn_slope_template)\
+        {
+	index_2 (" 0.067, 0.157, 0.557, 1.057, 5.057, 10.057");
+	values(\
+	   /*   0.010  0.100  0.500  1.000  5.000  10.000 */\
+/* 0.100 */ " 0.092 , 0.117 , 0.204 , 0.309 , 1.162 , 2.266 ",\
+/* 0.500 */ " 0.092 , 0.117 , 0.204 , 0.309 , 1.162 , 2.266 ",\
+/* 1.000 */ " 0.092 , 0.117 , 0.204 , 0.309 , 1.162 , 2.266 ",\
+/* 3.500 */ " 0.092 , 0.117 , 0.204 , 0.309 , 1.162 , 2.266 "\
+              );
+	}
+					        /* Q_SLOPE_TIME */
+      fall_transition(SPRAM256X8_syn_slope_template)\
+        {
+	index_2 (" 0.067, 0.157, 0.557, 1.057, 5.057, 10.057");
+	values(\
+	   /*   0.010  0.100  0.500  1.000  5.000  10.000 */\
+/* 0.100 */ " 0.092 , 0.117 , 0.204 , 0.309 , 1.162 , 2.266 ",\
+/* 0.500 */ " 0.092 , 0.117 , 0.204 , 0.309 , 1.162 , 2.266 ",\
+/* 1.000 */ " 0.092 , 0.117 , 0.204 , 0.309 , 1.162 , 2.266 ",\
+/* 3.500 */ " 0.092 , 0.117 , 0.204 , 0.309 , 1.162 , 2.266 "\
+	      );
+	}
+      }
+    timing()					/* HIGH_Z_TIME */\
+      {
+      related_pin  : "OEB" ;
+      timing_type  : three_state_disable;
+      timing_sense : positive_unate;
+      cell_rise(SPRAM256X8_syn_delay_template)\
+        {
+	index_2 (" 0.067, 0.157, 0.557, 1.057, 5.057, 10.057");
+	values(\
+	   /*   0.010  0.100  0.500  1.000  5.000  10.000 */\
+/* 0.100 */ " 0.813 , 0.813 , 0.813 , 0.813 , 0.813 , 0.813 ",\
+/* 0.500 */ " 0.846 , 0.846 , 0.846 , 0.846 , 0.846 , 0.846 ",\
+/* 1.000 */ " 0.872 , 0.872 , 0.872 , 0.872 , 0.872 , 0.872 ",\
+/* 3.500 */ " 0.799 , 0.799 , 0.799 , 0.799 , 0.799 , 0.799 "\
+              );
+	}
+      cell_fall(SPRAM256X8_syn_delay_template)\
+        {
+	index_2 (" 0.067, 0.157, 0.557, 1.057, 5.057, 10.057");
+	values(\
+	   /*   0.010  0.100  0.500  1.000  5.000  10.000 */\
+/* 0.100 */ " 0.813 , 0.813 , 0.813 , 0.813 , 0.813 , 0.813 ",\
+/* 0.500 */ " 0.846 , 0.846 , 0.846 , 0.846 , 0.846 , 0.846 ",\
+/* 1.000 */ " 0.872 , 0.872 , 0.872 , 0.872 , 0.872 , 0.872 ",\
+/* 3.500 */ " 0.799 , 0.799 , 0.799 , 0.799 , 0.799 , 0.799 "\
+	      );
+	}
+					        /* Q_SLOPE_TIME */
+      rise_transition(SPRAM256X8_syn_slope_template)\
+        {
+	index_2 (" 0.067, 0.157, 0.557, 1.057, 5.057, 10.057");
+	values(\
+	   /*   0.010  0.100  0.500  1.000  5.000  10.000 */\
+/* 0.100 */ " 0.092 , 0.117 , 0.204 , 0.309 , 1.162 , 2.266 ",\
+/* 0.500 */ " 0.092 , 0.117 , 0.204 , 0.309 , 1.162 , 2.266 ",\
+/* 1.000 */ " 0.092 , 0.117 , 0.204 , 0.309 , 1.162 , 2.266 ",\
+/* 3.500 */ " 0.092 , 0.117 , 0.204 , 0.309 , 1.162 , 2.266 "\
+              );
+	}
+					        /* Q_SLOPE_TIME */
+      fall_transition(SPRAM256X8_syn_slope_template)\
+        {
+	index_2 (" 0.067, 0.157, 0.557, 1.057, 5.057, 10.057");
+	values(\
+	   /*   0.010  0.100  0.500  1.000  5.000  10.000 */\
+/* 0.100 */ " 0.092 , 0.117 , 0.204 , 0.309 , 1.162 , 2.266 ",\
+/* 0.500 */ " 0.092 , 0.117 , 0.204 , 0.309 , 1.162 , 2.266 ",\
+/* 1.000 */ " 0.092 , 0.117 , 0.204 , 0.309 , 1.162 , 2.266 ",\
+/* 3.500 */ " 0.092 , 0.117 , 0.204 , 0.309 , 1.162 , 2.266 "\
+	      );
+	}
+      }
+    timing()					/* LOW_Z_TIME */\
+      {
+      related_pin  : "OEB" ;
+      timing_type  : three_state_enable;
+      timing_sense : negative_unate;
+      cell_rise(SPRAM256X8_syn_delay_template)\
+        {
+	index_2 (" 0.067, 0.157, 0.557, 1.057, 5.057, 10.057");
+	values(\
+	   /*   0.010  0.100  0.500  1.000  5.000  10.000 */\
+/* 0.100 */ " 0.748 , 0.766 , 0.827 , 0.891 , 1.333 , 1.827 ",\
+/* 0.500 */ " 0.837 , 0.854 , 0.916 , 0.98 , 1.421 , 1.915 ",\
+/* 1.000 */ " 0.936 , 0.954 , 1.015 , 1.079 , 1.521 , 2.015 ",\
+/* 3.500 */ " 1.302 , 1.32 , 1.381 , 1.445 , 1.887 , 2.381 "\
+              );
+	}
+      cell_fall(SPRAM256X8_syn_delay_template)\
+        {
+	index_2 (" 0.067, 0.157, 0.557, 1.057, 5.057, 10.057");
+	values(\
+	   /*   0.010  0.100  0.500  1.000  5.000  10.000 */\
+/* 0.100 */ " 0.748 , 0.766 , 0.827 , 0.891 , 1.333 , 1.827 ",\
+/* 0.500 */ " 0.837 , 0.854 , 0.916 , 0.98 , 1.421 , 1.915 ",\
+/* 1.000 */ " 0.936 , 0.954 , 1.015 , 1.079 , 1.521 , 2.015 ",\
+/* 3.500 */ " 1.302 , 1.32 , 1.381 , 1.445 , 1.887 , 2.381 "\
+	      );
+	}
+					        /* Q_SLOPE_TIME */
+      rise_transition(SPRAM256X8_syn_slope_template)\
+        {
+	index_2 (" 0.067, 0.157, 0.557, 1.057, 5.057, 10.057");
+	values(\
+	   /*   0.010  0.100  0.500  1.000  5.000  10.000 */\
+/* 0.100 */ " 0.092 , 0.117 , 0.204 , 0.309 , 1.162 , 2.266 ",\
+/* 0.500 */ " 0.092 , 0.117 , 0.204 , 0.309 , 1.162 , 2.266 ",\
+/* 1.000 */ " 0.092 , 0.117 , 0.204 , 0.309 , 1.162 , 2.266 ",\
+/* 3.500 */ " 0.092 , 0.117 , 0.204 , 0.309 , 1.162 , 2.266 "\
+              );
+	}
+					        /* Q_SLOPE_TIME */
+      fall_transition(SPRAM256X8_syn_slope_template)\
+        {
+	index_2 (" 0.067, 0.157, 0.557, 1.057, 5.057, 10.057");
+	values(\
+	   /*   0.010  0.100  0.500  1.000  5.000  10.000 */\
+/* 0.100 */ " 0.092 , 0.117 , 0.204 , 0.309 , 1.162 , 2.266 ",\
+/* 0.500 */ " 0.092 , 0.117 , 0.204 , 0.309 , 1.162 , 2.266 ",\
+/* 1.000 */ " 0.092 , 0.117 , 0.204 , 0.309 , 1.162 , 2.266 ",\
+/* 3.500 */ " 0.092 , 0.117 , 0.204 , 0.309 , 1.162 , 2.266 "\
+	      );
+	}
+      }
+    }
+  bus (D) {
+    bus_type    : SPRAM256X8_D_BUS;
+    direction   : input;
+    capacitance : 0.015;
+    timing()				        /* D_SETUP_TIME */\
+      {
+      related_pin : "CLK" ;
+      timing_type : setup_rising ;
+      rise_constraint(SPRAM256X8_syn_cnstr_template)\
+        {
+	values(\
+	   /*   0.100  0.500  1.000  3.500 */\
+/* 0.100 */ " 0.34 , 0.303 , 0.288 , 0.362 ",\
+/* 0.500 */ " 0.419 , 0.382 , 0.366 , 0.441 ",\
+/* 1.000 */ " 0.504 , 0.467 , 0.451 , 0.526 ",\
+/* 3.500 */ " 0.834 , 0.796 , 0.781 , 0.856 "\
+	      );
+	}
+      fall_constraint(SPRAM256X8_syn_cnstr_template)\
+        {
+	values(\
+	   /*   0.100  0.500  1.000  3.500 */\
+/* 0.100 */ " 0.34 , 0.303 , 0.288 , 0.362 ",\
+/* 0.500 */ " 0.419 , 0.382 , 0.366 , 0.441 ",\
+/* 1.000 */ " 0.504 , 0.467 , 0.451 , 0.526 ",\
+/* 3.500 */ " 0.834 , 0.796 , 0.781 , 0.856 "\
+	      );
+	}
+      }
+    timing()				        /* D_HOLD_TIME */\
+      {
+      related_pin : "CLK" ;
+      timing_type : hold_rising ;
+      rise_constraint(SPRAM256X8_syn_cnstr_template)\
+        {
+	values(\
+	   /*   0.100  0.500  1.000  3.500 */\
+/* 0.100 */ " 0.463 , 0.5 , 0.517 , 0.451 ",\
+/* 0.500 */ " 0.446 , 0.482 , 0.5 , 0.434 ",\
+/* 1.000 */ " 0.46 , 0.497 , 0.515 , 0.448 ",\
+/* 3.500 */ " 0.607 , 0.644 , 0.661 , 0.595 "\
+	      );
+	}
+      fall_constraint(SPRAM256X8_syn_cnstr_template)\
+        {
+	values(\
+	   /*   0.100  0.500  1.000  3.500 */\
+/* 0.100 */ " 0.463 , 0.5 , 0.517 , 0.451 ",\
+/* 0.500 */ " 0.446 , 0.482 , 0.5 , 0.434 ",\
+/* 1.000 */ " 0.46 , 0.497 , 0.515 , 0.448 ",\
+/* 3.500 */ " 0.607 , 0.644 , 0.661 , 0.595 "\
+	      );
+	}
+      }
+    }
+  bus (ADR) {
+    bus_type    : SPRAM256X8_ADR_BUS;
+    direction   : input;
+    capacitance : 0.021;
+    timing()				        /* ADR_SETUP_TIME */\
+      {
+      related_pin : "CLK" ;
+      timing_type : setup_rising ;
+      rise_constraint(SPRAM256X8_syn_cnstr_template)\
+        {
+	values(\
+	   /*   0.100  0.500  1.000  3.500 */\
+/* 0.100 */ " 1.032 , 1.084 , 1.178 , 1.691 ",\
+/* 0.500 */ " 1.115 , 1.167 , 1.261 , 1.774 ",\
+/* 1.000 */ " 1.191 , 1.243 , 1.337 , 1.85 ",\
+/* 3.500 */ " 1.519 , 1.571 , 1.665 , 2.178 "\
+	      );
+	}
+      fall_constraint(SPRAM256X8_syn_cnstr_template)\
+        {
+	values(\
+	   /*   0.100  0.500  1.000  3.500 */\
+/* 0.100 */ " 1.032 , 1.084 , 1.178 , 1.691 ",\
+/* 0.500 */ " 1.115 , 1.167 , 1.261 , 1.774 ",\
+/* 1.000 */ " 1.191 , 1.243 , 1.337 , 1.85 ",\
+/* 3.500 */ " 1.519 , 1.571 , 1.665 , 2.178 "\
+	      );
+	}
+      }
+    timing()				        /* ADR_HOLD_TIME */\
+      {
+      related_pin : "CLK" ;
+      timing_type : hold_rising ;
+      rise_constraint(SPRAM256X8_syn_cnstr_template)\
+        {
+	values(\
+	   /*   0.100  0.500  1.000  3.500 */\
+/* 0.100 */ " 0.282 , 0.282 , 0.277 , 0.215 ",\
+/* 0.500 */ " 0.24 , 0.239 , 0.234 , 0.173 ",\
+/* 1.000 */ " 0.244 , 0.244 , 0.239 , 0.178 ",\
+/* 3.500 */ " 0.355 , 0.354 , 0.349 , 0.288 "\
+	      );
+	}
+      fall_constraint(SPRAM256X8_syn_cnstr_template)\
+        {
+	values(\
+	   /*   0.100  0.500  1.000  3.500 */\
+/* 0.100 */ " 0.282 , 0.282 , 0.277 , 0.215 ",\
+/* 0.500 */ " 0.24 , 0.239 , 0.234 , 0.173 ",\
+/* 1.000 */ " 0.244 , 0.244 , 0.239 , 0.178 ",\
+/* 3.500 */ " 0.355 , 0.354 , 0.349 , 0.288 "\
+	      );
+	}
+      }
+    }
+  pin (CLK) \
+    {
+    direction   : input;
+    clock       : true;
+    capacitance : 0.189;
+    min_period  : 3.051  ;  		/* CYCLE_TIME */
+    min_pulse_width_high  : 1.049  ;  		/* CLK_HIGH_TIME */
+    min_pulse_width_low   : 1.117  ;  		/* CLK_LOW_TIME */
+
+    /* default: */
+    internal_power () {	 
+      power(SLOPE) {
+        values("343.1, 345.27, 349.01, 371.43");
+        }
+      }
+
+    /* read cycle: */
+    internal_power () {	 
+      when : "(!ENB * WEB)";
+      power(SLOPE) {
+        values("343.1, 345.27, 349.01, 371.43");
+        }
+      }
+
+    /* write cycle: */
+    internal_power () {	 
+      when : "(!ENB * !WEB)";
+      power(SLOPE) {
+        values("305.52, 298.4, 304.34, 330.3");
+        }
+      }
+    /* disabled: */
+    internal_power () {	 
+      when : "(ENB)";
+      power(SLOPE) {
+        values("37.741, 37.98, 38.391, 40.857");
+        }
+      }
+
+    }
+  pin (ENB) \
+    {
+    direction   : input;
+    capacitance : 0.07;
+    timing()				        /* ENB_SETUP_TIME */\
+      {
+      related_pin : "CLK" ;
+      timing_type : setup_rising ;
+      rise_constraint(SPRAM256X8_syn_cnstr_template)\
+        {
+	values(\
+	   /*   0.100  0.500  1.000  3.500 */\
+/* 0.100 */ " 1.032 , 1.084 , 1.178 , 1.691 ",\
+/* 0.500 */ " 1.115 , 1.167 , 1.261 , 1.774 ",\
+/* 1.000 */ " 1.191 , 1.243 , 1.337 , 1.85 ",\
+/* 3.500 */ " 1.519 , 1.571 , 1.665 , 2.178 "\
+	      );
+	}
+      fall_constraint(SPRAM256X8_syn_cnstr_template)\
+        {
+	values(\
+	   /*   0.100  0.500  1.000  3.500 */\
+/* 0.100 */ " 1.032 , 1.084 , 1.178 , 1.691 ",\
+/* 0.500 */ " 1.115 , 1.167 , 1.261 , 1.774 ",\
+/* 1.000 */ " 1.191 , 1.243 , 1.337 , 1.85 ",\
+/* 3.500 */ " 1.519 , 1.571 , 1.665 , 2.178 "\
+	      );
+	}
+      }
+    timing()				        /* ENB_HOLD_TIME */\
+      {
+      related_pin : "CLK" ;
+      timing_type : hold_rising ;
+      rise_constraint(SPRAM256X8_syn_cnstr_template)\
+        {
+	values(\
+	   /*   0.100  0.500  1.000  3.500 */\
+/* 0.100 */ " 0.405 , 0.405 , 0.399 , 0.338 ",\
+/* 0.500 */ " 0.469 , 0.469 , 0.464 , 0.402 ",\
+/* 1.000 */ " 0.581 , 0.581 , 0.576 , 0.515 ",\
+/* 3.500 */ " 1.215 , 1.215 , 1.21 , 1.148 "\
+	      );
+	}
+      fall_constraint(SPRAM256X8_syn_cnstr_template)\
+        {
+	values(\
+	   /*   0.100  0.500  1.000  3.500 */\
+/* 0.100 */ " 0.405 , 0.405 , 0.399 , 0.338 ",\
+/* 0.500 */ " 0.469 , 0.469 , 0.464 , 0.402 ",\
+/* 1.000 */ " 0.581 , 0.581 , 0.576 , 0.515 ",\
+/* 3.500 */ " 1.215 , 1.215 , 1.21 , 1.148 "\
+	      );
+	}
+      }
+    }
+  pin (WEB) \
+    {
+    direction   : input;
+    capacitance : 0.009;
+    timing()				        /* WEB_SETUP_TIME */\
+      {
+      related_pin : "CLK" ;
+      timing_type : setup_rising ;
+      rise_constraint(SPRAM256X8_syn_cnstr_template)\
+        {
+	values(\
+	   /*   0.100  0.500  1.000  3.500 */\
+/* 0.100 */ " 0.538 , 0.589 , 0.684 , 1.197 ",\
+/* 0.500 */ " 0.616 , 0.668 , 0.762 , 1.275 ",\
+/* 1.000 */ " 0.694 , 0.745 , 0.84 , 1.353 ",\
+/* 3.500 */ " 1.011 , 1.063 , 1.157 , 1.67 "\
+	      );
+	}
+      fall_constraint(SPRAM256X8_syn_cnstr_template)\
+        {
+	values(\
+	   /*   0.100  0.500  1.000  3.500 */\
+/* 0.100 */ " 0.538 , 0.589 , 0.684 , 1.197 ",\
+/* 0.500 */ " 0.616 , 0.668 , 0.762 , 1.275 ",\
+/* 1.000 */ " 0.694 , 0.745 , 0.84 , 1.353 ",\
+/* 3.500 */ " 1.011 , 1.063 , 1.157 , 1.67 "\
+	      );
+	}
+      }
+    timing()				        /* WEB_HOLD_TIME */\
+      {
+      related_pin : "CLK" ;
+      timing_type : hold_rising ;
+      rise_constraint(SPRAM256X8_syn_cnstr_template)\
+        {
+	values(\
+	   /*   0.100  0.500  1.000  3.500 */\
+/* 0.100 */ " 0.271 , 0.271 , 0.266 , 0.204 ",\
+/* 0.500 */ " 0.252 , 0.252 , 0.247 , 0.185 ",\
+/* 1.000 */ " 0.263 , 0.262 , 0.257 , 0.196 ",\
+/* 3.500 */ " 0.388 , 0.387 , 0.382 , 0.321 "\
+	      );
+	}
+      fall_constraint(SPRAM256X8_syn_cnstr_template)\
+        {
+	values(\
+	   /*   0.100  0.500  1.000  3.500 */\
+/* 0.100 */ " 0.271 , 0.271 , 0.266 , 0.204 ",\
+/* 0.500 */ " 0.252 , 0.252 , 0.247 , 0.185 ",\
+/* 1.000 */ " 0.263 , 0.262 , 0.257 , 0.196 ",\
+/* 3.500 */ " 0.388 , 0.387 , 0.382 , 0.321 "\
+	      );
+	}
+      }
+    }
+  pin (OEB) \
+    {
+    direction   : input;
+    capacitance : 0.018;
+    }
+  pin (RTEST) \
+    {
+    direction   : output;
+    max_capacitance : 0.200;
+    }
+
+  pin (ramvdd) {
+      direction      : input;
+      capacitance    : 0.01;
+  }
+  pin (ramgnd) {
+      direction      : input;
+      capacitance    : 0.01;
+  }
+
+  } /* end of cell(SPRAM256X8) */
+  
+} /* end of library(SPRAM256X8) */

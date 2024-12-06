@@ -1,0 +1,123 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+Version: 21.10-p002_1, built Fri Aug 20 06:13:13 PDT 2021
+Options: 
+Date:    Wed Dec 04 14:12:59 2024
+Host:    cinova05.lesc.ufc.br (x86_64 w/Linux 4.18.0-553.27.1.el8_10.x86_64) (14cores*20cpus*1physical cpu*13th Gen Intel(R) Core(TM) i5-13500 24576KB) (32333800KB)
+PID:     8268
+OS:      Rocky Linux release 8.10 (Green Obsidian)
+
+Checking out license: Genus_Synthesis
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Loading tool scripts...
+Finished loading tool scripts (6 seconds elapsed).
+
+WARNING: This version of the tool is 1202 days old.
+@genus:root: 1> report_area --help
+Error   : An invalid option was specified. [TUI-204] [parse_options]
+        : An option named '--help' could not be found.
+        : Run 'command_name -help' to check all valid options. To correct the option and rerun the command.
+  report_area: prints an area report 
+
+Usage: report_area [-summary] [-depth <integer>] [-min_count <integer>] [-physical] [-hinst <object>] [-gates]
+           [-normalize_with_gate <object>] [-show_leaf_cells] [-skip_modules_logical_hier_false] [-detail] [-show_full_names]
+           [<object>+] [> file]
+
+    [-summary]:
+        area summary 
+    [-depth <integer>]:
+        number of levels of recursion 
+    [-min_count <integer>]:
+        minimum instance count per block 
+    [-physical]:
+        use LEF width and height values for area computation 
+    [-hinst <object>]:
+        print the leaf instances with area under the specified hierarchy 
+    [-gates]:
+        prints all the comb/seq/hier cells 
+    [-normalize_with_gate <object>]:
+        normalize area numbers with area of the specified cell 
+    [-show_leaf_cells]:
+        print leaf instances at design level in the report 
+    [-skip_modules_logical_hier_false]:
+        skips reporting the modules with attribute logical_hier false 
+    [-detail]:
+        shows detailed area report 
+    [-show_full_names]:
+        display hierarchical name 
+    [<object>+]:
+        design to report on 
+Failed on report area
+@genus:root: 2> read_lib --h
+Error   : File error. [FILE-100] [::legacy::set_attribute]
+        : Cannot open file '--h'
+        : Make sure that the file is a readable regular file and has the specified name.
+Error   : A library file does not exist. [LBR-68] [::legacy::set_attribute]
+        : File '--h' could not be found. File '<none>' was the last file that was successfully read in.
+        : Make sure that the library file exists or check for a typo in the file name.
+Error   : The data value for this attribute is invalid. [TUI-24] [::legacy::set_attribute]
+        : The value '  { --h } ' cannot be set for attribute 'library'.
+        : To see the usage/description for this attribute, type '::legacy::set_attribute -h <attr_name> *' (in legacy UI mode) or 'help * <attr_name> -detail' (in CUI mode).
+1
+@genus:root: 3> read_lib --help
+Error   : File error. [FILE-100] [::legacy::set_attribute]
+        : Cannot open file '--help'
+Error   : A library file does not exist. [LBR-68] [::legacy::set_attribute]
+        : File '--help' could not be found. File '<none>' was the last file that was successfully read in.
+Error   : The data value for this attribute is invalid. [TUI-24] [::legacy::set_attribute]
+        : The value '  { --help } ' cannot be set for attribute 'library'.
+1
+@genus:root: 4> read_lib -help
+  read_libs: read libraries 
+
+Usage: read_libs [-min_libs <string>] [-max_libs <string>] [-min_noise_libs <string>] [-max_noise_libs <string>]
+           [-aocv_libs <string>] [-socv <string>] [-noise_libs <string>] [-power_ground_files <string>] [-stamp_libs <string>]
+           [<string>+]
+
+    [-min_libs <string>]:
+        min library files to be read 
+    [-max_libs <string>]:
+        max library files to be read 
+    [-min_noise_libs <string>]:
+        min noise library files to be read 
+    [-max_noise_libs <string>]:
+        max noise library files to be read 
+    [-aocv_libs <string>]:
+        aocv library files to be read 
+    [-socv <string>]:
+        socv library files to be read 
+    [-noise_libs <string>]:
+        noise library files to be read 
+    [-power_ground_files <string>]:
+        power-ground files to be read 
+    [-stamp_libs <string>]:
+        stamp libraries to be read 
+    [<string>+]:
+        the library files to be read 
+@genus:root: 5> ls
+arch_digital_sys
+asic_fpga_files
+digital_logic
+genus.cmd
+genus.cmd1
+genus.cmd2
+genus.log
+genus.log1
+genus.log2
+hdl_intro_files
+practice_0
+scripts
+verilog_tests
+xrun.history
+xrun.log
+@genus:root: 6> exit
+Normal exit.

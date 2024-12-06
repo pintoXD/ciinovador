@@ -2,10 +2,10 @@
 /* verilator lint_off SYNCASYNCNET */
 
 module register8_bank_v2(
-    input logic clk, rst, we3,
-    input logic [2:0] wa3,
+    input logic clk, rst, we5,
+    input logic [2:0] wa5,
     input logic [2:0] ra1, ra2,
-    input logic [7:0] wd3,
+    input logic [7:0] wd32,
     output logic [7:0] rd1, rd2
 );
 
@@ -31,8 +31,8 @@ always_ff @(posedge clk) begin
         for (ind = 0; ind < 8; ind = ind + 1) begin
             X_in_word[ind] <= 8'b0;
         end
-    end else if (we3) begin
-        X_in_word[wa3] <= wd3;
+    end else if (we5) begin
+        X_in_word[wa5] <= wd32;
     end
 end
 

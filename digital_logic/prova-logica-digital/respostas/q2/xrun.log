@@ -1,0 +1,63 @@
+xrun(64): 22.09-s013: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	22.09-s013: Started on Nov 28, 2024 at 12:07:57 -03
+xrun
+	-64bit
+	dec_i2c_tb.sv
+	dec_i2c.sv
+	+gui
+	+access+rw
+	-s
+Recompiling... reason: file './dec_i2c_tb.sv' is newer than expected.
+	expected: Thu Nov 28 12:05:15 2024
+	actual:   Thu Nov 28 12:07:48 2024
+file: dec_i2c_tb.sv
+	module worklib.dec_i2c_tb:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		dec_i2c_tb
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.dec_i2c_tb:sv <0x031cfc12>
+			streams:  15, words: 10330
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                  Instances  Unique
+		Modules:                  2       2
+		Registers:               27      27
+		Scalar wires:            16       -
+		Vectored wires:           3       -
+		Always blocks:            4       4
+		Initial blocks:           5       5
+		Cont. assignments:        4       5
+		Pseudo assignments:      10      10
+		Simulation timescale:  10ps
+	Writing initial simulation snapshot: worklib.dec_i2c_tb:sv
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> 
+xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
+xcelium> 
+-------------------------------------
+Relinquished control to SimVision...
+# Restoring simulation environment...
+xcelium> input -quiet .reinvoke.sim
+xcelium> file delete .reinvoke.sim
+xcelium> run
+Comecou o teste
+xmsim: *W,DFUSE: $dumpfile test.vcd is already in use (VCD file).
+            File: ./dec_i2c_tb.sv, line = 95, pos = 12
+           Scope: dec_i2c_tb
+            Time: 0 FS + 0
+
+xmsim: *W,VCDFUSE: Default VCD file name verilog.dump already in use (VCD file).
+            Time: 0 FS + 1
+
+Simulation complete via $finish(1) at time 1892 NS + 0
+./dec_i2c_tb.sv:87         $finish;
+xcelium> ^C
+xcelium> exit
+TOOL:	xrun(64)	22.09-s013: Exiting on Nov 28, 2024 at 14:36:59 -03  (total: 02:29:02)

@@ -1,0 +1,13 @@
+read_libs SPRAM256X8.lib fast_vdd1v0_basicCells_hvt.lib
+ 
+read_hdl -sv design_multiplexa_sram.sv
+elaborate
+check_design
+check_design -unresolved
+syn_generic
+check_design
+syn_map
+report_sequential
+write_hdl > design_multiplexa_sram_mapped.sv
+write_sdf > design_multiplexa_sram_mapped.sdf
+gui_show

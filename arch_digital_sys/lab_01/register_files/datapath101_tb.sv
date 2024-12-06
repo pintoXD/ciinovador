@@ -3,9 +3,9 @@ module datapath101_tb();
 
     logic [2:0] mocked_ra1 = 3'b000;
     logic [2:0] mocked_ra2 = 3'b000;
-    logic[2:0] mocked_wa3 = 3'b000;
-    logic mocked_we3 = 1'b0;
-    logic [7:0] mocked_wd3 = 'b0;
+    logic[2:0] mocked_wa5 = 3'b000;
+    logic mocked_we5 = 1'b0;
+    logic [7:0] mocked_wd32 = 'b0;
     logic [7:0] mock_constante = 'b0;
     logic [2:0] mock_ULAControl = 3'b000;
     logic mock_select_src = 1'b0;
@@ -17,9 +17,9 @@ module datapath101_tb();
     datapath101 DUT(
         .ra1(mocked_ra1),
         .ra2(mocked_ra2),
-        .wa3(mocked_wa3),
-        .we3(mocked_we3),
-        .wd3(mocked_wd3),
+        .wa5(mocked_wa5),
+        .we5(mocked_we5),
+        .wd32(mocked_wd32),
         .constante(mock_constante),
         .ULAControl(mock_ULAControl),
         .select_src(mock_select_src),
@@ -63,66 +63,66 @@ module datapath101_tb();
 
         //Test Case 1 - Write to register X1
         @(posedge test_clk);
-        mocked_we3 = 1'b1;
-        mocked_wd3 = 8'h5A;
-        mocked_wa3 = 3'b001; //==> Register X1
+        mocked_we5 = 1'b1;
+        mocked_wd32 = 8'h5A;
+        mocked_wa5 = 3'b001; //==> Register X1
         #20
-        mocked_we3 = 1'b0;
+        mocked_we5 = 1'b0;
         assert(dut_ULAResult == 8'h00 && dut_FlagZ == 1'b1) else $fatal("Test Case 1 failed");
 
         
         //Test Case 2 - Write to register X2
         @(posedge test_clk);
-        mocked_we3 = 1'b1;
-        mocked_wd3 = 8'h5B;
-        mocked_wa3 = 3'b010;   //==> Register X2
+        mocked_we5 = 1'b1;
+        mocked_wd32 = 8'h5B;
+        mocked_wa5 = 3'b010;   //==> Register X2
         #20
-        mocked_we3 = 1'b0;
+        mocked_we5 = 1'b0;
         assert(dut_ULAResult == 8'h00 && dut_FlagZ == 1'b1) else $fatal("Test Case 2 failed");
 
         //Test Case 3 - Write to register X3.
         @(posedge test_clk);
-        mocked_we3 = 1'b1;
-        mocked_wd3 = 8'h5C;
-        mocked_wa3 = 3'b011; //==> Register X3
+        mocked_we5 = 1'b1;
+        mocked_wd32 = 8'h5C;
+        mocked_wa5 = 3'b011; //==> Register X3
         #20
-        mocked_we3 = 1'b0;
+        mocked_we5 = 1'b0;
         assert(dut_ULAResult == 8'h00 && dut_FlagZ == 1'b1) else $fatal("Test Case 3 failed");
         
         //Test Case 4 - Write to register X4 with rd1 unchanged from the previous test case.
         @(posedge test_clk);
-        mocked_we3 = 1'b1;
-        mocked_wd3 = 8'h5D;
-        mocked_wa3 = 3'b100; //==> Register X4
+        mocked_we5 = 1'b1;
+        mocked_wd32 = 8'h5D;
+        mocked_wa5 = 3'b100; //==> Register X4
         #20
-        mocked_we3 = 1'b0;
+        mocked_we5 = 1'b0;
         assert(dut_ULAResult == 8'h00 && dut_FlagZ == 1'b1) else $fatal("Test Case 4 failed");
 
         //Test Case 5 - Write to register X5.
         @(posedge test_clk);
-        mocked_we3 = 1'b1;
-        mocked_wd3 = 8'h5E;
-        mocked_wa3 = 3'b101; //==> Register X5
+        mocked_we5 = 1'b1;
+        mocked_wd32 = 8'h5E;
+        mocked_wa5 = 3'b101; //==> Register X5
         #20
-        mocked_we3 = 1'b0;
+        mocked_we5 = 1'b0;
         assert(dut_ULAResult == 8'h00 && dut_FlagZ == 1'b1) else $fatal("Test Case 5 failed");
 
         //Test Case 6 - Write to register X6.
         @(posedge test_clk);
-        mocked_we3 = 1'b1;
-        mocked_wd3 = 8'h5F;
-        mocked_wa3 = 3'b110; //==> Register X6
+        mocked_we5 = 1'b1;
+        mocked_wd32 = 8'h5F;
+        mocked_wa5 = 3'b110; //==> Register X6
         #20
-        mocked_we3 = 1'b0;
+        mocked_we5 = 1'b0;
         assert(dut_ULAResult == 8'h00 && dut_FlagZ == 1'b1) else $fatal("Test Case 6 failed");
 
         //Test Case 6 - Write to register X7.
         @(posedge test_clk);
-        mocked_we3 = 1'b1;
-        mocked_wd3 = 8'h50;
-        mocked_wa3 = 3'b111; //==> Register X7
+        mocked_we5 = 1'b1;
+        mocked_wd32 = 8'h50;
+        mocked_wa5 = 3'b111; //==> Register X7
         #20
-        mocked_we3 = 1'b0;
+        mocked_we5 = 1'b0;
         assert(dut_ULAResult == 8'h00 && dut_FlagZ == 1'b1) else $fatal("Test Case 6 failed");
 
         /*
@@ -359,17 +359,17 @@ module datapath101_tb();
     initial
     begin
       $display("                Tempo               Entradas LUT                                                                                                                            Saídas");
-      $display("                         clk  rst  mocked_we3   mocked_wa3   mocked_ra1  mocked_ra2     mocked_wd3   mock_constante    mock_select_src     mock_ULAControl              Result   FlagZ");
+      $display("                         clk  rst  mocked_we5   mocked_wa5   mocked_ra1  mocked_ra2     mocked_wd32   mock_constante    mock_select_src     mock_ULAControl              Result   FlagZ");
       $display("                ====   ====================================================================================================================================   |   ==========================");
-      /* $monitor($time,"      %b    %b    %b    %b   %b    %b      %b         %b      %b", test_clk, test_reset, mocked_we3, 
-                                                                    mocked_wa3, mocked_ra1, mocked_ra2, mocked_wd3, 
+      /* $monitor($time,"      %b    %b    %b    %b   %b    %b      %b         %b      %b", test_clk, test_reset, mocked_we5, 
+                                                                    mocked_wa5, mocked_ra1, mocked_ra2, mocked_wd32, 
                                                                     rd1, rd2);
  */    end
 
     always@(posedge test_clk or negedge test_clk)begin
       $display($time,"      %b    %b        %b          %b           %b         %b            %h            %h                  %b                  %b          |           %h      %b", 
-                                                                    test_clk, test_reset, mocked_we3, 
-                                                                    mocked_wa3, mocked_ra1, mocked_ra2, mocked_wd3, mock_constante, 
+                                                                    test_clk, test_reset, mocked_we5, 
+                                                                    mocked_wa5, mocked_ra1, mocked_ra2, mocked_wd32, mock_constante, 
                                                                     mock_select_src, mock_ULAControl, dut_ULAResult, dut_FlagZ);
     end
 

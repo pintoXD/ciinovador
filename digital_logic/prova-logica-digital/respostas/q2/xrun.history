@@ -1,0 +1,16 @@
+s1(28Nov2024:10:49:44):  xrun -64bit dec_i2c_tb.sv dec_i2c.sv +gui +access+rw 
+s2(28Nov2024:10:52:53):  xrun -64bit dec_i2c_tb.sv dec_i2c.sv +gui +access+rw "-s " 
+s3(28Nov2024:10:55:20):  xrun -64bit dec_i2c_tb.sv dec_i2c.sv +gui +access+rw -s 
+s4(28Nov2024:11:00:40):  xrun -64bit dec_i2c_tb.sv dec_i2c.sv +gui +access+rw -s 
+s5(28Nov2024:11:07:08):  xrun -64bit dec_i2c_tb.sv dec_i2c.sv +gui +access+rw -s 
+s6(28Nov2024:11:09:55):  xrun -64bit dec_i2c_tb.sv dec_i2c.sv +gui +access+rw -s 
+s7(28Nov2024:11:34:28):  xrun -64bit dec_i2c_tb.sv dec_i2c.sv +gui +access+rw -s 
+s8(28Nov2024:11:41:04):  xrun -64bit dec_i2c_tb.sv dec_i2c.sv +gui +access+rw -s 
+s9(28Nov2024:11:50:25):  xrun -64bit dec_i2c_tb.sv dec_i2c.sv +gui +access+rw -s 
+s10(28Nov2024:11:50:28):  xrun -64bit dec_i2c_tb.sv dec_i2c.sv +gui +access+rw -s 
+s11(28Nov2024:11:51:03):  xrun -64bit dec_i2c_tb.sv dec_i2c.sv +gui +access+rw -s 
+s12(28Nov2024:11:51:37):  xrun -64bit dec_i2c_tb.sv dec_i2c.sv +gui +access+rw -s 
+s13(28Nov2024:12:02:26):  xrun -64bit dec_i2c_tb.sv dec_i2c.sv +gui +access+rw -s 
+s14(28Nov2024:12:04:48):  xrun -64bit dec_i2c_tb.sv dec_i2c.sv +gui +access+rw -s 
+s15(28Nov2024:12:05:17):  xrun -64bit dec_i2c_tb.sv dec_i2c.sv +gui +access+rw -s 
+s16(28Nov2024:12:07:57):  xrun -64bit dec_i2c_tb.sv dec_i2c.sv +gui +access+rw -s 

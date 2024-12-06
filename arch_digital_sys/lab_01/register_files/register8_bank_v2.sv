@@ -1,9 +1,9 @@
 `timescale 1ns/1ps
 module register8_bank_v2(
-    input logic clk, rst, we3,
-    input logic [2:0]wa3,
+    input logic clk, rst, we5,
+    input logic [2:0]wa5,
     input logic [2:0]ra1, ra2,
-    input logic [7:0]wd3,
+    input logic [7:0]wd32,
     output logic [7:0] rd1, rd2
 
 );
@@ -41,42 +41,42 @@ always_ff @(posedge clk) begin
                 X_in_word[ind] <= 8'b0;
             end
         end
-    else if(we3)
-        // X_in_word[wa3] <= wd3;
+    else if(we5)
+        // X_in_word[wa5] <= wd32;
         begin
-            case(wa3)
+            case(wa5)
                 // 3'b001:
-                //     X1_in_word <= wd3;
+                //     X1_in_word <= wd32;
                 // 3'b010:
-                //     X2_in_word <= wd3;
+                //     X2_in_word <= wd32;
                 // 3'b011:
-                //     X3_in_word <= wd3;
+                //     X3_in_word <= wd32;
                 // 3'b100:
-                //     X4_in_word <= wd3;
+                //     X4_in_word <= wd32;
                 // 3'b101:
-                //     X5_in_word <= wd3;
+                //     X5_in_word <= wd32;
                 // 3'b110:
-                //     X6_in_word <= wd3;
+                //     X6_in_word <= wd32;
                 // 3'b111:
-                //     X7_in_word <= wd3;
+                //     X7_in_word <= wd32;
                 // default:
-                //     X1_in_word <= wd3;
+                //     X1_in_word <= wd32;
                 3'b001:
-                    X_in_word[1] <= wd3;
+                    X_in_word[1] <= wd32;
                 3'b010:
-                    X_in_word[2] <= wd3;
+                    X_in_word[2] <= wd32;
                 3'b011:
-                    X_in_word[3] <= wd3;
+                    X_in_word[3] <= wd32;
                 3'b100:
-                    X_in_word[4] <= wd3;
+                    X_in_word[4] <= wd32;
                 3'b101:
-                    X_in_word[5] <= wd3;
+                    X_in_word[5] <= wd32;
                 3'b110:
-                    X_in_word[6] <= wd3;
+                    X_in_word[6] <= wd32;
                 3'b111:
-                    X_in_word[7] <= wd3;
+                    X_in_word[7] <= wd32;
                 default:
-                    X_in_word[1] <= wd3;
+                    X_in_word[1] <= wd32;
             endcase
         end
 end

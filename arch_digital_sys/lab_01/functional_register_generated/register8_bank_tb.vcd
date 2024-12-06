@@ -4,9 +4,9 @@ $timescale 1ps $end
   $scope module register8_bank_tb $end
    $var wire 1 J test_clk $end
    $var wire 1 # test_reset $end
-   $var wire 1 $ we3 $end
-   $var wire 8 % wd3 [7:0] $end
-   $var wire 3 & wa3 [2:0] $end
+   $var wire 1 $ we5 $end
+   $var wire 8 % wd32 [7:0] $end
+   $var wire 3 & wa5 [2:0] $end
    $var wire 3 ' ra1 [2:0] $end
    $var wire 3 ( ra2 [2:0] $end
    $var wire 8 K rd1 [7:0] $end
@@ -14,11 +14,11 @@ $timescale 1ps $end
    $scope module dut $end
     $var wire 1 J clk $end
     $var wire 1 # rst $end
-    $var wire 1 $ we3 $end
-    $var wire 3 & wa3 [2:0] $end
+    $var wire 1 $ we5 $end
+    $var wire 3 & wa5 [2:0] $end
     $var wire 3 ' ra1 [2:0] $end
     $var wire 3 ( ra2 [2:0] $end
-    $var wire 8 % wd3 [7:0] $end
+    $var wire 8 % wd32 [7:0] $end
     $var wire 8 K rd1 [7:0] $end
     $var wire 8 L rd2 [7:0] $end
     $var wire 8 ) X_in_word[0] [7:0] $end

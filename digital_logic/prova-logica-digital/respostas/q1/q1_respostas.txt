@@ -1,0 +1,16 @@
+Questão 1 
+
+Item 1:
+
+Portas lógicas estáticas CMOS são formadas por dois tipos de transistores do tipo MOS: pMOS e nMOS. As características de funcionamento de uma porta lógica CMOS dependem das características físicas desses transistores.
+
+Os atrasos de propagação de uma porta lógica dependem de fatores como as capacitâncias de saída e capacitâncias parasitas presentes nesses transistores. Essas são resultados da fabricação dos transistores, que ao unirem materiais de diferentes dopagens acabam por criar capacitâncias internas indesejadas. As capacitâncias de saída são inseridas junto ao arranjo elétrico que compõem uma porta lógica e seus valores influenciam diretamente no tempo de propagação, uma vez que quanto maior for a capacitância de saída de uma porta lógica, maior será seu tempo de propagação. 
+
+O tipo de arranjo de transistores pMOS e nMOS também influenciam no tempo de propagação. Portas lógicas são construídas por meio de redes pull-up (conjunto de transistores pMOS) e redes pull-down(conjunto de transistores nMOS), nas quais os transistores são associados em série ou paralelo a depender do objetivo almejado. Esses arranjos fazem com que uma dada porta lógica tenha um tempo de propagação diferente de outra porta lógica, dependendo do arranjo interno de seus transistores de também dos estímulos que estão recebendo em suas entradas. 
+
+Além desses fatores, o consumo energético também é um fator limitante no funcionamento de portas lógicas CMOS. Um fator que influência nessa propriedade é a temperatura de operação dos transistores, que influencia na mobilidade dos portadores de carga de um transistor fazendo com o que seja consumido mais corrente a medida que há uma aumento da temperatura de operação. O número de chaveamentos de transistores que uma porta lógica realiza, também é outro fator que influencia no consumo energético final do transistor. Quando maior a frequência de chaveamentos, maior será potência consumida.
+
+
+Item 2: 
+
+Visando reduzir o tempo de propagação em portas lógicas, o uso de transistores que possuam as menores capacitâncias parasitas possíveis e uma redução da capacitância de saída são soluções que podem impactar diretamente nessa redução. Além desses fatores, é possível também reduzir o número de transitores em uma dada porta lógica, bem como organizá-los de tal forma que o menor número possível de transistores seja acionado quando de um estímulo, visando reduzir mais o tempo de propagação da porta lógica.

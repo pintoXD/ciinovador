@@ -1,0 +1,13 @@
+$date
+    Nov 28, 2024  17:01:55
+$end
+$version
+    TOOL:	xmsim(64)	22.09-s013
+$end
+$timescale
+    1 fs
+$end
+$enddefinitions $end
+#50000000000000000
+$dumpvars
+$end

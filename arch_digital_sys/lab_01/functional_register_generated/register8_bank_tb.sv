@@ -2,20 +2,20 @@
 `timescale 1ns/1ps
 module register8_bank_tb();
 
-    logic test_clk, test_reset, we3;
-    logic [7:0] wd3;
-    logic [2:0] wa3, ra1, ra2;
+    logic test_clk, test_reset, we5;
+    logic [7:0] wd32;
+    logic [2:0] wa5, ra1, ra2;
     logic [7:0] rd1, rd2;
 
 
     register8_bank_v2 dut(
         .clk(test_clk),
         .rst(test_reset),
-        .we3(we3),
-        .wa3(wa3),
+        .we5(we5),
+        .wa5(wa5),
         .ra1(ra1),
         .ra2(ra2),
-        .wd3(wd3),
+        .wd32(wd32),
         .rd1(rd1),
         .rd2(rd2)
     );
@@ -53,91 +53,91 @@ module register8_bank_tb();
 
         //Test Case 1 - Write to register X1
         @(posedge test_clk);
-        we3 = 1'b1;
-        wd3 = 8'hAA;
-        wa3 = 3'b001;
+        we5 = 1'b1;
+        wd32 = 8'hAA;
+        wa5 = 3'b001;
         ra1 = 3'b001;
         #20
-        we3 = 1'b0;
+        we5 = 1'b0;
         #30
         assert(rd1 == 8'hAA && rd2 == 8'h00) else $fatal(1, "Test Case 1 failed");
 
 
         //Test Case 2 - Write to register X2
         @(posedge test_clk);
-        we3 = 1'b1;
-        wd3 = 8'hBB;
-        wa3 = 3'b010;
+        we5 = 1'b1;
+        wd32 = 8'hBB;
+        wa5 = 3'b010;
         ra2 = 3'b010;
         #20
-        we3 = 1'b0;
+        we5 = 1'b0;
         assert(rd1 == 8'hAA && rd2 == 8'hBB) else $fatal(2, "Test Case 2 failed");
 
         //Test Case 3 - Write to register X1 with no permission to write enabled.
         @(posedge test_clk);
-        we3 = 1'b0;
-        wd3 = 8'hFF;
-        wa3 = 3'b001;
+        we5 = 1'b0;
+        wd32 = 8'hFF;
+        wa5 = 3'b001;
         #10
         assert(rd1 == 8'hAA && rd2 == 8'hBB) else $fatal(3, "Test Case 3 failed");
 
         //Test Case 4 - Write to register X3 with rd2 unchanged from the previous test case.
         @(posedge test_clk);
-        we3 = 1'b1;
-        wd3 = 8'hCC;
-        wa3 = 3'b011; //==> Register X3
+        we5 = 1'b1;
+        wd32 = 8'hCC;
+        wa5 = 3'b011; //==> Register X3
         ra1 = 3'b011;
         #20
-        we3 = 1'b0;
+        we5 = 1'b0;
         assert(rd1 == 8'hCC && rd2 == 8'hBB) else $fatal(4, "Test Case 4 failed");
 
         //Test Case 5 - Write to register X4 with rd1 unchanged from the previous test case.
         @(posedge test_clk);
-        we3 = 1'b1;
-        wd3 = 8'hDD;
-        wa3 = 3'b100; //==> Register X4
+        we5 = 1'b1;
+        wd32 = 8'hDD;
+        wa5 = 3'b100; //==> Register X4
         ra2 = 3'b100;
         #20
-        we3 = 1'b0;
+        we5 = 1'b0;
         assert(rd1 == 8'hCC && rd2 == 8'hDD) else $fatal(5, "Test Case 5 failed");
 
 
         //Test Case 6 - Write to register X4 with no permission to write on it.
         @(posedge test_clk);
-        we3 = 1'b0;
-        wd3 = 8'hFF;
-        wa3 = 3'b100;
+        we5 = 1'b0;
+        wd32 = 8'hFF;
+        wa5 = 3'b100;
         #10
         assert(rd1 == 8'hCC && rd2 == 8'hDD) else $fatal(6, "Test Case 6 failed");
 
         //Test Case 7 - Write to register X5 with rd2 unchanged from X4 register writing test case.
         @(posedge test_clk);
-        we3 = 1'b1;
-        wd3 = 8'hEE;
-        wa3 = 3'b101; //==> Register X5
+        we5 = 1'b1;
+        wd32 = 8'hEE;
+        wa5 = 3'b101; //==> Register X5
         ra1 = 3'b101;
         #20
-        we3 = 1'b0;
+        we5 = 1'b0;
         assert(rd1 == 8'hEE && rd2 == 8'hDD) else $fatal(7, "Test Case 7 failed");
 
         //Test Case 8 - Write to register X6 with rd1 unchanged from the previous test case.
         @(posedge test_clk);
-        we3 = 1'b1;
-        wd3 = 8'hFF;
-        wa3 = 3'b110; //==> Register X6
+        we5 = 1'b1;
+        wd32 = 8'hFF;
+        wa5 = 3'b110; //==> Register X6
         ra2 = 3'b110;
         #20
-        we3 = 1'b0;
+        we5 = 1'b0;
         assert(rd1 == 8'hEE && rd2 == 8'hFF) else $fatal(8, "Test Case 8 failed");
 
         //Test Case 9 - Write to register X7 with rd2 unchanged from the previous test case.
         @(posedge test_clk);
-        we3 = 1'b1;
-        wd3 = 8'h11;
-        wa3 = 3'b111; //==> Register X7
+        we5 = 1'b1;
+        wd32 = 8'h11;
+        wa5 = 3'b111; //==> Register X7
         ra1 = 3'b111;
         #20
-        we3 = 1'b0;
+        we5 = 1'b0;
         assert(rd1 == 8'h11 && rd2 == 8'hFF) else $fatal(9, "Test Case 9 failed");
 
 
@@ -186,7 +186,7 @@ module register8_bank_tb();
         @(posedge test_clk);
         //Setting the reset process.
         test_reset = 1'b0;
-        we3 = 1'b0;
+        we5 = 1'b0;
         #10
         test_reset = 1'b1;
         $display($time, "HERE");
@@ -229,16 +229,16 @@ module register8_bank_tb();
     initial
     begin
       $display("                Tempo               Entradas LUT                                    Saídas");
-      $display("                         clk  rst  we3   wa3   ra1    ra2        wd3                rd1         rd2");
+      $display("                         clk  rst  we5   wa5   ra1    ra2        wd32                rd1         rd2");
       $display("                ====   =================================================        =====================");
-      /* $monitor($time,"      %b    %b    %b    %b   %b    %b      %b         %b      %b", test_clk, test_reset, we3, 
-                                                                    wa3, ra1, ra2, wd3, 
+      /* $monitor($time,"      %b    %b    %b    %b   %b    %b      %b         %b      %b", test_clk, test_reset, we5, 
+                                                                    wa5, ra1, ra2, wd32, 
                                                                     rd1, rd2);
  */    end
 
     always@(posedge test_clk)begin
-      $display($time,"      %b    %b    %b    %b   %b    %b      %b         %b      %b", test_clk, test_reset, we3, 
-                                                                    wa3, ra1, ra2, wd3, 
+      $display($time,"      %b    %b    %b    %b   %b    %b      %b         %b      %b", test_clk, test_reset, we5, 
+                                                                    wa5, ra1, ra2, wd32, 
                                                                     rd1, rd2);
     end
 

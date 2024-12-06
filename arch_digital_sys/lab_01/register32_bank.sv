@@ -1,9 +1,9 @@
 `timescale 1ns/1ps
 module register32_bank(
-    input logic clk, rst, we3,
-    input logic [4:0]wa3, //Write address. Is an andress of 8-bit word (0 to 255). But for now, only from 0 to 31 is accepted. 
-    input logic [4:0]ra1, ra2, //Read address. Is an andress of 8-bit word (0 to 255). But for now, only from 0 to 31 is accepted.
-    input logic [31:0]wd3, //Input for a 32-bit word
+    input logic clk, rst, we5,
+    input logic [4:0]wa5, 
+    input logic [4:0]ra1, ra2,
+    input logic [31:0]wd32, //Input for a 32-bit word
     output logic [31:0] rd1, rd2 //Output for 32-bit words
 
 );
@@ -37,8 +37,8 @@ always_ff @(posedge clk) begin
             end
     end
      
-    else if(we3 && wa3 != 5'h00) begin
-        X32_in_word[wa3] <= wd3;
+    else if(we5 && wa5 != 5'h00) begin
+        X32_in_word[wa5] <= wd32;
     end
 end
 

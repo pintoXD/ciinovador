@@ -3,9 +3,9 @@
 module datapath101(
     input logic [2:0]ra1,
     input logic [2:0]ra2,
-    input logic [2:0]wa3,
-    input logic we3,
-    input logic [7:0]wd3,
+    input logic [2:0]wa5,
+    input logic we5,
+    input logic [7:0]wd32,
     input logic [7:0]constante,
     input logic [2:0]ULAControl,
     input logic select_src,
@@ -24,11 +24,11 @@ logic [7:0] w_SrcB;
 register8_bank reg8_bank_inst(
     .clk(clk),
     .rst(rst),
-    .we3(we3),
-    .wa3(wa3),
+    .we5(we5),
+    .wa5(wa5),
     .ra1(ra1),
     .ra2(ra2),
-    .wd3(wd3),
+    .wd32(wd32),
     .rd1(w_rd1SrcA),
     .rd2(w_rd2)
 );

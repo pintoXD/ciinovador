@@ -25,8 +25,8 @@ Dessa forma, o módulo `datapath101` é capaz de armazenar 8 conjuntos de palavr
 
 
 Esse módulo possui as seguintes entradas:
-* `we3`: Habilita a escrita de dados nos registradores;
-* `wa3`: Endereço do registrador em que deve ser escrito algo. Os enderços disponíveis são:
+* `we5`: Habilita a escrita de dados nos registradores;
+* `wa5`: Endereço do registrador em que deve ser escrito algo. Os enderços disponíveis são:
   * `000`: Registrador X0 (Disponível somente para **leitura**) 
   * `001`: Registrador X1 (Disponível para leitura e escrita) 
   * `010`: Registrador X2 (Disponível para leitura e escrita)
@@ -35,7 +35,7 @@ Esse módulo possui as seguintes entradas:
   * `101`: Registrador X5 (Disponível para leitura e escrita)
   * `110`: Registrador X6 (Disponível para leitura e escrita)
   * `111`: Registrador X7 (Disponível para leitura e escrita) 
-* `wd3`: Palavra de 8 bits que deve escrita no registrador escolhido;
+* `wd32`: Palavra de 8 bits que deve escrita no registrador escolhido;
 * `ra1` e `ra2`: Define o endereço dos registradores que devem ser utilizados para as operações matetmáticas, lógicas ou de comparação. `ra1` representa o primeiro operando e `ra2` representa o segundo operando.
 * `constante`: Valor constante de 8-bits que pode ser fornecido para realizar uma operação matemática. Esse valor substitui o valor do operando `ra2` quando selecionado, fazendo com que a operação escolhida seja feita entre `ra1` e `constante`;
 * `ULAControl`: Valor de 3 bits que seleciona o tipo de operação matemática, lógica ou de comparação a ser realizada. As seguintes combinações são possíveis:

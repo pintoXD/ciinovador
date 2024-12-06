@@ -114,3 +114,19 @@ s113(02Dec2024:16:46:18):  xrun -64bit ula32_tb.sv ula32.sv
 s114(02Dec2024:16:46:54):  xrun -64bit ula32_tb.sv ula32.sv 
 s115(02Dec2024:16:55:09):  xrun -64bit ula32_tb.sv ula32.sv 
 s116(02Dec2024:16:58:07):  xrun -64bit ula32_tb.sv ula32.sv 
+s117(03Dec2024:09:47:00):  xrun -64bit ula32_tb.sv ula32.sv 
+s118(03Dec2024:10:00:51):  xrun -64bit sign_extend_16to32.sv 
+s119(03Dec2024:10:05:59):  xrun -64bit sign_extend_16to32_tb.sv sign_extend_16to32.sv 
+s120(03Dec2024:10:06:29):  xrun -64bit sign_extend_16to32_tb.sv sign_extend_16to32.sv 
+s121(03Dec2024:10:10:28):  xrun -64bit sign_extend_16to32_tb.sv sign_extend_16to32.sv 
+s122(03Dec2024:10:11:01):  xrun -64bit sign_extend_16to32_tb.sv sign_extend_16to32.sv 
+s123(03Dec2024:10:12:19):  xrun -64bit sign_extend_16to32_tb.sv sign_extend_16to32.sv 
+s124(03Dec2024:11:10:20):  xrun -64bit sign_extend_16to32_tb.sv sign_extend_16to32.sv 
+s125(03Dec2024:11:10:50):  xrun -64bit sign_extend_16to32_tb.sv sign_extend_16to32.sv 
+s126(03Dec2024:11:11:29):  xrun -64bit sign_extend_16to32_tb.sv sign_extend_16to32.sv 
+s127(03Dec2024:11:12:28):  xrun -64bit sign_extend_16to32_tb.sv sign_extend_16to32.sv 
+s128(03Dec2024:11:12:47):  xrun -64bit sign_extend_16to32_tb.sv sign_extend_16to32.sv 
+s129(03Dec2024:11:13:26):  xrun -64bit sign_extend_16to32_tb.sv sign_extend_16to32.sv 
+s130(03Dec2024:11:13:54):  xrun -64bit sign_extend_16to32_tb.sv sign_extend_16to32.sv 
+s131(03Dec2024:11:15:26):  xrun -64bit sign_extend_16to32_tb.sv sign_extend_16to32.sv 
+s132(04Dec2024:10:01:29):  xrun -64bit ula32_tb.sv ula32.sv 

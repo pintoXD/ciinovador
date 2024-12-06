@@ -1,12 +1,12 @@
 `timescale 1ns/1ps
 module register32_bank_tb();
 
-    logic test_clk, test_reset, we3;
-    logic [31:0] wd3;
-    logic [4:0] wa3, ra1, ra2;
+    logic test_clk, test_reset, we5;
+    logic [31:0] wd32;
+    logic [4:0] wa5, ra1, ra2;
     logic [31:0] rd1, rd2;
 
-    int base_wd3;
+    int base_wd32;
     int base_index;
     int base_read_data_1;
     int base_read_data_2;
@@ -14,11 +14,11 @@ module register32_bank_tb();
     register32_bank dut(
         .clk(test_clk),
         .rst(test_reset),
-        .we3(we3),
-        .wa3(wa3),
+        .we5(we5),
+        .wa5(wa5),
         .ra1(ra1),
         .ra2(ra2),
-        .wd3(wd3),
+        .wd32(wd32),
         .rd1(rd1),
         .rd2(rd2)
     );
@@ -50,13 +50,13 @@ module register32_bank_tb();
         */
 
         // Using a for loop to write to each register one by one
-        base_wd3 = 8'h00;
+        base_wd32 = 8'h00;
         for (int i = 0; i < 32; i = i + 1) begin
             @(posedge test_clk);
-            we3 = 1'b1;
-            wd3 = base_wd3; // Writes base_wd3 on register i
-            wa3 = i;
-            base_wd3 = base_wd3 + 8'h11;
+            we5 = 1'b1;
+            wd32 = base_wd32; // Writes base_wd32 on register i
+            wa5 = i;
+            base_wd32 = base_wd32 + 8'h11;
         end
 
         /* 
@@ -94,16 +94,16 @@ module register32_bank_tb();
     initial
     begin
       $display("                Tempo               Entradas LUT                                    Saídas");
-      $display("                         clk  rst  we3   wa3   ra1    ra2        wd3                rd1         rd2");
+      $display("                         clk  rst  we5   wa5   ra1    ra2        wd32                rd1         rd2");
       $display("                ====   =================================================        =====================");
-      /* $monitor($time,"      %b    %b    %b    %b   %b    %b      %b         %b      %b", test_clk, test_reset, we3, 
-                                                                    wa3, ra1, ra2, wd3, 
+      /* $monitor($time,"      %b    %b    %b    %b   %b    %b      %b         %b      %b", test_clk, test_reset, we5, 
+                                                                    wa5, ra1, ra2, wd32, 
                                                                     rd1, rd2);
  */    end
 
     always@(posedge test_clk)begin
-      $display($time,"      %b    %b    %b    %h   %h    %h      %h         %h      %h", test_clk, test_reset, we3, 
-                                                                    wa3, ra1, ra2, wd3, 
+      $display($time,"      %b    %b    %b    %h   %h    %h      %h         %h      %h", test_clk, test_reset, we5, 
+                                                                    wa5, ra1, ra2, wd32, 
                                                                     rd1, rd2);
     end
 

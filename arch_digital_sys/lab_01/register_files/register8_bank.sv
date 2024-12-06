@@ -1,9 +1,9 @@
 `timescale 1ns/1ps
 module register8_bank(
-    input logic clk, rst, we3,
-    input logic [2:0]wa3,
+    input logic clk, rst, we5,
+    input logic [2:0]wa5,
     input logic [2:0]ra1, ra2,
-    input logic [7:0]wd3,
+    input logic [7:0]wd32,
     output logic [7:0] rd1, rd2
 
 );
@@ -32,25 +32,25 @@ always_ff @(posedge clk) begin
             X6_in_word <= 8'b0;
             X7_in_word <= 8'b0;
         end
-    else if(we3)
+    else if(we5)
         begin
-            case(wa3)
+            case(wa5)
                 3'b001:
-                    X1_in_word <= wd3;
+                    X1_in_word <= wd32;
                 3'b010:
-                    X2_in_word <= wd3;
+                    X2_in_word <= wd32;
                 3'b011:
-                    X3_in_word <= wd3;
+                    X3_in_word <= wd32;
                 3'b100:
-                    X4_in_word <= wd3;
+                    X4_in_word <= wd32;
                 3'b101:
-                    X5_in_word <= wd3;
+                    X5_in_word <= wd32;
                 3'b110:
-                    X6_in_word <= wd3;
+                    X6_in_word <= wd32;
                 3'b111:
-                    X7_in_word <= wd3;
+                    X7_in_word <= wd32;
                 default:
-                    X1_in_word <= wd3;
+                    X1_in_word <= wd32;
             endcase
         end
 end

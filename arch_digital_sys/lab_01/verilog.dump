@@ -11,14 +11,14 @@ $end
 $scope module register32_bank_tb $end
 $var reg       1 !    test_clk $end
 $var reg       1 "    test_reset $end
-$var reg       1 #    we3 $end
-$var reg      32 $    wd3 [31:0] $end
-$var reg       5 %    wa3 [4:0] $end
+$var reg       1 #    we5 $end
+$var reg      32 $    wd32 [31:0] $end
+$var reg       5 %    wa5 [4:0] $end
 $var reg       5 &    ra1 [4:0] $end
 $var reg       5 '    ra2 [4:0] $end
 $var reg      32 (    rd1 [31:0] $end
 $var reg      32 )    rd2 [31:0] $end
-$var reg      32 *    base_wd3 [31:0] $end
+$var reg      32 *    base_wd32 [31:0] $end
 $var reg       8 +    base_index [7:0] $end
 $var reg       5 ,    base_read_data_1 [4:0] $end
 $var reg       5 -    base_read_data_2 [4:0] $end
@@ -26,11 +26,11 @@ $var reg       5 -    base_read_data_2 [4:0] $end
 $scope module dut $end
 $var wire      1 .    clk  $end
 $var wire      1 /    rst  $end
-$var wire      1 0    we3  $end
-$var wire      5 1    wa3 [4:0] $end
+$var wire      1 0    we5  $end
+$var wire      5 1    wa5 [4:0] $end
 $var wire      5 2    ra1 [4:0] $end
 $var wire      5 3    ra2 [4:0] $end
-$var wire     32 4    wd3 [31:0] $end
+$var wire     32 4    wd32 [31:0] $end
 $var reg      32 5    rd1 [31:0] $end
 $var reg      32 6    rd2 [31:0] $end
 $var reg      32 7    X32_in_word[31] [31:0] $end

@@ -1,0 +1,150 @@
+
+#
+# Preferences
+#
+preferences set toolbar-Standard-WatchWindow {
+  usual
+  shown 0
+}
+preferences set waveform-print-variables selected
+preferences set waveform-print-time range
+preferences set plugin-enable-svdatabrowser-new 1
+preferences set toolbar-Windows-WatchWindow {
+  usual
+  shown 0
+}
+preferences set toolbar-sendToIndago-WaveWindow {
+  usual
+  position -pos 1
+}
+preferences set waveform-print-paper {A4 (210mm x 297mm)}
+preferences set toolbar-Standard-Console {
+  usual
+  position -pos 1
+}
+preferences set toolbar-Search-Console {
+  usual
+  position -pos 2
+}
+preferences set plugin-enable-groupscope 0
+preferences set sb-display-values 1
+preferences set plugin-enable-interleaveandcompare 0
+preferences set plugin-enable-waveformfrequencyplot 0
+preferences set toolbar-SimControl-WatchWindow {
+  usual
+  shown 0
+}
+preferences set toolbar-TimeSearch-WatchWindow {
+  usual
+  shown 0
+}
+
+#
+# Mnemonic Maps
+#
+mmap new -reuse -name {Boolean as Logic} -radix %b -contents {{%c=FALSE -edgepriority 1 -shape low}
+{%c=TRUE -edgepriority 1 -shape high}}
+mmap new -reuse -name {Example Map} -radix %x -contents {{%b=11???? -bgcolor orange -label REG:%x -linecolor yellow -shape bus}
+{%x=1F -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=2C -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=* -label %x -linecolor gray -shape bus}}
+
+#
+# Design Browser windows
+#
+if {[catch {window new WatchList -name "Design Browser 1" -geometry 730x500+261+33}] != ""} {
+    window geometry "Design Browser 1" 730x500+261+33
+}
+window target "Design Browser 1" on
+browser using {Design Browser 1}
+browser set -scope  simulator::ram_writer_tb 
+browser set \
+    -signalsort name
+browser yview see  simulator::ram_writer_tb 
+browser timecontrol set -lock 0
+
+#
+# Waveform windows
+#
+if {[catch {window new WaveWindow -name "Waveform 1" -geometry 1920x1043+-1+-1}] != ""} {
+    window geometry "Waveform 1" 1920x1043+-1+-1
+}
+window target "Waveform 1" on
+waveform using {Waveform 1}
+waveform sidebar select designbrowser
+waveform set \
+    -primarycursor TimeA \
+    -signalnames name \
+    -signalwidth 175 \
+    -units ps \
+    -valuewidth 75
+waveform baseline set -time 1,194,960ps
+
+set id [waveform add -signals  {
+	{simulator::ram_writer_tb.addr[7:0]}
+	} ]
+waveform hierarchy collapse $id
+set id [waveform add -signals  {
+	simulator::ram_writer_tb.web
+	} ]
+set id [waveform add -signals  {
+	{simulator::ram_writer_tb.d[7:0]}
+	} ]
+set id [waveform add -signals  {
+	{simulator::ram_writer_tb.q[7:0]}
+	} ]
+waveform hierarchy collapse $id
+set id [waveform add -signals  {
+	simulator::ram_writer_tb.clk
+	} ]
+set id [waveform add -signals  {
+	simulator::ram_writer_tb.enb
+	} ]
+set id [waveform add -signals  {
+	simulator::ram_writer_tb.i
+	} ]
+set id [waveform add -signals  {
+	simulator::ram_writer_tb.oeb
+	} ]
+set id [waveform add -signals  {
+	{simulator::ram_writer_tb.U1.ADR_[7:0]}
+	} ]
+waveform hierarchy collapse $id
+set id [waveform add -signals  {
+	{simulator::ram_writer_tb.U1.sub1.RAM_matrix[0:255]}
+	} ]
+
+waveform xview limits 1183990ps 1225770ps
+
+#
+# Waveform Window Links
+#
+
+#
+# Memory Viewer windows
+#
+if {[catch {window new MemViewer -name "Memory Viewer 2" -geometry 1398x735+2285+110}] != ""} {
+    window geometry "Memory Viewer 2" 1398x735+2285+110
+}
+window target "Memory Viewer 2" on
+memviewer using {Memory Viewer 2}
+memviewer set \
+-primarycursor TimeA \
+-units ps \
+-radix default \
+-addressradix default \
+-addressorder MSBtoLSB
+
+memviewer add  {simulator::ram_writer_tb.U1.sub1.RAM_matrix[0:255]} 
+
+memviewer sidebar visibility partial
+
+#
+# Console windows
+#
+console set -windowname Console
+window geometry Console 1453x466+261+564
+
+#
+# Layout selection
+#

@@ -99,7 +99,7 @@ xmsim: *W,DVEXACC: some objects excluded from $dumpvars due to access restrictio
             Time: 0 FS + 0
 
                 Tempo               Entradas LUT                                    Saídas
-                         clk  rst  we3   wa3   ra1    ra2        wd3                rd1         rd2
+                         clk  rst  we5   wa5   ra1    ra2        wd32                rd1         rd2
                 ====   =================================================        =====================
                    5      1    x    x    xxx   xxx    xxx      xxxxxxxx         xxxxxxxx      xxxxxxxx
                   15      1    1    x    xxx   xxx    xxx      xxxxxxxx         xxxxxxxx      xxxxxxxx
