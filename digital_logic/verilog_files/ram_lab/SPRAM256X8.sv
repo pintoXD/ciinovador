@@ -364,7 +364,7 @@ initial begin
 		#1e2 RTEST_ = 1'bx;
 		#9e3 RTEST_ = 1'b0;
 	    end
-	    @ (posedge CLK_)  disable autoReset;	// restart autoReset timer
+	    @(posedge CLK_)  disable autoReset;	// restart autoReset timer
 	join	
 	end
 always @(CLK_) 	last_CLK_ <= CLK_;

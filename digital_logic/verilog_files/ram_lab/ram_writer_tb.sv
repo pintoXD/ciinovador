@@ -1,44 +1,45 @@
+/* verilator lint_off IMPLICIT */
 `timescale 1ns/10ps
 module ram_writer_tb();
 
-reg clk=0;
-wire [7:0] q;
-reg [7:0] d;
-reg [7:0] addr;
-reg web=1;
-reg enb;
-reg oeb;
-int i;
+// reg clk=0;
+// wire [7:0] q;
+// reg [7:0] d;
+// reg [7:0] addr;
+// reg web=1;
+// reg enb;
+// reg oeb;
+// int i;
 
-// logic clk, reset, fim;
-// logic [7:0] x;
+logic clk, reset, fim;
+logic [7:0] x;
 
-// ram_writer DUT(
-//     .clk(clk),
-//     .reset(reset),
-//     .x(x),
-//     .fim(fim)
-// );
+ram_writer DUT(
+    .clk(clk),
+    .reset(reset),
+    .x(x),
+    .fim(fim)
+);
 
-SPRAM256X8 
-/*	#(	// lista de parâmetros
-	.ram_init_file("spram_init_file.hex")	// Esse não é um comportamento físico na inicialização, mas pode ser feito quando desejado para acelerar a simulação para começar com a conteúdo conhecido na memória.
-	) 
-*/
-	U1    (	// lista de entradas/saídas			
-	.Q(q),		// RAM data output
-	.D(d),		// RAM data input bus
-	.ADR(addr),	// RAM address bus
-	.CLK(clk),	// RAM clock
-	.ENB(enb),	// RAM enable
-	.WEB(web),	// RAM  write enable, 0-active
-	.OEB(oeb),	// RAM  output enable, 0-active
-	.RTEST(),	// RAM reset test output
-	.ramvdd(1'b1),	// RAM power
-	.ramgnd(1'b0));	// RAM ground
+// SPRAM256X8 
+// /*	#(	// lista de parâmetros
+// 	.ram_init_file("spram_init_file.hex")	// Esse não é um comportamento físico na inicialização, mas pode ser feito quando desejado para acelerar a simulação para começar com a conteúdo conhecido na memória.
+// 	) 
+// */
+// 	U1    (	// lista de entradas/saídas			
+// 	.Q(q),		// RAM data output
+// 	.D(d),		// RAM data input bus
+// 	.ADR(addr),	// RAM address bus
+// 	.CLK(clk),	// RAM clock
+// 	.ENB(enb),	// RAM enable
+// 	.WEB(web),	// RAM  write enable, 0-active
+// 	.OEB(oeb),	// RAM  output enable, 0-active
+// 	.RTEST(),	// RAM reset test output
+// 	.ramvdd(1'b1),	// RAM power
+// 	.ramgnd(1'b0));	// RAM ground
 
 
-//    $display("(%t) %b",$time, clk);
+// //    $display("(%t) %b",$time, clk);
 
 
 initial begin
@@ -47,6 +48,9 @@ initial begin
 end
 
 initial begin
+    $dumpfile("ram_writer_tb.vcd");
+    $dumpvars(0, ram_writer_tb);
+    /*
 	#10ns;
     	@(posedge clk); #1;
 	oeb = 1;
@@ -70,14 +74,20 @@ initial begin
 	addr = 0;
     // 	@(posedge clk); #1;
     // web = 1;
-
-    // while(DUT.word_counter < 8'hA9)begin
-    //     // @(posedge clk)
-    //     $display("Current Step: %d", DUT.etapa_atual_ff);
-    //     $display("Content of word_counter: %h", DUT.word_counter);
-    //     $display("Content of x: %h", x);
-    //     #10;
-    // end
+    */
+    $display("Current Step: %d", DUT.etapa_atual_ff);
+    $display("Content of word_counter: %h", DUT.word_counter);
+    $display("Content of x: %h", x);
+    #10;
+    
+    while(DUT.word_counter < 8'hA9)begin
+        // @(posedge clk)
+        $display("Current Step: %d", DUT.etapa_atual_ff);
+        $display("Content of word_counter: %h", DUT.word_counter);
+        $display("Content of x: %h", x);
+        #10;
+    end
+    /*
     @(posedge clk)
     web = 0;
     addr = 8'h10;
@@ -114,7 +124,7 @@ initial begin
     @(posedge clk)
     @(posedge clk)
     $display("Current Q: %h", q);
-    /*
+    
     @(posedge clk)
     addr = 8'h05;
     d = 8'hA1;

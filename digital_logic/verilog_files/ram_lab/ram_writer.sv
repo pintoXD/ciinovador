@@ -1,3 +1,4 @@
+/* verilator lint_off PINCONNECTEMPTY */
 `timescale 1ns/10ps
 module ram_writer(
     input logic clk, reset,
@@ -12,6 +13,7 @@ logic web;
 logic enb;
 logic oeb;
 int i;
+
 
 SPRAM256X8 
 /*	#(	// lista de parâmetros
@@ -31,12 +33,13 @@ SPRAM256X8
 	.ramgnd(1'b0));	// RAM ground
 
 
-typedef enum {AGUARDA_CLOCK=0, 
-                WRITE_WORD=1, FIM_ETAPAS=2} est@(posedge clk); #1;ado_tipo;
+typedef enum {AWAITS_CLOCK=0, SRAM_STARTUP,
+                WRITE_WORD, FINISH_FSM} estado_tipo;
 
 estado_tipo etapa_atual_ff, prox_etapa;
 logic [7:0] word_counter;
 logic [3:0] addr_counter;
+logic [3:0] clk_counter;
 
 
 always_ff @(posedge clk)
@@ -46,13 +49,13 @@ end
 
 always_comb begin
     prox_etapa = etapa_atual_ff;
-    enb = 0; //SRAM enable
-    oeb = 0; //SRAM output enable
-    web = 0;
+    web = 1;
+    enb = 1;
+    oeb = 1;
     fim = 0;
     if(~reset)
     begin
-        prox_etapa = AGUARDA_CLOCK;
+        prox_etapa = AWAITS_CLOCK;
         enb = 1; //SRAM enable
         oeb = 1; //SRAM output enable
         web = 1;
@@ -61,25 +64,36 @@ always_comb begin
     else 
     begin
         case(etapa_atual_ff)
-            AGUARDA_CLOCK:
+            SRAM_STARTUP: begin // 10 clock cycles to initialize SRAM
+                if(clk) begin
+                    if(clk_counter < 10)
+                        prox_etapa = SRAM_STARTUP;
+                    else
+                        prox_etapa = AWAITS_CLOCK;
+                end
+            end
+
+            AWAITS_CLOCK:
                 if(clk && word_counter == 8'hA0)begin
-                    prox_etapa = WRITE_WORD;
-                    enb = 0; //SRAM enable
                     web = 0; //SRAM write enable
                     oeb = 0; //SRAM output enable
+                    enb = 0; //SRAM enable
+                    prox_etapa = WRITE_WORD;
                 end
+
             WRITE_WORD: begin
                 if(word_counter == 8'hA9) begin
-                    prox_etapa = FIM_ETAPAS;
+                    prox_etapa = FINISH_FSM;
                 end
                 else if(clk) begin
                     web = 0; //SRAM write enable
                     prox_etapa = WRITE_WORD;
                 end
             end
-            FIM_ETAPAS: begin
+            FINISH_FSM: begin
                 fim = 1;
-                prox_etapa = FIM_ETAPAS;
+                web = 0; //SRAM write disable
+                prox_etapa = FINISH_FSM;
             end
         endcase
     end
@@ -88,11 +102,13 @@ end
 
 always_ff @(negedge clk) begin
     case(etapa_atual_ff)
-        AGUARDA_CLOCK: begin
-            word_counter <= 8'hA0;
-            addr_counter <= 4'b0;
-            addr <= addr_counter;
-            d <= word_counter;
+        SRAM_STARTUP: begin
+            clk_counter <= clk_counter + 1;
+        end
+        AWAITS_CLOCK: begin
+            word_counter <= word_counter;
+            addr_counter <= addr_counter;
+            clk_counter <= 0;
         end
         WRITE_WORD: begin
             addr_counter <= addr_counter + 1;
@@ -102,7 +118,7 @@ always_ff @(negedge clk) begin
             d <= word_counter;
         end
                 
-        FIM_ETAPAS: begin
+        FINISH_FSM: begin
             addr <= 4'h8;
             x <= q;
         end
