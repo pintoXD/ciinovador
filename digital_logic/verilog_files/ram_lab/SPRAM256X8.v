@@ -1,5 +1,4 @@
 /* verilator lint_off IMPLICIT */
-/* verilator lint_off DECLFILENAME */
 `resetall
 `celldefine
 `suppress_faults

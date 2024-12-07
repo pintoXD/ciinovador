@@ -1,0 +1,1 @@
+xrun -64bit ram_writer_tb.sv ram_writer.sv SPRAM256X8.v +gui +access+rw
