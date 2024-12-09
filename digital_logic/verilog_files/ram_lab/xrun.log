@@ -1,16 +1,24 @@
 xrun(64): 22.09-s013: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	22.09-s013: Started on Dec 06, 2024 at 17:00:23 -03
+TOOL:	xrun(64)	22.09-s013: Started on Dec 09, 2024 at 08:40:31 -03
 xrun
+	-64bit
 	ram_writer_tb.sv
+	ram_writer.sv
 	SPRAM256X8.v
 	+gui
 	+access+rw
-	-s
-Recompiling... reason: file './ram_writer_tb.sv' is newer than expected.
-	expected: Fri Dec  6 16:46:49 2024
-	actual:   Fri Dec  6 16:57:02 2024
 file: ram_writer_tb.sv
 	module worklib.ram_writer_tb:sv
+		errors: 0, warnings: 0
+file: ram_writer.sv
+	module worklib.ram_writer:sv
+		errors: 0, warnings: 0
+file: SPRAM256X8.v
+	module worklib.SPRAM256X8_tmax:v
+		errors: 0, warnings: 0
+	primitive worklib.SPRAM256X8_DFF:v
+		errors: 0, warnings: 0
+	module worklib.SPRAM256X8:v
 		errors: 0, warnings: 0
 		Caching library 'worklib' ....... Done
 	Elaborating the design hierarchy:
@@ -19,219 +27,825 @@ file: ram_writer_tb.sv
 xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.ram_writer_tb:sv <0x4c94feba>
-			streams:  11, words: 20222
+		worklib.SPRAM256X8_tmax:v <0x4f8d6370>
+			streams:  10, words:  4869
+		worklib.SPRAM256X8:v <0x699ea3b0>
+			streams:   6, words: 11660
+		worklib.ram_writer_tb:sv <0x68e5d708>
+			streams:   6, words:  9583
+		worklib.ram_writer:sv <0x14af9d32>
+			streams:  18, words:  8252
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
 		                  Instances  Unique
-		Modules:                  3       3
+		Modules:                  4       4
 		UDPs:                     3       1
 		Primitives:              48       7
 		Timing outputs:           8       1
-		Registers:               18      19
-		Scalar wires:            28       -
-		Expanded wires:          16       2
-		Always blocks:            3       3
-		Initial blocks:           6       6
+		Registers:               30      31
+		Scalar wires:            32       -
+		Expanded wires:          24       3
+		Vectored wires:           3       -
+		Always blocks:            6       6
+		Initial blocks:           4       4
 		Parallel blocks:          1       1
-		Pseudo assignments:      15      15
+		Cont. assignments:        2       2
+		Pseudo assignments:      19      19
 		Timing checks:           76      21
+		Assertions:               1       1
 		Simulation timescale:  10ps
 	Writing initial simulation snapshot: worklib.ram_writer_tb:sv
 xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
 xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
-xcelium> 
-xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
-xcelium> 
+
 -------------------------------------
 Relinquished control to SimVision...
-# Restoring simulation environment...
-xcelium> input -quiet .reinvoke.sim
-xcelium> file delete .reinvoke.sim
-xcelium> run
-
-1005.00 ns: ERROR: ram_writer_tb.U1 : ENB is at x at CLK rising edge:
-
-
-1015.00 ns: ERROR: ram_writer_tb.U1 : ENB is at x at CLK rising edge:
-
-
-1025.00 ns: ERROR: ram_writer_tb.U1 : ENB is at x at CLK rising edge:
-
-
-1035.00 ns: ERROR: ram_writer_tb.U1 : ENB is at x at CLK rising edge:
-
-
-1045.00 ns: ERROR: ram_writer_tb.U1 : ENB is at x at CLK rising edge:
-
-
-1055.00 ns: ERROR: ram_writer_tb.U1 : ENB is at x at CLK rising edge:
-
-
-1065.00 ns: ERROR: ram_writer_tb.U1 : ENB is at x at CLK rising edge:
-
-
-1075.00 ns: ERROR: ram_writer_tb.U1 : ENB is at x at CLK rising edge:
-
-
-1085.00 ns: ERROR: ram_writer_tb.U1 : ENB is at x at CLK rising edge:
-
-
-1095.00 ns: ERROR: ram_writer_tb.U1 : ENB is at x at CLK rising edge:
-
-
-1105.00 ns: ERROR: ram_writer_tb.U1 : ENB is at x at CLK rising edge:
-
-
-1115.00 ns: ERROR: ram_writer_tb.U1 : ENB is at x at CLK rising edge:
-
-
-1125.00 ns: ERROR: ram_writer_tb.U1 : ENB is at x at CLK rising edge:
-
-
-1135.00 ns: ERROR: ram_writer_tb.U1 : ENB is at x at CLK rising edge:
-
-
-1145.00 ns: ERROR: ram_writer_tb.U1 : ENB is at x at CLK rising edge:
-
-Current Q: xx
-
-Warning!  Timing violation
-           $hold( posedge CLK &&& enableMem:1185 NS, posedge ADR[4]:1185 NS,  0.28 : 280 PS );
-            File: ./SPRAM256X8.v, line = 285
-           Scope: ram_writer_tb.U1
-            Time: 1185 NS
-
-
-Warning!  Timing violation
-           $hold( posedge CLK &&& cleanWrite_:1185 NS, negedge D[1]:1185 NS,  0.46 : 460 PS );
-            File: ./SPRAM256X8.v, line = 314
-           Scope: ram_writer_tb.U1
-            Time: 1185 NS
-
-
-Warning!  Timing violation
-           $hold( posedge CLK &&& enableMem:1185 NS, negedge WEB:1185 NS,  0.27 : 270 PS );
-            File: ./SPRAM256X8.v, line = 338
-           Scope: ram_writer_tb.U1
-            Time: 1185 NS
-
-
-Warning!  Timing violation
-           $hold( posedge CLK &&& enableMem:1195 NS, posedge WEB:1195 NS,  0.27 : 270 PS );
-            File: ./SPRAM256X8.v, line = 337
-           Scope: ram_writer_tb.U1
-            Time: 1195 NS
-
-Current Q: a9
-
-Warning!  Timing violation
-           $hold( posedge CLK &&& enableMem:1225 NS, posedge ADR[0]:1225 NS,  0.28 : 280 PS );
-            File: ./SPRAM256X8.v, line = 277
-           Scope: ram_writer_tb.U1
-            Time: 1225 NS
-
-
-Warning!  Timing violation
-           $hold( posedge CLK &&& enableMem:1225 NS, posedge ADR[1]:1225 NS,  0.28 : 280 PS );
-            File: ./SPRAM256X8.v, line = 279
-           Scope: ram_writer_tb.U1
-            Time: 1225 NS
-
-
-Warning!  Timing violation
-           $hold( posedge CLK &&& enableMem:1225 NS, posedge ADR[2]:1225 NS,  0.28 : 280 PS );
-            File: ./SPRAM256X8.v, line = 281
-           Scope: ram_writer_tb.U1
-            Time: 1225 NS
-
-
-Warning!  Timing violation
-           $hold( posedge CLK &&& enableMem:1225 NS, negedge ADR[4]:1225 NS,  0.28 : 280 PS );
-            File: ./SPRAM256X8.v, line = 286
-           Scope: ram_writer_tb.U1
-            Time: 1225 NS
-
-
-Warning!  Timing violation
-           $hold( posedge CLK &&& cleanWrite_:1225 NS, negedge D[0]:1225 NS,  0.46 : 460 PS );
-            File: ./SPRAM256X8.v, line = 312
-           Scope: ram_writer_tb.U1
-            Time: 1225 NS
-
-
-Warning!  Timing violation
-           $hold( posedge CLK &&& enableMem:1225 NS, negedge WEB:1225 NS,  0.27 : 270 PS );
-            File: ./SPRAM256X8.v, line = 338
-           Scope: ram_writer_tb.U1
-            Time: 1225 NS
-
-
-Warning!  Timing violation
-           $hold( posedge CLK &&& enableMem:1235 NS, posedge WEB:1235 NS,  0.27 : 270 PS );
-            File: ./SPRAM256X8.v, line = 337
-           Scope: ram_writer_tb.U1
-            Time: 1235 NS
-
-Current Q: a8
-
-Warning!  Timing violation
-           $hold( posedge CLK &&& enableMem:1265 NS, negedge ADR[0]:1265 NS,  0.28 : 280 PS );
-            File: ./SPRAM256X8.v, line = 278
-           Scope: ram_writer_tb.U1
-            Time: 1265 NS
-
-
-Warning!  Timing violation
-           $hold( posedge CLK &&& enableMem:1265 NS, negedge ADR[1]:1265 NS,  0.28 : 280 PS );
-            File: ./SPRAM256X8.v, line = 280
-           Scope: ram_writer_tb.U1
-            Time: 1265 NS
-
-
-Warning!  Timing violation
-           $hold( posedge CLK &&& cleanWrite_:1265 NS, posedge D[0]:1265 NS,  0.46 : 460 PS );
-            File: ./SPRAM256X8.v, line = 311
-           Scope: ram_writer_tb.U1
-            Time: 1265 NS
-
-
-Warning!  Timing violation
-           $hold( posedge CLK &&& cleanWrite_:1265 NS, posedge D[1]:1265 NS,  0.46 : 460 PS );
-            File: ./SPRAM256X8.v, line = 313
-           Scope: ram_writer_tb.U1
-            Time: 1265 NS
-
-
-Warning!  Timing violation
-           $hold( posedge CLK &&& cleanWrite_:1265 NS, posedge D[2]:1265 NS,  0.46 : 460 PS );
-            File: ./SPRAM256X8.v, line = 315
-           Scope: ram_writer_tb.U1
-            Time: 1265 NS
-
-
-Warning!  Timing violation
-           $hold( posedge CLK &&& cleanWrite_:1265 NS, negedge D[3]:1265 NS,  0.46 : 460 PS );
-            File: ./SPRAM256X8.v, line = 318
-           Scope: ram_writer_tb.U1
-            Time: 1265 NS
-
-
-Warning!  Timing violation
-           $hold( posedge CLK &&& enableMem:1265 NS, negedge WEB:1265 NS,  0.27 : 270 PS );
-            File: ./SPRAM256X8.v, line = 338
-           Scope: ram_writer_tb.U1
-            Time: 1265 NS
-
-
-Warning!  Timing violation
-           $hold( posedge CLK &&& enableMem:1275 NS, posedge WEB:1275 NS,  0.27 : 270 PS );
-            File: ./SPRAM256X8.v, line = 337
-           Scope: ram_writer_tb.U1
-            Time: 1275 NS
-
-Current Q: a7
-Simulation complete via $finish(1) at time 2295 NS + 0
-./ram_writer_tb.sv:178     $finish; 
 xcelium> 
+xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm ram_writer_tb.DUT.addr ram_writer_tb.DUT.addr_counter ram_writer_tb.DUT.clk ram_writer_tb.DUT.clk_counter ram_writer_tb.DUT.d ram_writer_tb.DUT.enb ram_writer_tb.DUT.etapa_atual_ff ram_writer_tb.DUT.fim ram_writer_tb.DUT.i ram_writer_tb.DUT.oeb ram_writer_tb.DUT.prox_etapa ram_writer_tb.DUT.q ram_writer_tb.DUT.reset ram_writer_tb.DUT.web ram_writer_tb.DUT.word_counter ram_writer_tb.DUT.x ram_writer_tb.DUT.U1.sub1.RAM_matrix
+Created probe 1
+xcelium> run
+Current Step:           1
+Content of word_counter: xx
+Content of x: zz
+
+Warning!  Timing violation
+           $hold( posedge CLK:1025 NS, negedge ENB:1025 NS,  0.41 : 410 PS );
+            File: ./SPRAM256X8.v, line = 333
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1025 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1025 NS, negedge WEB:1025 NS,  0.27 : 270 PS );
+            File: ./SPRAM256X8.v, line = 339
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1025 NS
+
+
+1035.00 ns: WARNING: ram_writer_tb.DUT.U1 : Write to RAM whilst D contains 'x's:
+				 D: xxxxxxxx:
+
+
+1035.00 ns: ERROR: ram_writer_tb.DUT.U1.sub1 : RAM write with inconsistent address
+
+1045.00 ns: WARNING: ram_writer_tb.DUT.U1 : Write to RAM whilst D contains 'x's:
+				 D: xxxxxxxx:
+
+
+1045.00 ns: ERROR: ram_writer_tb.DUT.U1.sub1 : RAM write with inconsistent address
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1045 NS, negedge ADR[0]:1045 NS,  0.28 : 280 PS );
+            File: ./SPRAM256X8.v, line = 279
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1045 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1045 NS, negedge ADR[1]:1045 NS,  0.28 : 280 PS );
+            File: ./SPRAM256X8.v, line = 281
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1045 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1045 NS, negedge ADR[2]:1045 NS,  0.28 : 280 PS );
+            File: ./SPRAM256X8.v, line = 283
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1045 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1045 NS, negedge ADR[3]:1045 NS,  0.28 : 280 PS );
+            File: ./SPRAM256X8.v, line = 285
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1045 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1045 NS, negedge ADR[4]:1045 NS,  0.28 : 280 PS );
+            File: ./SPRAM256X8.v, line = 287
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1045 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1045 NS, negedge ADR[5]:1045 NS,  0.28 : 280 PS );
+            File: ./SPRAM256X8.v, line = 289
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1045 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1045 NS, negedge ADR[6]:1045 NS,  0.28 : 280 PS );
+            File: ./SPRAM256X8.v, line = 291
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1045 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1045 NS, negedge ADR[7]:1045 NS,  0.28 : 280 PS );
+            File: ./SPRAM256X8.v, line = 293
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1045 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& cleanWrite_:1045 NS, negedge D[0]:1045 NS,  0.46 : 460 PS );
+            File: ./SPRAM256X8.v, line = 313
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1045 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& cleanWrite_:1045 NS, negedge D[1]:1045 NS,  0.46 : 460 PS );
+            File: ./SPRAM256X8.v, line = 315
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1045 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& cleanWrite_:1045 NS, negedge D[2]:1045 NS,  0.46 : 460 PS );
+            File: ./SPRAM256X8.v, line = 317
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1045 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& cleanWrite_:1045 NS, negedge D[3]:1045 NS,  0.46 : 460 PS );
+            File: ./SPRAM256X8.v, line = 319
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1045 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& cleanWrite_:1045 NS, negedge D[4]:1045 NS,  0.46 : 460 PS );
+            File: ./SPRAM256X8.v, line = 321
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1045 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& cleanWrite_:1045 NS, posedge D[5]:1045 NS,  0.46 : 460 PS );
+            File: ./SPRAM256X8.v, line = 322
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1045 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& cleanWrite_:1045 NS, negedge D[6]:1045 NS,  0.46 : 460 PS );
+            File: ./SPRAM256X8.v, line = 325
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1045 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& cleanWrite_:1045 NS, posedge D[7]:1045 NS,  0.46 : 460 PS );
+            File: ./SPRAM256X8.v, line = 326
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1045 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1055 NS, posedge ADR[0]:1055 NS,  0.28 : 280 PS );
+            File: ./SPRAM256X8.v, line = 278
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1055 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& cleanWrite_:1055 NS, posedge D[0]:1055 NS,  0.46 : 460 PS );
+            File: ./SPRAM256X8.v, line = 312
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1055 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1065 NS, negedge ADR[0]:1065 NS,  0.28 : 280 PS );
+            File: ./SPRAM256X8.v, line = 279
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1065 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1065 NS, posedge ADR[1]:1065 NS,  0.28 : 280 PS );
+            File: ./SPRAM256X8.v, line = 280
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1065 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& cleanWrite_:1065 NS, negedge D[0]:1065 NS,  0.46 : 460 PS );
+            File: ./SPRAM256X8.v, line = 313
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1065 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& cleanWrite_:1065 NS, posedge D[1]:1065 NS,  0.46 : 460 PS );
+            File: ./SPRAM256X8.v, line = 314
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1065 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1075 NS, posedge ADR[0]:1075 NS,  0.28 : 280 PS );
+            File: ./SPRAM256X8.v, line = 278
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1075 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& cleanWrite_:1075 NS, posedge D[0]:1075 NS,  0.46 : 460 PS );
+            File: ./SPRAM256X8.v, line = 312
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1075 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1085 NS, negedge ADR[0]:1085 NS,  0.28 : 280 PS );
+            File: ./SPRAM256X8.v, line = 279
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1085 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1085 NS, negedge ADR[1]:1085 NS,  0.28 : 280 PS );
+            File: ./SPRAM256X8.v, line = 281
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1085 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1085 NS, posedge ADR[2]:1085 NS,  0.28 : 280 PS );
+            File: ./SPRAM256X8.v, line = 282
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1085 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& cleanWrite_:1085 NS, negedge D[0]:1085 NS,  0.46 : 460 PS );
+            File: ./SPRAM256X8.v, line = 313
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1085 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& cleanWrite_:1085 NS, negedge D[1]:1085 NS,  0.46 : 460 PS );
+            File: ./SPRAM256X8.v, line = 315
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1085 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& cleanWrite_:1085 NS, posedge D[2]:1085 NS,  0.46 : 460 PS );
+            File: ./SPRAM256X8.v, line = 316
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1085 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1095 NS, posedge ADR[0]:1095 NS,  0.28 : 280 PS );
+            File: ./SPRAM256X8.v, line = 278
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1095 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& cleanWrite_:1095 NS, posedge D[0]:1095 NS,  0.46 : 460 PS );
+            File: ./SPRAM256X8.v, line = 312
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1095 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1105 NS, negedge ADR[0]:1105 NS,  0.28 : 280 PS );
+            File: ./SPRAM256X8.v, line = 279
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1105 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1105 NS, posedge ADR[1]:1105 NS,  0.28 : 280 PS );
+            File: ./SPRAM256X8.v, line = 280
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1105 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& cleanWrite_:1105 NS, negedge D[0]:1105 NS,  0.46 : 460 PS );
+            File: ./SPRAM256X8.v, line = 313
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1105 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& cleanWrite_:1105 NS, posedge D[1]:1105 NS,  0.46 : 460 PS );
+            File: ./SPRAM256X8.v, line = 314
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1105 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1115 NS, posedge ADR[0]:1115 NS,  0.28 : 280 PS );
+            File: ./SPRAM256X8.v, line = 278
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1115 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& cleanWrite_:1115 NS, posedge D[0]:1115 NS,  0.46 : 460 PS );
+            File: ./SPRAM256X8.v, line = 312
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1115 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1125 NS, negedge ADR[0]:1125 NS,  0.28 : 280 PS );
+            File: ./SPRAM256X8.v, line = 279
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1125 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1125 NS, negedge ADR[1]:1125 NS,  0.28 : 280 PS );
+            File: ./SPRAM256X8.v, line = 281
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1125 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1125 NS, negedge ADR[2]:1125 NS,  0.28 : 280 PS );
+            File: ./SPRAM256X8.v, line = 283
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1125 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1125 NS, posedge ADR[3]:1125 NS,  0.28 : 280 PS );
+            File: ./SPRAM256X8.v, line = 284
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1125 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& cleanWrite_:1125 NS, negedge D[0]:1125 NS,  0.46 : 460 PS );
+            File: ./SPRAM256X8.v, line = 313
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1125 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& cleanWrite_:1125 NS, negedge D[1]:1125 NS,  0.46 : 460 PS );
+            File: ./SPRAM256X8.v, line = 315
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1125 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& cleanWrite_:1125 NS, negedge D[2]:1125 NS,  0.46 : 460 PS );
+            File: ./SPRAM256X8.v, line = 317
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1125 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& cleanWrite_:1125 NS, posedge D[3]:1125 NS,  0.46 : 460 PS );
+            File: ./SPRAM256X8.v, line = 318
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1125 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1135 NS, posedge ADR[0]:1135 NS,  0.28 : 280 PS );
+            File: ./SPRAM256X8.v, line = 278
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1135 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& cleanWrite_:1135 NS, posedge D[0]:1135 NS,  0.46 : 460 PS );
+            File: ./SPRAM256X8.v, line = 312
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1135 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1165 NS, posedge WEB:1165 NS,  0.27 : 270 PS );
+            File: ./SPRAM256X8.v, line = 338
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1165 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1185 NS, negedge ADR[0]:1185 NS,  0.28 : 280 PS );
+            File: ./SPRAM256X8.v, line = 279
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1185 NS
+
+Current Step:           6
+Content of word_counter: aa
+Content of x: a8
+Simulation complete via $finish(1) at time 2140 NS + 0
+./ram_writer_tb.sv:55     $finish; 
+xcelium> probe -create -shm ram_writer_tb.clk ram_writer_tb.fim ram_writer_tb.reset ram_writer_tb.x
+Created probe 2
+xcelium> run
+xmsim: *E,RNFNSH: Cannot continue simulation due to a previous $finish.
+xcelium> run
+xmsim: *E,RNFNSH: Cannot continue simulation due to a previous $finish.
+xcelium> reset
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+Loaded snapshot worklib.ram_writer_tb:sv
+xcelium> run
+Current Step:           1
+Content of word_counter: xx
+Content of x: zz
+
+Warning!  Timing violation
+           $hold( posedge CLK:1025 NS, negedge ENB:1025 NS,  0.41 : 410 PS );
+            File: ./SPRAM256X8.v, line = 333
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1025 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1025 NS, negedge WEB:1025 NS,  0.27 : 270 PS );
+            File: ./SPRAM256X8.v, line = 339
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1025 NS
+
+
+1035.00 ns: WARNING: ram_writer_tb.DUT.U1 : Write to RAM whilst D contains 'x's:
+				 D: xxxxxxxx:
+
+
+1035.00 ns: ERROR: ram_writer_tb.DUT.U1.sub1 : RAM write with inconsistent address
+
+1045.00 ns: WARNING: ram_writer_tb.DUT.U1 : Write to RAM whilst D contains 'x's:
+				 D: xxxxxxxx:
+
+
+1045.00 ns: ERROR: ram_writer_tb.DUT.U1.sub1 : RAM write with inconsistent address
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1045 NS, negedge ADR[0]:1045 NS,  0.28 : 280 PS );
+            File: ./SPRAM256X8.v, line = 279
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1045 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1045 NS, negedge ADR[1]:1045 NS,  0.28 : 280 PS );
+            File: ./SPRAM256X8.v, line = 281
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1045 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1045 NS, negedge ADR[2]:1045 NS,  0.28 : 280 PS );
+            File: ./SPRAM256X8.v, line = 283
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1045 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1045 NS, negedge ADR[3]:1045 NS,  0.28 : 280 PS );
+            File: ./SPRAM256X8.v, line = 285
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1045 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1045 NS, negedge ADR[4]:1045 NS,  0.28 : 280 PS );
+            File: ./SPRAM256X8.v, line = 287
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1045 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1045 NS, negedge ADR[5]:1045 NS,  0.28 : 280 PS );
+            File: ./SPRAM256X8.v, line = 289
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1045 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1045 NS, negedge ADR[6]:1045 NS,  0.28 : 280 PS );
+            File: ./SPRAM256X8.v, line = 291
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1045 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1045 NS, negedge ADR[7]:1045 NS,  0.28 : 280 PS );
+            File: ./SPRAM256X8.v, line = 293
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1045 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& cleanWrite_:1045 NS, negedge D[0]:1045 NS,  0.46 : 460 PS );
+            File: ./SPRAM256X8.v, line = 313
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1045 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& cleanWrite_:1045 NS, negedge D[1]:1045 NS,  0.46 : 460 PS );
+            File: ./SPRAM256X8.v, line = 315
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1045 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& cleanWrite_:1045 NS, negedge D[2]:1045 NS,  0.46 : 460 PS );
+            File: ./SPRAM256X8.v, line = 317
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1045 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& cleanWrite_:1045 NS, negedge D[3]:1045 NS,  0.46 : 460 PS );
+            File: ./SPRAM256X8.v, line = 319
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1045 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& cleanWrite_:1045 NS, negedge D[4]:1045 NS,  0.46 : 460 PS );
+            File: ./SPRAM256X8.v, line = 321
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1045 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& cleanWrite_:1045 NS, posedge D[5]:1045 NS,  0.46 : 460 PS );
+            File: ./SPRAM256X8.v, line = 322
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1045 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& cleanWrite_:1045 NS, negedge D[6]:1045 NS,  0.46 : 460 PS );
+            File: ./SPRAM256X8.v, line = 325
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1045 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& cleanWrite_:1045 NS, posedge D[7]:1045 NS,  0.46 : 460 PS );
+            File: ./SPRAM256X8.v, line = 326
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1045 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1055 NS, posedge ADR[0]:1055 NS,  0.28 : 280 PS );
+            File: ./SPRAM256X8.v, line = 278
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1055 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& cleanWrite_:1055 NS, posedge D[0]:1055 NS,  0.46 : 460 PS );
+            File: ./SPRAM256X8.v, line = 312
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1055 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1065 NS, negedge ADR[0]:1065 NS,  0.28 : 280 PS );
+            File: ./SPRAM256X8.v, line = 279
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1065 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1065 NS, posedge ADR[1]:1065 NS,  0.28 : 280 PS );
+            File: ./SPRAM256X8.v, line = 280
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1065 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& cleanWrite_:1065 NS, negedge D[0]:1065 NS,  0.46 : 460 PS );
+            File: ./SPRAM256X8.v, line = 313
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1065 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& cleanWrite_:1065 NS, posedge D[1]:1065 NS,  0.46 : 460 PS );
+            File: ./SPRAM256X8.v, line = 314
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1065 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1075 NS, posedge ADR[0]:1075 NS,  0.28 : 280 PS );
+            File: ./SPRAM256X8.v, line = 278
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1075 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& cleanWrite_:1075 NS, posedge D[0]:1075 NS,  0.46 : 460 PS );
+            File: ./SPRAM256X8.v, line = 312
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1075 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1085 NS, negedge ADR[0]:1085 NS,  0.28 : 280 PS );
+            File: ./SPRAM256X8.v, line = 279
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1085 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1085 NS, negedge ADR[1]:1085 NS,  0.28 : 280 PS );
+            File: ./SPRAM256X8.v, line = 281
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1085 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1085 NS, posedge ADR[2]:1085 NS,  0.28 : 280 PS );
+            File: ./SPRAM256X8.v, line = 282
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1085 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& cleanWrite_:1085 NS, negedge D[0]:1085 NS,  0.46 : 460 PS );
+            File: ./SPRAM256X8.v, line = 313
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1085 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& cleanWrite_:1085 NS, negedge D[1]:1085 NS,  0.46 : 460 PS );
+            File: ./SPRAM256X8.v, line = 315
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1085 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& cleanWrite_:1085 NS, posedge D[2]:1085 NS,  0.46 : 460 PS );
+            File: ./SPRAM256X8.v, line = 316
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1085 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1095 NS, posedge ADR[0]:1095 NS,  0.28 : 280 PS );
+            File: ./SPRAM256X8.v, line = 278
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1095 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& cleanWrite_:1095 NS, posedge D[0]:1095 NS,  0.46 : 460 PS );
+            File: ./SPRAM256X8.v, line = 312
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1095 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1105 NS, negedge ADR[0]:1105 NS,  0.28 : 280 PS );
+            File: ./SPRAM256X8.v, line = 279
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1105 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1105 NS, posedge ADR[1]:1105 NS,  0.28 : 280 PS );
+            File: ./SPRAM256X8.v, line = 280
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1105 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& cleanWrite_:1105 NS, negedge D[0]:1105 NS,  0.46 : 460 PS );
+            File: ./SPRAM256X8.v, line = 313
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1105 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& cleanWrite_:1105 NS, posedge D[1]:1105 NS,  0.46 : 460 PS );
+            File: ./SPRAM256X8.v, line = 314
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1105 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1115 NS, posedge ADR[0]:1115 NS,  0.28 : 280 PS );
+            File: ./SPRAM256X8.v, line = 278
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1115 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& cleanWrite_:1115 NS, posedge D[0]:1115 NS,  0.46 : 460 PS );
+            File: ./SPRAM256X8.v, line = 312
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1115 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1125 NS, negedge ADR[0]:1125 NS,  0.28 : 280 PS );
+            File: ./SPRAM256X8.v, line = 279
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1125 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1125 NS, negedge ADR[1]:1125 NS,  0.28 : 280 PS );
+            File: ./SPRAM256X8.v, line = 281
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1125 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1125 NS, negedge ADR[2]:1125 NS,  0.28 : 280 PS );
+            File: ./SPRAM256X8.v, line = 283
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1125 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1125 NS, posedge ADR[3]:1125 NS,  0.28 : 280 PS );
+            File: ./SPRAM256X8.v, line = 284
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1125 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& cleanWrite_:1125 NS, negedge D[0]:1125 NS,  0.46 : 460 PS );
+            File: ./SPRAM256X8.v, line = 313
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1125 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& cleanWrite_:1125 NS, negedge D[1]:1125 NS,  0.46 : 460 PS );
+            File: ./SPRAM256X8.v, line = 315
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1125 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& cleanWrite_:1125 NS, negedge D[2]:1125 NS,  0.46 : 460 PS );
+            File: ./SPRAM256X8.v, line = 317
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1125 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& cleanWrite_:1125 NS, posedge D[3]:1125 NS,  0.46 : 460 PS );
+            File: ./SPRAM256X8.v, line = 318
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1125 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1135 NS, posedge ADR[0]:1135 NS,  0.28 : 280 PS );
+            File: ./SPRAM256X8.v, line = 278
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1135 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& cleanWrite_:1135 NS, posedge D[0]:1135 NS,  0.46 : 460 PS );
+            File: ./SPRAM256X8.v, line = 312
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1135 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1165 NS, posedge WEB:1165 NS,  0.27 : 270 PS );
+            File: ./SPRAM256X8.v, line = 338
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1165 NS
+
+
+Warning!  Timing violation
+           $hold( posedge CLK &&& enableMem:1185 NS, negedge ADR[0]:1185 NS,  0.28 : 280 PS );
+            File: ./SPRAM256X8.v, line = 279
+           Scope: ram_writer_tb.DUT.U1
+            Time: 1185 NS
+
+Current Step:           6
+Content of word_counter: aa
+Content of x: a8
+Simulation complete via $finish(1) at time 2140 NS + 0
+./ram_writer_tb.sv:55     $finish; 
+xcelium> ^C
+xcelium> exit
+TOOL:	xrun(64)	22.09-s013: Exiting on Dec 09, 2024 at 08:52:09 -03  (total: 00:11:38)

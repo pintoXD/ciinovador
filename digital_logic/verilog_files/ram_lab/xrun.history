@@ -102,3 +102,4 @@ s101(06Dec2024:16:38:29):  xrun ram_writer_tb.sv SPRAM256X8.v +gui +access+rw -s
 s102(06Dec2024:16:44:30):  xrun ram_writer_tb.sv SPRAM256X8.v +gui +access+rw -s 
 s103(06Dec2024:16:46:59):  xrun ram_writer_tb.sv SPRAM256X8.v +gui +access+rw -s 
 s104(06Dec2024:17:00:23):  xrun ram_writer_tb.sv SPRAM256X8.v +gui +access+rw -s 
+s105(09Dec2024:08:40:32):  xrun -64bit ram_writer_tb.sv ram_writer.sv SPRAM256X8.v +gui +access+rw 
