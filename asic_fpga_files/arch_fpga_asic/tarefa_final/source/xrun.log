@@ -1,0 +1,76 @@
+xrun(64): 22.09-s013: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	22.09-s013: Started on Dec 10, 2024 at 16:39:39 -03
+xrun
+	-64bit
+	ula8_tb.sv
+	ula8.sv
+Recompiling... reason: file './ula8_tb.sv' is newer than expected.
+	expected: Tue Dec 10 16:38:46 2024
+	actual:   Tue Dec 10 16:39:35 2024
+file: ula8_tb.sv
+	module worklib.ula8_tb:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		ula8_tb
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.ula8_tb:sv <0x7d1de49f>
+			streams:   8, words: 73352
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 2       2
+		Registers:              38      38
+		Scalar wires:            3       -
+		Vectored wires:          5       -
+		Always blocks:           1       1
+		Initial blocks:          2       2
+		Pseudo assignments:      5       5
+		Assertions:             30      30
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.ula8_tb:sv
+Loading snapshot worklib.ula8_tb:sv .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
+xcelium> run
+                Tempo               Entradas ULA                                              Saídas
+                         mocked_SrcA    mocked_SrcB     mocked_ULAControl       dut_ULAResult      dut_FlagZ
+                ====   ===================================================     ===============================
+                   0          00             00            000                        00              1
+                  10          50             60            000                        b0              0
+                  20          7f             2d            000                        ac              0
+                  30          60             50            001                        10              0
+                  40          60             60            001                        00              1
+                  50          50             60            001                        f0              0
+                  60          0a             0b            010                        6e              0
+                  70          0f             00            010                        00              1
+                  80          fe             02            011                        7f              0
+                  90          00             0f            011                        00              1
+                 100          aa             0f            100                        a9              0
+                 110          01             0f            100                        00              1
+                 120          aa             ff            101                        fe              0
+                 130          aa             00            101                        ff              0
+                 140          a0             f0            110                        af              0
+                 150          f0             b0            111                        bf              0
+                 160          ff             bb            000                        00              1
+                 170          aa             ee            001                        11              0
+                 180          00             00            001                        ff              0
+                 190          aa             ee            010                        55              0
+                 200          ff             ff            010                        00              1
+                 210          aa             55            011                        00              1
+                 220          fe             15            011                        14              0
+                 230          aa             00            100                        00              1
+                 240          aa             bb            100                        aa              0
+                 250          aa             bb            101                        bb              0
+                 260          aa             00            101                        aa              0
+                 270          aa             55            110                        ff              0
+                 280          fe             15            110                        eb              0
+                 290          fe             aa            111                        55              0
+Simulation complete via $finish(1) at time 310 NS + 0
+./ula8_tb.sv:270     $finish;
+xcelium> exit
+TOOL:	xrun(64)	22.09-s013: Exiting on Dec 10, 2024 at 16:39:40 -03  (total: 00:00:01)
