@@ -3,3 +3,12 @@ s2(10Dec2024:11:34:55):  xrun -64bit ula8_tb.sv ula8.sv
 s3(10Dec2024:12:10:47):  xrun -64bit ula8_tb.sv ula8.sv 
 s4(10Dec2024:12:11:47):  xrun -64bit ula8_tb.sv ula8.sv 
 s5(10Dec2024:12:11:58):  xrun -64bit ula8_tb.sv ula8.sv 
+s6(10Dec2024:12:26:29):  xrun -64bit ula8_tb.sv ula8.sv 
+s7(10Dec2024:12:28:02):  xrun -64bit ula8_tb.sv ula8.sv 
+s8(10Dec2024:12:29:29):  xrun -64bit ula8_tb.sv ula8.sv +gui +access+rw 
+s9(10Dec2024:14:41:00):  xrun -64bit ula8_tb.sv ula8.sv +gui +access+rw -input xrun_tcl/restore.tcl 
+s10(10Dec2024:14:41:42):  xrun -64bit ula8_tb.sv ula8.sv +gui +access+rw -input xrun_tcl/restore.tcl 
+s11(10Dec2024:14:42:49):  xrun -64bit ula8_tb.sv ula8.sv +gui +access+rw 
+s12(10Dec2024:14:46:24):  xrun -64bit ula8_tb.sv ula8.sv +gui +access+rw -input xrun_tcl/restore.tcl 
+s13(10Dec2024:14:47:04):  xrun -64bit ula8_tb.sv ula8.sv +gui +access+rw 
+s14(10Dec2024:14:48:38):  xrun -64bit ula8_tb.sv ula8.sv +gui +access+rw -input restore.tcl 

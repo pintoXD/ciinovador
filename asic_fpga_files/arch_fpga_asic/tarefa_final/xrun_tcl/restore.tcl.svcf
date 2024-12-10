@@ -1,0 +1,133 @@
+# SimVision Command Script (Tue Dec 10 02:46:08 PM -03 2024)
+#
+# Version 22.09.s013
+#
+# You can restore this configuration with:
+#
+#      xrun -64bit ula8_tb.sv ula8.sv +gui +access+rw -input xrun_tcl/restore.tcl
+#
+
+
+#
+# Preferences
+#
+preferences set toolbar-Standard-WatchWindow {
+  usual
+  shown 0
+}
+preferences set waveform-print-variables selected
+preferences set waveform-print-time range
+preferences set plugin-enable-svdatabrowser-new 1
+preferences set toolbar-Windows-WatchWindow {
+  usual
+  shown 0
+}
+preferences set toolbar-sendToIndago-WaveWindow {
+  usual
+  position -pos 1
+}
+preferences set waveform-print-paper {A4 (210mm x 297mm)}
+preferences set toolbar-Standard-Console {
+  usual
+  position -pos 1
+}
+preferences set toolbar-Search-Console {
+  usual
+  position -pos 2
+}
+preferences set plugin-enable-groupscope 0
+preferences set sb-display-values 1
+preferences set plugin-enable-interleaveandcompare 0
+preferences set plugin-enable-waveformfrequencyplot 0
+preferences set toolbar-SimControl-WatchWindow {
+  usual
+  shown 0
+}
+preferences set toolbar-TimeSearch-WatchWindow {
+  usual
+  shown 0
+}
+
+#
+# Simulator
+#
+database require simulator -hints {
+	simulator "xrun -64bit ula8_tb.sv ula8.sv +gui +access+rw -input restore.tcl"
+}
+
+#
+# Mnemonic Maps
+#
+mmap new  -reuse -name {Boolean as Logic} -radix %b -contents {{%c=FALSE -edgepriority 1 -shape low}
+{%c=TRUE -edgepriority 1 -shape high}}
+mmap new  -reuse -name {Example Map} -radix %x -contents {{%b=11???? -bgcolor orange -label REG:%x -linecolor yellow -shape bus}
+{%x=1F -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=2C -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=* -label %x -linecolor gray -shape bus}}
+
+#
+# Design Browser windows
+#
+if {[catch {window new WatchList -name "Design Browser 1" -geometry 730x500+2379+169}] != ""} {
+    window geometry "Design Browser 1" 730x500+2379+169
+}
+window target "Design Browser 1" on
+browser using {Design Browser 1}
+browser set -scope [subst  {[format {ula8_tb.DUT}]} ]
+browser set \
+    -signalsort name
+browser yview see [subst  {[format {ula8_tb.DUT}]} ]
+browser timecontrol set -lock 0
+
+#
+# Waveform windows
+#
+if {[catch {window new WaveWindow -name "Waveform 2" -geometry 1010x600+1949+210}] != ""} {
+    window geometry "Waveform 2" 1010x600+1949+210
+}
+window target "Waveform 2" on
+waveform using {Waveform 2}
+waveform sidebar visibility partial
+waveform set \
+    -primarycursor TimeA \
+    -signalnames name \
+    -signalwidth 175 \
+    -units ps \
+    -valuewidth 75
+waveform baseline set -time 0
+
+set id [waveform add -signals [subst  {
+	{[format {ula8_tb.DUT.SrcA[7:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ula8_tb.DUT.SrcB[7:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ula8_tb.DUT.ULAControl[2:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ula8_tb.DUT.IsLogic}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ula8_tb.DUT.ULAResult[7:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {ula8_tb.DUT.FlagZ}]}
+	} ]]
+
+waveform xview limits 0 310000ps
+
+#
+# Waveform Window Links
+#
+
+#
+# Console windows
+#
+console set -windowname Console
+window geometry Console 730x250+261+564
+
+#
+# Layout selection
+#
+

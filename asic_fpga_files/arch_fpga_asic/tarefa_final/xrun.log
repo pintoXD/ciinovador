@@ -1,76 +1,114 @@
 xrun(64): 22.09-s013: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	22.09-s013: Started on Dec 10, 2024 at 12:11:58 -03
+TOOL:	xrun(64)	22.09-s013: Started on Dec 10, 2024 at 14:48:38 -03
 xrun
 	-64bit
 	ula8_tb.sv
 	ula8.sv
-Recompiling... reason: file './ula8_tb.sv' is newer than expected.
-	expected: Tue Dec 10 12:10:34 2024
-	actual:   Tue Dec 10 12:11:56 2024
-file: ula8_tb.sv
-	module worklib.ula8_tb:sv
-		errors: 0, warnings: 0
-		Caching library 'worklib' ....... Done
-	Elaborating the design hierarchy:
-	Top level design units:
-		ula8_tb
-xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
-	Building instance overlay tables: .................... Done
-	Generating native compiled code:
-		worklib.ula8_tb:sv <0x7d1de49f>
-			streams:   8, words: 73352
-	Building instance specific data structures.
-	Loading native compiled code:     .................... Done
-	Design hierarchy summary:
-		                 Instances  Unique
-		Modules:                 2       2
-		Registers:              38      38
-		Scalar wires:            3       -
-		Vectored wires:          5       -
-		Always blocks:           1       1
-		Initial blocks:          2       2
-		Pseudo assignments:      5       5
-		Assertions:             30      30
-		Simulation timescale:  1ps
-	Writing initial simulation snapshot: worklib.ula8_tb:sv
-Loading snapshot worklib.ula8_tb:sv .................... Done
+	+gui
+	+access+rw
+	-input restore.tcl
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
 xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
 xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
-xcelium> run
-                Tempo               Entradas ULA                                              Saídas
-                         mocked_SrcA    mocked_SrcB     mocked_ULAControl       dut_ULAResult      dut_FlagZ
-                ====   ===================================================     ===============================
-                   0          00             00            000                        00              1
-                  10          50             60            000                        b0              0
-                  20          7f             2d            000                        ac              0
-                  30          60             50            001                        10              0
-                  40          60             60            001                        00              1
-                  50          50             60            001                        f0              0
-                  60          0a             0b            010                        6e              0
-                  70          0f             00            010                        00              1
-                  80          fe             02            011                        7f              0
-                  90          00             0f            011                        00              1
-                 100          aa             0f            100                        a9              0
-                 110          01             0f            100                        00              1
-                 120          aa             ff            101                        fe              0
-                 130          aa             00            101                        ff              0
-                 140          a0             f0            110                        af              0
-                 150          f0             b0            111                        bf              0
-                 160          ff             bb            000                        00              1
-                 170          aa             ee            001                        11              0
-                 180          00             00            001                        ff              0
-                 190          aa             ee            010                        55              0
-                 200          ff             ff            010                        00              1
-                 210          aa             55            011                        00              1
-                 220          fe             15            011                        14              0
-                 230          aa             00            100                        00              1
-                 240          aa             bb            100                        aa              0
-                 250          aa             bb            101                        bb              0
-                 260          aa             00            101                        aa              0
-                 270          aa             55            110                        ff              0
-                 280          fe             15            110                        eb              0
-                 290          fe             aa            111                        55              0
-Simulation complete via $finish(1) at time 310 NS + 0
-./ula8_tb.sv:270     $finish;
+xcelium> 
+xcelium> # XM-Sim Command File
+xcelium> # TOOL:	xmsim(64)	22.09-s013
+xcelium> #
+xcelium> #
+xcelium> # You can restore this configuration with:
+xcelium> #
+xcelium> #      xrun -64bit ula8_tb.sv ula8.sv +gui +access+rw -input restore.tcl
+xcelium> #
+xcelium> 
+xcelium> set tcl_prompt1 {puts -nonewline "xcelium> "}
+puts -nonewline "xcelium> "
+xcelium> set tcl_prompt2 {puts -nonewline "> "}
+puts -nonewline "> "
+xcelium> set vlog_format %h
+%h
+xcelium> set vhdl_format %v
+%v
+xcelium> set real_precision 6
+6
+xcelium> set display_unit auto
+auto
+xcelium> set time_unit module
+module
+xcelium> set heap_garbage_size -200
+-200
+xcelium> set heap_garbage_time 0
+0
+xcelium> set assert_report_level note
+note
+xcelium> set assert_stop_level error
+error
+xcelium> set autoscope yes
+yes
+xcelium> set assert_1164_warnings yes
+yes
+xcelium> set pack_assert_off {}
+xcelium> set severity_pack_assert_off {note warning}
+note warning
+xcelium> set assert_output_stop_level failed
+failed
+xcelium> set tcl_debug_level 0
+0
+xcelium> set relax_path_name 1
+1
+xcelium> set vhdl_vcdmap XX01ZX01X
+XX01ZX01X
+xcelium> set intovf_severity_level ERROR
+ERROR
+xcelium> set probe_screen_format 0
+0
+xcelium> set rangecnst_severity_level ERROR
+ERROR
+xcelium> set textio_severity_level ERROR
+ERROR
+xcelium> set vital_timing_checks_on 1
+1
+xcelium> set vlog_code_show_force 0
+0
+xcelium> set assert_count_attempts 1
+1
+xcelium> set tcl_all64 false
+false
+xcelium> set tcl_runerror_exit false
+false
+xcelium> set assert_report_incompletes 0
+0
+xcelium> set show_force 1
+1
+xcelium> set force_reset_by_reinvoke 0
+0
+xcelium> set tcl_relaxed_literal 0
+0
+xcelium> set probe_exclude_patterns {}
+xcelium> set probe_packed_limit 4k
+4k
+xcelium> set probe_unpacked_limit 16k
+16k
+xcelium> set assert_internal_msg no
+no
+xcelium> set svseed 1
+1
+xcelium> set assert_reporting_mode 0
+0
+xcelium> set vcd_compact_mode 0
+0
+xcelium> alias . run
+xcelium> alias quit exit
+xcelium> database -open -shm -into waves.shm waves -default
+Created default SHM database waves
+xcelium> probe -create -database waves ula8_tb.DUT.SrcA ula8_tb.DUT.SrcB ula8_tb.DUT.ULAControl ula8_tb.DUT.IsLogic ula8_tb.DUT.ULAResult ula8_tb.DUT.FlagZ
+Created probe 1
+xcelium> 
+xcelium> simvision -input restore.tcl.svcf
+xcelium> ^C
 xcelium> exit
-TOOL:	xrun(64)	22.09-s013: Exiting on Dec 10, 2024 at 12:11:59 -03  (total: 00:00:01)
+xmsim: *W,NORUNCMD: No 'run' command issued.
+TOOL:	xrun(64)	22.09-s013: Exiting on Dec 10, 2024 at 14:48:55 -03  (total: 00:00:17)
