@@ -1,0 +1,5 @@
+s1(10Dec2024:11:30:42):  xrun -64bit ula8_tb.sv ula8.sv 
+s2(10Dec2024:11:34:55):  xrun -64bit ula8_tb.sv ula8.sv 
+s3(10Dec2024:12:10:47):  xrun -64bit ula8_tb.sv ula8.sv 
+s4(10Dec2024:12:11:47):  xrun -64bit ula8_tb.sv ula8.sv 
+s5(10Dec2024:12:11:58):  xrun -64bit ula8_tb.sv ula8.sv 
