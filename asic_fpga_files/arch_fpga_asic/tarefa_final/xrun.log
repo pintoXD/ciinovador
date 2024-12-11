@@ -1,9 +1,0 @@
-xrun(64): 22.09-s013: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	22.09-s013: Started on Dec 10, 2024 at 16:38:50 -03
-xrun
-	-64bit
-	ula8_tb.sv
-	ula8.sv
-xrun: *E,FILEMIS: Cannot find the provided file ula8_tb.sv.
-xrun: *E,FILEMIS: Cannot find the provided file ula8.sv.
-TOOL:	xrun(64)	22.09-s013: Exiting on Dec 10, 2024 at 16:38:50 -03  (total: 00:00:00)

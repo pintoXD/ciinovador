@@ -12,7 +12,7 @@ array set tech_lib_names {
     gpdk45_fast "fast_vdd1v0_basicCells.lib"
 }
 
-set tech "tsmc18_slow"
+set tech "gpdk45_fast"
 
 puts "Reading libraries and design files..."
 set lib_file "$lib_dir/$tech_lib_names($tech)"
