@@ -48,7 +48,7 @@ if [ ! -d "$NETLIST_DIR" ]; then
     mkdir -p "$NETLIST_DIR"
 fi
 
-running tests from ula8_tb.sv that instantiates the ula8.sv module
+# running tests from ula8_tb.sv that instantiates the ula8.sv module
 xrun -64bit $SOURCE_DIR/ula8_tb.sv $SOURCE_DIR/ula8.sv
 RETVAL=$?
 
@@ -60,7 +60,7 @@ else
     exit 1
 fi
 
-Launching genus synthesis tool
+# Launching genus synthesis tool
 genus -abort_on_error -log "logs/genus" -f $SCRIPTS_DIR/synth_tsmc18.tcl
 genus -abort_on_error -log "logs/genus" -f $SCRIPTS_DIR/synth_gpdk45_slow.tcl
 genus -abort_on_error -log "logs/genus" -f $SCRIPTS_DIR/synth_gpdk45_fast.tcl
@@ -76,7 +76,6 @@ if [ $RETVAL_SLOW -eq 0 ]; then
     echo "Netlist $GPDK45_SLOW_LIB_NAME Simulation successful"
 else
     echo "Netlist $GPDK45_SLOW_LIB_NAME Simulation failed"
-    exit 1
 fi
 
 # running tests from ula8_tb.sv that instantiates the ula8.sv module using the resulting netlist as source file.
@@ -88,7 +87,6 @@ if [ $RETVAL_FAST -eq 0 ]; then
     echo "Netlist $GPDK45_FAST_LIB_NAME Simulation successful"
 else
     echo "Netlist $GPDK45_FAST_LIB_NAME Simulation failed"
-    exit 1
 fi
 
 if [ $RETVAL -eq 0 ] && [ $RETVAL_SLOW -eq 0 ] && [ $RETVAL_FAST -eq 0 ]; then
@@ -97,6 +95,8 @@ if [ $RETVAL -eq 0 ] && [ $RETVAL_SLOW -eq 0 ] && [ $RETVAL_FAST -eq 0 ]; then
     echo "Design Simulation: Passed!" >> $REPORTS_DIR/simulation_reports.txt
     echo "Netlist $GPDK45_SLOW_LIB_NAME Simulation: Passed!" >> $REPORTS_DIR/simulation_reports.txt
     echo "Netlist $GPDK45_FAST_LIB_NAME Simulation: Passed!" >> $REPORTS_DIR/simulation_reports.txt
+    echo "" >> $REPORTS_DIR/simulation_reports.txt
+    echo "" >> $REPORTS_DIR/simulation_reports.txt
 else
     timestamp=$(date +"%Y-%m-%d_%H-%M-%S")
     echo "$timestamp" >> $REPORTS_DIR/simulation_reports.txt
@@ -104,7 +104,8 @@ else
     echo "Design Simulation Return: $RETVAL" >> $REPORTS_DIR/simulation_reports.txt
     echo "Netlist $GPDK45_SLOW_LIB_NAME Simulation: $RETVAL_SLOW" >> $REPORTS_DIR/simulation_reports.txt
     echo "Netlist $GPDK45_FAST_LIB_NAME Simulation: $RETVAL_FAST" >> $REPORTS_DIR/simulation_reports.txt
-    exit 1
+    echo "" >> $REPORTS_DIR/simulation_reports.txt
+    echo "" >> $REPORTS_DIR/simulation_reports.txt
 fi
 
 

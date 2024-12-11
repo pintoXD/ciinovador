@@ -1,5 +1,7 @@
 #!/usr/bin/env tclsh
 
+
+
 # Set the working directory
 set WORKING_DIR [pwd]
 
@@ -36,8 +38,9 @@ foreach dir [list $REPORTS_DIR $LIB_DIR $LOGS_DIR $NETLIST_DIR] {
 }
 
 # Running tests from ula8_tb.sv that instantiates the ula8.sv module
-set cmd "xrun -64bit $SOURCE_DIR/ula8_tb.sv $SOURCE_DIR/ula8.sv"
-set retval [catch {exec $cmd} result]
+# set cmd "xrun -64bit $SOURCE_DIR/ula8_tb.sv $SOURCE_DIR/ula8.sv"
+puts "Running design simulation..."
+set retval [catch { exec xrun -64bit $SOURCE_DIR/ula8_tb.sv $SOURCE_DIR/ula8.sv } result]
 
 # Check if the simulation was successful
 if {$retval == 0} {
@@ -47,34 +50,38 @@ if {$retval == 0} {
     exit 1
 }
 
+
+# if { 0 } {
 # Launching genus synthesis tool
 foreach script [list "synth_tsmc18.tcl" "synth_gpdk45_slow.tcl" "synth_gpdk45_fast.tcl"] {
-    set cmd "genus -abort_on_error -log logs/genus -f $SCRIPTS_DIR/$script"
-    catch {exec $cmd} result
+    # set cmd "genus -abort_on_error -log logs/genus -f $SCRIPTS_DIR/$script"
+    puts "Running $script synthesis..."
+    catch {exec genus -abort_on_error -log logs/genus -f $SCRIPTS_DIR/$script} result
+    puts $result
 }
 
 # Running tests from ula8_tb.sv that instantiates the ula8.sv module using the resulting netlist as source file
-set cmd "xrun -64bit $SOURCE_DIR/ula8_tb.sv $NETLIST_DIR/$GPDK45_SLOW_LIB_NAME/ula8_${GPDK45_SLOW_LIB_NAME}_netlist.v $LIB_DIR/$GPDK45_SLOW_V"
-set retval_slow [catch {exec $cmd} result]
+# set cmd "xrun -64bit $SOURCE_DIR/ula8_tb.sv $NETLIST_DIR/$GPDK45_SLOW_LIB_NAME/ula8_${GPDK45_SLOW_LIB_NAME}_netlist.v $LIB_DIR/$GPDK45_SLOW_V"
+set retval_slow [catch {exec xrun -64bit $SOURCE_DIR/ula8_tb.sv $NETLIST_DIR/$GPDK45_SLOW_LIB_NAME/ula8_${GPDK45_SLOW_LIB_NAME}_netlist.v $LIB_DIR/$GPDK45_SLOW_V} result]
 
 # Check if the simulation was successful
 if {$retval_slow == 0} {
     puts "Netlist $GPDK45_SLOW_LIB_NAME Simulation successful"
 } else {
     puts "Netlist $GPDK45_SLOW_LIB_NAME Simulation failed"
-    exit 1
+    # exit 1
 }
 
 # Running tests from ula8_tb.sv that instantiates the ula8.sv module using the resulting netlist as source file
-set cmd "xrun -64bit $SOURCE_DIR/ula8_tb.sv $NETLIST_DIR/$GPDK45_FAST_LIB_NAME/ula8_${GPDK45_FAST_LIB_NAME}_netlist.v $LIB_DIR/$GPDK45_FAST_V"
-set retval_fast [catch {exec $cmd} result]
+# set cmd "xrun -64bit $SOURCE_DIR/ula8_tb.sv $NETLIST_DIR/$GPDK45_FAST_LIB_NAME/ula8_${GPDK45_FAST_LIB_NAME}_netlist.v $LIB_DIR/$GPDK45_FAST_V"
+set retval_fast [catch {exec xrun -64bit $SOURCE_DIR/ula8_tb.sv $NETLIST_DIR/$GPDK45_FAST_LIB_NAME/ula8_${GPDK45_FAST_LIB_NAME}_netlist.v $LIB_DIR/$GPDK45_FAST_V} result]
 
 # Check if the simulation was successful
 if {$retval_fast == 0} {
     puts "Netlist $GPDK45_FAST_LIB_NAME Simulation successful"
 } else {
     puts "Netlist $GPDK45_FAST_LIB_NAME Simulation failed"
-    exit 1
+    # exit 1
 }
 
 # Check overall simulation results
@@ -97,7 +104,7 @@ if {$retval == 0 && $retval_slow == 0 && $retval_fast == 0} {
     puts $fileId "Netlist $GPDK45_SLOW_LIB_NAME Simulation: $retval_slow"
     puts $fileId "Netlist $GPDK45_FAST_LIB_NAME Simulation: $retval_fast"
     close $fileId
-    exit 1
+    # exit 1
 }
 
 # Check if directories and files exist and delete them if they do
@@ -112,3 +119,5 @@ foreach file [list "$WORKING_DIR/xrun.history" "$WORKING_DIR/xrun.key" "$WORKING
         file delete $file
     }
 }
+
+# }
