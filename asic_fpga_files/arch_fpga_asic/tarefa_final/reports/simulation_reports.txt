@@ -1,0 +1,6 @@
+2024-12-11_12-13-38
+Design Simulation: Passed!
+Netlist gpdk45_slow Simulation: Passed!
+Netlist gpdk45_fast Simulation: Passed!
+
+
