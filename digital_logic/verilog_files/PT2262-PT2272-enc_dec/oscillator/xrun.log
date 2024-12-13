@@ -1,0 +1,50 @@
+xrun(64): 22.09-s013: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	22.09-s013: Started on Dec 13, 2024 at 17:13:35 -03
+xrun
+	-64bit
+	clock_n_divider_tb.sv
+	clock_n_divider.sv
+	+gui
+	+access+rw
+	-s
+Recompiling... reason: file './clock_n_divider_tb.sv' is newer than expected.
+	expected: Fri Dec 13 17:09:44 2024
+	actual:   Fri Dec 13 17:13:27 2024
+file: clock_n_divider_tb.sv
+	module worklib.CLOCK_N_DIVIDER_TB:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		CLOCK_N_DIVIDER_TB
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.CLOCK_N_DIVIDER_TB:sv <0x6f5c68c3>
+			streams:   4, words:  4026
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                   Instances  Unique
+		Modules:                   2       2
+		Registers:                 7       7
+		Scalar wires:              2       -
+		Always blocks:             1       1
+		Initial blocks:            3       3
+		Pseudo assignments:        2       2
+		Simulation timescale:  100ns
+	Writing initial simulation snapshot: worklib.CLOCK_N_DIVIDER_TB:sv
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> 
+xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
+xcelium> 
+-------------------------------------
+Relinquished control to SimVision...
+# Restoring simulation environment...
+xcelium> input -quiet .reinvoke.sim
+xcelium> file delete .reinvoke.sim
+xcelium> run
+Simulation complete via $finish(1) at time 22510500 NS + 0
+./clock_n_divider_tb.sv:43         $finish;
+xcelium> 
