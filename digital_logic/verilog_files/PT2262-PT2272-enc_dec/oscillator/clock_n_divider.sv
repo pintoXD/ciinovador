@@ -1,4 +1,5 @@
-`timescale 1us/100ns
+/* verilator lint_off DECLFILENAME */
+`timescale 1us/1ns
 module CLOCK_N_DIVIDER#(
     parameter DIVIDER = 2
 )(

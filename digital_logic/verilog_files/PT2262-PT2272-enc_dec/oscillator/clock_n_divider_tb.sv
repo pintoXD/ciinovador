@@ -1,4 +1,6 @@
-`timescale 1us/100ns
+/* verilator lint_off DECLFILENAME */
+/* verilator lint_off UNUSEDSIGNAL */
+`timescale 1us/1ns
 module CLOCK_N_DIVIDER_TB();
 
     logic mock_INPUT_CLK, mock_RST;
@@ -6,18 +8,18 @@ module CLOCK_N_DIVIDER_TB();
 
     //Instantiating the Device Under Test (DUT)
     CLOCK_N_DIVIDER #(
-        .DIVIDER(25)
+        .DIVIDER(250)
     )DUT(
         .INPUT_CLK(mock_INPUT_CLK), 
         .RST(mock_RST), 
-        .OUTPUT_CLK() 
+        .OUTPUT_CLK(dut_OUTPUT_CLK) 
     );
 
     initial begin
         mock_INPUT_CLK = 0;
         forever begin
             // #0.5us mock_INPUT_CLK = ~mock_INPUT_CLK; // 1us CLK Period == 1MHz CLK Frequency
-            #1.5us mock_INPUT_CLK = ~mock_INPUT_CLK; // 3us CLK Period == 3MHz CLK Frequency
+            #165ns mock_INPUT_CLK = ~mock_INPUT_CLK; // 330ns CLK Period == 3MHz CLK Frequency
             // #5us mock_INPUT_CLK = ~mock_INPUT_CLK; // 10us CLK Period == 100kHz CLK Frequency
             // #50us mock_INPUT_CLK = ~mock_INPUT_CLK; // 100us CLK Period == 10kHz CLK Frequency
             // #500us mock_INPUT_CLK = ~mock_INPUT_CLK; // 1000us CLK Period == 1kHz CLK Frequency
@@ -26,6 +28,9 @@ module CLOCK_N_DIVIDER_TB();
 
 
     initial begin
+        $dumpfile("CLOCK_N_DIVIDER_TB.vcd");
+        $dumpvars(0, CLOCK_N_DIVIDER_TB);
+
         // Initialize Inputs
         @(posedge mock_INPUT_CLK);
         mock_RST = 0;
