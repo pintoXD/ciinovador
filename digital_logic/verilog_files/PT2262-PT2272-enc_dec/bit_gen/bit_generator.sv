@@ -1,3 +1,5 @@
+/* verilator lint_off DECLFILENAME */
+/* verilator lint_off UNUSEDSIGNAL */
 `timescale 1us/1ns
 module BIT_GENERATOR(
     input logic osc_clk, rst,

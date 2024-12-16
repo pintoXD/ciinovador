@@ -1,6 +1,7 @@
 
 /* verilator lint_off DECLFILENAME */
 /* verilator lint_off UNUSEDSIGNAL */
+/* verilator lint_off PINCONNECTEMPTY */
 `timescale 1us/1ns
 module BIT_GENERATOR_TB();
     logic mock_INPUT_CLK, mock_RST;
@@ -66,7 +67,7 @@ module BIT_GENERATOR_TB();
         for(int i = 0; i < 500; i++) begin
             @(posedge dut_OUTPUT_CLK);
             #1ns;
-            $display("Index %0d: %0d", i, DUT.output_signal);
+            // $display("Index %0d: %0d", i, DUT.output_signal);
         end
         $finish;
     end
