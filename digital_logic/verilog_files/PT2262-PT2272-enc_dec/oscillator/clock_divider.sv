@@ -1,6 +1,6 @@
 /* verilator lint_off DECLFILENAME */
 `timescale 1us/1ns
-module CLOCK_N_DIVIDER#(
+module CLOCK_DIVIDER#(
     parameter DIVIDER = 2
 )(
     input logic INPUT_CLK, RST,

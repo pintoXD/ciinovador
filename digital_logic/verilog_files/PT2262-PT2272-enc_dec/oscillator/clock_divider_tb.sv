@@ -1,13 +1,13 @@
 /* verilator lint_off DECLFILENAME */
 /* verilator lint_off UNUSEDSIGNAL */
-`timescale 1us/1ns
-module CLOCK_N_DIVIDER_TB();
+`timescale 1us/100ns
+module CLOCK_DIVIDER_TB();
 
     logic mock_INPUT_CLK, mock_RST;
     logic dut_OUTPUT_CLK;
 
     //Instantiating the Device Under Test (DUT)
-    CLOCK_N_DIVIDER #(
+    CLOCK_DIVIDER #(
         .DIVIDER(250)
     )DUT(
         .INPUT_CLK(mock_INPUT_CLK), 
@@ -28,8 +28,8 @@ module CLOCK_N_DIVIDER_TB();
 
 
     initial begin
-        $dumpfile("CLOCK_N_DIVIDER_TB.vcd");
-        $dumpvars(0, CLOCK_N_DIVIDER_TB);
+        $dumpfile("CLOCK_DIVIDER_TB.vcd");
+        $dumpvars(0, CLOCK_DIVIDER_TB);
 
         // Initialize Inputs
         @(posedge mock_INPUT_CLK);
