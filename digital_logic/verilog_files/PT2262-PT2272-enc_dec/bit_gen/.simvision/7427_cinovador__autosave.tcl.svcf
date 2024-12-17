@@ -69,28 +69,22 @@ browser timecontrol set -lock 0
 #
 # Waveform windows
 #
-if {[catch {window new WaveWindow -name "Waveform 2" -geometry 1920x1043+-1+-1}] != ""} {
-    window geometry "Waveform 2" 1920x1043+-1+-1
+if {[catch {window new WaveWindow -name "Waveform 4" -geometry 1920x1043+-1+-1}] != ""} {
+    window geometry "Waveform 4" 1920x1043+-1+-1
 }
-window target "Waveform 2" on
-waveform using {Waveform 2}
+window target "Waveform 4" on
+waveform using {Waveform 4}
 waveform sidebar visibility partial
 waveform set \
     -primarycursor TimeA \
     -signalnames name \
     -signalwidth 175 \
     -units ns \
-    -valuewidth 112
-waveform baseline set -time 289,905ns
+    -valuewidth 75
+waveform baseline set -time 0
 
 set id [waveform add -signals  {
 	simulator::BIT_GENERATOR_TB.DUT.FSM_STATE
-	} ]
-set id [waveform add -signals  {
-	{simulator::BIT_GENERATOR_TB.DUT.bit_type[2:0]}
-	} ]
-set id [waveform add -signals  {
-	simulator::BIT_GENERATOR_TB.DUT.clk_rose_up
 	} ]
 set id [waveform add -signals  {
 	{simulator::BIT_GENERATOR_TB.DUT.current_state[7:0]}
@@ -114,16 +108,14 @@ set id [waveform add -signals  {
 	simulator::BIT_GENERATOR_TB.DUT.output_signal
 	} ]
 set id [waveform add -signals  {
-	simulator::BIT_GENERATOR_TB.DUT.past_clk
-	} ]
-set id [waveform add -signals  {
 	{simulator::BIT_GENERATOR_TB.DUT.pulse_counter[4:0]}
 	} ]
+waveform format $id -radix %d
 set id [waveform add -signals  {
 	simulator::BIT_GENERATOR_TB.DUT.rst
 	} ]
 
-waveform xview limits 0 35448976ns
+waveform xview limits 0 7833114ns
 
 #
 # Waveform Window Links

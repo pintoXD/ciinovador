@@ -1,5 +1,5 @@
 xrun(64): 22.09-s013: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	22.09-s013: Started on Dec 17, 2024 at 12:28:03 -03
+TOOL:	xrun(64)	22.09-s013: Started on Dec 17, 2024 at 17:26:24 -03
 xrun
 	-64bit
 	bit_generator_tb.sv
@@ -9,8 +9,8 @@ xrun
 	+gui
 	-s
 Recompiling... reason: file './bit_generator.sv' is newer than expected.
-	expected: Tue Dec 17 12:17:06 2024
-	actual:   Tue Dec 17 12:27:58 2024
+	expected: Tue Dec 17 17:10:39 2024
+	actual:   Tue Dec 17 17:26:22 2024
 file: bit_generator.sv
 	module worklib.BIT_GENERATOR:sv
 		errors: 0, warnings: 0
@@ -21,20 +21,18 @@ file: bit_generator.sv
 xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.BIT_GENERATOR:sv <0x20712500>
-			streams:   8, words:  3296
+		worklib.BIT_GENERATOR:sv <0x260be893>
+			streams:   9, words:  4013
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
 		                 Instances  Unique
 		Modules:                 3       3
-		Registers:              17      17
-		Scalar wires:            9       -
-		Vectored wires:          1       -
+		Registers:              16      16
+		Scalar wires:            8       -
 		Always blocks:           5       5
 		Initial blocks:          3       3
-		Cont. assignments:       1       1
-		Pseudo assignments:      8       8
+		Pseudo assignments:      7       7
 		Simulation timescale:  1ns
 	Writing initial simulation snapshot: worklib.BIT_GENERATOR_TB:sv
 xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
@@ -49,13 +47,13 @@ xcelium> input -quiet .reinvoke.sim
 xcelium> file delete .reinvoke.sim
 xcelium> run
 xmsim: *W,DFUSE: $dumpfile BIT_GENERATOR_TB.vcd is already in use (VCD file).
-            File: ./bit_generator_tb.sv, line = 45, pos = 16
+            File: ./bit_generator_tb.sv, line = 44, pos = 16
            Scope: BIT_GENERATOR_TB
             Time: 0 FS + 0
 
 xmsim: *W,VCDFUSE: Default VCD file name verilog.dump already in use (VCD file).
             Time: 0 FS + 1
 
-Simulation complete via $finish(1) at time 62582406 NS + 0
-./bit_generator_tb.sv:80         $finish;
+Simulation complete via $finish(1) at time 62664906 NS + 0
+./bit_generator_tb.sv:84         $finish;
 xcelium> 

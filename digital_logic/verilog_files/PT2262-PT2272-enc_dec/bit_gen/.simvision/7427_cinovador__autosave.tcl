@@ -44,10 +44,12 @@ set assert_reporting_mode 0
 set vcd_compact_mode 0
 alias . run
 alias quit exit
-database -open -vcd -into verilog.dump _verilog.dump1 -timescale fs
-database -open -shm -into waves.shm waves -default
 database -open -vcd -into BIT_GENERATOR_TB.vcd _BIT_GENERATOR_TB.vcd1 -timescale fs
-probe -create -database waves BIT_GENERATOR_TB.DUT.bit_type BIT_GENERATOR_TB.DUT.input_bit BIT_GENERATOR_TB.DUT.osc_clk BIT_GENERATOR_TB.DUT.output_signal BIT_GENERATOR_TB.DUT.pulse_counter BIT_GENERATOR_TB.DUT.rst
-probe -create -database waves BIT_GENERATOR_TB.DUT.clk_rose_up BIT_GENERATOR_TB.DUT.current_state BIT_GENERATOR_TB.DUT.enable_generation BIT_GENERATOR_TB.DUT.enable_pulse_counting BIT_GENERATOR_TB.DUT.next_state BIT_GENERATOR_TB.DUT.past_clk
+database -open -shm -into waves.shm waves -default
+database -open -vcd -into verilog.dump _verilog.dump1 -timescale fs
+probe -create -database waves BIT_GENERATOR_TB.DUT.input_bit BIT_GENERATOR_TB.DUT.osc_clk BIT_GENERATOR_TB.DUT.output_signal BIT_GENERATOR_TB.DUT.pulse_counter BIT_GENERATOR_TB.DUT.rst
+probe -create -database waves BIT_GENERATOR_TB.DUT.current_state BIT_GENERATOR_TB.DUT.enable_generation BIT_GENERATOR_TB.DUT.enable_pulse_counting BIT_GENERATOR_TB.DUT.next_state
+probe -create -database waves BIT_GENERATOR_TB.CLK_DIVIDER.INPUT_CLK BIT_GENERATOR_TB.CLK_DIVIDER.OUTPUT_CLK BIT_GENERATOR_TB.CLK_DIVIDER.RST BIT_GENERATOR_TB.CLK_DIVIDER.clk_cycle_counting BIT_GENERATOR_TB.CLK_DIVIDER.divider_index_ceil
+probe -create -database waves BIT_GENERATOR_TB.DUT.current_state BIT_GENERATOR_TB.DUT.enable_generation BIT_GENERATOR_TB.DUT.enable_pulse_counting BIT_GENERATOR_TB.DUT.input_bit BIT_GENERATOR_TB.DUT.next_state BIT_GENERATOR_TB.DUT.osc_clk BIT_GENERATOR_TB.DUT.output_signal BIT_GENERATOR_TB.DUT.pulse_counter BIT_GENERATOR_TB.DUT.rst
 
 simvision -input /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/bit_gen/.simvision/7427_cinovador__autosave.tcl.svcf

@@ -23,7 +23,6 @@ module BIT_GENERATOR_TB();
         .rst(mock_RST_BIT_GENERATOR),
         .enable_generation(mock_ENB_GENERATION),
         .input_bit(mock_INPUT_BIT),
-        .bit_type(3'b000),
         .output_signal()
     );
 
@@ -63,9 +62,14 @@ module BIT_GENERATOR_TB();
         @(posedge dut_OUTPUT_CLK);
         mock_RST_BIT_GENERATOR = 1;
         @(posedge dut_OUTPUT_CLK);
-        mock_ENB_GENERATION = 1;
         mock_INPUT_BIT = 1;
+        mock_ENB_GENERATION = 0;
 
+        @(posedge dut_OUTPUT_CLK);
+        mock_ENB_GENERATION = 1;
+
+        // @(posedge dut_OUTPUT_CLK);
+        // mock_ENB_GENERATION = 0;
 
         // Iterates over 500 oscillator clock cycles.
         for(int i = 0; i < 150; i++) begin
