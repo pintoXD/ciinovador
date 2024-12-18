@@ -79,3 +79,11 @@ s78(17Dec2024:17:25:00):  xrun -64bit bit_generator_tb.sv bit_generator.sv ../os
 s79(17Dec2024:17:25:25):  xrun -64bit bit_generator_tb.sv bit_generator.sv ../oscillator/clock_divider.sv +access+rw +gui -s 
 s80(17Dec2024:17:26:14):  xrun -64bit bit_generator_tb.sv bit_generator.sv ../oscillator/clock_divider.sv +access+rw +gui -s 
 s81(17Dec2024:17:26:24):  xrun -64bit bit_generator_tb.sv bit_generator.sv ../oscillator/clock_divider.sv +access+rw +gui -s 
+s82(18Dec2024:10:49:34):  xrun -64bit bit_generator_tb.sv bit_generator.sv ../oscillator/clock_divider.sv +access+rw +gui 
+s83(18Dec2024:10:53:46):  xrun -64bit bit_generator_tb.sv bit_generator.sv ../oscillator/clock_divider.sv +access+rw +gui "-s " 
+s84(18Dec2024:10:57:41):  xrun -64bit bit_generator_tb.sv bit_generator.sv ../oscillator/clock_divider.sv +access+rw +gui -s 
+s85(18Dec2024:11:00:17):  xrun -64bit bit_generator_tb.sv bit_generator.sv ../oscillator/clock_divider.sv +access+rw +gui -s 
+s86(18Dec2024:11:09:36):  xrun -64bit bit_generator_tb.sv bit_generator.sv ../oscillator/clock_divider.sv +access+rw +gui 
+s87(18Dec2024:11:13:10):  xrun -64bit bit_generator_tb.sv bit_generator.sv ../oscillator/clock_divider.sv +access+rw +gui "-s " 
+s88(18Dec2024:11:15:18):  xrun -64bit bit_generator_tb.sv bit_generator.sv ../oscillator/clock_divider.sv +access+rw +gui -s 
+s89(18Dec2024:11:17:54):  xrun -64bit bit_generator_tb.sv bit_generator.sv ../oscillator/clock_divider.sv +access+rw +gui -s 

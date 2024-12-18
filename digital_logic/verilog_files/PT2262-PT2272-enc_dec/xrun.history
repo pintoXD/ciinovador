@@ -1,0 +1,1 @@
+s1(18Dec2024:10:13:56):  xrun -64bit bit_generator_tb.sv bit_generator.sv ../oscillator/clock_divider.sv +access+rw +gui 

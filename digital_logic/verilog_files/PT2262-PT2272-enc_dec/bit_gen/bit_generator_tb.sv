@@ -62,7 +62,7 @@ module BIT_GENERATOR_TB();
         @(posedge dut_OUTPUT_CLK);
         mock_RST_BIT_GENERATOR = 1;
         @(posedge dut_OUTPUT_CLK);
-        mock_INPUT_BIT = 1;
+        mock_INPUT_BIT = 1'bx;
         mock_ENB_GENERATION = 0;
 
         @(posedge dut_OUTPUT_CLK);

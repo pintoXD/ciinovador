@@ -1,0 +1,13 @@
+xrun(64): 22.09-s013: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	22.09-s013: Started on Dec 18, 2024 at 10:13:55 -03
+xrun
+	-64bit
+	bit_generator_tb.sv
+	bit_generator.sv
+	../oscillator/clock_divider.sv
+	+access+rw
+	+gui
+xrun: *E,FILEMIS: Cannot find the provided file bit_generator_tb.sv.
+xrun: *E,FILEMIS: Cannot find the provided file bit_generator.sv.
+xrun: *E,FILEMIS: Cannot find the provided file ../oscillator/clock_divider.sv.
+TOOL:	xrun(64)	22.09-s013: Exiting on Dec 18, 2024 at 10:13:56 -03  (total: 00:00:01)

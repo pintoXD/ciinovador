@@ -1,5 +1,5 @@
 xrun(64): 22.09-s013: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	22.09-s013: Started on Dec 17, 2024 at 17:26:24 -03
+TOOL:	xrun(64)	22.09-s013: Started on Dec 18, 2024 at 11:17:54 -03
 xrun
 	-64bit
 	bit_generator_tb.sv
@@ -9,8 +9,8 @@ xrun
 	+gui
 	-s
 Recompiling... reason: file './bit_generator.sv' is newer than expected.
-	expected: Tue Dec 17 17:10:39 2024
-	actual:   Tue Dec 17 17:26:22 2024
+	expected: Wed Dec 18 11:14:50 2024
+	actual:   Wed Dec 18 11:17:44 2024
 file: bit_generator.sv
 	module worklib.BIT_GENERATOR:sv
 		errors: 0, warnings: 0
@@ -21,8 +21,8 @@ file: bit_generator.sv
 xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.BIT_GENERATOR:sv <0x260be893>
-			streams:   9, words:  4013
+		worklib.BIT_GENERATOR:sv <0x3f974809>
+			streams:   9, words:  5854
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:

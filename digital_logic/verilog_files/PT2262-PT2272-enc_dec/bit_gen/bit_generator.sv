@@ -54,18 +54,32 @@ always_comb begin : magic_manager
                     next_state = GENERATE_BIT_1;
                 end else if (input_bit === 1'b0) begin
                     next_state = GENERATE_BIT_0;
-                end else if (input_bit === 1'bz) begin
+                end else if (input_bit === 1'bx) begin
                     next_state = GENERATE_BIT_F;
                 end else begin
                     next_state = INITIAL_STATE;
                 end
             end
 
+            GENERATE_BIT_0: begin
+                if (pulse_counter == 31) begin
+                    next_state = enable_generation ? INITIAL_STATE : IDLE;
+                end else begin
+                    next_state = GENERATE_BIT_0;
+                end
+            end
             GENERATE_BIT_1: begin
                 if (pulse_counter == 31) begin
                     next_state = enable_generation ? INITIAL_STATE : IDLE;
                 end else begin
                     next_state = GENERATE_BIT_1;
+                end
+            end
+            GENERATE_BIT_F: begin
+                if (pulse_counter == 31) begin
+                    next_state = enable_generation ? INITIAL_STATE : IDLE;
+                end else begin
+                    next_state = GENERATE_BIT_F;
                 end
             end
         endcase
@@ -85,6 +99,7 @@ always_ff @(posedge osc_clk, negedge rst) begin: magic_manager_ff
             IDLE: begin 
                 output_signal <= 0;
                 enable_pulse_counting <= 0;
+                is_first_run <= 1;
             end
 
             INITIAL_STATE: begin
@@ -97,7 +112,7 @@ always_ff @(posedge osc_clk, negedge rst) begin: magic_manager_ff
                 enable_pulse_counting <= 1;
             end
                 
-            GENERATE_BIT_1: begin
+            GENERATE_BIT_0: begin
                     if(pulse_counter < 32) begin
                         if(pulse_counter < 4) begin
                             output_signal <= 1;
@@ -108,20 +123,32 @@ always_ff @(posedge osc_clk, negedge rst) begin: magic_manager_ff
                         end
                     end
             end
-            GENERATE_BIT_0: begin
-                    // if(pulse_counter < 31) begin
-                    //     if(pulse_counter < 4) begin
-                    //         output_signal <= 1;
-                    //     end else if(pulse_counter > 15 && pulse_counter < 20) begin
-                    //         output_signal <= 1;
-                    //     end else begin
-                    //         output_signal <= 0;
-                    //     end
-                    // end else if (pulse_counter == 31) begin
-                    //     output_signal <= 0;
-                    // end
+            GENERATE_BIT_1: begin
+                    if(pulse_counter < 31) begin
+                        if(pulse_counter < 12) begin
+                            output_signal <= 1;
+                        end else if(pulse_counter > 15 && pulse_counter < 28) begin
+                            output_signal <= 1;
+                        end else begin
+                            output_signal <= 0;
+                        end
+                    end else if (pulse_counter == 31) begin
+                        output_signal <= 0;
+                    end
             end
-
+            GENERATE_BIT_F: begin
+                    if(pulse_counter < 31) begin
+                        if(pulse_counter < 4) begin
+                            output_signal <= 1;
+                        end else if(pulse_counter > 15 && pulse_counter < 28) begin
+                            output_signal <= 1;
+                        end else begin
+                            output_signal <= 0;
+                        end
+                    end else if (pulse_counter == 31) begin
+                        output_signal <= 0;
+                    end
+            end
         endcase
     end
 end
