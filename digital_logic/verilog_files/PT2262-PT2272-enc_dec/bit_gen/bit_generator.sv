@@ -1,7 +1,16 @@
+/*
+    This module receives a bit and generates a signal that represents the given
+    bit according to the pt2262 protocol. It receives a 12kHz clock, control signals
+    to select what bit should be generated and an enable bit generation signal. 
+
+    It outputs the signals tha represents the desired bit.
+
+*/
+
 `timescale 1us/1ns
 module BIT_GENERATOR(
     input logic osc_clk, rst, enable_generation,
-    input logic input_bit,
+    input logic [1:0] input_bit,
     output logic output_signal
 );
 
@@ -11,7 +20,7 @@ typedef enum logic[7:0] {
     GENERATE_BIT_1 = 8'h02,
     GENERATE_BIT_0 = 8'h04,
     GENERATE_BIT_F = 8'h08,
-    CHECK_CONTINUOUS_GEN = 8'h10
+    GENERATE_BIT_SYNC = 8'h10
 } FSM_STATE;
 
 
@@ -50,12 +59,14 @@ always_comb begin : magic_manager
             end
 
             INITIAL_STATE: begin
-                if(input_bit === 1'b1) begin
-                    next_state = GENERATE_BIT_1;
-                end else if (input_bit === 1'b0) begin
+                if(input_bit == 2'b00) begin
                     next_state = GENERATE_BIT_0;
-                end else if (input_bit === 1'bx) begin
+                end else if (input_bit == 2'b01) begin
+                    next_state = GENERATE_BIT_1;
+                end else if (input_bit == 2'b10) begin
                     next_state = GENERATE_BIT_F;
+                end else if (input_bit == 2'b11) begin
+                    next_state = GENERATE_BIT_SYNC;
                 end else begin
                     next_state = INITIAL_STATE;
                 end

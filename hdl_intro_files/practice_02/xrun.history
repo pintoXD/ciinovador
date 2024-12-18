@@ -26,3 +26,12 @@ s25(18Nov2024:12:30:50):  xrun -64bit shiftreg_op_tb.sv shiftreg_op.sv
 s26(18Nov2024:12:31:40):  xrun -64bit shiftreg_op_tb.sv shiftreg_op.sv 
 s27(18Nov2024:12:32:26):  xrun -64bit shiftreg_op_tb.sv shiftreg_op.sv 
 s28(18Nov2024:15:49:11):  xrun -64bit shiftreg_op_tb.sv shiftreg_op.sv 
+s29(18Dec2024:15:36:39):  xrun -64bit shift_register_bidir_tb.sv shift_register_bidir.sv 
+s30(18Dec2024:15:37:44):  xrun -64bit shift_register_bidir_tb.sv shift_register_bidir.sv 
+s31(18Dec2024:15:38:34):  xrun -64bit shift_register_bidir_tb.sv shift_register_bidir.sv 
+s32(18Dec2024:15:39:43):  xrun -64bit shift_register_bidir_tb.sv shift_register_bidir.sv 
+s33(18Dec2024:15:42:07):  xrun -64bit shift_register_bidir_tb.sv shift_register_bidir.sv 
+s34(18Dec2024:15:43:12):  xrun -64bit shift_register_bidir_tb.sv shift_register_bidir.sv 
+s35(18Dec2024:15:43:28):  xrun -64bit shift_register_bidir_tb.sv shift_register_bidir.sv 
+s36(18Dec2024:15:43:37):  xrun -64bit shift_register_bidir_tb.sv shift_register_bidir.sv 
+s37(18Dec2024:15:43:45):  xrun -64bit shift_register_bidir_tb.sv shift_register_bidir.sv 

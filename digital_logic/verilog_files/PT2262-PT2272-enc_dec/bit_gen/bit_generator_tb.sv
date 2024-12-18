@@ -4,7 +4,7 @@
 `timescale 1us/1ns
 module BIT_GENERATOR_TB();
     logic mock_INPUT_CLK, mock_RST, mock_ENB_GENERATION;
-    logic mock_INPUT_BIT;
+    logic [1:0] mock_INPUT_BIT;
     logic mock_RST_BIT_GENERATOR;
     logic dut_OUTPUT_CLK;
 
@@ -62,14 +62,14 @@ module BIT_GENERATOR_TB();
         @(posedge dut_OUTPUT_CLK);
         mock_RST_BIT_GENERATOR = 1;
         @(posedge dut_OUTPUT_CLK);
-        mock_INPUT_BIT = 1'bx;
+        mock_INPUT_BIT = 2'b10;
         mock_ENB_GENERATION = 0;
 
         @(posedge dut_OUTPUT_CLK);
         mock_ENB_GENERATION = 1;
 
-        // @(posedge dut_OUTPUT_CLK);
-        // mock_ENB_GENERATION = 0;
+        @(posedge dut_OUTPUT_CLK);
+        mock_ENB_GENERATION = 0;
 
         // Iterates over 500 oscillator clock cycles.
         for(int i = 0; i < 150; i++) begin
@@ -78,7 +78,7 @@ module BIT_GENERATOR_TB();
             // $display("Index %0d: %0d", i, DUT.output_signal);
         end
 
-        mock_ENB_GENERATION = 0;
+        // mock_ENB_GENERATION = 0;
         mock_INPUT_BIT = 1;
         #50000us;
         $finish;

@@ -1,0 +1,25 @@
+$date
+    Dec 18, 2024  15:50:41
+$end
+$version
+    TOOL:	xmsim(64)	22.09-s013
+$end
+$timescale
+    1 ps
+$end
+
+$scope module BIDIR_SHIFTREG_TB $end
+$var parameter 32 !    N $end
+
+$scope module uut $end
+$var parameter 32 "    N $end
+$upscope $end
+
+$upscope $end
+
+$enddefinitions $end
+$dumpvars
+b100 "
+b100 !
+$end
+#155000
