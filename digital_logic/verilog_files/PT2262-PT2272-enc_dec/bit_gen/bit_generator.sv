@@ -20,13 +20,19 @@ typedef enum logic[7:0] {
     GENERATE_BIT_1 = 8'h02,
     GENERATE_BIT_0 = 8'h04,
     GENERATE_BIT_F = 8'h08,
-    GENERATE_BIT_SYNC = 8'h10
+    GENERATE_BIT_SYNC_0 = 8'h10,
+    GENERATE_BIT_SYNC_1 = 8'h11,
+    GENERATE_BIT_SYNC_2 = 8'h12,
+    GENERATE_BIT_SYNC_3 = 8'h13,
+    GENERATE_BIT_SYNC_4 = 8'h14
 } FSM_STATE;
 
 
 FSM_STATE current_state, next_state;
 logic [4:0] pulse_counter;
+logic [6:0] pulse_counter_sync;
 logic enable_pulse_counting;
+logic enable_pulse_counting_sync;
 logic is_first_run;
 
 // Updates the current state
@@ -34,8 +40,8 @@ always_ff @(posedge osc_clk) begin : state_manager
     current_state <= next_state;
 end
 
-// Manages the pulse counter
-always_ff @(posedge osc_clk, posedge rst) begin : pulse_counter_ff
+// Manages the pulse counter for bits 0, 1 and F
+always_ff @(posedge osc_clk) begin : pulse_counter_ff
     if(enable_pulse_counting) begin
         pulse_counter <= pulse_counter + 1;
     end else begin
@@ -43,11 +49,23 @@ always_ff @(posedge osc_clk, posedge rst) begin : pulse_counter_ff
     end
 end 
 
+// Manages the pulse counter for bit SYNC
+always_ff @(posedge osc_clk) begin : pulse_counter_sync_ff
+    if(enable_pulse_counting_sync) begin
+        pulse_counter_sync <= pulse_counter_sync + 1;
+    end else begin
+        pulse_counter_sync <= 0;
+    end
+end 
+
+
+
+
 always_comb begin : magic_manager
     next_state = current_state;
 
     if(~rst) begin
-        next_state = INITIAL_STATE;
+        next_state = IDLE;
     end else begin
         case (current_state)
             IDLE: begin
@@ -66,7 +84,7 @@ always_comb begin : magic_manager
                 end else if (input_bit == 2'b10) begin
                     next_state = GENERATE_BIT_F;
                 end else if (input_bit == 2'b11) begin
-                    next_state = GENERATE_BIT_SYNC;
+                    next_state = GENERATE_BIT_SYNC_0;
                 end else begin
                     next_state = INITIAL_STATE;
                 end
@@ -79,6 +97,7 @@ always_comb begin : magic_manager
                     next_state = GENERATE_BIT_0;
                 end
             end
+
             GENERATE_BIT_1: begin
                 if (pulse_counter == 31) begin
                     next_state = enable_generation ? INITIAL_STATE : IDLE;
@@ -86,11 +105,20 @@ always_comb begin : magic_manager
                     next_state = GENERATE_BIT_1;
                 end
             end
+
             GENERATE_BIT_F: begin
                 if (pulse_counter == 31) begin
                     next_state = enable_generation ? INITIAL_STATE : IDLE;
                 end else begin
                     next_state = GENERATE_BIT_F;
+                end
+            end
+
+            GENERATE_BIT_SYNC_0: begin
+                if (pulse_counter == 127) begin
+                    next_state = enable_generation ? INITIAL_STATE : IDLE;
+                end else begin
+                    next_state = GENERATE_BIT_SYNC_0;
                 end
             end
         endcase
@@ -104,12 +132,14 @@ always_ff @(posedge osc_clk, negedge rst) begin: magic_manager_ff
     if(~rst) begin
         output_signal <= 0;
         enable_pulse_counting <= 0;
+        enable_pulse_counting_sync <= 0;
         is_first_run <= 1;
     end else begin
         case (current_state)
             IDLE: begin 
                 output_signal <= 0;
                 enable_pulse_counting <= 0;
+                enable_pulse_counting_sync <= 0;
                 is_first_run <= 1;
             end
 
@@ -120,7 +150,17 @@ always_ff @(posedge osc_clk, negedge rst) begin: magic_manager_ff
                 end else begin
                     output_signal <= 1;
                 end
-                enable_pulse_counting <= 1;
+
+                // Enabling the pulse counting for the SYNC bit    
+                if (input_bit == 2'b11) begin
+                    enable_pulse_counting_sync <= 1;
+                end else begin
+                    enable_pulse_counting_sync <= 0;
+                end
+
+                // Enabling the pulse counting for the ordinary bits
+                if (input_bit != 2'b11) 
+                    enable_pulse_counting <= 1;
             end
                 
             GENERATE_BIT_0: begin
@@ -160,33 +200,18 @@ always_ff @(posedge osc_clk, negedge rst) begin: magic_manager_ff
                         output_signal <= 0;
                     end
             end
+            GENERATE_BIT_SYNC_0: begin //Generates HIGH por 4 oscillator cycles and a LOW for 28 oscillator cycles
+                    if(pulse_counter < 128) begin
+                        if(pulse_counter_sync < 4) begin
+                            output_signal <= 1;
+                        end else begin
+                            output_signal <= 0;
+                        end
+                    end 
+            end
         endcase
     end
 end
-
-
-
-
-// always_ff @(posedge osc_clk, negedge rst) begin : BIT_MANAGEMENT
-     
-//     if(~rst)begin
-//         pulse_counter <= 0;
-//         output_signal <= 1;    
-//     end else begin
-//         if(pulse_counter < 4)begin
-//             output_signal <= 1;    
-//         end else if (pulse_counter > 15 && pulse_counter < 20) begin
-//             output_signal <= 1;    
-//         end else begin
-//             output_signal <= 0;
-//         end
-
-//         pulse_counter <= pulse_counter + 1;
-
-//     end
-
-// end
-
 
 
 endmodule

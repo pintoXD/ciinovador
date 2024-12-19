@@ -62,23 +62,44 @@ module BIT_GENERATOR_TB();
         @(posedge dut_OUTPUT_CLK);
         mock_RST_BIT_GENERATOR = 1;
         @(posedge dut_OUTPUT_CLK);
-        mock_INPUT_BIT = 2'b10;
+        mock_INPUT_BIT = 2'b00;
         mock_ENB_GENERATION = 0;
 
         @(posedge dut_OUTPUT_CLK);
         mock_ENB_GENERATION = 1;
 
-        @(posedge dut_OUTPUT_CLK);
-        mock_ENB_GENERATION = 0;
-
-        // Iterates over 500 oscillator clock cycles.
-        for(int i = 0; i < 150; i++) begin
+        for(int i = 0; i < 30; i++) begin
             @(posedge dut_OUTPUT_CLK);
             #1ns;
             // $display("Index %0d: %0d", i, DUT.output_signal);
         end
 
-        // mock_ENB_GENERATION = 0;
+        // @(posedge dut_OUTPUT_CLK);
+        mock_INPUT_BIT = 2'b01;
+
+        for(int i = 0; i < 30; i++) begin
+            @(posedge dut_OUTPUT_CLK);
+            #1ns;
+            // $display("Index %0d: %0d", i, DUT.output_signal);
+        end
+
+        mock_INPUT_BIT = 2'b10;
+
+        for(int i = 0; i < 30; i++) begin
+            @(posedge dut_OUTPUT_CLK);
+            #1ns;
+            // $display("Index %0d: %0d", i, DUT.output_signal);
+        end
+
+        mock_INPUT_BIT = 2'b11;
+
+        for(int i = 0; i < 255; i++) begin
+            @(posedge dut_OUTPUT_CLK);
+            #1ns;
+            // $display("Index %0d: %0d", i, DUT.output_signal);
+        end
+
+        mock_ENB_GENERATION = 0;
         mock_INPUT_BIT = 1;
         #50000us;
         $finish;
