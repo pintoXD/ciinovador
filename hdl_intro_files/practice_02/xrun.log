@@ -1,73 +1,59 @@
 xrun(64): 22.09-s013: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	22.09-s013: Started on Nov 18, 2024 at 15:49:11 -03
+TOOL:	xrun(64)	22.09-s013: Started on Dec 18, 2024 at 15:43:45 -03
 xrun
 	-64bit
-	shiftreg_op_tb.sv
-	shiftreg_op.sv
-Recompiling... reason: file './shiftreg_op_tb.sv' is newer than expected.
-	expected: Mon Nov 18 12:32:22 2024
-	actual:   Mon Nov 18 12:33:28 2024
+	shift_register_bidir_tb.sv
+	shift_register_bidir.sv
+Recompiling... reason: file './shift_register_bidir_tb.sv' is newer than expected.
+	expected: Wed Dec 18 15:43:35 2024
+	actual:   Wed Dec 18 15:43:43 2024
+file: shift_register_bidir_tb.sv
+	module worklib.test_shift_register_bidir:sv
+		errors: 0, warnings: 0
 		Caching library 'worklib' ....... Done
 	Elaborating the design hierarchy:
 	Top level design units:
-		test_shiftreg_op
+		test_shift_register_bidir
 xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
-	Building instance overlay tables: .................... Done
+	Building instance overlay tables: ..........
+        assert(q_out == 4'b0000) else $fatal("Reset failed");
+                                                          |
+xmelab: *W,STRINT (./shift_register_bidir_tb.sv,46|58): String literal argument supplied to integer parameter.
+        assert(q_out == 4'b1010) else $fatal("Load data failed");
+                                                              |
+xmelab: *W,STRINT (./shift_register_bidir_tb.sv,53|62): String literal argument supplied to integer parameter.
+        assert(q_out == 4'b0101) else $fatal("Shift right failed");
+                                                                |
+xmelab: *W,STRINT (./shift_register_bidir_tb.sv,58|64): String literal argument supplied to integer parameter.
+            $fatal("Shift left failed");
+                                     |
+xmelab: *W,STRINT (./shift_register_bidir_tb.sv,69|37): String literal argument supplied to integer parameter.
+.......... Done
+	Generating native compiled code:
+		worklib.test_shift_register_bidir:sv <0x26136899>
+			streams:   4, words:  9556
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
 		                 Instances  Unique
 		Modules:                 2       2
-		Registers:              26      26
-		Scalar wires:            8       -
-		Vectored wires:          4       -
-		Always blocks:           1       1
-		Initial blocks:          3       3
-		Cont. assignments:       1       2
-		Pseudo assignments:      7       7
-		Assertions:             15      15
+		Registers:              11      11
+		Scalar wires:            4       -
+		Vectored wires:          3       -
+		Always blocks:           2       2
+		Initial blocks:          1       1
+		Pseudo assignments:      2       2
+		Assertions:              4       4
 		Simulation timescale:  1ps
-	Writing initial simulation snapshot: worklib.test_shiftreg_op:sv
-Loading snapshot worklib.test_shiftreg_op:sv .................... Done
+	Writing initial simulation snapshot: worklib.test_shift_register_bidir:sv
+Loading snapshot worklib.test_shift_register_bidir:sv .................... Done
 xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
 xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
 xcelium> run
-                Tempo     Entradas LUT                                  Saídas
-                         enable  shift_in  d   OP            q     shift_out_left  shift_out_right
-                ====   ============================      ==========================================
-                   0       0      0      0000  00          xxxx         x              x
-                   5       1      0      1010  11          1010         1              0
-                  10       0      0      1010  11          1010         1              0
-                  15       1      0      1010  10          0101         0              1
-                  20       0      0      1010  10          0101         0              1
-                  25       1      0      1010  10          0010         0              0
-                  30       0      0      1010  10          0010         0              0
-                  35       1      0      1010  10          0001         0              1
-                  40       0      0      1010  10          0001         0              1
-                  45       1      0      1010  10          0000         0              0
-                  50       0      0      1010  10          0000         0              0
-                  55       1      0      1010  11          1010         1              0
-                  60       0      0      1010  11          1010         1              0
-                  65       1      0      1010  01          0100         0              0
-                  70       0      0      1010  01          0100         0              0
-                  75       1      0      1010  01          1000         1              0
-                  80       0      0      1010  01          1000         1              0
-                  85       1      0      1010  01          0000         0              0
-                  90       0      0      1010  01          0000         0              0
-                  95       1      0      1111  11          1111         1              1
-                 100       0      0      1111  11          1111         1              1
-                 105       1      0      1111  00          1111         1              1
-                 110       0      0      1111  00          1111         1              1
-                 115       1      0      1111  01          1110         1              0
-                 120       0      0      1111  01          1110         1              0
-                 125       1      0      1111  01          1100         1              0
-                 130       0      0      1111  01          1100         1              0
-                 135       1      0      1111  01          1000         1              0
-                 140       0      0      1111  01          1000         1              0
-                 145       1      0      1111  01          0000         0              0
-                 150       0      0      1111  01          0000         0              0
-All test cases passed.
-Simulation complete via $finish(1) at time 155 NS + 0
-./shiftreg_op_tb.sv:230         $finish;
+##### q_out = 0101 #####
+q_out = 0100
+xmsim: *F,ASRTST (./shift_register_bidir_tb.sv,69): (time 66 NS) Assertion test_shift_register_bidir.__assert_4 has failed
+Simulation terminated via $fatal(1) at time 66 NS + 0
+./shift_register_bidir_tb.sv:69             $fatal("Shift left failed");
 xcelium> exit
-TOOL:	xrun(64)	22.09-s013: Exiting on Nov 18, 2024 at 15:49:23 -03  (total: 00:00:12)
+TOOL:	xrun(64)	22.09-s013: Exiting on Dec 18, 2024 at 15:43:45 -03  (total: 00:00:00)

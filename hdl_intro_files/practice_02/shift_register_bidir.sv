@@ -1,3 +1,5 @@
+`timescale 1ns/1ps
+
 module shift_register_bidir ( 
     input logic clk, reset_n, load_shift, right_left, 
     input logic [3:0] data_in, 

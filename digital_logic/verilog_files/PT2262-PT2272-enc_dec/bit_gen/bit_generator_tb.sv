@@ -4,7 +4,8 @@
 /* verilator lint_off PINCONNECTEMPTY */
 `timescale 1us/1ns
 module BIT_GENERATOR_TB();
-    logic mock_INPUT_CLK, mock_RST;
+    logic mock_INPUT_CLK, mock_RST, mock_ENB_GENERATION;
+    logic [1:0] mock_INPUT_BIT;
     logic mock_RST_BIT_GENERATOR;
     logic dut_OUTPUT_CLK;
 
@@ -21,8 +22,8 @@ module BIT_GENERATOR_TB();
     BIT_GENERATOR DUT(
         .osc_clk(dut_OUTPUT_CLK),
         .rst(mock_RST_BIT_GENERATOR),
-        .input_bit(1),
-        .bit_type(3'b000),
+        .enable_generation(mock_ENB_GENERATION),
+        .input_bit(mock_INPUT_BIT),
         .output_signal()
     );
 
@@ -62,13 +63,25 @@ module BIT_GENERATOR_TB();
         @(posedge dut_OUTPUT_CLK);
         mock_RST_BIT_GENERATOR = 1;
         @(posedge dut_OUTPUT_CLK);
+        mock_INPUT_BIT = 2'b10;
+        mock_ENB_GENERATION = 0;
+
+        @(posedge dut_OUTPUT_CLK);
+        mock_ENB_GENERATION = 1;
+
+        @(posedge dut_OUTPUT_CLK);
+        mock_ENB_GENERATION = 0;
 
         // Iterates over 500 oscillator clock cycles.
-        for(int i = 0; i < 500; i++) begin
+        for(int i = 0; i < 150; i++) begin
             @(posedge dut_OUTPUT_CLK);
             #1ns;
             // $display("Index %0d: %0d", i, DUT.output_signal);
         end
+
+        // mock_ENB_GENERATION = 0;
+        mock_INPUT_BIT = 1;
+        #50000us;
         $finish;
     end
 

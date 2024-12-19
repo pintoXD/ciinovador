@@ -1,0 +1,132 @@
+xrun(64): 22.09-s013: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	22.09-s013: Started on Dec 18, 2024 at 15:50:30 -03
+xrun
+	-64bit
+	bidir_shiftreg_tb.sv
+	bidir_shiftreg.sv
+Recompiling... reason: file './bidir_shiftreg_tb.sv' is newer than expected.
+	expected: Wed Dec 18 15:50:00 2024
+	actual:   Wed Dec 18 15:50:29 2024
+file: bidir_shiftreg_tb.sv
+	module worklib.BIDIR_SHIFTREG_TB:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		BIDIR_SHIFTREG_TB
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+	Building instance overlay tables: ..........
+        assert(q == 4'b1010 && shift_out_left == 1'b1 && shift_out_right == 1'b0) else $fatal("Test case 1 failed");
+                                                                                                                 |
+xmelab: *W,STRINT (./bidir_shiftreg_tb.sv,53|113): String literal argument supplied to integer parameter.
+        assert(q == 4'b0101 && shift_out_right == 1'b1) else $fatal("Test case 2 failed");
+                                                                                       |
+xmelab: *W,STRINT (./bidir_shiftreg_tb.sv,63|87): String literal argument supplied to integer parameter.
+        assert(q == 4'b0010 && shift_out_right == 1'b0) else $fatal("Test case 3 failed");
+                                                                                       |
+xmelab: *W,STRINT (./bidir_shiftreg_tb.sv,73|87): String literal argument supplied to integer parameter.
+        assert(q == 4'b0001 && shift_out_right == 1'b1) else $fatal("Test case 4 failed");
+                                                                                       |
+xmelab: *W,STRINT (./bidir_shiftreg_tb.sv,83|87): String literal argument supplied to integer parameter.
+        assert(q == 4'b0000 && shift_out_right == 1'b0) else $fatal("Test case 5 failed");
+                                                                                       |
+xmelab: *W,STRINT (./bidir_shiftreg_tb.sv,93|87): String literal argument supplied to integer parameter.
+        assert(q == 4'b1010 && shift_out_left == 1'b1 && shift_out_right == 1'b0) else $fatal("Test case 6 failed");
+                                                                                                                 |
+xmelab: *W,STRINT (./bidir_shiftreg_tb.sv,104|113): String literal argument supplied to integer parameter.
+        assert(q == 4'b0100 && shift_out_left == 1'b0) else $fatal("Test case 7 failed");
+                                                                                      |
+xmelab: *W,STRINT (./bidir_shiftreg_tb.sv,114|86): String literal argument supplied to integer parameter.
+        assert(q == 4'b1000 && shift_out_left == 1'b1) else $fatal("Test case 8 failed");
+                                                                                      |
+xmelab: *W,STRINT (./bidir_shiftreg_tb.sv,124|86): String literal argument supplied to integer parameter.
+        assert(q == 4'b0000 && shift_out_left == 1'b0) else $fatal("Test case 9 failed");
+                                                                                      |
+xmelab: *W,STRINT (./bidir_shiftreg_tb.sv,134|86): String literal argument supplied to integer parameter.
+        assert(q == 4'b1111 && shift_out_left == 1'b1 && shift_out_right == 1'b1) else $fatal("Test case 10 failed");
+                                                                                                                  |
+xmelab: *W,STRINT (./bidir_shiftreg_tb.sv,144|114): String literal argument supplied to integer parameter.
+        assert(q == 4'b1111 && shift_out_left == 1'b1 && shift_out_right == 1'b1) else $fatal("Test case 11 failed");
+                                                                                                                  |
+xmelab: *W,STRINT (./bidir_shiftreg_tb.sv,153|114): String literal argument supplied to integer parameter.
+        assert(q == 4'b1110 && shift_out_left == 1'b1) else $fatal("Test case 12 failed");
+                                                                                       |
+xmelab: *W,STRINT (./bidir_shiftreg_tb.sv,164|87): String literal argument supplied to integer parameter.
+        assert(q == 4'b1100 && shift_out_left == 1'b1) else $fatal("Test case 13 failed");
+                                                                                       |
+xmelab: *W,STRINT (./bidir_shiftreg_tb.sv,174|87): String literal argument supplied to integer parameter.
+        assert(q == 4'b1000 && shift_out_left == 1'b1) else $fatal("Test case 14 failed");
+                                                                                       |
+xmelab: *W,STRINT (./bidir_shiftreg_tb.sv,184|87): String literal argument supplied to integer parameter.
+        assert(q == 4'b0000 && shift_out_left == 1'b0) else $fatal("Test case 15 failed");
+                                                                                       |
+xmelab: *W,STRINT (./bidir_shiftreg_tb.sv,194|87): String literal argument supplied to integer parameter.
+.......... Done
+	Generating native compiled code:
+		worklib.BIDIR_SHIFTREG:sv <0x4ecdfa07>
+			streams:   3, words:  1064
+		worklib.BIDIR_SHIFTREG_TB:sv <0x6fc48553>
+			streams:  11, words: 35193
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 2       2
+		Registers:              25      25
+		Scalar wires:            8       -
+		Vectored wires:          4       -
+		Always blocks:           1       1
+		Initial blocks:          3       3
+		Cont. assignments:       1       2
+		Pseudo assignments:      7       7
+		Assertions:             15      15
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.BIDIR_SHIFTREG_TB:sv
+Loading snapshot worklib.BIDIR_SHIFTREG_TB:sv .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
+xcelium> run
+xmsim: *W,DVEXACC: some objects excluded from $dumpvars due to access restrictions, use +access+r on command line for access to all objects.
+            File: ./bidir_shiftreg_tb.sv, line = 37, pos = 16
+           Scope: BIDIR_SHIFTREG_TB
+            Time: 0 FS + 0
+
+                Tempo     Entradas LUT                                  Saídas
+                         enable  shift_in  d   OP            q     shift_out_left  shift_out_right
+                ====   ============================      ==========================================
+                   0       0      0      0000  00          xxxx         x              x
+                   5       1      0      1010  11          1010         1              0
+                  10       0      0      1010  11          1010         1              0
+                  15       1      0      1010  10          0101         0              1
+                  20       0      0      1010  10          0101         0              1
+                  25       1      0      1010  10          0010         0              0
+                  30       0      0      1010  10          0010         0              0
+                  35       1      0      1010  10          0001         0              1
+                  40       0      0      1010  10          0001         0              1
+                  45       1      0      1010  10          0000         0              0
+                  50       0      0      1010  10          0000         0              0
+                  55       1      0      1010  11          1010         1              0
+                  60       0      0      1010  11          1010         1              0
+                  65       1      0      1010  01          0100         0              0
+                  70       0      0      1010  01          0100         0              0
+                  75       1      0      1010  01          1000         1              0
+                  80       0      0      1010  01          1000         1              0
+                  85       1      0      1010  01          0000         0              0
+                  90       0      0      1010  01          0000         0              0
+                  95       1      0      1111  11          1111         1              1
+                 100       0      0      1111  11          1111         1              1
+                 105       1      0      1111  00          1111         1              1
+                 110       0      0      1111  00          1111         1              1
+                 115       1      0      1111  01          1110         1              0
+                 120       0      0      1111  01          1110         1              0
+                 125       1      0      1111  01          1100         1              0
+                 130       0      0      1111  01          1100         1              0
+                 135       1      0      1111  01          1000         1              0
+                 140       0      0      1111  01          1000         1              0
+                 145       1      0      1111  01          0000         0              0
+                 150       0      0      1111  01          0000         0              0
+All test cases passed.
+Simulation complete via $finish(1) at time 155 NS + 0
+./bidir_shiftreg_tb.sv:197         $finish;
+xcelium> exit
+TOOL:	xrun(64)	22.09-s013: Exiting on Dec 18, 2024 at 15:50:41 -03  (total: 00:00:11)
