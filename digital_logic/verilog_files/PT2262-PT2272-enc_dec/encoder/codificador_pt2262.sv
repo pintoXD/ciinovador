@@ -108,7 +108,8 @@ always_comb begin : encoder_fsm
     next_state = current_state;
 
     if(reset) begin
-        next_state = RESET_MODULES;
+        // next_state = RESET_MODULES;
+        next_state = INITIALIZE_BIT_GENERATOR;
         bit_generated_flag = 1;
     end else begin
         case(current_state)
@@ -368,8 +369,12 @@ always_ff @(posedge osc_clk, posedge reset) begin : encoder_fsm_ff
 end
 
 
-always_ff @(posedge osc_clk) begin : encoder_state_changer
-    current_state <= next_state;
+always_ff @(posedge osc_clk, posedge reset) begin : encoder_state_changer
+    if(reset) begin
+        current_state <= RESET_MODULES;
+    end else begin
+        current_state <= next_state;
+    end
 end
 
 endmodule

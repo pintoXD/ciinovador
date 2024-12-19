@@ -46,6 +46,7 @@ preferences set toolbar-TimeSearch-WatchWindow {
 #
 catch {group new -name BIT_GENERATOR -overlay 0}
 catch {group new -name ENCONDER -overlay 0}
+catch {group new -name OSCILLATOR -overlay 0}
 group using BIT_GENERATOR
 group set -overlay 0
 group set -comment {}
@@ -90,6 +91,18 @@ group insert \
     simulator::PT2262_ENCODER_TB.DUT.osc_rst \
     simulator::PT2262_ENCODER_TB.DUT.reset \
     simulator::PT2262_ENCODER_TB.DUT.sync
+group using OSCILLATOR
+group set -overlay 0
+group set -comment {}
+group clear 0 end
+
+group insert \
+    simulator::PT2262_ENCODER_TB.DUT.internal_oscillator.DIVIDER \
+    simulator::PT2262_ENCODER_TB.DUT.internal_oscillator.INPUT_CLK \
+    simulator::PT2262_ENCODER_TB.DUT.internal_oscillator.OUTPUT_CLK \
+    simulator::PT2262_ENCODER_TB.DUT.internal_oscillator.RST \
+    simulator::PT2262_ENCODER_TB.DUT.internal_oscillator.clk_cycle_counting[15:0] \
+    simulator::PT2262_ENCODER_TB.DUT.internal_oscillator.divider_index_ceil[15:0]
 
 #
 # Mnemonic Maps
@@ -109,10 +122,10 @@ if {[catch {window new WatchList -name "Design Browser 1" -geometry 1920x1043+-1
 }
 window target "Design Browser 1" on
 browser using {Design Browser 1}
-browser set -scope  simulator::PT2262_ENCODER_TB.DUT.signal_creator 
+browser set -scope  simulator::PT2262_ENCODER_TB.DUT.internal_oscillator 
 browser set \
     -signalsort name
-browser yview see  simulator::PT2262_ENCODER_TB.DUT.signal_creator 
+browser yview see  simulator::PT2262_ENCODER_TB.DUT.internal_oscillator 
 browser timecontrol set -lock 0
 
 #
@@ -139,7 +152,11 @@ set groupId0 [waveform add -groups ENCONDER]
 set groupId0 [waveform add -groups BIT_GENERATOR]
 
 
-waveform xview limits 0 10713351660ns
+set groupId0 [waveform add -groups OSCILLATOR]
+waveform hierarchy collapse $groupId0
+
+
+waveform xview limits 4165547ns 5002611ns
 
 #
 # Waveform Window Links

@@ -1,5 +1,5 @@
 xrun(64): 22.09-s013: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	22.09-s013: Started on Dec 19, 2024 at 12:17:20 -03
+TOOL:	xrun(64)	22.09-s013: Started on Dec 19, 2024 at 14:03:12 -03
 xrun
 	-64bit
 	/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262_tb.sv
@@ -12,11 +12,8 @@ xrun
 	+gui
 	-s
 Recompiling... reason: file './encoder/codificador_pt2262.sv' is newer than expected.
-	expected: Thu Dec 19 12:04:04 2024
-	actual:   Thu Dec 19 12:16:43 2024
-file: /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262_tb.sv
-	module worklib.PT2262_ENCODER_TB:sv
-		errors: 0, warnings: 0
+	expected: Thu Dec 19 14:01:09 2024
+	actual:   Thu Dec 19 14:03:05 2024
 file: /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262.sv
 	module worklib.PT2262_ENCODER:sv
 		errors: 0, warnings: 0
@@ -27,10 +24,10 @@ file: /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-
 xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.PT2262_ENCODER_TB:sv <0x3f0ea9eb>
+		worklib.PT2262_ENCODER_TB:sv <0x5d19ee6a>
 			streams:   8, words:  4953
-		worklib.PT2262_ENCODER:sv <0x5eb48dd9>
-			streams:  21, words: 15384
+		worklib.PT2262_ENCODER:sv <0x0a65d6cf>
+			streams:  21, words: 15643
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
