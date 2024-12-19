@@ -44,7 +44,7 @@ PT2262_ENCODER DUT(
         // mock_A = 8'b101z1111;
 
 
-        for (int i = 0; i < 250; i++) begin
+        for (int i = 0; i < 500; i++) begin
             @(posedge DUT.osc_clk);
             // @(posedge mock_INPUT_CLK);
         end

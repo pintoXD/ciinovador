@@ -11,6 +11,7 @@
 module BIT_GENERATOR(
     input logic osc_clk, rst, enable_generation,
     input logic [1:0] input_bit,
+    output logic bit_sent,
     output logic output_signal
 );
 
@@ -77,6 +78,8 @@ always_comb begin : magic_manager
             end
 
             INITIAL_STATE: begin
+                bit_sent = 0;
+
                 if(input_bit == 2'b00) begin
                     next_state = GENERATE_BIT_0;
                 end else if (input_bit == 2'b01) begin
@@ -92,6 +95,7 @@ always_comb begin : magic_manager
 
             GENERATE_BIT_0: begin
                 if (pulse_counter == 31) begin
+                    bit_sent = 1;
                     next_state = enable_generation ? INITIAL_STATE : IDLE;
                 end else begin
                     next_state = GENERATE_BIT_0;
@@ -100,6 +104,7 @@ always_comb begin : magic_manager
 
             GENERATE_BIT_1: begin
                 if (pulse_counter == 31) begin
+                    bit_sent = 1;
                     next_state = enable_generation ? INITIAL_STATE : IDLE;
                 end else begin
                     next_state = GENERATE_BIT_1;
@@ -108,6 +113,7 @@ always_comb begin : magic_manager
 
             GENERATE_BIT_F: begin
                 if (pulse_counter == 31) begin
+                    bit_sent = 1;
                     next_state = enable_generation ? INITIAL_STATE : IDLE;
                 end else begin
                     next_state = GENERATE_BIT_F;
@@ -116,6 +122,7 @@ always_comb begin : magic_manager
 
             GENERATE_BIT_SYNC_0: begin
                 if (pulse_counter == 127) begin
+                    bit_sent = 1;
                     next_state = enable_generation ? INITIAL_STATE : IDLE;
                 end else begin
                     next_state = GENERATE_BIT_SYNC_0;

@@ -38,6 +38,9 @@ logic bit_gen_enb; // Enable signal for the bit generator
 logic [1:0] bit_gen_input; // Input signal for select the type of the bit that must be generated
 logic bit_gen_output; // Output signal that represents the generated bit
 logic bit_generated_flag; // Flag that indicates that a bit was generated
+logic past_osc_clk;
+logic osc_clk_rose;
+logic bit_sent_flag;
 
 
 assign osc_rst = ~reset; // Oscillator resets on low
@@ -79,7 +82,8 @@ BIT_GENERATOR signal_creator(
     // .rst(bit_gen_rst),
     .enable_generation(bit_gen_enb),
     .input_bit(bit_gen_input),
-    .output_signal(bit_gen_output)
+    .output_signal(bit_gen_output),
+    .bit_sent(bit_sent_flag)
 );
 
 assign cod_o = bit_gen_output;
@@ -89,18 +93,27 @@ assign sync = (bit_gen_input == 2'b11) ? bit_gen_output : 0;
 // This is going to be used to drive the FSM state changing.
 // If two pulses were detected this means that a bit was already generated and we can proceed
 // to the generation of the next bit.
-logic [1:0] bit_gen_pulse_count;
-always_ff @(posedge bit_gen_output, posedge reset) begin : bit_generated_pulse_counter
-    if (reset) begin
-        bit_gen_pulse_count <= 2'b00;
-    end else begin
-        if (bit_gen_output) begin
-            bit_gen_pulse_count <= bit_gen_pulse_count + 1;
-        end else if (bit_gen_pulse_count == 2) begin
-            bit_gen_pulse_count <= 2'b00;
-        end
-    end
+// logic [1:0] bit_gen_pulse_count;
+// always_ff @(posedge bit_gen_output, posedge clk, posedge reset) begin : bit_generated_pulse_counter
+//     if (reset) begin
+//         bit_gen_pulse_count <= 2'b00;
+//     end else begin
+//         if (osc_clk_rose && bit_gen_pulse_count == 1)
+//             bit_gen_pulse_count <= 2'b00;
+//         else
+//             bit_gen_pulse_count <= bit_gen_pulse_count + 1;
+//     end
+// end
+
+
+
+always@(posedge clk)
+begin : save_past_osc_clk
+    past_osc_clk <= osc_clk;
 end
+
+assign osc_clk_rose = ( (osc_clk==1) && (past_osc_clk==0));
+
 
 
 always_comb begin : encoder_fsm
@@ -114,16 +127,21 @@ always_comb begin : encoder_fsm
     end else begin
         case(current_state)
             RESET_MODULES: begin
-                next_state = INITIALIZE_BIT_GENERATOR;
-            end
-
-            INITIALIZE_BIT_GENERATOR: begin
                 next_state = INITIALIZE_OSCILLATOR;
             end
 
             INITIALIZE_OSCILLATOR: begin
-                next_state = GENERATE_A0;
+                if (osc_clk_rose) begin
+                    next_state = INITIALIZE_BIT_GENERATOR;
+                end
+
             end
+
+            INITIALIZE_BIT_GENERATOR: begin
+                if (osc_clk_rose)
+                    next_state = GENERATE_A0;
+            end
+
 
             IDLE: begin
                 if(sync) begin
@@ -135,7 +153,7 @@ always_comb begin : encoder_fsm
 
             GENERATE_A0: begin
                 bit_generated_flag = 0;
-                if (bit_gen_pulse_count == 2) begin
+                if (bit_sent_flag && osc_clk_rose) begin
                     bit_generated_flag = 1;
                     next_state = GENERATE_A1;
                 end
@@ -143,7 +161,7 @@ always_comb begin : encoder_fsm
 
             GENERATE_A1: begin
                 bit_generated_flag = 0;
-                if (bit_gen_pulse_count == 2) begin
+                if (bit_sent_flag && osc_clk_rose) begin
                     bit_generated_flag = 1;
                     next_state = GENERATE_A2;
                 end
@@ -151,7 +169,7 @@ always_comb begin : encoder_fsm
 
             GENERATE_A2: begin
                 bit_generated_flag = 0;
-                if (bit_gen_pulse_count == 2) begin
+                if (bit_sent_flag && osc_clk_rose) begin
                     bit_generated_flag = 1;
                     next_state = GENERATE_A3;
                 end
@@ -159,7 +177,7 @@ always_comb begin : encoder_fsm
 
             GENERATE_A3: begin
                 bit_generated_flag = 0;
-                if (bit_gen_pulse_count == 2) begin
+                if (bit_sent_flag && osc_clk_rose) begin
                     bit_generated_flag = 1;
                     next_state = GENERATE_A4;
                 end
@@ -167,7 +185,7 @@ always_comb begin : encoder_fsm
 
             GENERATE_A4: begin
                 bit_generated_flag = 0;
-                if (bit_gen_pulse_count == 2) begin
+                if (bit_sent_flag && osc_clk_rose) begin
                     bit_generated_flag = 1;
                     next_state = GENERATE_A5;
                 end
@@ -175,7 +193,7 @@ always_comb begin : encoder_fsm
 
             GENERATE_A5: begin
                 bit_generated_flag = 0;
-                if (bit_gen_pulse_count == 2) begin
+                if (bit_sent_flag && osc_clk_rose) begin
                     bit_generated_flag = 1;
                     next_state = GENERATE_A6;
                 end
@@ -183,7 +201,7 @@ always_comb begin : encoder_fsm
 
             GENERATE_A6: begin
                 bit_generated_flag = 0;
-                if (bit_gen_pulse_count == 2) begin
+                if (bit_sent_flag && osc_clk_rose) begin
                     bit_generated_flag = 1;
                     next_state = GENERATE_A7;
                 end
@@ -191,7 +209,7 @@ always_comb begin : encoder_fsm
 
             GENERATE_A7: begin
                 bit_generated_flag = 0;
-                if (bit_gen_pulse_count == 2) begin
+                if (bit_sent_flag && osc_clk_rose) begin
                     bit_generated_flag = 1;
                     next_state = GENERATE_D0;
                 end
@@ -199,7 +217,7 @@ always_comb begin : encoder_fsm
 
             GENERATE_D0: begin
                 bit_generated_flag = 0;
-                if (bit_gen_pulse_count == 2) begin
+                if (bit_sent_flag && osc_clk_rose) begin
                     bit_generated_flag = 1;
                     next_state = GENERATE_D1;
                 end
@@ -207,7 +225,7 @@ always_comb begin : encoder_fsm
 
             GENERATE_D1: begin
                 bit_generated_flag = 0;
-                if (bit_gen_pulse_count == 2) begin
+                if (bit_sent_flag && osc_clk_rose) begin
                     bit_generated_flag = 1;
                     next_state = GENERATE_D2;
                 end
@@ -215,7 +233,7 @@ always_comb begin : encoder_fsm
 
             GENERATE_D2: begin
                 bit_generated_flag = 0;
-                if (bit_gen_pulse_count == 2) begin
+                if (bit_sent_flag && osc_clk_rose) begin
                     bit_generated_flag = 1;
                     next_state = GENERATE_D3;
                 end
@@ -223,7 +241,7 @@ always_comb begin : encoder_fsm
 
             GENERATE_D3: begin
                 bit_generated_flag = 0;
-                if (bit_gen_pulse_count == 2) begin
+                if (bit_sent_flag && osc_clk_rose) begin
                     bit_generated_flag = 1;
                     next_state = GENERATE_SYNC;
                 end
@@ -231,7 +249,7 @@ always_comb begin : encoder_fsm
 
             GENERATE_SYNC: begin
                 bit_generated_flag = 0;
-                if (bit_gen_pulse_count == 2) begin
+                if (bit_sent_flag && osc_clk_rose) begin
                    bit_generated_flag = 1;
                     next_state = GENERATE_A0;
                 end
@@ -240,7 +258,7 @@ always_comb begin : encoder_fsm
     end
 end
 
-always_ff @(posedge osc_clk, posedge reset) begin : encoder_fsm_ff
+always_ff @(posedge clk, posedge reset) begin : encoder_fsm_ff
     if(reset) begin
         // osc_rst <= 1'b0; // Oscillator resets on low
         bit_gen_rst <= 1'b0; // Bit generator resets on low
@@ -369,7 +387,7 @@ always_ff @(posedge osc_clk, posedge reset) begin : encoder_fsm_ff
 end
 
 
-always_ff @(posedge osc_clk, posedge reset) begin : encoder_state_changer
+always_ff @(posedge clk, posedge reset) begin : encoder_state_changer
     if(reset) begin
         current_state <= RESET_MODULES;
     end else begin
