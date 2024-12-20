@@ -164,10 +164,13 @@ always_ff @(posedge osc_clk, negedge rst) begin: magic_manager_ff
                 // Enabling the pulse counting for the SYNC bit    
                 if (input_bit == 2'b11) begin
                     enable_pulse_counting_sync <= 1;
+                    is_first_run <= 1;
+                    enable_pulse_counting <= 0;
                     // output_signal <= 0;
-                end else begin
-                    enable_pulse_counting_sync <= 0;
-                end
+                end 
+                // else begin
+                //     enable_pulse_counting_sync <= 0;
+                // end
 
                 // Enabling the pulse counting for the ordinary bits
                 if (input_bit != 2'b11) begin 

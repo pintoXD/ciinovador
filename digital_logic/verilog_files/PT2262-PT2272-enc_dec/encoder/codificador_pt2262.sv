@@ -183,9 +183,9 @@ always_comb begin : encoder_fsm
 
                 if (!bit_generated_flag) begin
                     if(F_BIT_LOCATOR[1]) // Checking for a bit F existance has the higher priority of all things. 
-                        bit_gen_input <= 2'b10;
+                        bit_gen_input = 2'b10;
                     else // If no bit F exists, we can proceed to request the generation of a bit 1 ou bit 0.
-                        bit_gen_input <= INTERPRETED_ADDR[1] ? 2'b01 : 2'b00;            
+                        bit_gen_input = INTERPRETED_ADDR[1] ? 2'b01 : 2'b00;            
                 end
 
 
@@ -201,9 +201,9 @@ always_comb begin : encoder_fsm
 
                 if (!bit_generated_flag) begin
                     if(F_BIT_LOCATOR[2]) // Checking for a bit F existance has the higher priority of all things. 
-                        bit_gen_input <= 2'b10;
+                        bit_gen_input = 2'b10;
                     else // If no bit F exists, we can proceed to request the generation of a bit 1 ou bit 0.
-                        bit_gen_input <= INTERPRETED_ADDR[2] ? 2'b01 : 2'b00;            
+                        bit_gen_input = INTERPRETED_ADDR[2] ? 2'b01 : 2'b00;            
                 end
             end
 
@@ -217,9 +217,9 @@ always_comb begin : encoder_fsm
 
                 if (!bit_generated_flag) begin
                     if(F_BIT_LOCATOR[3]) // Checking for a bit F existance has the higher priority of all things. 
-                        bit_gen_input <= 2'b10;
+                        bit_gen_input = 2'b10;
                     else // If no bit F exists, we can proceed to request the generation of a bit 1 ou bit 0.
-                        bit_gen_input <= INTERPRETED_ADDR[3] ? 2'b01 : 2'b00;            
+                        bit_gen_input = INTERPRETED_ADDR[3] ? 2'b01 : 2'b00;            
                 end
             end
 
@@ -232,9 +232,9 @@ always_comb begin : encoder_fsm
 
                 if (!bit_generated_flag) begin
                     if(F_BIT_LOCATOR[4]) // Checking for a bit F existance has the higher priority of all things. 
-                        bit_gen_input <= 2'b10;
+                        bit_gen_input = 2'b10;
                     else // If no bit F exists, we can proceed to request the generation of a bit 1 ou bit 0.
-                        bit_gen_input <= INTERPRETED_ADDR[4] ? 2'b01 : 2'b00;            
+                        bit_gen_input = INTERPRETED_ADDR[4] ? 2'b01 : 2'b00;            
                 end
                 
             end
@@ -248,9 +248,9 @@ always_comb begin : encoder_fsm
 
                 if (!bit_generated_flag) begin
                     if(F_BIT_LOCATOR[5]) // Checking for a bit F existance has the higher priority of all things. 
-                        bit_gen_input <= 2'b10;
+                        bit_gen_input = 2'b10;
                     else // If no bit F exists, we can proceed to request the generation of a bit 1 ou bit 0.
-                        bit_gen_input <= INTERPRETED_ADDR[5] ? 2'b01 : 2'b00;            
+                        bit_gen_input = INTERPRETED_ADDR[5] ? 2'b01 : 2'b00;            
                 end
 
             end
@@ -264,9 +264,9 @@ always_comb begin : encoder_fsm
 
                 if (!bit_generated_flag) begin
                     if(F_BIT_LOCATOR[6]) // Checking for a bit F existance has the higher priority of all things. 
-                        bit_gen_input <= 2'b10;
+                        bit_gen_input = 2'b10;
                     else // If no bit F exists, we can proceed to request the generation of a bit 1 ou bit 0.
-                        bit_gen_input <= INTERPRETED_ADDR[6] ? 2'b01 : 2'b00;            
+                        bit_gen_input = INTERPRETED_ADDR[6] ? 2'b01 : 2'b00;            
                 end
             end
 
@@ -279,9 +279,9 @@ always_comb begin : encoder_fsm
 
                 if (!bit_generated_flag) begin
                     if(F_BIT_LOCATOR[7]) // Checking for a bit F existance has the higher priority of all things. 
-                        bit_gen_input <= 2'b10;
+                        bit_gen_input = 2'b10;
                     else // If no bit F exists, we can proceed to request the generation of a bit 1 ou bit 0.
-                        bit_gen_input <= INTERPRETED_ADDR[7] ? 2'b01 : 2'b00;            
+                        bit_gen_input = INTERPRETED_ADDR[7] ? 2'b01 : 2'b00;            
                 end
             end
 
@@ -293,7 +293,7 @@ always_comb begin : encoder_fsm
                 end
 
                 if (!bit_generated_flag) begin
-                    bit_gen_input <= D[0] ? 2'b01 : 2'b00;            
+                    bit_gen_input = D[0] ? 2'b01 : 2'b00;            
                 end
 
             end
@@ -306,7 +306,7 @@ always_comb begin : encoder_fsm
                 end
 
                 if (!bit_generated_flag) begin
-                    bit_gen_input <= D[1] ? 2'b01 : 2'b00;            
+                    bit_gen_input = D[1] ? 2'b01 : 2'b00;            
                 end
             end
 
@@ -318,7 +318,7 @@ always_comb begin : encoder_fsm
                 end
 
                 if (!bit_generated_flag) begin
-                    bit_gen_input <= D[2] ? 2'b01 : 2'b00;            
+                    bit_gen_input = D[2] ? 2'b01 : 2'b00;            
                 end
             end
 
@@ -330,7 +330,7 @@ always_comb begin : encoder_fsm
                 end
 
                 if (!bit_generated_flag) begin
-                    bit_gen_input <= D[3] ? 2'b01 : 2'b00;            
+                    bit_gen_input = D[3] ? 2'b01 : 2'b00;            
                 end
             end
 
@@ -342,7 +342,7 @@ always_comb begin : encoder_fsm
                 end
 
                 if (!bit_generated_flag) begin
-                    bit_gen_input <= 2'b11;            
+                    bit_gen_input = 2'b11;            
                 end    
 
             end
