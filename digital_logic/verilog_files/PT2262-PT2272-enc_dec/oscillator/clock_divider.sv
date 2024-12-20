@@ -18,7 +18,8 @@ module CLOCK_DIVIDER#(
 
     Our DIVIDER was initially 2. To achieve the above effect, we need to divide it by 2. 
 */
-logic [15:0] divider_index_ceil = DIVIDER/2;
+logic [15:0] divider_index_ceil;
+assign divider_index_ceil = DIVIDER/2;
 logic [15:0] clk_cycle_counting;
 
 always_ff @(posedge INPUT_CLK) begin : FREQUENCY_DIVIDER

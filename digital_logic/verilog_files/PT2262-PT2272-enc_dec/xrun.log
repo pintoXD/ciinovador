@@ -1,5 +1,5 @@
 xrun(64): 22.09-s013: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	22.09-s013: Started on Dec 19, 2024 at 16:41:42 -03
+TOOL:	xrun(64)	22.09-s013: Started on Dec 20, 2024 at 14:04:26 -03
 xrun
 	-64bit
 	/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262_tb.sv
@@ -12,10 +12,10 @@ xrun
 	+gui
 	-s
 Recompiling... reason: file './bit_gen/bit_generator.sv' is newer than expected.
-	expected: Thu Dec 19 10:20:37 2024
-	actual:   Thu Dec 19 16:39:53 2024
-file: /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262.sv
-	module worklib.PT2262_ENCODER:sv
+	expected: Fri Dec 20 13:53:19 2024
+	actual:   Fri Dec 20 14:04:01 2024
+file: /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/bit_gen/bit_generator.sv
+	module worklib.BIT_GENERATOR:sv
 		errors: 0, warnings: 0
 		Caching library 'worklib' ....... Done
 	Elaborating the design hierarchy:
@@ -24,23 +24,19 @@ file: /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-
 xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.BIT_GENERATOR:sv <0x70bd89f3>
-			streams:  12, words:  8584
-		worklib.PT2262_ENCODER_TB:sv <0x06b95543>
-			streams:   8, words:  4953
-		worklib.PT2262_ENCODER:sv <0x4761ce67>
-			streams:  25, words: 16702
+		worklib.BIT_GENERATOR:sv <0x0df24c77>
+			streams:  12, words:  8808
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
 		                 Instances  Unique
 		Modules:                 6       6
-		Registers:              41      41
+		Registers:              40      40
 		Scalar wires:           20       -
-		Vectored wires:         11       -
-		Always blocks:          12      12
-		Initial blocks:          3       3
-		Cont. assignments:       4       4
+		Vectored wires:         12       -
+		Always blocks:          10      10
+		Initial blocks:          2       2
+		Cont. assignments:       4       5
 		Pseudo assignments:     18      18
 		Simulation timescale:  1ns
 	Writing initial simulation snapshot: worklib.PT2262_ENCODER_TB:sv
@@ -52,9 +48,106 @@ xcelium>
 -------------------------------------
 Relinquished control to SimVision...
 # Restoring simulation environment...
+xcelium> input {restore.tcl}
+xcelium> 
+xcelium> # XM-Sim Command File
+xcelium> # TOOL:	xmsim(64)	22.09-s013
+xcelium> #
+xcelium> #
+xcelium> # You can restore this configuration with:
+xcelium> #
+xcelium> #      xrun /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262_tb.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/addr_interpreter/addr_interpreter.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/addr_interpreter/comp_endereco.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/bit_gen/bit_generator.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/oscillator/clock_divider.sv +access+rw +gui -s -input restore.tcl
+xcelium> #
+xcelium> 
+xcelium> set tcl_prompt1 {puts -nonewline "xcelium> "}
+puts -nonewline "xcelium> "
+xcelium> set tcl_prompt2 {puts -nonewline "> "}
+puts -nonewline "> "
+xcelium> set vlog_format %h
+%h
+xcelium> set vhdl_format %v
+%v
+xcelium> set real_precision 6
+6
+xcelium> set display_unit auto
+auto
+xcelium> set time_unit module
+module
+xcelium> set heap_garbage_size -200
+-200
+xcelium> set heap_garbage_time 0
+0
+xcelium> set assert_report_level note
+note
+xcelium> set assert_stop_level error
+error
+xcelium> set autoscope yes
+yes
+xcelium> set assert_1164_warnings yes
+yes
+xcelium> set pack_assert_off {}
+xcelium> set severity_pack_assert_off {note warning}
+note warning
+xcelium> set assert_output_stop_level failed
+failed
+xcelium> set tcl_debug_level 0
+0
+xcelium> set relax_path_name 1
+1
+xcelium> set vhdl_vcdmap XX01ZX01X
+XX01ZX01X
+xcelium> set intovf_severity_level ERROR
+ERROR
+xcelium> set probe_screen_format 0
+0
+xcelium> set rangecnst_severity_level ERROR
+ERROR
+xcelium> set textio_severity_level ERROR
+ERROR
+xcelium> set vital_timing_checks_on 1
+1
+xcelium> set vlog_code_show_force 0
+0
+xcelium> set assert_count_attempts 1
+1
+xcelium> set tcl_all64 false
+false
+xcelium> set tcl_runerror_exit false
+false
+xcelium> set assert_report_incompletes 0
+0
+xcelium> set show_force 1
+1
+xcelium> set force_reset_by_reinvoke 0
+0
+xcelium> set tcl_relaxed_literal 0
+0
+xcelium> set probe_exclude_patterns {}
+xcelium> set probe_packed_limit 4k
+4k
+xcelium> set probe_unpacked_limit 16k
+16k
+xcelium> set assert_internal_msg no
+no
+xcelium> set svseed 1
+1
+xcelium> set assert_reporting_mode 0
+0
+xcelium> set vcd_compact_mode 0
+0
+xcelium> alias . run
+xcelium> alias quit exit
+xcelium> database -open -shm -into waves.shm waves -default
+Created default SHM database waves
+xcelium> probe -create -database waves PT2262_ENCODER_TB.DUT.A PT2262_ENCODER_TB.DUT.D PT2262_ENCODER_TB.DUT.F_BIT_LOCATOR PT2262_ENCODER_TB.DUT.INTERPRETED_ADDR PT2262_ENCODER_TB.DUT.bit_gen_enb PT2262_ENCODER_TB.DUT.bit_gen_input PT2262_ENCODER_TB.DUT.bit_gen_output PT2262_ENCODER_TB.DUT.bit_gen_rst PT2262_ENCODER_TB.DUT.bit_generated_flag PT2262_ENCODER_TB.DUT.bit_sent_flag PT2262_ENCODER_TB.DUT.clk PT2262_ENCODER_TB.DUT.cod_o PT2262_ENCODER_TB.DUT.current_state PT2262_ENCODER_TB.DUT.next_state PT2262_ENCODER_TB.DUT.osc_clk PT2262_ENCODER_TB.DUT.osc_clk_rose PT2262_ENCODER_TB.DUT.osc_rst PT2262_ENCODER_TB.DUT.past_osc_clk PT2262_ENCODER_TB.DUT.reset PT2262_ENCODER_TB.DUT.sync
+Created probe 1
+xcelium> probe -create -database waves PT2262_ENCODER_TB.DUT.signal_creator.bit_sent PT2262_ENCODER_TB.DUT.signal_creator.current_state PT2262_ENCODER_TB.DUT.signal_creator.enable_generation PT2262_ENCODER_TB.DUT.signal_creator.enable_pulse_counting PT2262_ENCODER_TB.DUT.signal_creator.enable_pulse_counting_sync PT2262_ENCODER_TB.DUT.signal_creator.input_bit PT2262_ENCODER_TB.DUT.signal_creator.is_first_run PT2262_ENCODER_TB.DUT.signal_creator.next_state PT2262_ENCODER_TB.DUT.signal_creator.osc_clk PT2262_ENCODER_TB.DUT.signal_creator.output_signal PT2262_ENCODER_TB.DUT.signal_creator.pulse_counter PT2262_ENCODER_TB.DUT.signal_creator.pulse_counter_sync PT2262_ENCODER_TB.DUT.signal_creator.rst
+Created probe 2
+xcelium> 
+xcelium> simvision -input restore.tcl.svcf
 xcelium> input -quiet .reinvoke.sim
 xcelium> file delete .reinvoke.sim
 xcelium> run
-Simulation complete via $finish(1) at time 41292075 NS + 3
-./encoder/codificador_pt2262_tb.sv:51         $finish;
+Simulation complete via $finish(1) at time 82542075 NS + 3
+./encoder/codificador_pt2262_tb.sv:53         $finish;
 xcelium> 
