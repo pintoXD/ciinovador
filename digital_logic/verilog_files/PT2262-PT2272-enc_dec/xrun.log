@@ -1,7 +1,6 @@
 xrun(64): 22.09-s013: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	22.09-s013: Started on Dec 19, 2024 at 16:41:42 -03
+TOOL:	xrun(64)	22.09-s013: Started on Dec 20, 2024 at 11:07:59 -03
 xrun
-	-64bit
 	/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262_tb.sv
 	/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262.sv
 	/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/addr_interpreter/addr_interpreter.sv
@@ -11,11 +10,11 @@ xrun
 	+access+rw
 	+gui
 	-s
-Recompiling... reason: file './bit_gen/bit_generator.sv' is newer than expected.
-	expected: Thu Dec 19 10:20:37 2024
-	actual:   Thu Dec 19 16:39:53 2024
-file: /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262.sv
-	module worklib.PT2262_ENCODER:sv
+Recompiling... reason: file './encoder/codificador_pt2262_tb.sv' is newer than expected.
+	expected: Fri Dec 20 10:18:32 2024
+	actual:   Fri Dec 20 11:07:51 2024
+file: /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262_tb.sv
+	module worklib.PT2262_ENCODER_TB:sv
 		errors: 0, warnings: 0
 		Caching library 'worklib' ....... Done
 	Elaborating the design hierarchy:
@@ -24,23 +23,19 @@ file: /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-
 xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.BIT_GENERATOR:sv <0x70bd89f3>
-			streams:  12, words:  8584
-		worklib.PT2262_ENCODER_TB:sv <0x06b95543>
-			streams:   8, words:  4953
-		worklib.PT2262_ENCODER:sv <0x4761ce67>
-			streams:  25, words: 16702
+		worklib.PT2262_ENCODER_TB:sv <0x14cd6a5a>
+			streams:   8, words:  4989
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
 		                 Instances  Unique
 		Modules:                 6       6
-		Registers:              41      41
+		Registers:              40      40
 		Scalar wires:           20       -
 		Vectored wires:         11       -
-		Always blocks:          12      12
+		Always blocks:          10      10
 		Initial blocks:          3       3
-		Cont. assignments:       4       4
+		Cont. assignments:       3       4
 		Pseudo assignments:     18      18
 		Simulation timescale:  1ns
 	Writing initial simulation snapshot: worklib.PT2262_ENCODER_TB:sv
@@ -55,6 +50,6 @@ Relinquished control to SimVision...
 xcelium> input -quiet .reinvoke.sim
 xcelium> file delete .reinvoke.sim
 xcelium> run
-Simulation complete via $finish(1) at time 41292075 NS + 3
-./encoder/codificador_pt2262_tb.sv:51         $finish;
+Simulation complete via $finish(1) at time 82542075 NS + 3
+./encoder/codificador_pt2262_tb.sv:53         $finish;
 xcelium> 

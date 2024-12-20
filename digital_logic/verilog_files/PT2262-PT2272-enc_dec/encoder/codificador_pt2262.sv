@@ -86,8 +86,8 @@ BIT_GENERATOR signal_creator(
     .bit_sent(bit_sent_flag)
 );
 
-assign cod_o = bit_gen_output;
-assign sync = (bit_gen_input == 2'b11) ? bit_gen_output : 0;
+assign cod_o = (bit_gen_input != 2'b11) ? bit_gen_output : 0; // Drives the cod_o output only and only if the bit being generated is not a sync bit.
+assign sync = (bit_gen_input == 2'b11) ? bit_gen_output : 0; // Drives the sync output only and only if the bit being generated is a sync bit.
 
 // A counter that counts the number of high pulses created byt the bit generator.
 // This is going to be used to drive the FSM state changing.
@@ -124,6 +124,8 @@ always_comb begin : encoder_fsm
         // next_state = RESET_MODULES;
         next_state = INITIALIZE_BIT_GENERATOR;
         bit_generated_flag = 1;
+        bit_gen_rst = 1'b0; // Bit generator resets on low
+        bit_gen_enb = 1'b0; // Bit generation is disabled
     end else begin
         case(current_state)
             RESET_MODULES: begin
@@ -138,6 +140,7 @@ always_comb begin : encoder_fsm
             end
 
             INITIALIZE_BIT_GENERATOR: begin
+                bit_gen_rst = 1'b1; // Bit generator resets on low
                 if (osc_clk_rose)
                     next_state = GENERATE_A0;
             end
@@ -155,7 +158,7 @@ always_comb begin : encoder_fsm
                 bit_generated_flag = 0; // Control flag to prevent sending the same bit more than once.
                 bit_gen_enb = 1'b1; // Enable the bit generation
 
-                if (bit_sent_flag) begin
+                if (bit_sent_flag && osc_clk_rose) begin
                     bit_generated_flag = 1;
                     next_state = GENERATE_A1;
                 end
@@ -173,7 +176,7 @@ always_comb begin : encoder_fsm
             GENERATE_A1: begin
                 bit_generated_flag = 0;
 
-                if (bit_sent_flag) begin
+                if (bit_sent_flag && osc_clk_rose) begin
                     bit_generated_flag = 1;
                     next_state = GENERATE_A2;
                 end
@@ -335,7 +338,7 @@ always_comb begin : encoder_fsm
                 bit_generated_flag = 0;
                 if (bit_sent_flag && osc_clk_rose) begin
                    bit_generated_flag = 1;
-                    next_state = GENERATE_A0;
+                   next_state = GENERATE_A0;
                 end
 
                 if (!bit_generated_flag) begin

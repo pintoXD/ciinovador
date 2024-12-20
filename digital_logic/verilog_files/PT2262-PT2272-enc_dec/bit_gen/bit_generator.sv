@@ -78,6 +78,7 @@ always_comb begin : magic_manager
             end
 
             INITIAL_STATE: begin
+
                 bit_sent = 0;
 
                 if(input_bit == 2'b00) begin
@@ -121,7 +122,7 @@ always_comb begin : magic_manager
             end
 
             GENERATE_BIT_SYNC_0: begin
-                if (pulse_counter == 127) begin
+                if (pulse_counter_sync == 127) begin
                     bit_sent = 1;
                     next_state = enable_generation ? INITIAL_STATE : IDLE;
                 end else begin
@@ -151,6 +152,8 @@ always_ff @(posedge osc_clk, negedge rst) begin: magic_manager_ff
             end
 
             INITIAL_STATE: begin
+                // Some sort of a workaround to solve the problem of the very first HIGH pulse 
+                // being sent with one more clock cycle than the expected.
                 if (is_first_run) begin
                     output_signal <= 0;
                     is_first_run <= 0;
@@ -161,13 +164,16 @@ always_ff @(posedge osc_clk, negedge rst) begin: magic_manager_ff
                 // Enabling the pulse counting for the SYNC bit    
                 if (input_bit == 2'b11) begin
                     enable_pulse_counting_sync <= 1;
+                    // output_signal <= 0;
                 end else begin
                     enable_pulse_counting_sync <= 0;
                 end
 
                 // Enabling the pulse counting for the ordinary bits
-                if (input_bit != 2'b11) 
+                if (input_bit != 2'b11) begin 
                     enable_pulse_counting <= 1;
+                    enable_pulse_counting_sync <= 0;
+                end
             end
                 
             GENERATE_BIT_0: begin
@@ -207,9 +213,9 @@ always_ff @(posedge osc_clk, negedge rst) begin: magic_manager_ff
                         output_signal <= 0;
                     end
             end
-            GENERATE_BIT_SYNC_0: begin //Generates HIGH por 4 oscillator cycles and a LOW for 28 oscillator cycles
+            GENERATE_BIT_SYNC_0: begin //Generates HIGH por 4 oscillator cycles and a LOW for 124 oscillator cycles
                     if(pulse_counter < 128) begin
-                        if(pulse_counter_sync < 4) begin
+                        if(pulse_counter_sync < 3) begin
                             output_signal <= 1;
                         end else begin
                             output_signal <= 0;
