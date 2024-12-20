@@ -1,153 +1,527 @@
 xrun(64): 22.09-s013: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	22.09-s013: Started on Dec 20, 2024 at 14:04:26 -03
+TOOL:	xrun(64)	22.09-s013: Started on Dec 20, 2024 at 16:57:05 -03
 xrun
 	-64bit
-	/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262_tb.sv
-	/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262.sv
-	/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/addr_interpreter/addr_interpreter.sv
-	/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/addr_interpreter/comp_endereco.sv
-	/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/bit_gen/bit_generator.sv
-	/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/oscillator/clock_divider.sv
+	bit_gen/bit_generator_tb.sv
+	bit_gen/generator_netlist.sv
+	libs/fast_vdd1v2_basicCells.v
+	oscillator/divider_netlist.v
 	+access+rw
 	+gui
-	-s
-Recompiling... reason: file './bit_gen/bit_generator.sv' is newer than expected.
-	expected: Fri Dec 20 13:53:19 2024
-	actual:   Fri Dec 20 14:04:01 2024
-file: /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/bit_gen/bit_generator.sv
-	module worklib.BIT_GENERATOR:sv
-		errors: 0, warnings: 0
 		Caching library 'worklib' ....... Done
 	Elaborating the design hierarchy:
+    BIT_GENERATOR DUT(
+                    |
+xmelab: *W,CUVWSP (./bit_gen/bit_generator_tb.sv,29|20): 1 output port was not connected:
+xmelab: (./bit_gen/generator_netlist.sv,8): bit_sent
+
 	Top level design units:
-		PT2262_ENCODER_TB
+		BIT_GENERATOR_TB
+		ACHCONX2
+		ADDFHX1
+		ADDFHX2
+		ADDFHX4
+		ADDFHXL
+		ADDFX1
+		ADDFX2
+		ADDFX4
+		ADDFXL
+		ADDHX1
+		ADDHX2
+		ADDHX4
+		ADDHXL
+		AND2X2
+		AND2X4
+		AND2X6
+		AND2X8
+		AND2XL
+		AND3X1
+		AND3X2
+		AND3X4
+		AND3X6
+		AND3X8
+		AND3XL
+		AND4X1
+		AND4X2
+		AND4X4
+		AND4X6
+		AND4X8
+		AND4XL
+		ANTENNA
+		AO21X1
+		AO21X2
+		AO21X4
+		AO21XL
+		AO22X1
+		AO22X2
+		AO22X4
+		AO22XL
+		AOI211X1
+		AOI211X2
+		AOI211X4
+		AOI21X1
+		AOI21X2
+		AOI21X4
+		AOI221X1
+		AOI221X2
+		AOI221X4
+		AOI221XL
+		AOI222X1
+		AOI222X2
+		AOI222X4
+		AOI222XL
+		AOI22X1
+		AOI22X2
+		AOI22X4
+		AOI22XL
+		AOI2BB1X1
+		AOI2BB1X2
+		AOI2BB1X4
+		AOI2BB1XL
+		AOI2BB2X1
+		AOI2BB2X2
+		AOI2BB2X4
+		AOI2BB2XL
+		AOI31X1
+		AOI31X2
+		AOI31X4
+		AOI31XL
+		AOI32X1
+		AOI32X2
+		AOI32X4
+		AOI32XL
+		AOI33X1
+		AOI33X2
+		AOI33X4
+		AOI33XL
+		BMXIX2
+		BMXIX4
+		BUFX12
+		BUFX16
+		BUFX2
+		BUFX20
+		BUFX3
+		BUFX4
+		BUFX6
+		BUFX8
+		CLKAND2X12
+		CLKAND2X2
+		CLKAND2X3
+		CLKAND2X4
+		CLKAND2X6
+		CLKAND2X8
+		CLKBUFX12
+		CLKBUFX16
+		CLKBUFX2
+		CLKBUFX20
+		CLKBUFX3
+		CLKBUFX4
+		CLKBUFX6
+		CLKBUFX8
+		CLKINVX1
+		CLKINVX12
+		CLKINVX16
+		CLKINVX2
+		CLKINVX20
+		CLKINVX3
+		CLKINVX4
+		CLKINVX6
+		CLKINVX8
+		CLKMX2X12
+		CLKMX2X2
+		CLKMX2X3
+		CLKMX2X4
+		CLKMX2X6
+		CLKMX2X8
+		CLKXOR2X1
+		CLKXOR2X2
+		CLKXOR2X4
+		CLKXOR2X8
+		DECAP10
+		DECAP2
+		DECAP3
+		DECAP4
+		DECAP5
+		DECAP6
+		DECAP7
+		DECAP8
+		DECAP9
+		DFFHQX2
+		DFFHQX4
+		DFFHQX8
+		DFFNSRX1
+		DFFNSRX2
+		DFFNSRX4
+		DFFNSRXL
+		DFFQX1
+		DFFQX2
+		DFFQX4
+		DFFQXL
+		DFFRHQX1
+		DFFRHQX2
+		DFFRHQX4
+		DFFRHQX8
+		DFFRX2
+		DFFRX4
+		DFFRXL
+		DFFSHQX2
+		DFFSHQX4
+		DFFSHQX8
+		DFFSRHQX1
+		DFFSRHQX2
+		DFFSRHQX4
+		DFFSRHQX8
+		DFFSRX1
+		DFFSRX2
+		DFFSRX4
+		DFFSRXL
+		DFFSX1
+		DFFSX2
+		DFFSX4
+		DFFSXL
+		DFFTRX1
+		DFFTRX2
+		DFFTRX4
+		DFFTRXL
+		DFFX1
+		DFFX2
+		DFFX4
+		DFFXL
+		DLY1X1
+		DLY1X4
+		DLY2X1
+		DLY2X4
+		DLY3X1
+		DLY3X4
+		DLY4X1
+		DLY4X4
+		EDFFHQX1
+		EDFFHQX2
+		EDFFHQX4
+		EDFFHQX8
+		EDFFTRX1
+		EDFFTRX2
+		EDFFTRX4
+		EDFFTRXL
+		EDFFX1
+		EDFFX2
+		EDFFX4
+		EDFFXL
+		HOLDX1
+		INVX1
+		INVX12
+		INVX16
+		INVX2
+		INVX20
+		INVX3
+		INVX4
+		INVX6
+		INVX8
+		MDFFHQX1
+		MDFFHQX2
+		MDFFHQX4
+		MDFFHQX8
+		MX2X2
+		MX2X4
+		MX2X6
+		MX2X8
+		MX2XL
+		MX3X1
+		MX3X2
+		MX3X4
+		MX3XL
+		MX4X1
+		MX4X2
+		MX4X4
+		MX4XL
+		MXI2X1
+		MXI2X2
+		MXI2X4
+		MXI2X6
+		MXI2X8
+		MXI2XL
+		MXI3X1
+		MXI3X2
+		MXI3X4
+		MXI3XL
+		MXI4X1
+		MXI4X2
+		MXI4X4
+		MXI4XL
+		NAND2BX1
+		NAND2BX2
+		NAND2BX4
+		NAND2X1
+		NAND2X2
+		NAND2X4
+		NAND2X6
+		NAND2X8
+		NAND3BX1
+		NAND3BX2
+		NAND3BX4
+		NAND3X1
+		NAND3X2
+		NAND3X4
+		NAND3X6
+		NAND3X8
+		NAND4BBX1
+		NAND4BBX2
+		NAND4BBX4
+		NAND4BBXL
+		NAND4BX1
+		NAND4BX2
+		NAND4BX4
+		NAND4X1
+		NAND4X2
+		NAND4X4
+		NAND4X6
+		NAND4X8
+		NAND4XL
+		NOR2BX1
+		NOR2BX2
+		NOR2BX4
+		NOR2BXL
+		NOR2X1
+		NOR2X2
+		NOR2X4
+		NOR2X6
+		NOR2X8
+		NOR3BX1
+		NOR3BX2
+		NOR3BX4
+		NOR3X1
+		NOR3X2
+		NOR3X4
+		NOR3X6
+		NOR3X8
+		NOR3XL
+		NOR4BBX1
+		NOR4BBX2
+		NOR4BBX4
+		NOR4BBXL
+		NOR4BX1
+		NOR4BX2
+		NOR4BX4
+		NOR4BXL
+		NOR4X2
+		NOR4X4
+		NOR4X6
+		NOR4X8
+		NOR4XL
+		OA21X2
+		OA21X4
+		OA21XL
+		OA22X2
+		OA22X4
+		OA22XL
+		OAI211X2
+		OAI211X4
+		OAI211XL
+		OAI21X1
+		OAI21X2
+		OAI21X4
+		OAI21XL
+		OAI221X2
+		OAI221X4
+		OAI221XL
+		OAI222X1
+		OAI222X2
+		OAI222X4
+		OAI222XL
+		OAI22X2
+		OAI22X4
+		OAI2BB1X2
+		OAI2BB1X4
+		OAI2BB1XL
+		OAI2BB2X1
+		OAI2BB2X2
+		OAI2BB2X4
+		OAI2BB2XL
+		OAI31X2
+		OAI31X4
+		OAI31XL
+		OAI32X1
+		OAI32X2
+		OAI32X4
+		OAI32XL
+		OAI33X1
+		OAI33X2
+		OAI33X4
+		OAI33XL
+		OR2X1
+		OR2X2
+		OR2X4
+		OR2X6
+		OR2X8
+		OR2XL
+		OR3X1
+		OR3X2
+		OR3X4
+		OR3X6
+		OR3X8
+		OR3XL
+		OR4X1
+		OR4X2
+		OR4X4
+		OR4X6
+		OR4X8
+		OR4XL
+		SDFFHQX1
+		SDFFHQX2
+		SDFFHQX4
+		SDFFHQX8
+		SDFFNSRX1
+		SDFFNSRX2
+		SDFFNSRX4
+		SDFFNSRXL
+		SDFFQX2
+		SDFFQX4
+		SDFFQXL
+		SDFFRHQX2
+		SDFFRHQX4
+		SDFFRHQX8
+		SDFFRX1
+		SDFFRX2
+		SDFFRX4
+		SDFFRXL
+		SDFFSHQX1
+		SDFFSHQX2
+		SDFFSHQX4
+		SDFFSHQX8
+		SDFFSRHQX1
+		SDFFSRHQX2
+		SDFFSRHQX4
+		SDFFSRHQX8
+		SDFFSRX1
+		SDFFSRX2
+		SDFFSRX4
+		SDFFSRXL
+		SDFFSX1
+		SDFFSX2
+		SDFFSX4
+		SDFFSXL
+		SDFFTRX1
+		SDFFTRX2
+		SDFFTRX4
+		SDFFTRXL
+		SDFFX1
+		SDFFX2
+		SDFFX4
+		SDFFXL
+		SEDFFHQX1
+		SEDFFHQX2
+		SEDFFHQX4
+		SEDFFHQX8
+		SEDFFTRX1
+		SEDFFTRX2
+		SEDFFTRX4
+		SEDFFTRXL
+		SEDFFX1
+		SEDFFX2
+		SEDFFX4
+		SEDFFXL
+		SMDFFHQX1
+		SMDFFHQX2
+		SMDFFHQX4
+		SMDFFHQX8
+		TBUFX1
+		TBUFX12
+		TBUFX16
+		TBUFX2
+		TBUFX20
+		TBUFX3
+		TBUFX4
+		TBUFX6
+		TBUFX8
+		TBUFXL
+		TIEHI
+		TIELO
+		TLATNCAX12
+		TLATNCAX16
+		TLATNCAX2
+		TLATNCAX20
+		TLATNCAX3
+		TLATNCAX4
+		TLATNCAX6
+		TLATNCAX8
+		TLATNSRX1
+		TLATNSRX2
+		TLATNSRX4
+		TLATNSRXL
+		TLATNTSCAX12
+		TLATNTSCAX16
+		TLATNTSCAX2
+		TLATNTSCAX20
+		TLATNTSCAX3
+		TLATNTSCAX4
+		TLATNTSCAX6
+		TLATNTSCAX8
+		TLATNX1
+		TLATNX2
+		TLATNX4
+		TLATNXL
+		TLATSRX1
+		TLATSRX2
+		TLATSRX4
+		TLATSRXL
+		TLATX1
+		TLATX2
+		TLATX4
+		XNOR2X2
+		XNOR2X4
+		XNOR2XL
+		XNOR3X1
+		XNOR3XL
+		XOR2X1
+		XOR2X2
+		XOR2X4
+		XOR2XL
+		XOR3X1
+		XOR3XL
 xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.BIT_GENERATOR:sv <0x0df24c77>
-			streams:  12, words:  8808
+		worklib.TLATX1:v <0x012f0656>
+			streams:   0, words:     0
+		worklib.TLATNXL:v <0x07166bf8>
+			streams:   0, words:     0
+		worklib.DFFSHQX1:v <0x103f1a67>
+			streams:   0, words:     0
+		worklib.BIT_GENERATOR_TB:sv <0x78100cdd>
+			streams:   9, words: 11478
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
-		                 Instances  Unique
-		Modules:                 6       6
-		Registers:              40      40
-		Scalar wires:           20       -
-		Vectored wires:         12       -
-		Always blocks:          10      10
-		Initial blocks:          2       2
-		Cont. assignments:       4       5
-		Pseudo assignments:     18      18
-		Simulation timescale:  1ns
-	Writing initial simulation snapshot: worklib.PT2262_ENCODER_TB:sv
+		                    Instances  Unique
+		Modules:                  599     492
+		UDPs:                     320      14
+		Primitives:              2032       6
+		Timing outputs:           675     422
+		Registers:                186     176
+		Scalar wires:            2919       -
+		Expanded wires:             2       1
+		Initial blocks:             2       2
+		Pseudo assignments:         7       7
+		Timing checks:           2131       -
+		Delayed tcheck signals:   586     559
+		Simulation timescale:     1ps
+	Writing initial simulation snapshot: worklib.BIT_GENERATOR_TB:sv
 xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
 xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
-xcelium> 
-xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
-xcelium> 
+
 -------------------------------------
 Relinquished control to SimVision...
-# Restoring simulation environment...
-xcelium> input {restore.tcl}
 xcelium> 
-xcelium> # XM-Sim Command File
-xcelium> # TOOL:	xmsim(64)	22.09-s013
-xcelium> #
-xcelium> #
-xcelium> # You can restore this configuration with:
-xcelium> #
-xcelium> #      xrun /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262_tb.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/addr_interpreter/addr_interpreter.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/addr_interpreter/comp_endereco.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/bit_gen/bit_generator.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/oscillator/clock_divider.sv +access+rw +gui -s -input restore.tcl
-xcelium> #
-xcelium> 
-xcelium> set tcl_prompt1 {puts -nonewline "xcelium> "}
-puts -nonewline "xcelium> "
-xcelium> set tcl_prompt2 {puts -nonewline "> "}
-puts -nonewline "> "
-xcelium> set vlog_format %h
-%h
-xcelium> set vhdl_format %v
-%v
-xcelium> set real_precision 6
-6
-xcelium> set display_unit auto
-auto
-xcelium> set time_unit module
-module
-xcelium> set heap_garbage_size -200
--200
-xcelium> set heap_garbage_time 0
-0
-xcelium> set assert_report_level note
-note
-xcelium> set assert_stop_level error
-error
-xcelium> set autoscope yes
-yes
-xcelium> set assert_1164_warnings yes
-yes
-xcelium> set pack_assert_off {}
-xcelium> set severity_pack_assert_off {note warning}
-note warning
-xcelium> set assert_output_stop_level failed
-failed
-xcelium> set tcl_debug_level 0
-0
-xcelium> set relax_path_name 1
-1
-xcelium> set vhdl_vcdmap XX01ZX01X
-XX01ZX01X
-xcelium> set intovf_severity_level ERROR
-ERROR
-xcelium> set probe_screen_format 0
-0
-xcelium> set rangecnst_severity_level ERROR
-ERROR
-xcelium> set textio_severity_level ERROR
-ERROR
-xcelium> set vital_timing_checks_on 1
-1
-xcelium> set vlog_code_show_force 0
-0
-xcelium> set assert_count_attempts 1
-1
-xcelium> set tcl_all64 false
-false
-xcelium> set tcl_runerror_exit false
-false
-xcelium> set assert_report_incompletes 0
-0
-xcelium> set show_force 1
-1
-xcelium> set force_reset_by_reinvoke 0
-0
-xcelium> set tcl_relaxed_literal 0
-0
-xcelium> set probe_exclude_patterns {}
-xcelium> set probe_packed_limit 4k
-4k
-xcelium> set probe_unpacked_limit 16k
-16k
-xcelium> set assert_internal_msg no
-no
-xcelium> set svseed 1
-1
-xcelium> set assert_reporting_mode 0
-0
-xcelium> set vcd_compact_mode 0
-0
-xcelium> alias . run
-xcelium> alias quit exit
-xcelium> database -open -shm -into waves.shm waves -default
+xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
+xcelium> database -open waves -into waves.shm -default
 Created default SHM database waves
-xcelium> probe -create -database waves PT2262_ENCODER_TB.DUT.A PT2262_ENCODER_TB.DUT.D PT2262_ENCODER_TB.DUT.F_BIT_LOCATOR PT2262_ENCODER_TB.DUT.INTERPRETED_ADDR PT2262_ENCODER_TB.DUT.bit_gen_enb PT2262_ENCODER_TB.DUT.bit_gen_input PT2262_ENCODER_TB.DUT.bit_gen_output PT2262_ENCODER_TB.DUT.bit_gen_rst PT2262_ENCODER_TB.DUT.bit_generated_flag PT2262_ENCODER_TB.DUT.bit_sent_flag PT2262_ENCODER_TB.DUT.clk PT2262_ENCODER_TB.DUT.cod_o PT2262_ENCODER_TB.DUT.current_state PT2262_ENCODER_TB.DUT.next_state PT2262_ENCODER_TB.DUT.osc_clk PT2262_ENCODER_TB.DUT.osc_clk_rose PT2262_ENCODER_TB.DUT.osc_rst PT2262_ENCODER_TB.DUT.past_osc_clk PT2262_ENCODER_TB.DUT.reset PT2262_ENCODER_TB.DUT.sync
+xcelium> probe -create -shm BIT_GENERATOR_TB.DUT.UNCONNECTED BIT_GENERATOR_TB.DUT.bit_sent BIT_GENERATOR_TB.DUT.current_state BIT_GENERATOR_TB.DUT.enable_generation BIT_GENERATOR_TB.DUT.enable_pulse_counting BIT_GENERATOR_TB.DUT.enable_pulse_counting_sync BIT_GENERATOR_TB.DUT.input_bit BIT_GENERATOR_TB.DUT.is_first_run BIT_GENERATOR_TB.DUT.n_0 BIT_GENERATOR_TB.DUT.n_1 BIT_GENERATOR_TB.DUT.n_2 BIT_GENERATOR_TB.DUT.n_3 BIT_GENERATOR_TB.DUT.n_4 BIT_GENERATOR_TB.DUT.n_5 BIT_GENERATOR_TB.DUT.n_6 BIT_GENERATOR_TB.DUT.n_7 BIT_GENERATOR_TB.DUT.n_8 BIT_GENERATOR_TB.DUT.n_9 BIT_GENERATOR_TB.DUT.n_10 BIT_GENERATOR_TB.DUT.n_11 BIT_GENERATOR_TB.DUT.n_12 BIT_GENERATOR_TB.DUT.n_14 BIT_GENERATOR_TB.DUT.n_15 BIT_GENERATOR_TB.DUT.n_16 BIT_GENERATOR_TB.DUT.n_17 BIT_GENERATOR_TB.DUT.n_18 BIT_GENERATOR_TB.DUT.n_19 BIT_GENERATOR_TB.DUT.n_20 BIT_GENERATOR_TB.DUT.n_21 BIT_GENERATOR_TB.DUT.n_22 BIT_GENERATOR_TB.DUT.n_23 BIT_GENERATOR_TB.DUT.n_24 BIT_GENERATOR_TB.DUT.n_25 BIT_GENERATOR_TB.DUT.n_26 BIT_GENERATOR_TB.DUT.n_27 BIT_GENERATOR_TB.DUT.n_28 BIT_GENERATOR_TB.DUT.n_29 BIT_GENERATOR_TB.DUT.n_30 BIT_GENERATOR_TB.DUT.n_31 BIT_GENERATOR_TB.DUT.n_32 BIT_GENERATOR_TB.DUT.n_33 BIT_GENERATOR_TB.DUT.n_34 BIT_GENERATOR_TB.DUT.n_35 BIT_GENERATOR_TB.DUT.n_36 BIT_GENERATOR_TB.DUT.n_37 BIT_GENERATOR_TB.DUT.n_39 BIT_GENERATOR_TB.DUT.n_40 BIT_GENERATOR_TB.DUT.n_41 BIT_GENERATOR_TB.DUT.n_42 BIT_GENERATOR_TB.DUT.n_43 BIT_GENERATOR_TB.DUT.n_44 BIT_GENERATOR_TB.DUT.n_45 BIT_GENERATOR_TB.DUT.n_46 BIT_GENERATOR_TB.DUT.n_47 BIT_GENERATOR_TB.DUT.n_48 BIT_GENERATOR_TB.DUT.n_49 BIT_GENERATOR_TB.DUT.n_50 BIT_GENERATOR_TB.DUT.n_51 BIT_GENERATOR_TB.DUT.n_52 BIT_GENERATOR_TB.DUT.n_53 BIT_GENERATOR_TB.DUT.n_54 BIT_GENERATOR_TB.DUT.n_55 BIT_GENERATOR_TB.DUT.n_56 BIT_GENERATOR_TB.DUT.n_57 BIT_GENERATOR_TB.DUT.n_58 BIT_GENERATOR_TB.DUT.n_59 BIT_GENERATOR_TB.DUT.n_60 BIT_GENERATOR_TB.DUT.n_61 BIT_GENERATOR_TB.DUT.n_62 BIT_GENERATOR_TB.DUT.n_63 BIT_GENERATOR_TB.DUT.n_64 BIT_GENERATOR_TB.DUT.n_65 BIT_GENERATOR_TB.DUT.n_66 BIT_GENERATOR_TB.DUT.n_67 BIT_GENERATOR_TB.DUT.n_68 BIT_GENERATOR_TB.DUT.n_69 BIT_GENERATOR_TB.DUT.n_70 BIT_GENERATOR_TB.DUT.n_71 BIT_GENERATOR_TB.DUT.n_72 BIT_GENERATOR_TB.DUT.n_73 BIT_GENERATOR_TB.DUT.n_74 BIT_GENERATOR_TB.DUT.n_75 BIT_GENERATOR_TB.DUT.n_76 BIT_GENERATOR_TB.DUT.n_77 BIT_GENERATOR_TB.DUT.n_78 BIT_GENERATOR_TB.DUT.n_79 BIT_GENERATOR_TB.DUT.n_80 BIT_GENERATOR_TB.DUT.n_81 BIT_GENERATOR_TB.DUT.n_82 BIT_GENERATOR_TB.DUT.n_83 BIT_GENERATOR_TB.DUT.n_84 BIT_GENERATOR_TB.DUT.n_90 BIT_GENERATOR_TB.DUT.osc_clk BIT_GENERATOR_TB.DUT.output_signal BIT_GENERATOR_TB.DUT.pulse_counter BIT_GENERATOR_TB.DUT.pulse_counter_sync BIT_GENERATOR_TB.DUT.rst
 Created probe 1
-xcelium> probe -create -database waves PT2262_ENCODER_TB.DUT.signal_creator.bit_sent PT2262_ENCODER_TB.DUT.signal_creator.current_state PT2262_ENCODER_TB.DUT.signal_creator.enable_generation PT2262_ENCODER_TB.DUT.signal_creator.enable_pulse_counting PT2262_ENCODER_TB.DUT.signal_creator.enable_pulse_counting_sync PT2262_ENCODER_TB.DUT.signal_creator.input_bit PT2262_ENCODER_TB.DUT.signal_creator.is_first_run PT2262_ENCODER_TB.DUT.signal_creator.next_state PT2262_ENCODER_TB.DUT.signal_creator.osc_clk PT2262_ENCODER_TB.DUT.signal_creator.output_signal PT2262_ENCODER_TB.DUT.signal_creator.pulse_counter PT2262_ENCODER_TB.DUT.signal_creator.pulse_counter_sync PT2262_ENCODER_TB.DUT.signal_creator.rst
-Created probe 2
-xcelium> 
-xcelium> simvision -input restore.tcl.svcf
-xcelium> input -quiet .reinvoke.sim
-xcelium> file delete .reinvoke.sim
 xcelium> run
-Simulation complete via $finish(1) at time 82542075 NS + 3
-./encoder/codificador_pt2262_tb.sv:53         $finish;
-xcelium> 
+Simulation complete via $finish(1) at time 78752736 NS + 0
+./bit_gen/bit_generator_tb.sv:113         $finish;
+xcelium> ^C
+xcelium> exit
+...Regained control from SimVision
+-------------------------------------
+TOOL:	xrun(64)	22.09-s013: Exiting on Dec 20, 2024 at 17:00:09 -03  (total: 00:03:04)

@@ -1,0 +1,8 @@
+s1(20Dec2024:14:50:58):  xrun -64bit divider_netlist.v clock_divider_tb.sv +access+rw +gui 
+s2(20Dec2024:14:51:10):  xrun -64bit divider_netlist.v clock_divider_tb.sv ../libs/fast_vdd1v2_basicCells.v +access+rw +gui 
+s3(20Dec2024:14:51:24):  xrun -64bit divider_netlist.v clock_divider_tb.sv ../libs/fast_vdd1v2_basicCells.v +access+rw +gui 
+s4(20Dec2024:14:52:48):  xrun -64bit divider_netlist.v clock_divider_tb.sv ../libs/fast_vdd1v2_basicCells.v +access+rw +gui 
+s5(20Dec2024:14:52:50):  xrun -64bit divider_netlist.v clock_divider_tb.sv ../libs/fast_vdd1v2_basicCells.v +access+rw +gui 
+s6(20Dec2024:14:53:34):  xrun -64bit divider_netlist.v clock_divider_tb.sv ../libs/fast_vdd1v2_basicCells.v +access+rw +gui 
+s7(20Dec2024:14:54:35):  xrun -64bit divider_netlist.v clock_divider_tb.sv ../libs/fast_vdd1v2_basicCells.v +access+rw +gui 
+s8(20Dec2024:14:55:05):  xrun -64bit divider_netlist.v clock_divider_tb.sv ../libs/fast_vdd1v2_basicCells.v +access+rw +gui 

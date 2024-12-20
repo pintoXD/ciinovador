@@ -6,3 +6,37 @@
 
 clear
 ls
+clear
+ls
+clear
+cd oscillator/
+clear
+ls
+read_libs ../libs/fast_vdd1v2_basicCells.lib
+clear
+cd ..
+read_hdl oscillator/clock_divider.sv
+read_hdl -sv oscillator/clock_divider.sv
+clear
+elaborate
+syn_gen
+syn_gen
+syn_gen > syn_gen_out.txt
+report sequential -deleted > report_sequential_deleted.txt
+set_db optimize_constant_0_flops false
+syn_gen
+syn_map
+syn_opt
+write_hdl --verlp
+wirte_netlist --help
+write_netlist --help
+write_netlist oscillator/divider_netlist.v
+write_netlist > oscillator/divider_netlist.v
+read_hdl -sv oscillator/clock_divider.sv
+read_lib libs/fast_vdd1v2_basicCells.v
+clear
+ls
+elaborate
+syn_gen; syn_map; syn_opt
+write_netlist > oscillator/divider_netlist.v
+exit

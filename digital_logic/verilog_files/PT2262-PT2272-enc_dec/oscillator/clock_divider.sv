@@ -1,7 +1,7 @@
 /* verilator lint_off DECLFILENAME */
 `timescale 1us/1ns
 module CLOCK_DIVIDER#(
-    parameter DIVIDER = 2
+    parameter DIVIDER = 250
 )(
     input logic INPUT_CLK, RST,
     output logic OUTPUT_CLK
@@ -19,7 +19,8 @@ module CLOCK_DIVIDER#(
     Our DIVIDER was initially 2. To achieve the above effect, we need to divide it by 2. 
 */
 logic [15:0] divider_index_ceil;
-assign divider_index_ceil = DIVIDER/2;
+// assign divider_index_ceil = DIVIDER/2;
+assign divider_index_ceil = 125;
 logic [15:0] clk_cycle_counting;
 
 always_ff @(posedge INPUT_CLK) begin : FREQUENCY_DIVIDER

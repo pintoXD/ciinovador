@@ -9,10 +9,17 @@ module BIT_GENERATOR_TB();
     logic mock_RST_BIT_GENERATOR;
     logic dut_OUTPUT_CLK;
 
+    // // Instantiating the 12kHz clock generator.
+    // CLOCK_DIVIDER #(
+    //     .DIVIDER(250)
+    // )CLK_DIVIDER(
+    //     .INPUT_CLK(mock_INPUT_CLK), 
+    //     .RST(mock_RST), 
+    //     .OUTPUT_CLK(dut_OUTPUT_CLK) 
+    // );
+
     // Instantiating the 12kHz clock generator.
-    CLOCK_DIVIDER #(
-        .DIVIDER(250)
-    )CLK_DIVIDER(
+    CLOCK_DIVIDER CLK_DIVIDER(
         .INPUT_CLK(mock_INPUT_CLK), 
         .RST(mock_RST), 
         .OUTPUT_CLK(dut_OUTPUT_CLK) 

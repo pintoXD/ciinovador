@@ -1,15 +1,21 @@
 /* verilator lint_off DECLFILENAME */
 /* verilator lint_off UNUSEDSIGNAL */
-`timescale 1us/100ns
+// `timescale 1us/100ns
+`timescale 1ns/1ps
 module CLOCK_DIVIDER_TB();
 
     logic mock_INPUT_CLK, mock_RST;
     logic dut_OUTPUT_CLK;
 
     //Instantiating the Device Under Test (DUT)
-    CLOCK_DIVIDER #(
-        .DIVIDER(250)
-    )DUT(
+    // CLOCK_DIVIDER #(
+    //     .DIVIDER(250)
+    // )DUT(
+    //     .INPUT_CLK(mock_INPUT_CLK), 
+    //     .RST(mock_RST), 
+    //     .OUTPUT_CLK(dut_OUTPUT_CLK) 
+    // );
+    CLOCK_DIVIDER DUT(
         .INPUT_CLK(mock_INPUT_CLK), 
         .RST(mock_RST), 
         .OUTPUT_CLK(dut_OUTPUT_CLK) 
