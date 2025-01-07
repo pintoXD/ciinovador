@@ -17,7 +17,7 @@ module BIDIR_SHIFTREG#(parameter N=4)(
 			q <= {shift_in, q[N-1:1]}; //shift right
 			end
 			2'b11: begin 
-				q <= d; 
+				q <= d; //load
 			end  
 			default: q <= q;
 		endcase
