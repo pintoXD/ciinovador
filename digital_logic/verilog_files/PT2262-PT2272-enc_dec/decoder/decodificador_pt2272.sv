@@ -17,7 +17,7 @@ typedef enum logic[7:0] {
     BIT_0_DETECTED = 8'h04,
     BIT_F_DETECTED = 8'h05,
     BIT_SYNC_DETECTED = 8'h06
-    
+
 } DECODER_FSM_STATE;
 
 /*****************************************
@@ -36,32 +36,32 @@ logic reset_counters;
 * with serial input and parallel output
 *
 ******************************************/
-    // Parameters
-    logic [3:0] BIDIR_SHIFTREG_SIZE = 13;
-    // Inputs
-    logic BIDIR_SHIFTREG_ENABLER;
-    logic BIDIR_SHIFTREG_SERIAL_IN;
-    logic [BIDIR_SHIFTREG_SIZE-1:0] BIDIR_SHIFTREG_PARALLEL_IN;
-    logic [1:0] BIDIR_SHIFTREG_OP_MODE;
+// Parameters
+// const logic [5:0] BIDIR_SHIFTREG_SIZE = 26;
+parameter int BIDIR_SHIFTREG_SIZE = 26;
+// Inputs
+logic BIDIR_SHIFTREG_ENABLER;
+logic BIDIR_SHIFTREG_SERIAL_IN;
+logic [BIDIR_SHIFTREG_SIZE-1:0] BIDIR_SHIFTREG_PARALLEL_IN;
+logic [2:0] BIDIR_SHIFTREG_OP_MODE;
+logic [1:0] BIDIR_SHIFTREG_PT2272_BIT_IN;
 
-    // Outputs
-    logic [BIDIR_SHIFTREG_SIZE-1:0] BIDIR_SHIFTREG_PARALLEL_OUT;
-    logic BIDIR_SHIFTREG_RIGHT_SHIFT_OUT;
-    logic BIDIR_SHIFTREG_LEFT_SHIFT_OUT;
+// Outputs
+logic [BIDIR_SHIFTREG_SIZE-1:0] BIDIR_SHIFTREG_PARALLEL_OUT;
+logic BIDIR_SHIFTREG_RIGHT_SHIFT_OUT;
+logic BIDIR_SHIFTREG_LEFT_SHIFT_OUT;
 
-    // Instantiate the shiftreg
-    BIDIR_SHIFTREG #(BIDIR_SHIFTREG_SIZE) RCVD_DATA_SHIFTREG (
-        .enable(BIDIR_SHIFTREG_ENABLER),
-        .shift_in(BIDIR_SHIFTREG_SERIAL_IN),
-        .d(BIDIR_SHIFTREG_PARALLEL_IN),
-        .OP(BIDIR_SHIFTREG_OP_MODE),
-        .q(BIDIR_SHIFTREG_PARALLEL_OUT),
-        .shift_out_right(BIDIR_SHIFTREG_RIGHT_SHIFT_OUT),
-        .shift_out_left(BIDIR_SHIFTREG_LEFT_SHIFT_OUT)
-    );
-
-
-
+// Instantiate the shiftreg
+BIDIR_SHIFTREG #(BIDIR_SHIFTREG_SIZE) RCVD_DATA_SHIFTREG (
+    .enable(BIDIR_SHIFTREG_ENABLER),
+    .shift_in(BIDIR_SHIFTREG_SERIAL_IN),
+    .d(BIDIR_SHIFTREG_PARALLEL_IN),
+    .PT2272_BIT(BIDIR_SHIFTREG_PT2272_BIT_IN),
+    .OP(BIDIR_SHIFTREG_OP_MODE),
+    .q(BIDIR_SHIFTREG_PARALLEL_OUT),
+    .shift_out_right(BIDIR_SHIFTREG_RIGHT_SHIFT_OUT),
+    .shift_out_left(BIDIR_SHIFTREG_LEFT_SHIFT_OUT)
+);
 
 /*****************************************
 *
@@ -71,38 +71,26 @@ logic reset_counters;
 logic PREVIOUS_cod_i;
 logic cod_i_ROSE;
 logic cod_i_FELL;
-always@(posedge clk)
-begin : SAVE_PAST_cod_i
-    PREVIOUS_cod_i <= cod_i;
+
+always@(posedge clk, posedge reset) begin : SAVE_PAST_cod_i
+    if(reset)
+        PREVIOUS_cod_i <= 0;
+    else
+        PREVIOUS_cod_i <= cod_i;
 end
 
-assign cod_i_ROSE = ( (cod_i==1) && (PREVIOUS_cod_i==0));
-assign cod_i_FELL = ( (cod_i==0) && (PREVIOUS_cod_i==1));
+assign cod_i_ROSE = ((cod_i==1) && (PREVIOUS_cod_i==0));
+assign cod_i_FELL = ((cod_i==0) && (PREVIOUS_cod_i==1));
 
 
-// always_ff @(posedge clk, posedge reset_counters) begin : INPUT_SIGNAL_COUNTER
-//     if(reset_counters) begin
-//         HIGH_PULSE_COUNTING <= 0;
-//         LOW_PULSE_COUNTING <= 0;
-//     end
-//     else begin
-//         if(cod_i_ROSE)begin //Maybe this won't work as expected because this signal changes too fast and it's not synchronized with the clock.
-//             HIGH_PULSE_COUNTING <= HIGH_PULSE_COUNTING + 1;
-//         end
-//         if(cod_i_FELL)begin
-//             LOW_PULSE_COUNTING <= LOW_PULSE_COUNTING + 1;
-//         end
-//     end
-// end
-
-
-
-always_comb begin  : DECODER_FSM_COMB_BLOCK
+always_comb begin : DECODER_FSM_COMB_BLOCK
     next_state = current_state;
     if(reset)begin
-        // do_something
+        // dv = 0;
+        // D = 4'b0000;
+        reset_counters = 1;
     end else begin
-        case(current_state)
+        unique case(current_state)
             IDLE: begin
                 if(cod_i_ROSE)
                     next_state = COUNTS_HIGH_PULSE;
@@ -138,19 +126,23 @@ always_comb begin  : DECODER_FSM_COMB_BLOCK
             end
 
             BIT_1_DETECTED: begin
-                // do_something
+                next_state = IDLE;
             end
 
             BIT_0_DETECTED: begin
-                // do_something
+                next_state = IDLE;
             end
 
             BIT_F_DETECTED: begin
-                // do_something
+                next_state = IDLE;
             end
 
             BIT_SYNC_DETECTED: begin
-                // do_something
+                next_state = IDLE;
+            end
+
+            default: begin
+                next_state = IDLE;
             end
 
         endcase
@@ -159,19 +151,18 @@ end
 
 always_ff @(posedge clk, posedge reset) begin : DECODER_FSM_FF_BLOCK
     if(reset) begin
-        
-        BIDIR_SHIFTREG_PARALLEL_IN <= 13'b0; // Initialize the shift register with 0
+        BIDIR_SHIFTREG_PARALLEL_IN <= 26'b0; // Initialize the shift register with 0
         BIDIR_SHIFTREG_SERIAL_IN <= 0; // Shift in 0 to the shift register by default.
-        BIDIR_SHIFTREG_OP_MODE <= 2'b11;   // Load mode to loads a 0 to the shift register
+        BIDIR_SHIFTREG_PT2272_BIT_IN <= 2'b00; // Shift in 00 to the shift register by default.
+        BIDIR_SHIFTREG_OP_MODE <= 3'b011;   // Load mode to loads a 0 to the shift register
         BIDIR_SHIFTREG_ENABLER <= 1; // Enable the shift register to load the 0 data.
         HIGH_PULSE_COUNTING <= 0; // Reset the high pulse counting
         LOW_PULSE_COUNTING <= 0; // Reset the low pulse counting
-
     end else begin
-        case(current_state)
+        unique case(current_state)
             IDLE: begin
-                BIDIR_SHIFTREG_OP_MODE <= 2'b10; // Turns shift right mode on
-                BIDIR_SHIFTREG_SERIAL_IN <= 0; // Shift in 0 to the shift register by default.
+                BIDIR_SHIFTREG_OP_MODE <= 3'b000; // Turns shift right mode on
+                BIDIR_SHIFTREG_PT2272_BIT_IN <= 2'b00; // Shift in 00 to the shift register by default.
                 BIDIR_SHIFTREG_ENABLER <= 0;   // Disable the shift register data loading.
                 HIGH_PULSE_COUNTING <= 0; // Reset the high pulse counting
                 LOW_PULSE_COUNTING <= 0; // Reset the low pulse counting
@@ -186,35 +177,36 @@ always_ff @(posedge clk, posedge reset) begin : DECODER_FSM_FF_BLOCK
             end
 
             BIT_1_DETECTED: begin
-                BIDIR_SHIFTREG_PARALLEL_IN <= {BIDIR_SHIFTREG_PARALLEL_IN[11:0], 1'b1};
-                BIDIR_SHIFTREG_SERIAL_IN <= 0;
-                BIDIR_SHIFTREG_OP_MODE <= 2'b11;
-                BIDIR_SHIFTREG_ENABLER <= 1;
+                BIDIR_SHIFTREG_ENABLER <= 1; // Enable the shift register to load the data.
+                BIDIR_SHIFTREG_OP_MODE <= 3'b100; // Turns shift right PT2272_BIT mode on
+                BIDIR_SHIFTREG_PT2272_BIT_IN <= 2'b11; // Shift in 11 to the shift register
             end
 
             BIT_0_DETECTED: begin
-                BIDIR_SHIFTREG_PARALLEL_IN <= {BIDIR_SHIFTREG_PARALLEL_IN[11:0], 1'b0};
-                BIDIR_SHIFTREG_SERIAL_IN <= 0;
-                BIDIR_SHIFTREG_OP_MODE <= 2'b11;
-                BIDIR_SHIFTREG_ENABLER <= 1;
+                BIDIR_SHIFTREG_ENABLER <= 1; // Enable the shift register to load the data.
+                BIDIR_SHIFTREG_OP_MODE <= 3'b100; // Turns shift right PT2272_BIT mode on
+                BIDIR_SHIFTREG_PT2272_BIT_IN <= 2'b00; // Shift in 00 to the shift register
             end
 
             BIT_F_DETECTED: begin
-                BIDIR_SHIFTREG_PARALLEL_IN <= {BIDIR_SHIFTREG_PARALLEL_IN[11:0], 1'bx};
-                BIDIR_SHIFTREG_SERIAL_IN <= 0;
-                BIDIR_SHIFTREG_OP_MODE <= 2'b11;
-                BIDIR_SHIFTREG_ENABLER <= 1;
+                BIDIR_SHIFTREG_ENABLER <= 1; // Enable the shift register to load the data.
+                BIDIR_SHIFTREG_OP_MODE <= 3'b100; // Turns shift right PT2272_BIT mode on
+                BIDIR_SHIFTREG_PT2272_BIT_IN <= 2'b10; // Shift in 10 to the shift register
             end
 
             BIT_SYNC_DETECTED: begin
-                BIDIR_SHIFTREG_PARALLEL_IN <= {BIDIR_SHIFTREG_PARALLEL_IN[11:0], 1'b0};
-                BIDIR_SHIFTREG_SERIAL_IN <= 0;
-                BIDIR_SHIFTREG
+                BIDIR_SHIFTREG_ENABLER <= 1; // Enable the shift register to load the data.
+                BIDIR_SHIFTREG_OP_MODE <= 3'b100; // Turns shift right PT2272_BIT mode on
+                BIDIR_SHIFTREG_PT2272_BIT_IN <= 2'b01; // Shift in 01 to the shift register
+            end
+
+            default: begin
+                HIGH_PULSE_COUNTING <= HIGH_PULSE_COUNTING;
+                LOW_PULSE_COUNTING <= LOW_PULSE_COUNTING;
             end
         endcase
     end
 end
-
 
 
 always_ff @(posedge clk, posedge reset) begin : decoder_state_changer
@@ -224,10 +216,6 @@ always_ff @(posedge clk, posedge reset) begin : decoder_state_changer
         current_state <= next_state;
     end
 end
-
-
-
-
 
 
 endmodule
