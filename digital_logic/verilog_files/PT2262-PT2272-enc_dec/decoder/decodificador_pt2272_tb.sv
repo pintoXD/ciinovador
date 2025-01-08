@@ -53,7 +53,35 @@ decodificador_pt2272 DUT(
             @(posedge mock_INPUT_CLK);
             @(posedge mock_INPUT_CLK);
             // mock_RESET = 0;
-            mock_cod_i = ~mock_cod_i;
+            // mock_cod_i = ~mock_cod_i;
+            // @(posedge mock_INPUT_CLK);
+        end
+
+        for (int i = 0; i < 12; i++) begin
+            @(posedge mock_INPUT_CLK);
+            // mock_RESET = 0;
+            mock_cod_i = 1;
+            // @(posedge mock_INPUT_CLK);
+        end
+
+        for (int i = 0; i < 4; i++) begin
+            @(posedge mock_INPUT_CLK);
+            // mock_RESET = 0;
+            mock_cod_i = 0;
+            // @(posedge mock_INPUT_CLK);
+        end
+
+        for (int i = 0; i < 12; i++) begin
+            @(posedge mock_INPUT_CLK);
+            // mock_RESET = 0;
+            mock_cod_i = 1;
+            // @(posedge mock_INPUT_CLK);
+        end
+
+        for (int i = 0; i < 4; i++) begin
+            @(posedge mock_INPUT_CLK);
+            // mock_RESET = 0;
+            mock_cod_i = 0;
             // @(posedge mock_INPUT_CLK);
         end
 

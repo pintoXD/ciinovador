@@ -17,7 +17,8 @@ typedef enum logic[7:0] {
     BIT_0_DETECTED = 8'h04,
     BIT_F_DETECTED = 8'h05,
     BIT_SYNC_DETECTED = 8'h06,
-    INITIAL_STATE = 8'h1F
+    INITIAL_STATE = 8'h1F,
+    PULSE_COUNTING = 8'h20
 
 } DECODER_FSM_STATE;
 
@@ -73,7 +74,7 @@ logic PREVIOUS_cod_i;
 logic cod_i_ROSE;
 logic cod_i_FELL;
 
-always_ff @(posedge cod_i) begin : SAVE_PAST_cod_i
+always_ff @(posedge cod_i, posedge reset) begin : SAVE_PAST_cod_i
     if(reset)
         PREVIOUS_cod_i <= 0;
     else
@@ -83,16 +84,31 @@ end
 assign cod_i_ROSE = ((cod_i==1) && (PREVIOUS_cod_i==1));
 assign cod_i_FELL = ((cod_i==0) && (PREVIOUS_cod_i==1));
 
+always_ff @(posedge clk, posedge reset_counters) begin : PULSE_COUNTING_FF
+    if(reset_counters)begin
+        HIGH_PULSE_COUNTING <= 0;
+        LOW_PULSE_COUNTING <= 0;
+    end else begin
+        if(cod_i_ROSE)
+            HIGH_PULSE_COUNTING <= HIGH_PULSE_COUNTING + 1;
+        else if(cod_i_FELL)
+            LOW_PULSE_COUNTING <= LOW_PULSE_COUNTING + 1;
+    end
+end
+
+
 
 always_comb begin : DECODER_FSM_COMB_BLOCK
     next_state = current_state;
     if(reset)begin
         next_state = INITIAL_STATE;
+        reset_counters = 1;
     end else begin
         unique case(current_state)
             INITIAL_STATE: begin
+                reset_counters = 0;
                 if(cod_i_ROSE)
-                    next_state = COUNTS_HIGH_PULSE;
+                    next_state = PULSE_COUNTING;
                 else
                     next_state = INITIAL_STATE;
             end
@@ -106,6 +122,19 @@ always_comb begin : DECODER_FSM_COMB_BLOCK
                     next_state = IDLE;
             end
             
+            PULSE_COUNTING: begin
+                if(HIGH_PULSE_COUNTING == 23 && LOW_PULSE_COUNTING == 7) // BIT 1
+                    next_state = BIT_1_DETECTED;
+                else if(HIGH_PULSE_COUNTING == 7 && LOW_PULSE_COUNTING == 23) // BIT 0
+                    next_state = BIT_0_DETECTED;
+                else if(HIGH_PULSE_COUNTING == 15 && LOW_PULSE_COUNTING == 15) // BIT F
+                    next_state = BIT_F_DETECTED;
+                else if(HIGH_PULSE_COUNTING == 3 && LOW_PULSE_COUNTING == 127) // BIT SYNC
+                    next_state = BIT_SYNC_DETECTED;
+                else
+                    next_state = PULSE_COUNTING;
+            end
+
             COUNTS_HIGH_PULSE: begin
                 if (cod_i_FELL)begin
                     next_state = COUNTS_LOW_PULSE;
@@ -118,37 +147,41 @@ always_comb begin : DECODER_FSM_COMB_BLOCK
                 if(cod_i_ROSE)begin
                     next_state = COUNTS_HIGH_PULSE;
                 end else begin
-                    if(HIGH_PULSE_COUNTING == 24 && LOW_PULSE_COUNTING == 8) // BIT 1
-                        next_state = BIT_1_DETECTED;
-                    else if(HIGH_PULSE_COUNTING == 8 && LOW_PULSE_COUNTING == 24) // BIT 0
-                        next_state = BIT_0_DETECTED;
-                    else if(HIGH_PULSE_COUNTING == 16 && LOW_PULSE_COUNTING == 16) // BIT F
-                        next_state = BIT_F_DETECTED;
-                    else if(HIGH_PULSE_COUNTING == 4 && LOW_PULSE_COUNTING == 128) // BIT SYNC
-                        next_state = BIT_SYNC_DETECTED;
-                    else
+                    // if(HIGH_PULSE_COUNTING == 24 && LOW_PULSE_COUNTING == 8) // BIT 1
+                    //     next_state = BIT_1_DETECTED;
+                    // else if(HIGH_PULSE_COUNTING == 8 && LOW_PULSE_COUNTING == 24) // BIT 0
+                    //     next_state = BIT_0_DETECTED;
+                    // else if(HIGH_PULSE_COUNTING == 16 && LOW_PULSE_COUNTING == 16) // BIT F
+                    //     next_state = BIT_F_DETECTED;
+                    // else if(HIGH_PULSE_COUNTING == 4 && LOW_PULSE_COUNTING == 128) // BIT SYNC
+                    //     next_state = BIT_SYNC_DETECTED;
+                    // else
                         next_state = COUNTS_LOW_PULSE;
                 end
             end
 
             BIT_1_DETECTED: begin
-                next_state = IDLE;
+                reset_counters = 1;
+                next_state = INITIAL_STATE;
             end
 
             BIT_0_DETECTED: begin
-                next_state = IDLE;
+                reset_counters = 1;
+                next_state = INITIAL_STATE;
             end
 
             BIT_F_DETECTED: begin
-                next_state = IDLE;
+                reset_counters = 1;
+                next_state = INITIAL_STATE;
             end
 
             BIT_SYNC_DETECTED: begin
-                next_state = IDLE;
+                reset_counters = 1;
+                next_state = INITIAL_STATE;
             end
 
             default: begin
-                next_state = IDLE;
+                next_state = INITIAL_STATE;
             end
 
         endcase
@@ -162,24 +195,24 @@ always_ff @(posedge clk, posedge reset) begin : DECODER_FSM_FF_BLOCK
         BIDIR_SHIFTREG_PT2272_BIT_IN <= 2'b00; // Shift in 00 to the shift register by default.
         BIDIR_SHIFTREG_OP_MODE <= 3'b011;   // Load mode to loads a 0 to the shift register
         BIDIR_SHIFTREG_ENABLER <= 1; // Enable the shift register to load the 0 data.
-        HIGH_PULSE_COUNTING <= 0; // Reset the high pulse counting
-        LOW_PULSE_COUNTING <= 0; // Reset the low pulse counting
+        // HIGH_PULSE_COUNTING <= 0; // Reset the high pulse counting
+        // LOW_PULSE_COUNTING <= 0; // Reset the low pulse counting
     end else begin
         unique case(current_state)
             IDLE: begin
                 BIDIR_SHIFTREG_OP_MODE <= 3'b000; // Turns shift right mode on
                 BIDIR_SHIFTREG_PT2272_BIT_IN <= 2'b00; // Shift in 00 to the shift register by default.
                 BIDIR_SHIFTREG_ENABLER <= 0;   // Disable the shift register data loading.
-                HIGH_PULSE_COUNTING <= 0; // Reset the high pulse counting
-                LOW_PULSE_COUNTING <= 0; // Reset the low pulse counting
+                // HIGH_PULSE_COUNTING <= 0; // Reset the high pulse counting
+                // LOW_PULSE_COUNTING <= 0; // Reset the low pulse counting
             end
 
             COUNTS_HIGH_PULSE: begin
-                HIGH_PULSE_COUNTING <= HIGH_PULSE_COUNTING + 1;
+                // HIGH_PULSE_COUNTING <= HIGH_PULSE_COUNTING + 1;
             end
 
             COUNTS_LOW_PULSE: begin
-                LOW_PULSE_COUNTING <= LOW_PULSE_COUNTING + 1;
+                // LOW_PULSE_COUNTING <= LOW_PULSE_COUNTING + 1;
             end
 
             BIT_1_DETECTED: begin
@@ -207,8 +240,8 @@ always_ff @(posedge clk, posedge reset) begin : DECODER_FSM_FF_BLOCK
             end
 
             default: begin
-                HIGH_PULSE_COUNTING <= HIGH_PULSE_COUNTING;
-                LOW_PULSE_COUNTING <= LOW_PULSE_COUNTING;
+                // HIGH_PULSE_COUNTING <= HIGH_PULSE_COUNTING;
+                // LOW_PULSE_COUNTING <= LOW_PULSE_COUNTING;
             end
         endcase
     end

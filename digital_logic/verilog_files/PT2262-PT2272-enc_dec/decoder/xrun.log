@@ -1,5 +1,5 @@
 xrun(64): 24.09-s001: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	24.09-s001: Started on Jan 08, 2025 at 10:53:50 -03
+TOOL:	xrun(64)	24.09-s001: Started on Jan 08, 2025 at 12:29:34 -03
 xrun
 	-64bit
 	decodificador_pt2272_tb.sv
@@ -9,8 +9,8 @@ xrun
 	+access+rw
 	-s
 Recompiling... reason: file './decodificador_pt2272.sv' is newer than expected.
-	expected: Wed Jan  8 10:47:10 2025
-	actual:   Wed Jan  8 10:53:25 2025
+	expected: Wed Jan  8 12:25:52 2025
+	actual:   Wed Jan  8 12:29:20 2025
 file: decodificador_pt2272.sv
 	module worklib.decodificador_pt2272:sv
 		errors: 0, warnings: 0
@@ -20,21 +20,21 @@ file: decodificador_pt2272.sv
 		PT2262_DECODER_TB
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.decodificador_pt2272:sv <0x298c71ac>
-			streams:  23, words: 12063
+		worklib.decodificador_pt2272:sv <0x34b67f49>
+			streams:  24, words: 12561
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
 		                 Instances  Unique
 		Modules:                 3       3
-		Registers:              35      35
+		Registers:              39      39
 		Scalar wires:           14       -
 		Vectored wires:          7       -
-		Always blocks:           5       5
+		Always blocks:           6       6
 		Initial blocks:          2       2
 		Cont. assignments:       2       4
 		Pseudo assignments:     12       -
-		Process Clocks:          4       4
+		Process Clocks:          5       5
 		Simulation timescale:  1ps
 	Writing initial simulation snapshot: worklib.PT2262_DECODER_TB:sv
 xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
@@ -46,7 +46,4 @@ Relinquished control to SimVision...
 # Restoring simulation environment...
 xcelium> input -quiet .reinvoke.sim
 xcelium> file delete .reinvoke.sim
-xcelium> run
-Simulation complete via $finish(1) at time 30461 US + 0
-./decodificador_pt2272_tb.sv:94         $finish;
 xcelium> 

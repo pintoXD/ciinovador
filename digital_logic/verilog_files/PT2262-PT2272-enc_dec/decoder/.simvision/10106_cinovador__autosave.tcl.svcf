@@ -77,8 +77,8 @@ browser timecontrol set -lock 0
 #
 # Waveform windows
 #
-if {[catch {window new WaveWindow -name "Waveform 1" -geometry 1920x1043+-1+-1}] != ""} {
-    window geometry "Waveform 1" 1920x1043+-1+-1
+if {[catch {window new WaveWindow -name "Waveform 1" -geometry 1920x983+1919+26}] != ""} {
+    window geometry "Waveform 1" 1920x983+1919+26
 }
 window target "Waveform 1" on
 waveform using {Waveform 1}
@@ -89,7 +89,7 @@ waveform set \
     -signalwidth 175 \
     -units ps \
     -valuewidth 75
-waveform baseline set -time 0
+waveform baseline set -time 17,014,747,960ps
 
 set id [waveform add -signals  {
 	{simulator::PT2262_DECODER_TB.DUT.A[7:0]}
@@ -130,6 +130,7 @@ set id [waveform add -signals  {
 set id [waveform add -signals  {
 	{simulator::PT2262_DECODER_TB.DUT.HIGH_PULSE_COUNTING[4:0]}
 	} ]
+waveform format $id -radix %d
 set id [waveform add -signals  {
 	{simulator::PT2262_DECODER_TB.DUT.LOW_PULSE_COUNTING[7:0]}
 	} ]
@@ -164,7 +165,7 @@ set id [waveform add -signals  {
 	simulator::PT2262_DECODER_TB.DUT.reset_counters
 	} ]
 
-waveform xview limits 0 2470324392ps
+waveform xview limits 0 2000ps
 
 #
 # Waveform Window Links

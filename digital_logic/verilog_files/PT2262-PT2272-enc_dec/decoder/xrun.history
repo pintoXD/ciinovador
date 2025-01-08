@@ -68,3 +68,23 @@ s33(08Jan2025:10:33:09):  xrun -64bit decodificador_pt2272_tb.sv decodificador_p
 s34(08Jan2025:10:47:15):  xrun -64bit decodificador_pt2272_tb.sv decodificador_pt2272.sv ../bidir_shift_register/bidir_shiftreg.sv +gui +access+rw -s 
 #e35(08Jan2025:10:53:50): source ./xcelium.d/env.d/env.history.08Jan2025_10_53_50
 s35(08Jan2025:10:53:50):  xrun -64bit decodificador_pt2272_tb.sv decodificador_pt2272.sv ../bidir_shift_register/bidir_shiftreg.sv +gui +access+rw -s 
+#e36(08Jan2025:11:06:58): source ./xcelium.d/env.d/env.history.08Jan2025_11_06_58
+s36(08Jan2025:11:06:58):  xrun -64bit decodificador_pt2272_tb.sv decodificador_pt2272.sv ../bidir_shift_register/bidir_shiftreg.sv +gui +access+rw -s 
+#e37(08Jan2025:11:11:36): source ./xcelium.d/env.d/env.history.08Jan2025_11_11_36
+s37(08Jan2025:11:11:36):  xrun -64bit decodificador_pt2272_tb.sv decodificador_pt2272.sv ../bidir_shift_register/bidir_shiftreg.sv +gui +access+rw -s 
+#e38(08Jan2025:11:15:53): source ./xcelium.d/env.d/env.history.08Jan2025_11_15_53
+s38(08Jan2025:11:15:53):  xrun -64bit decodificador_pt2272_tb.sv decodificador_pt2272.sv ../bidir_shift_register/bidir_shiftreg.sv +gui +access+rw -s 
+#e39(08Jan2025:12:18:51): source ./xcelium.d/env.d/env.history.08Jan2025_12_18_51
+s39(08Jan2025:12:18:51):  xrun -64bit decodificador_pt2272_tb.sv decodificador_pt2272.sv ../bidir_shift_register/bidir_shiftreg.sv +gui +access+rw -s 
+#e40(08Jan2025:12:19:15): source ./xcelium.d/env.d/env.history.08Jan2025_12_19_15
+s40(08Jan2025:12:19:15):  xrun -64bit decodificador_pt2272_tb.sv decodificador_pt2272.sv ../bidir_shift_register/bidir_shiftreg.sv +gui +access+rw -s 
+#e41(08Jan2025:12:19:42): source ./xcelium.d/env.d/env.history.08Jan2025_12_19_42
+s41(08Jan2025:12:19:42):  xrun -64bit decodificador_pt2272_tb.sv decodificador_pt2272.sv ../bidir_shift_register/bidir_shiftreg.sv +gui +access+rw -s 
+#e42(08Jan2025:12:19:58): source ./xcelium.d/env.d/env.history.08Jan2025_12_19_58
+s42(08Jan2025:12:19:58):  xrun -64bit decodificador_pt2272_tb.sv decodificador_pt2272.sv ../bidir_shift_register/bidir_shiftreg.sv +gui +access+rw -s 
+#e43(08Jan2025:12:20:21): source ./xcelium.d/env.d/env.history.08Jan2025_12_20_21
+s43(08Jan2025:12:20:21):  xrun -64bit decodificador_pt2272_tb.sv decodificador_pt2272.sv ../bidir_shift_register/bidir_shiftreg.sv +gui +access+rw -s 
+#e44(08Jan2025:12:26:04): source ./xcelium.d/env.d/env.history.08Jan2025_12_26_04
+s44(08Jan2025:12:26:04):  xrun -64bit decodificador_pt2272_tb.sv decodificador_pt2272.sv ../bidir_shift_register/bidir_shiftreg.sv +gui +access+rw -s 
+#e45(08Jan2025:12:29:34): source ./xcelium.d/env.d/env.history.08Jan2025_12_29_34
+s45(08Jan2025:12:29:34):  xrun -64bit decodificador_pt2272_tb.sv decodificador_pt2272.sv ../bidir_shift_register/bidir_shiftreg.sv +gui +access+rw -s 
