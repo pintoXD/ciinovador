@@ -1,5 +1,5 @@
 `timescale 1us/1ns
-module PT2262_ENCODER(
+module codificador_pt2262(
     input logic clk, reset,
     input logic [7:0] A,
     input logic [3:0] D,
@@ -54,13 +54,13 @@ ADDRESS_INTERPRETER addr_interpreter(
 
 // Instantiate an oscillator that creates a 12kHz oscillation clock from the 3MHz input clock
 CLOCK_DIVIDER #(
-        .DIVIDER(250)
-    )internal_oscillator(
-        .INPUT_CLK(clk), 
-        .RST(osc_rst), 
-        // .RST(osc_rst), 
-        .OUTPUT_CLK(osc_clk) 
-    );
+    .DIVIDER(250)
+)internal_oscillator(
+    .INPUT_CLK(clk), 
+    .RST(osc_rst), 
+    // .RST(osc_rst), 
+    .OUTPUT_CLK(osc_clk) 
+);
 
 /*  
 
@@ -86,7 +86,7 @@ BIT_GENERATOR signal_creator(
     .bit_sent(bit_sent_flag)
 );
 
-assign cod_o = (bit_gen_input != 2'b11) ? bit_gen_output : 0; // Drives the cod_o output only and only if the bit being generated is not a sync bit.
+assign cod_o = bit_gen_output; // Drives the cod_o output only and only if the bit being generated is not a sync bit.
 assign sync = (bit_gen_input == 2'b11) ? bit_gen_output : 0; // Drives the sync output only and only if the bit being generated is a sync bit.
 
 // A counter that counts the number of high pulses created byt the bit generator.

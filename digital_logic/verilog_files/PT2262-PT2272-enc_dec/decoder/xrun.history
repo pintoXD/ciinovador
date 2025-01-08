@@ -88,3 +88,17 @@ s43(08Jan2025:12:20:21):  xrun -64bit decodificador_pt2272_tb.sv decodificador_p
 s44(08Jan2025:12:26:04):  xrun -64bit decodificador_pt2272_tb.sv decodificador_pt2272.sv ../bidir_shift_register/bidir_shiftreg.sv +gui +access+rw -s 
 #e45(08Jan2025:12:29:34): source ./xcelium.d/env.d/env.history.08Jan2025_12_29_34
 s45(08Jan2025:12:29:34):  xrun -64bit decodificador_pt2272_tb.sv decodificador_pt2272.sv ../bidir_shift_register/bidir_shiftreg.sv +gui +access+rw -s 
+#e46(08Jan2025:13:59:24): source ./xcelium.d/env.d/env.history.08Jan2025_13_59_24
+s46(08Jan2025:13:59:24):  xrun -64bit decodificador_pt2272_tb.sv decodificador_pt2272.sv ../bidir_shift_register/bidir_shiftreg.sv +gui +access+rw -s 
+#e47(08Jan2025:14:31:30): source ./xcelium.d/env.d/env.history.08Jan2025_14_31_30
+s47(08Jan2025:14:31:30):  xrun -64bit decodificador_pt2272_tb.sv decodificador_pt2272.sv ../bidir_shift_register/bidir_shiftreg.sv +gui +access+rw -s 
+#e48(08Jan2025:14:42:09): source ./xcelium.d/env.d/env.history.08Jan2025_14_42_09
+s48(08Jan2025:14:42:09):  xrun -64bit decodificador_pt2272_tb.sv decodificador_pt2272.sv ../bidir_shift_register/bidir_shiftreg.sv +gui +access+rw -s 
+#e49(08Jan2025:14:45:22): source ./xcelium.d/env.d/env.history.08Jan2025_14_45_22
+s49(08Jan2025:14:45:22):  xrun -64bit decodificador_pt2272_tb.sv decodificador_pt2272.sv ../bidir_shift_register/bidir_shiftreg.sv +gui +access+rw -s 
+#e50(08Jan2025:14:47:48): source ./xcelium.d/env.d/env.history.08Jan2025_14_47_48
+s50(08Jan2025:14:47:48):  xrun -64bit decodificador_pt2272_tb.sv decodificador_pt2272.sv ../bidir_shift_register/bidir_shiftreg.sv +gui +access+rw -s 
+#e51(08Jan2025:14:52:28): source ./xcelium.d/env.d/env.history.08Jan2025_14_52_28
+s51(08Jan2025:14:52:28):  xrun -64bit decodificador_pt2272_tb.sv decodificador_pt2272.sv ../bidir_shift_register/bidir_shiftreg.sv +gui +access+rw -s 
+#e52(08Jan2025:14:56:54): source ./xcelium.d/env.d/env.history.08Jan2025_14_56_54
+s52(08Jan2025:14:56:54):  xrun -64bit decodificador_pt2272_tb.sv decodificador_pt2272.sv ../bidir_shift_register/bidir_shiftreg.sv +gui +access+rw -s 

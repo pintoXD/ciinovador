@@ -1,5 +1,5 @@
 xrun(64): 24.09-s001: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	24.09-s001: Started on Jan 08, 2025 at 12:29:34 -03
+TOOL:	xrun(64)	24.09-s001: Started on Jan 08, 2025 at 14:56:54 -03
 xrun
 	-64bit
 	decodificador_pt2272_tb.sv
@@ -8,11 +8,11 @@ xrun
 	+gui
 	+access+rw
 	-s
-Recompiling... reason: file './decodificador_pt2272.sv' is newer than expected.
-	expected: Wed Jan  8 12:25:52 2025
-	actual:   Wed Jan  8 12:29:20 2025
-file: decodificador_pt2272.sv
-	module worklib.decodificador_pt2272:sv
+Recompiling... reason: file './decodificador_pt2272_tb.sv' is newer than expected.
+	expected: Wed Jan  8 14:52:18 2025
+	actual:   Wed Jan  8 14:56:48 2025
+file: decodificador_pt2272_tb.sv
+	module worklib.PT2262_DECODER_TB:sv
 		errors: 0, warnings: 0
 		Caching library 'worklib' ....... Done
 	Elaborating the design hierarchy:
@@ -20,14 +20,14 @@ file: decodificador_pt2272.sv
 		PT2262_DECODER_TB
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.decodificador_pt2272:sv <0x34b67f49>
-			streams:  24, words: 12561
+		worklib.PT2262_DECODER_TB:sv <0x68e613b3>
+			streams:   6, words: 14903
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
 		                 Instances  Unique
 		Modules:                 3       3
-		Registers:              39      39
+		Registers:              45      45
 		Scalar wires:           14       -
 		Vectored wires:          7       -
 		Always blocks:           6       6
@@ -46,4 +46,9 @@ Relinquished control to SimVision...
 # Restoring simulation environment...
 xcelium> input -quiet .reinvoke.sim
 xcelium> file delete .reinvoke.sim
-xcelium> 
+xcelium> run
+Simulation complete via $finish(1) at time 56357 US + 0
+./decodificador_pt2272_tb.sv:168         $finish;
+xcelium> ^C
+xcelium> exit
+TOOL:	xrun(64)	24.09-s001: Exiting on Jan 08, 2025 at 15:31:37 -03  (total: 00:34:43)

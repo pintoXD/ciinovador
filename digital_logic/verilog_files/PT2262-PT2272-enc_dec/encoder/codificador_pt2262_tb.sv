@@ -1,5 +1,5 @@
 `timescale 1us/1ns
-module PT2262_ENCODER_TB (
+module codificador_pt2262_tb (
 );
     logic mock_INPUT_CLK, mock_RESET;
     logic [7:0] mock_A;
@@ -7,14 +7,14 @@ module PT2262_ENCODER_TB (
     logic mock_sync;
     logic mock_cod_o;
 
-PT2262_ENCODER DUT(
-    .clk(mock_INPUT_CLK), 
-    .reset(mock_RESET),
-    .A(mock_A),
-    .D(mock_D),
-    .sync(mock_sync),
-    .cod_o(mock_cod_o)
-);
+    codificador_pt2262 DUT(
+        .clk(mock_INPUT_CLK), 
+        .reset(mock_RESET),
+        .A(mock_A),
+        .D(mock_D),
+        .sync(mock_sync),
+        .cod_o(mock_cod_o)
+    );
 
     initial begin
         mock_INPUT_CLK = 0;

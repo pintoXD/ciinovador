@@ -1,13 +1,57 @@
 xrun(64): 24.09-s001: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	24.09-s001: Started on Jan 08, 2025 at 08:49:45 -03
+TOOL:	xrun(64)	24.09-s001: Started on Jan 08, 2025 at 16:08:32 -03
 xrun
 	-64bit
-	decodificador_pt2272_tb.sv
-	decodificador_pt2272.sv
-	../bidir_shift_register/bidir_shiftreg.sv
-	+gui
+	/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272_tb.sv
+	/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272.sv
+	/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262.sv
+	/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/addr_interpreter/addr_interpreter.sv
+	/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/addr_interpreter/comp_endereco.sv
+	/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/bit_gen/bit_generator.sv
+	/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/oscillator/clock_divider.sv
+	/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/bidir_shift_register/bidir_shiftreg.sv
 	+access+rw
-xrun: *E,FILEMIS: Cannot find the provided file decodificador_pt2272_tb.sv.
-xrun: *E,FILEMIS: Cannot find the provided file decodificador_pt2272.sv.
-xrun: *E,FILEMIS: Cannot find the provided file ../bidir_shift_register/bidir_shiftreg.sv.
-TOOL:	xrun(64)	24.09-s001: Exiting on Jan 08, 2025 at 08:49:46 -03  (total: 00:00:01)
+	+gui
+	-s
+Recompiling... reason: file './decoder/decodificador_pt2272.sv' is newer than expected.
+	expected: Wed Jan  8 15:54:42 2025
+	actual:   Wed Jan  8 16:08:24 2025
+file: /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272.sv
+	module worklib.decodificador_pt2272:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		decodificador_pt2272_tb
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.decodificador_pt2272:sv <0x54441585>
+			streams:  26, words: 11901
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 9       8
+		Registers:              70      67
+		Scalar wires:           38       -
+		Vectored wires:         20       -
+		Always blocks:          17      16
+		Initial blocks:          2       2
+		Cont. assignments:       9      10
+		Pseudo assignments:     30       -
+		Process Clocks:         10       7
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.decodificador_pt2272_tb:sv
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+xcelium> 
+xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
+xcelium> 
+-------------------------------------
+Relinquished control to SimVision...
+# Restoring simulation environment...
+xcelium> input -quiet .reinvoke.sim
+xcelium> file delete .reinvoke.sim
+xcelium> run
+Simulation complete via $finish(1) at time 82542075 NS + 3
+./decoder/decodificador_pt2272_tb.sv:192         $finish;
+xcelium> 
