@@ -27,6 +27,10 @@ preferences set toolbar-Search-Console {
   usual
   position -pos 2
 }
+preferences set toolbar-txe_waveform_toggle-WaveWindow {
+  usual
+  position -pos 1
+}
 preferences set savedlg-cursors 1
 preferences set plugin-enable-groupscope 0
 preferences set sb-display-values 1
@@ -35,6 +39,10 @@ preferences set plugin-enable-waveformfrequencyplot 0
 preferences set toolbar-SimControl-WatchWindow {
   usual
   shown 0
+}
+preferences set toolbar-Windows-WaveWindow {
+  usual
+  position -pos 2
 }
 preferences set savedlg-databases 0
 preferences set toolbar-TimeSearch-WatchWindow {
@@ -55,8 +63,8 @@ mmap new  -reuse -name {Example Map} -radix %x -contents {{%b=11???? -bgcolor or
 #
 # Design Browser windows
 #
-if {[catch {window new WatchList -name "Design Browser 1" -geometry 1920x1043+-1+-1}] != ""} {
-    window geometry "Design Browser 1" 1920x1043+-1+-1
+if {[catch {window new WatchList -name "Design Browser 1" -geometry 730x500+2733+88}] != ""} {
+    window geometry "Design Browser 1" 730x500+2733+88
 }
 window target "Design Browser 1" on
 browser using {Design Browser 1}
@@ -69,18 +77,18 @@ browser timecontrol set -lock 0
 #
 # Waveform windows
 #
-if {[catch {window new WaveWindow -name "Waveform 2" -geometry 1920x1043+-1+-1}] != ""} {
-    window geometry "Waveform 2" 1920x1043+-1+-1
+if {[catch {window new WaveWindow -name "Waveform 1" -geometry 1920x1043+-1+-1}] != ""} {
+    window geometry "Waveform 1" 1920x1043+-1+-1
 }
-window target "Waveform 2" on
-waveform using {Waveform 2}
+window target "Waveform 1" on
+waveform using {Waveform 1}
 waveform sidebar visibility partial
 waveform set \
     -primarycursor TimeA \
     -signalnames name \
-    -signalwidth 315 \
+    -signalwidth 175 \
     -units ps \
-    -valuewidth 168
+    -valuewidth 75
 waveform baseline set -time 0
 
 set id [waveform add -signals  {
@@ -135,10 +143,10 @@ set id [waveform add -signals  {
 	simulator::PT2262_DECODER_TB.DUT.cod_i
 	} ]
 set id [waveform add -signals  {
-	simulator::PT2262_DECODER_TB.DUT.cod_i_FELL
+	simulator::PT2262_DECODER_TB.DUT.cod_i_ROSE
 	} ]
 set id [waveform add -signals  {
-	simulator::PT2262_DECODER_TB.DUT.cod_i_ROSE
+	simulator::PT2262_DECODER_TB.DUT.cod_i_FELL
 	} ]
 set id [waveform add -signals  {
 	{simulator::PT2262_DECODER_TB.DUT.current_state[7:0]}
@@ -156,7 +164,7 @@ set id [waveform add -signals  {
 	simulator::PT2262_DECODER_TB.DUT.reset_counters
 	} ]
 
-waveform xview limits 0 22161000000ps
+waveform xview limits 0 2470324392ps
 
 #
 # Waveform Window Links
@@ -166,7 +174,7 @@ waveform xview limits 0 22161000000ps
 # Console windows
 #
 console set -windowname Console
-window geometry Console 730x250+261+564
+window geometry Console 730x250+1145+530
 
 #
 # Layout selection

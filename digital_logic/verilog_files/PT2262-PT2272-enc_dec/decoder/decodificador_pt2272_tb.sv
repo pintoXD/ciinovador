@@ -28,6 +28,7 @@ decodificador_pt2272 DUT(
     initial begin
         @(posedge mock_INPUT_CLK);
         mock_RESET = 1;
+        mock_cod_i = 0;
 
         @(posedge mock_INPUT_CLK);
         mock_RESET = 0;
@@ -47,9 +48,9 @@ decodificador_pt2272 DUT(
         // mock_D = 4'b1010;
 
 
-        mock_cod_i = 0;
         
-        for (int i = 0; i < 20; i++) begin
+        for (int i = 0; i < 50; i++) begin
+            @(posedge mock_INPUT_CLK);
             @(posedge mock_INPUT_CLK);
             // mock_RESET = 0;
             mock_cod_i = ~mock_cod_i;

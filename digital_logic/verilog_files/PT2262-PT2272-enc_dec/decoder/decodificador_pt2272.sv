@@ -16,7 +16,8 @@ typedef enum logic[7:0] {
     BIT_1_DETECTED = 8'h03,
     BIT_0_DETECTED = 8'h04,
     BIT_F_DETECTED = 8'h05,
-    BIT_SYNC_DETECTED = 8'h06
+    BIT_SYNC_DETECTED = 8'h06,
+    INITIAL_STATE = 8'h1F
 
 } DECODER_FSM_STATE;
 
@@ -72,25 +73,30 @@ logic PREVIOUS_cod_i;
 logic cod_i_ROSE;
 logic cod_i_FELL;
 
-always@(posedge clk, posedge reset) begin : SAVE_PAST_cod_i
+always_ff @(posedge cod_i) begin : SAVE_PAST_cod_i
     if(reset)
         PREVIOUS_cod_i <= 0;
     else
         PREVIOUS_cod_i <= cod_i;
 end
 
-assign cod_i_ROSE = ((cod_i==1) && (PREVIOUS_cod_i==0));
+assign cod_i_ROSE = ((cod_i==1) && (PREVIOUS_cod_i==1));
 assign cod_i_FELL = ((cod_i==0) && (PREVIOUS_cod_i==1));
 
 
 always_comb begin : DECODER_FSM_COMB_BLOCK
     next_state = current_state;
     if(reset)begin
-        // dv = 0;
-        // D = 4'b0000;
-        reset_counters = 1;
+        next_state = INITIAL_STATE;
     end else begin
         unique case(current_state)
+            INITIAL_STATE: begin
+                if(cod_i_ROSE)
+                    next_state = COUNTS_HIGH_PULSE;
+                else
+                    next_state = INITIAL_STATE;
+            end
+
             IDLE: begin
                 if(cod_i_ROSE)
                     next_state = COUNTS_HIGH_PULSE;
@@ -209,12 +215,8 @@ always_ff @(posedge clk, posedge reset) begin : DECODER_FSM_FF_BLOCK
 end
 
 
-always_ff @(posedge clk, posedge reset) begin : decoder_state_changer
-    if(reset) begin
-        current_state <= IDLE;
-    end else begin
-        current_state <= next_state;
-    end
+always_ff @(posedge clk) begin : decoder_state_changer
+    current_state <= next_state;
 end
 
 

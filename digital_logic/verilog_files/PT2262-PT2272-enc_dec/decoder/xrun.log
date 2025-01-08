@@ -1,5 +1,5 @@
 xrun(64): 24.09-s001: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	24.09-s001: Started on Jan 07, 2025 at 17:02:15 -03
+TOOL:	xrun(64)	24.09-s001: Started on Jan 08, 2025 at 10:53:50 -03
 xrun
 	-64bit
 	decodificador_pt2272_tb.sv
@@ -9,11 +9,8 @@ xrun
 	+access+rw
 	-s
 Recompiling... reason: file './decodificador_pt2272.sv' is newer than expected.
-	expected: Tue Jan  7 16:40:48 2025
-	actual:   Tue Jan  7 17:01:23 2025
-file: decodificador_pt2272_tb.sv
-	module worklib.PT2262_DECODER_TB:sv
-		errors: 0, warnings: 0
+	expected: Wed Jan  8 10:47:10 2025
+	actual:   Wed Jan  8 10:53:25 2025
 file: decodificador_pt2272.sv
 	module worklib.decodificador_pt2272:sv
 		errors: 0, warnings: 0
@@ -23,10 +20,8 @@ file: decodificador_pt2272.sv
 		PT2262_DECODER_TB
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.decodificador_pt2272:sv <0x4be7caa4>
-			streams:  22, words: 11773
-		worklib.PT2262_DECODER_TB:sv <0x0adc0119>
-			streams:   6, words:  7297
+		worklib.decodificador_pt2272:sv <0x298c71ac>
+			streams:  23, words: 12063
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
@@ -39,7 +34,7 @@ file: decodificador_pt2272.sv
 		Initial blocks:          2       2
 		Cont. assignments:       2       4
 		Pseudo assignments:     12       -
-		Process Clocks:          3       2
+		Process Clocks:          4       4
 		Simulation timescale:  1ps
 	Writing initial simulation snapshot: worklib.PT2262_DECODER_TB:sv
 xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
@@ -52,6 +47,6 @@ Relinquished control to SimVision...
 xcelium> input -quiet .reinvoke.sim
 xcelium> file delete .reinvoke.sim
 xcelium> run
-Simulation complete via $finish(1) at time 17181 US + 0
-./decodificador_pt2272_tb.sv:93         $finish;
+Simulation complete via $finish(1) at time 30461 US + 0
+./decodificador_pt2272_tb.sv:94         $finish;
 xcelium> 
