@@ -127,9 +127,10 @@ always_comb begin : DECODER_FSM_COMB_BLOCK
     end else begin
         unique case(current_state)
             INITIAL_STATE: begin
-                reset_counters = 0;
-                if(cod_i_ROSE)
+                if(cod_i_ROSE)begin
+                    reset_counters = 0;
                     next_state = PULSE_COUNTING;
+                end
                 else
                     next_state = INITIAL_STATE;
             end
@@ -144,15 +145,19 @@ always_comb begin : DECODER_FSM_COMB_BLOCK
             end
             
             PULSE_COUNTING: begin
-                if(HIGH_PULSE_COUNTING == 24 && LOW_PULSE_COUNTING == 7) // BIT 1
+                if(HIGH_PULSE_COUNTING == 24 && LOW_PULSE_COUNTING == 7) begin// BIT 1
+                    reset_counters = 1;
                     next_state = BIT_1_DETECTED; 
-                else if(HIGH_PULSE_COUNTING == 8 && LOW_PULSE_COUNTING == 23) // BIT 0
-                    next_state = BIT_0_DETECTED;
-                else if(HIGH_PULSE_COUNTING == 16 && LOW_PULSE_COUNTING == 15) // BIT F
+                end else if(HIGH_PULSE_COUNTING == 8 && LOW_PULSE_COUNTING == 23) begin// BIT 0
+                    reset_counters = 1;
+                    next_state = BIT_0_DETECTED; 
+                end else if(HIGH_PULSE_COUNTING == 16 && LOW_PULSE_COUNTING == 15) begin// BIT F
+                    reset_counters = 1;
                     next_state = BIT_F_DETECTED;
-                else if(HIGH_PULSE_COUNTING == 4 && LOW_PULSE_COUNTING == 127) // BIT SYNC
+                end else if(HIGH_PULSE_COUNTING == 4 && LOW_PULSE_COUNTING == 127) begin // BIT SYNC
+                    reset_counters = 1;
                     next_state = BIT_SYNC_DETECTED;
-                else
+                end else
                     next_state = PULSE_COUNTING;
             end
 
@@ -173,22 +178,22 @@ always_comb begin : DECODER_FSM_COMB_BLOCK
             end
 
             BIT_1_DETECTED: begin
-                reset_counters = 1;
+                reset_counters = 0;
                 next_state = INITIAL_STATE;
             end
 
             BIT_0_DETECTED: begin
-                reset_counters = 1;
+                reset_counters = 0;
                 next_state = INITIAL_STATE;
             end
 
             BIT_F_DETECTED: begin
-                reset_counters = 1;
+                reset_counters = 0;
                 next_state = INITIAL_STATE;
             end
 
             BIT_SYNC_DETECTED: begin
-                reset_counters = 1;
+                reset_counters = 0;
                 next_state = INITIAL_STATE;
             end
 
@@ -202,6 +207,7 @@ end
 
 always_ff @(posedge osc_clk, posedge reset) begin : DECODER_FSM_FF_BLOCK
     if(reset) begin
+        // reset_counters <= 1;
         BIDIR_SHIFTREG_PARALLEL_IN <= 26'b0; // Initialize the shift register with 0
         BIDIR_SHIFTREG_SERIAL_IN <= 0; // Shift in 0 to the shift register by default.
         BIDIR_SHIFTREG_PT2272_BIT_IN <= 2'b00; // Shift in 00 to the shift register by default.
@@ -218,11 +224,23 @@ always_ff @(posedge osc_clk, posedge reset) begin : DECODER_FSM_FF_BLOCK
             end
 
             INITIAL_STATE: begin
+                // reset_counters <= 0;
                 BIDIR_SHIFTREG_OP_MODE <= 3'b000; // Turns shift right mode on
                 BIDIR_SHIFTREG_ENABLER <= 0;   // Disable the shift register data loading.
             end
 
             PULSE_COUNTING: begin
+                if (next_state == BIT_0_DETECTED || next_state == BIT_1_DETECTED || next_state == BIT_F_DETECTED || next_state == BIT_SYNC_DETECTED) begin
+                    // reset_counters <= 1;
+                end
+                // if(HIGH_PULSE_COUNTING == 24 && LOW_PULSE_COUNTING == 7) // BIT 1
+                //     next_state = BIT_1_DETECTED; 
+                // else if(HIGH_PULSE_COUNTING == 8 && LOW_PULSE_COUNTING == 23) // BIT 0
+                //     next_state = BIT_0_DETECTED;
+                // else if(HIGH_PULSE_COUNTING == 16 && LOW_PULSE_COUNTING == 15) // BIT F
+                //     next_state = BIT_F_DETECTED;
+                // else if(HIGH_PULSE_COUNTING == 4 && LOW_PULSE_COUNTING == 127) // BIT SYNC
+                //     next_state = BIT_SYNC_DETECTED;
             end
 
             COUNTS_HIGH_PULSE: begin
@@ -232,24 +250,28 @@ always_ff @(posedge osc_clk, posedge reset) begin : DECODER_FSM_FF_BLOCK
             end
 
             BIT_1_DETECTED: begin
+                // reset_counters <= 0;
                 BIDIR_SHIFTREG_ENABLER <= 1; // Enable the shift register to load the data.
                 BIDIR_SHIFTREG_OP_MODE <= 3'b100; // Turns shift right PT2272_BIT mode on
                 BIDIR_SHIFTREG_PT2272_BIT_IN <= 2'b11; // Shift in 11 to the shift register
             end
 
             BIT_0_DETECTED: begin
+                // reset_counters <= 0;
                 BIDIR_SHIFTREG_ENABLER <= 1; // Enable the shift register to load the data.
                 BIDIR_SHIFTREG_OP_MODE <= 3'b100; // Turns shift right PT2272_BIT mode on
                 BIDIR_SHIFTREG_PT2272_BIT_IN <= 2'b00; // Shift in 00 to the shift register
             end
 
             BIT_F_DETECTED: begin
+                // reset_counters <= 0;
                 BIDIR_SHIFTREG_ENABLER <= 1; // Enable the shift register to load the data.
                 BIDIR_SHIFTREG_OP_MODE <= 3'b100; // Turns shift right PT2272_BIT mode on
                 BIDIR_SHIFTREG_PT2272_BIT_IN <= 2'b10; // Shift in 10 to the shift register
             end
 
             BIT_SYNC_DETECTED: begin
+                // reset_counters <= 0;
                 BIDIR_SHIFTREG_ENABLER <= 1; // Enable the shift register to load the data.
                 BIDIR_SHIFTREG_OP_MODE <= 3'b100; // Turns shift right PT2272_BIT mode on
                 BIDIR_SHIFTREG_PT2272_BIT_IN <= 2'b01; // Shift in 01 to the shift register

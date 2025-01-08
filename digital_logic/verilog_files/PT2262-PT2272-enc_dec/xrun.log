@@ -1,5 +1,5 @@
 xrun(64): 24.09-s001: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	24.09-s001: Started on Jan 08, 2025 at 16:08:32 -03
+TOOL:	xrun(64)	24.09-s001: Started on Jan 08, 2025 at 16:55:38 -03
 xrun
 	-64bit
 	/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272_tb.sv
@@ -14,8 +14,8 @@ xrun
 	+gui
 	-s
 Recompiling... reason: file './decoder/decodificador_pt2272.sv' is newer than expected.
-	expected: Wed Jan  8 15:54:42 2025
-	actual:   Wed Jan  8 16:08:24 2025
+	expected: Wed Jan  8 16:52:41 2025
+	actual:   Wed Jan  8 16:55:29 2025
 file: /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272.sv
 	module worklib.decodificador_pt2272:sv
 		errors: 0, warnings: 0
@@ -25,8 +25,8 @@ file: /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-
 		decodificador_pt2272_tb
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.decodificador_pt2272:sv <0x54441585>
-			streams:  26, words: 11901
+		worklib.decodificador_pt2272:sv <0x65c6c21c>
+			streams:  26, words: 12458
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:

@@ -232,7 +232,7 @@ set groupId0 [waveform add -groups encoder]
 waveform hierarchy collapse $groupId0
 
 
-waveform xview limits 0 82542075000ps
+waveform xview limits 0 3495822904ps
 
 #
 # Waveform Window Links
