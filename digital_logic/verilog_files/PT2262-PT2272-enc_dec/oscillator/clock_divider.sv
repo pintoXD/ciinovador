@@ -23,8 +23,8 @@ logic [15:0] divider_index_ceil;
 assign divider_index_ceil = 125;
 logic [15:0] clk_cycle_counting;
 
-always_ff @(posedge INPUT_CLK) begin : FREQUENCY_DIVIDER
-    if(~RST) begin
+always_ff @(posedge INPUT_CLK, posedge RST) begin : FREQUENCY_DIVIDER
+    if(RST) begin
         clk_cycle_counting <= 0;
         OUTPUT_CLK <= 0;
     end

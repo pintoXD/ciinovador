@@ -43,7 +43,7 @@ logic osc_clk_rose;
 logic bit_sent_flag;
 
 
-assign osc_rst = ~reset; // Oscillator resets on low
+assign osc_rst = reset; // Oscillator resets on low
 // assign bit_gen_rst = ~reset; // Bit generator resets on low
 
 ADDRESS_INTERPRETER addr_interpreter(
@@ -120,10 +120,10 @@ always_comb begin : encoder_fsm
     next_state = current_state;
 
     if(reset) begin
-        // next_state = RESET_MODULES;
-        next_state = INITIALIZE_BIT_GENERATOR;
+        next_state = RESET_MODULES;
+        // next_state = INITIALIZE_BIT_GENERATOR;
         bit_generated_flag = 1;
-        bit_gen_rst = 1'b0; // Bit generator resets on low
+        bit_gen_rst = 1'b1; // Bit generator resets on low
         bit_gen_enb = 1'b0; // Bit generation is disabled
     end else begin
         case(current_state)
@@ -139,7 +139,7 @@ always_comb begin : encoder_fsm
             end
 
             INITIALIZE_BIT_GENERATOR: begin
-                bit_gen_rst = 1'b1; // Bit generator resets on low
+                bit_gen_rst = 1'b0; // Bit generator resets on low
                 if (osc_clk_rose)
                     next_state = GENERATE_A0;
             end
@@ -351,11 +351,10 @@ end
 
 
 always_ff @(posedge clk, posedge reset) begin : encoder_state_changer
-    if(reset) begin
-        current_state <= RESET_MODULES;
-    end else begin
+    // if(reset)
+    //     current_state <= RESET_MODULES;
+    // else
         current_state <= next_state;
-    end
 end
 
 endmodule
