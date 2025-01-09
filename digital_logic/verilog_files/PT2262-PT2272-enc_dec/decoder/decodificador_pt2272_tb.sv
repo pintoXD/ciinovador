@@ -1,15 +1,17 @@
 `timescale 1us/1ns
 module decodificador_pt2272_tb ();
-    logic mock_INPUT_CLK, mock_RESET;
-    logic [7:0] mock_A;
-    logic [3:0] mock_D;
-    logic mock_cod_i;
 
     // logic mock_INPUT_CLK, mock_RESET;
     logic [7:0] mock_A_enc;
     logic [3:0] mock_D_enc;
     logic mock_sync;
     logic mock_cod_o;
+
+    logic mock_INPUT_CLK, mock_RESET;
+    logic [7:0] mock_A;
+    logic [3:0] mock_D;
+    logic mock_dv;
+    logic mock_cod_i;
 
     codificador_pt2262 encoder_dut(
         .clk(mock_INPUT_CLK), 
@@ -23,10 +25,10 @@ module decodificador_pt2272_tb ();
     decodificador_pt2272 DUT(
         .clk(mock_INPUT_CLK), // 3MHz conforme especificação
         .reset(mock_RESET), // reset ativo alto
-        .A(mock_A), // endereço de entrada, trinário
+        .A(mock_A_enc), // endereço de entrada, trinário
         .cod_i(mock_cod_o),  // dado codificado de entrada
-        .D(), // dado recebido registrado
-        .dv()       // sinalização de novo dado valido recebido, sincrono ao mesmo dominio de clock da saída "D"
+        .D(mock_D), // dado recebido registrado
+        .dv(mock_dv)       // sinalização de novo dado valido recebido, sincrono ao mesmo dominio de clock da saída "D"
     );
 
 
@@ -179,12 +181,27 @@ module decodificador_pt2272_tb ();
             end
         */
         
+        for (int i = 0; i < 2; i++) begin
+            @(posedge encoder_dut.osc_clk);
+            // @(posedge mock_INPUT_CLK);
+        end
+
         @(posedge encoder_dut.osc_clk);
         mock_A_enc = 8'bz1010000;
         mock_D_enc = 4'b1010;
 
 
-        for (int i = 0; i < 1000; i++) begin
+        for (int i = 0; i < 550; i++) begin
+            @(posedge encoder_dut.osc_clk);
+            // @(posedge mock_INPUT_CLK);
+        end
+
+        @(posedge encoder_dut.osc_clk);
+        mock_A_enc = 8'bz1010000;
+        mock_D_enc = 4'b0101;
+
+
+        for (int i = 0; i < 550; i++) begin
             @(posedge encoder_dut.osc_clk);
             // @(posedge mock_INPUT_CLK);
         end

@@ -1,5 +1,5 @@
 xrun(64): 24.09-s001: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	24.09-s001: Started on Jan 08, 2025 at 16:55:38 -03
+TOOL:	xrun(64)	24.09-s001: Started on Jan 09, 2025 at 09:31:28 -03
 xrun
 	-64bit
 	/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272_tb.sv
@@ -13,11 +13,11 @@ xrun
 	+access+rw
 	+gui
 	-s
-Recompiling... reason: file './decoder/decodificador_pt2272.sv' is newer than expected.
-	expected: Wed Jan  8 16:52:41 2025
-	actual:   Wed Jan  8 16:55:29 2025
-file: /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272.sv
-	module worklib.decodificador_pt2272:sv
+Recompiling... reason: file './decoder/decodificador_pt2272_tb.sv' is newer than expected.
+	expected: Thu Jan  9 09:27:00 2025
+	actual:   Thu Jan  9 09:31:02 2025
+file: /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272_tb.sv
+	module worklib.decodificador_pt2272_tb:sv
 		errors: 0, warnings: 0
 		Caching library 'worklib' ....... Done
 	Elaborating the design hierarchy:
@@ -25,21 +25,21 @@ file: /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-
 		decodificador_pt2272_tb
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.decodificador_pt2272:sv <0x65c6c21c>
-			streams:  26, words: 12458
+		worklib.decodificador_pt2272_tb:sv <0x3bc407a1>
+			streams:  11, words:  8113
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
 		                 Instances  Unique
 		Modules:                 9       8
-		Registers:              70      67
-		Scalar wires:           38       -
-		Vectored wires:         20       -
-		Always blocks:          17      16
+		Registers:              75      72
+		Scalar wires:           39       -
+		Vectored wires:         21       -
+		Always blocks:          18      17
 		Initial blocks:          2       2
 		Cont. assignments:       9      10
-		Pseudo assignments:     30       -
-		Process Clocks:         10       7
+		Pseudo assignments:     31       -
+		Process Clocks:         11       8
 		Simulation timescale:  1ps
 	Writing initial simulation snapshot: worklib.decodificador_pt2272_tb:sv
 xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
@@ -49,9 +49,115 @@ xcelium>
 -------------------------------------
 Relinquished control to SimVision...
 # Restoring simulation environment...
+xcelium> input {restore_dec.tcl}
+xcelium> 
+xcelium> # XM-Sim Command File
+xcelium> # TOOL:	xmsim(64)	24.09-s001
+xcelium> #
+xcelium> #
+xcelium> # You can restore this configuration with:
+xcelium> #
+xcelium> #      xrun -64bit /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272_tb.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/addr_interpreter/addr_interpreter.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/addr_interpreter/comp_endereco.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/bit_gen/bit_generator.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/oscillator/clock_divider.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/bidir_shift_register/bidir_shiftreg.sv +access+rw +gui -s -input /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/restore_dec.tcl
+xcelium> #
+xcelium> 
+xcelium> set tcl_prompt1 {puts -nonewline "xcelium> "}
+puts -nonewline "xcelium> "
+xcelium> set tcl_prompt2 {puts -nonewline "> "}
+puts -nonewline "> "
+xcelium> set vlog_format %h
+%h
+xcelium> set vhdl_format %v
+%v
+xcelium> set real_precision 6
+6
+xcelium> set display_unit auto
+auto
+xcelium> set time_unit module
+module
+xcelium> set heap_garbage_size -200
+-200
+xcelium> set heap_garbage_time 0
+0
+xcelium> set assert_report_level note
+note
+xcelium> set assert_stop_level error
+error
+xcelium> set autoscope yes
+yes
+xcelium> set assert_1164_warnings yes
+yes
+xcelium> set pack_assert_off {}
+xcelium> set severity_pack_assert_off {note warning}
+note warning
+xcelium> set assert_output_stop_level failed
+failed
+xcelium> set tcl_debug_level 0
+0
+xcelium> set relax_path_name 1
+1
+xcelium> set vhdl_vcdmap XX01ZX01X
+XX01ZX01X
+xcelium> set intovf_severity_level ERROR
+ERROR
+xcelium> set probe_screen_format 0
+0
+xcelium> set rangecnst_severity_level ERROR
+ERROR
+xcelium> set textio_severity_level ERROR
+ERROR
+xcelium> set vital_timing_checks_on 1
+1
+xcelium> set vlog_code_show_force 0
+0
+xcelium> set assert_count_attempts 1
+1
+xcelium> set tcl_all64 false
+false
+xcelium> set tcl_runerror_exit false
+false
+xcelium> set assert_report_incompletes 0
+0
+xcelium> set show_force 1
+1
+xcelium> set force_reset_by_reinvoke 0
+0
+xcelium> set tcl_relaxed_literal 0
+0
+xcelium> set probe_exclude_patterns {}
+xcelium> set probe_packed_limit 4k
+4k
+xcelium> set probe_unpacked_limit 16k
+16k
+xcelium> set assert_internal_msg no
+no
+xcelium> set svseed 1
+1
+xcelium> set assert_reporting_mode 0
+0
+xcelium> set vcd_compact_mode 0
+0
+xcelium> set vhdl_forgen_loopindex_enum_pos 0
+0
+xcelium> set xmreplay_dc_debug 0
+0
+xcelium> set tcl_runcmd_interrupt next_command
+next_command
+xcelium> set tcl_sigval_prefix {#}
+#
+xcelium> alias . run
+xcelium> alias indago verisium
+xcelium> alias quit exit
+xcelium> database -open -shm -into waves.shm waves -default
+Created default SHM database waves
+xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.A decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_ENABLER decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_LEFT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_OP_MODE decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PT2272_BIT_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_RIGHT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_SERIAL_IN decodificador_pt2272_tb.DUT.D decodificador_pt2272_tb.DUT.HIGH_PULSE_COUNTING decodificador_pt2272_tb.DUT.LOW_PULSE_COUNTING decodificador_pt2272_tb.DUT.PREVIOUS_cod_i decodificador_pt2272_tb.DUT.clk decodificador_pt2272_tb.DUT.cod_i decodificador_pt2272_tb.DUT.cod_i_FELL decodificador_pt2272_tb.DUT.cod_i_ROSE decodificador_pt2272_tb.DUT.current_state decodificador_pt2272_tb.DUT.dv decodificador_pt2272_tb.DUT.next_state decodificador_pt2272_tb.DUT.reset decodificador_pt2272_tb.DUT.reset_counters decodificador_pt2272_tb.encoder_dut.A decodificador_pt2272_tb.encoder_dut.D decodificador_pt2272_tb.encoder_dut.F_BIT_LOCATOR decodificador_pt2272_tb.encoder_dut.INTERPRETED_ADDR decodificador_pt2272_tb.encoder_dut.bit_gen_enb decodificador_pt2272_tb.encoder_dut.bit_gen_input decodificador_pt2272_tb.encoder_dut.bit_gen_output decodificador_pt2272_tb.encoder_dut.bit_gen_rst decodificador_pt2272_tb.encoder_dut.bit_generated_flag decodificador_pt2272_tb.encoder_dut.bit_sent_flag decodificador_pt2272_tb.encoder_dut.clk decodificador_pt2272_tb.encoder_dut.cod_o decodificador_pt2272_tb.encoder_dut.current_state decodificador_pt2272_tb.encoder_dut.next_state decodificador_pt2272_tb.encoder_dut.osc_clk decodificador_pt2272_tb.encoder_dut.osc_clk_rose decodificador_pt2272_tb.encoder_dut.osc_rst decodificador_pt2272_tb.encoder_dut.past_osc_clk decodificador_pt2272_tb.encoder_dut.reset decodificador_pt2272_tb.encoder_dut.sync
+Created probe 1
+xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.osc_rst decodificador_pt2272_tb.DUT.osc_clk
+Created probe 2
+xcelium> 
+xcelium> simvision -input restore_dec.tcl.svcf
 xcelium> input -quiet .reinvoke.sim
 xcelium> file delete .reinvoke.sim
 xcelium> run
-Simulation complete via $finish(1) at time 82542075 NS + 3
-./decoder/decodificador_pt2272_tb.sv:192         $finish;
+Simulation complete via $finish(1) at time 91039575 NS + 3
+./decoder/decodificador_pt2272_tb.sv:209         $finish;
 xcelium> 

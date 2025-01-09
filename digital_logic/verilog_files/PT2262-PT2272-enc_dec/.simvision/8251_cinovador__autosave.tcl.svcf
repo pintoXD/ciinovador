@@ -167,12 +167,12 @@ foreach {name attrs}  {
     simulator::decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_LEFT_SHIFT_OUT {}
     {simulator::decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_OP_MODE[2:0]} {}
     {simulator::decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_IN[25:0]} {}
-    {simulator::decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_OUT[25:0]} {}
+    {simulator::decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_OUT[25:0]} {-radix %b}
     {simulator::decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PT2272_BIT_IN[1:0]} {}
     simulator::decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_RIGHT_SHIFT_OUT {}
     simulator::decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_SERIAL_IN {}
     simulator::decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_SIZE {}
-    {simulator::decodificador_pt2272_tb.DUT.D[3:0]} {}
+    {simulator::decodificador_pt2272_tb.DUT.D[3:0]} {-radix %b}
     simulator::decodificador_pt2272_tb.DUT.DECODER_FSM_STATE {}
     {simulator::decodificador_pt2272_tb.DUT.HIGH_PULSE_COUNTING[4:0]} {-radix %d}
     {simulator::decodificador_pt2272_tb.DUT.LOW_PULSE_COUNTING[7:0]} {-radix %d}
@@ -194,7 +194,10 @@ foreach {name attrs}  {
     {}
     {}
     {}
-    {}
+    {
+        set id $gpID0
+        waveform hierarchy collapse $id
+    }
     {}
     {}
     {}
@@ -232,7 +235,7 @@ set groupId0 [waveform add -groups encoder]
 waveform hierarchy collapse $groupId0
 
 
-waveform xview limits 0 3495822904ps
+waveform xview limits 0 91039575000ps
 
 #
 # Waveform Window Links

@@ -79,7 +79,6 @@ CLOCK_DIVIDER #(
 BIT_GENERATOR signal_creator(
     .osc_clk(osc_clk),
     .rst(bit_gen_rst),
-    // .rst(bit_gen_rst),
     .enable_generation(bit_gen_enb),
     .input_bit(bit_gen_input),
     .output_signal(bit_gen_output),
