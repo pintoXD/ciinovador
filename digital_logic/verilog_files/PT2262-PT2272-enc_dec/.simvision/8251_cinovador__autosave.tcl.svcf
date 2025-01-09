@@ -85,7 +85,12 @@ group insert \
     simulator::decodificador_pt2272_tb.DUT.dv \
     simulator::decodificador_pt2272_tb.DUT.next_state[7:0] \
     simulator::decodificador_pt2272_tb.DUT.reset \
-    simulator::decodificador_pt2272_tb.DUT.reset_counters
+    simulator::decodificador_pt2272_tb.DUT.reset_counters \
+    simulator::decodificador_pt2272_tb.DUT.internal_a[7:0] \
+    simulator::decodificador_pt2272_tb.DUT.internal_f_bit_locator[7:0] \
+    simulator::decodificador_pt2272_tb.DUT.internal_interpreted_addr[7:0] \
+    simulator::decodificador_pt2272_tb.DUT.INTERPRETED_ADDR[7:0] \
+    simulator::decodificador_pt2272_tb.DUT.F_BIT_LOCATOR[7:0]
 group using encoder
 group set -overlay 0
 group set -comment {}
@@ -152,7 +157,7 @@ waveform set \
     -signalnames name \
     -signalwidth 175 \
     -units ps \
-    -valuewidth 537
+    -valuewidth 75
 waveform baseline set -time 0
 
 
@@ -186,8 +191,12 @@ foreach {name attrs}  {
     {simulator::decodificador_pt2272_tb.DUT.next_state[7:0]} {}
     simulator::decodificador_pt2272_tb.DUT.reset {}
     simulator::decodificador_pt2272_tb.DUT.reset_counters {}
+    {simulator::decodificador_pt2272_tb.DUT.internal_a[7:0]} {}
+    {simulator::decodificador_pt2272_tb.DUT.internal_f_bit_locator[7:0]} {}
+    {simulator::decodificador_pt2272_tb.DUT.internal_interpreted_addr[7:0]} {}
+    {simulator::decodificador_pt2272_tb.DUT.INTERPRETED_ADDR[7:0]} {}
+    {simulator::decodificador_pt2272_tb.DUT.F_BIT_LOCATOR[7:0]} {}
 } childcmds {
-    {}
     {}
     {}
     {}
@@ -198,6 +207,15 @@ foreach {name attrs}  {
         set id $gpID0
         waveform hierarchy collapse $id
     }
+    {
+        set id $gpID0
+        waveform hierarchy collapse $id
+    }
+    {}
+    {}
+    {}
+    {}
+    {}
     {}
     {}
     {}

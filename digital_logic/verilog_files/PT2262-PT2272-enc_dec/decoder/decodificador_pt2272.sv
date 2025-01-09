@@ -95,6 +95,25 @@ logic PREVIOUS_cod_i;
 logic cod_i_ROSE;
 logic cod_i_FELL;
 
+
+/*****************************************
+*
+* Address Interpreter instantiation
+*
+******************************************/
+
+logic [7:0] INTERPRETED_ADDR, F_BIT_LOCATOR;
+logic [7:0] internal_a, internal_interpreted_addr, internal_f_bit_locator;
+
+ADDRESS_INTERPRETER addr_translator(
+    .A(A),
+    .INTERPRETED_ADDR(INTERPRETED_ADDR),
+    .F_BIT_LOCATOR(F_BIT_LOCATOR)
+);
+
+
+
+
 always_ff @(posedge cod_i, posedge reset) begin : SAVE_PAST_cod_i
     if(reset)
         PREVIOUS_cod_i <= 0;
@@ -285,31 +304,126 @@ always_ff @(posedge osc_clk, posedge reset) begin : DECODER_FSM_FF_BLOCK
 end
 
 
-always_ff @(posedge osc_clk, posedge reset) begin : RECEIVER_PAYLOAD_D_REGISTERING
+always_comb begin : RECEIVER_PAYLOAD_D_REGISTERING
     if(reset)
-        D <= 4'b0000;
+        D = 4'b0000;
     else begin
         if (BIDIR_SHIFTREG_PARALLEL_OUT[25:24] == 2'b01)begin
-            D[0] <= BIDIR_SHIFTREG_PARALLEL_OUT[23] & BIDIR_SHIFTREG_PARALLEL_OUT[22];
-            D[1] <= BIDIR_SHIFTREG_PARALLEL_OUT[21] & BIDIR_SHIFTREG_PARALLEL_OUT[20];
-            D[2] <= BIDIR_SHIFTREG_PARALLEL_OUT[19] & BIDIR_SHIFTREG_PARALLEL_OUT[18];
-            D[3] <= BIDIR_SHIFTREG_PARALLEL_OUT[17] & BIDIR_SHIFTREG_PARALLEL_OUT[16];
+            D[0] = BIDIR_SHIFTREG_PARALLEL_OUT[23] & BIDIR_SHIFTREG_PARALLEL_OUT[22];
+            D[1] = BIDIR_SHIFTREG_PARALLEL_OUT[21] & BIDIR_SHIFTREG_PARALLEL_OUT[20];
+            D[2] = BIDIR_SHIFTREG_PARALLEL_OUT[19] & BIDIR_SHIFTREG_PARALLEL_OUT[18];
+            D[3] = BIDIR_SHIFTREG_PARALLEL_OUT[17] & BIDIR_SHIFTREG_PARALLEL_OUT[16];
         end
     end
 end
-
-// always_ff @(posedge osc_clk, posedge reset) begin : RECEIVER_ADDRESS_REGISTERING
+// always_ff @(posedge osc_clk, posedge reset) begin : RECEIVER_PAYLOAD_D_REGISTERING
 //     if(reset)
 //         D <= 4'b0000;
 //     else begin
 //         if (BIDIR_SHIFTREG_PARALLEL_OUT[25:24] == 2'b01)begin
-//             D[3] <= BIDIR_SHIFTREG_PARALLEL_OUT[23] & BIDIR_SHIFTREG_PARALLEL_OUT[22];
-//             D[2] <= BIDIR_SHIFTREG_PARALLEL_OUT[21] & BIDIR_SHIFTREG_PARALLEL_OUT[20];
-//             D[1] <= BIDIR_SHIFTREG_PARALLEL_OUT[19] & BIDIR_SHIFTREG_PARALLEL_OUT[18];
-//             D[0] <= BIDIR_SHIFTREG_PARALLEL_OUT[17] & BIDIR_SHIFTREG_PARALLEL_OUT[16];
+//             D[0] <= BIDIR_SHIFTREG_PARALLEL_OUT[23] & BIDIR_SHIFTREG_PARALLEL_OUT[22];
+//             D[1] <= BIDIR_SHIFTREG_PARALLEL_OUT[21] & BIDIR_SHIFTREG_PARALLEL_OUT[20];
+//             D[2] <= BIDIR_SHIFTREG_PARALLEL_OUT[19] & BIDIR_SHIFTREG_PARALLEL_OUT[18];
+//             D[3] <= BIDIR_SHIFTREG_PARALLEL_OUT[17] & BIDIR_SHIFTREG_PARALLEL_OUT[16];
 //         end
 //     end
 // end
+
+logic [8:0] i;
+
+always_ff @(posedge osc_clk, posedge reset) begin : RECEIVER_ADDRESS_REGISTERING_AND_VALIDATION
+    if(reset)begin
+        dv <= 0;
+        internal_a <= 8'b00000000;
+        internal_f_bit_locator <= 8'b00000000;
+        internal_interpreted_addr <= 8'b00000000;
+    end
+    else begin
+        if (BIDIR_SHIFTREG_PARALLEL_OUT[25:24] == 2'b01)begin
+            
+            if(BIDIR_SHIFTREG_PARALLEL_OUT[15] == BIDIR_SHIFTREG_PARALLEL_OUT[14]) begin
+                internal_interpreted_addr[7] <= BIDIR_SHIFTREG_PARALLEL_OUT[14];
+                internal_f_bit_locator[7] <= 0;
+            end else begin
+                internal_interpreted_addr[7] <= 0;
+                internal_f_bit_locator[7] <= 1;
+            end
+
+            if(BIDIR_SHIFTREG_PARALLEL_OUT[13] == BIDIR_SHIFTREG_PARALLEL_OUT[12]) begin
+                internal_interpreted_addr[6] <= BIDIR_SHIFTREG_PARALLEL_OUT[12];
+                internal_f_bit_locator[6] <= 0;
+            end else begin
+                internal_interpreted_addr[6] <= 0;
+                internal_f_bit_locator[6] <= 1;
+            end
+
+            if(BIDIR_SHIFTREG_PARALLEL_OUT[11] == BIDIR_SHIFTREG_PARALLEL_OUT[10]) begin
+                internal_interpreted_addr[5] <= BIDIR_SHIFTREG_PARALLEL_OUT[10];
+                internal_f_bit_locator[5] <= 0;
+            end else begin
+                internal_interpreted_addr[5] <= 0;
+                internal_f_bit_locator[5] <= 1;
+            end
+
+            if(BIDIR_SHIFTREG_PARALLEL_OUT[9] == BIDIR_SHIFTREG_PARALLEL_OUT[8]) begin
+                internal_interpreted_addr[4] <= BIDIR_SHIFTREG_PARALLEL_OUT[8];
+                internal_f_bit_locator[4] <= 0;
+            end else begin
+                internal_interpreted_addr[4] <= 0;
+                internal_f_bit_locator[4] <= 1;
+            end
+
+            if(BIDIR_SHIFTREG_PARALLEL_OUT[7] == BIDIR_SHIFTREG_PARALLEL_OUT[6]) begin
+                internal_interpreted_addr[3] <= BIDIR_SHIFTREG_PARALLEL_OUT[6];
+                internal_f_bit_locator[3] <= 0;
+            end else begin
+                internal_interpreted_addr[3] <= 0;
+                internal_f_bit_locator[3] <= 1;
+            end
+
+            if(BIDIR_SHIFTREG_PARALLEL_OUT[5] == BIDIR_SHIFTREG_PARALLEL_OUT[4]) begin
+                internal_interpreted_addr[2] <= BIDIR_SHIFTREG_PARALLEL_OUT[4];
+                internal_f_bit_locator[2] <= 0;
+            end else begin
+                internal_interpreted_addr[2] <= 0;
+                internal_f_bit_locator[2] <= 1;
+            end
+
+            if(BIDIR_SHIFTREG_PARALLEL_OUT[3] == BIDIR_SHIFTREG_PARALLEL_OUT[2]) begin
+                internal_interpreted_addr[1] <= BIDIR_SHIFTREG_PARALLEL_OUT[2];
+                internal_f_bit_locator[1] <= 0;
+            end else begin
+                internal_interpreted_addr[1] <= 0;
+                internal_f_bit_locator[1] <= 1;
+            end
+
+            if(BIDIR_SHIFTREG_PARALLEL_OUT[1] == BIDIR_SHIFTREG_PARALLEL_OUT[0]) begin
+                internal_interpreted_addr[0] <= BIDIR_SHIFTREG_PARALLEL_OUT[0];
+                internal_f_bit_locator[0] <= 0;
+            end else begin
+                internal_interpreted_addr[0] <= 0;
+                internal_f_bit_locator[1] <= 1;
+            end
+
+            // dv <= (^internal_f_bit_locator == ^F_BIT_LOCATOR) && (^internal_interpreted_addr == ^INTERPRETED_ADDR) ? 1 : 0;
+            dv <= 1;
+
+            for (i = 0; i < 8; i++) begin
+                if(internal_f_bit_locator[i] || F_BIT_LOCATOR[i])begin
+                    if(internal_f_bit_locator[i] != F_BIT_LOCATOR[i])begin
+                        dv <= 0;
+                        break;
+                    end
+                end else begin
+                    if(internal_interpreted_addr[i] != INTERPRETED_ADDR[i])begin
+                        dv <= 0;
+                        break;
+                    end
+                end
+            end
+        end
+    end
+end
 
 
 always_ff @(posedge osc_clk) begin : decoder_state_changer

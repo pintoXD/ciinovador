@@ -1,5 +1,5 @@
 xrun(64): 24.09-s001: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	24.09-s001: Started on Jan 09, 2025 at 11:47:40 -03
+TOOL:	xrun(64)	24.09-s001: Started on Jan 09, 2025 at 14:27:24 -03
 xrun
 	-64bit
 	/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272_tb.sv
@@ -14,8 +14,8 @@ xrun
 	+gui
 	-s
 Recompiling... reason: file './decoder/decodificador_pt2272.sv' is newer than expected.
-	expected: Thu Jan  9 11:16:20 2025
-	actual:   Thu Jan  9 11:47:27 2025
+	expected: Thu Jan  9 14:16:28 2025
+	actual:   Thu Jan  9 14:27:07 2025
 file: /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272.sv
 	module worklib.decodificador_pt2272:sv
 		errors: 0, warnings: 0
@@ -25,20 +25,20 @@ file: /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-
 		decodificador_pt2272_tb
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.decodificador_pt2272:sv <0x73b3327c>
-			streams:  30, words: 14339
+		worklib.decodificador_pt2272:sv <0x63463335>
+			streams:  64, words: 27476
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
 		                 Instances  Unique
-		Modules:                 9       8
-		Registers:              75      72
+		Modules:                11       8
+		Registers:              86      78
 		Scalar wires:           39       -
-		Vectored wires:         21       -
-		Always blocks:          18      17
+		Vectored wires:         29       -
+		Always blocks:          20      18
 		Initial blocks:          2       2
 		Cont. assignments:       9      10
-		Pseudo assignments:     31       -
+		Pseudo assignments:     35       -
 		Process Clocks:         11       8
 		Simulation timescale:  1ps
 	Writing initial simulation snapshot: worklib.decodificador_pt2272_tb:sv
