@@ -1,4 +1,4 @@
-# SimVision Command Script (Wed Jan 08 04:57:33 PM -03 2025)
+# SimVision Command Script (Thu Jan 09 03:21:03 PM -03 2025)
 #
 # Version 24.09.s001
 #
@@ -98,7 +98,12 @@ group insert \
     [subst  {[format {decodificador_pt2272_tb.DUT.dv}]} ] \
     [subst  {[format {decodificador_pt2272_tb.DUT.next_state[7:0]}]} ] \
     [subst  {[format {decodificador_pt2272_tb.DUT.reset}]} ] \
-    [subst  {[format {decodificador_pt2272_tb.DUT.reset_counters}]} ]
+    [subst  {[format {decodificador_pt2272_tb.DUT.reset_counters}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.internal_a[7:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.internal_f_bit_locator[7:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.internal_interpreted_addr[7:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.INTERPRETED_ADDR[7:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.F_BIT_LOCATOR[7:0]}]} ]
 group using encoder
 group set -overlay 0
 group set -comment {}
@@ -130,7 +135,7 @@ group insert \
 #
 # Cursors
 #
-set time 2929575000ps
+set time 821375ps
 if {[catch {cursor new -name  TimeA -time $time}] != ""} {
     cursor set -using TimeA -time $time
 }
@@ -162,8 +167,8 @@ browser timecontrol set -lock 0
 #
 # Waveform windows
 #
-if {[catch {window new WaveWindow -name "Waveform 1" -geometry 1920x983+1919+26}] != ""} {
-    window geometry "Waveform 1" 1920x983+1919+26
+if {[catch {window new WaveWindow -name "Waveform 1" -geometry 1920x1043+-1+-1}] != ""} {
+    window geometry "Waveform 1" 1920x1043+-1+-1
 }
 window target "Waveform 1" on
 waveform using {Waveform 1}
@@ -188,12 +193,12 @@ foreach {name attrs} [subst  {
     {[format {decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_LEFT_SHIFT_OUT}]} {}
     {[format {decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_OP_MODE[2:0]}]} {}
     {[format {decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_IN[25:0]}]} {}
-    {[format {decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_OUT[25:0]}]} {}
+    {[format {decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_OUT[25:0]}]} {-radix %b}
     {[format {decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PT2272_BIT_IN[1:0]}]} {}
     {[format {decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_RIGHT_SHIFT_OUT}]} {}
     {[format {decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_SERIAL_IN}]} {}
     {[format {decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_SIZE}]} {}
-    {[format {decodificador_pt2272_tb.DUT.D[3:0]}]} {}
+    {[format {decodificador_pt2272_tb.DUT.D[3:0]}]} {-radix %b}
     {[format {decodificador_pt2272_tb.DUT.DECODER_FSM_STATE}]} {}
     {[format {decodificador_pt2272_tb.DUT.HIGH_PULSE_COUNTING[4:0]}]} {-radix %d}
     {[format {decodificador_pt2272_tb.DUT.LOW_PULSE_COUNTING[7:0]}]} {-radix %d}
@@ -207,10 +212,26 @@ foreach {name attrs} [subst  {
     {[format {decodificador_pt2272_tb.DUT.next_state[7:0]}]} {}
     {[format {decodificador_pt2272_tb.DUT.reset}]} {}
     {[format {decodificador_pt2272_tb.DUT.reset_counters}]} {}
+    {[format {decodificador_pt2272_tb.DUT.internal_a[7:0]}]} {}
+    {[format {decodificador_pt2272_tb.DUT.internal_f_bit_locator[7:0]}]} {}
+    {[format {decodificador_pt2272_tb.DUT.internal_interpreted_addr[7:0]}]} {}
+    {[format {decodificador_pt2272_tb.DUT.INTERPRETED_ADDR[7:0]}]} {}
+    {[format {decodificador_pt2272_tb.DUT.F_BIT_LOCATOR[7:0]}]} {}
 }] childcmds {
     {}
     {}
     {}
+    {}
+    {}
+    {}
+    {
+        set id $gpID0
+        waveform hierarchy collapse $id
+    }
+    {
+        set id $gpID0
+        waveform hierarchy collapse $id
+    }
     {}
     {}
     {}
@@ -250,10 +271,69 @@ foreach {name attrs} [subst  {
 
 
 set groupId0 [waveform add -groups encoder]
+set gpGlist0 [waveform hierarchy contents $groupId0]
+set gpID0 [lindex $gpGlist0 0]
+foreach {name attrs} [subst  {
+    {[format {decodificador_pt2272_tb.encoder_dut.A[7:0]}]} {-radix %b}
+    {[format {decodificador_pt2272_tb.encoder_dut.D[3:0]}]} {}
+    {[format {decodificador_pt2272_tb.encoder_dut.ENCODER_FSM_STATE}]} {}
+    {[format {decodificador_pt2272_tb.encoder_dut.F_BIT_LOCATOR[7:0]}]} {}
+    {[format {decodificador_pt2272_tb.encoder_dut.INTERPRETED_ADDR[7:0]}]} {}
+    {[format {decodificador_pt2272_tb.encoder_dut.bit_gen_enb}]} {}
+    {[format {decodificador_pt2272_tb.encoder_dut.bit_gen_input[1:0]}]} {}
+    {[format {decodificador_pt2272_tb.encoder_dut.bit_gen_output}]} {}
+    {[format {decodificador_pt2272_tb.encoder_dut.bit_gen_rst}]} {}
+    {[format {decodificador_pt2272_tb.encoder_dut.bit_generated_flag}]} {}
+    {[format {decodificador_pt2272_tb.encoder_dut.bit_sent_flag}]} {}
+    {[format {decodificador_pt2272_tb.encoder_dut.clk}]} {}
+    {[format {decodificador_pt2272_tb.encoder_dut.cod_o}]} {}
+    {[format {decodificador_pt2272_tb.encoder_dut.current_state[7:0]}]} {}
+    {[format {decodificador_pt2272_tb.encoder_dut.next_state[7:0]}]} {}
+    {[format {decodificador_pt2272_tb.encoder_dut.osc_clk}]} {}
+    {[format {decodificador_pt2272_tb.encoder_dut.osc_clk_rose}]} {}
+    {[format {decodificador_pt2272_tb.encoder_dut.osc_rst}]} {}
+    {[format {decodificador_pt2272_tb.encoder_dut.past_osc_clk}]} {}
+    {[format {decodificador_pt2272_tb.encoder_dut.reset}]} {}
+    {[format {decodificador_pt2272_tb.encoder_dut.sync}]} {}
+}] childcmds {
+    {}
+    {}
+    {}
+    {}
+    {}
+    {}
+    {}
+    {}
+    {}
+    {}
+    {}
+    {}
+    {}
+    {}
+    {}
+    {}
+    {}
+    {}
+    {}
+    {}
+    {}
+} {
+    set expected [ join [waveform signals -format path $gpID0] ]
+    if {[string equal $name $expected] || $name == "cdivider"} {
+        if {$attrs != ""} {
+            eval waveform format $gpID0 $attrs
+        }
+        if { $childcmds != ""} {
+            eval $childcmds
+        }
+    }
+    set gpGlist0 [lrange $gpGlist0 1 end]
+    set gpID0 [lindex $gpGlist0 0]
+}
 waveform hierarchy collapse $groupId0
 
 
-waveform xview limits 0 7322920800ps
+waveform xview limits 0 1600832ps
 
 #
 # Waveform Window Links

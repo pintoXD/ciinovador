@@ -1,11 +1,11 @@
 
 # XM-Sim Command File
-# TOOL:	xmsim(64)	22.09-s013
+# TOOL:	xmsim(64)	24.09-s001
 #
 #
 # You can restore this configuration with:
 #
-#      xrun /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262_tb.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/addr_interpreter/addr_interpreter.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/addr_interpreter/comp_endereco.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/bit_gen/bit_generator.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/oscillator/clock_divider.sv +access+rw +gui -s -input restore.tcl
+#      xrun -64bit codificador_pt2262_tb.sv codificador_pt2262.sv ../addr_interpreter/addr_interpreter.sv ../addr_interpreter/comp_endereco.sv ../bit_gen/bit_generator.sv ../oscillator/clock_divider.sv +gui +access+rw -s -input /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/restore.tcl
 #
 
 set tcl_prompt1 {puts -nonewline "xcelium> "}
@@ -47,10 +47,14 @@ set assert_internal_msg no
 set svseed 1
 set assert_reporting_mode 0
 set vcd_compact_mode 0
+set vhdl_forgen_loopindex_enum_pos 0
+set xmreplay_dc_debug 0
+set tcl_runcmd_interrupt next_command
+set tcl_sigval_prefix {#}
 alias . run
+alias indago verisium
 alias quit exit
 database -open -shm -into waves.shm waves -default
-probe -create -database waves PT2262_ENCODER_TB.DUT.A PT2262_ENCODER_TB.DUT.D PT2262_ENCODER_TB.DUT.F_BIT_LOCATOR PT2262_ENCODER_TB.DUT.INTERPRETED_ADDR PT2262_ENCODER_TB.DUT.bit_gen_enb PT2262_ENCODER_TB.DUT.bit_gen_input PT2262_ENCODER_TB.DUT.bit_gen_output PT2262_ENCODER_TB.DUT.bit_gen_rst PT2262_ENCODER_TB.DUT.bit_generated_flag PT2262_ENCODER_TB.DUT.bit_sent_flag PT2262_ENCODER_TB.DUT.clk PT2262_ENCODER_TB.DUT.cod_o PT2262_ENCODER_TB.DUT.current_state PT2262_ENCODER_TB.DUT.next_state PT2262_ENCODER_TB.DUT.osc_clk PT2262_ENCODER_TB.DUT.osc_clk_rose PT2262_ENCODER_TB.DUT.osc_rst PT2262_ENCODER_TB.DUT.past_osc_clk PT2262_ENCODER_TB.DUT.reset PT2262_ENCODER_TB.DUT.sync
-probe -create -database waves PT2262_ENCODER_TB.DUT.signal_creator.bit_sent PT2262_ENCODER_TB.DUT.signal_creator.current_state PT2262_ENCODER_TB.DUT.signal_creator.enable_generation PT2262_ENCODER_TB.DUT.signal_creator.enable_pulse_counting PT2262_ENCODER_TB.DUT.signal_creator.enable_pulse_counting_sync PT2262_ENCODER_TB.DUT.signal_creator.input_bit PT2262_ENCODER_TB.DUT.signal_creator.is_first_run PT2262_ENCODER_TB.DUT.signal_creator.next_state PT2262_ENCODER_TB.DUT.signal_creator.osc_clk PT2262_ENCODER_TB.DUT.signal_creator.output_signal PT2262_ENCODER_TB.DUT.signal_creator.pulse_counter PT2262_ENCODER_TB.DUT.signal_creator.pulse_counter_sync PT2262_ENCODER_TB.DUT.signal_creator.rst
+probe -create -database waves codificador_pt2262_tb.DUT.A codificador_pt2262_tb.DUT.D codificador_pt2262_tb.DUT.F_BIT_LOCATOR codificador_pt2262_tb.DUT.INTERPRETED_ADDR codificador_pt2262_tb.DUT.bit_gen_enb codificador_pt2262_tb.DUT.bit_gen_input codificador_pt2262_tb.DUT.bit_gen_output codificador_pt2262_tb.DUT.bit_gen_rst codificador_pt2262_tb.DUT.bit_generated_flag codificador_pt2262_tb.DUT.bit_sent_flag codificador_pt2262_tb.DUT.clk codificador_pt2262_tb.DUT.cod_o codificador_pt2262_tb.DUT.current_state codificador_pt2262_tb.DUT.next_state codificador_pt2262_tb.DUT.osc_clk codificador_pt2262_tb.DUT.osc_clk_rose codificador_pt2262_tb.DUT.osc_rst codificador_pt2262_tb.DUT.past_osc_clk codificador_pt2262_tb.DUT.reset codificador_pt2262_tb.DUT.sync
 
 simvision -input restore.tcl.svcf
