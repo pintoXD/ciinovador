@@ -1,10 +1,10 @@
-# SimVision Command Script (Fri Dec 20 01:25:33 PM -03 2024)
+# SimVision Command Script (Thu Jan 09 04:27:31 PM -03 2025)
 #
-# Version 15.20.s086
+# Version 24.09.s001
 #
 # You can restore this configuration with:
 #
-#      xrun /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262_tb.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/addr_interpreter/addr_interpreter.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/addr_interpreter/comp_endereco.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/bit_gen/bit_generator.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/oscillator/clock_divider.sv +access+rw +gui -s -input restore.tcl
+#      xrun -64bit codificador_pt2262_tb.sv codificador_pt2262.sv ../addr_interpreter/addr_interpreter.sv ../addr_interpreter/comp_endereco.sv ../bit_gen/bit_generator.sv ../oscillator/clock_divider.sv +gui +access+rw -s -input /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/restore.tcl
 #
 
 
@@ -35,6 +35,10 @@ preferences set toolbar-Search-Console {
   usual
   position -pos 2
 }
+preferences set toolbar-txe_waveform_toggle-WaveWindow {
+  usual
+  position -pos 1
+}
 preferences set plugin-enable-groupscope 0
 preferences set sb-display-values 1
 preferences set plugin-enable-interleaveandcompare 0
@@ -42,6 +46,10 @@ preferences set plugin-enable-waveformfrequencyplot 0
 preferences set toolbar-SimControl-WatchWindow {
   usual
   shown 0
+}
+preferences set toolbar-Windows-WaveWindow {
+  usual
+  position -pos 2
 }
 preferences set toolbar-TimeSearch-WatchWindow {
   usual
@@ -52,65 +60,13 @@ preferences set toolbar-TimeSearch-WatchWindow {
 # Simulator
 #
 database require simulator -hints {
-	simulator "xrun /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262_tb.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/addr_interpreter/addr_interpreter.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/addr_interpreter/comp_endereco.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/bit_gen/bit_generator.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/oscillator/clock_divider.sv +access+rw +gui -s -input restore.tcl"
+	simulator "xrun -64bit codificador_pt2262_tb.sv codificador_pt2262.sv ../addr_interpreter/addr_interpreter.sv ../addr_interpreter/comp_endereco.sv ../bit_gen/bit_generator.sv ../oscillator/clock_divider.sv +gui +access+rw -s -input restore.tcl"
 }
-#
-# Groups
-#
-catch {group new -name ENCODER -overlay 0}
-catch {group new -name BIT_GENERATOR -overlay 0}
-group using ENCODER
-group set -overlay 0
-group set -comment {}
-group clear 0 end
-
-group insert \
-    [subst  {[format {PT2262_ENCODER_TB.DUT.A[7:0]}]} ] \
-    [subst  {[format {PT2262_ENCODER_TB.DUT.D[3:0]}]} ] \
-    [subst  {[format {PT2262_ENCODER_TB.DUT.ENCODER_FSM_STATE}]} ] \
-    [subst  {[format {PT2262_ENCODER_TB.DUT.F_BIT_LOCATOR[7:0]}]} ] \
-    [subst  {[format {PT2262_ENCODER_TB.DUT.INTERPRETED_ADDR[7:0]}]} ] \
-    [subst  {[format {PT2262_ENCODER_TB.DUT.bit_gen_enb}]} ] \
-    [subst  {[format {PT2262_ENCODER_TB.DUT.bit_gen_input[1:0]}]} ] \
-    [subst  {[format {PT2262_ENCODER_TB.DUT.bit_gen_output}]} ] \
-    [subst  {[format {PT2262_ENCODER_TB.DUT.bit_gen_rst}]} ] \
-    [subst  {[format {PT2262_ENCODER_TB.DUT.bit_generated_flag}]} ] \
-    [subst  {[format {PT2262_ENCODER_TB.DUT.bit_sent_flag}]} ] \
-    [subst  {[format {PT2262_ENCODER_TB.DUT.clk}]} ] \
-    [subst  {[format {PT2262_ENCODER_TB.DUT.cod_o}]} ] \
-    [subst  {[format {PT2262_ENCODER_TB.DUT.current_state[7:0]}]} ] \
-    [subst  {[format {PT2262_ENCODER_TB.DUT.next_state[7:0]}]} ] \
-    [subst  {[format {PT2262_ENCODER_TB.DUT.osc_clk}]} ] \
-    [subst  {[format {PT2262_ENCODER_TB.DUT.osc_clk_rose}]} ] \
-    [subst  {[format {PT2262_ENCODER_TB.DUT.osc_rst}]} ] \
-    [subst  {[format {PT2262_ENCODER_TB.DUT.past_osc_clk}]} ] \
-    [subst  {[format {PT2262_ENCODER_TB.DUT.reset}]} ] \
-    [subst  {[format {PT2262_ENCODER_TB.DUT.sync}]} ]
-group using BIT_GENERATOR
-group set -overlay 0
-group set -comment {}
-group clear 0 end
-
-group insert \
-    [subst  {[format {PT2262_ENCODER_TB.DUT.signal_creator.FSM_STATE}]} ] \
-    [subst  {[format {PT2262_ENCODER_TB.DUT.signal_creator.bit_sent}]} ] \
-    [subst  {[format {PT2262_ENCODER_TB.DUT.signal_creator.current_state[7:0]}]} ] \
-    [subst  {[format {PT2262_ENCODER_TB.DUT.signal_creator.enable_generation}]} ] \
-    [subst  {[format {PT2262_ENCODER_TB.DUT.signal_creator.enable_pulse_counting}]} ] \
-    [subst  {[format {PT2262_ENCODER_TB.DUT.signal_creator.enable_pulse_counting_sync}]} ] \
-    [subst  {[format {PT2262_ENCODER_TB.DUT.signal_creator.input_bit[1:0]}]} ] \
-    [subst  {[format {PT2262_ENCODER_TB.DUT.signal_creator.is_first_run}]} ] \
-    [subst  {[format {PT2262_ENCODER_TB.DUT.signal_creator.next_state[7:0]}]} ] \
-    [subst  {[format {PT2262_ENCODER_TB.DUT.signal_creator.osc_clk}]} ] \
-    [subst  {[format {PT2262_ENCODER_TB.DUT.signal_creator.output_signal}]} ] \
-    [subst  {[format {PT2262_ENCODER_TB.DUT.signal_creator.pulse_counter[4:0]}]} ] \
-    [subst  {[format {PT2262_ENCODER_TB.DUT.signal_creator.pulse_counter_sync[6:0]}]} ] \
-    [subst  {[format {PT2262_ENCODER_TB.DUT.signal_creator.rst}]} ]
 
 #
 # Cursors
 #
-set time 59748501ns
+set time 0
 if {[catch {cursor new -name  TimeA -time $time}] != ""} {
     cursor set -using TimeA -time $time
 }
@@ -118,9 +74,9 @@ if {[catch {cursor new -name  TimeA -time $time}] != ""} {
 #
 # Mnemonic Maps
 #
-mmap new -reuse -name {Boolean as Logic} -radix %b -contents {{%c=FALSE -edgepriority 1 -shape low}
+mmap new  -reuse -name {Boolean as Logic} -radix %b -contents {{%c=FALSE -edgepriority 1 -shape low}
 {%c=TRUE -edgepriority 1 -shape high}}
-mmap new -reuse -name {Example Map} -radix %x -contents {{%b=11???? -bgcolor orange -label REG:%x -linecolor yellow -shape bus}
+mmap new  -reuse -name {Example Map} -radix %x -contents {{%b=11???? -bgcolor orange -label REG:%x -linecolor yellow -shape bus}
 {%x=1F -bgcolor red -label ERROR -linecolor white -shape EVENT}
 {%x=2C -bgcolor red -label ERROR -linecolor white -shape EVENT}
 {%x=* -label %x -linecolor gray -shape bus}}
@@ -128,22 +84,22 @@ mmap new -reuse -name {Example Map} -radix %x -contents {{%b=11???? -bgcolor ora
 #
 # Design Browser windows
 #
-if {[catch {window new WatchList -name "Design Browser 1" -geometry 730x500+2551+183}] != ""} {
-    window geometry "Design Browser 1" 730x500+2551+183
+if {[catch {window new WatchList -name "Design Browser 1" -geometry 730x500+2172+151}] != ""} {
+    window geometry "Design Browser 1" 730x500+2172+151
 }
 window target "Design Browser 1" on
 browser using {Design Browser 1}
-browser set -scope [subst  {[format {PT2262_ENCODER_TB.DUT.signal_creator}]} ]
+browser set -scope [subst  {[format {codificador_pt2262_tb.DUT}]} ]
 browser set \
     -signalsort name
-browser yview see [subst  {[format {PT2262_ENCODER_TB.DUT.signal_creator}]} ]
+browser yview see [subst  {[format {codificador_pt2262_tb.DUT}]} ]
 browser timecontrol set -lock 0
 
 #
 # Waveform windows
 #
-if {[catch {window new WaveWindow -name "Waveform 1" -geometry 1920x983+1919+26}] != ""} {
-    window geometry "Waveform 1" 1920x983+1919+26
+if {[catch {window new WaveWindow -name "Waveform 1" -geometry 1920x1043+-1+-1}] != ""} {
+    window geometry "Waveform 1" 1920x1043+-1+-1
 }
 window target "Waveform 1" on
 waveform using {Waveform 1}
@@ -153,77 +109,74 @@ waveform set \
     -signalnames name \
     -signalwidth 175 \
     -units ns \
-    -valuewidth 215
-waveform baseline set -time 32,382,078ns
+    -valuewidth 75
+waveform baseline set -time 0
 
+set id [waveform add -signals [subst  {
+	{[format {codificador_pt2262_tb.DUT.A[7:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {codificador_pt2262_tb.DUT.D[3:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {codificador_pt2262_tb.DUT.ENCODER_FSM_STATE}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {codificador_pt2262_tb.DUT.F_BIT_LOCATOR[7:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {codificador_pt2262_tb.DUT.INTERPRETED_ADDR[7:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {codificador_pt2262_tb.DUT.bit_gen_enb}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {codificador_pt2262_tb.DUT.bit_gen_input[1:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {codificador_pt2262_tb.DUT.bit_gen_output}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {codificador_pt2262_tb.DUT.bit_gen_rst}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {codificador_pt2262_tb.DUT.bit_generated_flag}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {codificador_pt2262_tb.DUT.bit_sent_flag}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {codificador_pt2262_tb.DUT.clk}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {codificador_pt2262_tb.DUT.cod_o}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {codificador_pt2262_tb.DUT.current_state[7:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {codificador_pt2262_tb.DUT.next_state[7:0]}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {codificador_pt2262_tb.DUT.osc_clk}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {codificador_pt2262_tb.DUT.osc_clk_rose}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {codificador_pt2262_tb.DUT.osc_rst}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {codificador_pt2262_tb.DUT.past_osc_clk}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {codificador_pt2262_tb.DUT.reset}]}
+	} ]]
+set id [waveform add -signals [subst  {
+	{[format {codificador_pt2262_tb.DUT.sync}]}
+	} ]]
 
-set groupId0 [waveform add -groups ENCODER]
-set gpGlist0 [waveform hierarchy contents $groupId0]
-set gpID0 [lindex $gpGlist0 0]
-foreach {name attrs} [subst  {
-    {[format {PT2262_ENCODER_TB.DUT.A[7:0]}]} {-radix %b}
-    {[format {PT2262_ENCODER_TB.DUT.D[3:0]}]} {}
-    {[format {PT2262_ENCODER_TB.DUT.ENCODER_FSM_STATE}]} {}
-    {[format {PT2262_ENCODER_TB.DUT.F_BIT_LOCATOR[7:0]}]} {}
-    {[format {PT2262_ENCODER_TB.DUT.INTERPRETED_ADDR[7:0]}]} {}
-    {[format {PT2262_ENCODER_TB.DUT.bit_gen_enb}]} {}
-    {[format {PT2262_ENCODER_TB.DUT.bit_gen_input[1:0]}]} {}
-    {[format {PT2262_ENCODER_TB.DUT.bit_gen_output}]} {}
-    {[format {PT2262_ENCODER_TB.DUT.bit_gen_rst}]} {}
-    {[format {PT2262_ENCODER_TB.DUT.bit_generated_flag}]} {}
-    {[format {PT2262_ENCODER_TB.DUT.bit_sent_flag}]} {}
-    {[format {PT2262_ENCODER_TB.DUT.clk}]} {}
-    {[format {PT2262_ENCODER_TB.DUT.cod_o}]} {}
-    {[format {PT2262_ENCODER_TB.DUT.current_state[7:0]}]} {}
-    {[format {PT2262_ENCODER_TB.DUT.next_state[7:0]}]} {}
-    {[format {PT2262_ENCODER_TB.DUT.osc_clk}]} {}
-    {[format {PT2262_ENCODER_TB.DUT.osc_clk_rose}]} {}
-    {[format {PT2262_ENCODER_TB.DUT.osc_rst}]} {}
-    {[format {PT2262_ENCODER_TB.DUT.past_osc_clk}]} {}
-    {[format {PT2262_ENCODER_TB.DUT.reset}]} {}
-    {[format {PT2262_ENCODER_TB.DUT.sync}]} {}
-}] childcmds {
-    {}
-    {}
-    {}
-    {}
-    {}
-    {}
-    {}
-    {}
-    {}
-    {}
-    {}
-    {}
-    {}
-    {}
-    {}
-    {}
-    {}
-    {}
-    {}
-    {}
-    {}
-} {
-    set expected [ join [waveform signals -format path $gpID0] ]
-    if {[string equal $name $expected] || $name == "cdivider"} {
-        if {$attrs != ""} {
-            eval waveform format $gpID0 $attrs
-        }
-        if { $childcmds != ""} {
-            eval $childcmds
-        }
-    }
-    set gpGlist0 [lrange $gpGlist0 1 end]
-    set gpID0 [lindex $gpGlist0 0]
-}
-
-
-set groupId0 [waveform add -groups BIT_GENERATOR]
-waveform hierarchy collapse $groupId0
-
-
-waveform xview limits 0 82542075ns
+waveform xview limits 0 2471628ns
 
 #
 # Waveform Window Links
@@ -233,7 +186,7 @@ waveform xview limits 0 82542075ns
 # Console windows
 #
 console set -windowname Console
-window geometry Console 730x250+2666+632
+window geometry Console 730x250+3047+117
 
 #
 # Layout selection

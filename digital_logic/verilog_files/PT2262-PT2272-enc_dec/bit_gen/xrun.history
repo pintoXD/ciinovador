@@ -22,3 +22,9 @@ s21(19Dec2024:10:09:13):  xrun bit_generator_tb.sv bit_generator.sv ../oscillato
 s22(19Dec2024:10:12:34):  xrun bit_generator_tb.sv bit_generator.sv ../oscillator/clock_divider.sv +access+rw +gui -s 
 s23(19Dec2024:10:15:59):  xrun bit_generator_tb.sv bit_generator.sv ../oscillator/clock_divider.sv +access+rw +gui -s 
 s24(19Dec2024:10:17:20):  xrun bit_generator_tb.sv bit_generator.sv ../oscillator/clock_divider.sv +access+rw +gui -s 
+#e25(09Jan2025:15:31:41): source ./xcelium.d/env.d/env.history.09Jan2025_15_31_41
+s25(09Jan2025:15:31:41):  xrun -64bit bit_generator_tb.sv bit_generator.sv ../oscillator/clock_divider.sv 
+#e26(09Jan2025:15:32:01): source ./xcelium.d/env.d/env.history.09Jan2025_15_32_01
+s26(09Jan2025:15:32:01):  xrun -64bit bit_generator_tb.sv bit_generator.sv ../oscillator/clock_divider.sv +gui +access+rw 
+#e27(09Jan2025:15:56:46): source ./xcelium.d/env.d/env.history.09Jan2025_15_56_46
+s27(09Jan2025:15:56:46):  xrun -64bit bit_generator_tb.sv bit_generator.sv ../oscillator/clock_divider.sv +gui +access+rw "-s " 

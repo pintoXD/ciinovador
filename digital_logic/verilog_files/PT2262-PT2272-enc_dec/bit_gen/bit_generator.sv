@@ -64,11 +64,10 @@ end
 
 always_comb begin : magic_manager
     next_state = current_state;
-
-    if(~rst) begin
+    if(rst) begin
         next_state = IDLE;
     end else begin
-        case (current_state)
+        unique case (current_state)
             IDLE: begin
                 if(enable_generation) begin
                     next_state = INITIAL_STATE;
@@ -78,7 +77,6 @@ always_comb begin : magic_manager
             end
 
             INITIAL_STATE: begin
-
                 bit_sent = 0;
 
                 if(input_bit == 2'b00) begin
@@ -129,6 +127,10 @@ always_comb begin : magic_manager
                     next_state = GENERATE_BIT_SYNC_0;
                 end
             end
+
+            default: begin
+                next_state = next_state;
+            end
         endcase
 
 
@@ -136,12 +138,13 @@ always_comb begin : magic_manager
 end
 
 
-always_ff @(posedge osc_clk, negedge rst) begin: magic_manager_ff
-    if(~rst) begin
+always_ff @(posedge osc_clk, posedge rst) begin: magic_manager_ff
+    if(rst) begin
         output_signal <= 0;
         enable_pulse_counting <= 0;
         enable_pulse_counting_sync <= 0;
         is_first_run <= 1;
+        // bit_sent <= 0;
     end else begin
         case (current_state)
             IDLE: begin 
@@ -152,6 +155,8 @@ always_ff @(posedge osc_clk, negedge rst) begin: magic_manager_ff
             end
 
             INITIAL_STATE: begin
+                // bit_sent <= 0;
+
                 // Some sort of a workaround to solve the problem of the very first HIGH pulse 
                 // being sent with one more clock cycle than the expected.
                 if (is_first_run) begin
@@ -189,6 +194,7 @@ always_ff @(posedge osc_clk, negedge rst) begin: magic_manager_ff
                             output_signal <= 0;
                         end
                     end
+                    // bit_sent <= 1;
             end
             GENERATE_BIT_1: begin
                     if(pulse_counter < 31) begin
@@ -202,6 +208,7 @@ always_ff @(posedge osc_clk, negedge rst) begin: magic_manager_ff
                     end else if (pulse_counter == 31) begin
                         output_signal <= 0;
                     end
+                    // bit_sent <= 1;
             end
             GENERATE_BIT_F: begin
                     if(pulse_counter < 31) begin
@@ -215,6 +222,7 @@ always_ff @(posedge osc_clk, negedge rst) begin: magic_manager_ff
                     end else if (pulse_counter == 31) begin
                         output_signal <= 0;
                     end
+                    // bit_sent <= 1;
             end
             GENERATE_BIT_SYNC_0: begin //Generates HIGH por 4 oscillator cycles and a LOW for 124 oscillator cycles
                     if(pulse_counter < 128) begin
@@ -223,7 +231,8 @@ always_ff @(posedge osc_clk, negedge rst) begin: magic_manager_ff
                         end else begin
                             output_signal <= 0;
                         end
-                    end 
+                    end
+                    // bit_sent <= 1; 
             end
         endcase
     end

@@ -1,0 +1,59 @@
+xrun(64): 24.09-s001: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	24.09-s001: Started on Jan 09, 2025 at 16:18:42 -03
+xrun
+	-64bit
+	codificador_pt2262_tb.sv
+	codificador_pt2262.sv
+	../addr_interpreter/addr_interpreter.sv
+	../addr_interpreter/comp_endereco.sv
+	../bit_gen/bit_generator.sv
+	../oscillator/clock_divider.sv
+	+gui
+	+access+rw
+	-s
+Recompiling... reason: file './codificador_pt2262.sv' is newer than expected.
+	expected: Thu Jan  9 16:17:15 2025
+	actual:   Thu Jan  9 16:18:37 2025
+file: codificador_pt2262.sv
+	module worklib.codificador_pt2262:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		codificador_pt2262_tb
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.codificador_pt2262_tb:sv <0x3d453de0>
+			streams:   8, words:  4999
+		worklib.codificador_pt2262:sv <0x549cbe5a>
+			streams:  19, words: 18278
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 6       6
+		Registers:              41      41
+		Scalar wires:           20       -
+		Vectored wires:         12       -
+		Always blocks:          10      10
+		Initial blocks:          2       2
+		Cont. assignments:       5       5
+		Pseudo assignments:     18       -
+		Process Clocks:          7       5
+		Simulation timescale:  1ns
+	Writing initial simulation snapshot: worklib.codificador_pt2262_tb:sv
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+xcelium> 
+xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
+xcelium> 
+-------------------------------------
+Relinquished control to SimVision...
+# Restoring simulation environment...
+xcelium> input -quiet .reinvoke.sim
+xcelium> file delete .reinvoke.sim
+xcelium> run
+Simulation complete via $finish(1) at time 82542075 NS + 3
+./codificador_pt2262_tb.sv:53         $finish;
+xcelium> ^C
+xcelium> exit
+TOOL:	xrun(64)	24.09-s001: Exiting on Jan 09, 2025 at 16:27:36 -03  (total: 00:08:54)

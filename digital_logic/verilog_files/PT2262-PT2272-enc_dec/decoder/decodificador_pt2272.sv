@@ -42,7 +42,7 @@ logic reset_counters;
 logic osc_clk;
 logic osc_rst;
 
-assign osc_rst = ~reset; // Oscillator resets on low
+assign osc_rst = reset; // Oscillator resetting
 
 CLOCK_DIVIDER #(
     .DIVIDER(250)

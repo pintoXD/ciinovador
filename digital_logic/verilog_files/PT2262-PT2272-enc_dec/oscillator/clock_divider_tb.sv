@@ -39,13 +39,13 @@ module CLOCK_DIVIDER_TB();
 
         // Initialize Inputs
         @(posedge mock_INPUT_CLK);
-        mock_RST = 0;
+        mock_RST = 1;
 
         // Wait for rst to be finished
         @(posedge mock_INPUT_CLK);
         @(posedge mock_INPUT_CLK);
         @(posedge mock_INPUT_CLK);
-        mock_RST = 1;
+        mock_RST = 0;
 
         for(int i = 0; i < 750; i++) begin
             @(posedge mock_INPUT_CLK);
