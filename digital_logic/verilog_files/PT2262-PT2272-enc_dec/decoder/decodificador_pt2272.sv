@@ -285,18 +285,31 @@ always_ff @(posedge osc_clk, posedge reset) begin : DECODER_FSM_FF_BLOCK
 end
 
 
-always_ff @(posedge osc_clk, posedge reset) begin : RECEIVER_DATA_REGISTERING
+always_ff @(posedge osc_clk, posedge reset) begin : RECEIVER_PAYLOAD_D_REGISTERING
     if(reset)
         D <= 4'b0000;
     else begin
         if (BIDIR_SHIFTREG_PARALLEL_OUT[25:24] == 2'b01)begin
-            D[3] <= BIDIR_SHIFTREG_PARALLEL_OUT[23] & BIDIR_SHIFTREG_PARALLEL_OUT[22];
-            D[2] <= BIDIR_SHIFTREG_PARALLEL_OUT[21] & BIDIR_SHIFTREG_PARALLEL_OUT[20];
-            D[1] <= BIDIR_SHIFTREG_PARALLEL_OUT[19] & BIDIR_SHIFTREG_PARALLEL_OUT[18];
-            D[0] <= BIDIR_SHIFTREG_PARALLEL_OUT[17] & BIDIR_SHIFTREG_PARALLEL_OUT[16];
+            D[0] <= BIDIR_SHIFTREG_PARALLEL_OUT[23] & BIDIR_SHIFTREG_PARALLEL_OUT[22];
+            D[1] <= BIDIR_SHIFTREG_PARALLEL_OUT[21] & BIDIR_SHIFTREG_PARALLEL_OUT[20];
+            D[2] <= BIDIR_SHIFTREG_PARALLEL_OUT[19] & BIDIR_SHIFTREG_PARALLEL_OUT[18];
+            D[3] <= BIDIR_SHIFTREG_PARALLEL_OUT[17] & BIDIR_SHIFTREG_PARALLEL_OUT[16];
         end
     end
 end
+
+// always_ff @(posedge osc_clk, posedge reset) begin : RECEIVER_ADDRESS_REGISTERING
+//     if(reset)
+//         D <= 4'b0000;
+//     else begin
+//         if (BIDIR_SHIFTREG_PARALLEL_OUT[25:24] == 2'b01)begin
+//             D[3] <= BIDIR_SHIFTREG_PARALLEL_OUT[23] & BIDIR_SHIFTREG_PARALLEL_OUT[22];
+//             D[2] <= BIDIR_SHIFTREG_PARALLEL_OUT[21] & BIDIR_SHIFTREG_PARALLEL_OUT[20];
+//             D[1] <= BIDIR_SHIFTREG_PARALLEL_OUT[19] & BIDIR_SHIFTREG_PARALLEL_OUT[18];
+//             D[0] <= BIDIR_SHIFTREG_PARALLEL_OUT[17] & BIDIR_SHIFTREG_PARALLEL_OUT[16];
+//         end
+//     end
+// end
 
 
 always_ff @(posedge osc_clk) begin : decoder_state_changer

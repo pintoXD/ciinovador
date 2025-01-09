@@ -152,7 +152,7 @@ waveform set \
     -signalnames name \
     -signalwidth 175 \
     -units ps \
-    -valuewidth 75
+    -valuewidth 537
 waveform baseline set -time 0
 
 
@@ -232,6 +232,65 @@ foreach {name attrs}  {
 
 
 set groupId0 [waveform add -groups encoder]
+set gpGlist0 [waveform hierarchy contents $groupId0]
+set gpID0 [lindex $gpGlist0 0]
+foreach {name attrs}  {
+    {simulator::decodificador_pt2272_tb.encoder_dut.A[7:0]} {-radix %b}
+    {simulator::decodificador_pt2272_tb.encoder_dut.D[3:0]} {}
+    simulator::decodificador_pt2272_tb.encoder_dut.ENCODER_FSM_STATE {}
+    {simulator::decodificador_pt2272_tb.encoder_dut.F_BIT_LOCATOR[7:0]} {}
+    {simulator::decodificador_pt2272_tb.encoder_dut.INTERPRETED_ADDR[7:0]} {}
+    simulator::decodificador_pt2272_tb.encoder_dut.bit_gen_enb {}
+    {simulator::decodificador_pt2272_tb.encoder_dut.bit_gen_input[1:0]} {}
+    simulator::decodificador_pt2272_tb.encoder_dut.bit_gen_output {}
+    simulator::decodificador_pt2272_tb.encoder_dut.bit_gen_rst {}
+    simulator::decodificador_pt2272_tb.encoder_dut.bit_generated_flag {}
+    simulator::decodificador_pt2272_tb.encoder_dut.bit_sent_flag {}
+    simulator::decodificador_pt2272_tb.encoder_dut.clk {}
+    simulator::decodificador_pt2272_tb.encoder_dut.cod_o {}
+    {simulator::decodificador_pt2272_tb.encoder_dut.current_state[7:0]} {}
+    {simulator::decodificador_pt2272_tb.encoder_dut.next_state[7:0]} {}
+    simulator::decodificador_pt2272_tb.encoder_dut.osc_clk {}
+    simulator::decodificador_pt2272_tb.encoder_dut.osc_clk_rose {}
+    simulator::decodificador_pt2272_tb.encoder_dut.osc_rst {}
+    simulator::decodificador_pt2272_tb.encoder_dut.past_osc_clk {}
+    simulator::decodificador_pt2272_tb.encoder_dut.reset {}
+    simulator::decodificador_pt2272_tb.encoder_dut.sync {}
+} childcmds {
+    {}
+    {}
+    {}
+    {}
+    {}
+    {}
+    {}
+    {}
+    {}
+    {}
+    {}
+    {}
+    {}
+    {}
+    {}
+    {}
+    {}
+    {}
+    {}
+    {}
+    {}
+} {
+    set expected [ join [waveform signals -format path $gpID0] ]
+    if {[string equal $name $expected] || $name == "cdivider"} {
+        if {$attrs != ""} {
+            eval waveform format $gpID0 $attrs
+        }
+        if { $childcmds != ""} {
+            eval $childcmds
+        }
+    }
+    set gpGlist0 [lrange $gpGlist0 1 end]
+    set gpID0 [lindex $gpGlist0 0]
+}
 waveform hierarchy collapse $groupId0
 
 

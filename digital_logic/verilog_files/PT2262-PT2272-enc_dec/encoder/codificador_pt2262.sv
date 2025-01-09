@@ -273,7 +273,7 @@ always_comb begin : encoder_fsm
                 bit_generated_flag = 0;
                 if (bit_sent_flag && osc_clk_rose) begin
                     bit_generated_flag = 1;
-                    next_state = GENERATE_D0;
+                    next_state = GENERATE_D3;
                 end
 
                 if (!bit_generated_flag) begin
@@ -284,20 +284,7 @@ always_comb begin : encoder_fsm
                 end
             end
 
-            GENERATE_D0: begin
-                bit_generated_flag = 0;
-                if (bit_sent_flag && osc_clk_rose) begin
-                    bit_generated_flag = 1;
-                    next_state = GENERATE_D1;
-                end
-
-                if (!bit_generated_flag) begin
-                    bit_gen_input = D[0] ? 2'b01 : 2'b00;            
-                end
-
-            end
-
-            GENERATE_D1: begin
+            GENERATE_D3: begin
                 bit_generated_flag = 0;
                 if (bit_sent_flag && osc_clk_rose) begin
                     bit_generated_flag = 1;
@@ -305,15 +292,16 @@ always_comb begin : encoder_fsm
                 end
 
                 if (!bit_generated_flag) begin
-                    bit_gen_input = D[1] ? 2'b01 : 2'b00;            
+                    bit_gen_input = D[3] ? 2'b01 : 2'b00;            
                 end
+
             end
 
             GENERATE_D2: begin
                 bit_generated_flag = 0;
                 if (bit_sent_flag && osc_clk_rose) begin
                     bit_generated_flag = 1;
-                    next_state = GENERATE_D3;
+                    next_state = GENERATE_D1;
                 end
 
                 if (!bit_generated_flag) begin
@@ -321,7 +309,19 @@ always_comb begin : encoder_fsm
                 end
             end
 
-            GENERATE_D3: begin
+            GENERATE_D1: begin
+                bit_generated_flag = 0;
+                if (bit_sent_flag && osc_clk_rose) begin
+                    bit_generated_flag = 1;
+                    next_state = GENERATE_D0;
+                end
+
+                if (!bit_generated_flag) begin
+                    bit_gen_input = D[1] ? 2'b01 : 2'b00;            
+                end
+            end
+
+            GENERATE_D0: begin
                 bit_generated_flag = 0;
                 if (bit_sent_flag && osc_clk_rose) begin
                     bit_generated_flag = 1;
@@ -329,7 +329,7 @@ always_comb begin : encoder_fsm
                 end
 
                 if (!bit_generated_flag) begin
-                    bit_gen_input = D[3] ? 2'b01 : 2'b00;            
+                    bit_gen_input = D[0] ? 2'b01 : 2'b00;            
                 end
             end
 

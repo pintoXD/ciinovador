@@ -188,7 +188,7 @@ module decodificador_pt2272_tb ();
 
         @(posedge encoder_dut.osc_clk);
         mock_A_enc = 8'bz1010000;
-        mock_D_enc = 4'b1010;
+        mock_D_enc = 4'b0100;
 
 
         for (int i = 0; i < 550; i++) begin
@@ -197,8 +197,9 @@ module decodificador_pt2272_tb ();
         end
 
         @(posedge encoder_dut.osc_clk);
-        mock_A_enc = 8'bz1010000;
-        mock_D_enc = 4'b0101;
+        // mock_A_enc = 8'bz1010000;
+        mock_A_enc = 8'b11110000;
+        mock_D_enc = 4'b0110;
 
 
         for (int i = 0; i < 550; i++) begin
