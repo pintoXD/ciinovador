@@ -60,7 +60,7 @@ CLOCK_DIVIDER #(
 const logic [4:0] BIDIR_SHIFTREG_SIZE = 26;
 // parameter int BIDIR_SHIFTREG_SIZE = 26;
 // Inputs
-logic BIDIR_SHIFTREG_ENABLER;
+// logic BIDIR_SHIFTREG_ENABLER;
 logic BIDIR_SHIFTREG_RESET;
 // logic BIDIR_SHIFTREG_SERIAL_IN;
 // logic [25:0] BIDIR_SHIFTREG_PARALLEL_IN;
@@ -74,7 +74,8 @@ logic BIDIR_SHIFTREG_LEFT_SHIFT_OUT;
 
 // Instantiate the shiftreg
 BIDIR_SHIFTREG RCVD_DATA_SHIFTREG (
-    .enable(BIDIR_SHIFTREG_ENABLER),
+    .enable(osc_clk),
+    .reset(BIDIR_SHIFTREG_RESET),
     .shift_in(1'b0),
     .d(26'h0),
     .PT2272_BIT(BIDIR_SHIFTREG_PT2272_BIT_IN),
@@ -214,7 +215,8 @@ always_ff @(posedge osc_clk, posedge reset) begin : DECODER_FSM_FF_BLOCK
         unique case(current_state)
             INITIAL_STATE: begin
                 BIDIR_SHIFTREG_OP_MODE <= 3'b000; // Turns shift right mode on
-                BIDIR_SHIFTREG_ENABLER <= 0;   // Disable the shift register data loading.
+                // BIDIR_SHIFTREG_ENABLER <= 0;   // Disable the shift register data loading.
+                BIDIR_SHIFTREG_RESET <= 0;
             end
 
             PULSE_COUNTING: begin
@@ -225,28 +227,28 @@ always_ff @(posedge osc_clk, posedge reset) begin : DECODER_FSM_FF_BLOCK
 
             BIT_1_DETECTED: begin
                 reset_counters <= 0;
-                BIDIR_SHIFTREG_ENABLER <= 1; // Enable the shift register to load the data.
+                // BIDIR_SHIFTREG_ENABLER <= 1; // Enable the shift register to load the data.
                 BIDIR_SHIFTREG_OP_MODE <= 3'b101; // Turns shift right PT2272_BIT mode on
                 BIDIR_SHIFTREG_PT2272_BIT_IN <= 2'b11; // Shift in 11 to the shift register
             end
 
             BIT_0_DETECTED: begin
                 reset_counters <= 0;
-                BIDIR_SHIFTREG_ENABLER <= 1; // Enable the shift register to load the data.
+                // BIDIR_SHIFTREG_ENABLER <= 1; // Enable the shift register to load the data.
                 BIDIR_SHIFTREG_OP_MODE <= 3'b101; // Turns shift right PT2272_BIT mode on
                 BIDIR_SHIFTREG_PT2272_BIT_IN <= 2'b00; // Shift in 00 to the shift register
             end
 
             BIT_F_DETECTED: begin
                 reset_counters <= 0;
-                BIDIR_SHIFTREG_ENABLER <= 1; // Enable the shift register to load the data.
+                // BIDIR_SHIFTREG_ENABLER <= 1; // Enable the shift register to load the data.
                 BIDIR_SHIFTREG_OP_MODE <= 3'b101; // Turns shift right PT2272_BIT mode on
                 BIDIR_SHIFTREG_PT2272_BIT_IN <= 2'b10; // Shift in 10 to the shift register
             end
 
             BIT_SYNC_DETECTED: begin
                 reset_counters <= 0;
-                BIDIR_SHIFTREG_ENABLER <= 1; // Enable the shift register to load the data.
+                // BIDIR_SHIFTREG_ENABLER <= 1; // Enable the shift register to load the data.
                 BIDIR_SHIFTREG_OP_MODE <= 3'b101; // Turns shift right PT2272_BIT mode on
                 BIDIR_SHIFTREG_PT2272_BIT_IN <= 2'b01; // Shift in 01 to the shift register
             end
