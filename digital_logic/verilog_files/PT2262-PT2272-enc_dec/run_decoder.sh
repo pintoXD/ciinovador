@@ -74,8 +74,8 @@ if [ "$1" == "xrun_raw" ]; then
             ${BIT_SIGNAL_GENERATOR_PATH}/bit_generator.sv \
             ${OSCILLATOR_PATH}/clock_divider.sv \
             ${BIDIR_SHIFTREG_PATH}/bidir_shiftreg.sv \
-            +access+rw +gui
-            # -s -input restore_dec.tcl
+            +access+rw +gui \
+            -s -input restore_dec.tcl
 elif [ "$1" == "xrun_compile" ]; then
     #Run for simulation
     xrun -compile -64bit ${DECODER_PATH}/decodificador_pt2272_tb.sv ${DECODER_PATH}/decodificador_pt2272.sv \

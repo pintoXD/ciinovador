@@ -377,8 +377,11 @@ always_ff @(posedge osc_clk, posedge reset) begin : RECEIVER_ADDRESS_REGISTERING
 end
 
 
-always_ff @(posedge osc_clk) begin : decoder_state_changer
-    current_state <= next_state;
+always_ff @(posedge osc_clk, posedge reset) begin : decoder_state_changer
+    if(reset)
+        current_state <= INITIAL_STATE;
+    else
+        current_state <= next_state;
 end
 
 
