@@ -25,6 +25,7 @@ export ENCODER_PATH=${WORKING_DIR}/encoder
 # xrun ${ENCODER_PATH}/codificador_pt2262_tb.sv ${ENCODER_PATH}/codificador_netlist.sv ${WORKING_DIR}/libs/fast_vdd1v2_basicCells.v ${ADDRESS_INTERPRETER_PATH}/addr_interpreter.sv ${ADDRESS_INTERPRETER_PATH}/comp_endereco.sv ${BIT_SIGNAL_GENERATOR_PATH}/bit_generator.sv ${OSCILLATOR_PATH}/clock_divider.sv +access+rw +gui
 # xrun ${ENCODER_PATH}/codificador_pt2262_tb.sv ${ENCODER_PATH}/codificador_pt2262.sv ${ADDRESS_INTERPRETER_PATH}/addr_interpreter.sv ${ADDRESS_INTERPRETER_PATH}/comp_endereco.sv ${BIT_SIGNAL_GENERATOR_PATH}/bit_generator.sv ${OSCILLATOR_PATH}/clock_divider.sv +access+rw +gui
 
+#Run for simulation
 xrun -64bit ${ENCODER_PATH}/codificador_pt2262_tb.sv ${ENCODER_PATH}/codificador_pt2262.sv \
             ${ADDRESS_INTERPRETER_PATH}/addr_interpreter.sv \
             ${ADDRESS_INTERPRETER_PATH}/comp_endereco.sv \

@@ -118,13 +118,19 @@ assign osc_clk_rose = ( (osc_clk==1) && (past_osc_clk==0));
 always_comb begin : encoder_fsm
 
     next_state = current_state;
-
+    
+    /* The followying variabled are there to avoid the its synthesis as latches insted of wires. */
+    bit_gen_rst = 1'b0; // Bit generator is active by default
+    bit_gen_enb = 1'b1; // Bit generation is enabled by default
+    bit_gen_input = 2'b11; // Default bit generation is BIT SYNC
+    /*********************************************************************************************/
+    
     if(reset) begin
         next_state = RESET_MODULES;
         // next_state = INITIALIZE_BIT_GENERATOR;
         bit_generated_flag = 1;
-        bit_gen_rst = 1'b1; // Bit generator resets on low
-        bit_gen_enb = 1'b0; // Bit generation is disabled
+        bit_gen_rst = 1'b1; // Bit generator resetting
+        bit_gen_enb = 1'b0; // Bit generation disabling on resetting.
     end else begin
         case(current_state)
             RESET_MODULES: begin
@@ -139,7 +145,7 @@ always_comb begin : encoder_fsm
             end
 
             INITIALIZE_BIT_GENERATOR: begin
-                bit_gen_rst = 1'b0; // Bit generator resets on low
+                bit_gen_rst = 1'b1; // Bit generator resets on high
                 if (osc_clk_rose)
                     next_state = GENERATE_A0;
             end
@@ -350,11 +356,8 @@ always_comb begin : encoder_fsm
 end
 
 
-always_ff @(posedge clk, posedge reset) begin : encoder_state_changer
-    // if(reset)
-    //     current_state <= RESET_MODULES;
-    // else
-        current_state <= next_state;
+always_ff @(posedge clk) begin : encoder_state_changer
+    current_state <= next_state;
 end
 
 endmodule
