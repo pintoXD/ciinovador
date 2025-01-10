@@ -7,7 +7,7 @@ module codificador_pt2262(
     output logic cod_o
 );
 
-typedef enum logic[7:0] {  
+typedef enum bit[7:0] {  
     IDLE = 8'h00,
     INITIAL_STATE = 8'h01,
     GENERATE_A0 = 8'h02,
@@ -124,7 +124,7 @@ always_comb begin : encoder_fsm
     bit_gen_enb = 1'b1; // Bit generation is enabled by default
     bit_gen_input = 2'b11; // Default bit generation is BIT SYNC
     /*********************************************************************************************/
-    
+
     if(reset) begin
         next_state = RESET_MODULES;
         // next_state = INITIALIZE_BIT_GENERATOR;

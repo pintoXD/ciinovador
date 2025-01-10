@@ -1,303 +1,831 @@
 xrun(64): 24.09-s001: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	24.09-s001: Started on Jan 10, 2025 at 09:24:56 -03
+TOOL:	xrun(64)	24.09-s001: Started on Jan 10, 2025 at 11:33:08 -03
 xrun
 	-64bit
-	/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272_tb.sv
-	/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272.sv
-	/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262.sv
-	/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/addr_interpreter/addr_interpreter.sv
+	/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262_tb.sv
+	/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262.v
+	/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/libs/fast_vdd1v2_basicCells.v
 	/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/addr_interpreter/comp_endereco.sv
 	/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/bit_gen/bit_generator.sv
 	/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/oscillator/clock_divider.sv
-	/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/bidir_shift_register/bidir_shiftreg.sv
 	+access+rw
 	+gui
-	-s
-Recompiling... reason: file './encoder/codificador_pt2262.sv' is newer than expected.
-	expected: Fri Jan 10 09:06:23 2025
-	actual:   Fri Jan 10 09:24:40 2025
-file: /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262.sv
-	module worklib.codificador_pt2262:sv
+file: /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262_tb.sv
+	module worklib.codificador_pt2262_tb:sv
+		errors: 0, warnings: 0
+file: /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/addr_interpreter/comp_endereco.sv
+	module worklib.comp_endereco:sv
+		errors: 0, warnings: 0
+file: /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/bit_gen/bit_generator.sv
+	module worklib.BIT_GENERATOR:sv
+		errors: 0, warnings: 0
+file: /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/oscillator/clock_divider.sv
+	module worklib.CLOCK_DIVIDER:sv
 		errors: 0, warnings: 0
 		Caching library 'worklib' ....... Done
 	Elaborating the design hierarchy:
 	Top level design units:
-		decodificador_pt2272_tb
+		codificador_pt2262_tb
+		ACHCONX2
+		ADDFHX1
+		ADDFHX2
+		ADDFHX4
+		ADDFHXL
+		ADDFX1
+		ADDFX2
+		ADDFX4
+		ADDFXL
+		ADDHX1
+		ADDHX2
+		ADDHX4
+		ADDHXL
+		AND2X2
+		AND2X4
+		AND2X6
+		AND2X8
+		AND2XL
+		AND3X1
+		AND3X2
+		AND3X4
+		AND3X6
+		AND3X8
+		AND3XL
+		AND4X1
+		AND4X2
+		AND4X4
+		AND4X6
+		AND4X8
+		AND4XL
+		ANTENNA
+		AO21X1
+		AO21X2
+		AO21X4
+		AO21XL
+		AO22X1
+		AO22X2
+		AO22X4
+		AO22XL
+		AOI211X1
+		AOI211X2
+		AOI211X4
+		AOI21X1
+		AOI21X2
+		AOI21X4
+		AOI221X2
+		AOI221X4
+		AOI221XL
+		AOI222X1
+		AOI222X2
+		AOI222X4
+		AOI222XL
+		AOI22X1
+		AOI22X2
+		AOI22X4
+		AOI2BB1X1
+		AOI2BB1X2
+		AOI2BB1X4
+		AOI2BB1XL
+		AOI2BB2X1
+		AOI2BB2X2
+		AOI2BB2X4
+		AOI2BB2XL
+		AOI31X1
+		AOI31X2
+		AOI31X4
+		AOI31XL
+		AOI32X1
+		AOI32X2
+		AOI32X4
+		AOI32XL
+		AOI33X1
+		AOI33X2
+		AOI33X4
+		BMXIX2
+		BMXIX4
+		BUFX12
+		BUFX16
+		BUFX2
+		BUFX20
+		BUFX3
+		BUFX4
+		BUFX6
+		BUFX8
+		CLKAND2X12
+		CLKAND2X2
+		CLKAND2X3
+		CLKAND2X4
+		CLKAND2X6
+		CLKAND2X8
+		CLKBUFX12
+		CLKBUFX16
+		CLKBUFX2
+		CLKBUFX20
+		CLKBUFX3
+		CLKBUFX4
+		CLKBUFX6
+		CLKBUFX8
+		CLKINVX1
+		CLKINVX12
+		CLKINVX16
+		CLKINVX2
+		CLKINVX20
+		CLKINVX3
+		CLKINVX4
+		CLKINVX6
+		CLKINVX8
+		CLKMX2X12
+		CLKMX2X2
+		CLKMX2X3
+		CLKMX2X4
+		CLKMX2X6
+		CLKMX2X8
+		CLKXOR2X1
+		CLKXOR2X2
+		CLKXOR2X4
+		CLKXOR2X8
+		DECAP10
+		DECAP2
+		DECAP3
+		DECAP4
+		DECAP5
+		DECAP6
+		DECAP7
+		DECAP8
+		DECAP9
+		DFFHQX2
+		DFFHQX4
+		DFFHQX8
+		DFFNSRX1
+		DFFNSRX2
+		DFFNSRX4
+		DFFNSRXL
+		DFFQX1
+		DFFQX2
+		DFFQX4
+		DFFQXL
+		DFFRHQX2
+		DFFRHQX4
+		DFFRHQX8
+		DFFRX2
+		DFFRX4
+		DFFRXL
+		DFFSHQX2
+		DFFSHQX4
+		DFFSHQX8
+		DFFSRHQX1
+		DFFSRHQX2
+		DFFSRHQX4
+		DFFSRHQX8
+		DFFSRX1
+		DFFSRX2
+		DFFSRX4
+		DFFSRXL
+		DFFSX1
+		DFFSX2
+		DFFSX4
+		DFFSXL
+		DFFTRX1
+		DFFTRX2
+		DFFTRX4
+		DFFTRXL
+		DFFX1
+		DFFX2
+		DFFX4
+		DFFXL
+		DLY1X1
+		DLY1X4
+		DLY2X1
+		DLY2X4
+		DLY3X1
+		DLY3X4
+		DLY4X1
+		DLY4X4
+		EDFFHQX1
+		EDFFHQX2
+		EDFFHQX4
+		EDFFHQX8
+		EDFFTRX1
+		EDFFTRX2
+		EDFFTRX4
+		EDFFTRXL
+		EDFFX1
+		EDFFX2
+		EDFFX4
+		EDFFXL
+		HOLDX1
+		INVX12
+		INVX16
+		INVX2
+		INVX20
+		INVX3
+		INVX4
+		INVX6
+		INVX8
+		MDFFHQX1
+		MDFFHQX2
+		MDFFHQX4
+		MDFFHQX8
+		MX2X2
+		MX2X4
+		MX2X6
+		MX2X8
+		MX2XL
+		MX3X1
+		MX3X2
+		MX3X4
+		MX3XL
+		MX4X1
+		MX4X2
+		MX4X4
+		MX4XL
+		MXI2X1
+		MXI2X2
+		MXI2X4
+		MXI2X6
+		MXI2X8
+		MXI2XL
+		MXI3X1
+		MXI3X2
+		MXI3X4
+		MXI3XL
+		MXI4X1
+		MXI4X2
+		MXI4X4
+		MXI4XL
+		NAND2BX2
+		NAND2BX4
+		NAND2X1
+		NAND2X2
+		NAND2X4
+		NAND2X6
+		NAND2X8
+		NAND3BX1
+		NAND3BX2
+		NAND3BX4
+		NAND3X1
+		NAND3X2
+		NAND3X4
+		NAND3X6
+		NAND3X8
+		NAND3XL
+		NAND4BBX1
+		NAND4BBX2
+		NAND4BBX4
+		NAND4BBXL
+		NAND4BX1
+		NAND4BX2
+		NAND4BX4
+		NAND4X1
+		NAND4X2
+		NAND4X4
+		NAND4X6
+		NAND4X8
+		NOR2BX1
+		NOR2BX2
+		NOR2BX4
+		NOR2BXL
+		NOR2X1
+		NOR2X2
+		NOR2X4
+		NOR2X6
+		NOR2X8
+		NOR3BX1
+		NOR3BX2
+		NOR3BX4
+		NOR3X1
+		NOR3X2
+		NOR3X4
+		NOR3X6
+		NOR3X8
+		NOR4BBX1
+		NOR4BBX2
+		NOR4BBX4
+		NOR4BBXL
+		NOR4BX1
+		NOR4BX2
+		NOR4BX4
+		NOR4BXL
+		NOR4X2
+		NOR4X4
+		NOR4X6
+		NOR4X8
+		NOR4XL
+		OA21X1
+		OA21X2
+		OA21X4
+		OA21XL
+		OA22X2
+		OA22X4
+		OA22XL
+		OAI211X2
+		OAI211X4
+		OAI211XL
+		OAI21X1
+		OAI21X2
+		OAI21X4
+		OAI221X2
+		OAI221X4
+		OAI221XL
+		OAI222X1
+		OAI222X2
+		OAI222X4
+		OAI222XL
+		OAI22X2
+		OAI22X4
+		OAI2BB1X2
+		OAI2BB1X4
+		OAI2BB1XL
+		OAI2BB2X1
+		OAI2BB2X2
+		OAI2BB2X4
+		OAI2BB2XL
+		OAI31X2
+		OAI31X4
+		OAI31XL
+		OAI32X1
+		OAI32X2
+		OAI32X4
+		OAI32XL
+		OAI33X1
+		OAI33X2
+		OAI33X4
+		OAI33XL
+		OR2X2
+		OR2X4
+		OR2X6
+		OR2X8
+		OR2XL
+		OR3X2
+		OR3X4
+		OR3X6
+		OR3X8
+		OR4X2
+		OR4X4
+		OR4X6
+		OR4X8
+		OR4XL
+		SDFFHQX1
+		SDFFHQX2
+		SDFFHQX4
+		SDFFHQX8
+		SDFFNSRX1
+		SDFFNSRX2
+		SDFFNSRX4
+		SDFFNSRXL
+		SDFFQX1
+		SDFFQX2
+		SDFFQX4
+		SDFFQXL
+		SDFFRHQX2
+		SDFFRHQX4
+		SDFFRHQX8
+		SDFFRX1
+		SDFFRX2
+		SDFFRX4
+		SDFFRXL
+		SDFFSHQX1
+		SDFFSHQX2
+		SDFFSHQX4
+		SDFFSHQX8
+		SDFFSRHQX1
+		SDFFSRHQX2
+		SDFFSRHQX4
+		SDFFSRHQX8
+		SDFFSRX1
+		SDFFSRX2
+		SDFFSRX4
+		SDFFSRXL
+		SDFFSX1
+		SDFFSX2
+		SDFFSX4
+		SDFFSXL
+		SDFFTRX1
+		SDFFTRX2
+		SDFFTRX4
+		SDFFTRXL
+		SDFFX1
+		SDFFX2
+		SDFFX4
+		SDFFXL
+		SEDFFHQX1
+		SEDFFHQX2
+		SEDFFHQX4
+		SEDFFHQX8
+		SEDFFTRX1
+		SEDFFTRX2
+		SEDFFTRX4
+		SEDFFTRXL
+		SEDFFX1
+		SEDFFX2
+		SEDFFX4
+		SEDFFXL
+		SMDFFHQX1
+		SMDFFHQX2
+		SMDFFHQX4
+		SMDFFHQX8
+		TBUFX1
+		TBUFX12
+		TBUFX16
+		TBUFX2
+		TBUFX20
+		TBUFX3
+		TBUFX4
+		TBUFX6
+		TBUFX8
+		TBUFXL
+		TIEHI
+		TIELO
+		TLATNCAX12
+		TLATNCAX16
+		TLATNCAX2
+		TLATNCAX20
+		TLATNCAX3
+		TLATNCAX4
+		TLATNCAX6
+		TLATNCAX8
+		TLATNSRX1
+		TLATNSRX2
+		TLATNSRX4
+		TLATNSRXL
+		TLATNTSCAX12
+		TLATNTSCAX16
+		TLATNTSCAX2
+		TLATNTSCAX20
+		TLATNTSCAX3
+		TLATNTSCAX4
+		TLATNTSCAX6
+		TLATNTSCAX8
+		TLATNX1
+		TLATNX2
+		TLATNX4
+		TLATNXL
+		TLATSRX1
+		TLATSRX2
+		TLATSRX4
+		TLATSRXL
+		TLATX1
+		TLATX2
+		TLATX4
+		TLATXL
+		XNOR2X2
+		XNOR2X4
+		XNOR2XL
+		XNOR3X1
+		XNOR3XL
+		XOR2X1
+		XOR2X2
+		XOR2X4
+		XOR2XL
+		XOR3X1
+		XOR3XL
+		BIT_GENERATOR
+		CLOCK_DIVIDER
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.decodificador_pt2272_tb:sv <0x28e8104c>
-			streams:  11, words:  8100
-		worklib.codificador_pt2262:sv <0x3cb9cceb>
-			streams:  19, words: 19031
+		worklib.CLOCK_DIVIDER:sv <0x79e709dc>
+			streams:   4, words:  1066
+		worklib.BIT_GENERATOR:sv <0x0369fe96>
+			streams:  13, words:  9583
+		worklib.TLATXL:v <0x0b95d673>
+			streams:   0, words:     0
+		worklib.TLATX4:v <0x5b741471>
+			streams:   0, words:     0
+		worklib.TLATX2:v <0x35f795d6>
+			streams:   0, words:     0
+		worklib.TLATX1:v <0x461b3efe>
+			streams:   0, words:     0
+		worklib.TLATSRXL:v <0x0e0d5f1f>
+			streams:   0, words:     0
+		worklib.TLATSRX4:v <0x0502ba54>
+			streams:   0, words:     0
+		worklib.TLATSRX2:v <0x1ef3e0a1>
+			streams:   0, words:     0
+		worklib.TLATSRX1:v <0x0f557e69>
+			streams:   0, words:     0
+		worklib.TLATNXL:v <0x6ed82760>
+			streams:   0, words:     0
+		worklib.TLATNX4:v <0x14c0eef3>
+			streams:   0, words:     0
+		worklib.TLATNX2:v <0x6a4c9bdb>
+			streams:   0, words:     0
+		worklib.TLATNX1:v <0x3c1f4994>
+			streams:   0, words:     0
+		worklib.TLATNTSCAX8:v <0x31a55e95>
+			streams:   0, words:     0
+		worklib.TLATNTSCAX6:v <0x18059f8f>
+			streams:   0, words:     0
+		worklib.TLATNTSCAX4:v <0x627ed8d8>
+			streams:   0, words:     0
+		worklib.TLATNTSCAX3:v <0x474808c7>
+			streams:   0, words:     0
+		worklib.TLATNTSCAX20:v <0x155b803a>
+			streams:   0, words:     0
+		worklib.TLATNTSCAX2:v <0x0f3e7005>
+			streams:   0, words:     0
+		worklib.TLATNTSCAX16:v <0x2fd67fce>
+			streams:   0, words:     0
+		worklib.TLATNTSCAX12:v <0x18aabd70>
+			streams:   0, words:     0
+		worklib.TLATNSRXL:v <0x55a1f532>
+			streams:   0, words:     0
+		worklib.TLATNSRX4:v <0x1b48151e>
+			streams:   0, words:     0
+		worklib.TLATNSRX2:v <0x429316ce>
+			streams:   0, words:     0
+		worklib.TLATNSRX1:v <0x768dcf6f>
+			streams:   0, words:     0
+		worklib.TLATNCAX8:v <0x6d51f05e>
+			streams:   0, words:     0
+		worklib.TLATNCAX6:v <0x52867bb2>
+			streams:   0, words:     0
+		worklib.TLATNCAX4:v <0x67579710>
+			streams:   0, words:     0
+		worklib.TLATNCAX3:v <0x095ae274>
+			streams:   0, words:     0
+		worklib.TLATNCAX20:v <0x6dbbfff0>
+			streams:   0, words:     0
+		worklib.TLATNCAX2:v <0x6254a4b7>
+			streams:   0, words:     0
+		worklib.TLATNCAX16:v <0x1cec7dbd>
+			streams:   0, words:     0
+		worklib.TLATNCAX12:v <0x4b4f8b9a>
+			streams:   0, words:     0
+		worklib.SMDFFHQX8:v <0x2d891278>
+			streams:   0, words:     0
+		worklib.SMDFFHQX4:v <0x733ba335>
+			streams:   0, words:     0
+		worklib.SMDFFHQX2:v <0x58cf9068>
+			streams:   0, words:     0
+		worklib.SMDFFHQX1:v <0x4998e23d>
+			streams:   0, words:     0
+		worklib.SEDFFXL:v <0x20392dec>
+			streams:   0, words:     0
+		worklib.SEDFFX4:v <0x2595364e>
+			streams:   0, words:     0
+		worklib.SEDFFX2:v <0x4cbc58ca>
+			streams:   0, words:     0
+		worklib.SEDFFX1:v <0x113d0753>
+			streams:   0, words:     0
+		worklib.SEDFFTRXL:v <0x56def0e1>
+			streams:   0, words:     0
+		worklib.SEDFFTRX4:v <0x6964cf1d>
+			streams:   0, words:     0
+		worklib.SEDFFTRX2:v <0x3f41f6c2>
+			streams:   0, words:     0
+		worklib.SEDFFTRX1:v <0x10fe01d6>
+			streams:   0, words:     0
+		worklib.SEDFFHQX8:v <0x4464becd>
+			streams:   0, words:     0
+		worklib.SEDFFHQX4:v <0x31537bb4>
+			streams:   0, words:     0
+		worklib.SEDFFHQX2:v <0x4f65f2f3>
+			streams:   0, words:     0
+		worklib.SEDFFHQX1:v <0x74d3ddab>
+			streams:   0, words:     0
+		worklib.SDFFXL:v <0x27d8c741>
+			streams:   0, words:     0
+		worklib.SDFFX4:v <0x0098b40f>
+			streams:   0, words:     0
+		worklib.SDFFX2:v <0x305cde06>
+			streams:   0, words:     0
+		worklib.SDFFX1:v <0x6c9380f9>
+			streams:   0, words:     0
+		worklib.SDFFTRXL:v <0x1322aeb8>
+			streams:   0, words:     0
+		worklib.SDFFTRX4:v <0x232ffbd6>
+			streams:   0, words:     0
+		worklib.SDFFTRX2:v <0x7bb89424>
+			streams:   0, words:     0
+		worklib.SDFFTRX1:v <0x6615934f>
+			streams:   0, words:     0
+		worklib.SDFFSXL:v <0x6eff7bb1>
+			streams:   0, words:     0
+		worklib.SDFFSX4:v <0x058f1114>
+			streams:   0, words:     0
+		worklib.SDFFSX2:v <0x7a4ceeca>
+			streams:   0, words:     0
+		worklib.SDFFSX1:v <0x5d5e496c>
+			streams:   0, words:     0
+		worklib.SDFFSRXL:v <0x497b10ba>
+			streams:   0, words:     0
+		worklib.SDFFSRX4:v <0x28cda66d>
+			streams:   0, words:     0
+		worklib.SDFFSRX2:v <0x6159fdbf>
+			streams:   0, words:     0
+		worklib.SDFFSRX1:v <0x5d60881f>
+			streams:   0, words:     0
+		worklib.SDFFSRHQX8:v <0x76ebd0ce>
+			streams:   0, words:     0
+		worklib.SDFFSRHQX4:v <0x65976906>
+			streams:   0, words:     0
+		worklib.SDFFSRHQX2:v <0x5dcf8570>
+			streams:   0, words:     0
+		worklib.SDFFSRHQX1:v <0x68f61b90>
+			streams:   0, words:     0
+		worklib.SDFFSHQX8:v <0x7a1b9798>
+			streams:   0, words:     0
+		worklib.SDFFSHQX4:v <0x0830128c>
+			streams:   0, words:     0
+		worklib.SDFFSHQX2:v <0x7125d006>
+			streams:   0, words:     0
+		worklib.SDFFSHQX1:v <0x7c4981d1>
+			streams:   0, words:     0
+		worklib.SDFFRXL:v <0x015a7da3>
+			streams:   0, words:     0
+		worklib.SDFFRX4:v <0x6a2a1706>
+			streams:   0, words:     0
+		worklib.SDFFRX2:v <0x15e9e8d8>
+			streams:   0, words:     0
+		worklib.SDFFRX1:v <0x32fb4f7e>
+			streams:   0, words:     0
+		worklib.SDFFRHQX8:v <0x125a2d40>
+			streams:   0, words:     0
+		worklib.SDFFRHQX4:v <0x6071a854>
+			streams:   0, words:     0
+		worklib.SDFFRHQX2:v <0x19646ade>
+			streams:   0, words:     0
+		worklib.SDFFQXL:v <0x11536cee>
+			streams:   0, words:     0
+		worklib.SDFFQX4:v <0x359e8938>
+			streams:   0, words:     0
+		worklib.SDFFQX2:v <0x3766b916>
+			streams:   0, words:     0
+		worklib.SDFFQX1:v <0x761aa101>
+			streams:   0, words:     0
+		worklib.SDFFNSRXL:v <0x1ab86b89>
+			streams:   0, words:     0
+		worklib.SDFFNSRX4:v <0x53641e9f>
+			streams:   0, words:     0
+		worklib.SDFFNSRX2:v <0x52512387>
+			streams:   0, words:     0
+		worklib.SDFFNSRX1:v <0x0a38e542>
+			streams:   0, words:     0
+		worklib.SDFFHQX8:v <0x04dd3207>
+			streams:   0, words:     0
+		worklib.SDFFHQX4:v <0x538d33e2>
+			streams:   0, words:     0
+		worklib.SDFFHQX2:v <0x159db030>
+			streams:   0, words:     0
+		worklib.SDFFHQX1:v <0x7695f1d9>
+			streams:   0, words:     0
+		worklib.MDFFHQX8:v <0x2009238e>
+			streams:   0, words:     0
+		worklib.MDFFHQX4:v <0x7759226b>
+			streams:   0, words:     0
+		worklib.MDFFHQX2:v <0x3149a1b9>
+			streams:   0, words:     0
+		worklib.MDFFHQX1:v <0x5241e050>
+			streams:   0, words:     0
+		worklib.EDFFXL:v <0x2b19a245>
+			streams:   0, words:     0
+		worklib.EDFFX4:v <0x27bbd4d1>
+			streams:   0, words:     0
+		worklib.EDFFX2:v <0x2de6adf0>
+			streams:   0, words:     0
+		worklib.EDFFX1:v <0x749622d2>
+			streams:   0, words:     0
+		worklib.EDFFTRXL:v <0x307dd069>
+			streams:   0, words:     0
+		worklib.EDFFTRX4:v <0x2c1855e7>
+			streams:   0, words:     0
+		worklib.EDFFTRX2:v <0x16f187f5>
+			streams:   0, words:     0
+		worklib.EDFFTRX1:v <0x62908627>
+			streams:   0, words:     0
+		worklib.EDFFHQX8:v <0x56d8b82f>
+			streams:   0, words:     0
+		worklib.EDFFHQX4:v <0x3d2283b2>
+			streams:   0, words:     0
+		worklib.EDFFHQX2:v <0x1481adce>
+			streams:   0, words:     0
+		worklib.EDFFHQX1:v <0x58a362b9>
+			streams:   0, words:     0
+		worklib.DFFXL:v <0x3fafe711>
+			streams:   0, words:     0
+		worklib.DFFX4:v <0x43a44785>
+			streams:   0, words:     0
+		worklib.DFFX2:v <0x19a76ba3>
+			streams:   0, words:     0
+		worklib.DFFX1:v <0x2c55a5f9>
+			streams:   0, words:     0
+		worklib.DFFTRXL:v <0x1a17751d>
+			streams:   0, words:     0
+		worklib.DFFTRX4:v <0x10fa98fd>
+			streams:   0, words:     0
+		worklib.DFFTRX2:v <0x14ae3923>
+			streams:   0, words:     0
+		worklib.DFFTRX1:v <0x0e773185>
+			streams:   0, words:     0
+		worklib.DFFSXL:v <0x678ef770>
+			streams:   0, words:     0
+		worklib.DFFSX4:v <0x66c9e016>
+			streams:   0, words:     0
+		worklib.DFFSX2:v <0x3e5eaba5>
+			streams:   0, words:     0
+		worklib.DFFSX1:v <0x3fad8d5c>
+			streams:   0, words:     0
+		worklib.DFFSRXL:v <0x1b57b9a9>
+			streams:   0, words:     0
+		worklib.DFFSRX4:v <0x3f9a5c7f>
+			streams:   0, words:     0
+		worklib.DFFSRX2:v <0x3d626c51>
+			streams:   0, words:     0
+		worklib.DFFSRX1:v <0x7c1e7446>
+			streams:   0, words:     0
+		worklib.DFFSRHQX8:v <0x15ab566a>
+			streams:   0, words:     0
+		worklib.DFFSRHQX4:v <0x2ddb6071>
+			streams:   0, words:     0
+		worklib.DFFSRHQX2:v <0x354e1087>
+			streams:   0, words:     0
+		worklib.DFFSRHQX1:v <0x61f7f0b5>
+			streams:   0, words:     0
+		worklib.DFFSHQX8:v <0x57cf595a>
+			streams:   0, words:     0
+		worklib.DFFSHQX4:v <0x293a11d3>
+			streams:   0, words:     0
+		worklib.DFFSHQX2:v <0x7bf836b7>
+			streams:   0, words:     0
+		worklib.DFFRXL:v <0x6aa03d26>
+			streams:   0, words:     0
+		worklib.DFFRX4:v <0x6be72a40>
+			streams:   0, words:     0
+		worklib.DFFRX2:v <0x337061f3>
+			streams:   0, words:     0
+		worklib.DFFRHQX8:v <0x08be5144>
+			streams:   0, words:     0
+		worklib.DFFRHQX4:v <0x764b19cd>
+			streams:   0, words:     0
+		worklib.DFFRHQX2:v <0x24893ea9>
+			streams:   0, words:     0
+		worklib.DFFQXL:v <0x0567014a>
+			streams:   0, words:     0
+		worklib.DFFQX4:v <0x65f7fddf>
+			streams:   0, words:     0
+		worklib.DFFQX2:v <0x1d9a44d0>
+			streams:   0, words:     0
+		worklib.DFFQX1:v <0x0c141b77>
+			streams:   0, words:     0
+		worklib.DFFNSRXL:v <0x2ef7a7cc>
+			streams:   0, words:     0
+		worklib.DFFNSRX4:v <0x4df10f3e>
+			streams:   0, words:     0
+		worklib.DFFNSRX2:v <0x7f060cf9>
+			streams:   0, words:     0
+		worklib.DFFNSRX1:v <0x7a23bea8>
+			streams:   0, words:     0
+		worklib.DFFHQX8:v <0x05578f50>
+			streams:   0, words:     0
+		worklib.DFFHQX4:v <0x26c4a94a>
+			streams:   0, words:     0
+		worklib.DFFHQX2:v <0x5e18d29c>
+			streams:   0, words:     0
+		worklib.DFFRX1:v <0x44e97402>
+			streams:   0, words:     0
+		worklib.DFFSHQX1:v <0x237f9597>
+			streams:   0, words:     0
+		worklib.DFFRHQX1:v <0x55172aae>
+			streams:   0, words:     0
+		worklib.SDFFRHQX1:v <0x21e3cf34>
+			streams:   0, words:     0
+		worklib.DFFHQX1:v <0x272496d2>
+			streams:   0, words:     0
+		worklib.comp_endereco:sv <0x7121e6a5>
+			streams:   1, words:  1386
+		worklib.codificador_pt2262_tb:sv <0x26e28767>
+			streams:   8, words:  4830
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
-		                 Instances  Unique
-		Modules:                11       8
-		Registers:              87      79
-		Scalar wires:           39       -
-		Vectored wires:         29       -
-		Always blocks:          20      18
-		Initial blocks:          2       2
-		Cont. assignments:       9      10
-		Pseudo assignments:     35       -
-		Process Clocks:         11       8
-		Simulation timescale:  1ps
-	Writing initial simulation snapshot: worklib.decodificador_pt2272_tb:sv
+		                     Instances  Unique
+		Modules:                   684     495
+		UDPs:                      332      14
+		Primitives:              2,243       6
+		Timing outputs:            759     429
+		Registers:                 205     189
+		Scalar wires:            2,997       -
+		Expanded wires:             20       3
+		Vectored wires:              3       -
+		Always blocks:               7       7
+		Initial blocks:              2       2
+		Cont. assignments:           1       1
+		Pseudo assignments:          6       -
+		Timing checks:           2,196       -
+		Delayed tcheck signals:    600     565
+		Process Clocks:              5       3
+		Simulation timescale:      1ps
+	Writing initial simulation snapshot: worklib.codificador_pt2262_tb:sv
 xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
-xcelium> 
-xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
-xcelium> 
+
 -------------------------------------
 Relinquished control to SimVision...
-# Restoring simulation environment...
-xcelium> input {restore_dec.tcl}
 xcelium> 
-xcelium> # XM-Sim Command File
-xcelium> # TOOL:	xmsim(64)	24.09-s001
-xcelium> #
-xcelium> #
-xcelium> # You can restore this configuration with:
-xcelium> #
-xcelium> #      xrun -64bit /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272_tb.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/addr_interpreter/addr_interpreter.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/addr_interpreter/comp_endereco.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/bit_gen/bit_generator.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/oscillator/clock_divider.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/bidir_shift_register/bidir_shiftreg.sv +access+rw +gui -s -input /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/restore_dec.tcl
-xcelium> #
-xcelium> 
-xcelium> set tcl_prompt1 {puts -nonewline "xcelium> "}
-puts -nonewline "xcelium> "
-xcelium> set tcl_prompt2 {puts -nonewline "> "}
-puts -nonewline "> "
-xcelium> set vlog_format %h
-%h
-xcelium> set vhdl_format %v
-%v
-xcelium> set real_precision 6
-6
-xcelium> set display_unit auto
-auto
-xcelium> set time_unit module
-module
-xcelium> set heap_garbage_size -200
--200
-xcelium> set heap_garbage_time 0
-0
-xcelium> set assert_report_level note
-note
-xcelium> set assert_stop_level error
-error
-xcelium> set autoscope yes
-yes
-xcelium> set assert_1164_warnings yes
-yes
-xcelium> set pack_assert_off {}
-xcelium> set severity_pack_assert_off {note warning}
-note warning
-xcelium> set assert_output_stop_level failed
-failed
-xcelium> set tcl_debug_level 0
-0
-xcelium> set relax_path_name 1
-1
-xcelium> set vhdl_vcdmap XX01ZX01X
-XX01ZX01X
-xcelium> set intovf_severity_level ERROR
-ERROR
-xcelium> set probe_screen_format 0
-0
-xcelium> set rangecnst_severity_level ERROR
-ERROR
-xcelium> set textio_severity_level ERROR
-ERROR
-xcelium> set vital_timing_checks_on 1
-1
-xcelium> set vlog_code_show_force 0
-0
-xcelium> set assert_count_attempts 1
-1
-xcelium> set tcl_all64 false
-false
-xcelium> set tcl_runerror_exit false
-false
-xcelium> set assert_report_incompletes 0
-0
-xcelium> set show_force 1
-1
-xcelium> set force_reset_by_reinvoke 0
-0
-xcelium> set tcl_relaxed_literal 0
-0
-xcelium> set probe_exclude_patterns {}
-xcelium> set probe_packed_limit 4k
-4k
-xcelium> set probe_unpacked_limit 16k
-16k
-xcelium> set assert_internal_msg no
-no
-xcelium> set svseed 1
-1
-xcelium> set assert_reporting_mode 0
-0
-xcelium> set vcd_compact_mode 0
-0
-xcelium> set vhdl_forgen_loopindex_enum_pos 0
-0
-xcelium> set xmreplay_dc_debug 0
-0
-xcelium> set tcl_runcmd_interrupt next_command
-next_command
-xcelium> set tcl_sigval_prefix {#}
-#
-xcelium> alias . run
-xcelium> alias indago verisium
-xcelium> alias quit exit
-xcelium> database -open -shm -into waves.shm waves -default
+xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
+xcelium> database -open waves -into waves.shm -default
 Created default SHM database waves
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.A decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_ENABLER decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_LEFT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_OP_MODE decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PT2272_BIT_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_RIGHT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_SERIAL_IN decodificador_pt2272_tb.DUT.D decodificador_pt2272_tb.DUT.HIGH_PULSE_COUNTING decodificador_pt2272_tb.DUT.LOW_PULSE_COUNTING decodificador_pt2272_tb.DUT.PREVIOUS_cod_i decodificador_pt2272_tb.DUT.clk decodificador_pt2272_tb.DUT.cod_i decodificador_pt2272_tb.DUT.cod_i_FELL decodificador_pt2272_tb.DUT.cod_i_ROSE decodificador_pt2272_tb.DUT.current_state decodificador_pt2272_tb.DUT.dv decodificador_pt2272_tb.DUT.next_state decodificador_pt2272_tb.DUT.reset decodificador_pt2272_tb.DUT.reset_counters decodificador_pt2272_tb.encoder_dut.A decodificador_pt2272_tb.encoder_dut.D decodificador_pt2272_tb.encoder_dut.F_BIT_LOCATOR decodificador_pt2272_tb.encoder_dut.INTERPRETED_ADDR decodificador_pt2272_tb.encoder_dut.bit_gen_enb decodificador_pt2272_tb.encoder_dut.bit_gen_input decodificador_pt2272_tb.encoder_dut.bit_gen_output decodificador_pt2272_tb.encoder_dut.bit_gen_rst decodificador_pt2272_tb.encoder_dut.bit_generated_flag decodificador_pt2272_tb.encoder_dut.bit_sent_flag decodificador_pt2272_tb.encoder_dut.clk decodificador_pt2272_tb.encoder_dut.cod_o decodificador_pt2272_tb.encoder_dut.current_state decodificador_pt2272_tb.encoder_dut.next_state decodificador_pt2272_tb.encoder_dut.osc_clk decodificador_pt2272_tb.encoder_dut.osc_clk_rose decodificador_pt2272_tb.encoder_dut.osc_rst decodificador_pt2272_tb.encoder_dut.past_osc_clk decodificador_pt2272_tb.encoder_dut.reset decodificador_pt2272_tb.encoder_dut.sync
+xcelium> probe -create -shm codificador_pt2262_tb.DUT.A codificador_pt2262_tb.DUT.D codificador_pt2262_tb.DUT.F_BIT_LOCATOR codificador_pt2262_tb.DUT.INTERPRETED_ADDR codificador_pt2262_tb.DUT.bit_gen_input codificador_pt2262_tb.DUT.clk codificador_pt2262_tb.DUT.cod_o codificador_pt2262_tb.DUT.current_state codificador_pt2262_tb.DUT.internal_oscillator_clk_cycle_counting codificador_pt2262_tb.DUT.n_0 codificador_pt2262_tb.DUT.n_1 codificador_pt2262_tb.DUT.n_2 codificador_pt2262_tb.DUT.n_3 codificador_pt2262_tb.DUT.n_4 codificador_pt2262_tb.DUT.n_5 codificador_pt2262_tb.DUT.n_6 codificador_pt2262_tb.DUT.n_7 codificador_pt2262_tb.DUT.n_8 codificador_pt2262_tb.DUT.n_9 codificador_pt2262_tb.DUT.n_10 codificador_pt2262_tb.DUT.n_11 codificador_pt2262_tb.DUT.n_12 codificador_pt2262_tb.DUT.n_13 codificador_pt2262_tb.DUT.n_14 codificador_pt2262_tb.DUT.n_15 codificador_pt2262_tb.DUT.n_17 codificador_pt2262_tb.DUT.n_18 codificador_pt2262_tb.DUT.n_19 codificador_pt2262_tb.DUT.n_20 codificador_pt2262_tb.DUT.n_21 codificador_pt2262_tb.DUT.n_22 codificador_pt2262_tb.DUT.n_23 codificador_pt2262_tb.DUT.n_24 codificador_pt2262_tb.DUT.n_25 codificador_pt2262_tb.DUT.n_26 codificador_pt2262_tb.DUT.n_27 codificador_pt2262_tb.DUT.n_28 codificador_pt2262_tb.DUT.n_29 codificador_pt2262_tb.DUT.n_30 codificador_pt2262_tb.DUT.n_31 codificador_pt2262_tb.DUT.n_32 codificador_pt2262_tb.DUT.n_33 codificador_pt2262_tb.DUT.n_34 codificador_pt2262_tb.DUT.n_35 codificador_pt2262_tb.DUT.n_36 codificador_pt2262_tb.DUT.n_37 codificador_pt2262_tb.DUT.n_38 codificador_pt2262_tb.DUT.n_39 codificador_pt2262_tb.DUT.n_40 codificador_pt2262_tb.DUT.n_41 codificador_pt2262_tb.DUT.n_42 codificador_pt2262_tb.DUT.n_43 codificador_pt2262_tb.DUT.n_44 codificador_pt2262_tb.DUT.n_45 codificador_pt2262_tb.DUT.n_46 codificador_pt2262_tb.DUT.n_47 codificador_pt2262_tb.DUT.n_48 codificador_pt2262_tb.DUT.n_49 codificador_pt2262_tb.DUT.n_50 codificador_pt2262_tb.DUT.n_51 codificador_pt2262_tb.DUT.n_53 codificador_pt2262_tb.DUT.n_54 codificador_pt2262_tb.DUT.n_55 codificador_pt2262_tb.DUT.n_56 codificador_pt2262_tb.DUT.n_57 codificador_pt2262_tb.DUT.n_58 codificador_pt2262_tb.DUT.n_59 codificador_pt2262_tb.DUT.n_61 codificador_pt2262_tb.DUT.n_62 codificador_pt2262_tb.DUT.n_63 codificador_pt2262_tb.DUT.n_64 codificador_pt2262_tb.DUT.n_65 codificador_pt2262_tb.DUT.n_66 codificador_pt2262_tb.DUT.n_67 codificador_pt2262_tb.DUT.n_68 codificador_pt2262_tb.DUT.n_69 codificador_pt2262_tb.DUT.n_70 codificador_pt2262_tb.DUT.n_71 codificador_pt2262_tb.DUT.n_72 codificador_pt2262_tb.DUT.n_73 codificador_pt2262_tb.DUT.n_74 codificador_pt2262_tb.DUT.n_75 codificador_pt2262_tb.DUT.n_76 codificador_pt2262_tb.DUT.n_77 codificador_pt2262_tb.DUT.n_78 codificador_pt2262_tb.DUT.n_79 codificador_pt2262_tb.DUT.n_80 codificador_pt2262_tb.DUT.n_81 codificador_pt2262_tb.DUT.n_82 codificador_pt2262_tb.DUT.n_83 codificador_pt2262_tb.DUT.n_84 codificador_pt2262_tb.DUT.n_85 codificador_pt2262_tb.DUT.n_86 codificador_pt2262_tb.DUT.n_87 codificador_pt2262_tb.DUT.n_88 codificador_pt2262_tb.DUT.n_89 codificador_pt2262_tb.DUT.n_90 codificador_pt2262_tb.DUT.n_91 codificador_pt2262_tb.DUT.n_92 codificador_pt2262_tb.DUT.n_94 codificador_pt2262_tb.DUT.n_95 codificador_pt2262_tb.DUT.n_96 codificador_pt2262_tb.DUT.n_97 codificador_pt2262_tb.DUT.n_98 codificador_pt2262_tb.DUT.n_99 codificador_pt2262_tb.DUT.n_100 codificador_pt2262_tb.DUT.n_101 codificador_pt2262_tb.DUT.n_102 codificador_pt2262_tb.DUT.n_103 codificador_pt2262_tb.DUT.n_104 codificador_pt2262_tb.DUT.n_105 codificador_pt2262_tb.DUT.n_106 codificador_pt2262_tb.DUT.n_107 codificador_pt2262_tb.DUT.n_108 codificador_pt2262_tb.DUT.n_109 codificador_pt2262_tb.DUT.n_110 codificador_pt2262_tb.DUT.n_111 codificador_pt2262_tb.DUT.n_112 codificador_pt2262_tb.DUT.n_113 codificador_pt2262_tb.DUT.n_114 codificador_pt2262_tb.DUT.n_115 codificador_pt2262_tb.DUT.n_116 codificador_pt2262_tb.DUT.n_117 codificador_pt2262_tb.DUT.n_118 codificador_pt2262_tb.DUT.n_119 codificador_pt2262_tb.DUT.n_120 codificador_pt2262_tb.DUT.n_121 codificador_pt2262_tb.DUT.n_122 codificador_pt2262_tb.DUT.n_123 codificador_pt2262_tb.DUT.n_124 codificador_pt2262_tb.DUT.n_125 codificador_pt2262_tb.DUT.n_126 codificador_pt2262_tb.DUT.n_127 codificador_pt2262_tb.DUT.n_128 codificador_pt2262_tb.DUT.n_129 codificador_pt2262_tb.DUT.n_130 codificador_pt2262_tb.DUT.n_131 codificador_pt2262_tb.DUT.n_132 codificador_pt2262_tb.DUT.n_133 codificador_pt2262_tb.DUT.n_134 codificador_pt2262_tb.DUT.n_135 codificador_pt2262_tb.DUT.n_136 codificador_pt2262_tb.DUT.n_137 codificador_pt2262_tb.DUT.n_138 codificador_pt2262_tb.DUT.n_139 codificador_pt2262_tb.DUT.n_140 codificador_pt2262_tb.DUT.n_142 codificador_pt2262_tb.DUT.n_143 codificador_pt2262_tb.DUT.n_144 codificador_pt2262_tb.DUT.n_145 codificador_pt2262_tb.DUT.n_146 codificador_pt2262_tb.DUT.n_147 codificador_pt2262_tb.DUT.n_148 codificador_pt2262_tb.DUT.n_150 codificador_pt2262_tb.DUT.n_151 codificador_pt2262_tb.DUT.n_152 codificador_pt2262_tb.DUT.n_153 codificador_pt2262_tb.DUT.n_154 codificador_pt2262_tb.DUT.n_155 codificador_pt2262_tb.DUT.n_156 codificador_pt2262_tb.DUT.n_158 codificador_pt2262_tb.DUT.n_159 codificador_pt2262_tb.DUT.n_160 codificador_pt2262_tb.DUT.n_161 codificador_pt2262_tb.DUT.n_162 codificador_pt2262_tb.DUT.n_163 codificador_pt2262_tb.DUT.n_165 codificador_pt2262_tb.DUT.n_166 codificador_pt2262_tb.DUT.n_167 codificador_pt2262_tb.DUT.n_168 codificador_pt2262_tb.DUT.n_169 codificador_pt2262_tb.DUT.n_170 codificador_pt2262_tb.DUT.n_171 codificador_pt2262_tb.DUT.n_172 codificador_pt2262_tb.DUT.n_173 codificador_pt2262_tb.DUT.n_174 codificador_pt2262_tb.DUT.n_175 codificador_pt2262_tb.DUT.n_176 codificador_pt2262_tb.DUT.n_177 codificador_pt2262_tb.DUT.n_178 codificador_pt2262_tb.DUT.n_179 codificador_pt2262_tb.DUT.n_180 codificador_pt2262_tb.DUT.n_181 codificador_pt2262_tb.DUT.n_182 codificador_pt2262_tb.DUT.n_183 codificador_pt2262_tb.DUT.n_184 codificador_pt2262_tb.DUT.n_185 codificador_pt2262_tb.DUT.n_186 codificador_pt2262_tb.DUT.n_188 codificador_pt2262_tb.DUT.n_203 codificador_pt2262_tb.DUT.n_204 codificador_pt2262_tb.DUT.n_205 codificador_pt2262_tb.DUT.n_206 codificador_pt2262_tb.DUT.n_207 codificador_pt2262_tb.DUT.n_209 codificador_pt2262_tb.DUT.n_210 codificador_pt2262_tb.DUT.osc_clk codificador_pt2262_tb.DUT.past_osc_clk codificador_pt2262_tb.DUT.reset codificador_pt2262_tb.DUT.signal_creator_current_state codificador_pt2262_tb.DUT.signal_creator_enable_pulse_counting codificador_pt2262_tb.DUT.signal_creator_enable_pulse_counting_sync codificador_pt2262_tb.DUT.signal_creator_is_first_run codificador_pt2262_tb.DUT.signal_creator_n_28 codificador_pt2262_tb.DUT.signal_creator_n_30 codificador_pt2262_tb.DUT.signal_creator_n_551 codificador_pt2262_tb.DUT.signal_creator_n_555 codificador_pt2262_tb.DUT.signal_creator_n_561 codificador_pt2262_tb.DUT.signal_creator_pulse_counter codificador_pt2262_tb.DUT.signal_creator_pulse_counter_sync codificador_pt2262_tb.DUT.sync
 Created probe 1
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.osc_rst decodificador_pt2272_tb.DUT.osc_clk
-Created probe 2
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.A decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_ENABLER decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_LEFT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_OP_MODE decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PT2272_BIT_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_RIGHT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_SERIAL_IN decodificador_pt2272_tb.DUT.D decodificador_pt2272_tb.DUT.HIGH_PULSE_COUNTING decodificador_pt2272_tb.DUT.LOW_PULSE_COUNTING decodificador_pt2272_tb.DUT.PREVIOUS_cod_i decodificador_pt2272_tb.DUT.clk decodificador_pt2272_tb.DUT.cod_i decodificador_pt2272_tb.DUT.cod_i_FELL decodificador_pt2272_tb.DUT.cod_i_ROSE decodificador_pt2272_tb.DUT.current_state decodificador_pt2272_tb.DUT.dv decodificador_pt2272_tb.DUT.next_state decodificador_pt2272_tb.DUT.reset decodificador_pt2272_tb.DUT.reset_counters decodificador_pt2272_tb.encoder_dut.A decodificador_pt2272_tb.encoder_dut.D decodificador_pt2272_tb.encoder_dut.F_BIT_LOCATOR decodificador_pt2272_tb.encoder_dut.INTERPRETED_ADDR decodificador_pt2272_tb.encoder_dut.bit_gen_enb decodificador_pt2272_tb.encoder_dut.bit_gen_input decodificador_pt2272_tb.encoder_dut.bit_gen_output decodificador_pt2272_tb.encoder_dut.bit_gen_rst decodificador_pt2272_tb.encoder_dut.bit_generated_flag decodificador_pt2272_tb.encoder_dut.bit_sent_flag decodificador_pt2272_tb.encoder_dut.clk decodificador_pt2272_tb.encoder_dut.cod_o decodificador_pt2272_tb.encoder_dut.current_state decodificador_pt2272_tb.encoder_dut.next_state decodificador_pt2272_tb.encoder_dut.osc_clk decodificador_pt2272_tb.encoder_dut.osc_clk_rose decodificador_pt2272_tb.encoder_dut.osc_rst decodificador_pt2272_tb.encoder_dut.past_osc_clk decodificador_pt2272_tb.encoder_dut.reset decodificador_pt2272_tb.encoder_dut.sync
-Created probe 3
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.osc_rst decodificador_pt2272_tb.DUT.osc_clk
-Created probe 4
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.A decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_ENABLER decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_LEFT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_OP_MODE decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PT2272_BIT_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_RIGHT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_SERIAL_IN decodificador_pt2272_tb.DUT.D decodificador_pt2272_tb.DUT.HIGH_PULSE_COUNTING decodificador_pt2272_tb.DUT.LOW_PULSE_COUNTING decodificador_pt2272_tb.DUT.PREVIOUS_cod_i decodificador_pt2272_tb.DUT.clk decodificador_pt2272_tb.DUT.cod_i decodificador_pt2272_tb.DUT.cod_i_FELL decodificador_pt2272_tb.DUT.cod_i_ROSE decodificador_pt2272_tb.DUT.current_state decodificador_pt2272_tb.DUT.dv decodificador_pt2272_tb.DUT.next_state decodificador_pt2272_tb.DUT.reset decodificador_pt2272_tb.DUT.reset_counters decodificador_pt2272_tb.encoder_dut.A decodificador_pt2272_tb.encoder_dut.D decodificador_pt2272_tb.encoder_dut.F_BIT_LOCATOR decodificador_pt2272_tb.encoder_dut.INTERPRETED_ADDR decodificador_pt2272_tb.encoder_dut.bit_gen_enb decodificador_pt2272_tb.encoder_dut.bit_gen_input decodificador_pt2272_tb.encoder_dut.bit_gen_output decodificador_pt2272_tb.encoder_dut.bit_gen_rst decodificador_pt2272_tb.encoder_dut.bit_generated_flag decodificador_pt2272_tb.encoder_dut.bit_sent_flag decodificador_pt2272_tb.encoder_dut.clk decodificador_pt2272_tb.encoder_dut.cod_o decodificador_pt2272_tb.encoder_dut.current_state decodificador_pt2272_tb.encoder_dut.next_state decodificador_pt2272_tb.encoder_dut.osc_clk decodificador_pt2272_tb.encoder_dut.osc_clk_rose decodificador_pt2272_tb.encoder_dut.osc_rst decodificador_pt2272_tb.encoder_dut.past_osc_clk decodificador_pt2272_tb.encoder_dut.reset decodificador_pt2272_tb.encoder_dut.sync
-Created probe 5
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.osc_rst decodificador_pt2272_tb.DUT.osc_clk
-Created probe 6
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.A decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_ENABLER decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_LEFT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_OP_MODE decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PT2272_BIT_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_RIGHT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_SERIAL_IN decodificador_pt2272_tb.DUT.D decodificador_pt2272_tb.DUT.HIGH_PULSE_COUNTING decodificador_pt2272_tb.DUT.LOW_PULSE_COUNTING decodificador_pt2272_tb.DUT.PREVIOUS_cod_i decodificador_pt2272_tb.DUT.clk decodificador_pt2272_tb.DUT.cod_i decodificador_pt2272_tb.DUT.cod_i_FELL decodificador_pt2272_tb.DUT.cod_i_ROSE decodificador_pt2272_tb.DUT.current_state decodificador_pt2272_tb.DUT.dv decodificador_pt2272_tb.DUT.next_state decodificador_pt2272_tb.DUT.reset decodificador_pt2272_tb.DUT.reset_counters decodificador_pt2272_tb.encoder_dut.A decodificador_pt2272_tb.encoder_dut.D decodificador_pt2272_tb.encoder_dut.F_BIT_LOCATOR decodificador_pt2272_tb.encoder_dut.INTERPRETED_ADDR decodificador_pt2272_tb.encoder_dut.bit_gen_enb decodificador_pt2272_tb.encoder_dut.bit_gen_input decodificador_pt2272_tb.encoder_dut.bit_gen_output decodificador_pt2272_tb.encoder_dut.bit_gen_rst decodificador_pt2272_tb.encoder_dut.bit_generated_flag decodificador_pt2272_tb.encoder_dut.bit_sent_flag decodificador_pt2272_tb.encoder_dut.clk decodificador_pt2272_tb.encoder_dut.cod_o decodificador_pt2272_tb.encoder_dut.current_state decodificador_pt2272_tb.encoder_dut.next_state decodificador_pt2272_tb.encoder_dut.osc_clk decodificador_pt2272_tb.encoder_dut.osc_clk_rose decodificador_pt2272_tb.encoder_dut.osc_rst decodificador_pt2272_tb.encoder_dut.past_osc_clk decodificador_pt2272_tb.encoder_dut.reset decodificador_pt2272_tb.encoder_dut.sync
-Created probe 7
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.osc_rst decodificador_pt2272_tb.DUT.osc_clk
-Created probe 8
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.A decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_ENABLER decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_LEFT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_OP_MODE decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PT2272_BIT_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_RIGHT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_SERIAL_IN decodificador_pt2272_tb.DUT.D decodificador_pt2272_tb.DUT.HIGH_PULSE_COUNTING decodificador_pt2272_tb.DUT.LOW_PULSE_COUNTING decodificador_pt2272_tb.DUT.PREVIOUS_cod_i decodificador_pt2272_tb.DUT.clk decodificador_pt2272_tb.DUT.cod_i decodificador_pt2272_tb.DUT.cod_i_FELL decodificador_pt2272_tb.DUT.cod_i_ROSE decodificador_pt2272_tb.DUT.current_state decodificador_pt2272_tb.DUT.dv decodificador_pt2272_tb.DUT.next_state decodificador_pt2272_tb.DUT.reset decodificador_pt2272_tb.DUT.reset_counters decodificador_pt2272_tb.encoder_dut.A decodificador_pt2272_tb.encoder_dut.D decodificador_pt2272_tb.encoder_dut.F_BIT_LOCATOR decodificador_pt2272_tb.encoder_dut.INTERPRETED_ADDR decodificador_pt2272_tb.encoder_dut.bit_gen_enb decodificador_pt2272_tb.encoder_dut.bit_gen_input decodificador_pt2272_tb.encoder_dut.bit_gen_output decodificador_pt2272_tb.encoder_dut.bit_gen_rst decodificador_pt2272_tb.encoder_dut.bit_generated_flag decodificador_pt2272_tb.encoder_dut.bit_sent_flag decodificador_pt2272_tb.encoder_dut.clk decodificador_pt2272_tb.encoder_dut.cod_o decodificador_pt2272_tb.encoder_dut.current_state decodificador_pt2272_tb.encoder_dut.next_state decodificador_pt2272_tb.encoder_dut.osc_clk decodificador_pt2272_tb.encoder_dut.osc_clk_rose decodificador_pt2272_tb.encoder_dut.osc_rst decodificador_pt2272_tb.encoder_dut.past_osc_clk decodificador_pt2272_tb.encoder_dut.reset decodificador_pt2272_tb.encoder_dut.sync
-Created probe 9
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.osc_rst decodificador_pt2272_tb.DUT.osc_clk
-Created probe 10
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.A decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_ENABLER decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_LEFT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_OP_MODE decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PT2272_BIT_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_RIGHT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_SERIAL_IN decodificador_pt2272_tb.DUT.D decodificador_pt2272_tb.DUT.HIGH_PULSE_COUNTING decodificador_pt2272_tb.DUT.LOW_PULSE_COUNTING decodificador_pt2272_tb.DUT.PREVIOUS_cod_i decodificador_pt2272_tb.DUT.clk decodificador_pt2272_tb.DUT.cod_i decodificador_pt2272_tb.DUT.cod_i_FELL decodificador_pt2272_tb.DUT.cod_i_ROSE decodificador_pt2272_tb.DUT.current_state decodificador_pt2272_tb.DUT.dv decodificador_pt2272_tb.DUT.next_state decodificador_pt2272_tb.DUT.reset decodificador_pt2272_tb.DUT.reset_counters decodificador_pt2272_tb.encoder_dut.A decodificador_pt2272_tb.encoder_dut.D decodificador_pt2272_tb.encoder_dut.F_BIT_LOCATOR decodificador_pt2272_tb.encoder_dut.INTERPRETED_ADDR decodificador_pt2272_tb.encoder_dut.bit_gen_enb decodificador_pt2272_tb.encoder_dut.bit_gen_input decodificador_pt2272_tb.encoder_dut.bit_gen_output decodificador_pt2272_tb.encoder_dut.bit_gen_rst decodificador_pt2272_tb.encoder_dut.bit_generated_flag decodificador_pt2272_tb.encoder_dut.bit_sent_flag decodificador_pt2272_tb.encoder_dut.clk decodificador_pt2272_tb.encoder_dut.cod_o decodificador_pt2272_tb.encoder_dut.current_state decodificador_pt2272_tb.encoder_dut.next_state decodificador_pt2272_tb.encoder_dut.osc_clk decodificador_pt2272_tb.encoder_dut.osc_clk_rose decodificador_pt2272_tb.encoder_dut.osc_rst decodificador_pt2272_tb.encoder_dut.past_osc_clk decodificador_pt2272_tb.encoder_dut.reset decodificador_pt2272_tb.encoder_dut.sync
-Created probe 11
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.osc_rst decodificador_pt2272_tb.DUT.osc_clk
-Created probe 12
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.A decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_ENABLER decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_LEFT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_OP_MODE decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PT2272_BIT_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_RIGHT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_SERIAL_IN decodificador_pt2272_tb.DUT.D decodificador_pt2272_tb.DUT.HIGH_PULSE_COUNTING decodificador_pt2272_tb.DUT.LOW_PULSE_COUNTING decodificador_pt2272_tb.DUT.PREVIOUS_cod_i decodificador_pt2272_tb.DUT.clk decodificador_pt2272_tb.DUT.cod_i decodificador_pt2272_tb.DUT.cod_i_FELL decodificador_pt2272_tb.DUT.cod_i_ROSE decodificador_pt2272_tb.DUT.current_state decodificador_pt2272_tb.DUT.dv decodificador_pt2272_tb.DUT.next_state decodificador_pt2272_tb.DUT.reset decodificador_pt2272_tb.DUT.reset_counters decodificador_pt2272_tb.encoder_dut.A decodificador_pt2272_tb.encoder_dut.D decodificador_pt2272_tb.encoder_dut.F_BIT_LOCATOR decodificador_pt2272_tb.encoder_dut.INTERPRETED_ADDR decodificador_pt2272_tb.encoder_dut.bit_gen_enb decodificador_pt2272_tb.encoder_dut.bit_gen_input decodificador_pt2272_tb.encoder_dut.bit_gen_output decodificador_pt2272_tb.encoder_dut.bit_gen_rst decodificador_pt2272_tb.encoder_dut.bit_generated_flag decodificador_pt2272_tb.encoder_dut.bit_sent_flag decodificador_pt2272_tb.encoder_dut.clk decodificador_pt2272_tb.encoder_dut.cod_o decodificador_pt2272_tb.encoder_dut.current_state decodificador_pt2272_tb.encoder_dut.next_state decodificador_pt2272_tb.encoder_dut.osc_clk decodificador_pt2272_tb.encoder_dut.osc_clk_rose decodificador_pt2272_tb.encoder_dut.osc_rst decodificador_pt2272_tb.encoder_dut.past_osc_clk decodificador_pt2272_tb.encoder_dut.reset decodificador_pt2272_tb.encoder_dut.sync
-Created probe 13
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.osc_rst decodificador_pt2272_tb.DUT.osc_clk
-Created probe 14
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.A decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_ENABLER decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_LEFT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_OP_MODE decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PT2272_BIT_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_RIGHT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_SERIAL_IN decodificador_pt2272_tb.DUT.D decodificador_pt2272_tb.DUT.HIGH_PULSE_COUNTING decodificador_pt2272_tb.DUT.LOW_PULSE_COUNTING decodificador_pt2272_tb.DUT.PREVIOUS_cod_i decodificador_pt2272_tb.DUT.clk decodificador_pt2272_tb.DUT.cod_i decodificador_pt2272_tb.DUT.cod_i_FELL decodificador_pt2272_tb.DUT.cod_i_ROSE decodificador_pt2272_tb.DUT.current_state decodificador_pt2272_tb.DUT.dv decodificador_pt2272_tb.DUT.next_state decodificador_pt2272_tb.DUT.reset decodificador_pt2272_tb.DUT.reset_counters decodificador_pt2272_tb.encoder_dut.A decodificador_pt2272_tb.encoder_dut.D decodificador_pt2272_tb.encoder_dut.F_BIT_LOCATOR decodificador_pt2272_tb.encoder_dut.INTERPRETED_ADDR decodificador_pt2272_tb.encoder_dut.bit_gen_enb decodificador_pt2272_tb.encoder_dut.bit_gen_input decodificador_pt2272_tb.encoder_dut.bit_gen_output decodificador_pt2272_tb.encoder_dut.bit_gen_rst decodificador_pt2272_tb.encoder_dut.bit_generated_flag decodificador_pt2272_tb.encoder_dut.bit_sent_flag decodificador_pt2272_tb.encoder_dut.clk decodificador_pt2272_tb.encoder_dut.cod_o decodificador_pt2272_tb.encoder_dut.current_state decodificador_pt2272_tb.encoder_dut.next_state decodificador_pt2272_tb.encoder_dut.osc_clk decodificador_pt2272_tb.encoder_dut.osc_clk_rose decodificador_pt2272_tb.encoder_dut.osc_rst decodificador_pt2272_tb.encoder_dut.past_osc_clk decodificador_pt2272_tb.encoder_dut.reset decodificador_pt2272_tb.encoder_dut.sync
-Created probe 15
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.osc_rst decodificador_pt2272_tb.DUT.osc_clk
-Created probe 16
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.A decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_ENABLER decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_LEFT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_OP_MODE decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PT2272_BIT_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_RIGHT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_SERIAL_IN decodificador_pt2272_tb.DUT.D decodificador_pt2272_tb.DUT.HIGH_PULSE_COUNTING decodificador_pt2272_tb.DUT.LOW_PULSE_COUNTING decodificador_pt2272_tb.DUT.PREVIOUS_cod_i decodificador_pt2272_tb.DUT.clk decodificador_pt2272_tb.DUT.cod_i decodificador_pt2272_tb.DUT.cod_i_FELL decodificador_pt2272_tb.DUT.cod_i_ROSE decodificador_pt2272_tb.DUT.current_state decodificador_pt2272_tb.DUT.dv decodificador_pt2272_tb.DUT.next_state decodificador_pt2272_tb.DUT.reset decodificador_pt2272_tb.DUT.reset_counters decodificador_pt2272_tb.encoder_dut.A decodificador_pt2272_tb.encoder_dut.D decodificador_pt2272_tb.encoder_dut.F_BIT_LOCATOR decodificador_pt2272_tb.encoder_dut.INTERPRETED_ADDR decodificador_pt2272_tb.encoder_dut.bit_gen_enb decodificador_pt2272_tb.encoder_dut.bit_gen_input decodificador_pt2272_tb.encoder_dut.bit_gen_output decodificador_pt2272_tb.encoder_dut.bit_gen_rst decodificador_pt2272_tb.encoder_dut.bit_generated_flag decodificador_pt2272_tb.encoder_dut.bit_sent_flag decodificador_pt2272_tb.encoder_dut.clk decodificador_pt2272_tb.encoder_dut.cod_o decodificador_pt2272_tb.encoder_dut.current_state decodificador_pt2272_tb.encoder_dut.next_state decodificador_pt2272_tb.encoder_dut.osc_clk decodificador_pt2272_tb.encoder_dut.osc_clk_rose decodificador_pt2272_tb.encoder_dut.osc_rst decodificador_pt2272_tb.encoder_dut.past_osc_clk decodificador_pt2272_tb.encoder_dut.reset decodificador_pt2272_tb.encoder_dut.sync
-Created probe 17
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.osc_rst decodificador_pt2272_tb.DUT.osc_clk
-Created probe 18
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.A decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_ENABLER decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_LEFT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_OP_MODE decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PT2272_BIT_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_RIGHT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_SERIAL_IN decodificador_pt2272_tb.DUT.D decodificador_pt2272_tb.DUT.HIGH_PULSE_COUNTING decodificador_pt2272_tb.DUT.LOW_PULSE_COUNTING decodificador_pt2272_tb.DUT.PREVIOUS_cod_i decodificador_pt2272_tb.DUT.clk decodificador_pt2272_tb.DUT.cod_i decodificador_pt2272_tb.DUT.cod_i_FELL decodificador_pt2272_tb.DUT.cod_i_ROSE decodificador_pt2272_tb.DUT.current_state decodificador_pt2272_tb.DUT.dv decodificador_pt2272_tb.DUT.next_state decodificador_pt2272_tb.DUT.reset decodificador_pt2272_tb.DUT.reset_counters decodificador_pt2272_tb.encoder_dut.A decodificador_pt2272_tb.encoder_dut.D decodificador_pt2272_tb.encoder_dut.F_BIT_LOCATOR decodificador_pt2272_tb.encoder_dut.INTERPRETED_ADDR decodificador_pt2272_tb.encoder_dut.bit_gen_enb decodificador_pt2272_tb.encoder_dut.bit_gen_input decodificador_pt2272_tb.encoder_dut.bit_gen_output decodificador_pt2272_tb.encoder_dut.bit_gen_rst decodificador_pt2272_tb.encoder_dut.bit_generated_flag decodificador_pt2272_tb.encoder_dut.bit_sent_flag decodificador_pt2272_tb.encoder_dut.clk decodificador_pt2272_tb.encoder_dut.cod_o decodificador_pt2272_tb.encoder_dut.current_state decodificador_pt2272_tb.encoder_dut.next_state decodificador_pt2272_tb.encoder_dut.osc_clk decodificador_pt2272_tb.encoder_dut.osc_clk_rose decodificador_pt2272_tb.encoder_dut.osc_rst decodificador_pt2272_tb.encoder_dut.past_osc_clk decodificador_pt2272_tb.encoder_dut.reset decodificador_pt2272_tb.encoder_dut.sync
-Created probe 19
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.osc_rst decodificador_pt2272_tb.DUT.osc_clk
-Created probe 20
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.A decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_ENABLER decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_LEFT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_OP_MODE decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PT2272_BIT_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_RIGHT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_SERIAL_IN decodificador_pt2272_tb.DUT.D decodificador_pt2272_tb.DUT.HIGH_PULSE_COUNTING decodificador_pt2272_tb.DUT.LOW_PULSE_COUNTING decodificador_pt2272_tb.DUT.PREVIOUS_cod_i decodificador_pt2272_tb.DUT.clk decodificador_pt2272_tb.DUT.cod_i decodificador_pt2272_tb.DUT.cod_i_FELL decodificador_pt2272_tb.DUT.cod_i_ROSE decodificador_pt2272_tb.DUT.current_state decodificador_pt2272_tb.DUT.dv decodificador_pt2272_tb.DUT.next_state decodificador_pt2272_tb.DUT.reset decodificador_pt2272_tb.DUT.reset_counters decodificador_pt2272_tb.encoder_dut.A decodificador_pt2272_tb.encoder_dut.D decodificador_pt2272_tb.encoder_dut.F_BIT_LOCATOR decodificador_pt2272_tb.encoder_dut.INTERPRETED_ADDR decodificador_pt2272_tb.encoder_dut.bit_gen_enb decodificador_pt2272_tb.encoder_dut.bit_gen_input decodificador_pt2272_tb.encoder_dut.bit_gen_output decodificador_pt2272_tb.encoder_dut.bit_gen_rst decodificador_pt2272_tb.encoder_dut.bit_generated_flag decodificador_pt2272_tb.encoder_dut.bit_sent_flag decodificador_pt2272_tb.encoder_dut.clk decodificador_pt2272_tb.encoder_dut.cod_o decodificador_pt2272_tb.encoder_dut.current_state decodificador_pt2272_tb.encoder_dut.next_state decodificador_pt2272_tb.encoder_dut.osc_clk decodificador_pt2272_tb.encoder_dut.osc_clk_rose decodificador_pt2272_tb.encoder_dut.osc_rst decodificador_pt2272_tb.encoder_dut.past_osc_clk decodificador_pt2272_tb.encoder_dut.reset decodificador_pt2272_tb.encoder_dut.sync
-Created probe 21
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.osc_rst decodificador_pt2272_tb.DUT.osc_clk
-Created probe 22
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.A decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_ENABLER decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_LEFT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_OP_MODE decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PT2272_BIT_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_RIGHT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_SERIAL_IN decodificador_pt2272_tb.DUT.D decodificador_pt2272_tb.DUT.HIGH_PULSE_COUNTING decodificador_pt2272_tb.DUT.LOW_PULSE_COUNTING decodificador_pt2272_tb.DUT.PREVIOUS_cod_i decodificador_pt2272_tb.DUT.clk decodificador_pt2272_tb.DUT.cod_i decodificador_pt2272_tb.DUT.cod_i_FELL decodificador_pt2272_tb.DUT.cod_i_ROSE decodificador_pt2272_tb.DUT.current_state decodificador_pt2272_tb.DUT.dv decodificador_pt2272_tb.DUT.next_state decodificador_pt2272_tb.DUT.reset decodificador_pt2272_tb.DUT.reset_counters decodificador_pt2272_tb.encoder_dut.A decodificador_pt2272_tb.encoder_dut.D decodificador_pt2272_tb.encoder_dut.F_BIT_LOCATOR decodificador_pt2272_tb.encoder_dut.INTERPRETED_ADDR decodificador_pt2272_tb.encoder_dut.bit_gen_enb decodificador_pt2272_tb.encoder_dut.bit_gen_input decodificador_pt2272_tb.encoder_dut.bit_gen_output decodificador_pt2272_tb.encoder_dut.bit_gen_rst decodificador_pt2272_tb.encoder_dut.bit_generated_flag decodificador_pt2272_tb.encoder_dut.bit_sent_flag decodificador_pt2272_tb.encoder_dut.clk decodificador_pt2272_tb.encoder_dut.cod_o decodificador_pt2272_tb.encoder_dut.current_state decodificador_pt2272_tb.encoder_dut.next_state decodificador_pt2272_tb.encoder_dut.osc_clk decodificador_pt2272_tb.encoder_dut.osc_clk_rose decodificador_pt2272_tb.encoder_dut.osc_rst decodificador_pt2272_tb.encoder_dut.past_osc_clk decodificador_pt2272_tb.encoder_dut.reset decodificador_pt2272_tb.encoder_dut.sync
-Created probe 23
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.osc_rst decodificador_pt2272_tb.DUT.osc_clk
-Created probe 24
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.A decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_ENABLER decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_LEFT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_OP_MODE decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PT2272_BIT_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_RIGHT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_SERIAL_IN decodificador_pt2272_tb.DUT.D decodificador_pt2272_tb.DUT.HIGH_PULSE_COUNTING decodificador_pt2272_tb.DUT.LOW_PULSE_COUNTING decodificador_pt2272_tb.DUT.PREVIOUS_cod_i decodificador_pt2272_tb.DUT.clk decodificador_pt2272_tb.DUT.cod_i decodificador_pt2272_tb.DUT.cod_i_FELL decodificador_pt2272_tb.DUT.cod_i_ROSE decodificador_pt2272_tb.DUT.current_state decodificador_pt2272_tb.DUT.dv decodificador_pt2272_tb.DUT.next_state decodificador_pt2272_tb.DUT.reset decodificador_pt2272_tb.DUT.reset_counters decodificador_pt2272_tb.encoder_dut.A decodificador_pt2272_tb.encoder_dut.D decodificador_pt2272_tb.encoder_dut.F_BIT_LOCATOR decodificador_pt2272_tb.encoder_dut.INTERPRETED_ADDR decodificador_pt2272_tb.encoder_dut.bit_gen_enb decodificador_pt2272_tb.encoder_dut.bit_gen_input decodificador_pt2272_tb.encoder_dut.bit_gen_output decodificador_pt2272_tb.encoder_dut.bit_gen_rst decodificador_pt2272_tb.encoder_dut.bit_generated_flag decodificador_pt2272_tb.encoder_dut.bit_sent_flag decodificador_pt2272_tb.encoder_dut.clk decodificador_pt2272_tb.encoder_dut.cod_o decodificador_pt2272_tb.encoder_dut.current_state decodificador_pt2272_tb.encoder_dut.next_state decodificador_pt2272_tb.encoder_dut.osc_clk decodificador_pt2272_tb.encoder_dut.osc_clk_rose decodificador_pt2272_tb.encoder_dut.osc_rst decodificador_pt2272_tb.encoder_dut.past_osc_clk decodificador_pt2272_tb.encoder_dut.reset decodificador_pt2272_tb.encoder_dut.sync
-Created probe 25
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.osc_rst decodificador_pt2272_tb.DUT.osc_clk
-Created probe 26
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.A decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_ENABLER decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_LEFT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_OP_MODE decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PT2272_BIT_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_RIGHT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_SERIAL_IN decodificador_pt2272_tb.DUT.D decodificador_pt2272_tb.DUT.HIGH_PULSE_COUNTING decodificador_pt2272_tb.DUT.LOW_PULSE_COUNTING decodificador_pt2272_tb.DUT.PREVIOUS_cod_i decodificador_pt2272_tb.DUT.clk decodificador_pt2272_tb.DUT.cod_i decodificador_pt2272_tb.DUT.cod_i_FELL decodificador_pt2272_tb.DUT.cod_i_ROSE decodificador_pt2272_tb.DUT.current_state decodificador_pt2272_tb.DUT.dv decodificador_pt2272_tb.DUT.next_state decodificador_pt2272_tb.DUT.reset decodificador_pt2272_tb.DUT.reset_counters decodificador_pt2272_tb.encoder_dut.A decodificador_pt2272_tb.encoder_dut.D decodificador_pt2272_tb.encoder_dut.F_BIT_LOCATOR decodificador_pt2272_tb.encoder_dut.INTERPRETED_ADDR decodificador_pt2272_tb.encoder_dut.bit_gen_enb decodificador_pt2272_tb.encoder_dut.bit_gen_input decodificador_pt2272_tb.encoder_dut.bit_gen_output decodificador_pt2272_tb.encoder_dut.bit_gen_rst decodificador_pt2272_tb.encoder_dut.bit_generated_flag decodificador_pt2272_tb.encoder_dut.bit_sent_flag decodificador_pt2272_tb.encoder_dut.clk decodificador_pt2272_tb.encoder_dut.cod_o decodificador_pt2272_tb.encoder_dut.current_state decodificador_pt2272_tb.encoder_dut.next_state decodificador_pt2272_tb.encoder_dut.osc_clk decodificador_pt2272_tb.encoder_dut.osc_clk_rose decodificador_pt2272_tb.encoder_dut.osc_rst decodificador_pt2272_tb.encoder_dut.past_osc_clk decodificador_pt2272_tb.encoder_dut.reset decodificador_pt2272_tb.encoder_dut.sync
-Created probe 27
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.osc_rst decodificador_pt2272_tb.DUT.osc_clk
-Created probe 28
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.A decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_ENABLER decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_LEFT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_OP_MODE decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PT2272_BIT_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_RIGHT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_SERIAL_IN decodificador_pt2272_tb.DUT.D decodificador_pt2272_tb.DUT.HIGH_PULSE_COUNTING decodificador_pt2272_tb.DUT.LOW_PULSE_COUNTING decodificador_pt2272_tb.DUT.PREVIOUS_cod_i decodificador_pt2272_tb.DUT.clk decodificador_pt2272_tb.DUT.cod_i decodificador_pt2272_tb.DUT.cod_i_FELL decodificador_pt2272_tb.DUT.cod_i_ROSE decodificador_pt2272_tb.DUT.current_state decodificador_pt2272_tb.DUT.dv decodificador_pt2272_tb.DUT.next_state decodificador_pt2272_tb.DUT.reset decodificador_pt2272_tb.DUT.reset_counters decodificador_pt2272_tb.encoder_dut.A decodificador_pt2272_tb.encoder_dut.D decodificador_pt2272_tb.encoder_dut.F_BIT_LOCATOR decodificador_pt2272_tb.encoder_dut.INTERPRETED_ADDR decodificador_pt2272_tb.encoder_dut.bit_gen_enb decodificador_pt2272_tb.encoder_dut.bit_gen_input decodificador_pt2272_tb.encoder_dut.bit_gen_output decodificador_pt2272_tb.encoder_dut.bit_gen_rst decodificador_pt2272_tb.encoder_dut.bit_generated_flag decodificador_pt2272_tb.encoder_dut.bit_sent_flag decodificador_pt2272_tb.encoder_dut.clk decodificador_pt2272_tb.encoder_dut.cod_o decodificador_pt2272_tb.encoder_dut.current_state decodificador_pt2272_tb.encoder_dut.next_state decodificador_pt2272_tb.encoder_dut.osc_clk decodificador_pt2272_tb.encoder_dut.osc_clk_rose decodificador_pt2272_tb.encoder_dut.osc_rst decodificador_pt2272_tb.encoder_dut.past_osc_clk decodificador_pt2272_tb.encoder_dut.reset decodificador_pt2272_tb.encoder_dut.sync
-Created probe 29
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.osc_rst decodificador_pt2272_tb.DUT.osc_clk
-Created probe 30
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.A decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_ENABLER decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_LEFT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_OP_MODE decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PT2272_BIT_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_RIGHT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_SERIAL_IN decodificador_pt2272_tb.DUT.D decodificador_pt2272_tb.DUT.HIGH_PULSE_COUNTING decodificador_pt2272_tb.DUT.LOW_PULSE_COUNTING decodificador_pt2272_tb.DUT.PREVIOUS_cod_i decodificador_pt2272_tb.DUT.clk decodificador_pt2272_tb.DUT.cod_i decodificador_pt2272_tb.DUT.cod_i_FELL decodificador_pt2272_tb.DUT.cod_i_ROSE decodificador_pt2272_tb.DUT.current_state decodificador_pt2272_tb.DUT.dv decodificador_pt2272_tb.DUT.next_state decodificador_pt2272_tb.DUT.reset decodificador_pt2272_tb.DUT.reset_counters decodificador_pt2272_tb.encoder_dut.A decodificador_pt2272_tb.encoder_dut.D decodificador_pt2272_tb.encoder_dut.F_BIT_LOCATOR decodificador_pt2272_tb.encoder_dut.INTERPRETED_ADDR decodificador_pt2272_tb.encoder_dut.bit_gen_enb decodificador_pt2272_tb.encoder_dut.bit_gen_input decodificador_pt2272_tb.encoder_dut.bit_gen_output decodificador_pt2272_tb.encoder_dut.bit_gen_rst decodificador_pt2272_tb.encoder_dut.bit_generated_flag decodificador_pt2272_tb.encoder_dut.bit_sent_flag decodificador_pt2272_tb.encoder_dut.clk decodificador_pt2272_tb.encoder_dut.cod_o decodificador_pt2272_tb.encoder_dut.current_state decodificador_pt2272_tb.encoder_dut.next_state decodificador_pt2272_tb.encoder_dut.osc_clk decodificador_pt2272_tb.encoder_dut.osc_clk_rose decodificador_pt2272_tb.encoder_dut.osc_rst decodificador_pt2272_tb.encoder_dut.past_osc_clk decodificador_pt2272_tb.encoder_dut.reset decodificador_pt2272_tb.encoder_dut.sync
-Created probe 31
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.osc_rst decodificador_pt2272_tb.DUT.osc_clk
-Created probe 32
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.A decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_ENABLER decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_LEFT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_OP_MODE decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PT2272_BIT_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_RIGHT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_SERIAL_IN decodificador_pt2272_tb.DUT.D decodificador_pt2272_tb.DUT.HIGH_PULSE_COUNTING decodificador_pt2272_tb.DUT.LOW_PULSE_COUNTING decodificador_pt2272_tb.DUT.PREVIOUS_cod_i decodificador_pt2272_tb.DUT.clk decodificador_pt2272_tb.DUT.cod_i decodificador_pt2272_tb.DUT.cod_i_FELL decodificador_pt2272_tb.DUT.cod_i_ROSE decodificador_pt2272_tb.DUT.current_state decodificador_pt2272_tb.DUT.dv decodificador_pt2272_tb.DUT.next_state decodificador_pt2272_tb.DUT.reset decodificador_pt2272_tb.DUT.reset_counters decodificador_pt2272_tb.encoder_dut.A decodificador_pt2272_tb.encoder_dut.D decodificador_pt2272_tb.encoder_dut.F_BIT_LOCATOR decodificador_pt2272_tb.encoder_dut.INTERPRETED_ADDR decodificador_pt2272_tb.encoder_dut.bit_gen_enb decodificador_pt2272_tb.encoder_dut.bit_gen_input decodificador_pt2272_tb.encoder_dut.bit_gen_output decodificador_pt2272_tb.encoder_dut.bit_gen_rst decodificador_pt2272_tb.encoder_dut.bit_generated_flag decodificador_pt2272_tb.encoder_dut.bit_sent_flag decodificador_pt2272_tb.encoder_dut.clk decodificador_pt2272_tb.encoder_dut.cod_o decodificador_pt2272_tb.encoder_dut.current_state decodificador_pt2272_tb.encoder_dut.next_state decodificador_pt2272_tb.encoder_dut.osc_clk decodificador_pt2272_tb.encoder_dut.osc_clk_rose decodificador_pt2272_tb.encoder_dut.osc_rst decodificador_pt2272_tb.encoder_dut.past_osc_clk decodificador_pt2272_tb.encoder_dut.reset decodificador_pt2272_tb.encoder_dut.sync
-Created probe 33
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.osc_rst decodificador_pt2272_tb.DUT.osc_clk
-Created probe 34
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.A decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_ENABLER decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_LEFT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_OP_MODE decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PT2272_BIT_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_RIGHT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_SERIAL_IN decodificador_pt2272_tb.DUT.D decodificador_pt2272_tb.DUT.HIGH_PULSE_COUNTING decodificador_pt2272_tb.DUT.LOW_PULSE_COUNTING decodificador_pt2272_tb.DUT.PREVIOUS_cod_i decodificador_pt2272_tb.DUT.clk decodificador_pt2272_tb.DUT.cod_i decodificador_pt2272_tb.DUT.cod_i_FELL decodificador_pt2272_tb.DUT.cod_i_ROSE decodificador_pt2272_tb.DUT.current_state decodificador_pt2272_tb.DUT.dv decodificador_pt2272_tb.DUT.next_state decodificador_pt2272_tb.DUT.reset decodificador_pt2272_tb.DUT.reset_counters decodificador_pt2272_tb.encoder_dut.A decodificador_pt2272_tb.encoder_dut.D decodificador_pt2272_tb.encoder_dut.F_BIT_LOCATOR decodificador_pt2272_tb.encoder_dut.INTERPRETED_ADDR decodificador_pt2272_tb.encoder_dut.bit_gen_enb decodificador_pt2272_tb.encoder_dut.bit_gen_input decodificador_pt2272_tb.encoder_dut.bit_gen_output decodificador_pt2272_tb.encoder_dut.bit_gen_rst decodificador_pt2272_tb.encoder_dut.bit_generated_flag decodificador_pt2272_tb.encoder_dut.bit_sent_flag decodificador_pt2272_tb.encoder_dut.clk decodificador_pt2272_tb.encoder_dut.cod_o decodificador_pt2272_tb.encoder_dut.current_state decodificador_pt2272_tb.encoder_dut.next_state decodificador_pt2272_tb.encoder_dut.osc_clk decodificador_pt2272_tb.encoder_dut.osc_clk_rose decodificador_pt2272_tb.encoder_dut.osc_rst decodificador_pt2272_tb.encoder_dut.past_osc_clk decodificador_pt2272_tb.encoder_dut.reset decodificador_pt2272_tb.encoder_dut.sync
-Created probe 35
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.osc_rst decodificador_pt2272_tb.DUT.osc_clk
-Created probe 36
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.A decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_ENABLER decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_LEFT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_OP_MODE decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PT2272_BIT_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_RIGHT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_SERIAL_IN decodificador_pt2272_tb.DUT.D decodificador_pt2272_tb.DUT.HIGH_PULSE_COUNTING decodificador_pt2272_tb.DUT.LOW_PULSE_COUNTING decodificador_pt2272_tb.DUT.PREVIOUS_cod_i decodificador_pt2272_tb.DUT.clk decodificador_pt2272_tb.DUT.cod_i decodificador_pt2272_tb.DUT.cod_i_FELL decodificador_pt2272_tb.DUT.cod_i_ROSE decodificador_pt2272_tb.DUT.current_state decodificador_pt2272_tb.DUT.dv decodificador_pt2272_tb.DUT.next_state decodificador_pt2272_tb.DUT.reset decodificador_pt2272_tb.DUT.reset_counters decodificador_pt2272_tb.encoder_dut.A decodificador_pt2272_tb.encoder_dut.D decodificador_pt2272_tb.encoder_dut.F_BIT_LOCATOR decodificador_pt2272_tb.encoder_dut.INTERPRETED_ADDR decodificador_pt2272_tb.encoder_dut.bit_gen_enb decodificador_pt2272_tb.encoder_dut.bit_gen_input decodificador_pt2272_tb.encoder_dut.bit_gen_output decodificador_pt2272_tb.encoder_dut.bit_gen_rst decodificador_pt2272_tb.encoder_dut.bit_generated_flag decodificador_pt2272_tb.encoder_dut.bit_sent_flag decodificador_pt2272_tb.encoder_dut.clk decodificador_pt2272_tb.encoder_dut.cod_o decodificador_pt2272_tb.encoder_dut.current_state decodificador_pt2272_tb.encoder_dut.next_state decodificador_pt2272_tb.encoder_dut.osc_clk decodificador_pt2272_tb.encoder_dut.osc_clk_rose decodificador_pt2272_tb.encoder_dut.osc_rst decodificador_pt2272_tb.encoder_dut.past_osc_clk decodificador_pt2272_tb.encoder_dut.reset decodificador_pt2272_tb.encoder_dut.sync
-Created probe 37
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.osc_rst decodificador_pt2272_tb.DUT.osc_clk
-Created probe 38
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.A decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_ENABLER decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_LEFT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_OP_MODE decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PT2272_BIT_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_RIGHT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_SERIAL_IN decodificador_pt2272_tb.DUT.D decodificador_pt2272_tb.DUT.HIGH_PULSE_COUNTING decodificador_pt2272_tb.DUT.LOW_PULSE_COUNTING decodificador_pt2272_tb.DUT.PREVIOUS_cod_i decodificador_pt2272_tb.DUT.clk decodificador_pt2272_tb.DUT.cod_i decodificador_pt2272_tb.DUT.cod_i_FELL decodificador_pt2272_tb.DUT.cod_i_ROSE decodificador_pt2272_tb.DUT.current_state decodificador_pt2272_tb.DUT.dv decodificador_pt2272_tb.DUT.next_state decodificador_pt2272_tb.DUT.reset decodificador_pt2272_tb.DUT.reset_counters decodificador_pt2272_tb.encoder_dut.A decodificador_pt2272_tb.encoder_dut.D decodificador_pt2272_tb.encoder_dut.F_BIT_LOCATOR decodificador_pt2272_tb.encoder_dut.INTERPRETED_ADDR decodificador_pt2272_tb.encoder_dut.bit_gen_enb decodificador_pt2272_tb.encoder_dut.bit_gen_input decodificador_pt2272_tb.encoder_dut.bit_gen_output decodificador_pt2272_tb.encoder_dut.bit_gen_rst decodificador_pt2272_tb.encoder_dut.bit_generated_flag decodificador_pt2272_tb.encoder_dut.bit_sent_flag decodificador_pt2272_tb.encoder_dut.clk decodificador_pt2272_tb.encoder_dut.cod_o decodificador_pt2272_tb.encoder_dut.current_state decodificador_pt2272_tb.encoder_dut.next_state decodificador_pt2272_tb.encoder_dut.osc_clk decodificador_pt2272_tb.encoder_dut.osc_clk_rose decodificador_pt2272_tb.encoder_dut.osc_rst decodificador_pt2272_tb.encoder_dut.past_osc_clk decodificador_pt2272_tb.encoder_dut.reset decodificador_pt2272_tb.encoder_dut.sync
-Created probe 39
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.osc_rst decodificador_pt2272_tb.DUT.osc_clk
-Created probe 40
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.A decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_ENABLER decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_LEFT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_OP_MODE decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PT2272_BIT_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_RIGHT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_SERIAL_IN decodificador_pt2272_tb.DUT.D decodificador_pt2272_tb.DUT.HIGH_PULSE_COUNTING decodificador_pt2272_tb.DUT.LOW_PULSE_COUNTING decodificador_pt2272_tb.DUT.PREVIOUS_cod_i decodificador_pt2272_tb.DUT.clk decodificador_pt2272_tb.DUT.cod_i decodificador_pt2272_tb.DUT.cod_i_FELL decodificador_pt2272_tb.DUT.cod_i_ROSE decodificador_pt2272_tb.DUT.current_state decodificador_pt2272_tb.DUT.dv decodificador_pt2272_tb.DUT.next_state decodificador_pt2272_tb.DUT.reset decodificador_pt2272_tb.DUT.reset_counters decodificador_pt2272_tb.encoder_dut.A decodificador_pt2272_tb.encoder_dut.D decodificador_pt2272_tb.encoder_dut.F_BIT_LOCATOR decodificador_pt2272_tb.encoder_dut.INTERPRETED_ADDR decodificador_pt2272_tb.encoder_dut.bit_gen_enb decodificador_pt2272_tb.encoder_dut.bit_gen_input decodificador_pt2272_tb.encoder_dut.bit_gen_output decodificador_pt2272_tb.encoder_dut.bit_gen_rst decodificador_pt2272_tb.encoder_dut.bit_generated_flag decodificador_pt2272_tb.encoder_dut.bit_sent_flag decodificador_pt2272_tb.encoder_dut.clk decodificador_pt2272_tb.encoder_dut.cod_o decodificador_pt2272_tb.encoder_dut.current_state decodificador_pt2272_tb.encoder_dut.next_state decodificador_pt2272_tb.encoder_dut.osc_clk decodificador_pt2272_tb.encoder_dut.osc_clk_rose decodificador_pt2272_tb.encoder_dut.osc_rst decodificador_pt2272_tb.encoder_dut.past_osc_clk decodificador_pt2272_tb.encoder_dut.reset decodificador_pt2272_tb.encoder_dut.sync
-Created probe 41
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.osc_rst decodificador_pt2272_tb.DUT.osc_clk
-Created probe 42
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.A decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_ENABLER decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_LEFT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_OP_MODE decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PT2272_BIT_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_RIGHT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_SERIAL_IN decodificador_pt2272_tb.DUT.D decodificador_pt2272_tb.DUT.HIGH_PULSE_COUNTING decodificador_pt2272_tb.DUT.LOW_PULSE_COUNTING decodificador_pt2272_tb.DUT.PREVIOUS_cod_i decodificador_pt2272_tb.DUT.clk decodificador_pt2272_tb.DUT.cod_i decodificador_pt2272_tb.DUT.cod_i_FELL decodificador_pt2272_tb.DUT.cod_i_ROSE decodificador_pt2272_tb.DUT.current_state decodificador_pt2272_tb.DUT.dv decodificador_pt2272_tb.DUT.next_state decodificador_pt2272_tb.DUT.reset decodificador_pt2272_tb.DUT.reset_counters decodificador_pt2272_tb.encoder_dut.A decodificador_pt2272_tb.encoder_dut.D decodificador_pt2272_tb.encoder_dut.F_BIT_LOCATOR decodificador_pt2272_tb.encoder_dut.INTERPRETED_ADDR decodificador_pt2272_tb.encoder_dut.bit_gen_enb decodificador_pt2272_tb.encoder_dut.bit_gen_input decodificador_pt2272_tb.encoder_dut.bit_gen_output decodificador_pt2272_tb.encoder_dut.bit_gen_rst decodificador_pt2272_tb.encoder_dut.bit_generated_flag decodificador_pt2272_tb.encoder_dut.bit_sent_flag decodificador_pt2272_tb.encoder_dut.clk decodificador_pt2272_tb.encoder_dut.cod_o decodificador_pt2272_tb.encoder_dut.current_state decodificador_pt2272_tb.encoder_dut.next_state decodificador_pt2272_tb.encoder_dut.osc_clk decodificador_pt2272_tb.encoder_dut.osc_clk_rose decodificador_pt2272_tb.encoder_dut.osc_rst decodificador_pt2272_tb.encoder_dut.past_osc_clk decodificador_pt2272_tb.encoder_dut.reset decodificador_pt2272_tb.encoder_dut.sync
-Created probe 43
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.osc_rst decodificador_pt2272_tb.DUT.osc_clk
-Created probe 44
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.A decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_ENABLER decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_LEFT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_OP_MODE decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PT2272_BIT_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_RIGHT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_SERIAL_IN decodificador_pt2272_tb.DUT.D decodificador_pt2272_tb.DUT.HIGH_PULSE_COUNTING decodificador_pt2272_tb.DUT.LOW_PULSE_COUNTING decodificador_pt2272_tb.DUT.PREVIOUS_cod_i decodificador_pt2272_tb.DUT.clk decodificador_pt2272_tb.DUT.cod_i decodificador_pt2272_tb.DUT.cod_i_FELL decodificador_pt2272_tb.DUT.cod_i_ROSE decodificador_pt2272_tb.DUT.current_state decodificador_pt2272_tb.DUT.dv decodificador_pt2272_tb.DUT.next_state decodificador_pt2272_tb.DUT.reset decodificador_pt2272_tb.DUT.reset_counters decodificador_pt2272_tb.encoder_dut.A decodificador_pt2272_tb.encoder_dut.D decodificador_pt2272_tb.encoder_dut.F_BIT_LOCATOR decodificador_pt2272_tb.encoder_dut.INTERPRETED_ADDR decodificador_pt2272_tb.encoder_dut.bit_gen_enb decodificador_pt2272_tb.encoder_dut.bit_gen_input decodificador_pt2272_tb.encoder_dut.bit_gen_output decodificador_pt2272_tb.encoder_dut.bit_gen_rst decodificador_pt2272_tb.encoder_dut.bit_generated_flag decodificador_pt2272_tb.encoder_dut.bit_sent_flag decodificador_pt2272_tb.encoder_dut.clk decodificador_pt2272_tb.encoder_dut.cod_o decodificador_pt2272_tb.encoder_dut.current_state decodificador_pt2272_tb.encoder_dut.next_state decodificador_pt2272_tb.encoder_dut.osc_clk decodificador_pt2272_tb.encoder_dut.osc_clk_rose decodificador_pt2272_tb.encoder_dut.osc_rst decodificador_pt2272_tb.encoder_dut.past_osc_clk decodificador_pt2272_tb.encoder_dut.reset decodificador_pt2272_tb.encoder_dut.sync
-Created probe 45
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.osc_rst decodificador_pt2272_tb.DUT.osc_clk
-Created probe 46
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.A decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_ENABLER decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_LEFT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_OP_MODE decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PT2272_BIT_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_RIGHT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_SERIAL_IN decodificador_pt2272_tb.DUT.D decodificador_pt2272_tb.DUT.HIGH_PULSE_COUNTING decodificador_pt2272_tb.DUT.LOW_PULSE_COUNTING decodificador_pt2272_tb.DUT.PREVIOUS_cod_i decodificador_pt2272_tb.DUT.clk decodificador_pt2272_tb.DUT.cod_i decodificador_pt2272_tb.DUT.cod_i_FELL decodificador_pt2272_tb.DUT.cod_i_ROSE decodificador_pt2272_tb.DUT.current_state decodificador_pt2272_tb.DUT.dv decodificador_pt2272_tb.DUT.next_state decodificador_pt2272_tb.DUT.reset decodificador_pt2272_tb.DUT.reset_counters decodificador_pt2272_tb.encoder_dut.A decodificador_pt2272_tb.encoder_dut.D decodificador_pt2272_tb.encoder_dut.F_BIT_LOCATOR decodificador_pt2272_tb.encoder_dut.INTERPRETED_ADDR decodificador_pt2272_tb.encoder_dut.bit_gen_enb decodificador_pt2272_tb.encoder_dut.bit_gen_input decodificador_pt2272_tb.encoder_dut.bit_gen_output decodificador_pt2272_tb.encoder_dut.bit_gen_rst decodificador_pt2272_tb.encoder_dut.bit_generated_flag decodificador_pt2272_tb.encoder_dut.bit_sent_flag decodificador_pt2272_tb.encoder_dut.clk decodificador_pt2272_tb.encoder_dut.cod_o decodificador_pt2272_tb.encoder_dut.current_state decodificador_pt2272_tb.encoder_dut.next_state decodificador_pt2272_tb.encoder_dut.osc_clk decodificador_pt2272_tb.encoder_dut.osc_clk_rose decodificador_pt2272_tb.encoder_dut.osc_rst decodificador_pt2272_tb.encoder_dut.past_osc_clk decodificador_pt2272_tb.encoder_dut.reset decodificador_pt2272_tb.encoder_dut.sync
-Created probe 47
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.osc_rst decodificador_pt2272_tb.DUT.osc_clk
-Created probe 48
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.A decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_ENABLER decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_LEFT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_OP_MODE decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PT2272_BIT_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_RIGHT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_SERIAL_IN decodificador_pt2272_tb.DUT.D decodificador_pt2272_tb.DUT.HIGH_PULSE_COUNTING decodificador_pt2272_tb.DUT.LOW_PULSE_COUNTING decodificador_pt2272_tb.DUT.PREVIOUS_cod_i decodificador_pt2272_tb.DUT.clk decodificador_pt2272_tb.DUT.cod_i decodificador_pt2272_tb.DUT.cod_i_FELL decodificador_pt2272_tb.DUT.cod_i_ROSE decodificador_pt2272_tb.DUT.current_state decodificador_pt2272_tb.DUT.dv decodificador_pt2272_tb.DUT.next_state decodificador_pt2272_tb.DUT.reset decodificador_pt2272_tb.DUT.reset_counters decodificador_pt2272_tb.encoder_dut.A decodificador_pt2272_tb.encoder_dut.D decodificador_pt2272_tb.encoder_dut.F_BIT_LOCATOR decodificador_pt2272_tb.encoder_dut.INTERPRETED_ADDR decodificador_pt2272_tb.encoder_dut.bit_gen_enb decodificador_pt2272_tb.encoder_dut.bit_gen_input decodificador_pt2272_tb.encoder_dut.bit_gen_output decodificador_pt2272_tb.encoder_dut.bit_gen_rst decodificador_pt2272_tb.encoder_dut.bit_generated_flag decodificador_pt2272_tb.encoder_dut.bit_sent_flag decodificador_pt2272_tb.encoder_dut.clk decodificador_pt2272_tb.encoder_dut.cod_o decodificador_pt2272_tb.encoder_dut.current_state decodificador_pt2272_tb.encoder_dut.next_state decodificador_pt2272_tb.encoder_dut.osc_clk decodificador_pt2272_tb.encoder_dut.osc_clk_rose decodificador_pt2272_tb.encoder_dut.osc_rst decodificador_pt2272_tb.encoder_dut.past_osc_clk decodificador_pt2272_tb.encoder_dut.reset decodificador_pt2272_tb.encoder_dut.sync
-Created probe 49
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.osc_rst decodificador_pt2272_tb.DUT.osc_clk
-Created probe 50
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.A decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_ENABLER decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_LEFT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_OP_MODE decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PT2272_BIT_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_RIGHT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_SERIAL_IN decodificador_pt2272_tb.DUT.D decodificador_pt2272_tb.DUT.HIGH_PULSE_COUNTING decodificador_pt2272_tb.DUT.LOW_PULSE_COUNTING decodificador_pt2272_tb.DUT.PREVIOUS_cod_i decodificador_pt2272_tb.DUT.clk decodificador_pt2272_tb.DUT.cod_i decodificador_pt2272_tb.DUT.cod_i_FELL decodificador_pt2272_tb.DUT.cod_i_ROSE decodificador_pt2272_tb.DUT.current_state decodificador_pt2272_tb.DUT.dv decodificador_pt2272_tb.DUT.next_state decodificador_pt2272_tb.DUT.reset decodificador_pt2272_tb.DUT.reset_counters decodificador_pt2272_tb.encoder_dut.A decodificador_pt2272_tb.encoder_dut.D decodificador_pt2272_tb.encoder_dut.F_BIT_LOCATOR decodificador_pt2272_tb.encoder_dut.INTERPRETED_ADDR decodificador_pt2272_tb.encoder_dut.bit_gen_enb decodificador_pt2272_tb.encoder_dut.bit_gen_input decodificador_pt2272_tb.encoder_dut.bit_gen_output decodificador_pt2272_tb.encoder_dut.bit_gen_rst decodificador_pt2272_tb.encoder_dut.bit_generated_flag decodificador_pt2272_tb.encoder_dut.bit_sent_flag decodificador_pt2272_tb.encoder_dut.clk decodificador_pt2272_tb.encoder_dut.cod_o decodificador_pt2272_tb.encoder_dut.current_state decodificador_pt2272_tb.encoder_dut.next_state decodificador_pt2272_tb.encoder_dut.osc_clk decodificador_pt2272_tb.encoder_dut.osc_clk_rose decodificador_pt2272_tb.encoder_dut.osc_rst decodificador_pt2272_tb.encoder_dut.past_osc_clk decodificador_pt2272_tb.encoder_dut.reset decodificador_pt2272_tb.encoder_dut.sync
-Created probe 51
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.osc_rst decodificador_pt2272_tb.DUT.osc_clk
-Created probe 52
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.A decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_ENABLER decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_LEFT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_OP_MODE decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PT2272_BIT_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_RIGHT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_SERIAL_IN decodificador_pt2272_tb.DUT.D decodificador_pt2272_tb.DUT.HIGH_PULSE_COUNTING decodificador_pt2272_tb.DUT.LOW_PULSE_COUNTING decodificador_pt2272_tb.DUT.PREVIOUS_cod_i decodificador_pt2272_tb.DUT.clk decodificador_pt2272_tb.DUT.cod_i decodificador_pt2272_tb.DUT.cod_i_FELL decodificador_pt2272_tb.DUT.cod_i_ROSE decodificador_pt2272_tb.DUT.current_state decodificador_pt2272_tb.DUT.dv decodificador_pt2272_tb.DUT.next_state decodificador_pt2272_tb.DUT.reset decodificador_pt2272_tb.DUT.reset_counters decodificador_pt2272_tb.encoder_dut.A decodificador_pt2272_tb.encoder_dut.D decodificador_pt2272_tb.encoder_dut.F_BIT_LOCATOR decodificador_pt2272_tb.encoder_dut.INTERPRETED_ADDR decodificador_pt2272_tb.encoder_dut.bit_gen_enb decodificador_pt2272_tb.encoder_dut.bit_gen_input decodificador_pt2272_tb.encoder_dut.bit_gen_output decodificador_pt2272_tb.encoder_dut.bit_gen_rst decodificador_pt2272_tb.encoder_dut.bit_generated_flag decodificador_pt2272_tb.encoder_dut.bit_sent_flag decodificador_pt2272_tb.encoder_dut.clk decodificador_pt2272_tb.encoder_dut.cod_o decodificador_pt2272_tb.encoder_dut.current_state decodificador_pt2272_tb.encoder_dut.next_state decodificador_pt2272_tb.encoder_dut.osc_clk decodificador_pt2272_tb.encoder_dut.osc_clk_rose decodificador_pt2272_tb.encoder_dut.osc_rst decodificador_pt2272_tb.encoder_dut.past_osc_clk decodificador_pt2272_tb.encoder_dut.reset decodificador_pt2272_tb.encoder_dut.sync
-Created probe 53
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.osc_rst decodificador_pt2272_tb.DUT.osc_clk
-Created probe 54
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.A decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_ENABLER decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_LEFT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_OP_MODE decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PT2272_BIT_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_RIGHT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_SERIAL_IN decodificador_pt2272_tb.DUT.D decodificador_pt2272_tb.DUT.HIGH_PULSE_COUNTING decodificador_pt2272_tb.DUT.LOW_PULSE_COUNTING decodificador_pt2272_tb.DUT.PREVIOUS_cod_i decodificador_pt2272_tb.DUT.clk decodificador_pt2272_tb.DUT.cod_i decodificador_pt2272_tb.DUT.cod_i_FELL decodificador_pt2272_tb.DUT.cod_i_ROSE decodificador_pt2272_tb.DUT.current_state decodificador_pt2272_tb.DUT.dv decodificador_pt2272_tb.DUT.next_state decodificador_pt2272_tb.DUT.reset decodificador_pt2272_tb.DUT.reset_counters decodificador_pt2272_tb.encoder_dut.A decodificador_pt2272_tb.encoder_dut.D decodificador_pt2272_tb.encoder_dut.F_BIT_LOCATOR decodificador_pt2272_tb.encoder_dut.INTERPRETED_ADDR decodificador_pt2272_tb.encoder_dut.bit_gen_enb decodificador_pt2272_tb.encoder_dut.bit_gen_input decodificador_pt2272_tb.encoder_dut.bit_gen_output decodificador_pt2272_tb.encoder_dut.bit_gen_rst decodificador_pt2272_tb.encoder_dut.bit_generated_flag decodificador_pt2272_tb.encoder_dut.bit_sent_flag decodificador_pt2272_tb.encoder_dut.clk decodificador_pt2272_tb.encoder_dut.cod_o decodificador_pt2272_tb.encoder_dut.current_state decodificador_pt2272_tb.encoder_dut.next_state decodificador_pt2272_tb.encoder_dut.osc_clk decodificador_pt2272_tb.encoder_dut.osc_clk_rose decodificador_pt2272_tb.encoder_dut.osc_rst decodificador_pt2272_tb.encoder_dut.past_osc_clk decodificador_pt2272_tb.encoder_dut.reset decodificador_pt2272_tb.encoder_dut.sync
-Created probe 55
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.osc_rst decodificador_pt2272_tb.DUT.osc_clk
-Created probe 56
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.A decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_ENABLER decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_LEFT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_OP_MODE decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PT2272_BIT_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_RIGHT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_SERIAL_IN decodificador_pt2272_tb.DUT.D decodificador_pt2272_tb.DUT.HIGH_PULSE_COUNTING decodificador_pt2272_tb.DUT.LOW_PULSE_COUNTING decodificador_pt2272_tb.DUT.PREVIOUS_cod_i decodificador_pt2272_tb.DUT.clk decodificador_pt2272_tb.DUT.cod_i decodificador_pt2272_tb.DUT.cod_i_FELL decodificador_pt2272_tb.DUT.cod_i_ROSE decodificador_pt2272_tb.DUT.current_state decodificador_pt2272_tb.DUT.dv decodificador_pt2272_tb.DUT.next_state decodificador_pt2272_tb.DUT.reset decodificador_pt2272_tb.DUT.reset_counters decodificador_pt2272_tb.encoder_dut.A decodificador_pt2272_tb.encoder_dut.D decodificador_pt2272_tb.encoder_dut.F_BIT_LOCATOR decodificador_pt2272_tb.encoder_dut.INTERPRETED_ADDR decodificador_pt2272_tb.encoder_dut.bit_gen_enb decodificador_pt2272_tb.encoder_dut.bit_gen_input decodificador_pt2272_tb.encoder_dut.bit_gen_output decodificador_pt2272_tb.encoder_dut.bit_gen_rst decodificador_pt2272_tb.encoder_dut.bit_generated_flag decodificador_pt2272_tb.encoder_dut.bit_sent_flag decodificador_pt2272_tb.encoder_dut.clk decodificador_pt2272_tb.encoder_dut.cod_o decodificador_pt2272_tb.encoder_dut.current_state decodificador_pt2272_tb.encoder_dut.next_state decodificador_pt2272_tb.encoder_dut.osc_clk decodificador_pt2272_tb.encoder_dut.osc_clk_rose decodificador_pt2272_tb.encoder_dut.osc_rst decodificador_pt2272_tb.encoder_dut.past_osc_clk decodificador_pt2272_tb.encoder_dut.reset decodificador_pt2272_tb.encoder_dut.sync
-Created probe 57
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.osc_rst decodificador_pt2272_tb.DUT.osc_clk
-Created probe 58
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.A decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_ENABLER decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_LEFT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_OP_MODE decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PT2272_BIT_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_RIGHT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_SERIAL_IN decodificador_pt2272_tb.DUT.D decodificador_pt2272_tb.DUT.HIGH_PULSE_COUNTING decodificador_pt2272_tb.DUT.LOW_PULSE_COUNTING decodificador_pt2272_tb.DUT.PREVIOUS_cod_i decodificador_pt2272_tb.DUT.clk decodificador_pt2272_tb.DUT.cod_i decodificador_pt2272_tb.DUT.cod_i_FELL decodificador_pt2272_tb.DUT.cod_i_ROSE decodificador_pt2272_tb.DUT.current_state decodificador_pt2272_tb.DUT.dv decodificador_pt2272_tb.DUT.next_state decodificador_pt2272_tb.DUT.reset decodificador_pt2272_tb.DUT.reset_counters decodificador_pt2272_tb.encoder_dut.A decodificador_pt2272_tb.encoder_dut.D decodificador_pt2272_tb.encoder_dut.F_BIT_LOCATOR decodificador_pt2272_tb.encoder_dut.INTERPRETED_ADDR decodificador_pt2272_tb.encoder_dut.bit_gen_enb decodificador_pt2272_tb.encoder_dut.bit_gen_input decodificador_pt2272_tb.encoder_dut.bit_gen_output decodificador_pt2272_tb.encoder_dut.bit_gen_rst decodificador_pt2272_tb.encoder_dut.bit_generated_flag decodificador_pt2272_tb.encoder_dut.bit_sent_flag decodificador_pt2272_tb.encoder_dut.clk decodificador_pt2272_tb.encoder_dut.cod_o decodificador_pt2272_tb.encoder_dut.current_state decodificador_pt2272_tb.encoder_dut.next_state decodificador_pt2272_tb.encoder_dut.osc_clk decodificador_pt2272_tb.encoder_dut.osc_clk_rose decodificador_pt2272_tb.encoder_dut.osc_rst decodificador_pt2272_tb.encoder_dut.past_osc_clk decodificador_pt2272_tb.encoder_dut.reset decodificador_pt2272_tb.encoder_dut.sync
-Created probe 59
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.osc_rst decodificador_pt2272_tb.DUT.osc_clk
-Created probe 60
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.A decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_ENABLER decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_LEFT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_OP_MODE decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PT2272_BIT_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_RIGHT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_SERIAL_IN decodificador_pt2272_tb.DUT.D decodificador_pt2272_tb.DUT.HIGH_PULSE_COUNTING decodificador_pt2272_tb.DUT.LOW_PULSE_COUNTING decodificador_pt2272_tb.DUT.PREVIOUS_cod_i decodificador_pt2272_tb.DUT.clk decodificador_pt2272_tb.DUT.cod_i decodificador_pt2272_tb.DUT.cod_i_FELL decodificador_pt2272_tb.DUT.cod_i_ROSE decodificador_pt2272_tb.DUT.current_state decodificador_pt2272_tb.DUT.dv decodificador_pt2272_tb.DUT.next_state decodificador_pt2272_tb.DUT.reset decodificador_pt2272_tb.DUT.reset_counters decodificador_pt2272_tb.encoder_dut.A decodificador_pt2272_tb.encoder_dut.D decodificador_pt2272_tb.encoder_dut.F_BIT_LOCATOR decodificador_pt2272_tb.encoder_dut.INTERPRETED_ADDR decodificador_pt2272_tb.encoder_dut.bit_gen_enb decodificador_pt2272_tb.encoder_dut.bit_gen_input decodificador_pt2272_tb.encoder_dut.bit_gen_output decodificador_pt2272_tb.encoder_dut.bit_gen_rst decodificador_pt2272_tb.encoder_dut.bit_generated_flag decodificador_pt2272_tb.encoder_dut.bit_sent_flag decodificador_pt2272_tb.encoder_dut.clk decodificador_pt2272_tb.encoder_dut.cod_o decodificador_pt2272_tb.encoder_dut.current_state decodificador_pt2272_tb.encoder_dut.next_state decodificador_pt2272_tb.encoder_dut.osc_clk decodificador_pt2272_tb.encoder_dut.osc_clk_rose decodificador_pt2272_tb.encoder_dut.osc_rst decodificador_pt2272_tb.encoder_dut.past_osc_clk decodificador_pt2272_tb.encoder_dut.reset decodificador_pt2272_tb.encoder_dut.sync
-Created probe 61
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.osc_rst decodificador_pt2272_tb.DUT.osc_clk
-Created probe 62
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.A decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_ENABLER decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_LEFT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_OP_MODE decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PT2272_BIT_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_RIGHT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_SERIAL_IN decodificador_pt2272_tb.DUT.D decodificador_pt2272_tb.DUT.HIGH_PULSE_COUNTING decodificador_pt2272_tb.DUT.LOW_PULSE_COUNTING decodificador_pt2272_tb.DUT.PREVIOUS_cod_i decodificador_pt2272_tb.DUT.clk decodificador_pt2272_tb.DUT.cod_i decodificador_pt2272_tb.DUT.cod_i_FELL decodificador_pt2272_tb.DUT.cod_i_ROSE decodificador_pt2272_tb.DUT.current_state decodificador_pt2272_tb.DUT.dv decodificador_pt2272_tb.DUT.next_state decodificador_pt2272_tb.DUT.reset decodificador_pt2272_tb.DUT.reset_counters decodificador_pt2272_tb.encoder_dut.A decodificador_pt2272_tb.encoder_dut.D decodificador_pt2272_tb.encoder_dut.F_BIT_LOCATOR decodificador_pt2272_tb.encoder_dut.INTERPRETED_ADDR decodificador_pt2272_tb.encoder_dut.bit_gen_enb decodificador_pt2272_tb.encoder_dut.bit_gen_input decodificador_pt2272_tb.encoder_dut.bit_gen_output decodificador_pt2272_tb.encoder_dut.bit_gen_rst decodificador_pt2272_tb.encoder_dut.bit_generated_flag decodificador_pt2272_tb.encoder_dut.bit_sent_flag decodificador_pt2272_tb.encoder_dut.clk decodificador_pt2272_tb.encoder_dut.cod_o decodificador_pt2272_tb.encoder_dut.current_state decodificador_pt2272_tb.encoder_dut.next_state decodificador_pt2272_tb.encoder_dut.osc_clk decodificador_pt2272_tb.encoder_dut.osc_clk_rose decodificador_pt2272_tb.encoder_dut.osc_rst decodificador_pt2272_tb.encoder_dut.past_osc_clk decodificador_pt2272_tb.encoder_dut.reset decodificador_pt2272_tb.encoder_dut.sync
-Created probe 63
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.osc_rst decodificador_pt2272_tb.DUT.osc_clk
-Created probe 64
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.A decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_ENABLER decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_LEFT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_OP_MODE decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PT2272_BIT_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_RIGHT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_SERIAL_IN decodificador_pt2272_tb.DUT.D decodificador_pt2272_tb.DUT.HIGH_PULSE_COUNTING decodificador_pt2272_tb.DUT.LOW_PULSE_COUNTING decodificador_pt2272_tb.DUT.PREVIOUS_cod_i decodificador_pt2272_tb.DUT.clk decodificador_pt2272_tb.DUT.cod_i decodificador_pt2272_tb.DUT.cod_i_FELL decodificador_pt2272_tb.DUT.cod_i_ROSE decodificador_pt2272_tb.DUT.current_state decodificador_pt2272_tb.DUT.dv decodificador_pt2272_tb.DUT.next_state decodificador_pt2272_tb.DUT.reset decodificador_pt2272_tb.DUT.reset_counters decodificador_pt2272_tb.encoder_dut.A decodificador_pt2272_tb.encoder_dut.D decodificador_pt2272_tb.encoder_dut.F_BIT_LOCATOR decodificador_pt2272_tb.encoder_dut.INTERPRETED_ADDR decodificador_pt2272_tb.encoder_dut.bit_gen_enb decodificador_pt2272_tb.encoder_dut.bit_gen_input decodificador_pt2272_tb.encoder_dut.bit_gen_output decodificador_pt2272_tb.encoder_dut.bit_gen_rst decodificador_pt2272_tb.encoder_dut.bit_generated_flag decodificador_pt2272_tb.encoder_dut.bit_sent_flag decodificador_pt2272_tb.encoder_dut.clk decodificador_pt2272_tb.encoder_dut.cod_o decodificador_pt2272_tb.encoder_dut.current_state decodificador_pt2272_tb.encoder_dut.next_state decodificador_pt2272_tb.encoder_dut.osc_clk decodificador_pt2272_tb.encoder_dut.osc_clk_rose decodificador_pt2272_tb.encoder_dut.osc_rst decodificador_pt2272_tb.encoder_dut.past_osc_clk decodificador_pt2272_tb.encoder_dut.reset decodificador_pt2272_tb.encoder_dut.sync
-Created probe 65
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.osc_rst decodificador_pt2272_tb.DUT.osc_clk
-Created probe 66
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.osc_rst decodificador_pt2272_tb.DUT.clk decodificador_pt2272_tb.DUT.A decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_ENABLER decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_LEFT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_OP_MODE decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PT2272_BIT_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_RIGHT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_SERIAL_IN decodificador_pt2272_tb.DUT.D decodificador_pt2272_tb.DUT.HIGH_PULSE_COUNTING decodificador_pt2272_tb.DUT.LOW_PULSE_COUNTING decodificador_pt2272_tb.DUT.PREVIOUS_cod_i decodificador_pt2272_tb.DUT.osc_clk decodificador_pt2272_tb.DUT.cod_i decodificador_pt2272_tb.DUT.cod_i_FELL decodificador_pt2272_tb.DUT.cod_i_ROSE decodificador_pt2272_tb.DUT.current_state decodificador_pt2272_tb.DUT.dv decodificador_pt2272_tb.DUT.next_state decodificador_pt2272_tb.DUT.reset decodificador_pt2272_tb.DUT.reset_counters decodificador_pt2272_tb.encoder_dut.A decodificador_pt2272_tb.encoder_dut.D decodificador_pt2272_tb.encoder_dut.F_BIT_LOCATOR decodificador_pt2272_tb.encoder_dut.INTERPRETED_ADDR decodificador_pt2272_tb.encoder_dut.bit_gen_enb decodificador_pt2272_tb.encoder_dut.bit_gen_input decodificador_pt2272_tb.encoder_dut.bit_gen_output decodificador_pt2272_tb.encoder_dut.bit_gen_rst decodificador_pt2272_tb.encoder_dut.bit_generated_flag decodificador_pt2272_tb.encoder_dut.bit_sent_flag decodificador_pt2272_tb.encoder_dut.clk decodificador_pt2272_tb.encoder_dut.cod_o decodificador_pt2272_tb.encoder_dut.current_state decodificador_pt2272_tb.encoder_dut.next_state decodificador_pt2272_tb.encoder_dut.osc_clk decodificador_pt2272_tb.encoder_dut.osc_clk_rose decodificador_pt2272_tb.encoder_dut.osc_rst decodificador_pt2272_tb.encoder_dut.past_osc_clk decodificador_pt2272_tb.encoder_dut.reset decodificador_pt2272_tb.encoder_dut.sync
-Created probe 67
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.internal_a decodificador_pt2272_tb.DUT.internal_f_bit_locator decodificador_pt2272_tb.DUT.internal_interpreted_addr
-Created probe 68
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.INTERPRETED_ADDR decodificador_pt2272_tb.DUT.F_BIT_LOCATOR
-Created probe 69
-xcelium> probe -create -database waves decodificador_pt2272_tb.DUT.osc_rst decodificador_pt2272_tb.DUT.clk decodificador_pt2272_tb.DUT.A decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_ENABLER decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_LEFT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_OP_MODE decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PT2272_BIT_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_RIGHT_SHIFT_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_SERIAL_IN decodificador_pt2272_tb.DUT.D decodificador_pt2272_tb.DUT.HIGH_PULSE_COUNTING decodificador_pt2272_tb.DUT.LOW_PULSE_COUNTING decodificador_pt2272_tb.DUT.PREVIOUS_cod_i decodificador_pt2272_tb.DUT.osc_clk decodificador_pt2272_tb.DUT.cod_i decodificador_pt2272_tb.DUT.cod_i_FELL decodificador_pt2272_tb.DUT.cod_i_ROSE decodificador_pt2272_tb.DUT.current_state decodificador_pt2272_tb.DUT.dv decodificador_pt2272_tb.DUT.next_state decodificador_pt2272_tb.DUT.reset decodificador_pt2272_tb.DUT.reset_counters decodificador_pt2272_tb.DUT.internal_a decodificador_pt2272_tb.DUT.internal_f_bit_locator decodificador_pt2272_tb.DUT.internal_interpreted_addr decodificador_pt2272_tb.DUT.INTERPRETED_ADDR decodificador_pt2272_tb.DUT.F_BIT_LOCATOR decodificador_pt2272_tb.encoder_dut.A decodificador_pt2272_tb.encoder_dut.D decodificador_pt2272_tb.encoder_dut.F_BIT_LOCATOR decodificador_pt2272_tb.encoder_dut.INTERPRETED_ADDR decodificador_pt2272_tb.encoder_dut.bit_gen_enb decodificador_pt2272_tb.encoder_dut.bit_gen_input decodificador_pt2272_tb.encoder_dut.bit_gen_output decodificador_pt2272_tb.encoder_dut.bit_gen_rst decodificador_pt2272_tb.encoder_dut.bit_generated_flag decodificador_pt2272_tb.encoder_dut.bit_sent_flag decodificador_pt2272_tb.encoder_dut.clk decodificador_pt2272_tb.encoder_dut.cod_o decodificador_pt2272_tb.encoder_dut.current_state decodificador_pt2272_tb.encoder_dut.next_state decodificador_pt2272_tb.encoder_dut.osc_clk decodificador_pt2272_tb.encoder_dut.osc_clk_rose decodificador_pt2272_tb.encoder_dut.osc_rst decodificador_pt2272_tb.encoder_dut.past_osc_clk decodificador_pt2272_tb.encoder_dut.reset decodificador_pt2272_tb.encoder_dut.sync
-Created probe 70
-xcelium> 
-xcelium> simvision -input restore_dec.tcl.svcf
-xcelium> input -quiet .reinvoke.sim
-xcelium> file delete .reinvoke.sim
 xcelium> run
-Simulation complete via $finish(1) at time 91039575 NS + 3
-./decoder/decodificador_pt2272_tb.sv:210         $finish;
-xcelium> ^C
-xcelium> exit
-TOOL:	xrun(64)	24.09-s001: Exiting on Jan 10, 2025 at 09:54:28 -03  (total: 00:29:32)
+Simulation complete via $finish(1) at time 82542075 NS + 3
+./encoder/codificador_pt2262_tb.sv:53         $finish;
+xcelium> 
