@@ -42,7 +42,8 @@ module codificador_pt2262_tb (
         // mock_D = 4'b0011;
 
         @(posedge DUT.osc_clk);
-        mock_A = 8'bz1010000;
+        // mock_A = 8'bz1010000;
+        mock_A = 8'b11110000;
         mock_D = 4'b1010;
 
 

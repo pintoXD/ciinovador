@@ -1,0 +1,28 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+Version: 21.10-p002_1, built Fri Aug 20 06:13:13 PDT 2021
+Options: -abort_on_error -log /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/logs/encoder.log -files /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/scripts/synth.tcl 
+Date:    Fri Jan 10 11:42:53 2025
+Host:    cinova05.lesc.ufc.br (x86_64 w/Linux 4.18.0-553.27.1.el8_10.x86_64) (14cores*20cpus*1physical cpu*13th Gen Intel(R) Core(TM) i5-13500 24576KB) (32333792KB)
+PID:     48644
+OS:      Rocky Linux release 8.10 (Green Obsidian)
+
+Checking out license: Genus_Synthesis
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Loading tool scripts...
+Finished loading tool scripts (5 seconds elapsed).
+
+#@ Processing -files option
+@genus 1> source /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/scripts/synth.tcl
+File '/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/scripts/synth.tcl' does not exist.
+Encountered problems processing file: /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/scripts/synth.tcl
+Abnormal exit.Abnormal exit.

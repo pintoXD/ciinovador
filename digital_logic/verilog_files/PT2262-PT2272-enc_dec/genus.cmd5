@@ -1,0 +1,44 @@
+# Cadence Genus(TM) Synthesis Solution, Version 21.10-p002_1, built Aug 20 2021 10:13:13
+
+# Date: Fri Jan 10 07:44:45 2025
+# Host: cinova05.lesc.ufc.br (x86_64 w/Linux 4.18.0-553.27.1.el8_10.x86_64) (14cores*20cpus*1physical cpu*13th Gen Intel(R) Core(TM) i5-13500 24576KB)
+# OS:   Rocky Linux release 8.10 (Green Obsidian)
+
+read_libs libs/fast_vdd1v2_basicCells.lib
+/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/genus.cmd4
+read_hdl -sv encoder/codificador_pt2262.sv bit_gen/bit_generator.sv oscillator/clock_divider.sv addr_interpreter/addr_interpreter.sv
+read_libs libs/fast_vdd1v2_basicCells.lib
+read_hdl -sv encoder/codificador_pt2262.sv bit_gen/bit_generator.sv oscillator/clock_divider.sv addr_interpreter/addr_interpreter.sv
+clear
+read_hdl -sv encoder/codificador_pt2262.sv bit_gen/bit_generator.sv oscillator/clock_divider.sv addr_interpreter/addr_interpreter.sv
+clear
+read_hdl -sv encoder/codificador_pt2262.sv bit_gen/bit_generator.sv oscillator/clock_divider.sv addr_interpreter/addr_interpreter.sv
+clear
+elaborate
+clear
+elaborate
+elaborate
+elaborate
+read_hdl -sv encoder/codificador_pt2262.sv bit_gen/bit_generator.sv oscillator/clock_divider.sv addr_interpreter/addr_interpreter.sv
+elaborate
+read_hdl -sv encoder/codificador_pt2262.sv bit_gen/bit_generator.sv oscillator/clock_divider.sv addr_interpreter/addr_interpreter.sv
+elaborate
+read_hdl -sv encoder/codificador_pt2262.sv bit_gen/bit_generator.sv oscillator/clock_divider.sv addr_interpreter/addr_interpreter.sv
+elaborate
+read_hdl -sv encoder/codificador_pt2262.sv bit_gen/bit_generator.sv oscillator/clock_divider.sv addr_interpreter/addr_interpreter.sv
+elaborate
+read_hdl -sv encoder/codificador_pt2262.sv bit_gen/bit_generator.sv oscillator/clock_divider.sv addr_interpreter/addr_interpreter.sv
+elaborate
+read_hdl -sv encoder/codificador_pt2262.sv bit_gen/bit_generator.sv oscillator/clock_divider.sv addr_interpreter/addr_interpreter.sv
+elaborate
+clear
+elaborate
+read_hdl -sv encoder/codificador_pt2262.sv bit_gen/bit_generator.sv oscillator/clock_divider.sv addr_interpreter/addr_interpreter.sv
+elaborate
+read_hdl -sv encoder/codificador_pt2262.sv bit_gen/bit_generator.sv oscillator/clock_divider.sv addr_interpreter/addr_interpreter.sv
+clear
+read_hdl -sv encoder/codificador_pt2262.sv bit_gen/bit_generator.sv oscillator/clock_divider.sv addr_interpreter/addr_interpreter.sv
+elaborate
+read_hdl -sv encoder/codificador_pt2262.sv bit_gen/bit_generator.sv oscillator/clock_divider.sv addr_interpreter/addr_interpreter.sv
+elaborate
+exit

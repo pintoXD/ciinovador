@@ -15,17 +15,13 @@ module BIT_GENERATOR(
     output logic output_signal
 );
 
-typedef enum logic[7:0] {  
-    IDLE = 8'h00,
-    INITIAL_STATE = 8'h01,
-    GENERATE_BIT_1 = 8'h02,
-    GENERATE_BIT_0 = 8'h04,
-    GENERATE_BIT_F = 8'h08,
-    GENERATE_BIT_SYNC_0 = 8'h10,
-    GENERATE_BIT_SYNC_1 = 8'h11,
-    GENERATE_BIT_SYNC_2 = 8'h12,
-    GENERATE_BIT_SYNC_3 = 8'h13,
-    GENERATE_BIT_SYNC_4 = 8'h14
+typedef enum bit[2:0] {  
+    IDLE = 3'b000,
+    INITIAL_STATE = 3'b001,
+    GENERATE_BIT_1 = 3'b010,
+    GENERATE_BIT_0 = 3'b011,
+    GENERATE_BIT_F = 3'b100,
+    GENERATE_BIT_SYNC_0 = 3'b101
 } FSM_STATE;
 
 
@@ -60,10 +56,21 @@ always_ff @(posedge osc_clk) begin : pulse_counter_sync_ff
 end 
 
 
+// assign bit_sent = (current_state != IDLE && current_state != INITIAL_STATE) ? 1 : 0;
+
+// always_ff @(posedge osc_clk) begin : bit_sent_manager
+//     if(current_state != IDLE && current_state != INITIAL_STATE) begin
+//         bit_sent <= 1;
+//     end else begin
+//         bit_sent <= 0;
+//     end
+// end
+
 
 
 always_comb begin : magic_manager
     next_state = current_state;
+    bit_sent = 0;
     if(rst) begin
         next_state = IDLE;
     end else begin
@@ -77,19 +84,30 @@ always_comb begin : magic_manager
             end
 
             INITIAL_STATE: begin
-                bit_sent = 0;
+                // bit_sent = 0;
 
-                if(input_bit == 2'b00) begin
-                    next_state = GENERATE_BIT_0;
-                end else if (input_bit == 2'b01) begin
-                    next_state = GENERATE_BIT_1;
-                end else if (input_bit == 2'b10) begin
-                    next_state = GENERATE_BIT_F;
-                end else if (input_bit == 2'b11) begin
-                    next_state = GENERATE_BIT_SYNC_0;
-                end else begin
-                    next_state = INITIAL_STATE;
-                end
+                // if(input_bit == 2'b00) begin
+                //     next_state = GENERATE_BIT_0;
+                // end else if (input_bit == 2'b01) begin
+                //     next_state = GENERATE_BIT_1;
+                // end else if (input_bit == 2'b10) begin
+                //     next_state = GENERATE_BIT_F;
+                // end else if (input_bit == 2'b11) begin
+                //     next_state = GENERATE_BIT_SYNC_0;
+                // end 
+
+                unique case (input_bit)
+                    2'b00: next_state = GENERATE_BIT_0;
+                    2'b01: next_state = GENERATE_BIT_1;
+                    2'b10: next_state = GENERATE_BIT_F;
+                    2'b11: next_state = GENERATE_BIT_SYNC_0;
+                    // default: next_state = next_state;
+                endcase
+
+
+                // else begin
+                //     next_state = INITIAL_STATE;
+                // end
             end
 
             GENERATE_BIT_0: begin
@@ -192,6 +210,7 @@ always_ff @(posedge osc_clk, posedge rst) begin: magic_manager_ff
                             output_signal <= 1;
                         end else begin
                             output_signal <= 0;
+                            // bit_sent <= 1;
                         end
                     end
                     // bit_sent <= 1;
@@ -207,6 +226,7 @@ always_ff @(posedge osc_clk, posedge rst) begin: magic_manager_ff
                         end
                     end else if (pulse_counter == 31) begin
                         output_signal <= 0;
+                        // bit_sent <= 1;
                     end
                     // bit_sent <= 1;
             end
@@ -221,6 +241,7 @@ always_ff @(posedge osc_clk, posedge rst) begin: magic_manager_ff
                         end
                     end else if (pulse_counter == 31) begin
                         output_signal <= 0;
+                        // bit_sent <= 1;
                     end
                     // bit_sent <= 1;
             end
@@ -230,9 +251,9 @@ always_ff @(posedge osc_clk, posedge rst) begin: magic_manager_ff
                             output_signal <= 1;
                         end else begin
                             output_signal <= 0;
+                            // bit_sent <= 1; 
                         end
                     end
-                    // bit_sent <= 1; 
             end
         endcase
     end
