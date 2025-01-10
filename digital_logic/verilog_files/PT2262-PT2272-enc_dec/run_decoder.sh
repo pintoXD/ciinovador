@@ -1,25 +1,34 @@
 #!/bin/bash
 
 # Set the working directory
-export WORKING_DIR=${PWD}
+export WORKING_DIR=$PWD
 
 # Set the path to the address interpreter module
-export ADDRESS_INTERPRETER_PATH=${WORKING_DIR}/addr_interpreter
+export ADDRESS_INTERPRETER_PATH="$WORKING_DIR/addr_interpreter"
 
 # Set the path to the bit signal generator module
-export BIT_SIGNAL_GENERATOR_PATH=${WORKING_DIR}/bit_gen
+export BIT_SIGNAL_GENERATOR_PATH="$WORKING_DIR/bit_gen"
 
 # Set the path to the oscillator module
-export OSCILLATOR_PATH=${WORKING_DIR}/oscillator
-
-# Set the path to the shift register module
-export BIDIR_SHIFTREG=${WORKING_DIR}/bidir_shift_register
+export OSCILLATOR_PATH="$WORKING_DIR/oscillator"
 
 # Set the path to the encoder
-export ENCODER_PATH=${WORKING_DIR}/encoder
+export ENCODER_PATH="$WORKING_DIR/encoder"
+
+# Set the path to the libs
+export LIBS_PATH="$WORKING_DIR/libs"
+
+# Set the path to scripts
+export SCRIPTS_PATH="$WORKING_DIR/scripts"
+
+# Set the path to logs directory
+export LOGS_PATH="$WORKING_DIR/logs"
+
+# Define the reports folder path
+export REPORTS_PATH="$WORKING_DIR/reports"
 
 # Set the path to the decoder
-export DECODER_PATH=${WORKING_DIR}/decoder
+export DECODER_PATH="$WORKING_DIR/decoder"
 
 
 # Run Xcelium to compile the code.
