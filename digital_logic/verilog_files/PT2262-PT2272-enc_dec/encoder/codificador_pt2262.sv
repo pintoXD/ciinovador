@@ -7,25 +7,25 @@ module codificador_pt2262(
     output logic cod_o
 );
 
-typedef enum bit[7:0] {  
-    IDLE = 8'h00,
-    INITIAL_STATE = 8'h01,
-    GENERATE_A0 = 8'h02,
-    GENERATE_A1 = 8'h03,
-    GENERATE_A2 = 8'h04,
-    GENERATE_A3 = 8'h05,
-    GENERATE_A4 = 8'h06,
-    GENERATE_A5 = 8'h07,
-    GENERATE_A6 = 8'h08,
-    GENERATE_A7 = 8'h09,
-    GENERATE_D0 = 8'h0A,
-    GENERATE_D1 = 8'h0B,
-    GENERATE_D2 = 8'h0C,
-    GENERATE_D3 = 8'h0D,
-    GENERATE_SYNC = 8'h0E,
-    RESET_MODULES = 8'h0F,
-    INITIALIZE_OSCILLATOR = 8'h10,
-    INITIALIZE_BIT_GENERATOR = 8'h11
+typedef enum bit[4:0] {  
+    IDLE = 5'h00,
+    INITIAL_STATE = 5'h01,
+    GENERATE_A0 = 5'h02,
+    GENERATE_A1 = 5'h03,
+    GENERATE_A2 = 5'h04,
+    GENERATE_A3 = 5'h05,
+    GENERATE_A4 = 5'h06,
+    GENERATE_A5 = 5'h07,
+    GENERATE_A6 = 5'h08,
+    GENERATE_A7 = 5'h09,
+    GENERATE_D0 = 5'h0A,
+    GENERATE_D1 = 5'h0B,
+    GENERATE_D2 = 5'h0C,
+    GENERATE_D3 = 5'h0D,
+    GENERATE_SYNC = 5'h0E,
+    RESET_MODULES = 5'h0F,
+    INITIALIZE_OSCILLATOR = 5'h10,
+    INITIALIZE_BIT_GENERATOR = 5'h11
 } ENCODER_FSM_STATE;
 
 ENCODER_FSM_STATE current_state, next_state;
@@ -112,8 +112,6 @@ begin : save_past_osc_clk
 end
 
 assign osc_clk_rose = ( (osc_clk==1) && (past_osc_clk==0));
-
-
 
 always_comb begin : encoder_fsm
 

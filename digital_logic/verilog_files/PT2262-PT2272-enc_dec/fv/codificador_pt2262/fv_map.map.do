@@ -42,8 +42,6 @@ add mapped point internal_oscillator/clk_cycle_counting[6]/q internal_oscillator
 add mapped point signal_creator/current_state[0]/q signal_creator_current_state_reg[0]/Q  -type DFF DFF
 add mapped point signal_creator/current_state[1]/q signal_creator_current_state_reg[1]/Q  -type DFF DFF
 add mapped point signal_creator/current_state[2]/q signal_creator_current_state_reg[2]/Q  -type DFF DFF
-add mapped point signal_creator/current_state[3]/q signal_creator_current_state_reg[3]/Q  -type DFF DFF
-add mapped point signal_creator/current_state[4]/q signal_creator_current_state_reg[4]/Q  -type DFF DFF
 add mapped point signal_creator/enable_pulse_counting/q signal_creator_enable_pulse_counting_reg/Q  -type DFF DFF
 add mapped point signal_creator/enable_pulse_counting_sync/q signal_creator_enable_pulse_counting_sync_reg/Q  -type DFF DFF
 add mapped point signal_creator/is_first_run/q signal_creator_is_first_run_reg/Q  -type DFF DFF

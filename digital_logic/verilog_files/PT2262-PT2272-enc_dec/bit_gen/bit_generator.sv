@@ -15,13 +15,13 @@ module BIT_GENERATOR(
     output logic output_signal
 );
 
-typedef enum bit[7:0] {  
-    IDLE = 8'h00,
-    INITIAL_STATE = 8'h01,
-    GENERATE_BIT_1 = 8'h02,
-    GENERATE_BIT_0 = 8'h04,
-    GENERATE_BIT_F = 8'h08,
-    GENERATE_BIT_SYNC_0 = 8'h10
+typedef enum bit[2:0] {  
+    IDLE = 3'b000,
+    INITIAL_STATE = 3'b001,
+    GENERATE_BIT_1 = 3'b010,
+    GENERATE_BIT_0 = 3'b011,
+    GENERATE_BIT_F = 3'b100,
+    GENERATE_BIT_SYNC_0 = 3'b101
 } FSM_STATE;
 
 

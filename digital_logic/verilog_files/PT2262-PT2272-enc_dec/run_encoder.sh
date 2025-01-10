@@ -54,6 +54,15 @@ if [ "$1" == "xrun_raw" ]; then
             ${OSCILLATOR_PATH}/clock_divider.sv \
             +access+rw +gui \
             -s -input restore.tcl
+elif [ "$1" == "xrun_compile" ]; then
+    #Run for simulation
+    echo "Running simulation with the raw source code..."
+    sleep 1
+    xrun -compile -64bit ${ENCODER_PATH}/codificador_pt2262_tb.sv ${ENCODER_PATH}/codificador_pt2262.sv \
+            ${ADDRESS_INTERPRETER_PATH}/addr_interpreter.sv \
+            ${ADDRESS_INTERPRETER_PATH}/comp_endereco.sv \
+            ${BIT_SIGNAL_GENERATOR_PATH}/bit_generator.sv \
+            ${OSCILLATOR_PATH}/clock_divider.sv
 elif [ "$1" == "xrun_synth" ]; then
     echo "Running simulation with synthesized code..."
     sleep 1
@@ -63,12 +72,11 @@ elif [ "$1" == "xrun_synth" ]; then
         ${BIT_SIGNAL_GENERATOR_PATH}/bit_generator.sv \
         ${OSCILLATOR_PATH}/clock_divider.sv \
         +access+rw +gui \
-        # -s -input restore.tcl
-
+        -s -input restore_enc_synth.tcl
 elif [ "$1" == "genus" ]; then
     echo "Running synthesis with genus..."
     sleep 1
-    genus -abort_on_error -log "$LOGS_PATH/encoder.log" -f $SCRIPTS_PATH/synth.tcl
+    genus -abort_on_error -log "$LOGS_PATH/encoder.log" -f $SCRIPTS_PATH/encoder_synth.tcl
 else
     echo "Invalid argument. Usage: $0 <arg1> [simulation or synthesis]"
     exit 1
