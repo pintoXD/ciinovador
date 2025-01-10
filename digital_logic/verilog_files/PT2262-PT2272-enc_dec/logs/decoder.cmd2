@@ -1,0 +1,25 @@
+# Cadence Genus(TM) Synthesis Solution, Version 21.10-p002_1, built Aug 20 2021 10:13:13
+
+# Date: Fri Jan 10 16:41:10 2025
+# Host: cinova05.lesc.ufc.br (x86_64 w/Linux 4.18.0-553.27.1.el8_10.x86_64) (14cores*20cpus*1physical cpu*13th Gen Intel(R) Core(TM) i5-13500 24576KB)
+# OS:   Rocky Linux release 8.10 (Green Obsidian)
+
+source /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/scripts/decoder_synth.tcl
+elaborate decodificador_pt2272
+elaborate decodificador_pt2272
+elaborate decodificador_pt2272
+read_libs libs/fast_vdd1v2_basicCells.lib
+read_hdl -sv decoder/decodificador_pt2272.sv oscillator/clock_divider.sv addr_interpreter/addr_interpreter.sv bidir_shift_register/bidir_shiftreg.sv
+elaborate
+read_libs libs/fast_vdd1v2_basicCells.lib
+read_hdl -sv decoder/decodificador_pt2272.sv oscillator/clock_divider.sv addr_interpreter/addr_interpreter.sv bidir_shift_register/bidir_shiftreg.sv
+elaborate
+read_libs libs/fast_vdd1v2_basicCells.lib
+read_hdl -sv decoder/decodificador_pt2272.sv oscillator/clock_divider.sv addr_interpreter/addr_interpreter.sv bidir_shift_register/bidir_shiftreg.sv
+elaborate
+elaborate
+read_hdl -sv decoder/decodificador_pt2272.sv oscillator/clock_divider.sv addr_interpreter/addr_interpreter.sv bidir_shift_register/bidir_shiftreg.sv
+elaborate
+read_hdl -sv decoder/decodificador_pt2272.sv oscillator/clock_divider.sv addr_interpreter/addr_interpreter.sv bidir_shift_register/bidir_shiftreg.sv
+elaborate
+exit

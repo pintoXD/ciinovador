@@ -1,4 +1,4 @@
-# SimVision Command Script (Thu Jan 09 03:21:03 PM -03 2025)
+# SimVision Command Script (Fri Jan 10 04:50:42 PM -03 2025)
 #
 # Version 24.09.s001
 #
@@ -18,6 +18,10 @@ preferences set toolbar-Standard-WatchWindow {
 preferences set waveform-print-variables selected
 preferences set waveform-print-time range
 preferences set plugin-enable-svdatabrowser-new 1
+preferences set toolbar-SimControl-WaveWindow {
+  usual
+  position -anchor e
+}
 preferences set toolbar-Windows-WatchWindow {
   usual
   shown 0
@@ -84,7 +88,7 @@ group insert \
     [subst  {[format {decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PT2272_BIT_IN[1:0]}]} ] \
     [subst  {[format {decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_RIGHT_SHIFT_OUT}]} ] \
     [subst  {[format {decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_SERIAL_IN}]} ] \
-    [subst  {[format {decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_SIZE}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_SIZE[4:0]}]} ] \
     [subst  {[format {decodificador_pt2272_tb.DUT.D[3:0]}]} ] \
     [subst  {[format {decodificador_pt2272_tb.DUT.DECODER_FSM_STATE}]} ] \
     [subst  {[format {decodificador_pt2272_tb.DUT.HIGH_PULSE_COUNTING[4:0]}]} ] \
@@ -123,8 +127,6 @@ group insert \
     [subst  {[format {decodificador_pt2272_tb.encoder_dut.bit_sent_flag}]} ] \
     [subst  {[format {decodificador_pt2272_tb.encoder_dut.clk}]} ] \
     [subst  {[format {decodificador_pt2272_tb.encoder_dut.cod_o}]} ] \
-    [subst  {[format {decodificador_pt2272_tb.encoder_dut.current_state[7:0]}]} ] \
-    [subst  {[format {decodificador_pt2272_tb.encoder_dut.next_state[7:0]}]} ] \
     [subst  {[format {decodificador_pt2272_tb.encoder_dut.osc_clk}]} ] \
     [subst  {[format {decodificador_pt2272_tb.encoder_dut.osc_clk_rose}]} ] \
     [subst  {[format {decodificador_pt2272_tb.encoder_dut.osc_rst}]} ] \
@@ -197,7 +199,7 @@ foreach {name attrs} [subst  {
     {[format {decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PT2272_BIT_IN[1:0]}]} {}
     {[format {decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_RIGHT_SHIFT_OUT}]} {}
     {[format {decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_SERIAL_IN}]} {}
-    {[format {decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_SIZE}]} {}
+    {[format {decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_SIZE[4:0]}]} {}
     {[format {decodificador_pt2272_tb.DUT.D[3:0]}]} {-radix %b}
     {[format {decodificador_pt2272_tb.DUT.DECODER_FSM_STATE}]} {}
     {[format {decodificador_pt2272_tb.DUT.HIGH_PULSE_COUNTING[4:0]}]} {-radix %d}
@@ -213,8 +215,8 @@ foreach {name attrs} [subst  {
     {[format {decodificador_pt2272_tb.DUT.reset}]} {}
     {[format {decodificador_pt2272_tb.DUT.reset_counters}]} {}
     {[format {decodificador_pt2272_tb.DUT.internal_a[7:0]}]} {}
-    {[format {decodificador_pt2272_tb.DUT.internal_f_bit_locator[7:0]}]} {}
-    {[format {decodificador_pt2272_tb.DUT.internal_interpreted_addr[7:0]}]} {}
+    {[format {decodificador_pt2272_tb.DUT.internal_f_bit_locator[7:0]}]} {-radix %b}
+    {[format {decodificador_pt2272_tb.DUT.internal_interpreted_addr[7:0]}]} {-radix %b}
     {[format {decodificador_pt2272_tb.DUT.INTERPRETED_ADDR[7:0]}]} {}
     {[format {decodificador_pt2272_tb.DUT.F_BIT_LOCATOR[7:0]}]} {}
 }] childcmds {
@@ -224,14 +226,8 @@ foreach {name attrs} [subst  {
     {}
     {}
     {}
-    {
-        set id $gpID0
-        waveform hierarchy collapse $id
-    }
-    {
-        set id $gpID0
-        waveform hierarchy collapse $id
-    }
+    {}
+    {}
     {}
     {}
     {}
@@ -287,8 +283,6 @@ foreach {name attrs} [subst  {
     {[format {decodificador_pt2272_tb.encoder_dut.bit_sent_flag}]} {}
     {[format {decodificador_pt2272_tb.encoder_dut.clk}]} {}
     {[format {decodificador_pt2272_tb.encoder_dut.cod_o}]} {}
-    {[format {decodificador_pt2272_tb.encoder_dut.current_state[7:0]}]} {}
-    {[format {decodificador_pt2272_tb.encoder_dut.next_state[7:0]}]} {}
     {[format {decodificador_pt2272_tb.encoder_dut.osc_clk}]} {}
     {[format {decodificador_pt2272_tb.encoder_dut.osc_clk_rose}]} {}
     {[format {decodificador_pt2272_tb.encoder_dut.osc_rst}]} {}
@@ -296,8 +290,6 @@ foreach {name attrs} [subst  {
     {[format {decodificador_pt2272_tb.encoder_dut.reset}]} {}
     {[format {decodificador_pt2272_tb.encoder_dut.sync}]} {}
 }] childcmds {
-    {}
-    {}
     {}
     {}
     {}
@@ -333,7 +325,7 @@ foreach {name attrs} [subst  {
 waveform hierarchy collapse $groupId0
 
 
-waveform xview limits 0 1600832ps
+waveform xview limits 0 91039575000ps
 
 #
 # Waveform Window Links

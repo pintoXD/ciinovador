@@ -9,7 +9,7 @@ module decodificador_pt2272(
 );
 
 
-typedef enum logic[7:0] {  
+typedef enum bit[3:0] {  
     IDLE = 8'h00,
     COUNTS_HIGH_PULSE = 8'h01,
     COUNTS_LOW_PULSE = 8'h02,
@@ -17,8 +17,8 @@ typedef enum logic[7:0] {
     BIT_0_DETECTED = 8'h04,
     BIT_F_DETECTED = 8'h05,
     BIT_SYNC_DETECTED = 8'h06,
-    INITIAL_STATE = 8'h1F,
-    PULSE_COUNTING = 8'h20
+    INITIAL_STATE = 8'h07,
+    PULSE_COUNTING = 8'h08
 
 } DECODER_FSM_STATE;
 
@@ -60,25 +60,25 @@ CLOCK_DIVIDER #(
 *
 ******************************************/
 // Parameters
-// const logic [5:0] BIDIR_SHIFTREG_SIZE = 26;
-parameter int BIDIR_SHIFTREG_SIZE = 26;
+const logic [4:0] BIDIR_SHIFTREG_SIZE = 26;
+// parameter int BIDIR_SHIFTREG_SIZE = 26;
 // Inputs
 logic BIDIR_SHIFTREG_ENABLER;
-logic BIDIR_SHIFTREG_SERIAL_IN;
-logic [BIDIR_SHIFTREG_SIZE-1:0] BIDIR_SHIFTREG_PARALLEL_IN;
+// logic BIDIR_SHIFTREG_SERIAL_IN;
+// logic [25:0] BIDIR_SHIFTREG_PARALLEL_IN;
 logic [2:0] BIDIR_SHIFTREG_OP_MODE;
 logic [1:0] BIDIR_SHIFTREG_PT2272_BIT_IN;
 
 // Outputs
-logic [BIDIR_SHIFTREG_SIZE-1:0] BIDIR_SHIFTREG_PARALLEL_OUT;
+logic [25:0] BIDIR_SHIFTREG_PARALLEL_OUT;
 logic BIDIR_SHIFTREG_RIGHT_SHIFT_OUT;
 logic BIDIR_SHIFTREG_LEFT_SHIFT_OUT;
 
 // Instantiate the shiftreg
-BIDIR_SHIFTREG #(BIDIR_SHIFTREG_SIZE) RCVD_DATA_SHIFTREG (
+BIDIR_SHIFTREG RCVD_DATA_SHIFTREG (
     .enable(BIDIR_SHIFTREG_ENABLER),
-    .shift_in(BIDIR_SHIFTREG_SERIAL_IN),
-    .d(BIDIR_SHIFTREG_PARALLEL_IN),
+    .shift_in(1'b0),
+    .d(26'h0),
     .PT2272_BIT(BIDIR_SHIFTREG_PT2272_BIT_IN),
     .OP(BIDIR_SHIFTREG_OP_MODE),
     .q(BIDIR_SHIFTREG_PARALLEL_OUT),
@@ -94,7 +94,7 @@ BIDIR_SHIFTREG #(BIDIR_SHIFTREG_SIZE) RCVD_DATA_SHIFTREG (
 logic PREVIOUS_cod_i;
 logic cod_i_ROSE;
 logic cod_i_FELL;
-
+logic current_cod_i;
 
 /*****************************************
 *
@@ -103,7 +103,7 @@ logic cod_i_FELL;
 ******************************************/
 
 logic [7:0] INTERPRETED_ADDR, F_BIT_LOCATOR;
-logic [7:0] internal_a, internal_interpreted_addr, internal_f_bit_locator;
+logic [7:0] internal_interpreted_addr, internal_f_bit_locator;
 
 ADDRESS_INTERPRETER addr_translator(
     .A(A),
@@ -112,13 +112,13 @@ ADDRESS_INTERPRETER addr_translator(
 );
 
 
-
+assign current_cod_i = cod_i;
 
 always_ff @(posedge cod_i, posedge reset) begin : SAVE_PAST_cod_i
     if(reset)
         PREVIOUS_cod_i <= 0;
     else
-        PREVIOUS_cod_i <= cod_i;
+        PREVIOUS_cod_i <= current_cod_i;
 end
 
 assign cod_i_ROSE = ((cod_i==1) && (PREVIOUS_cod_i==1));
@@ -231,8 +231,8 @@ end
 always_ff @(posedge osc_clk, posedge reset) begin : DECODER_FSM_FF_BLOCK
     if(reset) begin
         reset_counters <= 0;
-        BIDIR_SHIFTREG_PARALLEL_IN <= 26'b0; // Initialize the shift register with 0
-        BIDIR_SHIFTREG_SERIAL_IN <= 0; // Shift in 0 to the shift register by default.
+        // BIDIR_SHIFTREG_PARALLEL_IN <= 26'b0; // Initialize the shift register with 0
+        // BIDIR_SHIFTREG_SERIAL_IN <= 0; // Shift in 0 to the shift register by default.
         BIDIR_SHIFTREG_PT2272_BIT_IN <= 2'b00; // Shift in 00 to the shift register by default.
         BIDIR_SHIFTREG_OP_MODE <= 3'b011;   // Load mode to loads a 0 to the shift register
         BIDIR_SHIFTREG_ENABLER <= 1; // Enable the shift register to load the 0 data.
@@ -304,37 +304,37 @@ always_ff @(posedge osc_clk, posedge reset) begin : DECODER_FSM_FF_BLOCK
 end
 
 
-always_comb begin : RECEIVER_PAYLOAD_D_REGISTERING
-    if(reset)
-        D = 4'b0000;
-    else begin
-        if (BIDIR_SHIFTREG_PARALLEL_OUT[25:24] == 2'b01)begin
-            D[0] = BIDIR_SHIFTREG_PARALLEL_OUT[23] & BIDIR_SHIFTREG_PARALLEL_OUT[22];
-            D[1] = BIDIR_SHIFTREG_PARALLEL_OUT[21] & BIDIR_SHIFTREG_PARALLEL_OUT[20];
-            D[2] = BIDIR_SHIFTREG_PARALLEL_OUT[19] & BIDIR_SHIFTREG_PARALLEL_OUT[18];
-            D[3] = BIDIR_SHIFTREG_PARALLEL_OUT[17] & BIDIR_SHIFTREG_PARALLEL_OUT[16];
-        end
-    end
-end
-// always_ff @(posedge osc_clk, posedge reset) begin : RECEIVER_PAYLOAD_D_REGISTERING
+// always_comb begin : RECEIVER_PAYLOAD_D_REGISTERING
 //     if(reset)
-//         D <= 4'b0000;
+//         D = 4'b0000;
 //     else begin
 //         if (BIDIR_SHIFTREG_PARALLEL_OUT[25:24] == 2'b01)begin
-//             D[0] <= BIDIR_SHIFTREG_PARALLEL_OUT[23] & BIDIR_SHIFTREG_PARALLEL_OUT[22];
-//             D[1] <= BIDIR_SHIFTREG_PARALLEL_OUT[21] & BIDIR_SHIFTREG_PARALLEL_OUT[20];
-//             D[2] <= BIDIR_SHIFTREG_PARALLEL_OUT[19] & BIDIR_SHIFTREG_PARALLEL_OUT[18];
-//             D[3] <= BIDIR_SHIFTREG_PARALLEL_OUT[17] & BIDIR_SHIFTREG_PARALLEL_OUT[16];
+//             D[0] = BIDIR_SHIFTREG_PARALLEL_OUT[23] & BIDIR_SHIFTREG_PARALLEL_OUT[22];
+//             D[1] = BIDIR_SHIFTREG_PARALLEL_OUT[21] & BIDIR_SHIFTREG_PARALLEL_OUT[20];
+//             D[2] = BIDIR_SHIFTREG_PARALLEL_OUT[19] & BIDIR_SHIFTREG_PARALLEL_OUT[18];
+//             D[3] = BIDIR_SHIFTREG_PARALLEL_OUT[17] & BIDIR_SHIFTREG_PARALLEL_OUT[16];
 //         end
 //     end
 // end
+
+always_ff @(posedge osc_clk, posedge reset) begin : RECEIVER_PAYLOAD_D_REGISTERING
+    if(reset)
+        D <= 4'b0000;
+    else begin
+        if (BIDIR_SHIFTREG_PARALLEL_OUT[25:24] == 2'b01 && dv == 1)begin
+            D[0] <= BIDIR_SHIFTREG_PARALLEL_OUT[23] & BIDIR_SHIFTREG_PARALLEL_OUT[22];
+            D[1] <= BIDIR_SHIFTREG_PARALLEL_OUT[21] & BIDIR_SHIFTREG_PARALLEL_OUT[20];
+            D[2] <= BIDIR_SHIFTREG_PARALLEL_OUT[19] & BIDIR_SHIFTREG_PARALLEL_OUT[18];
+            D[3] <= BIDIR_SHIFTREG_PARALLEL_OUT[17] & BIDIR_SHIFTREG_PARALLEL_OUT[16];
+        end
+    end
+end
 
 logic [8:0] i;
 
 always_ff @(posedge osc_clk, posedge reset) begin : RECEIVER_ADDRESS_REGISTERING_AND_VALIDATION
     if(reset)begin
         dv <= 0;
-        internal_a <= 8'b00000000;
         internal_f_bit_locator <= 8'b00000000;
         internal_interpreted_addr <= 8'b00000000;
     end
@@ -405,7 +405,6 @@ always_ff @(posedge osc_clk, posedge reset) begin : RECEIVER_ADDRESS_REGISTERING
                 internal_f_bit_locator[1] <= 1;
             end
 
-            // dv <= (^internal_f_bit_locator == ^F_BIT_LOCATOR) && (^internal_interpreted_addr == ^INTERPRETED_ADDR) ? 1 : 0;
             dv <= 1;
 
             for (i = 0; i < 8; i++) begin
