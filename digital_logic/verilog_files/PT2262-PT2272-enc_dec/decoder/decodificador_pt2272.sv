@@ -61,6 +61,7 @@ const logic [4:0] BIDIR_SHIFTREG_SIZE = 26;
 // parameter int BIDIR_SHIFTREG_SIZE = 26;
 // Inputs
 logic BIDIR_SHIFTREG_ENABLER;
+logic BIDIR_SHIFTREG_RESET;
 // logic BIDIR_SHIFTREG_SERIAL_IN;
 // logic [25:0] BIDIR_SHIFTREG_PARALLEL_IN;
 logic [2:0] BIDIR_SHIFTREG_OP_MODE;
@@ -205,9 +206,10 @@ always_ff @(posedge osc_clk, posedge reset) begin : DECODER_FSM_FF_BLOCK
         reset_counters <= 0;
         // BIDIR_SHIFTREG_PARALLEL_IN <= 26'b0; // Initialize the shift register with 0
         // BIDIR_SHIFTREG_SERIAL_IN <= 0; // Shift in 0 to the shift register by default.
-        BIDIR_SHIFTREG_PT2272_BIT_IN <= 2'b00; // Shift in 00 to the shift register by default.
-        BIDIR_SHIFTREG_OP_MODE <= 3'b011;   // Load mode to loads a 0 to the shift register
-        BIDIR_SHIFTREG_ENABLER <= 1; // Enable the shift register to load the 0 data.
+        // BIDIR_SHIFTREG_PT2272_BIT_IN <= 2'b00; // Shift in 00 to the shift register by default.
+        // BIDIR_SHIFTREG_OP_MODE <= 3'b011;   // Load mode to loads a 0 to the shift register
+        // BIDIR_SHIFTREG_ENABLER <= 0; // Enable the shift register to load the 0 data.
+        BIDIR_SHIFTREG_RESET <= 1;
     end else begin
         unique case(current_state)
             INITIAL_STATE: begin
