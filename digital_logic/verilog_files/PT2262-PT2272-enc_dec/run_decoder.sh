@@ -49,21 +49,7 @@ if [ $# -lt 1 ]; then
     exit 1
 fi
 
-# Run Xcelium to compile the code.
-
-# xrun -64bit ${DECODER_PATH}/decodificador_pt2272_tb.sv ${DECODER_PATH}/decodificador_pt2272.sv \
-#             ${ENCODER_PATH}/codificador_pt2262.sv \
-#             ${ADDRESS_INTERPRETER_PATH}/addr_interpreter.sv \
-#             ${ADDRESS_INTERPRETER_PATH}/comp_endereco.sv \
-#             ${BIT_SIGNAL_GENERATOR_PATH}/bit_generator.sv \
-#             ${OSCILLATOR_PATH}/clock_divider.sv \
-#             ${BIDIR_SHIFTREG}/bidir_shiftreg.sv \
-#             +access+rw +gui \
-#             -s -input restore_dec.tcl
-
-
-
-
+# Check if the argument is valid
 if [ "$1" == "xrun_raw" ]; then
     #Run for simulation
     echo "Running simulation with the raw source code..."
@@ -88,6 +74,18 @@ elif [ "$1" == "xrun_compile" ]; then
 elif [ "$1" == "xrun_synth" ]; then
     echo "Running simulation with synthesized code..."
     xrun -64bit ${DECODER_PATH}/decodificador_pt2272_tb.sv ${DECODER_PATH}/decodificador_pt2272.v \
+        ${LIBS_PATH}/fast_vdd1v2_basicCells.v \
+        ${ENCODER_PATH}/codificador_pt2262.sv \
+        ${ADDRESS_INTERPRETER_PATH}/addr_interpreter.sv \
+        ${ADDRESS_INTERPRETER_PATH}/comp_endereco.sv \
+        ${BIT_SIGNAL_GENERATOR_PATH}/bit_generator.sv \
+        ${OSCILLATOR_PATH}/clock_divider.sv \
+        ${BIDIR_SHIFTREG_PATH}/bidir_shiftreg.sv \
+        +access+rw +gui
+elif [ "$1" == "xrun_sdf" ]; then
+    echo "Running simulation with synthesized code..."
+    xrun -64bit -sdf_cmd_file ${DECODER_PATH}/decoder_sdf.cmd\
+        ${DECODER_PATH}/decodificador_pt2272_tb.sv ${DECODER_PATH}/decodificador_pt2272.v \
         ${LIBS_PATH}/fast_vdd1v2_basicCells.v \
         ${ENCODER_PATH}/codificador_pt2262.sv \
         ${ADDRESS_INTERPRETER_PATH}/addr_interpreter.sv \

@@ -39,13 +39,19 @@ syn_opt
 
 # Reports generation
 puts "Generating reports..."
-report area > "$reports_dir/encoder_area.txt"
-report power > "$reports_dir/encoder_power.txt"
-report gates > "$reports_dir/encoder_gates.txt"
+report sequential > "$reports_dir/decoder_sequential.txt"
+report area > "$reports_dir/decoder_area.txt"
+report power > "$reports_dir/decoder_power.txt"
+report gates > "$reports_dir/decoder_gates.txt"
 
 # Write the netlist
 puts "Writing the netlist..."
 write_netlist > "$decoder_dir/decodificador_pt2272.v"
+
+# Write the SDF file
+puts "Writing the sdf..."
+write_sdf > "$decoder_dir/decodificador_pt2272.sdf"
+
 
 # Quit the tool
 exit
