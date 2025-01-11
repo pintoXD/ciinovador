@@ -1,25 +1,26 @@
 xrun(64): 24.09-s001: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	24.09-s001: Started on Jan 10, 2025 at 21:58:11 -03
+TOOL:	xrun(64)	24.09-s001: Started on Jan 10, 2025 at 22:11:01 -03
 xrun
 	-64bit
-	-sdf_cmd_file /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/encoder_sdf.cmd
-	/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262_tb.sv
-	/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262.v
+	-ALLOWREDEFINITION
+	/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272_tb.sv
+	/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272.v
 	/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/libs/fast_vdd1v2_basicCells.v
+	/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262.v
 	/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/addr_interpreter/comp_endereco.sv
-	/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/bit_gen/bit_generator.sv
-	/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/oscillator/clock_divider.sv
 	+access+rw
 	+gui
-	-s
-	-input restore_enc_synth.tcl
-Recompiling... reason: file './encoder/encoder_sdf.cmd' is newer than expected.
-	expected: Fri Jan 10 21:32:50 2025
-	actual:   Fri Jan 10 21:57:14 2025
+file: /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262.v
+module ADDRESS_INTERPRETER(A, INTERPRETED_ADDR, F_BIT_LOCATOR);
+                         |
+xmvlog: *W,RECOME (/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262.v,7|25): recompiling design unit worklib.ADDRESS_INTERPRETER:v.
+	First compiled from line 7 of /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272.v.
+	module worklib.ADDRESS_INTERPRETER:v
+		errors: 0, warnings: 1
 		Caching library 'worklib' ....... Done
 	Elaborating the design hierarchy:
 	Top level design units:
-		codificador_pt2262_tb
+		decodificador_pt2272_tb
 		ACHCONX2
 		ADDFHX1
 		ADDFHX2
@@ -29,7 +30,6 @@ Recompiling... reason: file './encoder/encoder_sdf.cmd' is newer than expected.
 		ADDFX2
 		ADDFX4
 		ADDFXL
-		ADDHX1
 		ADDHX2
 		ADDHX4
 		ADDHXL
@@ -86,7 +86,6 @@ Recompiling... reason: file './encoder/encoder_sdf.cmd' is newer than expected.
 		AOI31X2
 		AOI31X4
 		AOI31XL
-		AOI32X1
 		AOI32X2
 		AOI32X4
 		AOI32XL
@@ -132,7 +131,6 @@ Recompiling... reason: file './encoder/encoder_sdf.cmd' is newer than expected.
 		CLKMX2X4
 		CLKMX2X6
 		CLKMX2X8
-		CLKXOR2X1
 		CLKXOR2X2
 		CLKXOR2X4
 		CLKXOR2X8
@@ -181,7 +179,6 @@ Recompiling... reason: file './encoder/encoder_sdf.cmd' is newer than expected.
 		DFFTRX2
 		DFFTRX4
 		DFFTRXL
-		DFFX1
 		DFFX2
 		DFFX4
 		DFFXL
@@ -260,7 +257,6 @@ Recompiling... reason: file './encoder/encoder_sdf.cmd' is newer than expected.
 		NAND3X4
 		NAND3X6
 		NAND3X8
-		NAND3XL
 		NAND4BBX1
 		NAND4BBX2
 		NAND4BBX4
@@ -305,7 +301,6 @@ Recompiling... reason: file './encoder/encoder_sdf.cmd' is newer than expected.
 		OA21X2
 		OA21X4
 		OA21XL
-		OA22X1
 		OA22X2
 		OA22X4
 		OA22XL
@@ -315,15 +310,12 @@ Recompiling... reason: file './encoder/encoder_sdf.cmd' is newer than expected.
 		OAI21X1
 		OAI21X2
 		OAI21X4
-		OAI21XL
-		OAI221X1
 		OAI221X2
 		OAI221X4
 		OAI221XL
 		OAI222X1
 		OAI222X2
 		OAI222X4
-		OAI222XL
 		OAI22X2
 		OAI22X4
 		OAI2BB1X2
@@ -474,202 +466,47 @@ Recompiling... reason: file './encoder/encoder_sdf.cmd' is newer than expected.
 		XOR2XL
 		XOR3X1
 		XOR3XL
-		BIT_GENERATOR
-		CLOCK_DIVIDER
-xmelab: *W,FLFEXS: Expected string but found name "1.0:1.0:1.0" in SDF annotation command file /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/encoder_sdf.cmd, line 4, trying to continue.
-	Reading SDF file from location "/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262.sdf"
-	Writing compiled SDF file to "codificador_pt2262.sdf.X".
-	Annotating SDF timing data:
-		Compiled SDF file:     codificador_pt2262.sdf.X
-		Log file:              encoder_sdf.log
-		Backannotation scope:  codificador_pt2262_tb.DUT
-		Configuration file:    
-		MTM control:           MAXIMUM
-		Scale factors:         1:1:1
-		Scale type:            
-xmelab: *W,SDFNG2: An SDF 2 limit timing check request (RECREM (posedge RN) (posedge CK) (-12) (24)) contains a negative limit and was matched to 2 single limit timing checks.  Negative limit will be set to 0 <./encoder/codificador_pt2262.sdf, line 1044>.
-xmelab: *W,SDFNG2: An SDF 2 limit timing check request (RECREM (posedge RN) (posedge CK) (-12) (24)) contains a negative limit and was matched to 2 single limit timing checks.  Negative limit will be set to 0 <./encoder/codificador_pt2262.sdf, line 1066>.
-xmelab: *W,SDFNG2: An SDF 2 limit timing check request (RECREM (posedge RN) (posedge CK) (-12) (24)) contains a negative limit and was matched to 2 single limit timing checks.  Negative limit will be set to 0 <./encoder/codificador_pt2262.sdf, line 1084>.
-xmelab: *W,SDFNG2: An SDF 2 limit timing check request (RECREM (posedge RN) (posedge CK) (-12) (24)) contains a negative limit and was matched to 2 single limit timing checks.  Negative limit will be set to 0 <./encoder/codificador_pt2262.sdf, line 1102>.
-xmelab: *W,SDFNG2: An SDF 2 limit timing check request (RECREM (posedge RN) (posedge CK) (-12) (24)) contains a negative limit and was matched to 2 single limit timing checks.  Negative limit will be set to 0 <./encoder/codificador_pt2262.sdf, line 1120>.
-xmelab: *W,SDFNG2: An SDF 2 limit timing check request (RECREM (posedge RN) (posedge CK) (-12) (24)) contains a negative limit and was matched to 2 single limit timing checks.  Negative limit will be set to 0 <./encoder/codificador_pt2262.sdf, line 1138>.
-xmelab: *W,SDFNG2: An SDF 2 limit timing check request (RECREM (posedge RN) (posedge CK) (-13) (24)) contains a negative limit and was matched to 2 single limit timing checks.  Negative limit will be set to 0 <./encoder/codificador_pt2262.sdf, line 1203>.
-xmelab: *W,SDFNG2: An SDF 2 limit timing check request (RECREM (posedge SN) (posedge CK) (-1) (9)) contains a negative limit and was matched to 2 single limit timing checks.  Negative limit will be set to 0 <./encoder/codificador_pt2262.sdf, line 1225>.
-xmelab: *W,SDFNG2: An SDF 2 limit timing check request (RECREM (posedge RN) (posedge CK) (-13) (24)) contains a negative limit and was matched to 2 single limit timing checks.  Negative limit will be set to 0 <./encoder/codificador_pt2262.sdf, line 1243>.
-xmelab: *W,SDFNG2: An SDF 2 limit timing check request (RECREM (posedge RN) (posedge CK) (-12) (24)) contains a negative limit and was matched to 2 single limit timing checks.  Negative limit will be set to 0 <./encoder/codificador_pt2262.sdf, line 2771>.
-xmelab: *W,SDFNG2: An SDF 2 limit timing check request (RECREM (posedge RN) (posedge CK) (-13) (24)) contains a negative limit and was matched to 2 single limit timing checks.  Negative limit will be set to 0 <./encoder/codificador_pt2262.sdf, line 2791>.
-xmelab: *W,SDFNG2: An SDF 2 limit timing check request (RECREM (posedge RN) (posedge CK) (-12) (24)) contains a negative limit and was matched to 2 single limit timing checks.  Negative limit will be set to 0 <./encoder/codificador_pt2262.sdf, line 2811>.
-	Annotation completed with 0 Errors and 12 Warnings
-	SDF statistics: 
-		 No. of Pathdelays = 2064    	 No. of Disabled Pathdelays = 0        Annotated = 24.76% (511/2064) 
-		 No. of Tchecks    = 1420    	 No. of Disabled Tchecks    = 0        Annotated = 6.06% (86.00/1420) 
-
-				        Total(T) 	   Disabled(D) 	    Annotated(A)	  Percentage(A/(T-D))
-
-		Path Delays 	          2064	             0	               511	                 24.76
-
-		$hold       	           104	             0	                 0	                  0.00
-
-		$width      	           456	             0	                 0	                  0.00
-
-		$recovery   	           104	             0	                12	                 11.54
-
-		$setuphold  	           756	             0	             74.00	                  9.79
-		      $setup	           756	             0	                74	                  9.79
-		       $hold	           756	             0	                74	                  9.79
-
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.DFFRX1:v <0x47f77eed>
+		worklib.DFFSHQX1:v <0x0a6622b0>
 			streams:   0, words:     0
-		worklib.DFFRHQX1:v <0x3c71bb7d>
-			streams:   0, words:     0
-		worklib.DFFSHQX1:v <0x3042090f>
-			streams:   0, words:     0
-		worklib.DFFRHQX1:v <0x462ab636>
-			streams:   0, words:     0
-		worklib.SDFFRHQX1:v <0x1dac86f8>
-			streams:   0, words:     0
-		worklib.DFFHQX1:v <0x7aa0adcc>
-			streams:   0, words:     0
+		worklib.decodificador_pt2272_tb:sv <0x3e474b62>
+			streams:  11, words:  7627
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
 		                     Instances  Unique
-		Modules:                   669     495
-		UDPs:                      328      14
-		Primitives:              2,201       6
-		Timing outputs:            744     394
-		Registers:                 203     189
-		Scalar wires:            2,973       -
-		Expanded wires:             20       3
-		Vectored wires:              3       -
-		Always blocks:               7       7
+		Modules:                   912     494
+		UDPs:                      478      14
+		Primitives:              2,914       6
+		Timing outputs:          1,003     431
+		Registers:                 274     182
+		Scalar wires:            3,348       -
+		Expanded wires:             40       6
+		Vectored wires:              2       -
+		Always blocks:               2       1
 		Initial blocks:              2       2
-		Cont. assignments:           1       1
-		Pseudo assignments:          6       -
-		Timing checks:           2,176      39
-		Interconnect:              518       -
-		Delayed tcheck signals:    594     561
-		Process Clocks:              5       3
+		Pseudo assignments:          9       -
+		Timing checks:           3,181       -
+		Delayed tcheck signals:    828     657
 		Simulation timescale:      1ps
-	Writing initial simulation snapshot: worklib.codificador_pt2262_tb:sv
+	Writing initial simulation snapshot: worklib.decodificador_pt2272_tb:sv
 xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
 
 -------------------------------------
 Relinquished control to SimVision...
 xcelium> 
 xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
-xcelium> 
-xcelium> # XM-Sim Command File
-xcelium> # TOOL:	xmsim(64)	24.09-s001
-xcelium> #
-xcelium> #
-xcelium> # You can restore this configuration with:
-xcelium> #
-xcelium> #      xrun -64bit /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262_tb.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262.v /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/libs/fast_vdd1v2_basicCells.v /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/addr_interpreter/comp_endereco.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/bit_gen/bit_generator.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/oscillator/clock_divider.sv +access+rw +gui -s -input restore_enc_synth.tcl -input /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/restore_enc_synth.tcl
-xcelium> #
-xcelium> 
-xcelium> set tcl_prompt1 {puts -nonewline "xcelium> "}
-puts -nonewline "xcelium> "
-xcelium> set tcl_prompt2 {puts -nonewline "> "}
-puts -nonewline "> "
-xcelium> set vlog_format %h
-%h
-xcelium> set vhdl_format %v
-%v
-xcelium> set real_precision 6
-6
-xcelium> set display_unit auto
-auto
-xcelium> set time_unit module
-module
-xcelium> set heap_garbage_size -200
--200
-xcelium> set heap_garbage_time 0
-0
-xcelium> set assert_report_level note
-note
-xcelium> set assert_stop_level error
-error
-xcelium> set autoscope yes
-yes
-xcelium> set assert_1164_warnings yes
-yes
-xcelium> set pack_assert_off {}
-xcelium> set severity_pack_assert_off {note warning}
-note warning
-xcelium> set assert_output_stop_level failed
-failed
-xcelium> set tcl_debug_level 0
-0
-xcelium> set relax_path_name 1
-1
-xcelium> set vhdl_vcdmap XX01ZX01X
-XX01ZX01X
-xcelium> set intovf_severity_level ERROR
-ERROR
-xcelium> set probe_screen_format 0
-0
-xcelium> set rangecnst_severity_level ERROR
-ERROR
-xcelium> set textio_severity_level ERROR
-ERROR
-xcelium> set vital_timing_checks_on 1
-1
-xcelium> set vlog_code_show_force 0
-0
-xcelium> set assert_count_attempts 1
-1
-xcelium> set tcl_all64 false
-false
-xcelium> set tcl_runerror_exit false
-false
-xcelium> set assert_report_incompletes 0
-0
-xcelium> set show_force 1
-1
-xcelium> set force_reset_by_reinvoke 0
-0
-xcelium> set tcl_relaxed_literal 0
-0
-xcelium> set probe_exclude_patterns {}
-xcelium> set probe_packed_limit 4k
-4k
-xcelium> set probe_unpacked_limit 16k
-16k
-xcelium> set assert_internal_msg no
-no
-xcelium> set svseed 1
-1
-xcelium> set assert_reporting_mode 0
-0
-xcelium> set vcd_compact_mode 0
-0
-xcelium> set vhdl_forgen_loopindex_enum_pos 0
-0
-xcelium> set xmreplay_dc_debug 0
-0
-xcelium> set tcl_runcmd_interrupt next_command
-next_command
-xcelium> set tcl_sigval_prefix {#}
-#
-xcelium> alias . run
-xcelium> alias indago verisium
-xcelium> alias quit exit
-xcelium> database -open -shm -into waves.shm waves -default
+xcelium> database -open waves -into waves.shm -default
 Created default SHM database waves
-xcelium> probe -create -database waves codificador_pt2262_tb.DUT.A codificador_pt2262_tb.DUT.D codificador_pt2262_tb.DUT.F_BIT_LOCATOR codificador_pt2262_tb.DUT.INTERPRETED_ADDR codificador_pt2262_tb.DUT.bit_gen_input codificador_pt2262_tb.DUT.clk codificador_pt2262_tb.DUT.cod_o codificador_pt2262_tb.DUT.current_state codificador_pt2262_tb.DUT.internal_oscillator_clk_cycle_counting codificador_pt2262_tb.DUT.n_0 codificador_pt2262_tb.DUT.n_1 codificador_pt2262_tb.DUT.n_2 codificador_pt2262_tb.DUT.n_3 codificador_pt2262_tb.DUT.n_4 codificador_pt2262_tb.DUT.n_5 codificador_pt2262_tb.DUT.n_6 codificador_pt2262_tb.DUT.n_7 codificador_pt2262_tb.DUT.n_8 codificador_pt2262_tb.DUT.n_9 codificador_pt2262_tb.DUT.n_10 codificador_pt2262_tb.DUT.n_11 codificador_pt2262_tb.DUT.n_12 codificador_pt2262_tb.DUT.n_13 codificador_pt2262_tb.DUT.n_14 codificador_pt2262_tb.DUT.n_17 codificador_pt2262_tb.DUT.n_18 codificador_pt2262_tb.DUT.n_19 codificador_pt2262_tb.DUT.n_20 codificador_pt2262_tb.DUT.n_21 codificador_pt2262_tb.DUT.n_22 codificador_pt2262_tb.DUT.n_24 codificador_pt2262_tb.DUT.n_25 codificador_pt2262_tb.DUT.n_26 codificador_pt2262_tb.DUT.n_27 codificador_pt2262_tb.DUT.n_28 codificador_pt2262_tb.DUT.n_29 codificador_pt2262_tb.DUT.n_30 codificador_pt2262_tb.DUT.n_31 codificador_pt2262_tb.DUT.n_32 codificador_pt2262_tb.DUT.n_33 codificador_pt2262_tb.DUT.n_34 codificador_pt2262_tb.DUT.n_35 codificador_pt2262_tb.DUT.n_36 codificador_pt2262_tb.DUT.n_37 codificador_pt2262_tb.DUT.n_38 codificador_pt2262_tb.DUT.n_41 codificador_pt2262_tb.DUT.n_42 codificador_pt2262_tb.DUT.n_43 codificador_pt2262_tb.DUT.n_44 codificador_pt2262_tb.DUT.n_45 codificador_pt2262_tb.DUT.n_46 codificador_pt2262_tb.DUT.n_47 codificador_pt2262_tb.DUT.n_48 codificador_pt2262_tb.DUT.n_49 codificador_pt2262_tb.DUT.n_50 codificador_pt2262_tb.DUT.n_51 codificador_pt2262_tb.DUT.n_53 codificador_pt2262_tb.DUT.n_54 codificador_pt2262_tb.DUT.n_55 codificador_pt2262_tb.DUT.n_56 codificador_pt2262_tb.DUT.n_57 codificador_pt2262_tb.DUT.n_58 codificador_pt2262_tb.DUT.n_59 codificador_pt2262_tb.DUT.n_61 codificador_pt2262_tb.DUT.n_62 codificador_pt2262_tb.DUT.n_63 codificador_pt2262_tb.DUT.n_65 codificador_pt2262_tb.DUT.n_66 codificador_pt2262_tb.DUT.n_67 codificador_pt2262_tb.DUT.n_68 codificador_pt2262_tb.DUT.n_69 codificador_pt2262_tb.DUT.n_70 codificador_pt2262_tb.DUT.n_71 codificador_pt2262_tb.DUT.n_72 codificador_pt2262_tb.DUT.n_73 codificador_pt2262_tb.DUT.n_75 codificador_pt2262_tb.DUT.n_76 codificador_pt2262_tb.DUT.n_77 codificador_pt2262_tb.DUT.n_78 codificador_pt2262_tb.DUT.n_79 codificador_pt2262_tb.DUT.n_80 codificador_pt2262_tb.DUT.n_81 codificador_pt2262_tb.DUT.n_82 codificador_pt2262_tb.DUT.n_83 codificador_pt2262_tb.DUT.n_84 codificador_pt2262_tb.DUT.n_85 codificador_pt2262_tb.DUT.n_86 codificador_pt2262_tb.DUT.n_87 codificador_pt2262_tb.DUT.n_88 codificador_pt2262_tb.DUT.n_89 codificador_pt2262_tb.DUT.n_90 codificador_pt2262_tb.DUT.n_91 codificador_pt2262_tb.DUT.n_92 codificador_pt2262_tb.DUT.n_94 codificador_pt2262_tb.DUT.n_95 codificador_pt2262_tb.DUT.n_96 codificador_pt2262_tb.DUT.n_97 codificador_pt2262_tb.DUT.n_98 codificador_pt2262_tb.DUT.n_99 codificador_pt2262_tb.DUT.n_100 codificador_pt2262_tb.DUT.n_101 codificador_pt2262_tb.DUT.n_102 codificador_pt2262_tb.DUT.n_103 codificador_pt2262_tb.DUT.n_104 codificador_pt2262_tb.DUT.n_105 codificador_pt2262_tb.DUT.n_106 codificador_pt2262_tb.DUT.n_107 codificador_pt2262_tb.DUT.n_108 codificador_pt2262_tb.DUT.n_109 codificador_pt2262_tb.DUT.n_110 codificador_pt2262_tb.DUT.n_111 codificador_pt2262_tb.DUT.n_115 codificador_pt2262_tb.DUT.n_116 codificador_pt2262_tb.DUT.n_117 codificador_pt2262_tb.DUT.n_118 codificador_pt2262_tb.DUT.n_119 codificador_pt2262_tb.DUT.n_121 codificador_pt2262_tb.DUT.n_122 codificador_pt2262_tb.DUT.n_123 codificador_pt2262_tb.DUT.n_124 codificador_pt2262_tb.DUT.n_125 codificador_pt2262_tb.DUT.n_126 codificador_pt2262_tb.DUT.n_127 codificador_pt2262_tb.DUT.n_128 codificador_pt2262_tb.DUT.n_129 codificador_pt2262_tb.DUT.n_130 codificador_pt2262_tb.DUT.n_131 codificador_pt2262_tb.DUT.n_132 codificador_pt2262_tb.DUT.n_133 codificador_pt2262_tb.DUT.n_134 codificador_pt2262_tb.DUT.n_135 codificador_pt2262_tb.DUT.n_136 codificador_pt2262_tb.DUT.n_137 codificador_pt2262_tb.DUT.n_138 codificador_pt2262_tb.DUT.n_139 codificador_pt2262_tb.DUT.n_140 codificador_pt2262_tb.DUT.n_142 codificador_pt2262_tb.DUT.n_143 codificador_pt2262_tb.DUT.n_144 codificador_pt2262_tb.DUT.n_145 codificador_pt2262_tb.DUT.n_146 codificador_pt2262_tb.DUT.n_147 codificador_pt2262_tb.DUT.n_148 codificador_pt2262_tb.DUT.n_150 codificador_pt2262_tb.DUT.n_151 codificador_pt2262_tb.DUT.n_152 codificador_pt2262_tb.DUT.n_154 codificador_pt2262_tb.DUT.n_156 codificador_pt2262_tb.DUT.n_158 codificador_pt2262_tb.DUT.n_160 codificador_pt2262_tb.DUT.n_161 codificador_pt2262_tb.DUT.n_162 codificador_pt2262_tb.DUT.n_163 codificador_pt2262_tb.DUT.n_165 codificador_pt2262_tb.DUT.n_166 codificador_pt2262_tb.DUT.n_167 codificador_pt2262_tb.DUT.n_168 codificador_pt2262_tb.DUT.n_169 codificador_pt2262_tb.DUT.n_170 codificador_pt2262_tb.DUT.n_171 codificador_pt2262_tb.DUT.n_172 codificador_pt2262_tb.DUT.n_173 codificador_pt2262_tb.DUT.n_174 codificador_pt2262_tb.DUT.n_175 codificador_pt2262_tb.DUT.n_176 codificador_pt2262_tb.DUT.n_177 codificador_pt2262_tb.DUT.n_178 codificador_pt2262_tb.DUT.n_179 codificador_pt2262_tb.DUT.n_180 codificador_pt2262_tb.DUT.n_181 codificador_pt2262_tb.DUT.n_182 codificador_pt2262_tb.DUT.n_203 codificador_pt2262_tb.DUT.osc_clk codificador_pt2262_tb.DUT.past_osc_clk codificador_pt2262_tb.DUT.reset codificador_pt2262_tb.DUT.signal_creator_current_state codificador_pt2262_tb.DUT.signal_creator_enable_pulse_counting codificador_pt2262_tb.DUT.signal_creator_enable_pulse_counting_sync codificador_pt2262_tb.DUT.signal_creator_is_first_run codificador_pt2262_tb.DUT.signal_creator_pulse_counter codificador_pt2262_tb.DUT.signal_creator_pulse_counter_sync codificador_pt2262_tb.DUT.sync
+xcelium> probe -create -shm decodificador_pt2272_tb.DUT.A decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_OP_MODE decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PT2272_BIT_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_RESET decodificador_pt2272_tb.DUT.D decodificador_pt2272_tb.DUT.F_BIT_LOCATOR decodificador_pt2272_tb.DUT.HIGH_PULSE_COUNTING decodificador_pt2272_tb.DUT.INTERPRETED_ADDR decodificador_pt2272_tb.DUT.LOW_PULSE_COUNTING decodificador_pt2272_tb.DUT.PREVIOUS_cod_i decodificador_pt2272_tb.DUT.clk decodificador_pt2272_tb.DUT.cod_i decodificador_pt2272_tb.DUT.current_state decodificador_pt2272_tb.DUT.dv decodificador_pt2272_tb.DUT.internal_f_bit_locator decodificador_pt2272_tb.DUT.internal_interpreted_addr decodificador_pt2272_tb.DUT.internal_oscillator_clk_cycle_counting decodificador_pt2272_tb.DUT.n_0 decodificador_pt2272_tb.DUT.n_1 decodificador_pt2272_tb.DUT.n_2 decodificador_pt2272_tb.DUT.n_3 decodificador_pt2272_tb.DUT.n_4 decodificador_pt2272_tb.DUT.n_5 decodificador_pt2272_tb.DUT.n_6 decodificador_pt2272_tb.DUT.n_7 decodificador_pt2272_tb.DUT.n_8 decodificador_pt2272_tb.DUT.n_9 decodificador_pt2272_tb.DUT.n_10 decodificador_pt2272_tb.DUT.n_11 decodificador_pt2272_tb.DUT.n_12 decodificador_pt2272_tb.DUT.n_13 decodificador_pt2272_tb.DUT.n_14 decodificador_pt2272_tb.DUT.n_15 decodificador_pt2272_tb.DUT.n_16 decodificador_pt2272_tb.DUT.n_17 decodificador_pt2272_tb.DUT.n_18 decodificador_pt2272_tb.DUT.n_19 decodificador_pt2272_tb.DUT.n_20 decodificador_pt2272_tb.DUT.n_21 decodificador_pt2272_tb.DUT.n_22 decodificador_pt2272_tb.DUT.n_23 decodificador_pt2272_tb.DUT.n_24 decodificador_pt2272_tb.DUT.n_25 decodificador_pt2272_tb.DUT.n_26 decodificador_pt2272_tb.DUT.n_27 decodificador_pt2272_tb.DUT.n_28 decodificador_pt2272_tb.DUT.n_29 decodificador_pt2272_tb.DUT.n_30 decodificador_pt2272_tb.DUT.n_31 decodificador_pt2272_tb.DUT.n_32 decodificador_pt2272_tb.DUT.n_33 decodificador_pt2272_tb.DUT.n_34 decodificador_pt2272_tb.DUT.n_35 decodificador_pt2272_tb.DUT.n_36 decodificador_pt2272_tb.DUT.n_37 decodificador_pt2272_tb.DUT.n_38 decodificador_pt2272_tb.DUT.n_39 decodificador_pt2272_tb.DUT.n_40 decodificador_pt2272_tb.DUT.n_41 decodificador_pt2272_tb.DUT.n_42 decodificador_pt2272_tb.DUT.n_43 decodificador_pt2272_tb.DUT.n_44 decodificador_pt2272_tb.DUT.n_45 decodificador_pt2272_tb.DUT.n_46 decodificador_pt2272_tb.DUT.n_47 decodificador_pt2272_tb.DUT.n_48 decodificador_pt2272_tb.DUT.n_49 decodificador_pt2272_tb.DUT.n_50 decodificador_pt2272_tb.DUT.n_51 decodificador_pt2272_tb.DUT.n_52 decodificador_pt2272_tb.DUT.n_53 decodificador_pt2272_tb.DUT.n_54 decodificador_pt2272_tb.DUT.n_55 decodificador_pt2272_tb.DUT.n_56 decodificador_pt2272_tb.DUT.n_57 decodificador_pt2272_tb.DUT.n_58 decodificador_pt2272_tb.DUT.n_59 decodificador_pt2272_tb.DUT.n_60 decodificador_pt2272_tb.DUT.n_61 decodificador_pt2272_tb.DUT.n_62 decodificador_pt2272_tb.DUT.n_63 decodificador_pt2272_tb.DUT.n_64 decodificador_pt2272_tb.DUT.n_65 decodificador_pt2272_tb.DUT.n_66 decodificador_pt2272_tb.DUT.n_67 decodificador_pt2272_tb.DUT.n_68 decodificador_pt2272_tb.DUT.n_69 decodificador_pt2272_tb.DUT.n_70 decodificador_pt2272_tb.DUT.n_71 decodificador_pt2272_tb.DUT.n_72 decodificador_pt2272_tb.DUT.n_73 decodificador_pt2272_tb.DUT.n_74 decodificador_pt2272_tb.DUT.n_75 decodificador_pt2272_tb.DUT.n_76 decodificador_pt2272_tb.DUT.n_77 decodificador_pt2272_tb.DUT.n_78 decodificador_pt2272_tb.DUT.n_79 decodificador_pt2272_tb.DUT.n_80 decodificador_pt2272_tb.DUT.n_81 decodificador_pt2272_tb.DUT.n_82 decodificador_pt2272_tb.DUT.n_83 decodificador_pt2272_tb.DUT.n_84 decodificador_pt2272_tb.DUT.n_85 decodificador_pt2272_tb.DUT.n_86 decodificador_pt2272_tb.DUT.n_87 decodificador_pt2272_tb.DUT.n_88 decodificador_pt2272_tb.DUT.n_89 decodificador_pt2272_tb.DUT.n_90 decodificador_pt2272_tb.DUT.n_91 decodificador_pt2272_tb.DUT.n_92 decodificador_pt2272_tb.DUT.n_93 decodificador_pt2272_tb.DUT.n_94 decodificador_pt2272_tb.DUT.n_95 decodificador_pt2272_tb.DUT.n_96 decodificador_pt2272_tb.DUT.n_97 decodificador_pt2272_tb.DUT.n_98 decodificador_pt2272_tb.DUT.n_99 decodificador_pt2272_tb.DUT.n_100 decodificador_pt2272_tb.DUT.n_101 decodificador_pt2272_tb.DUT.n_102 decodificador_pt2272_tb.DUT.n_103 decodificador_pt2272_tb.DUT.n_104 decodificador_pt2272_tb.DUT.n_105 decodificador_pt2272_tb.DUT.n_106 decodificador_pt2272_tb.DUT.n_107 decodificador_pt2272_tb.DUT.n_108 decodificador_pt2272_tb.DUT.n_109 decodificador_pt2272_tb.DUT.n_110 decodificador_pt2272_tb.DUT.n_111 decodificador_pt2272_tb.DUT.n_112 decodificador_pt2272_tb.DUT.n_113 decodificador_pt2272_tb.DUT.n_114 decodificador_pt2272_tb.DUT.n_115 decodificador_pt2272_tb.DUT.n_116 decodificador_pt2272_tb.DUT.n_117 decodificador_pt2272_tb.DUT.n_118 decodificador_pt2272_tb.DUT.n_119 decodificador_pt2272_tb.DUT.n_120 decodificador_pt2272_tb.DUT.n_121 decodificador_pt2272_tb.DUT.n_122 decodificador_pt2272_tb.DUT.n_123 decodificador_pt2272_tb.DUT.n_124 decodificador_pt2272_tb.DUT.n_125 decodificador_pt2272_tb.DUT.n_126 decodificador_pt2272_tb.DUT.n_127 decodificador_pt2272_tb.DUT.n_128 decodificador_pt2272_tb.DUT.n_129 decodificador_pt2272_tb.DUT.n_130 decodificador_pt2272_tb.DUT.n_131 decodificador_pt2272_tb.DUT.n_132 decodificador_pt2272_tb.DUT.n_133 decodificador_pt2272_tb.DUT.n_134 decodificador_pt2272_tb.DUT.n_135 decodificador_pt2272_tb.DUT.n_136 decodificador_pt2272_tb.DUT.n_137 decodificador_pt2272_tb.DUT.n_138 decodificador_pt2272_tb.DUT.n_139 decodificador_pt2272_tb.DUT.n_140 decodificador_pt2272_tb.DUT.n_141 decodificador_pt2272_tb.DUT.n_142 decodificador_pt2272_tb.DUT.n_143 decodificador_pt2272_tb.DUT.n_144 decodificador_pt2272_tb.DUT.n_145 decodificador_pt2272_tb.DUT.n_146 decodificador_pt2272_tb.DUT.n_147 decodificador_pt2272_tb.DUT.n_148 decodificador_pt2272_tb.DUT.n_149 decodificador_pt2272_tb.DUT.n_150 decodificador_pt2272_tb.DUT.n_151 decodificador_pt2272_tb.DUT.n_152 decodificador_pt2272_tb.DUT.n_153 decodificador_pt2272_tb.DUT.n_154 decodificador_pt2272_tb.DUT.n_155 decodificador_pt2272_tb.DUT.n_156 decodificador_pt2272_tb.DUT.n_157 decodificador_pt2272_tb.DUT.n_158 decodificador_pt2272_tb.DUT.n_159 decodificador_pt2272_tb.DUT.n_160 decodificador_pt2272_tb.DUT.n_161 decodificador_pt2272_tb.DUT.n_162 decodificador_pt2272_tb.DUT.n_163 decodificador_pt2272_tb.DUT.n_164 decodificador_pt2272_tb.DUT.n_165 decodificador_pt2272_tb.DUT.n_166 decodificador_pt2272_tb.DUT.n_167 decodificador_pt2272_tb.DUT.n_168 decodificador_pt2272_tb.DUT.n_169 decodificador_pt2272_tb.DUT.n_170 decodificador_pt2272_tb.DUT.n_171 decodificador_pt2272_tb.DUT.n_172 decodificador_pt2272_tb.DUT.n_173 decodificador_pt2272_tb.DUT.n_174 decodificador_pt2272_tb.DUT.n_175 decodificador_pt2272_tb.DUT.n_176 decodificador_pt2272_tb.DUT.n_177 decodificador_pt2272_tb.DUT.n_178 decodificador_pt2272_tb.DUT.n_179 decodificador_pt2272_tb.DUT.n_180 decodificador_pt2272_tb.DUT.n_181 decodificador_pt2272_tb.DUT.n_182 decodificador_pt2272_tb.DUT.n_183 decodificador_pt2272_tb.DUT.n_184 decodificador_pt2272_tb.DUT.n_185 decodificador_pt2272_tb.DUT.n_186 decodificador_pt2272_tb.DUT.n_187 decodificador_pt2272_tb.DUT.n_188 decodificador_pt2272_tb.DUT.n_189 decodificador_pt2272_tb.DUT.n_190 decodificador_pt2272_tb.DUT.n_191 decodificador_pt2272_tb.DUT.n_192 decodificador_pt2272_tb.DUT.n_193 decodificador_pt2272_tb.DUT.osc_clk decodificador_pt2272_tb.DUT.reset decodificador_pt2272_tb.DUT.reset_counters
 Created probe 1
-xcelium> probe -create -database waves BIT_GENERATOR.bit_sent BIT_GENERATOR.current_state BIT_GENERATOR.enable_generation BIT_GENERATOR.enable_pulse_counting BIT_GENERATOR.enable_pulse_counting_sync BIT_GENERATOR.input_bit BIT_GENERATOR.is_first_run BIT_GENERATOR.next_state BIT_GENERATOR.osc_clk BIT_GENERATOR.output_signal BIT_GENERATOR.pulse_counter BIT_GENERATOR.pulse_counter_sync BIT_GENERATOR.rst
-Created probe 2
-xcelium> probe -create -database waves CLOCK_DIVIDER.INPUT_CLK CLOCK_DIVIDER.OUTPUT_CLK CLOCK_DIVIDER.RST CLOCK_DIVIDER.clk_cycle_counting CLOCK_DIVIDER.divider_index_ceil
-Created probe 3
-xcelium> 
-xcelium> simvision -input restore_enc_synth.tcl.svcf
 xcelium> run
-Simulation complete via $finish(1) at time 82542075040 PS + 0
-./encoder/codificador_pt2262_tb.sv:54         $finish;
-xcelium> ^C
-xcelium> exit
-TOOL:	xrun(64)	24.09-s001: Exiting on Jan 10, 2025 at 21:58:38 -03  (total: 00:00:27)
+Simulation complete via $finish(1) at time 91039575 NS + 3
+./decoder/decodificador_pt2272_tb.sv:210         $finish;
+xcelium> reset
+Loaded snapshot worklib.decodificador_pt2272_tb:sv
+xcelium> run
+Simulation complete via $finish(1) at time 91039575 NS + 3
+./decoder/decodificador_pt2272_tb.sv:210         $finish;
+xcelium> 
