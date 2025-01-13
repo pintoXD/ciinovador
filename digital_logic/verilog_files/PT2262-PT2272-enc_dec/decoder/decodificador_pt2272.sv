@@ -9,7 +9,7 @@ module decodificador_pt2272(
 );
 
 
-typedef enum bit[2:0] {  
+typedef enum logic[2:0] {  
     INITIAL_STATE = 3'b000,
     BIT_1_DETECTED = 3'b001,
     BIT_0_DETECTED = 3'b010,

@@ -7,7 +7,7 @@ module codificador_pt2262(
     output logic cod_o
 );
 
-typedef enum bit[4:0] {  
+typedef enum logic[4:0] {  
     IDLE = 5'h00,
     INITIAL_STATE = 5'h01,
     GENERATE_A0 = 5'h02,

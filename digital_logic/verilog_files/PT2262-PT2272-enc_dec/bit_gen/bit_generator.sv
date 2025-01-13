@@ -15,7 +15,7 @@ module BIT_GENERATOR(
     output logic output_signal
 );
 
-typedef enum bit[2:0] {  
+typedef enum logic[2:0] {  
     IDLE = 3'b000,
     INITIAL_STATE = 3'b001,
     GENERATE_BIT_1 = 3'b010,
