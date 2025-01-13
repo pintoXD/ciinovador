@@ -1,0 +1,190 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+Version: 21.10-p002_1, built Fri Aug 20 06:13:13 PDT 2021
+Options: -log /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/logs/decoder.log -files /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/scripts/decoder_synth.tcl 
+Date:    Mon Jan 13 12:18:34 2025
+Host:    cinova05.lesc.ufc.br (x86_64 w/Linux 4.18.0-553.27.1.el8_10.x86_64) (14cores*20cpus*1physical cpu*13th Gen Intel(R) Core(TM) i5-13500 24576KB) (32333800KB)
+PID:     55411
+OS:      Rocky Linux release 8.10 (Green Obsidian)
+
+Checking out license: Genus_Synthesis
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Loading tool scripts...
+Finished loading tool scripts (5 seconds elapsed).
+
+#@ Processing -files option
+@genus 1> source /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/scripts/decoder_synth.tcl
+#@ Begin verbose source /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/scripts/decoder_synth.tcl
+@file(decoder_synth.tcl) 1: set working_dir $env(WORKING_DIR)
+@file(decoder_synth.tcl) 2: set address_interpreter_dir $env(ADDRESS_INTERPRETER_PATH)
+@file(decoder_synth.tcl) 3: set bit_signal_generator_dir $env(BIT_SIGNAL_GENERATOR_PATH)
+@file(decoder_synth.tcl) 4: set oscillator_dir $env(OSCILLATOR_PATH)
+@file(decoder_synth.tcl) 5: set encoder_dir $env(ENCODER_PATH)
+@file(decoder_synth.tcl) 6: set decoder_dir $env(DECODER_PATH)
+@file(decoder_synth.tcl) 7: set bidir_shift_reg_dir $env(BIDIR_SHIFTREG_PATH)
+@file(decoder_synth.tcl) 8: set libs_dir $env(LIBS_PATH)
+@file(decoder_synth.tcl) 9: set scripts_dir $env(SCRIPTS_PATH)
+@file(decoder_synth.tcl) 10: set logs_dir $env(LOGS_PATH)
+@file(decoder_synth.tcl) 11: set reports_dir $env(REPORTS_PATH)
+@file(decoder_synth.tcl) 13: puts "Reading libraries and design files..."
+Reading libraries and design files...
+@file(decoder_synth.tcl) 14: set lib_file "$libs_dir/fast_vdd1v2_basicCells.lib"
+@file(decoder_synth.tcl) 15: read_lib $lib_file
+
+Threads Configured:3
+
+  Message Summary for Library fast_vdd1v2_basicCells.lib:
+  *******************************************************
+  Missing a function attribute in the output pin definition. [LBR-518]: 1
+  *******************************************************
+ 
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (1.000000, 1.320000, 0.000000) in library 'fast_vdd1v2_basicCells.lib'.
+        : The nominal operating condition is represented, either by the nominal PVT values specified in the library source (via nom_process,nom_voltage and nom_temperature respectively), or by the default PVT values (1.0,1.0,1.0).
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNA' must have an output pin.
+        : Add the missing output pin(s), then reload the library. Else the library cell will be marked as timing model i.e. unusable. Timing_model means that the cell does not have any defined function. If there is no output pin, Genus will mark library cell as unusable i.e. the attribute 'usable' will be marked to 'false' on the libcell. Therefore, the cell is not used for mapping and it will not be picked up from the library for synthesis. If you query the attribute 'unusable_reason' on the libcell; result will be: 'Library cell has no output pins.'Note: The message LBR-9 is only for the logical pins and not for the power_ground pins. Genus will depend upon the output function defined in the pin group (output pin) of the cell, to use it for mapping. The pg_pin will not have any function defined.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNA' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP10' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP10' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP2' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP2' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP3' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP3' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP4' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP4' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP5' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP5' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP6' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP6' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP7' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP7' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP8' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP8' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP9' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DECAP9' must have an output pin.
+@file(decoder_synth.tcl) 19: read_hdl -sv \
+     $decoder_dir/decodificador_pt2272.sv \
+     $oscillator_dir/clock_divider.sv \
+     $address_interpreter_dir/addr_interpreter.sv \
+     $bidir_shift_reg_dir/bidir_shiftreg.sv
+    else begin
+       |
+Error   : Parsing error. [VLOGPT-1] [read_hdl]
+        : Expecting a statement in file '/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272.sv' on line 282, column 8.
+        : Invalid Verilog syntax is parsed, or unsupported Verilog syntax is encountered.
+    else begin
+       |
+Error   : Parsing error. [VLOGPT-1] [read_hdl]
+        : Expecting token ';', found 'else' in file '/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272.sv' on line 282, column 8.
+            D[0] <= BIDIR_SHIFTREG_PARALLEL_OUT[23] & BIDIR_SHIFTREG_PARALLEL_OUT[22];
+            |
+Error   : Parsing error. [VLOGPT-1] [read_hdl]
+        : Expecting token 'end', found '<identifier>' in file '/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272.sv' on line 290, column 13.
+                end else begin
+                  |
+Error   : Parsing error. [VLOGPT-1] [read_hdl]
+        : in file '/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272.sv' on line 304, column 19.
+                end else begin
+                  |
+Error   : Parsing error. [VLOGPT-1] [read_hdl]
+        : Expecting token ';', found 'end' in file '/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272.sv' on line 304, column 19.
+                        D <= 4'b0000;
+                           |
+Error   : Instance name required for module instance. [VLOGPT-58] [read_hdl]
+        : in file '/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272.sv' on line 307, column 28.
+        : According to Verilog IEEE standard it is mandatory to give instance name while instantiating a module. For more details see the 'module instantiation syntax' section in the Verilog IEEE Reference manual.
+                        D <= 4'b0000;
+                           |
+Error   : Parsing error. [VLOGPT-1] [read_hdl]
+        : Bad declaration using undeclared type 'D' in file '/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272.sv' on line 307, column 28.
+                        break;
+                            |
+Error   : Parsing error. [VLOGPT-1] [read_hdl]
+        : in file '/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272.sv' on line 308, column 29.
+                        break;
+                            |
+Error   : Parsing error. [VLOGPT-1] [read_hdl]
+        : Expecting token ';', found 'break' in file '/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272.sv' on line 308, column 29.
+                    end
+                      |
+Error   : Parsing error. [VLOGPT-1] [read_hdl]
+        : in file '/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272.sv' on line 309, column 23.
+                    end
+                      |
+Error   : Parsing error. [VLOGPT-1] [read_hdl]
+        : Expecting token ';', found 'end' in file '/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272.sv' on line 309, column 23.
+        internal_interpreted_addr <= 8'b00000000;
+                                   |
+Error   : Instance name required for module instance. [VLOGPT-58] [read_hdl]
+        : in file '/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272.sv' on line 324, column 36.
+        internal_interpreted_addr <= 8'b00000000;
+                                   |
+Error   : Parsing error. [VLOGPT-1] [read_hdl]
+        : Bad declaration using undeclared type 'internal_interpreted_addr' in file '/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272.sv' on line 324, column 36.
+        D <= 4'b0000;
+           |
+Error   : Instance name required for module instance. [VLOGPT-58] [read_hdl]
+        : in file '/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272.sv' on line 325, column 12.
+        D <= 4'b0000;
+           |
+Error   : Parsing error. [VLOGPT-1] [read_hdl]
+        : Bad declaration using undeclared type 'D' in file '/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272.sv' on line 325, column 12.
+    end
+      |
+Error   : Parsing error. [VLOGPT-1] [read_hdl]
+        : in file '/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272.sv' on line 326, column 7.
+    end
+      |
+Error   : Parsing error. [VLOGPT-1] [read_hdl]
+        : Expecting token ';', found 'end' in file '/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272.sv' on line 326, column 7.
+                internal_f_bit_locator[7] <= 0;
+                                           |
+Error   : Instance name required for module instance. [VLOGPT-58] [read_hdl]
+        : in file '/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272.sv' on line 332, column 44.
+                internal_f_bit_locator[7] <= 0;
+                                           |
+Error   : Parsing error. [VLOGPT-1] [read_hdl]
+        : Bad declaration using undeclared type 'internal_f_bit_locator' in file '/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272.sv' on line 332, column 44.
+            end else begin
+              |
+Error   : Parsing error. [VLOGPT-1] [read_hdl]
+        : in file '/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272.sv' on line 333, column 15.
+            end else begin
+              |
+Error   : Parsing error. [VLOGPT-1] [read_hdl]
+        : Expecting token ';', found 'end' in file '/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272.sv' on line 333, column 15.
+#@ End verbose source /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/scripts/decoder_synth.tcl
+1
+Encountered problems processing file: /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/scripts/decoder_synth.tcl
+WARNING: This version of the tool is 1242 days old.
+@genus:root: 2> quit
+Normal exit.

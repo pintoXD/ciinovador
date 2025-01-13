@@ -78,14 +78,15 @@ elif [ "$1" == "xrun_synth" ]; then
         ${LIBS_PATH}/fast_vdd1v2_basicCells.v \
         ${ADDRESS_INTERPRETER_PATH}/comp_endereco.sv \
         +access+rw +gui \
-        -s -input restore_dec_synth.tcl
+        # -s -input restore_dec_synth.tcl
 elif [ "$1" == "xrun_synth_all" ]; then
     echo "Running simulation with synthesized encoder and decoder code..."
     xrun -64bit -ALLOWREDEFINITION ${DECODER_PATH}/decodificador_pt2272_tb.sv ${DECODER_PATH}/decodificador_pt2272_mapped.sv \
         ${ENCODER_PATH}/codificador_pt2262_mapped.sv \
         ${LIBS_PATH}/fast_vdd1v2_basicCells.v \
         ${ADDRESS_INTERPRETER_PATH}/comp_endereco.sv \
-        +access+rw +gui
+        +access+rw +gui \
+        -s -input restore_dec_synth_all.tcl
 elif [ "$1" == "xrun_sdf" ]; then
     echo "Running simulation with SDF on synthesized code..."
     xrun -64bit -sdf_cmd_file ${DECODER_PATH}/decoder_sdf.cmd\
