@@ -1,24 +1,31 @@
 xrun(64): 24.09-s001: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	24.09-s001: Started on Jan 10, 2025 at 22:11:01 -03
+TOOL:	xrun(64)	24.09-s001: Started on Jan 13, 2025 at 09:17:04 -03
 xrun
 	-64bit
-	-ALLOWREDEFINITION
 	/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272_tb.sv
-	/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272.v
+	/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272_mapped.sv
+	/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262.sv
 	/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/libs/fast_vdd1v2_basicCells.v
-	/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262.v
 	/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/addr_interpreter/comp_endereco.sv
 	+access+rw
 	+gui
-file: /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262.v
-module ADDRESS_INTERPRETER(A, INTERPRETED_ADDR, F_BIT_LOCATOR);
-                         |
-xmvlog: *W,RECOME (/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262.v,7|25): recompiling design unit worklib.ADDRESS_INTERPRETER:v.
-	First compiled from line 7 of /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272.v.
-	module worklib.ADDRESS_INTERPRETER:v
-		errors: 0, warnings: 1
+file: /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272_tb.sv
+	module worklib.decodificador_pt2272_tb:sv
+		errors: 0, warnings: 0
+file: /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272_mapped.sv
+	module worklib.ADDRESS_INTERPRETER:sv
+		errors: 0, warnings: 0
+	module worklib.decodificador_pt2272:sv
+		errors: 0, warnings: 0
+file: /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262.sv
+	module worklib.codificador_pt2262:sv
+		errors: 0, warnings: 0
+file: /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/addr_interpreter/comp_endereco.sv
+	module worklib.comp_endereco:sv
+		errors: 0, warnings: 0
 		Caching library 'worklib' ....... Done
 	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
 	Top level design units:
 		decodificador_pt2272_tb
 		ACHCONX2
@@ -92,6 +99,7 @@ xmvlog: *W,RECOME (/home/cinovador/Documents/course_files/digital_logic/verilog_
 		AOI33X1
 		AOI33X2
 		AOI33X4
+		AOI33XL
 		BMXIX2
 		BMXIX4
 		BUFX12
@@ -215,6 +223,7 @@ xmvlog: *W,RECOME (/home/cinovador/Documents/course_files/digital_logic/verilog_
 		MDFFHQX2
 		MDFFHQX4
 		MDFFHQX8
+		MX2X1
 		MX2X2
 		MX2X4
 		MX2X6
@@ -242,6 +251,7 @@ xmvlog: *W,RECOME (/home/cinovador/Documents/course_files/digital_logic/verilog_
 		MXI4X2
 		MXI4X4
 		MXI4XL
+		NAND2BX1
 		NAND2BX2
 		NAND2BX4
 		NAND2X1
@@ -290,6 +300,7 @@ xmvlog: *W,RECOME (/home/cinovador/Documents/course_files/digital_logic/verilog_
 		NOR4BBX2
 		NOR4BBX4
 		NOR4BBXL
+		NOR4BX1
 		NOR4BX2
 		NOR4BX4
 		NOR4BXL
@@ -316,6 +327,7 @@ xmvlog: *W,RECOME (/home/cinovador/Documents/course_files/digital_logic/verilog_
 		OAI222X1
 		OAI222X2
 		OAI222X4
+		OAI22X1
 		OAI22X2
 		OAI22X4
 		OAI2BB1X2
@@ -328,6 +340,7 @@ xmvlog: *W,RECOME (/home/cinovador/Documents/course_files/digital_logic/verilog_
 		OAI31X2
 		OAI31X4
 		OAI31XL
+		OAI32X1
 		OAI32X2
 		OAI32X4
 		OAI32XL
@@ -468,27 +481,33 @@ xmvlog: *W,RECOME (/home/cinovador/Documents/course_files/digital_logic/verilog_
 		XOR3XL
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.DFFSHQX1:v <0x0a6622b0>
-			streams:   0, words:     0
-		worklib.decodificador_pt2272_tb:sv <0x3e474b62>
-			streams:  11, words:  7627
+		worklib.comp_endereco:sv <0x48028e68>
+			streams:   1, words:  1386
+		worklib.comp_endereco:sv <0x5cc7a7e0>
+			streams:   1, words:  1141
+		worklib.decodificador_pt2272_tb:sv <0x6a6db277>
+			streams:  11, words:  8164
+		worklib.codificador_pt2262:sv <0x7c535375>
+			streams:  19, words: 19006
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
 		                     Instances  Unique
-		Modules:                   912     494
-		UDPs:                      478      14
-		Primitives:              2,914       6
-		Timing outputs:          1,003     431
-		Registers:                 274     182
-		Scalar wires:            3,348       -
-		Expanded wires:             40       6
-		Vectored wires:              2       -
-		Always blocks:               2       1
+		Modules:                   711     496
+		UDPs:                      412      14
+		Primitives:              2,477       6
+		Timing outputs:            797     427
+		Registers:                 270     211
+		Scalar wires:            3,136       -
+		Expanded wires:             20       3
+		Vectored wires:              9       -
+		Always blocks:              11      10
 		Initial blocks:              2       2
-		Pseudo assignments:          9       -
-		Timing checks:           3,181       -
-		Delayed tcheck signals:    828     657
+		Cont. assignments:           5       5
+		Pseudo assignments:         19       -
+		Timing checks:           2,931       -
+		Delayed tcheck signals:    758     620
+		Process Clocks:              7       4
 		Simulation timescale:      1ps
 	Writing initial simulation snapshot: worklib.decodificador_pt2272_tb:sv
 xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
@@ -499,14 +518,11 @@ xcelium>
 xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
 xcelium> database -open waves -into waves.shm -default
 Created default SHM database waves
-xcelium> probe -create -shm decodificador_pt2272_tb.DUT.A decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_OP_MODE decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PT2272_BIT_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_RESET decodificador_pt2272_tb.DUT.D decodificador_pt2272_tb.DUT.F_BIT_LOCATOR decodificador_pt2272_tb.DUT.HIGH_PULSE_COUNTING decodificador_pt2272_tb.DUT.INTERPRETED_ADDR decodificador_pt2272_tb.DUT.LOW_PULSE_COUNTING decodificador_pt2272_tb.DUT.PREVIOUS_cod_i decodificador_pt2272_tb.DUT.clk decodificador_pt2272_tb.DUT.cod_i decodificador_pt2272_tb.DUT.current_state decodificador_pt2272_tb.DUT.dv decodificador_pt2272_tb.DUT.internal_f_bit_locator decodificador_pt2272_tb.DUT.internal_interpreted_addr decodificador_pt2272_tb.DUT.internal_oscillator_clk_cycle_counting decodificador_pt2272_tb.DUT.n_0 decodificador_pt2272_tb.DUT.n_1 decodificador_pt2272_tb.DUT.n_2 decodificador_pt2272_tb.DUT.n_3 decodificador_pt2272_tb.DUT.n_4 decodificador_pt2272_tb.DUT.n_5 decodificador_pt2272_tb.DUT.n_6 decodificador_pt2272_tb.DUT.n_7 decodificador_pt2272_tb.DUT.n_8 decodificador_pt2272_tb.DUT.n_9 decodificador_pt2272_tb.DUT.n_10 decodificador_pt2272_tb.DUT.n_11 decodificador_pt2272_tb.DUT.n_12 decodificador_pt2272_tb.DUT.n_13 decodificador_pt2272_tb.DUT.n_14 decodificador_pt2272_tb.DUT.n_15 decodificador_pt2272_tb.DUT.n_16 decodificador_pt2272_tb.DUT.n_17 decodificador_pt2272_tb.DUT.n_18 decodificador_pt2272_tb.DUT.n_19 decodificador_pt2272_tb.DUT.n_20 decodificador_pt2272_tb.DUT.n_21 decodificador_pt2272_tb.DUT.n_22 decodificador_pt2272_tb.DUT.n_23 decodificador_pt2272_tb.DUT.n_24 decodificador_pt2272_tb.DUT.n_25 decodificador_pt2272_tb.DUT.n_26 decodificador_pt2272_tb.DUT.n_27 decodificador_pt2272_tb.DUT.n_28 decodificador_pt2272_tb.DUT.n_29 decodificador_pt2272_tb.DUT.n_30 decodificador_pt2272_tb.DUT.n_31 decodificador_pt2272_tb.DUT.n_32 decodificador_pt2272_tb.DUT.n_33 decodificador_pt2272_tb.DUT.n_34 decodificador_pt2272_tb.DUT.n_35 decodificador_pt2272_tb.DUT.n_36 decodificador_pt2272_tb.DUT.n_37 decodificador_pt2272_tb.DUT.n_38 decodificador_pt2272_tb.DUT.n_39 decodificador_pt2272_tb.DUT.n_40 decodificador_pt2272_tb.DUT.n_41 decodificador_pt2272_tb.DUT.n_42 decodificador_pt2272_tb.DUT.n_43 decodificador_pt2272_tb.DUT.n_44 decodificador_pt2272_tb.DUT.n_45 decodificador_pt2272_tb.DUT.n_46 decodificador_pt2272_tb.DUT.n_47 decodificador_pt2272_tb.DUT.n_48 decodificador_pt2272_tb.DUT.n_49 decodificador_pt2272_tb.DUT.n_50 decodificador_pt2272_tb.DUT.n_51 decodificador_pt2272_tb.DUT.n_52 decodificador_pt2272_tb.DUT.n_53 decodificador_pt2272_tb.DUT.n_54 decodificador_pt2272_tb.DUT.n_55 decodificador_pt2272_tb.DUT.n_56 decodificador_pt2272_tb.DUT.n_57 decodificador_pt2272_tb.DUT.n_58 decodificador_pt2272_tb.DUT.n_59 decodificador_pt2272_tb.DUT.n_60 decodificador_pt2272_tb.DUT.n_61 decodificador_pt2272_tb.DUT.n_62 decodificador_pt2272_tb.DUT.n_63 decodificador_pt2272_tb.DUT.n_64 decodificador_pt2272_tb.DUT.n_65 decodificador_pt2272_tb.DUT.n_66 decodificador_pt2272_tb.DUT.n_67 decodificador_pt2272_tb.DUT.n_68 decodificador_pt2272_tb.DUT.n_69 decodificador_pt2272_tb.DUT.n_70 decodificador_pt2272_tb.DUT.n_71 decodificador_pt2272_tb.DUT.n_72 decodificador_pt2272_tb.DUT.n_73 decodificador_pt2272_tb.DUT.n_74 decodificador_pt2272_tb.DUT.n_75 decodificador_pt2272_tb.DUT.n_76 decodificador_pt2272_tb.DUT.n_77 decodificador_pt2272_tb.DUT.n_78 decodificador_pt2272_tb.DUT.n_79 decodificador_pt2272_tb.DUT.n_80 decodificador_pt2272_tb.DUT.n_81 decodificador_pt2272_tb.DUT.n_82 decodificador_pt2272_tb.DUT.n_83 decodificador_pt2272_tb.DUT.n_84 decodificador_pt2272_tb.DUT.n_85 decodificador_pt2272_tb.DUT.n_86 decodificador_pt2272_tb.DUT.n_87 decodificador_pt2272_tb.DUT.n_88 decodificador_pt2272_tb.DUT.n_89 decodificador_pt2272_tb.DUT.n_90 decodificador_pt2272_tb.DUT.n_91 decodificador_pt2272_tb.DUT.n_92 decodificador_pt2272_tb.DUT.n_93 decodificador_pt2272_tb.DUT.n_94 decodificador_pt2272_tb.DUT.n_95 decodificador_pt2272_tb.DUT.n_96 decodificador_pt2272_tb.DUT.n_97 decodificador_pt2272_tb.DUT.n_98 decodificador_pt2272_tb.DUT.n_99 decodificador_pt2272_tb.DUT.n_100 decodificador_pt2272_tb.DUT.n_101 decodificador_pt2272_tb.DUT.n_102 decodificador_pt2272_tb.DUT.n_103 decodificador_pt2272_tb.DUT.n_104 decodificador_pt2272_tb.DUT.n_105 decodificador_pt2272_tb.DUT.n_106 decodificador_pt2272_tb.DUT.n_107 decodificador_pt2272_tb.DUT.n_108 decodificador_pt2272_tb.DUT.n_109 decodificador_pt2272_tb.DUT.n_110 decodificador_pt2272_tb.DUT.n_111 decodificador_pt2272_tb.DUT.n_112 decodificador_pt2272_tb.DUT.n_113 decodificador_pt2272_tb.DUT.n_114 decodificador_pt2272_tb.DUT.n_115 decodificador_pt2272_tb.DUT.n_116 decodificador_pt2272_tb.DUT.n_117 decodificador_pt2272_tb.DUT.n_118 decodificador_pt2272_tb.DUT.n_119 decodificador_pt2272_tb.DUT.n_120 decodificador_pt2272_tb.DUT.n_121 decodificador_pt2272_tb.DUT.n_122 decodificador_pt2272_tb.DUT.n_123 decodificador_pt2272_tb.DUT.n_124 decodificador_pt2272_tb.DUT.n_125 decodificador_pt2272_tb.DUT.n_126 decodificador_pt2272_tb.DUT.n_127 decodificador_pt2272_tb.DUT.n_128 decodificador_pt2272_tb.DUT.n_129 decodificador_pt2272_tb.DUT.n_130 decodificador_pt2272_tb.DUT.n_131 decodificador_pt2272_tb.DUT.n_132 decodificador_pt2272_tb.DUT.n_133 decodificador_pt2272_tb.DUT.n_134 decodificador_pt2272_tb.DUT.n_135 decodificador_pt2272_tb.DUT.n_136 decodificador_pt2272_tb.DUT.n_137 decodificador_pt2272_tb.DUT.n_138 decodificador_pt2272_tb.DUT.n_139 decodificador_pt2272_tb.DUT.n_140 decodificador_pt2272_tb.DUT.n_141 decodificador_pt2272_tb.DUT.n_142 decodificador_pt2272_tb.DUT.n_143 decodificador_pt2272_tb.DUT.n_144 decodificador_pt2272_tb.DUT.n_145 decodificador_pt2272_tb.DUT.n_146 decodificador_pt2272_tb.DUT.n_147 decodificador_pt2272_tb.DUT.n_148 decodificador_pt2272_tb.DUT.n_149 decodificador_pt2272_tb.DUT.n_150 decodificador_pt2272_tb.DUT.n_151 decodificador_pt2272_tb.DUT.n_152 decodificador_pt2272_tb.DUT.n_153 decodificador_pt2272_tb.DUT.n_154 decodificador_pt2272_tb.DUT.n_155 decodificador_pt2272_tb.DUT.n_156 decodificador_pt2272_tb.DUT.n_157 decodificador_pt2272_tb.DUT.n_158 decodificador_pt2272_tb.DUT.n_159 decodificador_pt2272_tb.DUT.n_160 decodificador_pt2272_tb.DUT.n_161 decodificador_pt2272_tb.DUT.n_162 decodificador_pt2272_tb.DUT.n_163 decodificador_pt2272_tb.DUT.n_164 decodificador_pt2272_tb.DUT.n_165 decodificador_pt2272_tb.DUT.n_166 decodificador_pt2272_tb.DUT.n_167 decodificador_pt2272_tb.DUT.n_168 decodificador_pt2272_tb.DUT.n_169 decodificador_pt2272_tb.DUT.n_170 decodificador_pt2272_tb.DUT.n_171 decodificador_pt2272_tb.DUT.n_172 decodificador_pt2272_tb.DUT.n_173 decodificador_pt2272_tb.DUT.n_174 decodificador_pt2272_tb.DUT.n_175 decodificador_pt2272_tb.DUT.n_176 decodificador_pt2272_tb.DUT.n_177 decodificador_pt2272_tb.DUT.n_178 decodificador_pt2272_tb.DUT.n_179 decodificador_pt2272_tb.DUT.n_180 decodificador_pt2272_tb.DUT.n_181 decodificador_pt2272_tb.DUT.n_182 decodificador_pt2272_tb.DUT.n_183 decodificador_pt2272_tb.DUT.n_184 decodificador_pt2272_tb.DUT.n_185 decodificador_pt2272_tb.DUT.n_186 decodificador_pt2272_tb.DUT.n_187 decodificador_pt2272_tb.DUT.n_188 decodificador_pt2272_tb.DUT.n_189 decodificador_pt2272_tb.DUT.n_190 decodificador_pt2272_tb.DUT.n_191 decodificador_pt2272_tb.DUT.n_192 decodificador_pt2272_tb.DUT.n_193 decodificador_pt2272_tb.DUT.osc_clk decodificador_pt2272_tb.DUT.reset decodificador_pt2272_tb.DUT.reset_counters
+xcelium> probe -create -shm decodificador_pt2272_tb.DUT.A decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_OP_MODE decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_OUT decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PT2272_BIT_IN decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_RESET decodificador_pt2272_tb.DUT.D decodificador_pt2272_tb.DUT.F_BIT_LOCATOR decodificador_pt2272_tb.DUT.HIGH_PULSE_COUNTING decodificador_pt2272_tb.DUT.INTERPRETED_ADDR decodificador_pt2272_tb.DUT.LOW_PULSE_COUNTING decodificador_pt2272_tb.DUT.PREVIOUS_cod_i decodificador_pt2272_tb.DUT.clk decodificador_pt2272_tb.DUT.cod_i decodificador_pt2272_tb.DUT.current_state decodificador_pt2272_tb.DUT.dv decodificador_pt2272_tb.DUT.internal_f_bit_locator decodificador_pt2272_tb.DUT.internal_interpreted_addr decodificador_pt2272_tb.DUT.internal_oscillator_clk_cycle_counting decodificador_pt2272_tb.DUT.osc_clk decodificador_pt2272_tb.DUT.reset decodificador_pt2272_tb.DUT.reset_counters decodificador_pt2272_tb.DUT.n_0 decodificador_pt2272_tb.DUT.n_1 decodificador_pt2272_tb.DUT.n_2 decodificador_pt2272_tb.DUT.n_3 decodificador_pt2272_tb.DUT.n_4 decodificador_pt2272_tb.DUT.n_5 decodificador_pt2272_tb.DUT.n_6 decodificador_pt2272_tb.DUT.n_7 decodificador_pt2272_tb.DUT.n_8 decodificador_pt2272_tb.DUT.n_9 decodificador_pt2272_tb.DUT.n_10 decodificador_pt2272_tb.DUT.n_11 decodificador_pt2272_tb.DUT.n_12 decodificador_pt2272_tb.DUT.n_13 decodificador_pt2272_tb.DUT.n_14 decodificador_pt2272_tb.DUT.n_15 decodificador_pt2272_tb.DUT.n_16 decodificador_pt2272_tb.DUT.n_17 decodificador_pt2272_tb.DUT.n_18 decodificador_pt2272_tb.DUT.n_19 decodificador_pt2272_tb.DUT.n_20 decodificador_pt2272_tb.DUT.n_21 decodificador_pt2272_tb.DUT.n_22 decodificador_pt2272_tb.DUT.n_23 decodificador_pt2272_tb.DUT.n_24 decodificador_pt2272_tb.DUT.n_25 decodificador_pt2272_tb.DUT.n_26 decodificador_pt2272_tb.DUT.n_27 decodificador_pt2272_tb.DUT.n_28 decodificador_pt2272_tb.DUT.n_29 decodificador_pt2272_tb.DUT.n_30 decodificador_pt2272_tb.DUT.n_31 decodificador_pt2272_tb.DUT.n_32 decodificador_pt2272_tb.DUT.n_33 decodificador_pt2272_tb.DUT.n_34 decodificador_pt2272_tb.DUT.n_35 decodificador_pt2272_tb.DUT.n_36 decodificador_pt2272_tb.DUT.n_37 decodificador_pt2272_tb.DUT.n_38 decodificador_pt2272_tb.DUT.n_39 decodificador_pt2272_tb.DUT.n_40 decodificador_pt2272_tb.DUT.n_41 decodificador_pt2272_tb.DUT.n_42 decodificador_pt2272_tb.DUT.n_43 decodificador_pt2272_tb.DUT.n_44 decodificador_pt2272_tb.DUT.n_45 decodificador_pt2272_tb.DUT.n_46 decodificador_pt2272_tb.DUT.n_47 decodificador_pt2272_tb.DUT.n_48 decodificador_pt2272_tb.DUT.n_49 decodificador_pt2272_tb.DUT.n_50 decodificador_pt2272_tb.DUT.n_51 decodificador_pt2272_tb.DUT.n_52 decodificador_pt2272_tb.DUT.n_53 decodificador_pt2272_tb.DUT.n_54 decodificador_pt2272_tb.DUT.n_55 decodificador_pt2272_tb.DUT.n_56 decodificador_pt2272_tb.DUT.n_57 decodificador_pt2272_tb.DUT.n_58 decodificador_pt2272_tb.DUT.n_59 decodificador_pt2272_tb.DUT.n_60 decodificador_pt2272_tb.DUT.n_61 decodificador_pt2272_tb.DUT.n_62 decodificador_pt2272_tb.DUT.n_63 decodificador_pt2272_tb.DUT.n_64 decodificador_pt2272_tb.DUT.n_65 decodificador_pt2272_tb.DUT.n_66 decodificador_pt2272_tb.DUT.n_67 decodificador_pt2272_tb.DUT.n_68 decodificador_pt2272_tb.DUT.n_69 decodificador_pt2272_tb.DUT.n_70 decodificador_pt2272_tb.DUT.n_71 decodificador_pt2272_tb.DUT.n_72 decodificador_pt2272_tb.DUT.n_73 decodificador_pt2272_tb.DUT.n_74 decodificador_pt2272_tb.DUT.n_75 decodificador_pt2272_tb.DUT.n_76 decodificador_pt2272_tb.DUT.n_77 decodificador_pt2272_tb.DUT.n_78 decodificador_pt2272_tb.DUT.n_79 decodificador_pt2272_tb.DUT.n_80 decodificador_pt2272_tb.DUT.n_81 decodificador_pt2272_tb.DUT.n_82 decodificador_pt2272_tb.DUT.n_83 decodificador_pt2272_tb.DUT.n_84 decodificador_pt2272_tb.DUT.n_85 decodificador_pt2272_tb.DUT.n_86 decodificador_pt2272_tb.DUT.n_87 decodificador_pt2272_tb.DUT.n_88 decodificador_pt2272_tb.DUT.n_89 decodificador_pt2272_tb.DUT.n_90 decodificador_pt2272_tb.DUT.n_91 decodificador_pt2272_tb.DUT.n_92 decodificador_pt2272_tb.DUT.n_93 decodificador_pt2272_tb.DUT.n_94 decodificador_pt2272_tb.DUT.n_95 decodificador_pt2272_tb.DUT.n_96 decodificador_pt2272_tb.DUT.n_97 decodificador_pt2272_tb.DUT.n_98 decodificador_pt2272_tb.DUT.n_99 decodificador_pt2272_tb.DUT.n_100 decodificador_pt2272_tb.DUT.n_101 decodificador_pt2272_tb.DUT.n_102 decodificador_pt2272_tb.DUT.n_103 decodificador_pt2272_tb.DUT.n_104 decodificador_pt2272_tb.DUT.n_105 decodificador_pt2272_tb.DUT.n_106 decodificador_pt2272_tb.DUT.n_107 decodificador_pt2272_tb.DUT.n_108 decodificador_pt2272_tb.DUT.n_109 decodificador_pt2272_tb.DUT.n_110 decodificador_pt2272_tb.DUT.n_111 decodificador_pt2272_tb.DUT.n_112 decodificador_pt2272_tb.DUT.n_113 decodificador_pt2272_tb.DUT.n_114 decodificador_pt2272_tb.DUT.n_115 decodificador_pt2272_tb.DUT.n_116 decodificador_pt2272_tb.DUT.n_117 decodificador_pt2272_tb.DUT.n_118 decodificador_pt2272_tb.DUT.n_119 decodificador_pt2272_tb.DUT.n_120 decodificador_pt2272_tb.DUT.n_121 decodificador_pt2272_tb.DUT.n_122 decodificador_pt2272_tb.DUT.n_123 decodificador_pt2272_tb.DUT.n_124 decodificador_pt2272_tb.DUT.n_125 decodificador_pt2272_tb.DUT.n_126 decodificador_pt2272_tb.DUT.n_127 decodificador_pt2272_tb.DUT.n_128 decodificador_pt2272_tb.DUT.n_129 decodificador_pt2272_tb.DUT.n_130 decodificador_pt2272_tb.DUT.n_131 decodificador_pt2272_tb.DUT.n_132 decodificador_pt2272_tb.DUT.n_133 decodificador_pt2272_tb.DUT.n_134 decodificador_pt2272_tb.DUT.n_135 decodificador_pt2272_tb.DUT.n_136 decodificador_pt2272_tb.DUT.n_137 decodificador_pt2272_tb.DUT.n_138 decodificador_pt2272_tb.DUT.n_139 decodificador_pt2272_tb.DUT.n_140 decodificador_pt2272_tb.DUT.n_141 decodificador_pt2272_tb.DUT.n_142 decodificador_pt2272_tb.DUT.n_143 decodificador_pt2272_tb.DUT.n_144 decodificador_pt2272_tb.DUT.n_145 decodificador_pt2272_tb.DUT.n_146 decodificador_pt2272_tb.DUT.n_147 decodificador_pt2272_tb.DUT.n_148 decodificador_pt2272_tb.DUT.n_149 decodificador_pt2272_tb.DUT.n_150 decodificador_pt2272_tb.DUT.n_151 decodificador_pt2272_tb.DUT.n_152 decodificador_pt2272_tb.DUT.n_153 decodificador_pt2272_tb.DUT.n_154 decodificador_pt2272_tb.DUT.n_155 decodificador_pt2272_tb.DUT.n_156 decodificador_pt2272_tb.DUT.n_157 decodificador_pt2272_tb.DUT.n_158 decodificador_pt2272_tb.DUT.n_159 decodificador_pt2272_tb.DUT.n_160 decodificador_pt2272_tb.DUT.n_161 decodificador_pt2272_tb.DUT.n_162 decodificador_pt2272_tb.DUT.n_163 decodificador_pt2272_tb.DUT.n_164 decodificador_pt2272_tb.DUT.n_165 decodificador_pt2272_tb.DUT.n_166 decodificador_pt2272_tb.DUT.n_167 decodificador_pt2272_tb.DUT.n_168 decodificador_pt2272_tb.DUT.n_169 decodificador_pt2272_tb.DUT.n_170 decodificador_pt2272_tb.DUT.n_171 decodificador_pt2272_tb.DUT.n_172 decodificador_pt2272_tb.DUT.n_173 decodificador_pt2272_tb.DUT.n_174 decodificador_pt2272_tb.DUT.n_175 decodificador_pt2272_tb.DUT.n_176 decodificador_pt2272_tb.DUT.n_177 decodificador_pt2272_tb.DUT.n_178 decodificador_pt2272_tb.DUT.n_179 decodificador_pt2272_tb.DUT.n_180 decodificador_pt2272_tb.DUT.n_181 decodificador_pt2272_tb.DUT.n_182 decodificador_pt2272_tb.DUT.n_183 decodificador_pt2272_tb.DUT.n_184 decodificador_pt2272_tb.DUT.n_185 decodificador_pt2272_tb.DUT.n_186 decodificador_pt2272_tb.DUT.n_187 decodificador_pt2272_tb.DUT.n_188 decodificador_pt2272_tb.DUT.n_189 decodificador_pt2272_tb.DUT.n_190 decodificador_pt2272_tb.DUT.n_191 decodificador_pt2272_tb.DUT.n_192 decodificador_pt2272_tb.DUT.n_193
 Created probe 1
 xcelium> run
-Simulation complete via $finish(1) at time 91039575 NS + 3
+Simulation complete via $finish(1) at time 91039575 NS + 17
 ./decoder/decodificador_pt2272_tb.sv:210         $finish;
-xcelium> reset
-Loaded snapshot worklib.decodificador_pt2272_tb:sv
-xcelium> run
-Simulation complete via $finish(1) at time 91039575 NS + 3
-./decoder/decodificador_pt2272_tb.sv:210         $finish;
-xcelium> 
+xcelium> ^C
+xcelium> exit
+TOOL:	xrun(64)	24.09-s001: Exiting on Jan 13, 2025 at 09:26:16 -03  (total: 00:09:12)

@@ -46,7 +46,7 @@ report gates > "$reports_dir/decoder_gates.txt"
 
 # Write the netlist
 puts "Writing the netlist..."
-write_netlist > "$decoder_dir/decodificador_pt2272.v"
+write_netlist > "$decoder_dir/decodificador_pt2272_mapped.sv"
 
 # Write the SDF file
 puts "Writing the sdf..."

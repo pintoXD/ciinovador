@@ -1,10 +1,10 @@
-# SimVision Command Script (Fri Jan 10 12:29:14 PM -03 2025)
+# SimVision Command Script (Mon Jan 13 09:06:52 AM -03 2025)
 #
 # Version 24.09.s001
 #
 # You can restore this configuration with:
 #
-#      xrun -64bit /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262_tb.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262.v /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/libs/fast_vdd1v2_basicCells.v /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/addr_interpreter/comp_endereco.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/bit_gen/bit_generator.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/oscillator/clock_divider.sv +access+rw +gui -s -input restore_enc_synth.tcl -input /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/restore_enc_synth.tcl
+#      xrun -64bit /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262_tb.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262_mapped.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/libs/fast_vdd1v2_basicCells.v /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/addr_interpreter/comp_endereco.sv +access+rw +gui -input /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/restore_enc_synth.tcl
 #
 
 
@@ -18,6 +18,10 @@ preferences set toolbar-Standard-WatchWindow {
 preferences set waveform-print-variables selected
 preferences set waveform-print-time range
 preferences set plugin-enable-svdatabrowser-new 1
+preferences set toolbar-SimControl-WaveWindow {
+  usual
+  position -anchor e
+}
 preferences set toolbar-Windows-WatchWindow {
   usual
   shown 0
@@ -60,186 +64,200 @@ preferences set toolbar-TimeSearch-WatchWindow {
 # Simulator
 #
 database require simulator -hints {
-	simulator "xrun -64bit /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262_tb.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262.v /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/libs/fast_vdd1v2_basicCells.v /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/addr_interpreter/comp_endereco.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/bit_gen/bit_generator.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/oscillator/clock_divider.sv +access+rw +gui -s -input restore_enc_synth.tcl -input restore_enc_synth.tcl"
+	simulator "xrun -64bit /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262_tb.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262_mapped.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/libs/fast_vdd1v2_basicCells.v /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/addr_interpreter/comp_endereco.sv +access+rw +gui -input restore_enc_synth.tcl"
 }
 #
 # Groups
 #
-catch {group new -name internal_signals -overlay 0}
-group using internal_signals
+catch {group new -name {internal signals} -overlay 0}
+group using {internal signals}
 group set -overlay 0
 group set -comment {}
 group clear 0 end
 
 group insert \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_203}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_182}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_181}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_180}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_179}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_178}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_177}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_176}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_175}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_174}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_173}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_172}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_171}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_170}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_169}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_168}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_167}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_166}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_165}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_163}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_162}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_161}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_160}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_158}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_156}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_154}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_152}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_151}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_150}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_148}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_147}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_146}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_145}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_144}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_143}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_142}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_140}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_139}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_138}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_137}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_136}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_135}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_134}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_133}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_132}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_131}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_130}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_129}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_128}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_127}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_126}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_125}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_124}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_123}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_122}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_121}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_119}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_118}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_117}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_116}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_115}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_111}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_110}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_109}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_108}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_107}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_106}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_105}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_104}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_103}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_102}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_101}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_100}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_99}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_98}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_97}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_96}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_95}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_94}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_92}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_91}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_90}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_89}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_88}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_87}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_86}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_85}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_84}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_83}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_82}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_81}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_80}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_79}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_78}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_77}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_76}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_75}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_73}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_72}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_71}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_70}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_69}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_68}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_67}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_66}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_65}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_63}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_62}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_61}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_59}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_58}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_57}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_56}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_55}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_54}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_53}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_51}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_50}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_49}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_48}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_47}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_46}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_45}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_44}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_43}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_42}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_41}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_38}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_37}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_36}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_35}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_34}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_33}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_32}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_31}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_30}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_29}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_28}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_27}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_26}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_25}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_24}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_22}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_21}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_20}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_19}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_18}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_17}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_14}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_13}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_12}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_11}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_10}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_9}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_8}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_7}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_6}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_5}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_4}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_3}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_2}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_0}]} ] \
     [subst  {[format {codificador_pt2262_tb.DUT.n_1}]} ] \
-    [subst  {[format {codificador_pt2262_tb.DUT.n_0}]} ]
+    [subst  {[format {codificador_pt2262_tb.DUT.n_2}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_3}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_4}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_5}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_6}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_7}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_8}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_9}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_10}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_11}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_12}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_13}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_14}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_16}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_17}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_18}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_19}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_20}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_21}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_22}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_24}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_25}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_26}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_27}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_28}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_29}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_30}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_31}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_32}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_33}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_34}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_35}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_36}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_37}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_38}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_41}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_42}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_43}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_44}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_45}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_46}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_47}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_48}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_49}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_50}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_51}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_52}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_53}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_54}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_55}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_56}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_57}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_58}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_59}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_60}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_61}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_62}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_63}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_65}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_66}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_67}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_68}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_69}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_70}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_71}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_72}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_73}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_75}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_76}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_77}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_78}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_79}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_80}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_81}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_82}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_83}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_84}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_85}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_86}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_87}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_88}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_89}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_90}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_91}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_92}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_93}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_94}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_95}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_96}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_97}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_98}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_99}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_100}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_101}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_102}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_103}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_104}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_105}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_106}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_107}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_108}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_109}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_110}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_111}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_115}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_116}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_117}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_118}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_119}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_121}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_122}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_123}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_124}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_125}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_126}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_127}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_128}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_129}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_130}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_131}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_132}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_133}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_134}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_135}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_136}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_137}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_138}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_139}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_140}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_141}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_142}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_143}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_144}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_145}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_146}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_147}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_148}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_149}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_150}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_151}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_152}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_154}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_156}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_157}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_158}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_160}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_161}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_162}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_163}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_164}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_165}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_166}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_167}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_168}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_169}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_170}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_171}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_172}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_173}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_174}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_175}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_176}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_177}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_178}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_179}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_180}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_181}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_182}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_197}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_198}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_199}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_200}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_201}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_202}]} ] \
+    [subst  {[format {codificador_pt2262_tb.DUT.n_203}]} ]
 
 #
 # Cursors
 #
-set time 9677346724ps
+set time 59010117249ps
 if {[catch {cursor new -name  TimeA -time $time}] != ""} {
     cursor set -using TimeA -time $time
 }
@@ -257,8 +275,8 @@ mmap new  -reuse -name {Example Map} -radix %x -contents {{%b=11???? -bgcolor or
 #
 # Design Browser windows
 #
-if {[catch {window new WatchList -name "Design Browser 1" -geometry 1920x1043+-1+-1}] != ""} {
-    window geometry "Design Browser 1" 1920x1043+-1+-1
+if {[catch {window new WatchList -name "Design Browser 1" -geometry 730x500+2403+173}] != ""} {
+    window geometry "Design Browser 1" 730x500+2403+173
 }
 window target "Design Browser 1" on
 browser using {Design Browser 1}
@@ -271,18 +289,18 @@ browser timecontrol set -lock 0
 #
 # Waveform windows
 #
-if {[catch {window new WaveWindow -name "Waveform 2" -geometry 1920x983+1919+26}] != ""} {
-    window geometry "Waveform 2" 1920x983+1919+26
+if {[catch {window new WaveWindow -name "Waveform 1" -geometry 1920x983+1919+26}] != ""} {
+    window geometry "Waveform 1" 1920x983+1919+26
 }
-window target "Waveform 2" on
-waveform using {Waveform 2}
+window target "Waveform 1" on
+waveform using {Waveform 1}
 waveform sidebar visibility partial
 waveform set \
     -primarycursor TimeA \
     -signalnames name \
-    -signalwidth 256 \
+    -signalwidth 175 \
     -units ps \
-    -valuewidth 292
+    -valuewidth 75
 waveform baseline set -time 0
 
 set id [waveform add -signals [subst  {
@@ -309,6 +327,13 @@ set id [waveform add -signals [subst  {
 set id [waveform add -signals [subst  {
 	{[format {codificador_pt2262_tb.DUT.current_state[4:0]}]}
 	} ]]
+set id [waveform add -signals [subst  {
+	{[format {codificador_pt2262_tb.DUT.internal_oscillator_clk_cycle_counting[6:0]}]}
+	} ]]
+
+set groupId0 [waveform add -groups {{internal signals}}]
+waveform hierarchy collapse $groupId0
+
 set id [waveform add -signals [subst  {
 	{[format {codificador_pt2262_tb.DUT.osc_clk}]}
 	} ]]
@@ -339,10 +364,6 @@ set id [waveform add -signals [subst  {
 set id [waveform add -signals [subst  {
 	{[format {codificador_pt2262_tb.DUT.sync}]}
 	} ]]
-set id [waveform add -signals [subst  {
-	{[format {codificador_pt2262_tb.DUT.internal_oscillator_clk_cycle_counting[6:0]}]}
-	} ]]
-waveform format $id -radix %d
 
 waveform xview limits 0 82542075000ps
 

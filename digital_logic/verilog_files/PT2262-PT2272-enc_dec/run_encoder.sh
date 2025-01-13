@@ -64,18 +64,18 @@ elif [ "$1" == "xrun_compile" ]; then
             ${BIT_SIGNAL_GENERATOR_PATH}/bit_generator.sv \
             ${OSCILLATOR_PATH}/clock_divider.sv
 elif [ "$1" == "xrun_synth" ]; then
-    echo "Running simulation with synthesized code..."
+    echo "Running simulation with synthesized encoder code..."
     sleep 1
-    xrun -64bit ${ENCODER_PATH}/codificador_pt2262_tb.sv ${ENCODER_PATH}/codificador_pt2262.v \
+    xrun -64bit ${ENCODER_PATH}/codificador_pt2262_tb.sv ${ENCODER_PATH}/codificador_pt2262_mapped.sv \
         ${LIBS_PATH}/fast_vdd1v2_basicCells.v \
         ${ADDRESS_INTERPRETER_PATH}/comp_endereco.sv \
         +access+rw +gui \
         -s -input restore_enc_synth.tcl
 elif [ "$1" == "xrun_sdf" ]; then
-    echo "Running simulation with synthesized code..."
+    echo "Running simulation with SDF and synthesized encoder code..."
     sleep 1
     xrun -64bit -sdf_cmd_file ${ENCODER_PATH}/encoder_sdf.cmd\
-        ${ENCODER_PATH}/codificador_pt2262_tb.sv ${ENCODER_PATH}/codificador_pt2262.v \
+        ${ENCODER_PATH}/codificador_pt2262_tb.sv ${ENCODER_PATH}/codificador_pt2262_mapped.sv \
         ${LIBS_PATH}/fast_vdd1v2_basicCells.v \
         ${ADDRESS_INTERPRETER_PATH}/comp_endereco.sv \
         ${BIT_SIGNAL_GENERATOR_PATH}/bit_generator.sv \

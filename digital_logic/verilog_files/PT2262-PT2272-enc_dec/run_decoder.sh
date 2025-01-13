@@ -72,10 +72,10 @@ elif [ "$1" == "xrun_compile" ]; then
         ${OSCILLATOR_PATH}/clock_divider.sv \
         ${BIDIR_SHIFTREG_PATH}/bidir_shiftreg.sv
 elif [ "$1" == "xrun_synth" ]; then
-    echo "Running simulation with synthesized code..."
-    xrun -64bit ${DECODER_PATH}/decodificador_pt2272_tb.sv ${DECODER_PATH}/decodificador_pt2272.v \
-        ${LIBS_PATH}/fast_vdd1v2_basicCells.v \
+    echo "Running simulation with synthesized decoder code..."
+    xrun -64bit ${DECODER_PATH}/decodificador_pt2272_tb.sv ${DECODER_PATH}/decodificador_pt2272_mapped.sv \
         ${ENCODER_PATH}/codificador_pt2262.sv \
+        ${LIBS_PATH}/fast_vdd1v2_basicCells.v \
         ${ADDRESS_INTERPRETER_PATH}/comp_endereco.sv \
         +access+rw +gui
         # ${ADDRESS_INTERPRETER_PATH}/addr_interpreter.sv \
@@ -83,16 +83,16 @@ elif [ "$1" == "xrun_synth" ]; then
         # ${OSCILLATOR_PATH}/clock_divider.sv \
         # ${BIDIR_SHIFTREG_PATH}/bidir_shiftreg.sv \
 elif [ "$1" == "xrun_synth_all" ]; then
-    echo "Running simulation with synthesized code..."
-    xrun -64bit -ALLOWREDEFINITION ${DECODER_PATH}/decodificador_pt2272_tb.sv ${DECODER_PATH}/decodificador_pt2272.v \
+    echo "Running simulation with synthesized encoder and decoder code..."
+    xrun -64bit -ALLOWREDEFINITION ${DECODER_PATH}/decodificador_pt2272_tb.sv ${DECODER_PATH}/decodificador_pt2272_mapped.sv \
+        ${ENCODER_PATH}/codificador_pt2262_mapped.sv \
         ${LIBS_PATH}/fast_vdd1v2_basicCells.v \
-        ${ENCODER_PATH}/codificador_pt2262.v \
         ${ADDRESS_INTERPRETER_PATH}/comp_endereco.sv \
         +access+rw +gui
 elif [ "$1" == "xrun_sdf" ]; then
-    echo "Running simulation with synthesized code..."
+    echo "Running simulation with SDF on synthesized code..."
     xrun -64bit -sdf_cmd_file ${DECODER_PATH}/decoder_sdf.cmd\
-        ${DECODER_PATH}/decodificador_pt2272_tb.sv ${DECODER_PATH}/decodificador_pt2272.v \
+        ${DECODER_PATH}/decodificador_pt2272_tb.sv ${DECODER_PATH}/decodificador_pt2272_mapped.sv \
         ${LIBS_PATH}/fast_vdd1v2_basicCells.v \
         ${ENCODER_PATH}/codificador_pt2262.sv \
         ${ADDRESS_INTERPRETER_PATH}/addr_interpreter.sv \
