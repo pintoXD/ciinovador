@@ -78,10 +78,6 @@ elif [ "$1" == "xrun_synth" ]; then
         ${LIBS_PATH}/fast_vdd1v2_basicCells.v \
         ${ADDRESS_INTERPRETER_PATH}/comp_endereco.sv \
         +access+rw +gui
-        # ${ADDRESS_INTERPRETER_PATH}/addr_interpreter.sv \
-        # ${BIT_SIGNAL_GENERATOR_PATH}/bit_generator.sv \
-        # ${OSCILLATOR_PATH}/clock_divider.sv \
-        # ${BIDIR_SHIFTREG_PATH}/bidir_shiftreg.sv \
 elif [ "$1" == "xrun_synth_all" ]; then
     echo "Running simulation with synthesized encoder and decoder code..."
     xrun -64bit -ALLOWREDEFINITION ${DECODER_PATH}/decodificador_pt2272_tb.sv ${DECODER_PATH}/decodificador_pt2272_mapped.sv \
