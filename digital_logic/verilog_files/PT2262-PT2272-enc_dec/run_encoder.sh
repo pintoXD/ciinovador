@@ -27,6 +27,9 @@ export LOGS_PATH="$WORKING_DIR/logs"
 # Define the reports folder path
 export REPORTS_PATH="$WORKING_DIR/reports"
 
+# Define the restores folder path
+export RESTORES_PATH="$WORKING_DIR/restores"
+
 # Check if the logs directory exists. If not it not exists, create it.
 if [ ! -d "$LOGS_PATH" ]; then
   mkdir -p $LOGS_PATH
@@ -53,7 +56,7 @@ if [ "$1" == "xrun_raw" ]; then
             ${BIT_SIGNAL_GENERATOR_PATH}/bit_generator.sv \
             ${OSCILLATOR_PATH}/clock_divider.sv \
             +access+rw +gui \
-            -s -input restore.tcl
+            -s -input ${RESTORES_PATH}/restore.tcl
 elif [ "$1" == "xrun_compile" ]; then
     #Run for simulation
     echo "Running simulation with the raw source code..."
@@ -70,7 +73,7 @@ elif [ "$1" == "xrun_synth" ]; then
         ${LIBS_PATH}/fast_vdd1v2_basicCells.v \
         ${ADDRESS_INTERPRETER_PATH}/comp_endereco.sv \
         +access+rw +gui \
-        -s -input restore_enc_synth.tcl
+        -s -input ${RESTORES_PATH}/restore_enc_synth.tcl
 elif [ "$1" == "xrun_sdf" ]; then
     echo "Running simulation with SDF and synthesized encoder code..."
     sleep 1
@@ -81,7 +84,7 @@ elif [ "$1" == "xrun_sdf" ]; then
         ${BIT_SIGNAL_GENERATOR_PATH}/bit_generator.sv \
         ${OSCILLATOR_PATH}/clock_divider.sv \
         +access+rw +gui \
-        -s -input restore_enc_synth.tcl
+        -s -input ${RESTORES_PATH}/restore_enc_synth.tcl
 elif [ "$1" == "genus" ]; then
     echo "Running synthesis with genus..."
     sleep 1

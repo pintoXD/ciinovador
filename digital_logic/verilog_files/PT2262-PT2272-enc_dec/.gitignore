@@ -6,3 +6,5 @@ encoder/.simvision/**/*
 decoder/.simvision/**/*
 decoder/waves.shm/**/*
 encoder/waves.shm/**/*
+./**/waves.shm/**/*
+./**/.simvision/**/*

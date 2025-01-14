@@ -33,6 +33,9 @@ export DECODER_PATH="$WORKING_DIR/decoder"
 # Set the path to the shift register module
 export BIDIR_SHIFTREG_PATH="$WORKING_DIR/bidir_shift_register"
 
+# Define the restores folder path
+export RESTORES_PATH="$WORKING_DIR/restores"
+
 # Check if the logs directory exists. If not it not exists, create it.
 if [ ! -d "$LOGS_PATH" ]; then
   mkdir -p $LOGS_PATH
@@ -61,7 +64,7 @@ if [ "$1" == "xrun_raw" ]; then
             ${OSCILLATOR_PATH}/clock_divider.sv \
             ${BIDIR_SHIFTREG_PATH}/bidir_shiftreg.sv \
             +access+rw +gui \
-            -s -input restore_dec.tcl
+            -s -input ${RESTORES_PATH}/restore_dec.tcl
 elif [ "$1" == "xrun_compile" ]; then
     #Run for simulation
     xrun -compile -64bit ${DECODER_PATH}/decodificador_pt2272_tb.sv ${DECODER_PATH}/decodificador_pt2272.sv \
@@ -78,7 +81,7 @@ elif [ "$1" == "xrun_synth" ]; then
         ${LIBS_PATH}/fast_vdd1v2_basicCells.v \
         ${ADDRESS_INTERPRETER_PATH}/comp_endereco.sv \
         +access+rw +gui \
-        # -s -input restore_dec_synth.tcl
+        # -s -input ${RESTORES_PATH}/restore_dec_synth.tcl
 elif [ "$1" == "xrun_synth_all" ]; then
     echo "Running simulation with synthesized encoder and decoder code..."
     xrun -64bit -ALLOWREDEFINITION ${DECODER_PATH}/decodificador_pt2272_tb.sv ${DECODER_PATH}/decodificador_pt2272_mapped.sv \
@@ -86,7 +89,7 @@ elif [ "$1" == "xrun_synth_all" ]; then
         ${LIBS_PATH}/fast_vdd1v2_basicCells.v \
         ${ADDRESS_INTERPRETER_PATH}/comp_endereco.sv \
         +access+rw +gui \
-        -s -input restore_dec_synth_all.tcl
+        -s -input ${RESTORES_PATH}/restore_dec_synth_all.tcl
 elif [ "$1" == "xrun_sdf" ]; then
     echo "Running simulation with SDF on synthesized code..."
     xrun -64bit -sdf_cmd_file ${DECODER_PATH}/decoder_sdf.cmd\
