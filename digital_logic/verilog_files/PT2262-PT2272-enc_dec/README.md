@@ -10,3 +10,5 @@
 * **oscillator/**: Módulo que implementa o divisor de clock solicitado na descrição do projeto e utilizado nos módulos codificador e decodificador.
 * **scripts/**: Possui os scripts tcl necessários para sintetização dos códigos do codificador e do decodificador. `encoder_synth.tcl` refere-se ao tcl sintetizador do codificador. `decoder_synth.tcl` refere-se ao sintetizador do decodificador. 
 * **reports/**: Arquivos de relatório gerados durante a sintetização com Genus. Os arquivos no padrão `encoder_*.txt` representam os relatórios de síntese do codificador. Já os arquivos no padrão  `decoder_*.txt` representam os relatórios de síntese do decodificador.
+
+As pastas `logs/` e `restores` são pastas de controle para a automação realizada neste projeto. Não há informações relevantes nestas pastas. 

@@ -76,7 +76,9 @@ elif [ "$1" == "xrun_compile" ]; then
         ${BIDIR_SHIFTREG_PATH}/bidir_shiftreg.sv
 elif [ "$1" == "xrun_synth" ]; then
     echo "Running simulation with synthesized decoder code..."
-    xrun -64bit ${DECODER_PATH}/decodificador_pt2272_tb.sv ${DECODER_PATH}/decodificador_pt2272_mapped.sv \
+    xrun -64bit -sdf_cmd_file ${DECODER_PATH}/decoder_sdf.cmd \
+        ${DECODER_PATH}/decodificador_pt2272_tb.sv \
+        ${DECODER_PATH}/decodificador_pt2272_mapped.sv \
         ${ENCODER_PATH}/codificador_pt2262.sv \
         ${LIBS_PATH}/fast_vdd1v2_basicCells.v \
         ${ADDRESS_INTERPRETER_PATH}/comp_endereco.sv \
@@ -84,7 +86,8 @@ elif [ "$1" == "xrun_synth" ]; then
         -s -input ${RESTORES_PATH}/restore_dec_synth.tcl
 elif [ "$1" == "xrun_synth_all" ]; then
     echo "Running simulation with synthesized encoder and decoder code..."
-    xrun -64bit -ALLOWREDEFINITION ${DECODER_PATH}/decodificador_pt2272_tb.sv ${DECODER_PATH}/decodificador_pt2272_mapped.sv \
+    xrun -64bit -ALLOWREDEFINITION -sdf_cmd_file ${DECODER_PATH}/decoder_sdf.cmd\
+        ${DECODER_PATH}/decodificador_pt2272_tb.sv ${DECODER_PATH}/decodificador_pt2272_mapped.sv \
         ${ENCODER_PATH}/codificador_pt2262_mapped.sv \
         ${LIBS_PATH}/fast_vdd1v2_basicCells.v \
         ${ADDRESS_INTERPRETER_PATH}/comp_endereco.sv \
