@@ -1,0 +1,9 @@
+# Todas os scripts TCL usados nas sínteses do codificador e decodificador estão presentes
+# no diretório scripts sob os nomes:
+
+# - scripts/encoder_synth.tcl --> Script tcl usado para síntese do codificador
+# - scripts/decoder_synth.tcl --> Script tcl usado para síntese do decodificador
+
+puts "  Este arquivo possui apenas instruções em seu conteúdo. 
+  Por favor, consulte o conteúdo do arquivo para mais orientações. 
+  Informações relevantes também presentes em README.md"

@@ -81,7 +81,7 @@ elif [ "$1" == "xrun_synth" ]; then
         ${LIBS_PATH}/fast_vdd1v2_basicCells.v \
         ${ADDRESS_INTERPRETER_PATH}/comp_endereco.sv \
         +access+rw +gui \
-        # -s -input ${RESTORES_PATH}/restore_dec_synth.tcl
+        -s -input ${RESTORES_PATH}/restore_dec_synth.tcl
 elif [ "$1" == "xrun_synth_all" ]; then
     echo "Running simulation with synthesized encoder and decoder code..."
     xrun -64bit -ALLOWREDEFINITION ${DECODER_PATH}/decodificador_pt2272_tb.sv ${DECODER_PATH}/decodificador_pt2272_mapped.sv \
@@ -107,8 +107,9 @@ elif [ "$1" == "genus" ]; then
     sleep 1
     genus -log "$LOGS_PATH/decoder.log" -f $SCRIPTS_PATH/decoder_synth.tcl
 else
-    echo "Invalid argument. Usage: $0 <arg1> [simulation or synthesis]"
+    echo "Invalid argument. Usage: $0 <arg1> [xrun_raw, xrun_synth, xrun_compile or genus]"
     exit 1
 fi
 
 
+echo "Finishing"

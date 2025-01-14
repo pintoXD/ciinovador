@@ -1,10 +1,10 @@
-# SimVision Command Script (Fri Jan 10 07:47:27 PM -03 2025)
+# SimVision Command Script (Tue Jan 14 09:00:09 AM -03 2025)
 #
 # Version 24.09.s001
 #
 # You can restore this configuration with:
 #
-#      xrun -64bit /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272_tb.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/addr_interpreter/addr_interpreter.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/addr_interpreter/comp_endereco.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/bit_gen/bit_generator.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/oscillator/clock_divider.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/bidir_shift_register/bidir_shiftreg.sv +access+rw +gui -input /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/restore_dec.tcl
+#      xrun -64bit /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272_tb.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/addr_interpreter/addr_interpreter.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/addr_interpreter/comp_endereco.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/bit_gen/bit_generator.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/oscillator/clock_divider.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/bidir_shift_register/bidir_shiftreg.sv +access+rw +gui -s -input /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/restores/restore_dec.tcl
 #
 
 
@@ -64,17 +64,85 @@ preferences set toolbar-TimeSearch-WatchWindow {
 # Simulator
 #
 database require simulator -hints {
-	simulator "xrun -64bit /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272_tb.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/addr_interpreter/addr_interpreter.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/addr_interpreter/comp_endereco.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/bit_gen/bit_generator.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/oscillator/clock_divider.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/bidir_shift_register/bidir_shiftreg.sv +access+rw +gui -input restore_dec.tcl"
+	simulator "xrun -64bit /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272_tb.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/addr_interpreter/addr_interpreter.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/addr_interpreter/comp_endereco.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/bit_gen/bit_generator.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/oscillator/clock_divider.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/bidir_shift_register/bidir_shiftreg.sv +access+rw +gui -s -input /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/restores/restore_dec.tcl -input restore_dec.tcl"
 }
+#
+# Groups
+#
+catch {group new -name decoder -overlay 0}
+catch {group new -name encoder -overlay 0}
+group using decoder
+group set -overlay 0
+group set -comment {}
+group clear 0 end
+
+group insert \
+    [subst  {[format {decodificador_pt2272_tb.DUT.A[7:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_LEFT_SHIFT_OUT}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_OP_MODE[2:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_OUT[25:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PT2272_BIT_IN[1:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_RESET}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_RIGHT_SHIFT_OUT}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_SIZE[4:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.D[3:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.DECODER_FSM_STATE}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.F_BIT_LOCATOR[7:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.HIGH_PULSE_COUNTING[4:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.INTERPRETED_ADDR[7:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.LOW_PULSE_COUNTING[7:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.PREVIOUS_cod_i}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.clk}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.cod_i}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.cod_i_FELL}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.cod_i_ROSE}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.current_cod_i}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.current_state[2:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.dv}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.flag_dv}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.i[8:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.internal_f_bit_locator[7:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.internal_interpreted_addr[7:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.next_state[2:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.osc_clk}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.osc_rst}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.reset}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.reset_counters}]} ]
+group using encoder
+group set -overlay 0
+group set -comment {}
+group clear 0 end
+
+group insert \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.A[7:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.D[3:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.ENCODER_FSM_STATE}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.F_BIT_LOCATOR[7:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.INTERPRETED_ADDR[7:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.bit_gen_enb}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.bit_gen_input[1:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.bit_gen_output}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.bit_gen_rst}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.bit_generated_flag}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.bit_sent_flag}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.clk}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.cod_o}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.current_state[4:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.next_state[4:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.osc_clk}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.osc_clk_rose}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.osc_rst}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.past_osc_clk}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.reset}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.sync}]} ]
 
 #
 # Cursors
 #
-set time 91039575000ps
+set time 29475695212ps
 if {[catch {cursor new -name  TimeA -time $time}] != ""} {
     cursor set -using TimeA -time $time
 }
-cursor set -using TimeA -marching 1
 
 #
 # Mnemonic Maps
@@ -89,8 +157,8 @@ mmap new  -reuse -name {Example Map} -radix %x -contents {{%b=11???? -bgcolor or
 #
 # Design Browser windows
 #
-if {[catch {window new WatchList -name "Design Browser 1" -geometry 730x500+261+33}] != ""} {
-    window geometry "Design Browser 1" 730x500+261+33
+if {[catch {window new WatchList -name "Design Browser 1" -geometry 730x500+2506+111}] != ""} {
+    window geometry "Design Browser 1" 730x500+2506+111
 }
 window target "Design Browser 1" on
 browser using {Design Browser 1}
@@ -117,102 +185,16 @@ waveform set \
     -valuewidth 75
 waveform baseline set -time 0
 
-set id [waveform add -signals [subst  {
-	{[format {decodificador_pt2272_tb.DUT.A[7:0]}]}
-	} ]]
-set id [waveform add -signals [subst  {
-	{[format {decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_ENABLER}]}
-	} ]]
-set id [waveform add -signals [subst  {
-	{[format {decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_LEFT_SHIFT_OUT}]}
-	} ]]
-set id [waveform add -signals [subst  {
-	{[format {decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_OP_MODE[2:0]}]}
-	} ]]
-set id [waveform add -signals [subst  {
-	{[format {decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_OUT[25:0]}]}
-	} ]]
-waveform format $id -radix %b
-set id [waveform add -signals [subst  {
-	{[format {decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PT2272_BIT_IN[1:0]}]}
-	} ]]
-set id [waveform add -signals [subst  {
-	{[format {decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_RIGHT_SHIFT_OUT}]}
-	} ]]
-set id [waveform add -signals [subst  {
-	{[format {decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_SIZE[4:0]}]}
-	} ]]
-set id [waveform add -signals [subst  {
-	{[format {decodificador_pt2272_tb.DUT.D[3:0]}]}
-	} ]]
-waveform format $id -radix %b
-set id [waveform add -signals [subst  {
-	{[format {decodificador_pt2272_tb.DUT.DECODER_FSM_STATE}]}
-	} ]]
-set id [waveform add -signals [subst  {
-	{[format {decodificador_pt2272_tb.DUT.F_BIT_LOCATOR[7:0]}]}
-	} ]]
-set id [waveform add -signals [subst  {
-	{[format {decodificador_pt2272_tb.DUT.HIGH_PULSE_COUNTING[4:0]}]}
-	} ]]
-set id [waveform add -signals [subst  {
-	{[format {decodificador_pt2272_tb.DUT.INTERPRETED_ADDR[7:0]}]}
-	} ]]
-set id [waveform add -signals [subst  {
-	{[format {decodificador_pt2272_tb.DUT.LOW_PULSE_COUNTING[7:0]}]}
-	} ]]
-set id [waveform add -signals [subst  {
-	{[format {decodificador_pt2272_tb.DUT.PREVIOUS_cod_i}]}
-	} ]]
-set id [waveform add -signals [subst  {
-	{[format {decodificador_pt2272_tb.DUT.clk}]}
-	} ]]
-set id [waveform add -signals [subst  {
-	{[format {decodificador_pt2272_tb.DUT.cod_i}]}
-	} ]]
-set id [waveform add -signals [subst  {
-	{[format {decodificador_pt2272_tb.DUT.cod_i_FELL}]}
-	} ]]
-set id [waveform add -signals [subst  {
-	{[format {decodificador_pt2272_tb.DUT.cod_i_ROSE}]}
-	} ]]
-set id [waveform add -signals [subst  {
-	{[format {decodificador_pt2272_tb.DUT.current_cod_i}]}
-	} ]]
-set id [waveform add -signals [subst  {
-	{[format {decodificador_pt2272_tb.DUT.current_state}]}
-	} ]]
-set id [waveform add -signals [subst  {
-	{[format {decodificador_pt2272_tb.DUT.dv}]}
-	} ]]
-set id [waveform add -signals [subst  {
-	{[format {decodificador_pt2272_tb.DUT.i[8:0]}]}
-	} ]]
-set id [waveform add -signals [subst  {
-	{[format {decodificador_pt2272_tb.DUT.internal_f_bit_locator[7:0]}]}
-	} ]]
-waveform format $id -radix %b
-set id [waveform add -signals [subst  {
-	{[format {decodificador_pt2272_tb.DUT.internal_interpreted_addr[7:0]}]}
-	} ]]
-waveform format $id -radix %b
-set id [waveform add -signals [subst  {
-	{[format {decodificador_pt2272_tb.DUT.next_state}]}
-	} ]]
-set id [waveform add -signals [subst  {
-	{[format {decodificador_pt2272_tb.DUT.osc_clk}]}
-	} ]]
-set id [waveform add -signals [subst  {
-	{[format {decodificador_pt2272_tb.DUT.osc_rst}]}
-	} ]]
-set id [waveform add -signals [subst  {
-	{[format {decodificador_pt2272_tb.DUT.reset}]}
-	} ]]
-set id [waveform add -signals [subst  {
-	{[format {decodificador_pt2272_tb.DUT.reset_counters}]}
-	} ]]
 
-waveform xview limits 0 91039575000ps
+set groupId0 [waveform add -groups decoder]
+waveform hierarchy collapse $groupId0
+
+
+set groupId0 [waveform add -groups encoder]
+waveform hierarchy collapse $groupId0
+
+
+waveform xview limits 0 2000ps
 
 #
 # Waveform Window Links

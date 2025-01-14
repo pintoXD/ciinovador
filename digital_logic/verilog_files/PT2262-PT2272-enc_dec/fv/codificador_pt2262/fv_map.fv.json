@@ -387,20 +387,20 @@
 "object":"/designs/codificador_pt2262/instances_seq/signal_creator_pulse_counter_sync_reg[6]",
 "type":"instance"},
 {"index": "1", 
- "date": "Mon Jan 13 13:38:49 UTC 2025",
- "seconds": 1736775529.879699,
+ "date": "Tue Jan 14 12:52:44 UTC 2025",
+ "seconds": 1736859164.6585479,
  "netlist": "fv/codificador_pt2262/fv_map.v.gz", 
  "netlist_exists": "1", 
  "netlist_normalize": "/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/fv/codificador_pt2262/fv_map.v.gz", 
- "netlist_mtime": "1736775529", 
- "netlist_timestamp": "Mon Jan 13 13:38:49 UTC 2025", 
+ "netlist_mtime": "1736859164", 
+ "netlist_timestamp": "Tue Jan 14 12:52:44 UTC 2025", 
  "netlist_size": "4116", 
- "netlist_cksum": "1342199185", 
+ "netlist_cksum": "108903090", 
  "design_name": "codificador_pt2262", 
  "synth_workdir": "/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec", 
  "synthesis_command":"",
  "current_label": "fv_map", 
  "previous_label": "rtl", 
- "write_verif_file_runtime": 0.43194899999999997 
+ "write_verif_file_runtime": 0.42255499999999996 
  }
 ]
