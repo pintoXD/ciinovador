@@ -76,7 +76,7 @@ elif [ "$1" == "xrun_compile" ]; then
         ${BIDIR_SHIFTREG_PATH}/bidir_shiftreg.sv
 elif [ "$1" == "xrun_synth" ]; then
     echo "Running simulation with synthesized decoder code..."
-    xrun -64bit -sdf_cmd_file ${DECODER_PATH}/decoder_sdf.cmd \
+    xrun -64bit \
         ${DECODER_PATH}/decodificador_pt2272_tb.sv \
         ${DECODER_PATH}/decodificador_pt2272_mapped.sv \
         ${ENCODER_PATH}/codificador_pt2262.sv \

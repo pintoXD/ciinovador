@@ -17,8 +17,8 @@ echo "Executando sínteses e simulações..."
 # mas o decodificador não executa como deveria.
 ./run_encoder.sh genus
 ./run_decoder.sh genus
-./run_decoder.sh xrun_synth_all
+# ./run_decoder.sh xrun_synth_all
 
 # Para executar a simulação com somente o decodificador sintetizado e o codificador apenas simulado,
 # basta descomentar a linha abaixo e comentar o comando ./run_decoder.sh xrun_synth_all (provavelmente presente na linha 20.)
-# ./run_decoder.sh xrun_synth
+./run_decoder.sh xrun_synth

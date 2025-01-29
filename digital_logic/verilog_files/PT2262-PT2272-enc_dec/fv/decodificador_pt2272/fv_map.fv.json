@@ -524,20 +524,20 @@
 "object":"/designs/decodificador_pt2272/instances_seq/reset_counters_reg",
 "type":"instance"},
 {"index": "1", 
- "date": "Tue Jan 14 13:11:35 UTC 2025",
- "seconds": 1736860295.793537,
+ "date": "Tue Jan 14 14:00:45 UTC 2025",
+ "seconds": 1736863245.2524009,
  "netlist": "fv/decodificador_pt2272/fv_map.v.gz", 
  "netlist_exists": "1", 
  "netlist_normalize": "/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/fv/decodificador_pt2272/fv_map.v.gz", 
- "netlist_mtime": "1736860295", 
- "netlist_timestamp": "Tue Jan 14 13:11:35 UTC 2025", 
+ "netlist_mtime": "1736863244", 
+ "netlist_timestamp": "Tue Jan 14 14:00:44 UTC 2025", 
  "netlist_size": "4199", 
- "netlist_cksum": "252833069", 
+ "netlist_cksum": "1309108574", 
  "design_name": "decodificador_pt2272", 
  "synth_workdir": "/home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec", 
  "synthesis_command":"",
  "current_label": "fv_map", 
  "previous_label": "rtl", 
- "write_verif_file_runtime": 0.372324 
+ "write_verif_file_runtime": 0.37677 
  }
 ]
