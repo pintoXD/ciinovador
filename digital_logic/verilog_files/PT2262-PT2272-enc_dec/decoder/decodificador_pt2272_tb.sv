@@ -190,15 +190,15 @@ initial #(1500ms) $finish(); // termina a simulação
 initial
 begin
 	@(posedge clk_decod);
-	// gera 1 bit
-	/*bit_0();
-	bit_1();
-	bit_f();
-	sync();
-	bit_0();
-	bit_1();
-	bit_f();
-	sync();/
+	// // gera 1 bit
+	// bit_0();
+	// bit_1();
+	// bit_f();
+	// sync();
+	// bit_0();
+	// bit_1();
+	// bit_f();
+	// sync();
 	// A = z1111z11
 	A_decod = 8'hFF;
 	A_decod[2] = 1'bz;

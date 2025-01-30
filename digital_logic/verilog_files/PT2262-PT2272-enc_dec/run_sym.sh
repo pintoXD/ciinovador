@@ -1,0 +1,13 @@
+#!/bin/bash
+
+echo "Script para execução da simulação de codificador e decodifcador somente simulados.
+
+Por favor, verificar o arquivo README.md para maiores informações sobre este projeto.
+"
+
+sleep 3
+
+# Run the decoder and encoder simluation without being synthesized
+./run_decoder.sh xrun_raw
+
+

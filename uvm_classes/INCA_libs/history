@@ -1,0 +1,8 @@
+//
+// File created by:  irun
+// Do not modify this file
+
+s1::(29Jan2025:14:44:10):( irun -uvm top.sv +UVM_VERBOSITY=HIGH )
+s2::(29Jan2025:14:46:38):( irun -uvm top.sv +UVM_VERBOSITY=HIGH )
+s3::(29Jan2025:14:48:41):( irun -uvm top.sv +UVM_VERBOSITY=HIGH )
+s4::(29Jan2025:14:50:36):( irun -uvm top.sv +UVM_VERBOSITY=HIGH )

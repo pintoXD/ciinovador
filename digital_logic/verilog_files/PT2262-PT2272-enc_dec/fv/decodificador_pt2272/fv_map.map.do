@@ -25,6 +25,7 @@ add mapped point dv dv -type PO PO
 
 
 //Sequential Pins
+add mapped point BIDIR_SHIFTREG_OP_MODE[0]/q BIDIR_SHIFTREG_OP_MODE_reg[0]/Q  -type DFF DFF
 add mapped point BIDIR_SHIFTREG_PT2272_BIT_IN[0]/q BIDIR_SHIFTREG_PT2272_BIT_IN_reg[0]/Q  -type DFF DFF
 add mapped point BIDIR_SHIFTREG_PT2272_BIT_IN[1]/q BIDIR_SHIFTREG_PT2272_BIT_IN_reg[1]/Q  -type DFF DFF
 add mapped point BIDIR_SHIFTREG_RESET/q BIDIR_SHIFTREG_RESET_reg/Q  -type DFF DFF
@@ -34,12 +35,18 @@ add mapped point D[2]/q D_reg[2]/Q  -type DFF DFF
 add mapped point D[3]/q D_reg[3]/Q  -type DFF DFF
 add mapped point HIGH_PULSE_COUNTING[0]/q HIGH_PULSE_COUNTING_reg[0]/Q  -type DFF DFF
 add mapped point HIGH_PULSE_COUNTING[1]/q HIGH_PULSE_COUNTING_reg[1]/Q  -type DFF DFF
+add mapped point HIGH_PULSE_COUNTING[2]/q HIGH_PULSE_COUNTING_reg[2]/Q  -type DFF DFF
 add mapped point HIGH_PULSE_COUNTING[3]/q HIGH_PULSE_COUNTING_reg[3]/Q  -type DFF DFF
+add mapped point HIGH_PULSE_COUNTING[4]/q HIGH_PULSE_COUNTING_reg[4]/Q  -type DFF DFF
+add mapped point LOW_PULSE_COUNTING[0]/q LOW_PULSE_COUNTING_reg[0]/Q  -type DFF DFF
 add mapped point LOW_PULSE_COUNTING[1]/q LOW_PULSE_COUNTING_reg[1]/Q  -type DFF DFF
+add mapped point LOW_PULSE_COUNTING[2]/q LOW_PULSE_COUNTING_reg[2]/Q  -type DFF DFF
+add mapped point LOW_PULSE_COUNTING[3]/q LOW_PULSE_COUNTING_reg[3]/Q  -type DFF DFF
+add mapped point LOW_PULSE_COUNTING[4]/q LOW_PULSE_COUNTING_reg[4]/Q  -type DFF DFF
+add mapped point LOW_PULSE_COUNTING[5]/q LOW_PULSE_COUNTING_reg[5]/Q  -type DFF DFF
+add mapped point LOW_PULSE_COUNTING[6]/q LOW_PULSE_COUNTING_reg[6]/Q  -type DFF DFF
 add mapped point LOW_PULSE_COUNTING[7]/q LOW_PULSE_COUNTING_reg[7]/Q  -type DFF DFF
 add mapped point PREVIOUS_cod_i/q PREVIOUS_cod_i_reg/Q  -type DFF DFF
-add mapped point RCVD_DATA_SHIFTREG/q[0]/q RCVD_DATA_SHIFTREG_q_reg[0]/Q  -type DFF DFF
-add mapped point RCVD_DATA_SHIFTREG/q[1]/q RCVD_DATA_SHIFTREG_q_reg[1]/Q  -type DFF DFF
 add mapped point RCVD_DATA_SHIFTREG/q[2]/q RCVD_DATA_SHIFTREG_q_reg[2]/Q  -type DFF DFF
 add mapped point RCVD_DATA_SHIFTREG/q[3]/q RCVD_DATA_SHIFTREG_q_reg[3]/Q  -type DFF DFF
 add mapped point RCVD_DATA_SHIFTREG/q[4]/q RCVD_DATA_SHIFTREG_q_reg[4]/Q  -type DFF DFF
@@ -66,54 +73,18 @@ add mapped point RCVD_DATA_SHIFTREG/q[24]/q RCVD_DATA_SHIFTREG_q_reg[24]/Q  -typ
 add mapped point RCVD_DATA_SHIFTREG/q[25]/q RCVD_DATA_SHIFTREG_q_reg[25]/Q  -type DFF DFF
 add mapped point current_state[0]/q current_state_reg[0]/Q  -type DFF DFF
 add mapped point current_state[1]/q current_state_reg[1]/Q  -type DFF DFF
+add mapped point current_state[2]/q current_state_reg[2]/Q  -type DFF DFF
 add mapped point dv/q dv_reg/Q  -type DFF DFF
-add mapped point internal_f_bit_locator[1]/q internal_f_bit_locator_reg[1]/Q  -type DFF DFF
-add mapped point internal_f_bit_locator[2]/q internal_f_bit_locator_reg[2]/Q  -type DFF DFF
-add mapped point internal_f_bit_locator[3]/q internal_f_bit_locator_reg[3]/Q  -type DFF DFF
-add mapped point internal_f_bit_locator[4]/q internal_f_bit_locator_reg[4]/Q  -type DFF DFF
-add mapped point internal_f_bit_locator[5]/q internal_f_bit_locator_reg[5]/Q  -type DFF DFF
-add mapped point internal_f_bit_locator[6]/q internal_f_bit_locator_reg[6]/Q  -type DFF DFF
-add mapped point internal_f_bit_locator[7]/q internal_f_bit_locator_reg[7]/Q  -type DFF DFF
-add mapped point internal_interpreted_addr[0]/q internal_interpreted_addr_reg[0]/Q  -type DFF DFF
-add mapped point internal_interpreted_addr[1]/q internal_interpreted_addr_reg[1]/Q  -type DFF DFF
-add mapped point internal_interpreted_addr[2]/q internal_interpreted_addr_reg[2]/Q  -type DFF DFF
-add mapped point internal_interpreted_addr[3]/q internal_interpreted_addr_reg[3]/Q  -type DFF DFF
-add mapped point internal_interpreted_addr[4]/q internal_interpreted_addr_reg[4]/Q  -type DFF DFF
-add mapped point internal_interpreted_addr[5]/q internal_interpreted_addr_reg[5]/Q  -type DFF DFF
-add mapped point internal_interpreted_addr[6]/q internal_interpreted_addr_reg[6]/Q  -type DFF DFF
-add mapped point internal_interpreted_addr[7]/q internal_interpreted_addr_reg[7]/Q  -type DFF DFF
+add mapped point flag_dv/q flag_dv_reg/Q  -type DFF DFF
 add mapped point internal_oscillator/OUTPUT_CLK/q internal_oscillator_OUTPUT_CLK_reg/Q  -type DFF DFF
 add mapped point internal_oscillator/clk_cycle_counting[0]/q internal_oscillator_clk_cycle_counting_reg[0]/Q  -type DFF DFF
 add mapped point internal_oscillator/clk_cycle_counting[1]/q internal_oscillator_clk_cycle_counting_reg[1]/Q  -type DFF DFF
+add mapped point internal_oscillator/clk_cycle_counting[2]/q internal_oscillator_clk_cycle_counting_reg[2]/Q  -type DFF DFF
 add mapped point internal_oscillator/clk_cycle_counting[3]/q internal_oscillator_clk_cycle_counting_reg[3]/Q  -type DFF DFF
+add mapped point internal_oscillator/clk_cycle_counting[4]/q internal_oscillator_clk_cycle_counting_reg[4]/Q  -type DFF DFF
 add mapped point internal_oscillator/clk_cycle_counting[5]/q internal_oscillator_clk_cycle_counting_reg[5]/Q  -type DFF DFF
 add mapped point internal_oscillator/clk_cycle_counting[6]/q internal_oscillator_clk_cycle_counting_reg[6]/Q  -type DFF DFF
-add mapped point BIDIR_SHIFTREG_OP_MODE[0]/q BIDIR_SHIFTREG_OP_MODE_reg[0]/Q  -type DFF DFF
-add mapped point BIDIR_SHIFTREG_OP_MODE[0]/q BIDIR_SHIFTREG_OP_MODE_reg[0]/QN  -type DFF DFF
-add mapped point HIGH_PULSE_COUNTING[2]/q HIGH_PULSE_COUNTING_reg[2]/Q  -type DFF DFF
-add mapped point HIGH_PULSE_COUNTING[2]/q HIGH_PULSE_COUNTING_reg[2]/QN  -type DFF DFF
-add mapped point HIGH_PULSE_COUNTING[4]/q HIGH_PULSE_COUNTING_reg[4]/Q  -type DFF DFF
-add mapped point HIGH_PULSE_COUNTING[4]/q HIGH_PULSE_COUNTING_reg[4]/QN  -type DFF DFF
-add mapped point LOW_PULSE_COUNTING[0]/q LOW_PULSE_COUNTING_reg[0]/Q  -type DFF DFF
-add mapped point LOW_PULSE_COUNTING[0]/q LOW_PULSE_COUNTING_reg[0]/QN  -type DFF DFF
-add mapped point LOW_PULSE_COUNTING[2]/q LOW_PULSE_COUNTING_reg[2]/Q  -type DFF DFF
-add mapped point LOW_PULSE_COUNTING[2]/q LOW_PULSE_COUNTING_reg[2]/QN  -type DFF DFF
-add mapped point LOW_PULSE_COUNTING[3]/q LOW_PULSE_COUNTING_reg[3]/Q  -type DFF DFF
-add mapped point LOW_PULSE_COUNTING[3]/q LOW_PULSE_COUNTING_reg[3]/QN  -type DFF DFF
-add mapped point LOW_PULSE_COUNTING[4]/q LOW_PULSE_COUNTING_reg[4]/Q  -type DFF DFF
-add mapped point LOW_PULSE_COUNTING[4]/q LOW_PULSE_COUNTING_reg[4]/QN  -type DFF DFF
-add mapped point LOW_PULSE_COUNTING[5]/q LOW_PULSE_COUNTING_reg[5]/Q  -type DFF DFF
-add mapped point LOW_PULSE_COUNTING[5]/q LOW_PULSE_COUNTING_reg[5]/QN  -type DFF DFF
-add mapped point LOW_PULSE_COUNTING[6]/q LOW_PULSE_COUNTING_reg[6]/Q  -type DFF DFF
-add mapped point LOW_PULSE_COUNTING[6]/q LOW_PULSE_COUNTING_reg[6]/QN  -type DFF DFF
-add mapped point current_state[2]/q current_state_reg[2]/Q  -type DFF DFF
-add mapped point current_state[2]/q current_state_reg[2]/QN  -type DFF DFF
-add mapped point internal_oscillator/clk_cycle_counting[2]/q internal_oscillator_clk_cycle_counting_reg[2]/Q  -type DFF DFF
-add mapped point internal_oscillator/clk_cycle_counting[2]/q internal_oscillator_clk_cycle_counting_reg[2]/QN  -type DFF DFF
-add mapped point internal_oscillator/clk_cycle_counting[4]/q internal_oscillator_clk_cycle_counting_reg[4]/Q  -type DFF DFF
-add mapped point internal_oscillator/clk_cycle_counting[4]/q internal_oscillator_clk_cycle_counting_reg[4]/QN  -type DFF DFF
 add mapped point reset_counters/q reset_counters_reg/Q  -type DFF DFF
-add mapped point reset_counters/q reset_counters_reg/QN  -type DFF DFF
 
 
 

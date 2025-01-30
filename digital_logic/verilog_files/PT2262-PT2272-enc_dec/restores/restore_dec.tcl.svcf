@@ -1,0 +1,212 @@
+# SimVision Command Script (Tue Jan 14 09:00:09 AM -03 2025)
+#
+# Version 24.09.s001
+#
+# You can restore this configuration with:
+#
+#      xrun -64bit /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272_tb.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/addr_interpreter/addr_interpreter.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/addr_interpreter/comp_endereco.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/bit_gen/bit_generator.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/oscillator/clock_divider.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/bidir_shift_register/bidir_shiftreg.sv +access+rw +gui -s -input /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/restores/restore_dec.tcl
+#
+
+
+#
+# Preferences
+#
+preferences set toolbar-Standard-WatchWindow {
+  usual
+  shown 0
+}
+preferences set waveform-print-variables selected
+preferences set waveform-print-time range
+preferences set plugin-enable-svdatabrowser-new 1
+preferences set toolbar-SimControl-WaveWindow {
+  usual
+  position -anchor e
+}
+preferences set toolbar-Windows-WatchWindow {
+  usual
+  shown 0
+}
+preferences set toolbar-sendToIndago-WaveWindow {
+  usual
+  position -pos 1
+}
+preferences set waveform-print-paper {A4 (210mm x 297mm)}
+preferences set toolbar-Standard-Console {
+  usual
+  position -pos 1
+}
+preferences set toolbar-Search-Console {
+  usual
+  position -pos 2
+}
+preferences set toolbar-txe_waveform_toggle-WaveWindow {
+  usual
+  position -pos 1
+}
+preferences set plugin-enable-groupscope 0
+preferences set sb-display-values 1
+preferences set plugin-enable-interleaveandcompare 0
+preferences set plugin-enable-waveformfrequencyplot 0
+preferences set toolbar-SimControl-WatchWindow {
+  usual
+  shown 0
+}
+preferences set toolbar-Windows-WaveWindow {
+  usual
+  position -pos 2
+}
+preferences set toolbar-TimeSearch-WatchWindow {
+  usual
+  shown 0
+}
+
+#
+# Simulator
+#
+database require simulator -hints {
+	simulator "xrun -64bit /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272_tb.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/addr_interpreter/addr_interpreter.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/addr_interpreter/comp_endereco.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/bit_gen/bit_generator.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/oscillator/clock_divider.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/bidir_shift_register/bidir_shiftreg.sv +access+rw +gui -s -input /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/restores/restore_dec.tcl -input restore_dec.tcl"
+}
+#
+# Groups
+#
+catch {group new -name decoder -overlay 0}
+catch {group new -name encoder -overlay 0}
+group using decoder
+group set -overlay 0
+group set -comment {}
+group clear 0 end
+
+group insert \
+    [subst  {[format {decodificador_pt2272_tb.DUT.A[7:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_LEFT_SHIFT_OUT}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_OP_MODE[2:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_OUT[25:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PT2272_BIT_IN[1:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_RESET}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_RIGHT_SHIFT_OUT}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_SIZE[4:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.D[3:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.DECODER_FSM_STATE}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.F_BIT_LOCATOR[7:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.HIGH_PULSE_COUNTING[4:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.INTERPRETED_ADDR[7:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.LOW_PULSE_COUNTING[7:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.PREVIOUS_cod_i}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.clk}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.cod_i}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.cod_i_FELL}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.cod_i_ROSE}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.current_cod_i}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.current_state[2:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.dv}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.flag_dv}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.i[8:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.internal_f_bit_locator[7:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.internal_interpreted_addr[7:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.next_state[2:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.osc_clk}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.osc_rst}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.reset}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.reset_counters}]} ]
+group using encoder
+group set -overlay 0
+group set -comment {}
+group clear 0 end
+
+group insert \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.A[7:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.D[3:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.ENCODER_FSM_STATE}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.F_BIT_LOCATOR[7:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.INTERPRETED_ADDR[7:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.bit_gen_enb}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.bit_gen_input[1:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.bit_gen_output}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.bit_gen_rst}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.bit_generated_flag}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.bit_sent_flag}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.clk}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.cod_o}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.current_state[4:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.next_state[4:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.osc_clk}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.osc_clk_rose}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.osc_rst}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.past_osc_clk}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.reset}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.sync}]} ]
+
+#
+# Cursors
+#
+set time 29475695212ps
+if {[catch {cursor new -name  TimeA -time $time}] != ""} {
+    cursor set -using TimeA -time $time
+}
+
+#
+# Mnemonic Maps
+#
+mmap new  -reuse -name {Boolean as Logic} -radix %b -contents {{%c=FALSE -edgepriority 1 -shape low}
+{%c=TRUE -edgepriority 1 -shape high}}
+mmap new  -reuse -name {Example Map} -radix %x -contents {{%b=11???? -bgcolor orange -label REG:%x -linecolor yellow -shape bus}
+{%x=1F -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=2C -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=* -label %x -linecolor gray -shape bus}}
+
+#
+# Design Browser windows
+#
+if {[catch {window new WatchList -name "Design Browser 1" -geometry 730x500+2506+111}] != ""} {
+    window geometry "Design Browser 1" 730x500+2506+111
+}
+window target "Design Browser 1" on
+browser using {Design Browser 1}
+browser set -scope [subst  {[format {decodificador_pt2272_tb.DUT}]} ]
+browser set \
+    -signalsort name
+browser yview see [subst  {[format {decodificador_pt2272_tb.DUT}]} ]
+browser timecontrol set -lock 0
+
+#
+# Waveform windows
+#
+if {[catch {window new WaveWindow -name "Waveform 1" -geometry 1920x983+1919+26}] != ""} {
+    window geometry "Waveform 1" 1920x983+1919+26
+}
+window target "Waveform 1" on
+waveform using {Waveform 1}
+waveform sidebar visibility partial
+waveform set \
+    -primarycursor TimeA \
+    -signalnames name \
+    -signalwidth 175 \
+    -units ps \
+    -valuewidth 75
+waveform baseline set -time 0
+
+
+set groupId0 [waveform add -groups decoder]
+waveform hierarchy collapse $groupId0
+
+
+set groupId0 [waveform add -groups encoder]
+waveform hierarchy collapse $groupId0
+
+
+waveform xview limits 0 2000ps
+
+#
+# Waveform Window Links
+#
+
+#
+# Console windows
+#
+console set -windowname Console
+window geometry Console 730x250+261+564
+
+#
+# Layout selection
+#
+

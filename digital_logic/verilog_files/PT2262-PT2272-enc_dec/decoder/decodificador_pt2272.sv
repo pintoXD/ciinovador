@@ -204,17 +204,11 @@ end
 always_ff @(posedge osc_clk, posedge reset) begin : DECODER_FSM_FF_BLOCK
     if(reset) begin
         reset_counters <= 0;
-        // BIDIR_SHIFTREG_PARALLEL_IN <= 26'b0; // Initialize the shift register with 0
-        // BIDIR_SHIFTREG_SERIAL_IN <= 0; // Shift in 0 to the shift register by default.
-        // BIDIR_SHIFTREG_PT2272_BIT_IN <= 2'b00; // Shift in 00 to the shift register by default.
-        // BIDIR_SHIFTREG_OP_MODE <= 3'b011;   // Load mode to loads a 0 to the shift register
-        // BIDIR_SHIFTREG_ENABLER <= 0; // Enable the shift register to load the 0 data.
         BIDIR_SHIFTREG_RESET <= 1;
     end else begin
         unique case(current_state)
             INITIAL_STATE: begin
                 BIDIR_SHIFTREG_OP_MODE <= 3'b000; // Turns shift right mode on
-                // BIDIR_SHIFTREG_ENABLER <= 0;   // Disable the shift register data loading.
                 BIDIR_SHIFTREG_RESET <= 0;
             end
 
@@ -226,28 +220,24 @@ always_ff @(posedge osc_clk, posedge reset) begin : DECODER_FSM_FF_BLOCK
 
             BIT_1_DETECTED: begin
                 reset_counters <= 0;
-                // BIDIR_SHIFTREG_ENABLER <= 1; // Enable the shift register to load the data.
                 BIDIR_SHIFTREG_OP_MODE <= 3'b101; // Turns shift right PT2272_BIT mode on
                 BIDIR_SHIFTREG_PT2272_BIT_IN <= 2'b11; // Shift in 11 to the shift register
             end
 
             BIT_0_DETECTED: begin
                 reset_counters <= 0;
-                // BIDIR_SHIFTREG_ENABLER <= 1; // Enable the shift register to load the data.
                 BIDIR_SHIFTREG_OP_MODE <= 3'b101; // Turns shift right PT2272_BIT mode on
                 BIDIR_SHIFTREG_PT2272_BIT_IN <= 2'b00; // Shift in 00 to the shift register
             end
 
             BIT_F_DETECTED: begin
                 reset_counters <= 0;
-                // BIDIR_SHIFTREG_ENABLER <= 1; // Enable the shift register to load the data.
                 BIDIR_SHIFTREG_OP_MODE <= 3'b101; // Turns shift right PT2272_BIT mode on
                 BIDIR_SHIFTREG_PT2272_BIT_IN <= 2'b10; // Shift in 10 to the shift register
             end
 
             BIT_SYNC_DETECTED: begin
                 reset_counters <= 0;
-                // BIDIR_SHIFTREG_ENABLER <= 1; // Enable the shift register to load the data.
                 BIDIR_SHIFTREG_OP_MODE <= 3'b101; // Turns shift right PT2272_BIT mode on
                 BIDIR_SHIFTREG_PT2272_BIT_IN <= 2'b01; // Shift in 01 to the shift register
             end
@@ -258,114 +248,67 @@ always_ff @(posedge osc_clk, posedge reset) begin : DECODER_FSM_FF_BLOCK
     end
 end
 
-
-always_ff @(posedge osc_clk, posedge reset) begin : RECEIVER_PAYLOAD_D_REGISTERING
-    if(reset)
-        D <= 4'b0000;
-    else begin
-        if (BIDIR_SHIFTREG_PARALLEL_OUT[25:24] == 2'b01 && dv == 1)begin
-            D[0] <= BIDIR_SHIFTREG_PARALLEL_OUT[23] & BIDIR_SHIFTREG_PARALLEL_OUT[22];
-            D[1] <= BIDIR_SHIFTREG_PARALLEL_OUT[21] & BIDIR_SHIFTREG_PARALLEL_OUT[20];
-            D[2] <= BIDIR_SHIFTREG_PARALLEL_OUT[19] & BIDIR_SHIFTREG_PARALLEL_OUT[18];
-            D[3] <= BIDIR_SHIFTREG_PARALLEL_OUT[17] & BIDIR_SHIFTREG_PARALLEL_OUT[16];
-        end
-    end
-end
-
 logic [8:0] i;
+logic flag_dv;
 
 always_ff @(posedge osc_clk, posedge reset) begin : RECEIVER_ADDRESS_REGISTERING_AND_VALIDATION
     if(reset)begin
         dv <= 0;
+        flag_dv <= 0;
         internal_f_bit_locator <= 8'b00000000;
         internal_interpreted_addr <= 8'b00000000;
     end
     else begin
-        if (BIDIR_SHIFTREG_PARALLEL_OUT[25:24] == 2'b01)begin
-            
-            if(BIDIR_SHIFTREG_PARALLEL_OUT[15] == BIDIR_SHIFTREG_PARALLEL_OUT[14]) begin
-                internal_interpreted_addr[7] <= BIDIR_SHIFTREG_PARALLEL_OUT[14];
-                internal_f_bit_locator[7] <= 0;
-            end else begin
-                internal_interpreted_addr[7] <= 0;
-                internal_f_bit_locator[7] <= 1;
-            end
+        if (current_state == BIT_SYNC_DETECTED)begin
+            flag_dv <= 1; // Assumes that the received world is valid. 
+            for (i = 0; i < 8; i++) begin 
+                if(BIDIR_SHIFTREG_PARALLEL_OUT[((2*i) + 1 + 2)] == 1 && BIDIR_SHIFTREG_PARALLEL_OUT[((2*i) + 2)] == 0) begin //Checks the existance of an F bit.
+                    // 2'b10 is the token for an F bit on this decoder
+                    // BIDIR_SHIFTREG_PARALLEL_OUT[((2*i) + 1 + 2)] == 1 && BIDIR_SHIFTREG_PARALLEL_OUT[((2*i) + 2)] == 0
+                    // The above line means something like BIDIR_SHIFTREG_PARALLEL_OUT[1] == 1 && BIDIR_SHIFTREG_PARALLEL_OUT[0] == 0 when we have a 2'b10 combination on the received data.
+                    // This means that there's an F bit on the received data.
+                    // Ass there is an F bit, assume 0 for this internal_interpreted_addr bit and process the current F bit on internal_f_bit_locator array
+                    internal_interpreted_addr[i] <= 0;
+                    internal_f_bit_locator[i] <= 1;
 
-            if(BIDIR_SHIFTREG_PARALLEL_OUT[13] == BIDIR_SHIFTREG_PARALLEL_OUT[12]) begin
-                internal_interpreted_addr[6] <= BIDIR_SHIFTREG_PARALLEL_OUT[12];
-                internal_f_bit_locator[6] <= 0;
-            end else begin
-                internal_interpreted_addr[6] <= 0;
-                internal_f_bit_locator[6] <= 1;
-            end
+                    if(F_BIT_LOCATOR[i] != 1)begin 
+                        //It interpreted that an F bit was receiveid. Doing a check with the real F_locator to verify 
+                        //if we really have an F bit here.
+                        flag_dv <= 0;
+                    end
+                end else if(BIDIR_SHIFTREG_PARALLEL_OUT[((2*i) + 1 + 2)] == 0 && BIDIR_SHIFTREG_PARALLEL_OUT[((2*i) + 2)] == 0)begin 
+                    // /*If there is no F bit, proceed with a different approach of interpretation
+                    // /* in this case, 00 represents a real 0 bit and 11 representes a real bit 1
+                    internal_interpreted_addr[i] <= BIDIR_SHIFTREG_PARALLEL_OUT[(2*i) + 2];
+                    internal_f_bit_locator[i] <= 0;
 
-            if(BIDIR_SHIFTREG_PARALLEL_OUT[11] == BIDIR_SHIFTREG_PARALLEL_OUT[10]) begin
-                internal_interpreted_addr[5] <= BIDIR_SHIFTREG_PARALLEL_OUT[10];
-                internal_f_bit_locator[5] <= 0;
-            end else begin
-                internal_interpreted_addr[5] <= 0;
-                internal_f_bit_locator[5] <= 1;
-            end
+                    if(INTERPRETED_ADDR[i] != BIDIR_SHIFTREG_PARALLEL_OUT[(2*i) + 2])begin
+                        flag_dv <= 0;
+                    end
+                end else if(BIDIR_SHIFTREG_PARALLEL_OUT[((2*i) + 1 + 2)] == 1 && BIDIR_SHIFTREG_PARALLEL_OUT[((2*i) + 2)] == 1)begin 
+                    // If there is no F bit, proceed with a different approach of interpretation
+                    // In this case, 00 represents a real 0 bit and 11 representes a real bit 1
+                    internal_interpreted_addr[i] <= BIDIR_SHIFTREG_PARALLEL_OUT[(2*i) + 2];
+                    internal_f_bit_locator[i] <= 0;
 
-            if(BIDIR_SHIFTREG_PARALLEL_OUT[9] == BIDIR_SHIFTREG_PARALLEL_OUT[8]) begin
-                internal_interpreted_addr[4] <= BIDIR_SHIFTREG_PARALLEL_OUT[8];
-                internal_f_bit_locator[4] <= 0;
-            end else begin
-                internal_interpreted_addr[4] <= 0;
-                internal_f_bit_locator[4] <= 1;
-            end
+                    if(INTERPRETED_ADDR[i] != BIDIR_SHIFTREG_PARALLEL_OUT[(2*i) + 2])begin
+                        flag_dv <= 0;
+                    end
+                end 
 
-            if(BIDIR_SHIFTREG_PARALLEL_OUT[7] == BIDIR_SHIFTREG_PARALLEL_OUT[6]) begin
-                internal_interpreted_addr[3] <= BIDIR_SHIFTREG_PARALLEL_OUT[6];
-                internal_f_bit_locator[3] <= 0;
-            end else begin
-                internal_interpreted_addr[3] <= 0;
-                internal_f_bit_locator[3] <= 1;
             end
-
-            if(BIDIR_SHIFTREG_PARALLEL_OUT[5] == BIDIR_SHIFTREG_PARALLEL_OUT[4]) begin
-                internal_interpreted_addr[2] <= BIDIR_SHIFTREG_PARALLEL_OUT[4];
-                internal_f_bit_locator[2] <= 0;
-            end else begin
-                internal_interpreted_addr[2] <= 0;
-                internal_f_bit_locator[2] <= 1;
-            end
-
-            if(BIDIR_SHIFTREG_PARALLEL_OUT[3] == BIDIR_SHIFTREG_PARALLEL_OUT[2]) begin
-                internal_interpreted_addr[1] <= BIDIR_SHIFTREG_PARALLEL_OUT[2];
-                internal_f_bit_locator[1] <= 0;
-            end else begin
-                internal_interpreted_addr[1] <= 0;
-                internal_f_bit_locator[1] <= 1;
-            end
-
-            if(BIDIR_SHIFTREG_PARALLEL_OUT[1] == BIDIR_SHIFTREG_PARALLEL_OUT[0]) begin
-                internal_interpreted_addr[0] <= BIDIR_SHIFTREG_PARALLEL_OUT[0];
-                internal_f_bit_locator[0] <= 0;
-            end else begin
-                internal_interpreted_addr[0] <= 0;
-                internal_f_bit_locator[1] <= 1;
-            end
-
+        end else if (current_state == INITIAL_STATE && flag_dv == 1) begin
+            D[0] <= BIDIR_SHIFTREG_PARALLEL_OUT[25] & BIDIR_SHIFTREG_PARALLEL_OUT[24];
+            D[1] <= BIDIR_SHIFTREG_PARALLEL_OUT[23] & BIDIR_SHIFTREG_PARALLEL_OUT[22];
+            D[2] <= BIDIR_SHIFTREG_PARALLEL_OUT[21] & BIDIR_SHIFTREG_PARALLEL_OUT[20];
+            D[3] <= BIDIR_SHIFTREG_PARALLEL_OUT[19] & BIDIR_SHIFTREG_PARALLEL_OUT[18];
             dv <= 1;
-
-            for (i = 0; i < 8; i++) begin
-                if(internal_f_bit_locator[i] || F_BIT_LOCATOR[i])begin
-                    if(internal_f_bit_locator[i] != F_BIT_LOCATOR[i])begin
-                        dv <= 0;
-                        break;
-                    end
-                end else begin
-                    if(internal_interpreted_addr[i] != INTERPRETED_ADDR[i])begin
-                        dv <= 0;
-                        break;
-                    end
-                end
-            end
+            flag_dv <= 0;
+        end else if(flag_dv == 0) begin
+            dv <= 0;
         end
     end
 end
-
 
 always_ff @(posedge osc_clk, posedge reset) begin : decoder_state_changer
     if(reset)

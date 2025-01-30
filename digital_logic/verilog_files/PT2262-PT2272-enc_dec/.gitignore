@@ -1,0 +1,10 @@
+waves.shm/**/*
+xrun.*
+*autosave.tcl*
+.simvision/**/*
+encoder/.simvision/**/*
+decoder/.simvision/**/*
+decoder/waves.shm/**/*
+encoder/waves.shm/**/*
+./**/waves.shm/**/*
+./**/.simvision/**/*
