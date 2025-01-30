@@ -1,5 +1,5 @@
 `timescale 1us/1ns
-module PT2262_ENCODER(
+module codificador_pt2262(
     input logic clk, reset,
     input logic [7:0] A,
     input logic [3:0] D,
@@ -7,25 +7,25 @@ module PT2262_ENCODER(
     output logic cod_o
 );
 
-typedef enum logic[7:0] {  
-    IDLE = 8'h00,
-    INITIAL_STATE = 8'h01,
-    GENERATE_A0 = 8'h02,
-    GENERATE_A1 = 8'h03,
-    GENERATE_A2 = 8'h04,
-    GENERATE_A3 = 8'h05,
-    GENERATE_A4 = 8'h06,
-    GENERATE_A5 = 8'h07,
-    GENERATE_A6 = 8'h08,
-    GENERATE_A7 = 8'h09,
-    GENERATE_D0 = 8'h0A,
-    GENERATE_D1 = 8'h0B,
-    GENERATE_D2 = 8'h0C,
-    GENERATE_D3 = 8'h0D,
-    GENERATE_SYNC = 8'h0E,
-    RESET_MODULES = 8'h0F,
-    INITIALIZE_OSCILLATOR = 8'h10,
-    INITIALIZE_BIT_GENERATOR = 8'h11
+typedef enum logic[4:0] {  
+    IDLE = 5'h00,
+    INITIAL_STATE = 5'h01,
+    GENERATE_A0 = 5'h02,
+    GENERATE_A1 = 5'h03,
+    GENERATE_A2 = 5'h04,
+    GENERATE_A3 = 5'h05,
+    GENERATE_A4 = 5'h06,
+    GENERATE_A5 = 5'h07,
+    GENERATE_A6 = 5'h08,
+    GENERATE_A7 = 5'h09,
+    GENERATE_D0 = 5'h0A,
+    GENERATE_D1 = 5'h0B,
+    GENERATE_D2 = 5'h0C,
+    GENERATE_D3 = 5'h0D,
+    GENERATE_SYNC = 5'h0E,
+    RESET_MODULES = 5'h0F,
+    INITIALIZE_OSCILLATOR = 5'h10,
+    INITIALIZE_BIT_GENERATOR = 5'h11
 } ENCODER_FSM_STATE;
 
 ENCODER_FSM_STATE current_state, next_state;
@@ -43,7 +43,7 @@ logic osc_clk_rose;
 logic bit_sent_flag;
 
 
-assign osc_rst = ~reset; // Oscillator resets on low
+assign osc_rst = reset; // Oscillator resets on low
 // assign bit_gen_rst = ~reset; // Bit generator resets on low
 
 ADDRESS_INTERPRETER addr_interpreter(
@@ -54,13 +54,13 @@ ADDRESS_INTERPRETER addr_interpreter(
 
 // Instantiate an oscillator that creates a 12kHz oscillation clock from the 3MHz input clock
 CLOCK_DIVIDER #(
-        .DIVIDER(250)
-    )internal_oscillator(
-        .INPUT_CLK(clk), 
-        .RST(osc_rst), 
-        // .RST(osc_rst), 
-        .OUTPUT_CLK(osc_clk) 
-    );
+    .DIVIDER(250)
+)internal_oscillator(
+    .INPUT_CLK(clk), 
+    .RST(osc_rst), 
+    // .RST(osc_rst), 
+    .OUTPUT_CLK(osc_clk) 
+);
 
 /*  
 
@@ -79,14 +79,13 @@ CLOCK_DIVIDER #(
 BIT_GENERATOR signal_creator(
     .osc_clk(osc_clk),
     .rst(bit_gen_rst),
-    // .rst(bit_gen_rst),
     .enable_generation(bit_gen_enb),
     .input_bit(bit_gen_input),
     .output_signal(bit_gen_output),
     .bit_sent(bit_sent_flag)
 );
 
-assign cod_o = (bit_gen_input != 2'b11) ? bit_gen_output : 0; // Drives the cod_o output only and only if the bit being generated is not a sync bit.
+assign cod_o = bit_gen_output; // Drives the cod_o output only and only if the bit being generated is not a sync bit.
 assign sync = (bit_gen_input == 2'b11) ? bit_gen_output : 0; // Drives the sync output only and only if the bit being generated is a sync bit.
 
 // A counter that counts the number of high pulses created byt the bit generator.
@@ -114,18 +113,22 @@ end
 
 assign osc_clk_rose = ( (osc_clk==1) && (past_osc_clk==0));
 
-
-
 always_comb begin : encoder_fsm
 
     next_state = current_state;
+    
+    /* The followying variabled are there to avoid the its synthesis as latches insted of wires. */
+    bit_gen_rst = 1'b0; // Bit generator is active by default
+    bit_gen_enb = 1'b1; // Bit generation is enabled by default
+    bit_gen_input = 2'b11; // Default bit generation is BIT SYNC
+    /*********************************************************************************************/
 
     if(reset) begin
-        // next_state = RESET_MODULES;
-        next_state = INITIALIZE_BIT_GENERATOR;
+        next_state = RESET_MODULES;
+        // next_state = INITIALIZE_BIT_GENERATOR;
         bit_generated_flag = 1;
-        bit_gen_rst = 1'b0; // Bit generator resets on low
-        bit_gen_enb = 1'b0; // Bit generation is disabled
+        bit_gen_rst = 1'b1; // Bit generator resetting
+        bit_gen_enb = 1'b0; // Bit generation disabling on resetting.
     end else begin
         case(current_state)
             RESET_MODULES: begin
@@ -140,7 +143,7 @@ always_comb begin : encoder_fsm
             end
 
             INITIALIZE_BIT_GENERATOR: begin
-                bit_gen_rst = 1'b1; // Bit generator resets on low
+                bit_gen_rst = 1'b1; // Bit generator resets on high
                 if (osc_clk_rose)
                     next_state = GENERATE_A0;
             end
@@ -274,7 +277,7 @@ always_comb begin : encoder_fsm
                 bit_generated_flag = 0;
                 if (bit_sent_flag && osc_clk_rose) begin
                     bit_generated_flag = 1;
-                    next_state = GENERATE_D0;
+                    next_state = GENERATE_D3;
                 end
 
                 if (!bit_generated_flag) begin
@@ -285,20 +288,7 @@ always_comb begin : encoder_fsm
                 end
             end
 
-            GENERATE_D0: begin
-                bit_generated_flag = 0;
-                if (bit_sent_flag && osc_clk_rose) begin
-                    bit_generated_flag = 1;
-                    next_state = GENERATE_D1;
-                end
-
-                if (!bit_generated_flag) begin
-                    bit_gen_input = D[0] ? 2'b01 : 2'b00;            
-                end
-
-            end
-
-            GENERATE_D1: begin
+            GENERATE_D3: begin
                 bit_generated_flag = 0;
                 if (bit_sent_flag && osc_clk_rose) begin
                     bit_generated_flag = 1;
@@ -306,15 +296,16 @@ always_comb begin : encoder_fsm
                 end
 
                 if (!bit_generated_flag) begin
-                    bit_gen_input = D[1] ? 2'b01 : 2'b00;            
+                    bit_gen_input = D[3] ? 2'b01 : 2'b00;            
                 end
+
             end
 
             GENERATE_D2: begin
                 bit_generated_flag = 0;
                 if (bit_sent_flag && osc_clk_rose) begin
                     bit_generated_flag = 1;
-                    next_state = GENERATE_D3;
+                    next_state = GENERATE_D1;
                 end
 
                 if (!bit_generated_flag) begin
@@ -322,7 +313,19 @@ always_comb begin : encoder_fsm
                 end
             end
 
-            GENERATE_D3: begin
+            GENERATE_D1: begin
+                bit_generated_flag = 0;
+                if (bit_sent_flag && osc_clk_rose) begin
+                    bit_generated_flag = 1;
+                    next_state = GENERATE_D0;
+                end
+
+                if (!bit_generated_flag) begin
+                    bit_gen_input = D[1] ? 2'b01 : 2'b00;            
+                end
+            end
+
+            GENERATE_D0: begin
                 bit_generated_flag = 0;
                 if (bit_sent_flag && osc_clk_rose) begin
                     bit_generated_flag = 1;
@@ -330,7 +333,7 @@ always_comb begin : encoder_fsm
                 end
 
                 if (!bit_generated_flag) begin
-                    bit_gen_input = D[3] ? 2'b01 : 2'b00;            
+                    bit_gen_input = D[0] ? 2'b01 : 2'b00;            
                 end
             end
 
@@ -349,142 +352,10 @@ always_comb begin : encoder_fsm
         endcase
     end
 end
-/*
-always_ff @(posedge clk, posedge reset) begin : encoder_fsm_ff
-    if(reset) begin
-        // osc_rst <= 1'b0; // Oscillator resets on low
-        bit_gen_rst <= 1'b0; // Bit generator resets on low
-        bit_gen_enb <= 1'b0; // Bit generation is disabled
-        
-    end else begin
-        case(current_state)
-            RESET_MODULES: begin
-                // osc_rst <= 1'b0; // Oscillator resets on low
-                bit_gen_rst <= 1'b0; // Bit generator resets on low
-                bit_gen_enb <= 1'b0; // Bit generation is disabled
-            end
 
-            INITIALIZE_OSCILLATOR: begin
-                // osc_rst <= 1'b1;
-            end
 
-            INITIALIZE_BIT_GENERATOR: begin
-                bit_gen_rst <= 1'b1;
-            end
-
-            GENERATE_A0: begin
-                if (!bit_generated_flag) begin
-                    bit_gen_enb <= 1'b1;
-                    if(F_BIT_LOCATOR[0]) // Checking for a bit F existance has the higher priority of all things. 
-                        bit_gen_input <= 2'b10;
-                    else // If no bit F exists, we can proceed to request the generation of a bit 1 ou bit 0.
-                        bit_gen_input <= INTERPRETED_ADDR[0] ? 2'b01 : 2'b00;            
-                end
-            end
-
-            GENERATE_A1: begin
-                if (!bit_generated_flag) begin
-                    if(F_BIT_LOCATOR[1]) // Checking for a bit F existance has the higher priority of all things. 
-                        bit_gen_input <= 2'b10;
-                    else // If no bit F exists, we can proceed to request the generation of a bit 1 ou bit 0.
-                        bit_gen_input <= INTERPRETED_ADDR[1] ? 2'b01 : 2'b00;            
-                end
-            end
-
-            GENERATE_A2: begin
-                if (!bit_generated_flag) begin
-                    if(F_BIT_LOCATOR[2]) // Checking for a bit F existance has the higher priority of all things. 
-                        bit_gen_input <= 2'b10;
-                    else // If no bit F exists, we can proceed to request the generation of a bit 1 ou bit 0.
-                        bit_gen_input <= INTERPRETED_ADDR[2] ? 2'b01 : 2'b00;            
-                end
-            end
-
-            GENERATE_A3: begin
-                if (!bit_generated_flag) begin
-                    if(F_BIT_LOCATOR[3]) // Checking for a bit F existance has the higher priority of all things. 
-                        bit_gen_input <= 2'b10;
-                    else // If no bit F exists, we can proceed to request the generation of a bit 1 ou bit 0.
-                        bit_gen_input <= INTERPRETED_ADDR[3] ? 2'b01 : 2'b00;            
-                end
-            end
-
-            GENERATE_A4: begin
-                if (!bit_generated_flag) begin
-                    if(F_BIT_LOCATOR[4]) // Checking for a bit F existance has the higher priority of all things. 
-                        bit_gen_input <= 2'b10;
-                    else // If no bit F exists, we can proceed to request the generation of a bit 1 ou bit 0.
-                        bit_gen_input <= INTERPRETED_ADDR[4] ? 2'b01 : 2'b00;            
-                end
-            end
-
-            GENERATE_A5: begin
-                if (!bit_generated_flag) begin
-                    if(F_BIT_LOCATOR[5]) // Checking for a bit F existance has the higher priority of all things. 
-                        bit_gen_input <= 2'b10;
-                    else // If no bit F exists, we can proceed to request the generation of a bit 1 ou bit 0.
-                        bit_gen_input <= INTERPRETED_ADDR[5] ? 2'b01 : 2'b00;            
-                end
-            end
-
-            GENERATE_A6: begin
-                if (!bit_generated_flag) begin
-                    if(F_BIT_LOCATOR[6]) // Checking for a bit F existance has the higher priority of all things. 
-                        bit_gen_input <= 2'b10;
-                    else // If no bit F exists, we can proceed to request the generation of a bit 1 ou bit 0.
-                        bit_gen_input <= INTERPRETED_ADDR[6] ? 2'b01 : 2'b00;            
-                end
-            end
-
-            GENERATE_A7: begin
-                if (!bit_generated_flag) begin
-                    if(F_BIT_LOCATOR[7]) // Checking for a bit F existance has the higher priority of all things. 
-                        bit_gen_input <= 2'b10;
-                    else // If no bit F exists, we can proceed to request the generation of a bit 1 ou bit 0.
-                        bit_gen_input <= INTERPRETED_ADDR[7] ? 2'b01 : 2'b00;            
-                end
-            end
-
-            GENERATE_D0: begin
-                if (!bit_generated_flag) begin
-                    bit_gen_input <= D[0] ? 2'b01 : 2'b00;            
-                end
-            end
-
-            GENERATE_D1: begin
-                if (!bit_generated_flag) begin
-                    bit_gen_input <= D[1] ? 2'b01 : 2'b00;            
-                end
-            end
-
-            GENERATE_D2: begin
-                if (!bit_generated_flag) begin
-                    bit_gen_input <= D[2] ? 2'b01 : 2'b00;            
-                end
-            end
-
-            GENERATE_D3: begin
-                if (!bit_generated_flag) begin
-                    bit_gen_input <= D[3] ? 2'b01 : 2'b00;            
-                end
-            end
-
-            GENERATE_SYNC: begin
-                if (!bit_generated_flag) begin
-                    bit_gen_input <= 2'b11;            
-                end
-            end
-        endcase
-    end
-end
-*/
-
-always_ff @(posedge clk, posedge reset) begin : encoder_state_changer
-    if(reset) begin
-        current_state <= RESET_MODULES;
-    end else begin
-        current_state <= next_state;
-    end
+always_ff @(posedge clk) begin : encoder_state_changer
+    current_state <= next_state;
 end
 
 endmodule

@@ -1,0 +1,55 @@
+xrun(64): 24.09-s001: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	24.09-s001: Started on Jan 09, 2025 at 15:21:33 -03
+xrun
+	-64bit
+	clock_divider_tb.sv
+	clock_divider.sv
+	+gui
+	+access+rw
+file: clock_divider_tb.sv
+	module worklib.CLOCK_DIVIDER_TB:sv
+		errors: 0, warnings: 0
+file: clock_divider.sv
+	module worklib.CLOCK_DIVIDER:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		CLOCK_DIVIDER_TB
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.CLOCK_DIVIDER:sv <0x4b580861>
+			streams:   4, words:  1148
+		worklib.CLOCK_DIVIDER_TB:sv <0x01c66d15>
+			streams:   5, words:  4609
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 2       2
+		Registers:               7       7
+		Scalar wires:            4       -
+		Vectored wires:          1       -
+		Always blocks:           1       1
+		Initial blocks:          2       2
+		Cont. assignments:       1       1
+		Pseudo assignments:      3       -
+		Process Clocks:          1       1
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.CLOCK_DIVIDER_TB:sv
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm CLOCK_DIVIDER_TB.DUT.INPUT_CLK CLOCK_DIVIDER_TB.DUT.OUTPUT_CLK CLOCK_DIVIDER_TB.DUT.RST CLOCK_DIVIDER_TB.DUT.clk_cycle_counting CLOCK_DIVIDER_TB.DUT.divider_index_ceil
+Created probe 1
+xcelium> run
+Simulation complete via $finish(1) at time 248655 NS + 0
+./clock_divider_tb.sv:54         $finish;
+xcelium> ^C
+xcelium> exit
+TOOL:	xrun(64)	24.09-s001: Exiting on Jan 09, 2025 at 15:22:09 -03  (total: 00:00:36)

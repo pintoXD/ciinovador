@@ -1,0 +1,14 @@
+#e1(09Jan2025:15:58:26): source ./xcelium.d/env.d/env.history.09Jan2025_15_58_26
+s1(09Jan2025:15:58:26):  xrun -64bit codificador_pt2262_tb.sv codificador_pt2262.sv ../addr_interpreter/addr_interpreter.sv ../bit_gen/bit_generator.sv ../oscillator/clock_divider.sv +gui +access+rw 
+#e2(09Jan2025:15:58:45): source ./xcelium.d/env.d/env.history.09Jan2025_15_58_45
+s2(09Jan2025:15:58:45):  xrun -64bit codificador_pt2262_tb.sv codificador_pt2262.sv ../addr_interpreter/addr_interpreter.sv ../addr_interpreter/comp_endereco.sv ../bit_gen/bit_generator.sv ../oscillator/clock_divider.sv +gui +access+rw 
+#e3(09Jan2025:16:17:22): source ./xcelium.d/env.d/env.history.09Jan2025_16_17_22
+s3(09Jan2025:16:17:22):  xrun -64bit codificador_pt2262_tb.sv codificador_pt2262.sv ../addr_interpreter/addr_interpreter.sv ../addr_interpreter/comp_endereco.sv ../bit_gen/bit_generator.sv ../oscillator/clock_divider.sv +gui +access+rw "-s " 
+#e4(09Jan2025:16:18:42): source ./xcelium.d/env.d/env.history.09Jan2025_16_18_42
+s4(09Jan2025:16:18:42):  xrun -64bit codificador_pt2262_tb.sv codificador_pt2262.sv ../addr_interpreter/addr_interpreter.sv ../addr_interpreter/comp_endereco.sv ../bit_gen/bit_generator.sv ../oscillator/clock_divider.sv +gui +access+rw -s 
+#e5(10Jan2025:09:56:45): source ./xcelium.d/env.d/env.history.10Jan2025_09_56_45
+s5(10Jan2025:09:56:45):  xrun -64bit codificador_pt2262_tb.sv codificador_netlist.sv ../libs/fast_vdd1v2_basicCells.v ../addr_interpreter/addr_interpreter.sv ../addr_interpreter/comp_endereco.sv ../bit_gen/bit_generator.sv ../oscillator/clock_divider.sv +gui +access+rw 
+#e6(10Jan2025:10:00:13): source ./xcelium.d/env.d/env.history.10Jan2025_10_00_13
+s6(10Jan2025:10:00:13):  xrun -64bit codificador_pt2262_tb.sv codificador_netlist.sv ../libs/fast_vdd1v2_basicCells.v ../addr_interpreter/comp_endereco.sv ../bit_gen/bit_generator.sv ../oscillator/clock_divider.sv +gui +access+rw 
+#e7(10Jan2025:10:07:14): source ./xcelium.d/env.d/env.history.10Jan2025_10_07_14
+s7(10Jan2025:10:07:14):  xrun -64bit codificador_pt2262_tb.sv codificador_netlist.sv ../libs/fast_vdd1v2_basicCells.v ../addr_interpreter/comp_endereco.sv ../bit_gen/bit_generator.sv ../oscillator/clock_divider.sv +gui +access+rw 

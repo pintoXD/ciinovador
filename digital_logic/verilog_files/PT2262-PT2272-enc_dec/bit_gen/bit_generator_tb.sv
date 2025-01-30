@@ -9,10 +9,17 @@ module BIT_GENERATOR_TB();
     logic mock_RST_BIT_GENERATOR;
     logic dut_OUTPUT_CLK;
 
+    // // Instantiating the 12kHz clock generator.
+    // CLOCK_DIVIDER #(
+    //     .DIVIDER(250)
+    // )CLK_DIVIDER(
+    //     .INPUT_CLK(mock_INPUT_CLK), 
+    //     .RST(mock_RST), 
+    //     .OUTPUT_CLK(dut_OUTPUT_CLK) 
+    // );
+
     // Instantiating the 12kHz clock generator.
-    CLOCK_DIVIDER #(
-        .DIVIDER(250)
-    )CLK_DIVIDER(
+    CLOCK_DIVIDER CLK_DIVIDER(
         .INPUT_CLK(mock_INPUT_CLK), 
         .RST(mock_RST), 
         .OUTPUT_CLK(dut_OUTPUT_CLK) 
@@ -47,21 +54,22 @@ module BIT_GENERATOR_TB();
 
         // ###### Initialize oscillator #########
         @(posedge mock_INPUT_CLK);
-        mock_RST = 0;
+        mock_RST = 1;
 
         // Wait for rst to be finished
         @(posedge mock_INPUT_CLK);
         @(posedge mock_INPUT_CLK);
         @(posedge mock_INPUT_CLK);
-        mock_RST = 1;
+        @(posedge mock_INPUT_CLK);
+        mock_RST = 0;
 
         // ###### Initialize bit generator #########
         @(posedge dut_OUTPUT_CLK);
-        mock_RST_BIT_GENERATOR = 0;
+        mock_RST_BIT_GENERATOR = 1;
 
         // Wait for rst to be finished and set it to 1 to start the bit generation.
         @(posedge dut_OUTPUT_CLK);
-        mock_RST_BIT_GENERATOR = 1;
+        mock_RST_BIT_GENERATOR = 0;
         @(posedge dut_OUTPUT_CLK);
         mock_INPUT_BIT = 2'b00;
         mock_ENB_GENERATION = 0;

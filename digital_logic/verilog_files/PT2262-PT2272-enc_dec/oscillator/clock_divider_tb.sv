@@ -1,15 +1,21 @@
 /* verilator lint_off DECLFILENAME */
 /* verilator lint_off UNUSEDSIGNAL */
-`timescale 1us/100ns
+// `timescale 1us/100ns
+`timescale 1ns/1ps
 module CLOCK_DIVIDER_TB();
 
     logic mock_INPUT_CLK, mock_RST;
     logic dut_OUTPUT_CLK;
 
     //Instantiating the Device Under Test (DUT)
-    CLOCK_DIVIDER #(
-        .DIVIDER(250)
-    )DUT(
+    // CLOCK_DIVIDER #(
+    //     .DIVIDER(250)
+    // )DUT(
+    //     .INPUT_CLK(mock_INPUT_CLK), 
+    //     .RST(mock_RST), 
+    //     .OUTPUT_CLK(dut_OUTPUT_CLK) 
+    // );
+    CLOCK_DIVIDER DUT(
         .INPUT_CLK(mock_INPUT_CLK), 
         .RST(mock_RST), 
         .OUTPUT_CLK(dut_OUTPUT_CLK) 
@@ -33,13 +39,13 @@ module CLOCK_DIVIDER_TB();
 
         // Initialize Inputs
         @(posedge mock_INPUT_CLK);
-        mock_RST = 0;
+        mock_RST = 1;
 
         // Wait for rst to be finished
         @(posedge mock_INPUT_CLK);
         @(posedge mock_INPUT_CLK);
         @(posedge mock_INPUT_CLK);
-        mock_RST = 1;
+        mock_RST = 0;
 
         for(int i = 0; i < 750; i++) begin
             @(posedge mock_INPUT_CLK);

@@ -1,2 +1,6 @@
 s1(18Dec2024:15:50:12):  xrun -64bit bidir_shiftreg_tb.sv bidir_shiftreg.sv 
 s2(18Dec2024:15:50:30):  xrun -64bit bidir_shiftreg_tb.sv bidir_shiftreg.sv 
+#e3(07Jan2025:15:38:27): source ./xcelium.d/env.d/env.history.07Jan2025_15_38_27
+s3(07Jan2025:15:38:27):  xrun -64bit bidir_shiftreg_tb.sv bidir_shiftreg.sv 
+#e4(07Jan2025:15:38:57): source ./xcelium.d/env.d/env.history.07Jan2025_15_38_57
+s4(07Jan2025:15:38:57):  xrun -64bit bidir_shiftreg_tb.sv bidir_shiftreg.sv 

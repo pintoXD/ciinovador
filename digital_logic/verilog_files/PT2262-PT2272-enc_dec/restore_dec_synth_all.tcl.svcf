@@ -1,0 +1,595 @@
+# SimVision Command Script (Mon Jan 13 03:29:42 PM -03 2025)
+#
+# Version 24.09.s001
+#
+# You can restore this configuration with:
+#
+#      xrun -64bit -ALLOWREDEFINITION /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272_tb.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272_mapped.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262_mapped.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/libs/fast_vdd1v2_basicCells.v /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/addr_interpreter/comp_endereco.sv +access+rw +gui -s -input restore_dec_synth_all.tcl -input /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/restore_dec_synth_all.tcl
+#
+
+
+#
+# Preferences
+#
+preferences set toolbar-Standard-WatchWindow {
+  usual
+  shown 0
+}
+preferences set waveform-print-variables selected
+preferences set waveform-print-time range
+preferences set plugin-enable-svdatabrowser-new 1
+preferences set toolbar-SimControl-WaveWindow {
+  usual
+  position -anchor e
+}
+preferences set toolbar-Windows-WatchWindow {
+  usual
+  shown 0
+}
+preferences set toolbar-sendToIndago-WaveWindow {
+  usual
+  position -pos 1
+}
+preferences set waveform-print-paper {A4 (210mm x 297mm)}
+preferences set toolbar-Standard-Console {
+  usual
+  position -pos 1
+}
+preferences set toolbar-Search-Console {
+  usual
+  position -pos 2
+}
+preferences set toolbar-txe_waveform_toggle-WaveWindow {
+  usual
+  position -pos 1
+}
+preferences set plugin-enable-groupscope 0
+preferences set sb-display-values 1
+preferences set plugin-enable-interleaveandcompare 0
+preferences set plugin-enable-waveformfrequencyplot 0
+preferences set toolbar-SimControl-WatchWindow {
+  usual
+  shown 0
+}
+preferences set toolbar-Windows-WaveWindow {
+  usual
+  position -pos 2
+}
+preferences set toolbar-TimeSearch-WatchWindow {
+  usual
+  shown 0
+}
+
+#
+# Simulator
+#
+database require simulator -hints {
+	simulator "xrun -64bit -ALLOWREDEFINITION /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272_tb.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/decoder/decodificador_pt2272_mapped.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/encoder/codificador_pt2262_mapped.sv /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/libs/fast_vdd1v2_basicCells.v /home/cinovador/Documents/course_files/digital_logic/verilog_files/PT2262-PT2272-enc_dec/addr_interpreter/comp_endereco.sv +access+rw +gui -s -input restore_dec_synth_all.tcl -input restore_dec_synth_all.tcl"
+}
+#
+# Groups
+#
+catch {group new -name {Group 1} -overlay 0}
+catch {group new -name Encoder -overlay 0}
+catch {group new -name {Group 3} -overlay 0}
+catch {group new -name Decoder -overlay 0}
+group using {Group 1}
+group set -overlay 0
+group set -comment {}
+group clear 0 end
+
+group insert \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_0}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_1}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_2}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_3}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_4}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_5}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_6}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_7}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_8}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_9}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_10}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_11}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_12}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_13}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_14}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_15}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_16}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_17}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_18}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_19}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_20}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_21}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_22}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_23}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_24}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_25}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_26}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_27}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_28}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_29}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_30}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_31}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_32}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_33}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_34}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_35}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_36}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_37}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_38}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_39}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_40}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_41}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_42}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_43}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_44}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_45}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_46}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_47}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_48}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_49}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_50}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_51}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_52}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_53}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_54}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_55}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_56}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_57}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_58}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_59}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_60}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_61}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_62}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_63}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_64}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_65}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_66}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_67}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_68}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_69}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_70}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_71}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_72}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_73}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_74}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_75}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_76}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_77}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_78}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_79}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_80}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_81}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_82}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_83}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_84}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_85}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_86}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_87}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_88}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_89}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_90}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_91}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_92}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_93}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_94}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_95}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_96}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_97}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_98}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_99}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_100}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_101}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_102}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_103}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_104}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_105}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_106}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_107}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_108}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_109}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_110}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_111}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_112}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_113}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_114}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_115}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_116}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_117}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_118}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_119}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_120}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_121}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_122}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_123}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_124}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_125}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_126}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_127}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_128}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_129}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_130}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_131}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_132}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_133}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_134}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_135}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_136}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_137}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_138}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_139}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_140}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_141}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_142}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_143}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_144}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_145}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_146}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_147}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_148}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_149}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_150}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_151}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_152}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_153}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_154}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_155}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_156}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_157}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_158}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_159}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_160}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_161}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_162}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_163}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_164}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_165}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_166}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_167}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_168}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_169}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_170}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_171}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_172}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_173}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_174}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_175}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_176}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_177}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_178}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_179}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_180}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_181}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_182}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_183}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_184}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_185}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_186}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_187}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_188}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_189}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_190}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_191}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_192}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.n_193}]} ]
+group using Encoder
+group set -overlay 0
+group set -comment {}
+group clear 0 end
+
+group insert \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.A[7:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.D[3:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.F_BIT_LOCATOR[7:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.INTERPRETED_ADDR[7:0]}]} ] \
+    [subst  {[format {signed(decodificador_pt2272_tb.encoder_dut.bit_gen_input)}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.clk}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.cod_o}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.current_state[4:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.internal_oscillator_clk_cycle_counting[6:0]}]} ] \
+    {Group 3} \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.osc_clk}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.past_osc_clk}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.reset}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.signal_creator_current_state[2:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.signal_creator_enable_pulse_counting}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.signal_creator_enable_pulse_counting_sync}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.signal_creator_is_first_run}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.signal_creator_pulse_counter[4:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.signal_creator_pulse_counter_sync[6:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.sync}]} ]
+group using {Group 3}
+group set -overlay 0
+group set -comment {}
+group clear 0 end
+
+group insert \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_0}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_1}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_2}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_3}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_4}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_5}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_6}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_7}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_8}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_9}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_10}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_11}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_12}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_13}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_14}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_16}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_17}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_18}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_19}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_20}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_21}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_22}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_24}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_25}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_26}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_27}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_28}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_29}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_30}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_31}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_32}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_33}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_34}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_35}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_36}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_37}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_38}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_41}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_42}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_43}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_44}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_45}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_46}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_47}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_48}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_49}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_50}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_51}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_52}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_53}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_54}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_55}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_56}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_57}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_58}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_59}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_60}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_61}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_62}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_63}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_65}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_66}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_67}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_68}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_69}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_70}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_71}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_72}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_73}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_75}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_76}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_77}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_78}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_79}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_80}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_81}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_82}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_83}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_84}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_85}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_86}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_87}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_88}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_89}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_90}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_91}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_92}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_93}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_94}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_95}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_96}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_97}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_98}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_99}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_100}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_101}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_102}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_103}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_104}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_105}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_106}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_107}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_108}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_109}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_110}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_111}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_115}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_116}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_117}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_118}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_119}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_121}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_122}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_123}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_124}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_125}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_126}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_127}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_128}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_129}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_130}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_131}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_132}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_133}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_134}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_135}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_136}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_137}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_138}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_139}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_140}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_141}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_142}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_143}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_144}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_145}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_146}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_147}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_148}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_149}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_150}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_151}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_152}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_154}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_156}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_157}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_158}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_160}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_161}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_162}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_163}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_164}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_165}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_166}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_167}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_168}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_169}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_170}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_171}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_172}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_173}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_174}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_175}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_176}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_177}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_178}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_179}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_180}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_181}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_182}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_197}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_198}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_199}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_200}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_201}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_202}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.encoder_dut.n_203}]} ]
+group using Decoder
+group set -overlay 0
+group set -comment {}
+group clear 0 end
+
+group insert \
+    [subst  {[format {decodificador_pt2272_tb.DUT.reset_counters}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.reset}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.osc_clk}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.internal_oscillator_clk_cycle_counting[6:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.internal_interpreted_addr[7:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.internal_f_bit_locator[7:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.dv}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.current_state[2:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.cod_i}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.clk}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.PREVIOUS_cod_i}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.LOW_PULSE_COUNTING[7:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.INTERPRETED_ADDR[7:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.HIGH_PULSE_COUNTING[4:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.F_BIT_LOCATOR[7:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.D[3:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_RESET}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PT2272_BIT_IN[1:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_PARALLEL_OUT[25:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.BIDIR_SHIFTREG_OP_MODE[2:0]}]} ] \
+    [subst  {[format {decodificador_pt2272_tb.DUT.A[7:0]}]} ] \
+    {Group 1}
+
+#
+# Cursors
+#
+set time 522326ps
+if {[catch {cursor new -name  TimeA -time $time}] != ""} {
+    cursor set -using TimeA -time $time
+}
+
+#
+# Mnemonic Maps
+#
+mmap new  -reuse -name {Boolean as Logic} -radix %b -contents {{%c=FALSE -edgepriority 1 -shape low}
+{%c=TRUE -edgepriority 1 -shape high}}
+mmap new  -reuse -name {Example Map} -radix %x -contents {{%b=11???? -bgcolor orange -label REG:%x -linecolor yellow -shape bus}
+{%x=1F -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=2C -bgcolor red -label ERROR -linecolor white -shape EVENT}
+{%x=* -label %x -linecolor gray -shape bus}}
+
+#
+# Design Browser windows
+#
+if {[catch {window new WatchList -name "Design Browser 1" -geometry 1920x983+1919+26}] != ""} {
+    window geometry "Design Browser 1" 1920x983+1919+26
+}
+window target "Design Browser 1" on
+browser using {Design Browser 1}
+browser set -scope [subst  {[format {decodificador_pt2272_tb.encoder_dut}]} ]
+browser set \
+    -signalsort name
+browser yview see [subst  {[format {decodificador_pt2272_tb.encoder_dut}]} ]
+browser timecontrol set -lock 0
+
+#
+# Waveform windows
+#
+if {[catch {window new WaveWindow -name "Waveform 1" -geometry 1920x983+1919+26}] != ""} {
+    window geometry "Waveform 1" 1920x983+1919+26
+}
+window target "Waveform 1" on
+waveform using {Waveform 1}
+waveform sidebar visibility partial
+waveform set \
+    -primarycursor TimeA \
+    -signalnames name \
+    -signalwidth 226 \
+    -units ps \
+    -valuewidth 215
+waveform baseline set -time 0
+
+
+set groupId0 [waveform add -groups Decoder]
+
+set groupId1 [waveform find -name {Group 1}]
+waveform hierarchy collapse $groupId1
+
+waveform hierarchy collapse $groupId0
+
+
+set groupId0 [waveform add -groups Encoder]
+
+set groupId1 [waveform find -name {Group 3}]
+waveform hierarchy collapse $groupId1
+
+waveform hierarchy collapse $groupId0
+
+
+waveform xview limits 0 8292656ps
+
+#
+# Waveform Window Links
+#
+
+#
+# Console windows
+#
+console set -windowname Console
+window geometry Console 730x250+261+564
+
+#
+# Layout selection
+#
+
