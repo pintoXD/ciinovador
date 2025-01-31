@@ -1,0 +1,37 @@
+xrun(64): 24.09-s001: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	24.09-s001: Started on Jan 31, 2025 at 16:14:29 -03
+xrun
+	-64bit
+	rb.sv
+Recompiling... reason: file './rb.sv' is newer than expected.
+	expected: Fri Jan 31 15:32:41 2025
+	actual:   Fri Jan 31 16:14:28 2025
+file: rb.sv
+	module worklib.ieee754_to_float:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		ieee754_to_float
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.ieee754_to_float:sv <0x239f03c1>
+			streams:   2, words:  3012
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		         Instances  Unique
+		Modules:         1       1
+		Registers:       5       5
+		Initial blocks:  2       2
+	Writing initial simulation snapshot: worklib.ieee754_to_float:sv
+Loading snapshot worklib.ieee754_to_float:sv .................... Done
+xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
+xcelium> run
+Floating Point Result: 8.000000
+IEEE 754 Number: 01000001000000000000000000000000
+IEEE 754 Number: 01000001000000000000000000000000
+Floating Point Result: 8.000000
+xmsim: *W,RNQUIE: Simulation is complete.
+xcelium> exit
+TOOL:	xrun(64)	24.09-s001: Exiting on Jan 31, 2025 at 16:14:40 -03  (total: 00:00:11)

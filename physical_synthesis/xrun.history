@@ -1,0 +1,38 @@
+#e1(31Jan2025:14:48:33): source ./xcelium.d/env.d/env.history.31Jan2025_14_48_33
+s1(31Jan2025:14:48:33):  xrun rb.sv 
+#e2(31Jan2025:15:02:50): source ./xcelium.d/env.d/env.history.31Jan2025_15_02_50
+s2(31Jan2025:15:02:50):  xrun rb.sv 
+#e3(31Jan2025:15:03:13): source ./xcelium.d/env.d/env.history.31Jan2025_15_03_13
+s3(31Jan2025:15:03:13):  xrun rb.sv 
+#e4(31Jan2025:15:23:09): source ./xcelium.d/env.d/env.history.31Jan2025_15_23_09
+s4(31Jan2025:15:23:09):  xrun rb.sv 
+#e5(31Jan2025:15:24:13): source ./xcelium.d/env.d/env.history.31Jan2025_15_24_13
+s5(31Jan2025:15:24:13):  xrun rb.sv 
+#e6(31Jan2025:15:24:29): source ./xcelium.d/env.d/env.history.31Jan2025_15_24_29
+s6(31Jan2025:15:24:29):  xrun rb.sv 
+#e7(31Jan2025:15:25:57): source ./xcelium.d/env.d/env.history.31Jan2025_15_25_57
+s7(31Jan2025:15:25:57):  xrun rb.sv 
+#e8(31Jan2025:15:26:37): source ./xcelium.d/env.d/env.history.31Jan2025_15_26_37
+s8(31Jan2025:15:26:37):  xrun rb.sv 
+#e9(31Jan2025:15:27:18): source ./xcelium.d/env.d/env.history.31Jan2025_15_27_18
+s9(31Jan2025:15:27:18):  xrun -64bit rb.sv 
+#e10(31Jan2025:15:27:27): source ./xcelium.d/env.d/env.history.31Jan2025_15_27_27
+s10(31Jan2025:15:27:27):  xrun -64bit rb.sv 
+#e11(31Jan2025:15:30:45): source ./xcelium.d/env.d/env.history.31Jan2025_15_30_45
+s11(31Jan2025:15:30:45):  xrun -64bit rb.sv 
+#e12(31Jan2025:15:31:09): source ./xcelium.d/env.d/env.history.31Jan2025_15_31_09
+s12(31Jan2025:15:31:09):  xrun -64bit rb.sv 
+#e13(31Jan2025:15:31:53): source ./xcelium.d/env.d/env.history.31Jan2025_15_31_53
+s13(31Jan2025:15:31:53):  xrun -64bit rb.sv ] 
+#e14(31Jan2025:15:31:55): source ./xcelium.d/env.d/env.history.31Jan2025_15_31_55
+s14(31Jan2025:15:31:55):  xrun -64bit rb.sv ] 
+#e15(31Jan2025:15:32:02): source ./xcelium.d/env.d/env.history.31Jan2025_15_32_02
+s15(31Jan2025:15:32:02):  xrun -64bit rb.sv 
+#e16(31Jan2025:15:32:43): source ./xcelium.d/env.d/env.history.31Jan2025_15_32_43
+s16(31Jan2025:15:32:43):  xrun -64bit rb.sv 
+#e17(31Jan2025:16:14:03): source ./xcelium.d/env.d/env.history.31Jan2025_16_14_03
+s17(31Jan2025:16:14:03):  xrun -64bit rb.sv 
+#e18(31Jan2025:16:14:17): source ./xcelium.d/env.d/env.history.31Jan2025_16_14_17
+s18(31Jan2025:16:14:17):  xrun -64bit rb.sv 
+#e19(31Jan2025:16:14:29): source ./xcelium.d/env.d/env.history.31Jan2025_16_14_29
+s19(31Jan2025:16:14:29):  xrun -64bit rb.sv 
