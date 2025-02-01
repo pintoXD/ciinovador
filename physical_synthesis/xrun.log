@@ -1,11 +1,14 @@
 xrun(64): 24.09-s001: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	24.09-s001: Started on Feb 01, 2025 at 13:54:10 -03
+TOOL:	xrun(64)	24.09-s001: Started on Feb 01, 2025 at 14:50:20 -03
 xrun
 	ieee754multiplier_tb.sv
 	ieee754multiplier.sv
+	+gui
+	+access+rw
+	-s
 Recompiling... reason: file './ieee754multiplier.sv' is newer than expected.
-	expected: Sat Feb  1 11:09:33 2025
-	actual:   Sat Feb  1 13:54:06 2025
+	expected: Sat Feb  1 14:44:25 2025
+	actual:   Sat Feb  1 14:50:13 2025
 file: ieee754multiplier.sv
 	module worklib.multiplier:sv
 		errors: 0, warnings: 0
@@ -15,26 +18,41 @@ file: ieee754multiplier.sv
 		multiplier_tb
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.multiplier:sv <0x19b2a591>
-			streams:   1, words:  1306
+		worklib.multiplier:sv <0x7d85cb2c>
+			streams:   6, words:  4037
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
-		              Instances  Unique
-		Modules:              2       2
-		Registers:           15      15
-		Vectored wires:       4       -
-		Always blocks:        1       1
-		Initial blocks:       1       1
-		Pseudo assignments:   1       -
+		                 Instances  Unique
+		Modules:                 2       2
+		Registers:              17      17
+		Scalar wires:            2       -
+		Vectored wires:          4       -
+		Always blocks:           2       2
+		Initial blocks:          2       2
+		Pseudo assignments:      5       -
+		Process Clocks:          1       1
+		Simulation timescale:  1ps
 	Writing initial simulation snapshot: worklib.multiplier_tb:sv
-Loading snapshot worklib.multiplier_tb:sv .................... Done
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+xcelium> 
 xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
+xcelium> 
+-------------------------------------
+Relinquished control to SimVision...
+# Restoring simulation environment...
+xcelium> input -quiet .reinvoke.sim
+xcelium> file delete .reinvoke.sim
 xcelium> run
 Result Bits: 01000001100001000000000000000000
 Result: 16.500000
 Expected: 16.500000
-Simulation complete via $finish(1) at time 20 NS + 0
-./ieee754multiplier_tb.sv:32     $finish;
-xcelium> exit
-TOOL:	xrun(64)	24.09-s001: Exiting on Feb 01, 2025 at 13:54:41 -03  (total: 00:00:31)
+Result Bits: 01000000000111110011110010000001
+Result: 2.488068
+Expected: 2.488068
+Result Bits: 00000000000000000000000000000000
+Result: 0.000000
+Expected: 0.000000
+Simulation complete via $finish(1) at time 60 NS + 0
+./ieee754multiplier_tb.sv:73     $finish;
+xcelium> 
