@@ -1,0 +1,29 @@
+# SimVision Command Script (Tue Mar 07 09:00:44 PM BRT 2017)
+#
+# Version 15.20.s013
+#
+# You can restore this configuration with:
+#
+#     simvision -input simvision.svcf
+#
+
+#
+# Databases
+#
+database require waves -search {
+      ./waves.shm/waves.trn
+}
+
+#
+# Waveform windows
+#
+
+window new WaveWindow -name "Waveform 1"
+window target "Waveform 1" on
+waveform using {Waveform 1}
+
+set id [waveform add -signals  {
+      waves::Transactions.uvm_sequence_item
+      } ]
+waveform hierarchy set -expandtype Attr:begin_time $id
+

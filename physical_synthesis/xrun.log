@@ -55,4 +55,7 @@ Result: 0.000000
 Expected: 0.000000
 Simulation complete via $finish(1) at time 60 NS + 0
 ./ieee754multiplier_tb.sv:73     $finish;
-xcelium> 
+xcelium> xmsim: *W,NCTERM: Simulation received SIGTERM signal from process 1, user id 0 (/usr/lib/systemd/systemd).
+...Regained control from SimVision
+-------------------------------------
+TOOL:	xrun(64)	24.09-s001: Exiting on Feb 01, 2025 at 14:53:12 -03  (total: 00:02:52)

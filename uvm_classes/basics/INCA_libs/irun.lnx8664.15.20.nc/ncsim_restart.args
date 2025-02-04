@@ -1,0 +1,33 @@
+//
+// File created by:  irun
+// Do not modify this file
+//
+-INPUT
+"@source /home/tools/cadence/installs/INCISIVE152/tools/methodology/UVM/CDNS-1.1d/additions/sv/files/tcl/uvm_sim.tcl"
++UVM_VERBOSITY=HIGH
+-uvmhome
+/home/tools/cadence/installs/INCISIVE152/tools/methodology/UVM/CDNS-1.1d
+-sv_lib
+/home/tools/cadence/installs/INCISIVE152/tools/methodology/UVM/CDNS-1.1d/additions/sv/lib/64bit/libuvmpli.so
+-MESSAGES
+-RUN
+-SV_LIB
+/home/tools/cadence/installs/INCISIVE152/tools/methodology/UVM/CDNS-1.1d/additions/sv/lib/64bit/libuvmdpi.so
++EMGRLOG
+irun.log
+-XLSTIME
+1738243359
+-XLKEEP
+-XLMODE
+./INCA_libs/irun.lnx8664.15.20.nc
+-RUNMODE
+-CDSLIB
+./INCA_libs/irun.lnx8664.15.20.nc/cds.lib
+-HDLVAR
+./INCA_libs/irun.lnx8664.15.20.nc/hdl.var
+-XLNAME
+irun
+-XLVERSION
+"TOOL:	irun(64)	15.20-s086"
+-XLNAME
+./INCA_libs/irun.lnx8664.15.20.nc/cinova05.lesc.ufc.br_20018
