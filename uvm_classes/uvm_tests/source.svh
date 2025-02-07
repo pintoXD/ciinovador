@@ -15,8 +15,8 @@ class source extends uvm_component;
       phase.raise_objection(this); // avoid simulation to finish immediately
 
       // Let us generate 5 transactions and send it via the put_port
-      repeat (5) begin
-         #10;  // wait some time before the transaction begins
+      repeat (7) begin
+         #5;  // wait some time before the transaction begins
          tr = new();  // create transaction instance
          assert(tr.randomize ());
          `bvm_begin_tr(tr)  // start transaction recording

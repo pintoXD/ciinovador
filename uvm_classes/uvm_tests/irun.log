@@ -1,5 +1,5 @@
 irun(64): 15.20-s086: (c) Copyright 1995-2020 Cadence Design Systems, Inc.
-TOOL:	irun(64)	15.20-s086: Started on Feb 04, 2025 at 17:17:20 -03
+TOOL:	irun(64)	15.20-s086: Started on Feb 05, 2025 at 16:26:08 -03
 irun
 	-access +r
 	-uvm
@@ -14,6 +14,50 @@ irun
 	+uvm_set_config_int=*,recording_detail,1
 	+UVM_VERBOSITY=LOW
 
+Recompiling... reason: file './source.svh' is newer than expected.
+	expected: Wed Feb  5 15:34:33 2025
+	actual:   Wed Feb  5 16:26:00 2025
+Compiling UVM packages (uvm_pkg.sv cdns_uvm_pkg.sv) using uvmhome location /home/tools/cadence/installs/INCISIVE152/tools/methodology/UVM/CDNS-1.1d
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		uvm_pkg
+		cdns_uvmapi
+		cdns_assert2uvm_pkg
+		cdns_uvm_pkg
+		$unit_0x7dc301e5
+		top
+ncelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.\$unit_0x7dc301e5 :compilation_unit <0x7f9b1891>
+			streams:   0, words:     0
+		worklib.top:sv <0x4d192d32>
+			streams:   1, words:   526
+		worklib.uvm_pkg:sv <0x39785519>
+			streams:  24, words: 30794
+		worklib.uvm_pkg:sv <0x492c8cbf>
+			streams: 100, words: 176491
+		worklib.uvm_pkg:sv <0x6030d1c8>
+			streams:  30, words: 33370
+		worklib.uvm_pkg:sv <0x697f5aac>
+			streams:  24, words: 25252
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                       Instances  Unique
+		Modules:                       1       1
+		Verilog packages:              4       5
+		Registers:                 13188   10124
+		Named events:                  4      12
+		Initial blocks:              261     150
+		Parallel blocks:              26      27
+		Assertions:                    3       3
+		Compilation units:             1       1
+		SV Class declarations:       195     309
+		SV Class specializations:    350     350
+	Writing initial simulation snapshot: worklib.top:sv
+ncelab: *W,DPIEXP: DPI export function in  _sv_export.so not available.
 Loading snapshot worklib.top:sv .................... Done
 SVSEED default: 1
 ncsim: *E,IMPDLL: Unable to load the implicit shared object.
@@ -45,7 +89,7 @@ CDNS-UVM-1.1d (15.20-s086)
 UVM_INFO @ 0: reporter [RNTST] Running test test...
 UVM_INFO @ 0: reporter [UVM_CMDLINE_PROC] Applying config setting from the command line: +uvm_set_config_int=*,recording_detail,1
 SDI/Verilog Transaction Recording Facility Version 15.20-s086
-UVM_INFO /home/tools/cadence/installs/INCISIVE152/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_objection.svh(1268) @ 220: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO /home/tools/cadence/installs/INCISIVE152/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_objection.svh(1268) @ 225: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
 
 --- UVM Report catcher Summary ---
 
@@ -68,7 +112,7 @@ UVM_FATAL :    0
 [RNTST]     1
 [TEST_DONE]     1
 [UVM_CMDLINE_PROC]     1
-Simulation complete via $finish(1) at time 220 NS + 44
+Simulation complete via $finish(1) at time 225 NS + 44
 /home/tools/cadence/installs/INCISIVE152/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_root.svh:457     $finish;
 ncsim> exit
-TOOL:	irun(64)	15.20-s086: Exiting on Feb 04, 2025 at 17:17:29 -03  (total: 00:00:09)
+TOOL:	irun(64)	15.20-s086: Exiting on Feb 05, 2025 at 16:26:09 -03  (total: 00:00:01)
