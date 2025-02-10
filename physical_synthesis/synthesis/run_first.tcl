@@ -32,9 +32,9 @@ cd ${PROJECT_DIR}/frontend
 ## apenas o programa
 #genus -abort_on_error -lic_startup Genus_Synthesis -lic_startup_options Genus_Physical_Opt -log genus -overwrite
 # programa e carrega script para síntese automatizada
-genus -abort_on_error -lic_startup Genus_Synthesis -lic_startup_options Genus_Physical_Opt \
-      -log ${BACKEND_DIR}/synthesis/work/genus/ \
-      -overwrite -files ${PROJECT_DIR}/backend/synthesis/scripts/${DESIGNS}.tcl
+# genus -abort_on_error -lic_startup Genus_Synthesis -lic_startup_options Genus_Physical_Opt \
+#       -log ${BACKEND_DIR}/synthesis/work/genus/ \
+#       -overwrite -files ${PROJECT_DIR}/backend/synthesis/scripts/${DESIGNS}.tcl
 
 
 
@@ -42,7 +42,7 @@ genus -abort_on_error -lic_startup Genus_Synthesis -lic_startup_options Genus_Ph
 # cd ${PROJECT_DIR}/backend/layout/work
 ## apenas o programa
 # innovus
-# innovus -stylus -file ${PROJECT_DIR}/backend/layout/scripts/layout.tcl
+innovus -stylus -log ${BACKEND_DIR}/synthesis/work/innovus/ -file ${PROJECT_DIR}/backend/layout/scripts/layout.tcl
 
 
 

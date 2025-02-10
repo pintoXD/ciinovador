@@ -10,7 +10,7 @@ logic clk, reset;
 shortreal mock_a;
 shortreal mock_b;
 
-multiplier DUT (
+ieee754multiplier DUT (
     .clk(clk),
     .reset(reset),
     .input_a(input_a),
