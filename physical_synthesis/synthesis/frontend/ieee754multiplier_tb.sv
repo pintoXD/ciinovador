@@ -14,6 +14,9 @@ logic underflow_o;
 logic [31:0] product_o;
 
 
+shortreal mock_a;
+shortreal mock_b;
+
 ieee754multiplier DUT (
     .clk(clk), 
     .rst_n(rst_n),
@@ -39,50 +42,46 @@ end
 
 
 initial begin
-
-    rst_n = 0;
-    #10;
-    rst_n = 1;
     #10;
 
-    a_i = 7.5;
-    b_i = 2.2;
+    mock_a = 7.5;
+    mock_b = 2.2;
 
-    input_a = $shortrealtobits(a_i);
-    input_b = $shortrealtobits(b_i);
+    a_i = $shortrealtobits(mock_a);
+    b_i = $shortrealtobits(mock_b);
 
     #10;
     $display("product_o Bits: %b", product_o);
     $display("product_o: %f", $bitstoshortreal(product_o));
-    $display("Expected: %f", a_i * b_i);
+    $display("Expected: %f", mock_a * mock_b);
 
     // $finish;
 
     #10;
 
-    a_i = 3.1415;
-    b_i = 0.792;
+    mock_a = 3.1415;
+    mock_b = 0.792;
 
-    input_a = $shortrealtobits(a_i);
-    input_b = $shortrealtobits(b_i);
-
-    #10;
-    $display("product_o Bits: %b", product_o);
-    $display("product_o: %f", $bitstoshortreal(product_o));
-    $display("Expected: %f", a_i * b_i);
-
-    #10;
-
-    a_i = 0.0;
-    b_i = 3.1415;
-
-    input_a = $shortrealtobits(a_i);
-    input_b = 32'b0_11111001_11100000000000000000000;//$shortrealtobits(b_i);
+    a_i = $shortrealtobits(mock_a);
+    b_i = $shortrealtobits(mock_b);
 
     #10;
     $display("product_o Bits: %b", product_o);
     $display("product_o: %f", $bitstoshortreal(product_o));
-    $display("Expected: %f", a_i * b_i);
+    $display("Expected: %f", mock_a * mock_b);
+
+    #10;
+
+    mock_a = 0.0;
+    mock_b = 3.1415;
+
+    a_i = $shortrealtobits(mock_a);
+    b_i = 32'b0_11111001_11100000000000000000000;//$shortrealtobits(mock_b);
+
+    #10;
+    $display("product_o Bits: %b", product_o);
+    $display("product_o: %f", $bitstoshortreal(product_o));
+    $display("Expected: %f", mock_a * mock_b);
 
     $finish;
 

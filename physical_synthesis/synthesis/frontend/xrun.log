@@ -1,0 +1,51 @@
+xrun(64): 24.09-s001: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	24.09-s001: Started on Feb 10, 2025 at 16:42:56 -03
+xrun
+	ieee754multiplier_tb.sv
+	ieee754multiplier.sv
+Recompiling... reason: file './ieee754multiplier_tb.sv' is newer than expected.
+	expected: Mon Feb 10 16:37:27 2025
+	actual:   Mon Feb 10 16:42:53 2025
+file: ieee754multiplier_tb.sv
+	module worklib.multiplier_tb:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		multiplier_tb
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.ieee754multiplier:sv <0x1273516f>
+			streams:  10, words:  4852
+		worklib.multiplier_tb:sv <0x0eb60f49>
+			streams:   3, words:  7642
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 2       2
+		Registers:              31      31
+		Scalar wires:            8       -
+		Vectored wires:          4       -
+		Always blocks:           3       3
+		Initial blocks:          2       2
+		Pseudo assignments:      1       -
+		Process Clocks:          2       1
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.multiplier_tb:sv
+Loading snapshot worklib.multiplier_tb:sv .................... Done
+xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
+xcelium> run
+product_o Bits: 00000000000000000000000000000000
+product_o: 0.000000
+Expected: 16.500000
+product_o Bits: 00000000000000000000000000000000
+product_o: 0.000000
+Expected: 2.488068
+product_o Bits: 00000000000000000000000000000000
+product_o: 0.000000
+Expected: 0.000000
+Simulation complete via $finish(1) at time 60 NS + 0
+./ieee754multiplier_tb.sv:86     $finish;
+xcelium> exit
+TOOL:	xrun(64)	24.09-s001: Exiting on Feb 10, 2025 at 16:43:07 -03  (total: 00:00:11)

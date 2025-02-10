@@ -1,0 +1,16 @@
+#e1(10Feb2025:16:35:55): source ./xcelium.d/env.d/env.history.10Feb2025_16_35_55
+s1(10Feb2025:16:35:55):  xrun ieee754multiplier_tb.sv ieee754multiplier.sv 
+#e2(10Feb2025:16:37:44): source ./xcelium.d/env.d/env.history.10Feb2025_16_37_44
+s2(10Feb2025:16:37:44):  xrun ieee754multiplier_tb.sv ieee754multiplier.sv 
+#e3(10Feb2025:16:38:32): source ./xcelium.d/env.d/env.history.10Feb2025_16_38_32
+s3(10Feb2025:16:38:32):  xrun ieee754multiplier_tb.sv ieee754multiplier.sv 
+#e4(10Feb2025:16:39:31): source ./xcelium.d/env.d/env.history.10Feb2025_16_39_31
+s4(10Feb2025:16:39:31):  xrun ieee754multiplier_tb.sv ieee754multiplier.sv 
+#e5(10Feb2025:16:39:35): source ./xcelium.d/env.d/env.history.10Feb2025_16_39_35
+s5(10Feb2025:16:39:35):  xrun ieee754multiplier_tb.sv ieee754multiplier.sv 
+#e6(10Feb2025:16:40:18): source ./xcelium.d/env.d/env.history.10Feb2025_16_40_18
+s6(10Feb2025:16:40:18):  xrun ieee754multiplier_tb.sv ieee754multiplier.sv 
+#e7(10Feb2025:16:41:55): source ./xcelium.d/env.d/env.history.10Feb2025_16_41_55
+s7(10Feb2025:16:41:55):  xrun ieee754multiplier_tb.sv ieee754multiplier.sv 
+#e8(10Feb2025:16:42:56): source ./xcelium.d/env.d/env.history.10Feb2025_16_42_56
+s8(10Feb2025:16:42:56):  xrun ieee754multiplier_tb.sv ieee754multiplier.sv 

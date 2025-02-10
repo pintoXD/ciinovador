@@ -21,7 +21,6 @@ typedef enum logic[2:0] {
     OVERFLOW_O_DETECTED = 3'b101,
     UNDERFLOW_O_DETECTED = 3'b110,
     DONE = 3'b111
-
 } MULTIPLIER_FSM_STATE;
 
 /*****************************************
@@ -29,7 +28,7 @@ typedef enum logic[2:0] {
 * control variables
 *
 ******************************************/
-DECODER_FSM_STATE current_state, next_state;
+MULTIPLIER_FSM_STATE current_state, next_state;
 
 
 /*****************************************
@@ -99,9 +98,10 @@ always_comb begin : MULTIPLIER_COMB_BLOCK
                     next_state = RESULT_VERIFICATION_STEP;
             end
 
-            RESULT_VERIFICATION_STEP:
+            RESULT_VERIFICATION_STEP: begin
                 is_multiplication_done = 1;
                 next_state = DONE;
+            end
             DONE:
                 next_state = INITIAL_STATE;
 
@@ -109,37 +109,34 @@ always_comb begin : MULTIPLIER_COMB_BLOCK
                 next_state = INITIAL_STATE;
         endcase
     end
-
-
 end
 
 
 always_ff @(posedge clk, negedge rst_n) begin : MULTIPLIER_FF_BLOCK
-    if(!rst_n)
+    if(!rst_n) begin
         done_o <= 1'b0;
         nan_o <= 1'b0;
         inifinit_o <= 1'b0;
         overflow_o <= 1'b0;
         underflow_o <= 1'b0;
         product_o <= 32'b0;
-    else begin
-
+    end else begin
         product_o[31] <= signal_a ^ signal_b; //XOR the sign bits to get the sign of the product_o
         product_o[30:23] <=  exponent_temp[7:0]; //add the exponents and subtract the bias
         product_o[22:0] <= mantissa_temp[45:23]; //extract the 24 most significant bits of the product_o
 
         case (current_state)
-            INITIAL_STATE:
+            INITIAL_STATE: begin
                 done_o <= 1'b0;
                 nan_o <= 1'b0;
                 inifinit_o <= 1'b0;
                 overflow_o <= 1'b0;
                 underflow_o <= 1'b0;
                 product_o <= 32'b0;
-
+            end
             MULTIPLY_STEP:
 
-            RESULT_VERIFICATION_STEP:
+            RESULT_VERIFICATION_STEP: begin
                 if (product_o[30:23] == 8'hFF && product_o[22:0] != 23'b00) begin
                     nan_o <= 1'b1;
                     product_o <= 32'b00;
@@ -156,6 +153,7 @@ always_ff @(posedge clk, negedge rst_n) begin : MULTIPLIER_FF_BLOCK
                 end
 
                 done_o <= 1'b1;
+            end
 
             DONE:
                 done_o <= 1'b0;
