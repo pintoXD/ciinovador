@@ -1,0 +1,19 @@
+*** source_.svh	2017-05-02 08:42:04.294646187 -0300
+--- source.svh	2017-05-02 08:30:09.733626976 -0300
+***************
+*** 16,22 ****
+  
+        // Let us generate 5 transactions and send it via the put_port
+        repeat (5) begin
+!          #30;  // wait some time before the transaction begins
+           tr = a_tr::type_id::create("tr", this);  // create transaction instance
+           assert(tr.randomize ());
+           `bvm_begin_tr(tr)  // start transaction recording
+--- 16,22 ----
+  
+        // Let us generate 5 transactions and send it via the put_port
+        repeat (5) begin
+!          #10;  // wait some time before the transaction begins
+           tr = a_tr::type_id::create("tr", this);  // create transaction instance
+           assert(tr.randomize ());
+           `bvm_begin_tr(tr)  // start transaction recording
