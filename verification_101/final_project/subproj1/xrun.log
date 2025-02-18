@@ -1,0 +1,63 @@
+xrun(64): 24.09-s001: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	24.09-s001: Started on Feb 18, 2025 at 17:13:38 -03
+xrun
+	-64bit
+	alu_testvectors_tb.sv
+	alu.sv
+Recompiling... reason: file './alu_testvectors_tb.sv' is newer than expected.
+	expected: Tue Feb 18 17:12:43 2025
+	actual:   Tue Feb 18 17:13:36 2025
+file: alu_testvectors_tb.sv
+	module worklib.test_alu:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		test_alu
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.test_alu:sv <0x60a2928a>
+			streams:   1, words:  2739
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		             Instances  Unique
+		Modules:             2       2
+		Registers:          20      20
+		Scalar wires:        3       -
+		Vectored wires:      5       -
+		Always blocks:       2       2
+		Initial blocks:      3       3
+		Cont. assignments:   0       1
+	Writing initial simulation snapshot: worklib.test_alu:sv
+Loading snapshot worklib.test_alu:sv .................... Done
+xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
+xcelium> run
+Test vectors read from file:
+A = 9d, B = 60, ALU_Sel = 00, Expected_ALU_Out=fd, Expected_CarryOut=00
+A = b1, B = 9f, ALU_Sel = 00, Expected_ALU_Out=50, Expected_CarryOut=01
+A = 97, B = 1b, ALU_Sel = 00, Expected_ALU_Out=b2, Expected_CarryOut=00
+A = 27, B = 18, ALU_Sel = 00, Expected_ALU_Out=3f, Expected_CarryOut=00
+A = 89, B = 38, ALU_Sel = 00, Expected_ALU_Out=c1, Expected_CarryOut=00
+A = 55, B = 36, ALU_Sel = 01, Expected_ALU_Out=1f, Expected_CarryOut=00
+A = 38, B = 10, ALU_Sel = 01, Expected_ALU_Out=28, Expected_CarryOut=00
+A = ea, B = 3c, ALU_Sel = 01, Expected_ALU_Out=ae, Expected_CarryOut=00
+A = c4, B = 7b, ALU_Sel = 01, Expected_ALU_Out=49, Expected_CarryOut=00
+A = 2b, B = 06, ALU_Sel = 01, Expected_ALU_Out=25, Expected_CarryOut=00
+A = 0e, B = 0b, ALU_Sel = 02, Expected_ALU_Out=9a, Expected_CarryOut=00
+A = 0c, B = 03, ALU_Sel = 02, Expected_ALU_Out=24, Expected_CarryOut=00
+A = 0c, B = 03, ALU_Sel = 02, Expected_ALU_Out=24, Expected_CarryOut=00
+A = 0f, B = 0a, ALU_Sel = 02, Expected_ALU_Out=96, Expected_CarryOut=00
+A = 00, B = 00, ALU_Sel = 02, Expected_ALU_Out=00, Expected_CarryOut=00
+A = 24, B = 22, ALU_Sel = 03, Expected_ALU_Out=01, Expected_CarryOut=00
+A = 1d, B = 04, ALU_Sel = 03, Expected_ALU_Out=07, Expected_CarryOut=00
+A = 13, B = 11, ALU_Sel = 03, Expected_ALU_Out=01, Expected_CarryOut=00
+A = f4, B = 2f, ALU_Sel = 03, Expected_ALU_Out=05, Expected_CarryOut=00
+A = b7, B = 5a, ALU_Sel = 03, Expected_ALU_Out=02, Expected_CarryOut=00
+A = xx, B = xx, ALU_Sel = xx, Expected_ALU_Out=xx, Expected_CarryOut=xx
+A = xx, B = xx, ALU_Sel = xx, Expected_ALU_Out=xx, Expected_CarryOut=xx
+A = xx, B = xx, ALU_Sel = xx, Expected_ALU_Out=xx, Expected_CarryOut=xx
+A = xx, B = xx, ALU_Sel = xx, Expected_ALU_Out=xx, Expected_CarryOut=xx
+xmsim: *W,RNQUIE: Simulation is complete.
+xcelium> exit
+TOOL:	xrun(64)	24.09-s001: Exiting on Feb 18, 2025 at 17:13:39 -03  (total: 00:00:01)

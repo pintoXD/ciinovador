@@ -1,11 +1,14 @@
 xrun(64): 24.09-s001: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	24.09-s001: Started on Feb 10, 2025 at 16:42:56 -03
+TOOL:	xrun(64)	24.09-s001: Started on Feb 13, 2025 at 15:06:02 -03
 xrun
+	-64bit
 	ieee754multiplier_tb.sv
 	ieee754multiplier.sv
+	+gui
+	+access+rw
 Recompiling... reason: file './ieee754multiplier_tb.sv' is newer than expected.
-	expected: Mon Feb 10 16:37:27 2025
-	actual:   Mon Feb 10 16:42:53 2025
+	expected: Mon Feb 10 16:42:53 2025
+	actual:   Thu Feb 13 14:42:30 2025
 file: ieee754multiplier_tb.sv
 	module worklib.multiplier_tb:sv
 		errors: 0, warnings: 0
@@ -15,37 +18,44 @@ file: ieee754multiplier_tb.sv
 		multiplier_tb
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.ieee754multiplier:sv <0x1273516f>
-			streams:  10, words:  4852
-		worklib.multiplier_tb:sv <0x0eb60f49>
-			streams:   3, words:  7642
+		worklib.multiplier_tb:sv <0x68bfca94>
+			streams:  13, words: 12307
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
 		                 Instances  Unique
 		Modules:                 2       2
 		Registers:              31      31
-		Scalar wires:            8       -
+		Scalar wires:           13       -
 		Vectored wires:          4       -
 		Always blocks:           3       3
 		Initial blocks:          2       2
-		Pseudo assignments:      1       -
+		Pseudo assignments:     11       -
 		Process Clocks:          2       1
 		Simulation timescale:  1ps
 	Writing initial simulation snapshot: worklib.multiplier_tb:sv
-Loading snapshot worklib.multiplier_tb:sv .................... Done
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
 xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm multiplier_tb.DUT.a_i multiplier_tb.DUT.b_i multiplier_tb.DUT.clk multiplier_tb.DUT.current_state multiplier_tb.DUT.done_o multiplier_tb.DUT.exponent_a multiplier_tb.DUT.exponent_b multiplier_tb.DUT.exponent_temp multiplier_tb.DUT.inifinit_o multiplier_tb.DUT.is_multiplication_done multiplier_tb.DUT.mantissa_a multiplier_tb.DUT.mantissa_b multiplier_tb.DUT.mantissa_product_o multiplier_tb.DUT.mantissa_temp multiplier_tb.DUT.nan_o multiplier_tb.DUT.next_state multiplier_tb.DUT.overflow_o multiplier_tb.DUT.product_o multiplier_tb.DUT.rst_n multiplier_tb.DUT.signal_a multiplier_tb.DUT.signal_b multiplier_tb.DUT.start_i multiplier_tb.DUT.underflow_o
+Created probe 1
 xcelium> run
 product_o Bits: 00000000000000000000000000000000
 product_o: 0.000000
 Expected: 16.500000
-product_o Bits: 00000000000000000000000000000000
-product_o: 0.000000
+product_o Bits: 01000000000111110011110010000001
+product_o: 2.488068
 Expected: 2.488068
 product_o Bits: 00000000000000000000000000000000
 product_o: 0.000000
 Expected: 0.000000
-Simulation complete via $finish(1) at time 60 NS + 0
-./ieee754multiplier_tb.sv:86     $finish;
+Simulation complete via $finish(1) at time 80 NS + 0
+./ieee754multiplier_tb.sv:98     $finish;
+xcelium> ^C
 xcelium> exit
-TOOL:	xrun(64)	24.09-s001: Exiting on Feb 10, 2025 at 16:43:07 -03  (total: 00:00:11)
+TOOL:	xrun(64)	24.09-s001: Exiting on Feb 13, 2025 at 15:21:01 -03  (total: 00:14:59)

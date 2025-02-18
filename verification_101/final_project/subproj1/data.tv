@@ -1,0 +1,9 @@
+# A B ALU_Sel Expected_ALU_Out Expected_CarryOut
+10 20 0000 30 0  // Addition: 10 + 20 = 30
+15 5 0001 10 0   // Subtraction: 15 - 5 = 10
+3 4 0010 12 0    // Multiplication: 3 * 4 = 12
+8 2 0011 4 0     // Division: 8 / 2 = 4
+255 1 0000 0 1   // Addition with carry: 255 + 1 = 0 with carry 1
+100 50 0001 50 0 // Subtraction: 100 - 50 = 50
+7 3 0010 21 0    // Multiplication: 7 * 3 = 21
+9 3 0011 3 0     // Division: 9 / 3 = 3

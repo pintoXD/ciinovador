@@ -43,6 +43,13 @@ end
 
 initial begin
     #10;
+        rst_n = 0;
+    #10;
+        start_i = 0;
+        rst_n = 1;
+    #10;
+        start_i = 1;
+
 
     mock_a = 7.5;
     mock_b = 2.2;
