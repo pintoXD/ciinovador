@@ -1,0 +1,18 @@
+#e1(18Feb2025:09:42:04): source ./xcelium.d/env.d/env.history.18Feb2025_09_42_04
+s1(18Feb2025:09:42:04):  xrun -64bit alu_simple_tb.sv alu.sv 
+#e2(18Feb2025:09:44:42): source ./xcelium.d/env.d/env.history.18Feb2025_09_44_42
+s2(18Feb2025:09:44:42):  xrun -64bit -log work/ alu_simple_tb.sv alu.sv 
+#e3(18Feb2025:09:58:07): source ./xcelium.d/env.d/env.history.18Feb2025_09_58_07
+s3(18Feb2025:09:58:07):  xrun -64bit alu_simple_tb.sv alu.sv -log_* work/ 
+#e4(18Feb2025:09:58:12): source ./xcelium.d/env.d/env.history.18Feb2025_09_58_12
+s4(18Feb2025:09:58:12):  xrun -64bit alu_simple_tb.sv alu.sv -log_* work 
+#e5(18Feb2025:09:58:30): source ./xcelium.d/env.d/env.history.18Feb2025_09_58_30
+s5(18Feb2025:09:58:30):  xrun -64bit -log_* work/ alu_simple_tb.sv alu.sv 
+#e6(18Feb2025:10:05:26): source ./xcelium.d/env.d/env.history.18Feb2025_10_05_26
+s6(18Feb2025:10:05:26):  xrun -64bit -log work alu_simple_tb.sv alu.sv 
+#e7(18Feb2025:10:06:47): source ./xcelium.d/env.d/env.history.18Feb2025_10_06_47
+s7(18Feb2025:10:06:47):  xrun -64bit -log work alu_simple_tb.sv alu.sv 
+#e8(18Feb2025:10:10:24): source ./xcelium.d/env.d/env.history.18Feb2025_10_10_24
+s8(18Feb2025:10:10:24):  xrun -64bit -log work alu_simple_tb.sv alu.sv 
+#e9(18Feb2025:11:43:07): source ./xcelium.d/env.d/env.history.18Feb2025_11_43_07
+s9(18Feb2025:11:43:07):  xrun -64bit -log work alu_testvectors_tb.sv alu.sv 
