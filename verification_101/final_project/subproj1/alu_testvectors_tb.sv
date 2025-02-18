@@ -5,7 +5,14 @@ module test_alu;
   logic [7:0] ALU_Out;
   logic CarryOut;
 
-  
+
+  logic [7:0] mock_A, mock_B;
+  logic mock_ALU_Sel;
+  logic [7:0]expected_ALU_Out; 
+  logic expected_CarryOut;
+  int num_vectors, i;
+  logic [7:0] testvectors [0:119];
+  logic [15:0] vectornum, errors; // bookkeeping variables
 
   // Instantiate the ALU
   alu uut (
@@ -18,29 +25,26 @@ module test_alu;
     .CarryOut(CarryOut)
   );
 
-  // Clock generation
-  always #5 clock = ~clock;
-
-  initial begin
-    // Initialize signals
-    clock = 0;
-    reset = 1;
-    #10 reset = 0;
-
-    // Open the TV file
-    $readmemb("data.tv", test_vectors);
-
-    // Apply test vectors
-    for (i = 0; i < num_vectors; i = i + 1) begin
-      {A, B, ALU_Sel, expected_ALU_Out, expected_CarryOut} = test_vectors[i];
-      #10;
-      if (ALU_Out !== expected_ALU_Out || CarryOut !== expected_CarryOut) begin
-        $display("Test failed for vector %0d: A=%0d, B=%0d, ALU_Sel=%0b", i, A, B, ALU_Sel);
-      end
+    initial begin
+        clock = 0;
+        forever begin
+            #5 clock = ~clock;
+        end
     end
 
-    $finish;
-  end
+
+    initial begin
+        $readmemh("data2.tv", testvectors);
+    end
+        
+    initial begin
+        #100;
+        $display("Test vectors read from file:");
+        for(i=0; i<120; i=i+5) begin
+            // $display("A = %h, B = %h, ALU_Sel = %h", testvectors[i][7:0], testvectors[i][15:8], testvectors[i][31:16]);
+            $display("A = %h, B = %h, ALU_Sel = %h, Expected_ALU_Out=%h, Expected_CarryOut=%h", testvectors[i], testvectors[i+1], testvectors[i+2], testvectors[i+3], testvectors[i+4]);
+        end
+    end
 
 
 

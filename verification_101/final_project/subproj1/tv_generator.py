@@ -21,6 +21,7 @@ def generate_sum_value():
     return generate_hex_value(mock_a, mock_b, sum_value, carry)
 
 def generate_sub_value():
+    
     """
     Generates a test vector for the subtraction operation.
 
@@ -34,27 +35,10 @@ def generate_sub_value():
     # function implementation
     mock_a = random.randint(0, 255)
     mock_b = random.randint(0, mock_a) # Fix this, mock_a should be greater than mock_b
-    result = mock_a - mock_b
+    result = mock_a + (~mock_b + 1)
     carry = (result >> 8) & 1
     sub_value = result & 0xFF
     return generate_hex_value(mock_a, mock_b, sub_value, carry)
-
-
-# def multiply_8bit_integers():
-#     """
-#     Multiplies two random 8-bit integers and stores the result in an 8-bit integer variable.
-
-#     Returns:
-#         tuple: A tuple containing:
-#             - mock_a (int): The first operand.
-#             - mock_b (int): The second operand.
-#             - result (int): The result of the multiplication, truncated to 8 bits.
-#     """
-#     mock_a = random.randint(0, 255)
-#     mock_b = random.randint(0, 255)
-#     result = (mock_a * mock_b) & 0xFF  # Truncate to 8 bits
-#     return mock_a, mock_b, result
-
 
 
 def generate_multiplication_value():
@@ -72,9 +56,9 @@ def generate_multiplication_value():
     mock_a = random.randint(0, 15)
     mock_b = random.randint(0, mock_a)
     result = mock_a * mock_b
-    # carry = (result >> 8) & 0xFF
-    # multiplication_value = result & 0xFF
-    return generate_hex_value(mock_a, mock_b, result, 0)
+    carry = (result >> 8) & 0xFF
+    multiplication_value = result & 0xFF
+    return generate_hex_value(mock_a, mock_b, multiplication_value, carry)
 
 def generate_division_value():
     """
@@ -88,11 +72,11 @@ def generate_division_value():
             - remainder (str): The remainder of the division.
     """
     # function implementation
-    mock_a = random.randint(0, 255)
+    mock_a = random.randint(0, 254)
     mock_b = random.randint(1, mock_a)  # from 1 to 255 to avoid division by zero
     result = mock_a // mock_b
-    remainder = mock_a % mock_b
-    return generate_hex_value(mock_a, mock_b, result, remainder)
+    # remainder = mock_a % mock_b
+    return generate_hex_value(mock_a, mock_b, result, 0)
 
 def generate_hex_value(data_a, data_b, data_c, data_d):
     """
@@ -128,14 +112,14 @@ def generate_tv_file(filename, num_vectors):
         print("####### Addition #######")
         for _ in range(num_vectors):
             A, B, Expected_ALU_Out, Expected_CarryOut = generate_sum_value()
-            ALU_Sel = '0000'
+            ALU_Sel = '0'
             print(f"A: {int(A, 16)}, B: {int(B, 16)}, ALU_Sel: {ALU_Sel}, Expected_ALU_Out: {int(Expected_ALU_Out, 16)}, Expected_CarryOut: {int(Expected_CarryOut, 16)}")
             f.write(f"{A} {B} {ALU_Sel} {Expected_ALU_Out} {Expected_CarryOut}\n")
 
         print("####### Subtraction #######")
         for _ in range(num_vectors):
             A, B, Expected_ALU_Out, Expected_CarryOut = generate_sub_value()
-            ALU_Sel = '0001'
+            ALU_Sel = '1'
             # print(f"A: {A}, B: {B}, ALU_Sel: {ALU_Sel}, Expected_ALU_Out: {Expected_ALU_Out}, Expected_CarryOut: {Expected_CarryOut}")
             print(f"A: {int(A, 16)}, B: {int(B, 16)}, ALU_Sel: {ALU_Sel}, Expected_ALU_Out: {int(Expected_ALU_Out, 16)}, Expected_CarryOut: {int(Expected_CarryOut, 16)}")
             f.write(f"{A} {B} {ALU_Sel} {Expected_ALU_Out} {Expected_CarryOut}\n")
@@ -143,7 +127,7 @@ def generate_tv_file(filename, num_vectors):
         print("###### Multiplication ######")
         for _ in range(num_vectors):
             A, B, Expected_ALU_Out, Expected_CarryOut = generate_multiplication_value()
-            ALU_Sel = '0010'
+            ALU_Sel = '2'
             # print(f"A: {A}, B: {B}, ALU_Sel: {ALU_Sel}, Expected_ALU_Out: {Expected_ALU_Out}, Expected_CarryOut: {Expected_CarryOut}")
             print(f"A: {int(A, 16)}, B: {int(B, 16)}, ALU_Sel: {ALU_Sel}, Expected_ALU_Out: {int(Expected_ALU_Out, 16)}, Expected_CarryOut: {int(Expected_CarryOut, 16)}")
             f.write(f"{A} {B} {ALU_Sel} {Expected_ALU_Out} {Expected_CarryOut}\n")
@@ -151,7 +135,7 @@ def generate_tv_file(filename, num_vectors):
         print("###### Division ######")
         for _ in range(num_vectors):
             A, B, Expected_ALU_Out, Expected_CarryOut = generate_division_value()
-            ALU_Sel = '0011'
+            ALU_Sel = '3'
             # print(f"A: {A}, B: {B}, ALU_Sel: {ALU_Sel}, Expected_ALU_Out: {Expected_ALU_Out}, Expected_CarryOut: {Expected_CarryOut}")
             print(f"A: {int(A, 16)}, B: {int(B, 16)}, ALU_Sel: {ALU_Sel}, Expected_ALU_Out: {int(Expected_ALU_Out, 16)}, Expected_CarryOut: {int(Expected_CarryOut, 16)}")
             f.write(f"{A} {B} {ALU_Sel} {Expected_ALU_Out} {Expected_CarryOut}\n")
