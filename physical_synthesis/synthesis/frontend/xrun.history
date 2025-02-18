@@ -14,3 +14,7 @@ s6(10Feb2025:16:40:18):  xrun ieee754multiplier_tb.sv ieee754multiplier.sv
 s7(10Feb2025:16:41:55):  xrun ieee754multiplier_tb.sv ieee754multiplier.sv 
 #e8(10Feb2025:16:42:56): source ./xcelium.d/env.d/env.history.10Feb2025_16_42_56
 s8(10Feb2025:16:42:56):  xrun ieee754multiplier_tb.sv ieee754multiplier.sv 
+#e9(13Feb2025:10:44:04): source ./xcelium.d/env.d/env.history.13Feb2025_10_44_04
+s9(13Feb2025:10:44:04):  xrun -64bit ieee754multiplier_tb.sv ieee754multiplier.sv +gui +access+rw 
+#e10(13Feb2025:15:06:02): source ./xcelium.d/env.d/env.history.13Feb2025_15_06_02
+s10(13Feb2025:15:06:02):  xrun -64bit ieee754multiplier_tb.sv ieee754multiplier.sv +gui +access+rw 
