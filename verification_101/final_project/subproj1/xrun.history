@@ -86,3 +86,21 @@ s42(18Feb2025:17:11:58):  xrun -64bit alu_testvectors_tb.sv alu.sv
 s43(18Feb2025:17:12:45):  xrun -64bit alu_testvectors_tb.sv alu.sv 
 #e44(18Feb2025:17:13:38): source ./xcelium.d/env.d/env.history.18Feb2025_17_13_38
 s44(18Feb2025:17:13:38):  xrun -64bit alu_testvectors_tb.sv alu.sv 
+#e45(19Feb2025:09:39:14): source ./xcelium.d/env.d/env.history.19Feb2025_09_39_14
+s45(19Feb2025:09:39:14):  xrun -64bit alu_testvectors_tb.sv alu.sv 
+#e46(19Feb2025:09:39:35): source ./xcelium.d/env.d/env.history.19Feb2025_09_39_35
+s46(19Feb2025:09:39:35):  xrun -64bit alu_testvectors_tb.sv alu.sv 
+#e47(19Feb2025:09:41:17): source ./xcelium.d/env.d/env.history.19Feb2025_09_41_17
+s47(19Feb2025:09:41:17):  xrun -64bit alu_testvectors_tb.sv alu.sv 
+#e48(19Feb2025:09:41:28): source ./xcelium.d/env.d/env.history.19Feb2025_09_41_28
+s48(19Feb2025:09:41:28):  xrun -64bit alu_testvectors_tb.sv alu.sv 
+#e49(19Feb2025:09:43:07): source ./xcelium.d/env.d/env.history.19Feb2025_09_43_07
+s49(19Feb2025:09:43:07):  xrun -64bit alu_testvectors_tb.sv alu.sv 
+#e50(19Feb2025:09:44:48): source ./xcelium.d/env.d/env.history.19Feb2025_09_44_48
+s50(19Feb2025:09:44:48):  xrun -64bit alu_testvectors_tb.sv alu.sv 
+#e51(19Feb2025:09:52:07): source ./xcelium.d/env.d/env.history.19Feb2025_09_52_07
+s51(19Feb2025:09:52:07):  xrun -64bit alu_testvectors_tb.sv alu.sv 
+#e52(19Feb2025:09:53:50): source ./xcelium.d/env.d/env.history.19Feb2025_09_53_50
+s52(19Feb2025:09:53:50):  xrun -64bit alu_testvectors_tb.sv alu.sv 
+#e53(19Feb2025:10:11:50): source ./xcelium.d/env.d/env.history.19Feb2025_10_11_50
+s53(19Feb2025:10:11:50):  xrun -64bit alu_testvectors_tb.sv alu.sv 
