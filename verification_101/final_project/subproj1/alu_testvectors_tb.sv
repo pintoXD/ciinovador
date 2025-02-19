@@ -1,4 +1,4 @@
-module test_alu;
+module alu_testvectors_tb;
   logic [7:0] A, B;
   logic [3:0] ALU_Sel;
   logic clock, reset;
