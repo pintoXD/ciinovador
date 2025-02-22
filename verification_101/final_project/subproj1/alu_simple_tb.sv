@@ -38,6 +38,7 @@ module alu_simple_tb();
         // Wait for global reset
         #10;
         reset = 0;
+        #10;
 
         // Test Addition
         A = 8'h9d;

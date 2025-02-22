@@ -104,3 +104,27 @@ s51(19Feb2025:09:52:07):  xrun -64bit alu_testvectors_tb.sv alu.sv
 s52(19Feb2025:09:53:50):  xrun -64bit alu_testvectors_tb.sv alu.sv 
 #e53(19Feb2025:10:11:50): source ./xcelium.d/env.d/env.history.19Feb2025_10_11_50
 s53(19Feb2025:10:11:50):  xrun -64bit alu_testvectors_tb.sv alu.sv 
+#e54(22Feb2025:10:09:48): source ./xcelium.d/env.d/env.history.22Feb2025_10_09_48
+s54(22Feb2025:10:09:48):  xrun alu_simple_tb.sv alu.sv 
+#e55(22Feb2025:10:12:06): source ./xcelium.d/env.d/env.history.22Feb2025_10_12_06
+s55(22Feb2025:10:12:06):  xrun alu_simple_tb.sv alu.sv +gui +access+rw 
+#e56(22Feb2025:10:18:04): source ./xcelium.d/env.d/env.history.22Feb2025_10_18_04
+s56(22Feb2025:10:18:04):  xrun alu_auto_tb.sv alu.sv 
+#e57(22Feb2025:10:24:10): source ./xcelium.d/env.d/env.history.22Feb2025_10_24_10
+s57(22Feb2025:10:24:10):  xrun alu_auto_tb.sv alu.sv 
+#e58(22Feb2025:10:24:50): source ./xcelium.d/env.d/env.history.22Feb2025_10_24_50
+s58(22Feb2025:10:24:50):  xrun alu_auto_tb.sv alu.sv 
+#e59(22Feb2025:10:25:38): source ./xcelium.d/env.d/env.history.22Feb2025_10_25_38
+s59(22Feb2025:10:25:38):  xrun alu_auto_tb.sv alu.sv 
+#e60(22Feb2025:10:26:10): source ./xcelium.d/env.d/env.history.22Feb2025_10_26_10
+s60(22Feb2025:10:26:10):  xrun alu_auto_tb.sv alu.sv 
+#e61(22Feb2025:10:26:23): source ./xcelium.d/env.d/env.history.22Feb2025_10_26_23
+s61(22Feb2025:10:26:23):  xrun alu_auto_tb.sv alu.sv +access+rw 
+#e62(22Feb2025:10:30:43): source ./xcelium.d/env.d/env.history.22Feb2025_10_30_43
+s62(22Feb2025:10:30:43):  xrun alu_testvectors_tb.sv alu.sv +access+rw 
+#e63(22Feb2025:10:31:53): source ./xcelium.d/env.d/env.history.22Feb2025_10_31_53
+s63(22Feb2025:10:31:53):  xrun alu_testvectors_tb.sv alu.sv +access+rw 
+#e64(22Feb2025:10:57:23): source ./xcelium.d/env.d/env.history.22Feb2025_10_57_23
+s64(22Feb2025:10:57:23):  xrun alu_auto_tb.sv alu.sv +access+rw 
+#e65(22Feb2025:11:19:09): source ./xcelium.d/env.d/env.history.22Feb2025_11_19_09
+s65(22Feb2025:11:19:09):  xrun alu_testvectors_tb.sv alu.sv +access+rw 

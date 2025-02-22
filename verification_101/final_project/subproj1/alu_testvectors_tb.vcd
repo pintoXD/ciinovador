@@ -1,0 +1,1775 @@
+$date
+    Feb 22, 2025  11:19:19
+$end
+$version
+    TOOL:	xmsim(64)	24.09-s001
+$end
+$timescale
+    1 ns
+$end
+
+$scope module alu_testvectors_tb $end
+$var reg       8 !    A [7:0] $end
+$var reg       8 "    B [7:0] $end
+$var reg       4 #    ALU_Sel [3:0] $end
+$var reg       1 $    clock $end
+$var reg       1 %    reset $end
+$var reg       8 &    ALU_Out [7:0] $end
+$var reg       1 '    CarryOut $end
+$var reg       8 (    mock_A [7:0] $end
+$var reg       8 )    mock_B [7:0] $end
+$var reg       1 *    mock_ALU_Sel $end
+$var reg       8 +    expected_ALU_Out [7:0] $end
+$var reg       1 ,    expected_CarryOut $end
+$var integer  32 -    num_vectors $end
+$var integer  32 .    i $end
+$var reg       8 /    testvectors[0] [7:0] $end
+$var reg       8 0    testvectors[1] [7:0] $end
+$var reg       8 1    testvectors[2] [7:0] $end
+$var reg       8 2    testvectors[3] [7:0] $end
+$var reg       8 3    testvectors[4] [7:0] $end
+$var reg       8 4    testvectors[5] [7:0] $end
+$var reg       8 5    testvectors[6] [7:0] $end
+$var reg       8 6    testvectors[7] [7:0] $end
+$var reg       8 7    testvectors[8] [7:0] $end
+$var reg       8 8    testvectors[9] [7:0] $end
+$var reg       8 9    testvectors[10] [7:0] $end
+$var reg       8 :    testvectors[11] [7:0] $end
+$var reg       8 ;    testvectors[12] [7:0] $end
+$var reg       8 <    testvectors[13] [7:0] $end
+$var reg       8 =    testvectors[14] [7:0] $end
+$var reg       8 >    testvectors[15] [7:0] $end
+$var reg       8 ?    testvectors[16] [7:0] $end
+$var reg       8 @    testvectors[17] [7:0] $end
+$var reg       8 A    testvectors[18] [7:0] $end
+$var reg       8 B    testvectors[19] [7:0] $end
+$var reg       8 C    testvectors[20] [7:0] $end
+$var reg       8 D    testvectors[21] [7:0] $end
+$var reg       8 E    testvectors[22] [7:0] $end
+$var reg       8 F    testvectors[23] [7:0] $end
+$var reg       8 G    testvectors[24] [7:0] $end
+$var reg       8 H    testvectors[25] [7:0] $end
+$var reg       8 I    testvectors[26] [7:0] $end
+$var reg       8 J    testvectors[27] [7:0] $end
+$var reg       8 K    testvectors[28] [7:0] $end
+$var reg       8 L    testvectors[29] [7:0] $end
+$var reg       8 M    testvectors[30] [7:0] $end
+$var reg       8 N    testvectors[31] [7:0] $end
+$var reg       8 O    testvectors[32] [7:0] $end
+$var reg       8 P    testvectors[33] [7:0] $end
+$var reg       8 Q    testvectors[34] [7:0] $end
+$var reg       8 R    testvectors[35] [7:0] $end
+$var reg       8 S    testvectors[36] [7:0] $end
+$var reg       8 T    testvectors[37] [7:0] $end
+$var reg       8 U    testvectors[38] [7:0] $end
+$var reg       8 V    testvectors[39] [7:0] $end
+$var reg       8 W    testvectors[40] [7:0] $end
+$var reg       8 X    testvectors[41] [7:0] $end
+$var reg       8 Y    testvectors[42] [7:0] $end
+$var reg       8 Z    testvectors[43] [7:0] $end
+$var reg       8 [    testvectors[44] [7:0] $end
+$var reg       8 \    testvectors[45] [7:0] $end
+$var reg       8 ]    testvectors[46] [7:0] $end
+$var reg       8 ^    testvectors[47] [7:0] $end
+$var reg       8 _    testvectors[48] [7:0] $end
+$var reg       8 `    testvectors[49] [7:0] $end
+$var reg       8 a    testvectors[50] [7:0] $end
+$var reg       8 b    testvectors[51] [7:0] $end
+$var reg       8 c    testvectors[52] [7:0] $end
+$var reg       8 d    testvectors[53] [7:0] $end
+$var reg       8 e    testvectors[54] [7:0] $end
+$var reg       8 f    testvectors[55] [7:0] $end
+$var reg       8 g    testvectors[56] [7:0] $end
+$var reg       8 h    testvectors[57] [7:0] $end
+$var reg       8 i    testvectors[58] [7:0] $end
+$var reg       8 j    testvectors[59] [7:0] $end
+$var reg       8 k    testvectors[60] [7:0] $end
+$var reg       8 l    testvectors[61] [7:0] $end
+$var reg       8 m    testvectors[62] [7:0] $end
+$var reg       8 n    testvectors[63] [7:0] $end
+$var reg       8 o    testvectors[64] [7:0] $end
+$var reg       8 p    testvectors[65] [7:0] $end
+$var reg       8 q    testvectors[66] [7:0] $end
+$var reg       8 r    testvectors[67] [7:0] $end
+$var reg       8 s    testvectors[68] [7:0] $end
+$var reg       8 t    testvectors[69] [7:0] $end
+$var reg       8 u    testvectors[70] [7:0] $end
+$var reg       8 v    testvectors[71] [7:0] $end
+$var reg       8 w    testvectors[72] [7:0] $end
+$var reg       8 x    testvectors[73] [7:0] $end
+$var reg       8 y    testvectors[74] [7:0] $end
+$var reg       8 z    testvectors[75] [7:0] $end
+$var reg       8 {    testvectors[76] [7:0] $end
+$var reg       8 |    testvectors[77] [7:0] $end
+$var reg       8 }    testvectors[78] [7:0] $end
+$var reg       8 ~    testvectors[79] [7:0] $end
+$var reg       8 !!   testvectors[80] [7:0] $end
+$var reg       8 "!   testvectors[81] [7:0] $end
+$var reg       8 #!   testvectors[82] [7:0] $end
+$var reg       8 $!   testvectors[83] [7:0] $end
+$var reg       8 %!   testvectors[84] [7:0] $end
+$var reg       8 &!   testvectors[85] [7:0] $end
+$var reg       8 '!   testvectors[86] [7:0] $end
+$var reg       8 (!   testvectors[87] [7:0] $end
+$var reg       8 )!   testvectors[88] [7:0] $end
+$var reg       8 *!   testvectors[89] [7:0] $end
+$var reg       8 +!   testvectors[90] [7:0] $end
+$var reg       8 ,!   testvectors[91] [7:0] $end
+$var reg       8 -!   testvectors[92] [7:0] $end
+$var reg       8 .!   testvectors[93] [7:0] $end
+$var reg       8 /!   testvectors[94] [7:0] $end
+$var reg       8 0!   testvectors[95] [7:0] $end
+$var reg       8 1!   testvectors[96] [7:0] $end
+$var reg       8 2!   testvectors[97] [7:0] $end
+$var reg       8 3!   testvectors[98] [7:0] $end
+$var reg       8 4!   testvectors[99] [7:0] $end
+$var reg       8 5!   testvectors[100] [7:0] $end
+$var reg       8 6!   testvectors[101] [7:0] $end
+$var reg       8 7!   testvectors[102] [7:0] $end
+$var reg       8 8!   testvectors[103] [7:0] $end
+$var reg       8 9!   testvectors[104] [7:0] $end
+$var reg       8 :!   testvectors[105] [7:0] $end
+$var reg       8 ;!   testvectors[106] [7:0] $end
+$var reg       8 <!   testvectors[107] [7:0] $end
+$var reg       8 =!   testvectors[108] [7:0] $end
+$var reg       8 >!   testvectors[109] [7:0] $end
+$var reg       8 ?!   testvectors[110] [7:0] $end
+$var reg       8 @!   testvectors[111] [7:0] $end
+$var reg       8 A!   testvectors[112] [7:0] $end
+$var reg       8 B!   testvectors[113] [7:0] $end
+$var reg       8 C!   testvectors[114] [7:0] $end
+$var reg       8 D!   testvectors[115] [7:0] $end
+$var reg       8 E!   testvectors[116] [7:0] $end
+$var reg       8 F!   testvectors[117] [7:0] $end
+$var reg       8 G!   testvectors[118] [7:0] $end
+$var reg       8 H!   testvectors[119] [7:0] $end
+$var reg      32 I!   vectornum [31:0] $end
+$var reg      32 J!   errors [31:0] $end
+
+$scope module uut $end
+$var wire      1 K!   clock  $end
+$var wire      1 L!   reset  $end
+$var wire      8 M!   A [7:0] $end
+$var wire      8 N!   B [7:0] $end
+$var wire      4 O!   ALU_Sel [3:0] $end
+$var reg       8 P!   ALU_Out [7:0] $end
+$var reg       1 Q!   CarryOut $end
+$var reg       8 R!   ALU_Result [7:0] $end
+$var wire      9 S!   tmp [8:0] $end
+$upscope $end
+
+$upscope $end
+
+$enddefinitions $end
+$dumpvars
+bx !
+bx "
+bx #
+1$
+x%
+bx &
+0'
+bx (
+bx )
+x*
+bx +
+x,
+b0 -
+b0 .
+b10011101 /
+b1100000 0
+b0 1
+b11111101 2
+b0 3
+b10110001 4
+b10011111 5
+b0 6
+b1010000 7
+b1 8
+b10010111 9
+b11011 :
+b0 ;
+b10110010 <
+b0 =
+b100111 >
+b11000 ?
+b0 @
+b111111 A
+b0 B
+b10001001 C
+b111000 D
+b0 E
+b11000001 F
+b0 G
+b1010101 H
+b110110 I
+b1 J
+b11111 K
+b0 L
+b111000 M
+b10000 N
+b1 O
+b101000 P
+b0 Q
+b11101010 R
+b111100 S
+b1 T
+b10101110 U
+b1 V
+b11000100 W
+b1111011 X
+b1 Y
+b1001001 Z
+b1 [
+b101011 \
+b110 ]
+b1 ^
+b100101 _
+b0 `
+b1110 a
+b1011 b
+b10 c
+b10011010 d
+b0 e
+b1100 f
+b11 g
+b10 h
+b100100 i
+b0 j
+b1100 k
+b11 l
+b10 m
+b100100 n
+b0 o
+b1111 p
+b1010 q
+b10 r
+b10010110 s
+b0 t
+b0 u
+b0 v
+b10 w
+b0 x
+b0 y
+b100100 z
+b100010 {
+b11 |
+b1 }
+b0 ~
+b11101 !!
+b100 "!
+b11 #!
+b111 $!
+b0 %!
+b10011 &!
+b10001 '!
+b11 (!
+b1 )!
+b0 *!
+b11110100 +!
+b101111 ,!
+b11 -!
+b101 .!
+b0 /!
+b10110111 0!
+b1011010 1!
+b11 2!
+b10 3!
+b0 4!
+bx 5!
+bx 6!
+bx 7!
+bx 8!
+bx 9!
+bx :!
+bx ;!
+bx <!
+bx =!
+bx >!
+bx ?!
+bx @!
+bx A!
+bx B!
+bx C!
+bx D!
+bx E!
+bx F!
+bx G!
+bx H!
+b0 I!
+b0 J!
+1K!
+xL!
+bx M!
+bx N!
+bx O!
+bx P!
+0Q!
+bx R!
+bx S!
+$end
+#5
+0$
+0K!
+#10
+1%
+1$
+1K!
+1L!
+b0 P!
+b0 &
+#11
+b10011101 !
+b1100000 "
+b0 #
+b0 O!
+b1100000 N!
+b10011101 M!
+b11111101 R!
+b11111101 S!
+#15
+0$
+0K!
+#20
+0%
+1$
+1K!
+0L!
+b11111101 P!
+b11111101 &
+#25
+0$
+0K!
+#30
+1$
+1K!
+#35
+0$
+0K!
+#40
+1$
+1K!
+#45
+0$
+0K!
+#50
+1$
+1K!
+#55
+0$
+0K!
+#60
+1$
+1K!
+#65
+0$
+0K!
+#70
+1$
+1K!
+#75
+0$
+0K!
+#80
+1$
+1K!
+#85
+0$
+0K!
+#90
+1$
+1K!
+#95
+0$
+0K!
+#100
+1$
+1K!
+#105
+b11111101 +
+0,
+b101 I!
+0$
+0K!
+#110
+1$
+1K!
+#111
+b10110001 !
+b10011111 "
+b10011111 N!
+b10110001 M!
+b1010000 R!
+b101010000 S!
+#115
+0$
+0K!
+#120
+1$
+1K!
+b1010000 P!
+1Q!
+1'
+b1010000 &
+#125
+0$
+0K!
+#130
+1$
+1K!
+#135
+0$
+0K!
+#140
+1$
+1K!
+#145
+0$
+0K!
+#150
+1$
+1K!
+#155
+0$
+0K!
+#160
+1$
+1K!
+#165
+0$
+0K!
+#170
+1$
+1K!
+#175
+0$
+0K!
+#180
+1$
+1K!
+#185
+0$
+0K!
+#190
+1$
+1K!
+#195
+0$
+0K!
+#200
+1$
+1K!
+#205
+b1010000 +
+1,
+b1010 I!
+0$
+0K!
+#210
+1$
+1K!
+#211
+b10010111 !
+b11011 "
+b11011 N!
+b10010111 M!
+b10110010 R!
+b10110010 S!
+#215
+0$
+0K!
+#220
+1$
+1K!
+b10110010 P!
+0Q!
+0'
+b10110010 &
+#225
+0$
+0K!
+#230
+1$
+1K!
+#235
+0$
+0K!
+#240
+1$
+1K!
+#245
+0$
+0K!
+#250
+1$
+1K!
+#255
+0$
+0K!
+#260
+1$
+1K!
+#265
+0$
+0K!
+#270
+1$
+1K!
+#275
+0$
+0K!
+#280
+1$
+1K!
+#285
+0$
+0K!
+#290
+1$
+1K!
+#295
+0$
+0K!
+#300
+1$
+1K!
+#305
+b10110010 +
+0,
+b1111 I!
+0$
+0K!
+#310
+1$
+1K!
+#311
+b100111 !
+b11000 "
+b11000 N!
+b100111 M!
+b111111 R!
+b111111 S!
+#315
+0$
+0K!
+#320
+1$
+1K!
+b111111 P!
+b111111 &
+#325
+0$
+0K!
+#330
+1$
+1K!
+#335
+0$
+0K!
+#340
+1$
+1K!
+#345
+0$
+0K!
+#350
+1$
+1K!
+#355
+0$
+0K!
+#360
+1$
+1K!
+#365
+0$
+0K!
+#370
+1$
+1K!
+#375
+0$
+0K!
+#380
+1$
+1K!
+#385
+0$
+0K!
+#390
+1$
+1K!
+#395
+0$
+0K!
+#400
+1$
+1K!
+#405
+b111111 +
+b10100 I!
+0$
+0K!
+#410
+1$
+1K!
+#411
+b10001001 !
+b111000 "
+b111000 N!
+b10001001 M!
+b11000001 R!
+b11000001 S!
+#415
+0$
+0K!
+#420
+1$
+1K!
+b11000001 P!
+b11000001 &
+#425
+0$
+0K!
+#430
+1$
+1K!
+#435
+0$
+0K!
+#440
+1$
+1K!
+#445
+0$
+0K!
+#450
+1$
+1K!
+#455
+0$
+0K!
+#460
+1$
+1K!
+#465
+0$
+0K!
+#470
+1$
+1K!
+#475
+0$
+0K!
+#480
+1$
+1K!
+#485
+0$
+0K!
+#490
+1$
+1K!
+#495
+0$
+0K!
+#500
+1$
+1K!
+#505
+b11000001 +
+b11001 I!
+0$
+0K!
+#510
+1$
+1K!
+#511
+b1010101 !
+b110110 "
+b1 #
+b1 O!
+b110110 N!
+b1010101 M!
+b11111 R!
+b10001011 S!
+#515
+0$
+0K!
+#520
+1$
+1K!
+b11111 P!
+b11111 &
+#525
+0$
+0K!
+#530
+1$
+1K!
+#535
+0$
+0K!
+#540
+1$
+1K!
+#545
+0$
+0K!
+#550
+1$
+1K!
+#555
+0$
+0K!
+#560
+1$
+1K!
+#565
+0$
+0K!
+#570
+1$
+1K!
+#575
+0$
+0K!
+#580
+1$
+1K!
+#585
+0$
+0K!
+#590
+1$
+1K!
+#595
+0$
+0K!
+#600
+1$
+1K!
+#605
+b11111 +
+b11110 I!
+0$
+0K!
+#610
+1$
+1K!
+#611
+b111000 !
+b10000 "
+b10000 N!
+b111000 M!
+b101000 R!
+b1001000 S!
+#615
+0$
+0K!
+#620
+1$
+1K!
+b101000 P!
+b101000 &
+#625
+0$
+0K!
+#630
+1$
+1K!
+#635
+0$
+0K!
+#640
+1$
+1K!
+#645
+0$
+0K!
+#650
+1$
+1K!
+#655
+0$
+0K!
+#660
+1$
+1K!
+#665
+0$
+0K!
+#670
+1$
+1K!
+#675
+0$
+0K!
+#680
+1$
+1K!
+#685
+0$
+0K!
+#690
+1$
+1K!
+#695
+0$
+0K!
+#700
+1$
+1K!
+#705
+b101000 +
+b100011 I!
+0$
+0K!
+#710
+1$
+1K!
+#711
+b11101010 !
+b111100 "
+b111100 N!
+b11101010 M!
+b10101110 R!
+b100100110 S!
+#715
+0$
+0K!
+#720
+1$
+1K!
+b10101110 P!
+1Q!
+1'
+b10101110 &
+#725
+0$
+0K!
+#730
+1$
+1K!
+#735
+0$
+0K!
+#740
+1$
+1K!
+#745
+0$
+0K!
+#750
+1$
+1K!
+#755
+0$
+0K!
+#760
+1$
+1K!
+#765
+0$
+0K!
+#770
+1$
+1K!
+#775
+0$
+0K!
+#780
+1$
+1K!
+#785
+0$
+0K!
+#790
+1$
+1K!
+#795
+0$
+0K!
+#800
+1$
+1K!
+#805
+b10101110 +
+1,
+b101000 I!
+0$
+0K!
+#810
+1$
+1K!
+#811
+b11000100 !
+b1111011 "
+b1111011 N!
+b11000100 M!
+b1001001 R!
+b100111111 S!
+#815
+0$
+0K!
+#820
+1$
+1K!
+b1001001 P!
+b1001001 &
+#825
+0$
+0K!
+#830
+1$
+1K!
+#835
+0$
+0K!
+#840
+1$
+1K!
+#845
+0$
+0K!
+#850
+1$
+1K!
+#855
+0$
+0K!
+#860
+1$
+1K!
+#865
+0$
+0K!
+#870
+1$
+1K!
+#875
+0$
+0K!
+#880
+1$
+1K!
+#885
+0$
+0K!
+#890
+1$
+1K!
+#895
+0$
+0K!
+#900
+1$
+1K!
+#905
+b1001001 +
+b101101 I!
+0$
+0K!
+#910
+1$
+1K!
+#911
+b101011 !
+b110 "
+b110 N!
+b101011 M!
+b100101 R!
+b110001 S!
+#915
+0$
+0K!
+#920
+1$
+1K!
+b100101 P!
+0Q!
+0'
+b100101 &
+#925
+0$
+0K!
+#930
+1$
+1K!
+#935
+0$
+0K!
+#940
+1$
+1K!
+#945
+0$
+0K!
+#950
+1$
+1K!
+#955
+0$
+0K!
+#960
+1$
+1K!
+#965
+0$
+0K!
+#970
+1$
+1K!
+#975
+0$
+0K!
+#980
+1$
+1K!
+#985
+0$
+0K!
+#990
+1$
+1K!
+#995
+0$
+0K!
+#1000
+1$
+1K!
+#1005
+b100101 +
+0,
+b110010 I!
+0$
+0K!
+#1010
+1$
+1K!
+#1011
+b1110 !
+b1011 "
+b10 #
+b10 O!
+b1011 N!
+b1110 M!
+b10011010 R!
+b11001 S!
+#1015
+0$
+0K!
+#1020
+1$
+1K!
+b10011010 P!
+b10011010 &
+#1025
+0$
+0K!
+#1030
+1$
+1K!
+#1035
+0$
+0K!
+#1040
+1$
+1K!
+#1045
+0$
+0K!
+#1050
+1$
+1K!
+#1055
+0$
+0K!
+#1060
+1$
+1K!
+#1065
+0$
+0K!
+#1070
+1$
+1K!
+#1075
+0$
+0K!
+#1080
+1$
+1K!
+#1085
+0$
+0K!
+#1090
+1$
+1K!
+#1095
+0$
+0K!
+#1100
+1$
+1K!
+#1105
+b10011010 +
+b110111 I!
+0$
+0K!
+#1110
+1$
+1K!
+#1111
+b1100 !
+b11 "
+b11 N!
+b1100 M!
+b100100 R!
+b1111 S!
+#1115
+0$
+0K!
+#1120
+1$
+1K!
+b100100 P!
+b100100 &
+#1125
+0$
+0K!
+#1130
+1$
+1K!
+#1135
+0$
+0K!
+#1140
+1$
+1K!
+#1145
+0$
+0K!
+#1150
+1$
+1K!
+#1155
+0$
+0K!
+#1160
+1$
+1K!
+#1165
+0$
+0K!
+#1170
+1$
+1K!
+#1175
+0$
+0K!
+#1180
+1$
+1K!
+#1185
+0$
+0K!
+#1190
+1$
+1K!
+#1195
+0$
+0K!
+#1200
+1$
+1K!
+#1205
+b100100 +
+b111100 I!
+0$
+0K!
+#1210
+1$
+1K!
+#1215
+0$
+0K!
+#1220
+1$
+1K!
+#1225
+0$
+0K!
+#1230
+1$
+1K!
+#1235
+0$
+0K!
+#1240
+1$
+1K!
+#1245
+0$
+0K!
+#1250
+1$
+1K!
+#1255
+0$
+0K!
+#1260
+1$
+1K!
+#1265
+0$
+0K!
+#1270
+1$
+1K!
+#1275
+0$
+0K!
+#1280
+1$
+1K!
+#1285
+0$
+0K!
+#1290
+1$
+1K!
+#1295
+0$
+0K!
+#1300
+1$
+1K!
+#1305
+b1000001 I!
+0$
+0K!
+#1310
+1$
+1K!
+#1311
+b1111 !
+b1010 "
+b1010 N!
+b1111 M!
+b10010110 R!
+b11001 S!
+#1315
+0$
+0K!
+#1320
+1$
+1K!
+b10010110 P!
+b10010110 &
+#1325
+0$
+0K!
+#1330
+1$
+1K!
+#1335
+0$
+0K!
+#1340
+1$
+1K!
+#1345
+0$
+0K!
+#1350
+1$
+1K!
+#1355
+0$
+0K!
+#1360
+1$
+1K!
+#1365
+0$
+0K!
+#1370
+1$
+1K!
+#1375
+0$
+0K!
+#1380
+1$
+1K!
+#1385
+0$
+0K!
+#1390
+1$
+1K!
+#1395
+0$
+0K!
+#1400
+1$
+1K!
+#1405
+b10010110 +
+b1000110 I!
+0$
+0K!
+#1410
+1$
+1K!
+#1411
+b0 !
+b0 "
+b0 N!
+b0 M!
+b0 R!
+b0 S!
+#1415
+0$
+0K!
+#1420
+1$
+1K!
+b0 P!
+b0 &
+#1425
+0$
+0K!
+#1430
+1$
+1K!
+#1435
+0$
+0K!
+#1440
+1$
+1K!
+#1445
+0$
+0K!
+#1450
+1$
+1K!
+#1455
+0$
+0K!
+#1460
+1$
+1K!
+#1465
+0$
+0K!
+#1470
+1$
+1K!
+#1475
+0$
+0K!
+#1480
+1$
+1K!
+#1485
+0$
+0K!
+#1490
+1$
+1K!
+#1495
+0$
+0K!
+#1500
+1$
+1K!
+#1505
+b0 +
+b1001011 I!
+0$
+0K!
+#1510
+1$
+1K!
+#1511
+b100100 !
+b100010 "
+b11 #
+b11 O!
+b100010 N!
+b100100 M!
+b1 R!
+b1000110 S!
+#1515
+0$
+0K!
+#1520
+1$
+1K!
+b1 P!
+b1 &
+#1525
+0$
+0K!
+#1530
+1$
+1K!
+#1535
+0$
+0K!
+#1540
+1$
+1K!
+#1545
+0$
+0K!
+#1550
+1$
+1K!
+#1555
+0$
+0K!
+#1560
+1$
+1K!
+#1565
+0$
+0K!
+#1570
+1$
+1K!
+#1575
+0$
+0K!
+#1580
+1$
+1K!
+#1585
+0$
+0K!
+#1590
+1$
+1K!
+#1595
+0$
+0K!
+#1600
+1$
+1K!
+#1605
+b1 +
+b1010000 I!
+0$
+0K!
+#1610
+1$
+1K!
+#1611
+b11101 !
+b100 "
+b100 N!
+b11101 M!
+b111 R!
+b100001 S!
+#1615
+0$
+0K!
+#1620
+1$
+1K!
+b111 P!
+b111 &
+#1625
+0$
+0K!
+#1630
+1$
+1K!
+#1635
+0$
+0K!
+#1640
+1$
+1K!
+#1645
+0$
+0K!
+#1650
+1$
+1K!
+#1655
+0$
+0K!
+#1660
+1$
+1K!
+#1665
+0$
+0K!
+#1670
+1$
+1K!
+#1675
+0$
+0K!
+#1680
+1$
+1K!
+#1685
+0$
+0K!
+#1690
+1$
+1K!
+#1695
+0$
+0K!
+#1700
+1$
+1K!
+#1705
+b111 +
+b1010101 I!
+0$
+0K!
+#1710
+1$
+1K!
+#1711
+b10011 !
+b10001 "
+b10001 N!
+b10011 M!
+b1 R!
+b100100 S!
+#1715
+0$
+0K!
+#1720
+1$
+1K!
+b1 P!
+b1 &
+#1725
+0$
+0K!
+#1730
+1$
+1K!
+#1735
+0$
+0K!
+#1740
+1$
+1K!
+#1745
+0$
+0K!
+#1750
+1$
+1K!
+#1755
+0$
+0K!
+#1760
+1$
+1K!
+#1765
+0$
+0K!
+#1770
+1$
+1K!
+#1775
+0$
+0K!
+#1780
+1$
+1K!
+#1785
+0$
+0K!
+#1790
+1$
+1K!
+#1795
+0$
+0K!
+#1800
+1$
+1K!
+#1805
+b1 +
+b1011010 I!
+0$
+0K!
+#1810
+1$
+1K!
+#1811
+b11110100 !
+b101111 "
+b101111 N!
+b11110100 M!
+b101 R!
+b100100011 S!
+#1815
+0$
+0K!
+#1820
+1$
+1K!
+b101 P!
+1Q!
+1'
+b101 &
+#1825
+0$
+0K!
+#1830
+1$
+1K!
+#1835
+0$
+0K!
+#1840
+1$
+1K!
+#1845
+0$
+0K!
+#1850
+1$
+1K!
+#1855
+0$
+0K!
+#1860
+1$
+1K!
+#1865
+0$
+0K!
+#1870
+1$
+1K!
+#1875
+0$
+0K!
+#1880
+1$
+1K!
+#1885
+0$
+0K!
+#1890
+1$
+1K!
+#1895
+0$
+0K!
+#1900
+1$
+1K!
+#1905
+b101 +
+b1011111 I!
+0$
+0K!
+#1910
+1$
+1K!
+#1911
+b10110111 !
+b1011010 "
+b1011010 N!
+b10110111 M!
+b10 R!
+b100010001 S!
+#1915
+0$
+0K!
+#1920
+1$
+1K!
+b10 P!
+b10 &
+#1925
+0$
+0K!
+#1930
+1$
+1K!
+#1935
+0$
+0K!
+#1940
+1$
+1K!
+#1945
+0$
+0K!
+#1950
+1$
+1K!
+#1955
+0$
+0K!
+#1960
+1$
+1K!
+#1965
+0$
+0K!
+#1970
+1$
+1K!
+#1975
+0$
+0K!
+#1980
+1$
+1K!
+#1985
+0$
+0K!
+#1990
+1$
+1K!
+#1995
+0$
+0K!
+#2000
+1$
+1K!
+#2005
+b10 +
+b1100100 I!
+0$
+0K!
+#2010
+1$
+1K!
+#2011
+bx !
+bx "
+bx #
+bx O!
+bx N!
+bx M!
+b10101100 R!
+bx S!
+#2015
+0$
+0K!
+#2020
+1$
+1K!
+b10101100 P!
+0Q!
+0'
+b10101100 &
+#2021

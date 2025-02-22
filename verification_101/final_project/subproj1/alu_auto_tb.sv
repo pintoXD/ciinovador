@@ -25,6 +25,12 @@ module alu_auto_tb();
 
     // Test vectors
     initial begin
+
+        $dumpfile("alu_auto_tb.vcd");
+        $dumpvars(0, alu_auto_tb);
+
+        #10;
+
         // Initialize Inputs
         reset = 1;
         A = 0;
@@ -34,7 +40,8 @@ module alu_auto_tb();
         // Wait for global reset
         #10;
         reset = 0;
-
+        #10;
+        
         // Test Addition
         A = 8'h9d;
         B = 8'h60;

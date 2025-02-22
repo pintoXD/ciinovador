@@ -1,14 +1,11 @@
 xrun(64): 24.09-s001: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	24.09-s001: Started on Feb 19, 2025 at 10:11:50 -03
+TOOL:	xrun(64)	24.09-s001: Started on Feb 22, 2025 at 11:19:09 -03
 xrun
-	-64bit
 	alu_testvectors_tb.sv
 	alu.sv
-Recompiling... reason: file './alu_testvectors_tb.sv' is newer than expected.
-	expected: Wed Feb 19 09:53:44 2025
-	actual:   Wed Feb 19 09:54:35 2025
-file: alu_testvectors_tb.sv
-	module worklib.alu_testvectors_tb:sv
+	+access+rw
+file: alu.sv
+	module worklib.alu:sv
 		errors: 0, warnings: 0
 		Caching library 'worklib' ....... Done
 	Elaborating the design hierarchy:
@@ -16,8 +13,8 @@ file: alu_testvectors_tb.sv
 		alu_testvectors_tb
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.alu_testvectors_tb:sv <0x5e6f2091>
-			streams:  10, words:  7908
+		worklib.alu:sv <0x1b6cb09e>
+			streams:   5, words:  1849
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
@@ -29,16 +26,14 @@ file: alu_testvectors_tb.sv
 		Always blocks:        5       5
 		Initial blocks:       1       1
 		Cont. assignments:    1       1
-		Pseudo assignments:   6       -
+		Pseudo assignments:   7       -
 		Process Clocks:       1       1
 	Writing initial simulation snapshot: worklib.alu_testvectors_tb:sv
 Loading snapshot worklib.alu_testvectors_tb:sv .................... Done
 xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
 xcelium> run
-Error in vector           0: A = f4, B = 2f, ALU_Sel = 3, Expected_ALU_Out=05, Expected_CarryOut=0, ALU_Out=05, CarryOut=1
-Error in vector           0: A = b7, B = 5a, ALU_Sel = 3, Expected_ALU_Out=02, Expected_CarryOut=0, ALU_Out=02, CarryOut=1
-Finished testing all vectors.          2 errors found.
+Finished testing all vectors.          0 errors found.
 Simulation complete via $finish(1) at time 2021 NS + 0
-./alu_testvectors_tb.sv:51             $finish;
+./alu_testvectors_tb.sv:57             $finish;
 xcelium> exit
-TOOL:	xrun(64)	24.09-s001: Exiting on Feb 19, 2025 at 10:12:00 -03  (total: 00:00:10)
+TOOL:	xrun(64)	24.09-s001: Exiting on Feb 22, 2025 at 11:19:19 -03  (total: 00:00:10)
