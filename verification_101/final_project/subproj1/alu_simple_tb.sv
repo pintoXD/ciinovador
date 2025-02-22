@@ -25,6 +25,10 @@ module alu_simple_tb();
 
     // Test vectors
     initial begin
+        $dumpfile("alu_simple_tb.vcd");
+        $dumpvars(0, alu_simple_tb);
+
+
         // Initialize Inputs
         reset = 1;
         A = 0;
