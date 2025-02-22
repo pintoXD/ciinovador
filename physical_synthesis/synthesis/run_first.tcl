@@ -7,6 +7,7 @@ export TECH_DIR=/home/tools/cadence/gpdk;# techonology dependant comand only val
 export HDL_NAME=${DESIGNS}
 export VLOG_LIST="$BACKEND_DIR/synthesis/deliverables/${DESIGNS}.v  $BACKEND_DIR/synthesis/deliverables/${DESIGNS}_io.v  $BACKEND_DIR/synthesis/deliverables/${DESIGNS}_chip.v"
 export LIB_DIR=${TECH_DIR}/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing
+export LIB_VERILOG_FILES=${TECH_DIR}/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/
 
 # loading modules
 # module add cdn/genus/genus211 		;# GENUS
@@ -21,7 +22,7 @@ cd ${PROJECT_DIR}/frontend
 ### run HDL
 #xrun -64bit -v200x -v93 ${DESIGNS}.vhd Util_package.vhd ${DESIGNS}_tb.vhd -top ${DESIGNS}_tb -access +rwc -gui
 ### run netlist (logic synthesis)
-#xrun -64bit -v200x -v93 ${TECH_DIR}/gsclib045_all_v4.4/gsclib045/verilog/slow_vdd1v0_basicCells.v ${PROJECT_DIR}/backend/synthesis/deliverables/${DESIGNS}.v Util_package.vhd ${DESIGNS}_tb.vhd -top ${DESIGNS}_tb -access +rwc -gui
+xrun -64bit -v200x -v93 ${TECH_DIR}/gsclib045_all_v4.4/gsclib045/verilog/slow_vdd1v0_basicCells.v ${PROJECT_DIR}/backend/synthesis/deliverables/${DESIGNS}.v -top ${DESIGNS}_tb -access +rwc -gui
 ### run netlist (logic syntesis) with compiled SDF 
 #xmsdfc -iocondsort -compile ${PROJECT_DIR}/backend/synthesis/deliverables/${DESIGNS}_worst.sdf & xrun -timescale 1ns/10ps -mess -64bit -v200x -v93 -noneg_tchk ${TECH_DIR}/gsclib045_all_v4.4/gsclib045/verilog/slow_vdd1v0_basicCells.v ${PROJECT_DIR}/backend/synthesis/deliverables/${DESIGNS}.v Util_package.vhd ${DESIGNS}_tb.vhd -top ${DESIGNS}_tb -access +rwc -sdf_cmd_file ${PROJECT_DIR}/frontend/sdf_cmd_file.cmd -gui 
 
@@ -32,6 +33,7 @@ cd ${PROJECT_DIR}/frontend
 ## apenas o programa
 #genus -abort_on_error -lic_startup Genus_Synthesis -lic_startup_options Genus_Physical_Opt -log genus -overwrite
 # programa e carrega script para síntese automatizada
+
 # genus -abort_on_error -lic_startup Genus_Synthesis -lic_startup_options Genus_Physical_Opt \
 #       -log ${BACKEND_DIR}/synthesis/work/genus/ \
 #       -overwrite -files ${PROJECT_DIR}/backend/synthesis/scripts/${DESIGNS}.tcl
@@ -42,7 +44,7 @@ cd ${PROJECT_DIR}/frontend
 # cd ${PROJECT_DIR}/backend/layout/work
 ## apenas o programa
 # innovus
-innovus -stylus -log ${BACKEND_DIR}/synthesis/work/innovus/ -file ${PROJECT_DIR}/backend/layout/scripts/layout.tcl
+# innovus -stylus -log ${BACKEND_DIR}/synthesis/work/innovus/ -file ${PROJECT_DIR}/backend/layout/scripts/layout.tcl
 
 
 

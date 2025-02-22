@@ -1,5 +1,5 @@
 `timescale 1ns/1ps
-module multiplier_tb (
+module ieee754multiplier_tb (
 );
 
 logic clk, rst_n;

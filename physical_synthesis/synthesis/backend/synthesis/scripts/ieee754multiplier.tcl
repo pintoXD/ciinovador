@@ -28,10 +28,10 @@ set MAIN_RST_NAME rst_n
 set BEST_LIB_OPERATING_CONDITION PVT_1P32V_0C
 set WORST_LIB_OPERATING_CONDITION PVT_0P9V_125C
 set period_clk 100.0  ;# (100 ns = 10 MHz) (10 ns = 100 MHz) (2 ns = 500 MHz) (1 ns = 1 GHz)
-set clk_uncertainty 0.05 ;# ns (“a guess”)
-set clk_latency 0.10 ;# ns (“a guess”)
-set in_delay 0.30 ;# ns
-set out_delay 0.30;#ns
+set clk_uncertainty 0.044 ;# ns (“a guess”)
+set clk_latency 0.105 ;# ns (“a guess”)
+set in_delay 0.28 ;# ns
+set out_delay 0.35;#ns
 set out_load 0.045 ;#pF
 set slew "146 164 264 252" ;#minimum rise, minimum fall, maximum rise and maximum fall
 set slew_min_rise 0.146 ;# ns
