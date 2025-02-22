@@ -36,131 +36,125 @@ module alu_simple_tb();
         reset = 0;
 
         // Test Addition
-        A = 8'd15;
-        B = 8'd10;
+        A = 8'h9d;
+        B = 8'h60;
         ALU_Sel = 4'b0000;
         #10;
         $display("Addition: A = %d, B = %d, ALU_Out = %d, CarryOut = %b", A, B, ALU_Out, CarryOut);
 
-        A = 8'd100;
-        B = 8'd55;
+        A = 8'hb1;
+        B = 8'h9f;
         ALU_Sel = 4'b0000;
         #10;
         $display("Addition: A = %d, B = %d, ALU_Out = %d, CarryOut = %b", A, B, ALU_Out, CarryOut);
 
-        A = 8'd200;
-        B = 8'd55;
+        A = 8'h97;
+        B = 8'h1b;
         ALU_Sel = 4'b0000;
         #10;
         $display("Addition: A = %d, B = %d, ALU_Out = %d, CarryOut = %b", A, B, ALU_Out, CarryOut);
 
-        A = 8'd255;
-        B = 8'd1;
+        A = 8'h27;
+        B = 8'h18;
         ALU_Sel = 4'b0000;
         #10;
         $display("Addition: A = %d, B = %d, ALU_Out = %d, CarryOut = %b", A, B, ALU_Out, CarryOut);
 
-        A = 8'd255;
-        B = 8'd50;
+        A = 8'h89;
+        B = 8'h38;
         ALU_Sel = 4'b0000;
         #10;
         $display("Addition: A = %d, B = %d, ALU_Out = %d, CarryOut = %b", A, B, ALU_Out, CarryOut);
 
         // Test Subtraction
-        A = 8'd20;
-        B = 8'd5;
+        A = 8'h55;
+        B = 8'h36;
         ALU_Sel = 4'b0001;
         #10;
         $display("Subtraction: A = %d, B = %d, ALU_Out = %d, CarryOut = %b", A, B, ALU_Out, CarryOut);
         
-        A = 8'd50;
-        B = 8'd25;
+        A = 8'h38;
+        B = 8'h10;
         ALU_Sel = 4'b0001;
         #10;
         $display("Subtraction: A = %d, B = %d, ALU_Out = %d, CarryOut = %b", A, B, ALU_Out, CarryOut);
 
-        A = 8'd100;
-        B = 8'd50;
+        A = 8'hea;
+        B = 8'h3c;
         ALU_Sel = 4'b0001;
         #10;
         $display("Subtraction: A = %d, B = %d, ALU_Out = %d, CarryOut = %b", A, B, ALU_Out, CarryOut);
 
-        A = 8'd200;
-        B = 8'd100;
+        A = 8'hc4;
+        B = 8'h7b;
         ALU_Sel = 4'b0001;
         #10;
         $display("Subtraction: A = %d, B = %d, ALU_Out = %d, CarryOut = %b", A, B, ALU_Out, CarryOut);
 
-        A = 8'd255;
-        B = 8'd128;
+        A = 8'h2b;
+        B = 8'h6;
         ALU_Sel = 4'b0001;
         #10;
         $display("Subtraction: A = %d, B = %d, ALU_Out = %d, CarryOut = %b", A, B, ALU_Out, CarryOut);
 
         // Test Multiplication
-        A = 8'd3;
-        B = 8'd4;
+        A = 8'he;
+        B = 8'hb;
         ALU_Sel = 4'b0010;
         #10;
         $display("Multiplication: A = %d, B = %d, ALU_Out = %d, CarryOut = %b", A, B, ALU_Out, CarryOut);
 
-        A = 8'd10;
-        B = 8'd10;
+        A = 8'hc;
+        B = 8'h3;
         ALU_Sel = 4'b0010;
         #10;
         $display("Multiplication: A = %d, B = %d, ALU_Out = %d, CarryOut = %b", A, B, ALU_Out, CarryOut);
 
-        A = 8'd15;
-        B = 8'd15;
+        A = 8'hc;
+        B = 8'h3;
         ALU_Sel = 4'b0010;
         #10;
         $display("Multiplication: A = %d, B = %d, ALU_Out = %d, CarryOut = %b", A, B, ALU_Out, CarryOut);
 
-        A = 8'd20;
-        B = 8'd5;
+        A = 8'hf;
+        B = 8'ha;
         ALU_Sel = 4'b0010;
         #10;
         $display("Multiplication: A = %d, B = %d, ALU_Out = %d, CarryOut = %b", A, B, ALU_Out, CarryOut);
 
-        A = 8'd25;
-        B = 8'd4;
-        ALU_Sel = 4'b0010;
-        #10;
-        $display("Multiplication: A = %d, B = %d, ALU_Out = %d, CarryOut = %b", A, B, ALU_Out, CarryOut);
-
-        A = 8'd30;
-        B = 8'd3;
+        A = 8'h0;
+        B = 8'h0;
         ALU_Sel = 4'b0010;
         #10;
         $display("Multiplication: A = %d, B = %d, ALU_Out = %d, CarryOut = %b", A, B, ALU_Out, CarryOut);
 
         // Test Division
-        A = 8'd20;
-        B = 8'd4;
+        A = 8'h24;
+        B = 8'h22;
         ALU_Sel = 4'b0011;
         #10;
         $display("Division: A = %d, B = %d, ALU_Out = %d, CarryOut = %b", A, B, ALU_Out, CarryOut);
 
-        A = 8'd100;
-        B = 8'd5;
+        A = 8'h1d;
+        B = 8'h4;
         ALU_Sel = 4'b0011;
         #10;
         $display("Division: A = %d, B = %d, ALU_Out = %d, CarryOut = %b", A, B, ALU_Out, CarryOut);
 
-        A = 8'd50;
-        B = 8'd2;
+        A = 8'h13;
+        B = 8'h11;
         ALU_Sel = 4'b0011;
         #10;
         $display("Division: A = %d, B = %d, ALU_Out = %d, CarryOut = %b", A, B, ALU_Out, CarryOut);
 
-        A = 8'd75;
-        B = 8'd3;
+        A = 8'hf4;
+        B = 8'h2f;
         ALU_Sel = 4'b0011;
         #10;
         $display("Division: A = %d, B = %d, ALU_Out = %d, CarryOut = %b", A, B, ALU_Out, CarryOut);
 
-        A = 8'd200;
-        B = 8'd10;
+        A = 8'hb7;
+        B = 8'h5a;
         ALU_Sel = 4'b0011;
         #10;
         $display("Division: A = %d, B = %d, ALU_Out = %d, CarryOut = %b", A, B, ALU_Out, CarryOut);
