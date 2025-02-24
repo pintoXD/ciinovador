@@ -98,6 +98,11 @@ syn_map ${HDL_NAME}
 get_db insts .base_cell.name -u ;# List all cell names used in the current design.
 
 #-----------------------------------------------------------------------------
+# Perform Syn Opt
+#-----------------------------------------------------------------------------
+syn_opt -incr
+
+#-----------------------------------------------------------------------------
 # Preparing and generating output data (reports, verilog netlist)
 #-----------------------------------------------------------------------------
 report_design_rules ;# > ${RPT_DIR}/${HDL_NAME}_drc.rpt
