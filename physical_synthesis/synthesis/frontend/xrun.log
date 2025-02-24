@@ -1,13 +1,59 @@
 xrun(64): 24.09-s001: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	24.09-s001: Started on Feb 21, 2025 at 13:11:28 -03
+TOOL:	xrun(64)	24.09-s001: Started on Feb 24, 2025 at 09:42:52 -03
 xrun
 	-64bit
-	-v200x
-	-v93
-	/home/tools/cadence/gpdk/gsclib045_all_v4.4/gsclib045/verilog/slow_vdd1v0_basicCells.v
-	/home/cinovador/Documents/course_files/physical_synthesis/synthesis/backend/synthesis/deliverables/ieee754multiplier.v
-	-top ieee754multiplier_tb
-	-access +rwc
-	-gui
-xrun: *E,FILEMIS: Cannot find the provided file /home/tools/cadence/gpdk/gsclib045_all_v4.4/gsclib045/verilog/slow_vdd1v0_basicCells.v.
-TOOL:	xrun(64)	24.09-s001: Exiting on Feb 21, 2025 at 13:11:28 -03  (total: 00:00:00)
+	ieee754multiplier_tb.sv
+	ieee754multiplier.sv
+	+gui
+	+access+rw
+	-s
+Recompiling... reason: file './ieee754multiplier.sv' is newer than expected.
+	expected: Mon Feb 24 09:23:11 2025
+	actual:   Mon Feb 24 09:42:44 2025
+file: ieee754multiplier.sv
+	module worklib.ieee754multiplier:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		ieee754multiplier_tb
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.ieee754multiplier:sv <0x107bc99a>
+			streams:  13, words:  9267
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 2       2
+		Registers:              31      31
+		Scalar wires:           13       -
+		Vectored wires:          4       -
+		Always blocks:           3       3
+		Initial blocks:          2       2
+		Pseudo assignments:     11       -
+		Process Clocks:          2       1
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.ieee754multiplier_tb:sv
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
+xcelium> 
+xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
+xcelium> 
+-------------------------------------
+Relinquished control to SimVision...
+# Restoring simulation environment...
+xcelium> input -quiet .reinvoke.sim
+xcelium> file delete .reinvoke.sim
+xcelium> run
+product_o Bits: 00000000000000000000000000000000
+product_o: 0.000000
+Expected: 16.500000
+product_o Bits: 01000000000111110011110010000001
+product_o: 2.488068
+Expected: 2.488068
+product_o Bits: 00000000000000000000000000000000
+product_o: 0.000000
+Expected: 0.000000
+Simulation complete via $finish(1) at time 80 NS + 0
+./ieee754multiplier_tb.sv:93     $finish;
+xcelium> 
