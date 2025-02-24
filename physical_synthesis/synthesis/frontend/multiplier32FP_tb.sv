@@ -1,5 +1,5 @@
 `timescale 1ns/1ps
-module ieee754multiplier_tb (
+module multiplier32FP_tb (
 );
 
 logic clk, rst_n;
@@ -17,7 +17,7 @@ logic [31:0] product_o;
 shortreal mock_a;
 shortreal mock_b;
 
-ieee754multiplier DUT (
+multiplier32FP DUT (
     .clk(clk), 
     .rst_n(rst_n),
     .a_i(a_i),
