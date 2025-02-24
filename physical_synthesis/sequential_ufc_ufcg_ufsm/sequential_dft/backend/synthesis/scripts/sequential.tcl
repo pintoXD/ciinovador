@@ -63,17 +63,8 @@ set_db [get_db library_domain *best] .default true
 #-----------------------------------------------------------------------------
 set_db init_hdl_search_path "${DEV_DIR} ${FRONTEND_DIR}"
 set rtl_files ${DESIGNS}.vhd
+puts "Analyzing RTL source files: $HDL_NAME"
 read_hdl -language vhdl $rtl_files
-
-#-----------------------------------------------------------------------------
-# Load Library
-#-----------------------------------------------------------------------------
-check_dft_rules
-set_db dft_scan_style muxed_scan
-set_db dft_prefix dft_
-define_shift_enable -name {scan_en} -active {high} -create_port {scan_en}
-define_shift_enable -name SE -active high -create_port SE
-check_dft_rules
 
 #-----------------------------------------------------------------------------
 # Elaborate Design
@@ -92,6 +83,14 @@ report timing -lint
 gui_show
 
 #-----------------------------------------------------------------------------
+# Load DFT Rules
+#-----------------------------------------------------------------------------
+set_db dft_scan_style muxed_scan
+set_db dft_prefix dft_
+define_shift_enable -name SE -active high -create_port SE
+check_dft_rules
+
+#-----------------------------------------------------------------------------
 # Pos "Elaborate" Attributes (manually set)
 #-----------------------------------------------------------------------------
 set_db auto_ungroup none ;# (none|both) ungrouping will not be performed
@@ -108,6 +107,16 @@ syn_map ${HDL_NAME}
 get_db insts .base_cell.name -u ;# List all cell names used in the current design.
 
 #-----------------------------------------------------------------------------
+# DFT SynOpt rules
+#-----------------------------------------------------------------------------
+check_dft_rules
+set_db design:sequential .dft_min_number_of_scan_chains 1
+define_scan_chain -name top_chain -sdi scan_in -sdo scan_out -create_ports
+connect_scan_chains -auto_create_chains
+syn_opt -incr
+report_scan_chains
+
+#-----------------------------------------------------------------------------
 # Preparing and generating output data (reports, verilog netlist)
 #-----------------------------------------------------------------------------
 report_design_rules ;# > ${RPT_DIR}/${HDL_NAME}_drc.rpt
@@ -116,8 +125,10 @@ report_timing > ${RPT_DIR}/${HDL_NAME}_timing.rpt
 report_gates > ${RPT_DIR}/${HDL_NAME}_gates.rpt
 report_qor > ${RPT_DIR}/${HDL_NAME}_qor.rpt
 report_power > ${RPT_DIR}/${HDL_NAME}_power.rpt
+
 write_sdf -edge check_edge -setuphold merge_always -nonegchecks -recrem split -version 3.0 -design ${HDL_NAME} > ${DEV_DIR}/${HDL_NAME}_worst.sdf
 write_hdl ${HDL_NAME} > ${DEV_DIR}/${HDL_NAME}.v
+write_scandef > ${DEV_DIR}/${HDL_NAME}.scandef
 
 
 

@@ -8,7 +8,7 @@ export TECH_DIR=/home/tools/cadence/gpdk;# techonology dependant comand only val
 # export TECH_DIR=/home/tools/design_kits/cadence/gpdk045_v6/;# techonology dependant comand only valid for UFCG guys. Uncomment this line if you are from UFSM.
 
 
-export HDL_NAME=${PWD##*/}
+export HDL_NAME=${DESIGNS}
 #
 #module add cdn/genus/genus211 		;# GENUS #no need for this in UFC campus
 #module add cdn/xcelium/xcelium2209 	;# XCELIUM
