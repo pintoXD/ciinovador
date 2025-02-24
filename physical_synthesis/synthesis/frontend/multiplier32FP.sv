@@ -1,4 +1,4 @@
-module ieee754multiplier (
+module multiplier32FP (
     input logic clk, rst_n,
     input logic [31:0] a_i,
     input logic [31:0] b_i,
