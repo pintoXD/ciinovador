@@ -2240,3 +2240,13 @@ Output file: /home/cinovador/Documents/course_files/physical_synthesis/sequentia
 @file(sequential.tcl) 131: write_scandef > ${DEV_DIR}/${HDL_NAME}.scandef
 #@ End verbose source /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft/backend/synthesis/scripts/sequential.tcl
 WARNING: This version of the tool is 1284 days old.
+
+Another Ctrl-C within 1 second will terminate the tool.
+CURRENT RESOURCES: RT {elapsed: 282s, ST: 12s, FG: 12s, CPU: 3.5%}, MEM {curr: 1.6G, peak: 1.6G, phys curr: 0.7G, phys peak: 0.7G}, SYS {load: 0.1, cpu: 20, total: 30.8G, free: 21.6G}
+
+Another Ctrl-C within 1 second will terminate the tool.
+CURRENT RESOURCES: RT {elapsed: 283s, ST: 12s, FG: 12s, CPU: 3.5%}, MEM {curr: 1.6G, peak: 1.6G, phys curr: 0.7G, phys peak: 0.7G}, SYS {load: 0.1, cpu: 20, total: 30.8G, free: 21.6G}
+
+Another Ctrl-C within 1 second will terminate the tool.
+CURRENT RESOURCES: RT {elapsed: 285s, ST: 12s, FG: 12s, CPU: 3.5%}, MEM {curr: 1.6G, peak: 1.6G, phys curr: 0.7G, phys peak: 0.7G}, SYS {load: 0.1, cpu: 20, total: 30.8G, free: 21.6G}
+Abnormal exit.

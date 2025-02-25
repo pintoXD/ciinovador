@@ -132,3 +132,101 @@ s65(24Feb2025:17:34:41):  xrun -64bit multiplier32FP.sv alu_testvectors_tb.sv
 s66(24Feb2025:17:36:40):  xrun -64bit multiplier32FP.sv alu_testvectors_tb.sv 
 #e67(24Feb2025:17:38:52): source ./xcelium.d/env.d/env.history.24Feb2025_17_38_52
 s67(24Feb2025:17:38:52):  xrun -64bit multiplier32FP.sv alu_testvectors_tb.sv 
+#e68(25Feb2025:09:34:58): source ./xcelium.d/env.d/env.history.25Feb2025_09_34_58
+s68(25Feb2025:09:34:58):  xrun -64bit alu_testvectors_tb.sv multiplier32FP.sv 
+#e69(25Feb2025:09:35:50): source ./xcelium.d/env.d/env.history.25Feb2025_09_35_50
+s69(25Feb2025:09:35:50):  xrun -64bit alu_testvectors_tb.sv multiplier32FP.sv 
+#e70(25Feb2025:09:39:25): source ./xcelium.d/env.d/env.history.25Feb2025_09_39_25
+s70(25Feb2025:09:39:25):  xrun -64bit alu_testvectors_tb.sv multiplier32FP.sv 
+#e71(25Feb2025:09:40:58): source ./xcelium.d/env.d/env.history.25Feb2025_09_40_58
+s71(25Feb2025:09:40:58):  xrun -64bit alu_testvectors_tb.sv multiplier32FP.sv 
+#e72(25Feb2025:09:41:45): source ./xcelium.d/env.d/env.history.25Feb2025_09_41_45
+s72(25Feb2025:09:41:45):  xrun -64bit alu_testvectors_tb.sv multiplier32FP.sv +access+rw 
+#e73(25Feb2025:09:42:40): source ./xcelium.d/env.d/env.history.25Feb2025_09_42_40
+s73(25Feb2025:09:42:40):  xrun -64bit alu_testvectors_tb.sv multiplier32FP.sv +access+rw 
+#e74(25Feb2025:09:43:13): source ./xcelium.d/env.d/env.history.25Feb2025_09_43_13
+s74(25Feb2025:09:43:13):  xrun -64bit alu_testvectors_tb.sv multiplier32FP.sv +access+rw 
+#e75(25Feb2025:09:46:06): source ./xcelium.d/env.d/env.history.25Feb2025_09_46_06
+s75(25Feb2025:09:46:06):  xrun -64bit alu_testvectors_tb.sv multiplier32FP.sv +access+rw 
+#e76(25Feb2025:09:46:32): source ./xcelium.d/env.d/env.history.25Feb2025_09_46_32
+s76(25Feb2025:09:46:32):  xrun -64bit alu_testvectors_tb.sv multiplier32FP.sv +access+rw 
+#e77(25Feb2025:09:50:11): source ./xcelium.d/env.d/env.history.25Feb2025_09_50_11
+s77(25Feb2025:09:50:11):  xrun -64bit alu_testvectors_tb.sv multiplier32FP.sv +access+rw 
+#e78(25Feb2025:09:51:15): source ./xcelium.d/env.d/env.history.25Feb2025_09_51_15
+s78(25Feb2025:09:51:15):  xrun -64bit alu_testvectors_tb.sv multiplier32FP.sv +access+rw 
+#e79(25Feb2025:09:51:51): source ./xcelium.d/env.d/env.history.25Feb2025_09_51_51
+s79(25Feb2025:09:51:51):  xrun -64bit alu_testvectors_tb.sv multiplier32FP.sv +access+rw 
+#e80(25Feb2025:09:52:49): source ./xcelium.d/env.d/env.history.25Feb2025_09_52_49
+s80(25Feb2025:09:52:49):  xrun -64bit alu_testvectors_tb.sv multiplier32FP.sv +access+rw 
+#e81(25Feb2025:09:53:01): source ./xcelium.d/env.d/env.history.25Feb2025_09_53_01
+s81(25Feb2025:09:53:01):  xrun -64bit alu_testvectors_tb.sv multiplier32FP.sv +gui +access+rw 
+#e82(25Feb2025:10:01:08): source ./xcelium.d/env.d/env.history.25Feb2025_10_01_08
+s82(25Feb2025:10:01:08):  xrun -64bit alu_testvectors_tb.sv multiplier32FP.sv +gui +access+rw "-s " 
+#e83(25Feb2025:10:37:07): source ./xcelium.d/env.d/env.history.25Feb2025_10_37_07
+s83(25Feb2025:10:37:07):  xrun -64bit alu_testvectors_tb.sv multiplier32FP.sv +access+rw 
+#e84(25Feb2025:10:37:27): source ./xcelium.d/env.d/env.history.25Feb2025_10_37_27
+s84(25Feb2025:10:37:27):  xrun -64bit alu_testvectors_tb.sv multiplier32FP.sv +access+rw 
+#e85(25Feb2025:10:37:55): source ./xcelium.d/env.d/env.history.25Feb2025_10_37_55
+s85(25Feb2025:10:37:55):  xrun -64bit alu_testvectors_tb.sv multiplier32FP.sv +access+rw 
+#e86(25Feb2025:10:39:53): source ./xcelium.d/env.d/env.history.25Feb2025_10_39_53
+s86(25Feb2025:10:39:53):  xrun -64bit alu_testvectors_tb.sv multiplier32FP.sv +access+rw +gui 
+#e87(25Feb2025:10:54:01): source ./xcelium.d/env.d/env.history.25Feb2025_10_54_01
+s87(25Feb2025:10:54:01):  xrun -64bit alu_testvectors_tb.sv multiplier32FP.sv +access+rw +gui "-s " 
+#e88(25Feb2025:10:54:58): source ./xcelium.d/env.d/env.history.25Feb2025_10_54_58
+s88(25Feb2025:10:54:58):  xrun -64bit alu_testvectors_tb.sv multiplier32FP.sv +access+rw +gui -s 
+#e89(25Feb2025:11:01:09): source ./xcelium.d/env.d/env.history.25Feb2025_11_01_09
+s89(25Feb2025:11:01:09):  xrun -64bit alu_testvectors_tb.sv multiplier32FP.sv +access+rw +gui -s 
+#e90(25Feb2025:11:03:17): source ./xcelium.d/env.d/env.history.25Feb2025_11_03_17
+s90(25Feb2025:11:03:17):  xrun -64bit alu_testvectors_tb.sv multiplier32FP.sv +access+rw +gui -s 
+#e91(25Feb2025:11:16:23): source ./xcelium.d/env.d/env.history.25Feb2025_11_16_23
+s91(25Feb2025:11:16:23):  xrun -64bit alu_testvectors_tb.sv multiplier32FP.sv +access+rw +gui -s 
+#e92(25Feb2025:11:19:57): source ./xcelium.d/env.d/env.history.25Feb2025_11_19_57
+s92(25Feb2025:11:19:57):  xrun -64bit alu_testvectors_tb.sv multiplier32FP.sv +access+rw +gui -s 
+#e93(25Feb2025:11:21:28): source ./xcelium.d/env.d/env.history.25Feb2025_11_21_28
+s93(25Feb2025:11:21:28):  xrun -64bit alu_testvectors_tb.sv multiplier32FP.sv +access+rw +gui -s 
+#e94(25Feb2025:11:23:26): source ./xcelium.d/env.d/env.history.25Feb2025_11_23_26
+s94(25Feb2025:11:23:26):  xrun -64bit alu_testvectors_tb.sv multiplier32FP.sv +access+rw +gui -s 
+#e95(25Feb2025:11:24:50): source ./xcelium.d/env.d/env.history.25Feb2025_11_24_50
+s95(25Feb2025:11:24:50):  xrun -64bit alu_testvectors_tb.sv multiplier32FP.sv +access+rw +gui -s 
+#e96(25Feb2025:11:30:08): source ./xcelium.d/env.d/env.history.25Feb2025_11_30_08
+s96(25Feb2025:11:30:08):  xrun -64bit alu_testvectors_tb.sv multiplier32FP.sv +access+rw 
+#e97(25Feb2025:11:30:52): source ./xcelium.d/env.d/env.history.25Feb2025_11_30_52
+s97(25Feb2025:11:30:52):  xrun -64bit alu_testvectors_tb.sv multiplier32FP.sv +access+rw 
+#e98(25Feb2025:11:32:23): source ./xcelium.d/env.d/env.history.25Feb2025_11_32_23
+s98(25Feb2025:11:32:23):  xrun -64bit alu_testvectors_tb.sv multiplier32FP.sv +access+rw 
+#e99(25Feb2025:11:32:50): source ./xcelium.d/env.d/env.history.25Feb2025_11_32_50
+s99(25Feb2025:11:32:50):  xrun -64bit alu_testvectors_tb.sv multiplier32FP.sv +access+rw 
+#e100(25Feb2025:11:43:07): source ./xcelium.d/env.d/env.history.25Feb2025_11_43_07
+s100(25Feb2025:11:43:07):  xrun -64bit alu_testvectors_tb.sv multiplier32FP.sv +access+rw 
+#e101(25Feb2025:11:43:17): source ./xcelium.d/env.d/env.history.25Feb2025_11_43_17
+s101(25Feb2025:11:43:17):  xrun -64bit alu_testvectors_tb.sv multiplier32FP.sv +access+rw 
+#e102(25Feb2025:11:46:20): source ./xcelium.d/env.d/env.history.25Feb2025_11_46_20
+s102(25Feb2025:11:46:20):  xrun -64bit alu_testvectors_tb.sv multiplier32FP.sv +access+rw 
+#e103(25Feb2025:11:47:17): source ./xcelium.d/env.d/env.history.25Feb2025_11_47_17
+s103(25Feb2025:11:47:17):  xrun -workdir 
+#e104(25Feb2025:11:47:26): source ./xcelium.d/env.d/env.history.25Feb2025_11_47_26
+s104(25Feb2025:11:47:26):  xrun -workdir 
+#e105(25Feb2025:11:47:28): source ./xcelium.d/env.d/env.history.25Feb2025_11_47_28
+s105(25Feb2025:11:47:28):  xrun -64bit alu_testvectors_tb.sv multiplier32FP.sv +access+rw 
+#e106(25Feb2025:11:47:32): source ./xcelium.d/env.d/env.history.25Feb2025_11_47_32
+s106(25Feb2025:11:47:32):  xrun -64bit alu_testvectors_tb.sv multiplier32FP.sv +access+rw 
+#e107(25Feb2025:11:47:50): source ./xcelium.d/env.d/env.history.25Feb2025_11_47_50
+s107(25Feb2025:11:47:50):  xrun -64bit alu_testvectors_tb.sv multiplier32FP.sv +access+rw 
+#e108(25Feb2025:11:49:23): source ./xcelium.d/env.d/env.history.25Feb2025_11_49_23
+s108(25Feb2025:11:49:23):  xrun -64bit alu_testvectors_tb.sv multiplier32FP.sv +access+rw 
+#e109(25Feb2025:11:52:32): source ./xcelium.d/env.d/env.history.25Feb2025_11_52_32
+s109(25Feb2025:11:52:32):  xrun -64bit alu_testvectors_tb.sv multiplier32FP.sv +access+rw 
+#e110(25Feb2025:11:53:24): source ./xcelium.d/env.d/env.history.25Feb2025_11_53_24
+s110(25Feb2025:11:53:24):  xrun -64bit alu_testvectors_tb.sv multiplier32FP.sv +access+rw 
+#e111(25Feb2025:16:54:47): source ./xcelium.d/env.d/env.history.25Feb2025_16_54_47
+s111(25Feb2025:16:54:47):  xrun -64bit alu_testvectors_tb_2.sv multiplier32FP.sv +access+rw 
+#e112(25Feb2025:16:55:48): source ./xcelium.d/env.d/env.history.25Feb2025_16_55_48
+s112(25Feb2025:16:55:48):  xrun -64bit alu_testvectors_tb_2.sv multiplier32FP.sv +access+rw 
+#e113(25Feb2025:16:58:54): source ./xcelium.d/env.d/env.history.25Feb2025_16_58_54
+s113(25Feb2025:16:58:54):  xrun -64bit alu_testvectors_tb_2.sv multiplier32FP.sv +access+rw 
+#e114(25Feb2025:16:59:48): source ./xcelium.d/env.d/env.history.25Feb2025_16_59_48
+s114(25Feb2025:16:59:48):  xrun -64bit alu_testvectors_tb_2.sv multiplier32FP.sv +access+rw 
+#e115(25Feb2025:17:00:24): source ./xcelium.d/env.d/env.history.25Feb2025_17_00_24
+s115(25Feb2025:17:00:24):  xrun -64bit alu_testvectors_tb_2.sv multiplier32FP.sv +access+rw 
+#e116(25Feb2025:17:02:58): source ./xcelium.d/env.d/env.history.25Feb2025_17_02_58
+s116(25Feb2025:17:02:58):  xrun -64bit alu_testvectors_tb_2.sv multiplier32FP.sv +access+rw 

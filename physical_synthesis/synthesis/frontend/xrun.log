@@ -1,238 +1,75 @@
 xrun(64): 24.09-s001: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	24.09-s001: Started on Feb 24, 2025 at 17:38:52 -03
+TOOL:	xrun(64)	24.09-s001: Started on Feb 25, 2025 at 17:02:57 -03
 xrun
 	-64bit
+	alu_testvectors_tb_2.sv
 	multiplier32FP.sv
-	alu_testvectors_tb.sv
-Recompiling... reason: file './alu_testvectors_tb.sv' is newer than expected.
-	expected: Mon Feb 24 17:36:37 2025
-	actual:   Mon Feb 24 17:38:50 2025
-file: alu_testvectors_tb.sv
+	+access+rw
+Recompiling... reason: file './alu_testvectors_tb_2.sv' is newer than expected.
+	expected: Tue Feb 25 17:00:20 2025
+	actual:   Tue Feb 25 17:02:40 2025
+file: alu_testvectors_tb_2.sv
 	module worklib.alu_testvectors_tb:sv
 		errors: 0, warnings: 0
 		Caching library 'worklib' ....... Done
 	Elaborating the design hierarchy:
 	Top level design units:
 		alu_testvectors_tb
-	Building instance overlay tables: .................... Done
+	Building instance overlay tables: ..........
+                $display("Expected %h, got %h", expected_result, product_o);
+                                                              |
+xmelab: *W,REALCV (./alu_testvectors_tb_2.sv,128|62): Real argument converted to integer for (%h).
+.......... Done
 	Generating native compiled code:
-		worklib.alu_testvectors_tb:sv <0x71084b83>
-			streams:   1, words:  3815
+		worklib.alu_testvectors_tb:sv <0x4119c6b9>
+			streams:  14, words: 17114
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
-		          Instances  Unique
-		Modules:          2       2
-		Registers:       41      41
-		Scalar wires:     8       -
-		Vectored wires:   3       -
-		Always blocks:    6       6
-		Initial blocks:   1       1
+		              Instances  Unique
+		Modules:              2       2
+		Registers:           46      46
+		Scalar wires:        13       -
+		Vectored wires:       4       -
+		Always blocks:        4       4
+		Initial blocks:       1       1
+		Pseudo assignments:  11       -
+		Process Clocks:       2       1
 	Writing initial simulation snapshot: worklib.alu_testvectors_tb:sv
 Loading snapshot worklib.alu_testvectors_tb:sv .................... Done
 xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
 xcelium> run
 testvectors[0][0] = 7f000000
 testvectors[0][1] = 7f000000
+testvectors[0][2] = 7fffffff
 testvectors[1][0] = 7c400000
 testvectors[1][1] = 7e400000
+testvectors[1][2] = 7fffffff
 testvectors[2][0] = 7f000000
 testvectors[2][1] = 41c00000
+testvectors[2][2] = 7fffffff
 testvectors[3][0] = 7f000000
 testvectors[3][1] = 40400000
+testvectors[3][2] = 7fffffff
 testvectors[4][0] = 7f000000
 testvectors[4][1] = 40800000
+testvectors[4][2] = 7fffffff
 testvectors[5][0] = 41200000
 testvectors[5][1] = 41c80000
+testvectors[5][2] = 437a0000
 testvectors[6][0] = 42dc0000
 testvectors[6][1] = 3f800000
+testvectors[6][2] = 42dc0000
 testvectors[7][0] = 3f800000
 testvectors[7][1] = 00000000
+testvectors[7][2] = 00000000
 testvectors[8][0] = 3f800000
 testvectors[8][1] = 3f800000
+testvectors[8][2] = 3f800000
 testvectors[9][0] = 00000000
 testvectors[9][1] = 41c84444
-testvectors[10][0] = 7f800000
-testvectors[10][1] = 41c84444
-testvectors[11][0] = 00800000
-testvectors[11][1] = 00800000
-testvectors[12][0] = 7f900000
-testvectors[12][1] = 41d00000
-testvectors[13][0] = 42dc0000
-testvectors[13][1] = 3f800000
-testvectors[14][0] = 3fffffff
-testvectors[14][1] = 7f100000
-testvectors[15][0] = 403945de
-testvectors[15][1] = c9743800
-testvectors[16][0] = 07e00000
-testvectors[16][1] = 57e00000
-testvectors[17][0] = 64440f02
-testvectors[17][1] = 04478f02
-testvectors[18][0] = 3f9fd530
-testvectors[18][1] = 7e1fd530
-testvectors[19][0] = 97479506
-testvectors[19][1] = c75ff506
-testvectors[20][0] = 2918d530
-testvectors[20][1] = 7f800000
-testvectors[21][0] = c75ff506
-testvectors[21][1] = 7f900000
-testvectors[22][0] = e32000d6
-testvectors[22][1] = 632000d6
-testvectors[23][0] = c72360d6
-testvectors[23][1] = c72360d6
-testvectors[24][0] = 472360d6
-testvectors[24][1] = c72360d6
-testvectors[25][0] = 7edfe8ea
-testvectors[25][1] = 0ad828eb
-testvectors[26][0] = de3d104f
-testvectors[26][1] = 9e2117ff
-testvectors[27][0] = bcc001f4
-testvectors[27][1] = fccf01f4
-testvectors[28][0] = 3f800000
-testvectors[28][1] = c75ff506
-testvectors[29][0] = 9f2e99d6
-testvectors[29][1] = 4ed088ea
-testvectors[30][0] = 1d8647c1
-testvectors[30][1] = 004de8c6
-testvectors[31][0] = ff8364ef
-testvectors[31][1] = 93ea69c6
-testvectors[32][0] = ce9981fd
-testvectors[32][1] = 2e5948b7
-testvectors[33][0] = f58705e4
-testvectors[33][1] = 9affd518
-testvectors[34][0] = 8847902a
-testvectors[34][1] = 50d33667
-testvectors[35][0] = 93c34f89
-testvectors[35][1] = 2aa4a1c6
-testvectors[36][0] = 4553b6c9
-testvectors[36][1] = 3d7694bf
-testvectors[37][0] = a813c7c2
-testvectors[37][1] = 9bd93e71
-testvectors[38][0] = 7b9f4594
-testvectors[38][1] = b81df364
-testvectors[39][0] = e0a7d0b4
-testvectors[39][1] = df6e5b3e
-testvectors[40][0] = 10f05801
-testvectors[40][1] = 483be748
-testvectors[41][0] = 29224825
-testvectors[41][1] = e9f94cee
-testvectors[42][0] = ca14a237
-testvectors[42][1] = 1ce51fc8
-testvectors[43][0] = 226fb519
-testvectors[43][1] = 7fc8e1cb
-testvectors[44][0] = abd762f3
-testvectors[44][1] = f0d653d6
-testvectors[45][0] = 8fd2a024
-testvectors[45][1] = 382ab6e3
-testvectors[46][0] = a04fbe18
-testvectors[46][1] = 2f6e5923
-testvectors[47][0] = eeeaba0e
-testvectors[47][1] = 16c3b505
-testvectors[48][0] = c707bde3
-testvectors[48][1] = 830cd585
-testvectors[49][0] = b119163a
-testvectors[49][1] = cf8c5a18
-testvectors[50][0] = 991602f0
-testvectors[50][1] = 02bb1f32
-testvectors[51][0] = 3477b1a8
-testvectors[51][1] = 9a952996
-testvectors[52][0] = 67da453a
-testvectors[52][1] = 4305d53d
-testvectors[53][0] = b7cd5998
-testvectors[53][1] = 7a75d7fa
-testvectors[54][0] = 550d4ca0
-testvectors[54][1] = 5d22e754
-testvectors[55][0] = 61593320
-testvectors[55][1] = 4e1198f6
-testvectors[56][0] = 9b810c50
-testvectors[56][1] = 88624b47
-testvectors[57][0] = 2fce5ad0
-testvectors[57][1] = 4e0750f8
-testvectors[58][0] = edf895a2
-testvectors[58][1] = 1740026d
-testvectors[59][0] = 64b5cd6d
-testvectors[59][1] = 90a296e6
-testvectors[60][0] = 9696193f
-testvectors[60][1] = 22f98d26
-testvectors[61][0] = 014aa465
-testvectors[61][1] = b43abdcf
-testvectors[62][0] = 624edcd5
-testvectors[62][1] = e29be5e8
-testvectors[63][0] = 9cf1b532
-testvectors[63][1] = e00df035
-testvectors[64][0] = c4c903e8
-testvectors[64][1] = cc04afde
-testvectors[65][0] = f1ad7815
-testvectors[65][1] = 02573b58
-testvectors[66][0] = 529cf77f
-testvectors[66][1] = 980e5d19
-testvectors[67][0] = ce2c8d20
-testvectors[67][1] = ac22e8f5
-testvectors[68][0] = 04b7adfd
-testvectors[68][1] = 883dd03a
-testvectors[69][0] = d7249784
-testvectors[69][1] = d0ed1bb6
-testvectors[70][0] = 0f215bee
-testvectors[70][1] = 7962ec53
-testvectors[71][0] = 32029d64
-testvectors[71][1] = 966a6ee7
-testvectors[72][0] = 8599413b
-testvectors[72][1] = 9266f731
-testvectors[73][0] = 015eeeff
-testvectors[73][1] = cadb72df
-testvectors[74][0] = 40044f71
-testvectors[74][1] = 3dc1e6d8
-testvectors[75][0] = a169558f
-testvectors[75][1] = ef87c698
-testvectors[76][0] = 8c246662
-testvectors[76][1] = 926b565e
-testvectors[77][0] = d65a24a9
-testvectors[77][1] = 3ba542c4
-testvectors[78][0] = a4af1394
-testvectors[78][1] = c15e1469
-testvectors[79][0] = 42b77569
-testvectors[79][1] = a5a2dd2b
-testvectors[80][0] = e7d0243b
-testvectors[80][1] = d3f056bc
-testvectors[81][0] = 1f5fe5fc
-testvectors[81][1] = e5ee453f
-testvectors[82][0] = 53369a62
-testvectors[82][1] = abafc78a
-testvectors[83][0] = f3551601
-testvectors[83][1] = 41c0eca7
-testvectors[84][0] = 0b39d0fe
-testvectors[84][1] = 8ae55817
-testvectors[85][0] = 41e43153
-testvectors[85][1] = aeb7cd6e
-testvectors[86][0] = 0d31bada
-testvectors[86][1] = b9a267d8
-testvectors[87][0] = 731cad8b
-testvectors[87][1] = 2db1e28c
-testvectors[88][0] = 8da133fb
-testvectors[88][1] = a796ecaa
-testvectors[89][0] = 379abd0b
-testvectors[89][1] = fe042d0e
-testvectors[90][0] = 4b5958f6
-testvectors[90][1] = 15afd074
-testvectors[91][0] = a3452e18
-testvectors[91][1] = 02878f46
-testvectors[92][0] = a86ed7db
-testvectors[92][1] = cc38e2f9
-testvectors[93][0] = 160620ad
-testvectors[93][1] = e68738b0
-testvectors[94][0] = 895c0d88
-testvectors[94][1] = 571730f0
-testvectors[95][0] = a2ccd195
-testvectors[95][1] = 2d9946d8
-testvectors[96][0] = 4e623ae2
-testvectors[96][1] = 67af1434
-testvectors[97][0] = 51da3cb8
-testvectors[97][1] = 23087c97
-testvectors[98][0] = a53191dd
-testvectors[98][1] = 343a5e3b
-testvectors[99][0] = d094e751
-testvectors[99][1] = 4b640bab
-Simulation complete via $finish(1) at time 10 US + 0
-./alu_testvectors_tb.sv:70         $finish;
+testvectors[9][2] = 00000000
+Simulation complete via $finish(1) at time 200 NS + 0
+./alu_testvectors_tb_2.sv:89         $finish;
 xcelium> exit
-TOOL:	xrun(64)	24.09-s001: Exiting on Feb 24, 2025 at 17:39:01 -03  (total: 00:00:09)
+TOOL:	xrun(64)	24.09-s001: Exiting on Feb 25, 2025 at 17:03:07 -03  (total: 00:00:10)

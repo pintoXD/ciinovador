@@ -61,9 +61,9 @@ module alu_testvectors_tb();
     initial begin
         // $dumpfile("alu_testvectors_tb.vcd");
         // $dumpvars(0, alu_testvectors_tb);
-        $readmemh("vetor.txt", testvectors);
+        // $readmemh("vetor.txt", testvectors);
         #100;
-        file = $fopen("vetor.txt", "r");
+        file = $fopen("vetor2.txt", "r");
         if (file == 0) begin
             $display("Error: Could not open file.");
             $finish;
@@ -71,7 +71,7 @@ module alu_testvectors_tb();
 
         // Read the file and store the data in the array
         for (i = 0; i < 100; i = i + 1) begin
-                r = $fscanf(file, "%h %h", testvectors[i][0], testvectors[i][1]);
+                r = $fscanf(file, "%h %h %h", testvectors[i][0], testvectors[i][1], testvectors[i][2]);
         end
         // Close the file
         $fclose(file);
@@ -80,12 +80,13 @@ module alu_testvectors_tb();
 
         // // Display the contents of the array using foreach
         
-        // Display the contents of the array
-        // for (i = 0; i < 100; i = i + 1) begin
-        //         $display("testvectors[%0d][0] = %h", i, testvectors[i][0]);
-        //         $display("testvectors[%0d][1] = %h", i, testvectors[i][1]);
-        // end
-        // $finish;
+        //Display the contents of the array
+        for (i = 0; i < 10; i = i + 1) begin
+                $display("testvectors[%0d][0] = %h", i, testvectors[i][0]);
+                $display("testvectors[%0d][1] = %h", i, testvectors[i][1]);
+                $display("testvectors[%0d][2] = %h", i, testvectors[i][2]);
+        end
+        $finish;
         vectornum = 0;
         // errors = 0;
     // end

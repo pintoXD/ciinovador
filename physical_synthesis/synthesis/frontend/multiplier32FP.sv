@@ -99,7 +99,7 @@ always_comb begin : MULTIPLIER_COMB_BLOCK
             end
 
             RESULT_VERIFICATION_STEP: begin
-                is_multiplication_done = 1;
+                // is_multiplication_done = 1;
                 next_state = DONE;
             end
             DONE:
@@ -121,9 +121,9 @@ always_ff @(posedge clk, negedge rst_n) begin : MULTIPLIER_FF_BLOCK
         underflow_o <= 1'b0;
         product_o <= 32'b0;
     end else begin
-        product_o[31] <= signal_a ^ signal_b; //XOR the sign bits to get the sign of the product_o
-        product_o[30:23] <=  exponent_temp[7:0]; //add the exponents and subtract the bias
-        product_o[22:0] <= mantissa_temp[45:23]; //extract the 24 most significant bits of the product_o
+        // product_o[31] <= signal_a ^ signal_b; //XOR the sign bits to get the sign of the product_o
+        // product_o[30:23] <=  exponent_temp[7:0]; //add the exponents and subtract the bias
+        // product_o[22:0] <= mantissa_temp[45:23]; //extract the 24 most significant bits of the product_o
 
         case (current_state)
             INITIAL_STATE: begin
@@ -136,6 +136,9 @@ always_ff @(posedge clk, negedge rst_n) begin : MULTIPLIER_FF_BLOCK
             end
             MULTIPLY_STEP: begin
                 done_o <= 1'b1;
+                product_o[31] <= signal_a ^ signal_b;    //XOR the sign bits to get the sign of the product_o
+                product_o[30:23] <=  exponent_temp[7:0]; //add the exponents and subtract the bias
+                product_o[22:0] <= mantissa_temp[45:23]; //extract the 24 most significant bits of the product_o
             end
 
             RESULT_VERIFICATION_STEP: begin
@@ -151,7 +154,7 @@ always_ff @(posedge clk, negedge rst_n) begin : MULTIPLIER_FF_BLOCK
                     underflow_o <= 1'b1;
                     product_o <= 32'b00;
                 end else begin
-                    done_o <= 1'b1;
+                    // done_o <= 1'b1;
                 end
 
                 done_o <= 1'b0;
