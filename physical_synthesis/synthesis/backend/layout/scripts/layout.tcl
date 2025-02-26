@@ -228,3 +228,5 @@ write_db 03_cts.enc
 # graphical
 
 gui_show
+
+write_netlist ${BACKEND_DIR}/layout/deliverables/${DESIGNS}_chip.v
