@@ -1,0 +1,12 @@
+#e1(26Feb2025:09:34:04): source ./xcelium.d/env.d/env.history.26Feb2025_09_34_04
+s1(26Feb2025:09:34:04):  irun -access +r -uvm +uvm_set_config_int=*,recording_detail,1 -coverage all -covoverwrite -DSYSTEM_CLOCK_UNITS_PER_SECOND=100 ../bvm/system_clock.c +incdir+../bvm ../bvm/bvm_pkg.sv test_pkg.sv top.sv +UVM_VERBOSITY=LOW 
+#e2(26Feb2025:09:34:22): source ./xcelium.d/env.d/env.history.26Feb2025_09_34_22
+s2(26Feb2025:09:34:22):  irun ../app/hello.v 
+#e3(26Feb2025:09:34:53): source ./xcelium.d/env.d/env.history.26Feb2025_09_34_53
+s3(26Feb2025:09:34:53):  irun -access +r -uvm +uvm_set_config_int=*,recording_detail,1 +incdir+../bvm ../bvm/bvm_pkg.sv test_pkg.sv top.sv +UVM_VERBOSITY=LOW 
+#e4(26Feb2025:09:36:41): source ./xcelium.d/env.d/env.history.26Feb2025_09_36_41
+s4(26Feb2025:09:36:41):  irun -access +r -uvm +uvm_set_config_int=*,recording_detail,1 -coverage all -covoverwrite -DSYSTEM_CLOCK_UNITS_PER_SECOND=100 ../bvm/system_clock.c +incdir+../bvm ../bvm/bvm_pkg.sv test_pkg.sv top.sv +UVM_VERBOSITY=LOW 
+#e5(26Feb2025:09:37:36): source ./xcelium.d/env.d/env.history.26Feb2025_09_37_36
+s5(26Feb2025:09:37:36):  irun -access +r -uvm +uvm_set_config_int=*,recording_detail,1 +define+BVM_ASSERT_BEGIN_TR=void' +incdir+../bvm ../bvm/bvm_pkg.sv test_pkg.sv top.sv +UVM_VERBOSITY=LOW 
+#e6(26Feb2025:10:02:54): source ./xcelium.d/env.d/env.history.26Feb2025_10_02_54
+s6(26Feb2025:10:02:54):  irun -access +r -uvm +uvm_set_config_int=*,recording_detail,1 +define+BVM_ASSERT_BEGIN_TR=void' +incdir+../bvm ../bvm/bvm_pkg.sv test_pkg.sv top.sv +UVM_VERBOSITY=LOW 

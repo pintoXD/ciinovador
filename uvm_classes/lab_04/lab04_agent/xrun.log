@@ -1,0 +1,155 @@
+xrun(64): 24.09-s001: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	24.09-s001: Started on Feb 26, 2025 at 17:47:07 -03
+irun
+	-access +r
+	-uvm
+	+uvm_set_config_int=*,recording_detail,1
+	-coverage all
+	-covoverwrite
+	-DSYSTEM_CLOCK_UNITS_PER_SECOND=100 ../bvm/system_clock.c
+	+incdir+../bvm
+	../bvm/bvm_pkg.sv
+	test_pkg.sv
+	top.sv
+	+UVM_VERBOSITY=LOW
+
+   User defined plus("+") options:
+	+uvm_set_config_int=*,recording_detail,1
+	+UVM_VERBOSITY=LOW
+
+xrun: *W,NCEXDEP: Executable (irun) is deprecated. Use (xrun) instead.
+Recompiling... reason: file './coverage_in.svh' is newer than expected.
+	expected: Wed Feb 26 17:10:40 2025
+	actual:   Wed Feb 26 17:46:40 2025
+Compiling UVM packages (uvm_pkg.sv cdns_uvm_pkg.sv) using uvmhome location /home/tools/cadence/installs/XCELIUM2209/tools/methodology/UVM/CDNS-1.1d
+file: ../bvm/bvm_pkg.sv
+	package worklib.bvm_pkg:sv
+		errors: 0, warnings: 0
+file: test_pkg.sv
+package test_pkg;
+               |
+xmvlog: *W,TSNSPK (test_pkg.sv,4|15): `timescale is not specified for the package.  The default timescale of 1ns/1ns will be assumed for this package.
+	package worklib.test_pkg:sv
+		errors: 0, warnings: 1
+file: top.sv
+	module worklib.top:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		uvm_pkg
+		cdns_uvmapi
+		cdns_assert2uvm_pkg
+		cdns_uvm_pkg
+		bvm_pkg
+		test_pkg
+		top
+
+	Extracting FSMs for coverage:
+		worklib.top
+	Total FSMs extracted = 0
+	Building instance overlay tables: .................... Done
+	Enabling instrumentation for coverage types: block expression FSM toggle functional
+	Generating native compiled code:
+		worklib.top:sv <0x15b06f55>
+			streams:   1, words:   791
+		worklib.test_pkg:sv <0x4cb65b50>
+			streams: 426, words: 405876
+		worklib.bvm_pkg:sv <0x7dcc0915>
+			streams:   0, words:     0
+		worklib.cdns_uvm_pkg:sv <0x0443c06f>
+			streams: 179, words: 281542
+		worklib.cdns_uvmapi:svp <0x322b69c9>
+			streams:  27, words: 30445
+		worklib.cdns_assert2uvm_pkg:sv <0x5fc6ecef>
+			streams:   3, words:  1761
+		worklib.uvm_pkg:sv <0x703e5de1>
+			streams: 5100, words: 7914876
+	Building instance specific data structures.
+xmelab: *W,CGPIDF: Covergroup "per_instance" option , by default, is set as 0.
+xmelab: *N,COVCGN: Coverage configuration file command "set_covergroup -new_instance_reporting" can be specified to improve the scoping and naming of covergroup instances. It may be noted that subsequent merging of a coverage database saved with this command and a coverage database saved without this command is not allowed.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                        Instances  Unique
+		Modules:                        1       1
+		Verilog packages:               6       6
+		Registers:                 13,588  10,200
+		Named events:                   4      12
+		Initial blocks:               281     155
+		Parallel blocks:               26      27
+		Assertions:                     5       5
+		Covergroup Instances:           0       1
+		SV Class declarations:        204     314
+		SV Class specializations:     372     372
+	Writing initial simulation snapshot: worklib.top:sv
+Loading snapshot worklib.top:sv .................... Done
+SVSEED default: 1
+xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
+xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/methodology/UVM/CDNS-1.1d/additions/sv/files/tcl/uvm_sim.tcl
+xcelium> run
+----------------------------------------------------------------
+CDNS-UVM-1.1d (24.09-s001)
+(C) 2007-2013 Mentor Graphics Corporation
+(C) 2007-2013 Cadence Design Systems, Inc.
+(C) 2006-2013 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test test...
+UVM_INFO @ 0: reporter [UVM_CMDLINE_PROC] Applying config setting from the command line: +uvm_set_config_int=*,recording_detail,1
+SDI/Verilog Transaction Recording Facility Version 24.09-s001
+UVM_INFO ../bvm/bvm_cover.svh(60) @ 30: uvm_test_top.env_h.coverage_in_h [coverage_in] Coverage:  0%       
+UVM_INFO ../bvm/bvm_cover.svh(60) @ 360: uvm_test_top.env_h.coverage_in_h [coverage_in] Coverage: 25%       
+UVM_INFO ../bvm/bvm_cover.svh(60) @ 1980: uvm_test_top.env_h.coverage_in_h [coverage_in] Coverage: 100%       
+UVM_INFO /home/tools/cadence/installs/XCELIUM2209/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_objection.svh(1268) @ 1980: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO ../bvm/bvm_cover.svh(82) @ 1980: uvm_test_top.env_h.coverage_in_h [coverage_in] Coverage: 100%
+
+--- UVM Report catcher Summary ---
+
+
+Number of demoted UVM_FATAL reports  :    0
+Number of demoted UVM_ERROR reports  :    0
+Number of demoted UVM_WARNING reports:    0
+Number of caught UVM_FATAL reports   :    0
+Number of caught UVM_ERROR reports   :    0
+Number of caught UVM_WARNING reports :    0
+
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :    7
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[RNTST]     1
+[TEST_DONE]     1
+[UVM_CMDLINE_PROC]     1
+[coverage_in]     4
+Simulation complete via $finish(1) at time 1980 NS + 44
+/home/tools/cadence/installs/XCELIUM2209/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_root.svh:457     $finish;
+xcelium> exit
+xmsim: *N,COVCGN: Coverage configuration file command "set_covergroup -new_instance_reporting" can be specified to improve the scoping and naming of covergroup instances. It may be noted that subsequent merging of a coverage database saved with this command and a coverage database saved without this command is not allowed.
+
+coverage setup:
+  workdir  :  ./cov_work
+  dutinst  :  top(top)
+  scope    :  scope
+  testname :  test
+
+coverage files:
+  model(design data) :  ./cov_work/scope/icc_38532caf_17fd649e.ucm
+  data               :  ./cov_work/scope/test/icc_38532caf_17fd649e.ucd
+TOOL:	xrun(64)	24.09-s001: Exiting on Feb 26, 2025 at 17:47:21 -03  (total: 00:00:14)
