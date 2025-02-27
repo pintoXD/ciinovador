@@ -15,9 +15,24 @@ export LIB_VERILOG_FILES=${TECH_DIR}/gsclib045_svt_v4.4/lan/flow/t1u1/reference_
 
 # Check if at least one argument is provided
 if [ $# -lt 1 ]; then
-    echo "Usage: $0 <arg1> [-xrun_raw, -xrun_compiled, -xrun_sdf, -genus, -innovus]"
+    echo "Usage: $0 <arg1> [-xrun_raw, -xrun_compiled, -xrun_sdf, -genus, -innovus, -clear_work]"
     exit 1
 fi
+
+if [ $1 == "-clear_work" ]; then
+    # Para limpar a pasta de trabalho
+    rm -r ${PROJECT_DIR}/frontend/work/*
+    rm -r ${PROJECT_DIR}/backend/synthesis/work/*
+    rm -r ${PROJECT_DIR}/backend/layout/work/*
+fi
+
+if [ $1 == "-touch_work" ]; then
+    # Para limpar a pasta de trabalho
+    touch ${PROJECT_DIR}/frontend/work/teste.txt
+    touch ${PROJECT_DIR}/backend/synthesis/work/teste.txt
+    touch ${PROJECT_DIR}/backend/layout/work/teste.txt
+fi
+
 
 
 if [ $1 == "-xrun_raw" ]; then
@@ -46,6 +61,24 @@ if [ $1 == "-xrun_sdf" ]; then
     -access +rwc -sdf_cmd_file ${PROJECT_DIR}/frontend/sdf_cmd_file.cmd 
 fi
 
+if [ $1 == "-xrun_sdf_min_max" ]; then
+    # Para executar o XCELIUM
+    cd ${PROJECT_DIR}/frontend/work
+    ### run netlist (logic syntesis) with compiled SDF for MIN
+    xmsdfc -iocondsort -compile ${PROJECT_DIR}/backend/synthesis/deliverables/${DESIGNS}_worst.sdf && \
+    xrun -timescale 1ns/10ps -mess -64bit -noneg_tchk ${LIB_VERILOG_FILES}/slow_vdd1v0_basicCells.v \
+    ${PROJECT_DIR}/backend/synthesis/deliverables/${DESIGNS}.v ${FRONTEND_DIR}/${DESIGNS}_MIN_tb.sv -top ${DESIGNS}_tb \
+    -access +rwc -sdf_cmd_file ${PROJECT_DIR}/frontend/sdf_cmd_file.cmd
+
+    sleep 1
+
+    ### run netlist (logic syntesis) with compiled SDF for MAX
+    xmsdfc -iocondsort -compile ${PROJECT_DIR}/backend/synthesis/deliverables/${DESIGNS}_worst.sdf && \
+    xrun -timescale 1ns/10ps -mess -64bit -noneg_tchk ${LIB_VERILOG_FILES}/slow_vdd1v0_basicCells.v \
+    ${PROJECT_DIR}/backend/synthesis/deliverables/${DESIGNS}.v ${FRONTEND_DIR}/${DESIGNS}_MAX_tb.sv -top ${DESIGNS}_tb \
+    -access +rwc -sdf_cmd_file ${PROJECT_DIR}/frontend/sdf_cmd_file.cmd
+fi
+
 if [ $1 == "-genus" ]; then
     # Para executar o GENUS
     cd ${PROJECT_DIR}/backend/synthesis/work
@@ -59,7 +92,8 @@ if [ $1 == "-innovus" ]; then
     # Para executar o INNOVUS
     cd ${PROJECT_DIR}/backend/layout/work
     # innovus
-    innovus -stylus -log ${BACKEND_DIR}/synthesis/work/innovus/ -file ${PROJECT_DIR}/backend/layout/scripts/layout.tcl
+    # innovus -stylus -log ${BACKEND_DIR}/synthesis/work/innovus/ -file ${PROJECT_DIR}/backend/layout/scripts/layout.tcl
+    innovus -stylus -file ${PROJECT_DIR}/backend/layout/scripts/layout.tcl
 fi
 
 

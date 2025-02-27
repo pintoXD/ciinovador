@@ -9,12 +9,12 @@
 #-----------------------------------------------------------------------------
 set PROJECT_DIR $env(PROJECT_DIR)
 set BACKEND_DIR $env(BACKEND_DIR)
-set FRONTEND_DIR $env(FRONTEND_DIR)
 set TECH_DIR $env(TECH_DIR)
 set DESIGNS $env(DESIGNS)
 set HDL_NAME $env(HDL_NAME)
 set VLOG_LIST $env(VLOG_LIST)
 set INTERCONNECT_MODE ple
+set FRONTEND_DIR $env(FRONTEND_DIR)
 
 #-----------------------------------------------------------------------------
 # (!) same as $DESIGNS.tcl (!) MAIN Custom Variables to be used in SDC (constraints file)
@@ -283,7 +283,17 @@ set_db power_corner min
 #set_db power_method event_based
 
 
-# The following command must be uncommented when we have the VCD files.
+# The following command must be uncommented when we have the VCD MAX files.
+# #
+read_activity_file -format VCD -scope ${DESIGNS}/DUT ${PROJECT_DIR}/frontend/work/${DESIGNS}_MAX_tb.vcd
+report_power -power_unit uW > ${BACKEND_DIR}/layout/deliverables/reports/power_report_VCD_MAX.rpt
+
+# The following command must be uncommented when we have the VCD MIN files.
+# #
+read_activity_file -format VCD -scope ${DESIGNS}/DUT ${PROJECT_DIR}/frontend/work/${DESIGNS}_MIN_tb.vcd -reset
+report_power -power_unit uW > ${BACKEND_DIR}/layout/deliverables/reports/power_report_VCD_MIN.rpt
+
+
 # #
 # read_activity_file -format VCD -scope somador_tb(verification)/DUV ${FRONTEND_DIR}/vcd/${DESIGNS}_layout_10kns.vcd
 # report_power -power_unit uW > ${BACKEND_DIR}/layout/deliverables/reports/power_report_VCD_10kns.rpt
@@ -299,6 +309,8 @@ set_db power_corner min
 
 
 
+
+
 #-----------------------------------------------------------------------------
 # Add metal fill
 #-----------------------------------------------------------------------------
@@ -310,14 +322,14 @@ add_metal_fill -layers {Metal1 Metal2 Metal3 Metal4 Metal5 Metal6 Metal7 Metal8 
 #-----------------------------------------------------------------------------
 # Write GDS
 #-----------------------------------------------------------------------------
-write_stream -mode ALL -unit 2000 ../deliverables/${DESIGNS}.gsd
+write_stream -mode ALL -unit 2000 ${BACKEND_DIR}/layout/deliverables/${DESIGNS}.gsd
 ls streamOut.map ;# this file should be created after write_stream command run
 
 
 #-----------------------------------------------------------------------------
 # Write DEF
 #-----------------------------------------------------------------------------
-write_def ../deliverables/${DESIGNS}_layout.def
+write_def ${BACKEND_DIR}/layout/deliverables/${DESIGNS}_layout.def
 
 
 #-----------------------------------------------------------------------------
@@ -335,4 +347,4 @@ write_db 07_to-drc-lvs.enc
 # Virtuoso
 
 
-gui_show
+# gui_show

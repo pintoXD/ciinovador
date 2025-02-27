@@ -1,19 +1,15 @@
 xrun(64): 24.09-s001: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	24.09-s001: Started on Feb 27, 2025 at 15:24:21 -03
+TOOL:	xrun(64)	24.09-s001: Started on Feb 27, 2025 at 15:47:01 -03
 xrun
 	-timescale 1ns/10ps
-	-mess
 	-64bit
-	-noneg_tchk
-	/home/tools/cadence/gpdk/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/verilog/slow_vdd1v0_basicCells.v
-	/home/cinovador/Documents/course_files/physical_synthesis/synthesis/backend/synthesis/deliverables/multiplier32FP.v
+	/home/cinovador/Documents/course_files/physical_synthesis/synthesis/frontend/multiplier32FP.sv
 	/home/cinovador/Documents/course_files/physical_synthesis/synthesis/frontend/multiplier32FP_tb.sv
 	-top multiplier32FP_tb
 	-access +rwc
-	-sdf_cmd_file /home/cinovador/Documents/course_files/physical_synthesis/synthesis/frontend/sdf_cmd_file.cmd
 Recompiling... reason: file '../multiplier32FP_tb.sv' is newer than expected.
-	expected: Thu Feb 27 15:21:26 2025
-	actual:   Thu Feb 27 15:24:09 2025
+	expected: Thu Feb 27 15:44:56 2025
+	actual:   Thu Feb 27 15:46:59 2025
 file: /home/cinovador/Documents/course_files/physical_synthesis/synthesis/frontend/multiplier32FP_tb.sv
 	module worklib.multiplier32FP_tb:sv
 		errors: 0, warnings: 0
@@ -21,17 +17,16 @@ file: /home/cinovador/Documents/course_files/physical_synthesis/synthesis/fronte
 		Caching library 'worklib' ....... Done
 	Top level design units:
 		multiplier32FP_tb
-xmelab: *W,FLFFNF: Compiled SDF file (../backend/synthesis/deliverables/multiplier32FP_worst.sdf.X) not found, specified in SDF annotation command file /home/cinovador/Documents/course_files/physical_synthesis/synthesis/frontend/sdf_cmd_file.cmd, line 8.
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.multiplier32FP_tb:sv <0x7da0a7da>
-			streams:  14, words: 11596
+		worklib.multiplier32FP_tb:sv <0x1b9d4137>
+			streams:  14, words: 13060
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
 		                  Instances  Unique
 		Modules:                  2       2
-		Registers:               48      48
+		Registers:               50      50
 		Scalar wires:            13       -
 		Vectored wires:           4       -
 		Always blocks:            4       4
@@ -102,7 +97,8 @@ Line          92 Error: Expected 80000000, got e650d352
 Line          98 Error: Expected 3568b4f0, got 3568b4ef
 Line         100 Error: Expected dc84a4ce, got dc84a4cd
 Finished testing all vectors.          58 errors found.
-Simulation complete via $finish(1) at time 4310 NS + 0
-../multiplier32FP_tb.sv:108         $finish;
+Total runtime: 460000 time units
+Simulation complete via $finish(1) at time 4600 NS + 0
+../multiplier32FP_tb.sv:118         $finish;
 xcelium> exit
-TOOL:	xrun(64)	24.09-s001: Exiting on Feb 27, 2025 at 15:24:21 -03  (total: 00:00:00)
+TOOL:	xrun(64)	24.09-s001: Exiting on Feb 27, 2025 at 15:47:11 -03  (total: 00:00:10)
