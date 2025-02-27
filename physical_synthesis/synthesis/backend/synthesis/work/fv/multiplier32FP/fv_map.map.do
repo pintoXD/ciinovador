@@ -113,6 +113,10 @@ add mapped point product_o[0] product_o[0] -type PO PO
 
 
 //Sequential Pins
+add mapped point current_state[0]/q current_state_reg[0]/Q  -type DFF DFF
+add mapped point current_state[2]/q current_state_reg[2]/Q  -type DFF DFF
+add mapped point current_state[2]/q current_state_reg[2]/QN  -type DFF DFF
+add mapped point done_o/q done_o_reg/Q  -type DFF DFF
 add mapped point exponent_temp[0]/q exponent_temp_reg[0]/Q  -type DLAT DLAT
 add mapped point exponent_temp[0]/q exponent_temp_reg[0]/QN  -type DLAT DLAT
 add mapped point exponent_temp[1]/q exponent_temp_reg[1]/Q  -type DLAT DLAT
@@ -133,6 +137,7 @@ add mapped point exponent_temp[8]/q exponent_temp_reg[8]/Q  -type DLAT DLAT
 add mapped point exponent_temp[8]/q exponent_temp_reg[8]/QN  -type DLAT DLAT
 add mapped point exponent_temp[9]/q exponent_temp_reg[9]/Q  -type DLAT DLAT
 add mapped point exponent_temp[9]/q exponent_temp_reg[9]/QN  -type DLAT DLAT
+add mapped point inifinit_o/q inifinit_o_reg/Q  -type DFF DFF
 add mapped point mantissa_temp[23]/q mantissa_temp_reg[23]/Q  -type DLAT DLAT
 add mapped point mantissa_temp[23]/q mantissa_temp_reg[23]/QN  -type DLAT DLAT
 add mapped point mantissa_temp[24]/q mantissa_temp_reg[24]/Q  -type DLAT DLAT
@@ -179,17 +184,6 @@ add mapped point mantissa_temp[44]/q mantissa_temp_reg[44]/Q  -type DLAT DLAT
 add mapped point mantissa_temp[44]/q mantissa_temp_reg[44]/QN  -type DLAT DLAT
 add mapped point mantissa_temp[45]/q mantissa_temp_reg[45]/Q  -type DLAT DLAT
 add mapped point mantissa_temp[45]/q mantissa_temp_reg[45]/QN  -type DLAT DLAT
-add mapped point product_o[31]/q product_o_reg[31]/Q  -type DFF DFF
-add mapped point signal_a/q signal_a_reg/Q  -type DLAT DLAT
-add mapped point signal_a/q signal_a_reg/QN  -type DLAT DLAT
-add mapped point signal_b/q signal_b_reg/Q  -type DLAT DLAT
-add mapped point signal_b/q signal_b_reg/QN  -type DLAT DLAT
-add mapped point current_state[0]/q current_state_reg[0]/Q  -type DFF DFF
-add mapped point current_state[1]/q current_state_reg[1]/Q  -type DFF DFF
-add mapped point current_state[1]/q current_state_reg[1]/QN  -type DFF DFF
-add mapped point current_state[2]/q current_state_reg[2]/Q  -type DFF DFF
-add mapped point done_o/q done_o_reg/Q  -type DFF DFF
-add mapped point inifinit_o/q inifinit_o_reg/Q  -type DFF DFF
 add mapped point nan_o/q nan_o_reg/Q  -type DFF DFF
 add mapped point overflow_o/q overflow_o_reg/Q  -type DFF DFF
 add mapped point product_o[0]/q product_o_reg[0]/Q  -type DFF DFF
@@ -223,7 +217,14 @@ add mapped point product_o[27]/q product_o_reg[27]/Q  -type DFF DFF
 add mapped point product_o[28]/q product_o_reg[28]/Q  -type DFF DFF
 add mapped point product_o[29]/q product_o_reg[29]/Q  -type DFF DFF
 add mapped point product_o[30]/q product_o_reg[30]/Q  -type DFF DFF
+add mapped point product_o[31]/q product_o_reg[31]/Q  -type DFF DFF
+add mapped point signal_a/q signal_a_reg/Q  -type DLAT DLAT
+add mapped point signal_a/q signal_a_reg/QN  -type DLAT DLAT
+add mapped point signal_b/q signal_b_reg/Q  -type DLAT DLAT
+add mapped point signal_b/q signal_b_reg/QN  -type DLAT DLAT
 add mapped point underflow_o/q underflow_o_reg/Q  -type DFF DFF
+add mapped point current_state[1]/q current_state_reg[1]/Q  -type DFF DFF
+add mapped point current_state[1]/q current_state_reg[1]/QN  -type DFF DFF
 
 
 

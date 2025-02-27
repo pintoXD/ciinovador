@@ -5,11 +5,11 @@ export USER=$USER;# put here YOUR user name at this machine
 export PROJECT_DIR=${PWD}
 export BACKEND_DIR=${PROJECT_DIR}/backend
 export FRONTEND_DIR=${PROJECT_DIR}/frontend
-export TECH_DIR=/home/tools/cadence/gpdk;# techonology dependant comand only valid for UFC guys. Uncomment this line if you are from UFC.
+export TECH_DIR=/home/tools/cadence/gpdk; # techonology dependant comand only valid for UFC guys. Uncomment this line if you are from UFC.
 export HDL_NAME=${DESIGNS}
 export VLOG_LIST="$BACKEND_DIR/synthesis/deliverables/${DESIGNS}.v  $BACKEND_DIR/synthesis/deliverables/${DESIGNS}_io.v  $BACKEND_DIR/synthesis/deliverables/${DESIGNS}_chip.v"
 export LIB_DIR=${TECH_DIR}/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing
-export LIB_VERILOG_FILES=${TECH_DIR}/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/
+export LIB_VERILOG_FILES=${TECH_DIR}/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/verilog
 
 
 
@@ -31,7 +31,7 @@ if [ $1 == "-xrun_compiled" ]; then
     # Para executar o XCELIUM
     cd ${PROJECT_DIR}/frontend/work
     ### run netlist (logic synthesis)
-    xrun -64bit ${TECH_DIR}/gsclib045_all_v4.4/gsclib045/verilog/slow_vdd1v0_basicCells.v ${PROJECT_DIR}/backend/synthesis/deliverables/${DESIGNS}.v -top ${DESIGNS}_tb -access +rwc -gui
+    xrun -64bit ${LIB_VERILOG_FILES}/slow_vdd1v0_basicCells.v ${PROJECT_DIR}/backend/synthesis/deliverables/${DESIGNS}.v ${FRONTEND_DIR}/${DESIGNS}_tb.sv -top ${DESIGNS}_tb -access +rwc -gui
 fi
 
 if [ $1 == "-xrun_sdf" ]; then
@@ -39,8 +39,8 @@ if [ $1 == "-xrun_sdf" ]; then
     cd ${PROJECT_DIR}/frontend/work
     ### run netlist (logic syntesis) with compiled SDF 
     xmsdfc -iocondsort -compile ${PROJECT_DIR}/backend/synthesis/deliverables/${DESIGNS}_worst.sdf && \
-    xrun -timescale 1ns/10ps -mess -64bit -noneg_tchk ${TECH_DIR}/gsclib045_all_v4.4/gsclib045/verilog/slow_vdd1v0_basicCells.v \
-    ${PROJECT_DIR}/backend/synthesis/deliverables/${DESIGNS}.v Util_package.vhd ${DESIGNS}_tb.vhd -top ${DESIGNS}_tb \
+    xrun -timescale 1ns/10ps -mess -64bit -noneg_tchk ${LIB_VERILOG_FILES}/slow_vdd1v0_basicCells.v \
+    ${PROJECT_DIR}/backend/synthesis/deliverables/${DESIGNS}.v ${FRONTEND_DIR}/${DESIGNS}_tb.sv -top ${DESIGNS}_tb \
     -access +rwc -sdf_cmd_file ${PROJECT_DIR}/frontend/sdf_cmd_file.cmd -gui 
 fi
 
