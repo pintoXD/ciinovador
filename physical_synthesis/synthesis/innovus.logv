@@ -1,0 +1,48 @@
+[02/27 17:57:21      0s] 
+[02/27 17:57:21      0s] Cadence Innovus(TM) Implementation System.
+[02/27 17:57:21      0s] Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+[02/27 17:57:21      0s] 
+[02/27 17:57:21      0s] Version:	v21.15-s110_1, built Fri Sep 23 13:08:12 PDT 2022
+[02/27 17:57:21      0s] Options:	
+[02/27 17:57:21      0s] Date:		Thu Feb 27 17:57:21 2025
+[02/27 17:57:21      0s] Host:		cinova05.lesc.ufc.br (x86_64 w/Linux 4.18.0-553.36.1.el8_10.x86_64) (14cores*20cpus*13th Gen Intel(R) Core(TM) i5-13500 24576KB)
+[02/27 17:57:21      0s] OS:		Rocky Linux release 8.10 (Green Obsidian)
+[02/27 17:57:21      0s] 
+[02/27 17:57:21      0s] License:
+[02/27 17:57:21      0s] 		[17:57:21.201657] Configured Lic search path (21.01-s002): 5280@192.168.0.10
+
+[02/27 17:57:30      0s] 		invs	Innovus Implementation System	21.1	checkout succeeded
+[02/27 17:57:30      0s] 		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+[02/27 17:57:39      7s] Reset Parastics called with the command setExtractRCMode -reset@(#)CDS: Innovus v21.15-s110_1 (64bit) 09/23/2022 13:08 (Linux 3.10.0-693.el7.x86_64)
+[02/27 17:57:41      9s] @(#)CDS: NanoRoute 21.15-s110_1 NR220912-2004/21_15-UB (database version 18.20.592) {superthreading v2.17}
+[02/27 17:57:41      9s] @(#)CDS: AAE 21.15-s039 (64bit) 09/23/2022 (Linux 3.10.0-693.el7.x86_64)
+[02/27 17:57:41      9s] @(#)CDS: CTE 21.15-s038_1 () Sep 20 2022 11:42:13 ( )
+[02/27 17:57:41      9s] @(#)CDS: SYNTECH 21.15-s012_1 () Sep  5 2022 10:25:51 ( )
+[02/27 17:57:41      9s] @(#)CDS: CPE v21.15-s076
+[02/27 17:57:41      9s] @(#)CDS: IQuantus/TQuantus 21.1.1-s867 (64bit) Sun Jun 26 22:12:54 PDT 2022 (Linux 3.10.0-693.el7.x86_64)
+[02/27 17:57:41      9s] @(#)CDS: OA 22.60-p076 Wed May 18 13:45:29 2022
+[02/27 17:57:41      9s] @(#)CDS: SGN 20.10-d001 (01-Jun-2020) (64 bit executable, Qt5.9.0)
+[02/27 17:57:41      9s] @(#)CDS: RCDB 11.15.0
+[02/27 17:57:41      9s] @(#)CDS: STYLUS 21.12-s013_1 (08/15/2022 08:25 PDT)
+[02/27 17:57:41      9s] @(#)CDS: SystemPlanner-21.15Rel-8720 (21.15) (2022-08-22 18:31:54+0800)
+[02/27 17:57:41      9s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_182382_cinova05.lesc.ufc.br_cinovador_xFpFU9.
+
+[02/27 17:57:41      9s] Change the soft stacksize limit to 0.2%RAM (63 mbytes). Set global soft_stack_size_limit to change the value.
+[02/27 17:57:42     10s] 
+[02/27 17:57:42     10s] **INFO:  MMMC transition support version v31-84 
+[02/27 17:57:42     10s] 
+[02/27 17:57:42     10s] <CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+[02/27 17:57:42     10s] <CMD> suppressMessage ENCEXT-2799
+[02/27 17:57:42     10s] <CMD> getVersion
+[02/27 17:57:42     10s] [INFO] Loading PVS 23.11 fill procedures
+[02/27 17:57:43     10s] <CMD> win
+[02/27 17:58:18     12s] **INFO (INTERRUPT): The current script will stop before next command.
+[02/27 17:58:18     12s] **INFO (INTERRUPT): One more Ctrl-C to exit Innovus ...
+[02/27 17:58:20     12s] invalid command name "/home/cinovador/Documents/course_files/physical_synthesis/synthesis/backend/layout/scripts/layout.tcl"
+[02/27 17:58:55     14s] <CMD> read_activity_file -format VCD -scope multiplier32/DUT frontend/work/multiplier32FP_MAX_tb.vcd
+[02/27 17:59:33     17s] <CMD> read_activity_file -format VCD -scope multiplier32_tb/DUT frontend/work/multiplier32FP_MAX_tb.vcd
+[02/27 17:59:53     18s] 
+[02/27 17:59:53     18s] *** Memory Usage v#1 (Current mem = 1191.852M, initial mem = 483.914M) ***
+[02/27 17:59:53     18s] *** Message Summary: 0 warning(s), 0 error(s)
+[02/27 17:59:53     18s] 
+[02/27 17:59:53     18s] --- Ending "Innovus" (totcpu=0:00:18.4, real=0:02:32, mem=1191.9M) ---
