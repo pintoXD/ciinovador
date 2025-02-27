@@ -274,7 +274,7 @@ write_sdf -edge check_edge -map_setuphold merge_always -map_recrem merge_always 
 #-----------------------------------------------------------------------------
 # command
 get_db power_method ;# this command should return "static"
-report_power -power_unit uW > ${BACKEND_DIR}/layout/deliverables/reports/power_report_no_VCD.rpt
+report_power -power_unit uW > ${BACKEND_DIR}/layout/deliverables/reports/power_report_20MHZ_no_VCD.rpt
 #
 set_db power_corner min
 ##set_default_switching_activity -reset
@@ -286,12 +286,12 @@ set_db power_corner min
 # The following command must be uncommented when we have the VCD MAX files.
 # #
 read_activity_file -format VCD -scope ${DESIGNS}_tb/DUT ${PROJECT_DIR}/frontend/work/${DESIGNS}_MAX_tb.vcd
-report_power -power_unit uW > ${BACKEND_DIR}/layout/deliverables/reports/power_report_VCD_MAX.rpt
+report_power -power_unit uW > ${BACKEND_DIR}/layout/deliverables/reports/power_report_20MHZ_VCD_MAX.rpt
 
 # The following command must be uncommented when we have the VCD MIN files.
 # #
 read_activity_file -format VCD -scope ${DESIGNS}_tb/DUT ${PROJECT_DIR}/frontend/work/${DESIGNS}_MIN_tb.vcd -reset
-report_power -power_unit uW > ${BACKEND_DIR}/layout/deliverables/reports/power_report_VCD_MIN.rpt
+report_power -power_unit uW > ${BACKEND_DIR}/layout/deliverables/reports/power_report_20MHZ_VCD_MIN.rpt
 
 
 # #

@@ -104,11 +104,11 @@ get_db insts .base_cell.name -u ;# List all cell names used in the current desig
 # Preparing and generating output data (reports, verilog netlist)
 #-----------------------------------------------------------------------------
 report_design_rules ;# > ${RPT_DIR}/${HDL_NAME}_drc.rpt
-report_area > ${RPT_DIR}/${HDL_NAME}_20MHZ_area.rpt
-report_timing > ${RPT_DIR}/${HDL_NAME}_20MHZ_timing.rpt
-report_gates > ${RPT_DIR}/${HDL_NAME}_20MHZ_gates.rpt
-report_qor > ${RPT_DIR}/${HDL_NAME}_20MHZ_qor.rpt
-report_power -unit uW > ${RPT_DIR}/${HDL_NAME}_20MHZ_power.rpt
+report_area > ${RPT_DIR}/${HDL_NAME}_area.rpt
+report_timing > ${RPT_DIR}/${HDL_NAME}_timing.rpt
+report_gates > ${RPT_DIR}/${HDL_NAME}_gates.rpt
+report_qor > ${RPT_DIR}/${HDL_NAME}_qor.rpt
+report_power -unit uW > ${RPT_DIR}/${HDL_NAME}_power.rpt
 source ${SCRIPT_DIR}/common/sdf_width_wa.etf
 write_sdf -edge check_edge -setuphold merge_always -nonegchecks -recrem merge_always -version 3.0 -design ${HDL_NAME}  > ${DEV_DIR}/${HDL_NAME}_worst.sdf
 write_hdl ${HDL_NAME} > ${DEV_DIR}/${HDL_NAME}.v
