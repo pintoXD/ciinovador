@@ -1,5 +1,5 @@
 xrun(64): 24.09-s001: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	24.09-s001: Started on Feb 27, 2025 at 18:53:36 -03
+TOOL:	xrun(64)	24.09-s001: Started on Feb 27, 2025 at 19:04:53 -03
 xrun
 	-timescale 1ns/10ps
 	-mess
@@ -103,8 +103,8 @@ Line          92 Error: Expected 80000000, got e650d352
 Line          98 Error: Expected 3568b4f0, got 3568b4ef
 Line         100 Error: Expected dc84a4ce, got dc84a4cd
 Finished testing all vectors.          58 errors found.
-Total runtime: 4011000 time units
-Simulation complete via $finish(1) at time 120330 NS + 0
+Total runtime: 431000 time units
+Simulation complete via $finish(1) at time 12930 NS + 0
 ../multiplier32FP_MAX_tb.sv:119         $finish;
 xcelium> exit
-TOOL:	xrun(64)	24.09-s001: Exiting on Feb 27, 2025 at 18:53:36 -03  (total: 00:00:00)
+TOOL:	xrun(64)	24.09-s001: Exiting on Feb 27, 2025 at 19:04:54 -03  (total: 00:00:01)

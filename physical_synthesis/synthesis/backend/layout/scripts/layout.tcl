@@ -294,6 +294,11 @@ read_activity_file -format VCD -scope ${DESIGNS}_tb/DUT ${PROJECT_DIR}/frontend/
 report_power -power_unit uW > ${BACKEND_DIR}/layout/deliverables/reports/power_report_VCD_MIN.rpt
 
 
+
+report_area > ${BACKEND_DIR}/layout/deliverables/reports/report_area.rpt
+report_timing > ${BACKEND_DIR}/layout/deliverables/reports/report_timing.rpt
+
+
 # #
 # read_activity_file -format VCD -scope somador_tb(verification)/DUV ${FRONTEND_DIR}/vcd/${DESIGNS}_layout_10kns.vcd
 # report_power -power_unit uW > ${BACKEND_DIR}/layout/deliverables/reports/power_report_VCD_10kns.rpt
