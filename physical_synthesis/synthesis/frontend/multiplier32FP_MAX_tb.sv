@@ -53,10 +53,10 @@ module multiplier32FP_tb();
         return (diff > 0.1) ? 1 : 0;
     endfunction
 
-    int clock_period = 100; // 10MHz clock
+    int clock_period = 25; // 20MHz clock
 
     always begin
-        clk = 1; #50; clk = 0; #50; // 10MHz clock
+        clk = 1; #25; clk = 0; #25; // 20MHz clock
     end
 
     initial begin

@@ -13,12 +13,12 @@ Begin Processing Timing Library for Power Calculation
 
 Begin Processing Power Net/Grid for Power Calculation
 
-Ended Processing Power Net/Grid for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1963.61MB/3861.86MB/1963.61MB)
+Ended Processing Power Net/Grid for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=2010.22MB/3868.11MB/2010.22MB)
 
 Begin Processing Timing Window Data for Power Calculation
 
 CK: assigning clock clk to net clk
-Ended Processing Timing Window Data for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1963.61MB/3861.86MB/1963.61MB)
+Ended Processing Timing Window Data for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=2010.22MB/3868.11MB/2010.22MB)
 
 ** WARN:  (VOLTUS_POWR-1784): The SDC clock frequency 10MHz is being overwritten with the VCD clock frequency 10.0017MHz for the clock 'clk' associated with the net
 'clk' from the TCF file. If the SDC clock frequency is required for static power calculation, use the command
@@ -26,16 +26,16 @@ Ended Processing Timing Window Data for Power Calculation: (cpu=0:00:00, real=0:
 
 Begin Processing User Attributes
 
-Ended Processing User Attributes: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1963.61MB/3861.86MB/1963.61MB)
+Ended Processing User Attributes: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=2010.22MB/3868.11MB/2010.22MB)
 
 Begin Processing Signal Activity
 
 
 Starting Activity Propagation
-2025-Feb-27 18:05:40 (2025-Feb-27 21:05:40 GMT)
+2025-Feb-27 18:24:05 (2025-Feb-27 21:24:05 GMT)
 
 Finished Activity Propagation
-2025-Feb-27 18:05:40 (2025-Feb-27 21:05:40 GMT)
+2025-Feb-27 18:24:05 (2025-Feb-27 21:24:05 GMT)
 
 Activity annotation summary:
         Primary Inputs : 67/67 = 100%
@@ -44,7 +44,7 @@ Activity annotation summary:
       Tristate outputs : 0/0 = 0%
             Total Nets : 1817/1847 = 98.3757%
 
-Ended Processing Signal Activity: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1963.61MB/3861.86MB/1963.61MB)
+Ended Processing Signal Activity: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=2010.22MB/3868.11MB/2010.22MB)
 
 Begin Power Computation
 
@@ -57,39 +57,39 @@ Begin Power Computation
 
 
 Starting Calculating power
-2025-Feb-27 18:05:40 (2025-Feb-27 21:05:40 GMT)
+2025-Feb-27 18:24:05 (2025-Feb-27 21:24:05 GMT)
  ... Calculating switching power
-2025-Feb-27 18:05:40 (2025-Feb-27 21:05:40 GMT): 10%
-2025-Feb-27 18:05:40 (2025-Feb-27 21:05:40 GMT): 20%
-2025-Feb-27 18:05:40 (2025-Feb-27 21:05:40 GMT): 30%
-2025-Feb-27 18:05:40 (2025-Feb-27 21:05:40 GMT): 40%
-2025-Feb-27 18:05:40 (2025-Feb-27 21:05:40 GMT): 50%
+2025-Feb-27 18:24:05 (2025-Feb-27 21:24:05 GMT): 10%
+2025-Feb-27 18:24:05 (2025-Feb-27 21:24:05 GMT): 20%
+2025-Feb-27 18:24:05 (2025-Feb-27 21:24:05 GMT): 30%
+2025-Feb-27 18:24:05 (2025-Feb-27 21:24:05 GMT): 40%
+2025-Feb-27 18:24:05 (2025-Feb-27 21:24:05 GMT): 50%
  ... Calculating internal and leakage power
-2025-Feb-27 18:05:40 (2025-Feb-27 21:05:40 GMT): 60%
-2025-Feb-27 18:05:40 (2025-Feb-27 21:05:40 GMT): 70%
-2025-Feb-27 18:05:40 (2025-Feb-27 21:05:40 GMT): 80%
-2025-Feb-27 18:05:40 (2025-Feb-27 21:05:40 GMT): 90%
+2025-Feb-27 18:24:05 (2025-Feb-27 21:24:05 GMT): 60%
+2025-Feb-27 18:24:05 (2025-Feb-27 21:24:05 GMT): 70%
+2025-Feb-27 18:24:05 (2025-Feb-27 21:24:05 GMT): 80%
+2025-Feb-27 18:24:05 (2025-Feb-27 21:24:05 GMT): 90%
 
 Finished Calculating power
-2025-Feb-27 18:05:40 (2025-Feb-27 21:05:40 GMT)
+2025-Feb-27 18:24:05 (2025-Feb-27 21:24:05 GMT)
       # of MSMV cell(s) missing power_level: 0
-Ended Power Computation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1963.61MB/3861.86MB/1963.61MB)
+Ended Power Computation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=2010.22MB/3868.11MB/2010.22MB)
 
 Begin Processing User Attributes
 
-Ended Processing User Attributes: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1963.61MB/3861.86MB/1963.61MB)
+Ended Processing User Attributes: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=2010.22MB/3868.11MB/2010.22MB)
 
-Ended Power Analysis: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1963.61MB/3861.86MB/1963.61MB)
+Ended Power Analysis: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=2010.22MB/3868.11MB/2010.22MB)
 
 Begin Boundary Leakage Calculation
 Ended Boundary Leakage Calculation: (cpu=0:00:00, real=0:00:00,
-mem(process/total/peak)=1963.61MB/3861.86MB/1963.61MB)
+mem(process/total/peak)=2010.22MB/3868.11MB/2010.22MB)
 Begin Static Power Report Generation
 *----------------------------------------------------------------------------------------
 *	Innovus 21.15-s110_1 (64bit) 09/23/2022 13:08 (Linux 3.10.0-693.el7.x86_64)
 *	
 *
-* 	Date & Time:	2025-Feb-27 18:05:40 (2025-Feb-27 21:05:40 GMT)
+* 	Date & Time:	2025-Feb-27 18:24:05 (2025-Feb-27 21:24:05 GMT)
 *
 *----------------------------------------------------------------------------------------
 *
@@ -176,5 +176,5 @@ VDD                      1.32       4977        5299       557.9   1.083e+04    
 ** INFO:  (VOLTUS_POWR-3465): There are 0 decaps and 0 fillers in the design
 
 Ended Static Power Report Generation: (cpu=0:00:00, real=0:00:00,
-mem(process/total/peak)=1963.61MB/3861.86MB/1963.61MB)
+mem(process/total/peak)=2010.22MB/3868.11MB/2010.22MB)
 
