@@ -24,7 +24,6 @@ module multiplier32FP_tb();
     
     int a, b;
 
-
     multiplier32FP DUT (
         .clk(clk), 
         .rst_n(rst_n),
@@ -59,8 +58,8 @@ module multiplier32FP_tb();
     end
 
     initial begin
-        // $dumpfile("alu_testvectors_tb.vcd");
-        // $dumpvars(0, alu_testvectors_tb);
+        $dumpfile("multiplier32FP_tb.vcd");
+        $dumpvars(0, multiplier32FP_tb);
         #100;
         file = $fopen("vetor.txt", "r");
         if (file == 0) begin

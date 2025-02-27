@@ -5,9 +5,9 @@ of Cadence Design Systems, Inc. in the United States and other countries.
 
 Version: 21.10-p002_1, built Fri Aug 20 06:13:13 PDT 2021
 Options: -abort_on_error -lic_startup Genus_Synthesis -lic_startup_options Genus_Physical_Opt -log /home/cinovador/Documents/course_files/physical_synthesis/synthesis/backend/synthesis/work/genus/genus -overwrite -files /home/cinovador/Documents/course_files/physical_synthesis/synthesis/backend/synthesis/scripts/multiplier32FP.tcl 
-Date:    Thu Feb 27 12:21:11 2025
+Date:    Thu Feb 27 15:13:20 2025
 Host:    cinova05.lesc.ufc.br (x86_64 w/Linux 4.18.0-553.36.1.el8_10.x86_64) (14cores*20cpus*1physical cpu*13th Gen Intel(R) Core(TM) i5-13500 24576KB) (32333796KB)
-PID:     67773
+PID:     109385
 OS:      Rocky Linux release 8.10 (Green Obsidian)
 
 Checking out license: Genus_Synthesis
@@ -19,7 +19,7 @@ Checking out license: Genus_Synthesis
 
 
 Loading tool scripts...
-Finished loading tool scripts (6 seconds elapsed).
+Finished loading tool scripts (5 seconds elapsed).
 
 Checking out license: Genus_Physical_Opt
 
@@ -60,7 +60,7 @@ Checking out license: Genus_Physical_Opt
 @file(multiplier32FP.tcl) 45: set WORST_CAP_LIST ${TECH_DIR}/gpdk045_v_6_0/soce/gpdk045.basic.CapTbl
 @file(multiplier32FP.tcl) 46: set QRC_LIST ${TECH_DIR}/gpdk045_v_6_0/qrc/rcworst/qrcTechFile
 @file(multiplier32FP.tcl) 53: source ${PROJECT_DIR}/backend/synthesis/scripts/common/path.tcl
-Sourcing '/home/cinovador/Documents/course_files/physical_synthesis/synthesis/backend/synthesis/scripts/common/path.tcl' (Thu Feb 27 12:21:18 -03 2025)...
+Sourcing '/home/cinovador/Documents/course_files/physical_synthesis/synthesis/backend/synthesis/scripts/common/path.tcl' (Thu Feb 27 15:13:25 -03 2025)...
 #@ Begin verbose source /home/cinovador/Documents/course_files/physical_synthesis/synthesis/backend/synthesis/scripts/common/path.tcl
 @file(path.tcl) 5: set BACKEND_DIR ${PROJECT_DIR}/backend
 @file(path.tcl) 6: set SYNT_DIR ${BACKEND_DIR}/synthesis
@@ -75,7 +75,7 @@ Sourcing '/home/cinovador/Documents/course_files/physical_synthesis/synthesis/ba
 @file(path.tcl) 36: set LEF_DIR ${TECH_DIR}/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/lef
 #@ End verbose source /home/cinovador/Documents/course_files/physical_synthesis/synthesis/backend/synthesis/scripts/common/path.tcl
 @file(multiplier32FP.tcl) 58: source ${SCRIPT_DIR}/common/tech.tcl
-Sourcing '/home/cinovador/Documents/course_files/physical_synthesis/synthesis/backend/synthesis/scripts/common/tech.tcl' (Thu Feb 27 12:21:18 -03 2025)...
+Sourcing '/home/cinovador/Documents/course_files/physical_synthesis/synthesis/backend/synthesis/scripts/common/tech.tcl' (Thu Feb 27 15:13:25 -03 2025)...
 #@ Begin verbose source /home/cinovador/Documents/course_files/physical_synthesis/synthesis/backend/synthesis/scripts/common/tech.tcl
 @file(tech.tcl) 5: create_library_domain {worst best} 
 @file(tech.tcl) 6: get_db library_domains *
@@ -493,17 +493,15 @@ multiplier32FP.sv
 Info    : Elaborating Design. [ELAB-1]
         : Elaborating top-level block 'multiplier32FP' from file '/home/cinovador/Documents/course_files/physical_synthesis/synthesis/frontend/multiplier32FP.sv'.
 Warning : Removing unused register. [CDFG-508]
-        : Removing unused latch register 'is_multiplication_done' in module 'multiplier32FP' in file '/home/cinovador/Documents/course_files/physical_synthesis/synthesis/frontend/multiplier32FP.sv' on line 57.
+        : Removing unused flip-flop register 'mantissa_temp_ff' in module 'multiplier32FP' in file '/home/cinovador/Documents/course_files/physical_synthesis/synthesis/frontend/multiplier32FP.sv' on line 51.
         : Genus removes the flip-flop or latch inferred for an unused signal or variable. To preserve the flip-flop or latch, set the hdl_preserve_unused_registers attribute to true or use a pragma in the RTL.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'exponent_temp_ff' in module 'multiplier32FP' in file '/home/cinovador/Documents/course_files/physical_synthesis/synthesis/frontend/multiplier32FP.sv' on line 51.
 Warning : Generated logic differs from the expected logic. [CDFG2G-615]
-        : Signal 'signal_a' in module 'multiplier32FP' modeled as latch instead of wire in file '/home/cinovador/Documents/course_files/physical_synthesis/synthesis/frontend/multiplier32FP.sv' on line 57, column 15.
+        : Signal 'mantissa_temp' in module 'multiplier32FP' modeled as latch instead of wire in file '/home/cinovador/Documents/course_files/physical_synthesis/synthesis/frontend/multiplier32FP.sv' on line 65, column 29.
         : The logic generated for an always_comb, always_latch or always_ff process may not match the behavior specified in the input HDL.
 Warning : Generated logic differs from the expected logic. [CDFG2G-615]
-        : Signal 'signal_b' in module 'multiplier32FP' modeled as latch instead of wire in file '/home/cinovador/Documents/course_files/physical_synthesis/synthesis/frontend/multiplier32FP.sv' on line 57, column 25.
-Warning : Generated logic differs from the expected logic. [CDFG2G-615]
-        : Signal 'mantissa_temp' in module 'multiplier32FP' modeled as latch instead of wire in file '/home/cinovador/Documents/course_files/physical_synthesis/synthesis/frontend/multiplier32FP.sv' on line 57, column 37.
-Warning : Generated logic differs from the expected logic. [CDFG2G-615]
-        : Signal 'exponent_temp' in module 'multiplier32FP' modeled as latch instead of wire in file '/home/cinovador/Documents/course_files/physical_synthesis/synthesis/frontend/multiplier32FP.sv' on line 57, column 37.
+        : Signal 'exponent_temp' in module 'multiplier32FP' modeled as latch instead of wire in file '/home/cinovador/Documents/course_files/physical_synthesis/synthesis/frontend/multiplier32FP.sv' on line 65, column 29.
 Info    : Done Elaborating Design. [ELAB-3]
         : Done elaborating 'multiplier32FP'.
 Checking for analog nets...
@@ -541,7 +539,7 @@ No empty modules in design 'multiplier32FP'
 @file(multiplier32FP.tcl) 76: check_library
 ============================================================
   Generated by:           Genus(TM) Synthesis Solution 21.10-p002_1
-  Generated on:           Feb 27 2025  12:21:21 pm
+  Generated on:           Feb 27 2025  03:13:27 pm
   Module:                 multiplier32FP
   Library domain:         worst
     Domain index:         0
@@ -593,7 +591,7 @@ read_sdc completed in 00:00:00 (hh:mm:ss)
 @file(multiplier32FP.tcl) 83: report timing -lint
 ============================================================
   Generated by:           Genus(TM) Synthesis Solution 21.10-p002_1
-  Generated on:           Feb 27 2025  12:21:21 pm
+  Generated on:           Feb 27 2025  03:13:27 pm
   Module:                 multiplier32FP
   Library domain:         worst
     Domain index:         0
@@ -614,10 +612,10 @@ The following sequential clock pins have no clock waveform driving them.  No
 timing constraints will be derived for paths leading to or from these pins.     
 (Pin | Source | Reason)                                                         
 
-pin:multiplier32FP/signal_a_reg/ena {pin:multiplier32FP/current_state_reg[2]/q} {Disabled timing*}
-pin:multiplier32FP/signal_b_reg/ena {pin:multiplier32FP/current_state_reg[2]/q} {Disabled timing*}
 {pin:multiplier32FP/exponent_temp_reg[0]/ena} {pin:multiplier32FP/current_state_reg[2]/q} {Disabled timing*}
-  ... 57 other warnings in this category.
+{pin:multiplier32FP/exponent_temp_reg[1]/ena} {pin:multiplier32FP/current_state_reg[2]/q} {Disabled timing*}
+{pin:multiplier32FP/exponent_temp_reg[2]/ena} {pin:multiplier32FP/current_state_reg[2]/q} {Disabled timing*}
+  ... 55 other warnings in this category.
  Use the -verbose option for more details.
 -------------------------------------------------------------------------------
 
@@ -625,7 +623,7 @@ pin:multiplier32FP/signal_b_reg/ena {pin:multiplier32FP/current_state_reg[2]/q} 
 Lint summary
  Unconnected/logic driven clocks                                  0
  Sequential data pins driven by a clock signal                    0
- Sequential clock pins without clock waveform                    60
+ Sequential clock pins without clock waveform                    58
  Sequential clock pins with multiple clock waveforms              0
  Generated clocks without clock waveform                          0
  Generated clocks with incompatible options                       0
@@ -642,7 +640,7 @@ Lint summary
  Outputs without external load                                    0
  Exceptions with invalid timing start-/endpoints                  0
 
-                                                  Total:         60
+                                                  Total:         58
 @file(multiplier32FP.tcl) 89: set_db auto_ungroup none ;# (none|both) ungrouping will not be performed
   Setting attribute of root '/': 'auto_ungroup' = none
 @file(multiplier32FP.tcl) 94: syn_generic ${HDL_NAME}
@@ -718,7 +716,7 @@ stamp 'PBS_Generic-Start' being created for table 'pbs_debug'
 
   Total Time (Wall) |  Stage Time (Wall)  |   % (Wall)   |    Date - Time     |  Memory   | Stage
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:06(00:00:06) |  00:00:00(00:00:00) |   0.0(  0.0) |   12:21:21 (Feb27) |  477.3 MB | PBS_Generic-Start
+ 00:00:05(00:00:04) |  00:00:00(00:00:00) |   0.0(  0.0) |   15:13:27 (Feb27) |  489.2 MB | PBS_Generic-Start
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
 Number of threads: 8 * 1   (id: pbs_debug, time_info v1.57)
 Info: (*N*) indicates data that was populated from previously saved time_info database
@@ -727,7 +725,7 @@ TNS Restructuring config: no_value at stage: generic applied.
 Info    : Partition Based Synthesis execution skipped. [PHYS-752]
         : Design size is less than the partition size '100000' for distributed generic optimization to kick in.
 Starting mux data reorder optimization [v1.0] (stage: pre_to_gen_setup, startdef: multiplier32FP, recur: true)
-Completed mux data reorder optimization (accepts: 0, rejects: 0, runtime: 0.000s)
+Completed mux data reorder optimization (accepts: 0, rejects: 0, runtime: 0.001s)
 Starting mux data reorder optimization [v1.0] (stage: post_to_gen_setup, startdef: multiplier32FP, recur: true)
 Completed mux data reorder optimization (accepts: 0, rejects: 0, runtime: 0.000s)
 Current PLE settings:
@@ -796,13 +794,13 @@ Completed Unified Mux Engine Tricks
 --------------------------------------------
 --------------------------------------------
 Starting datapath recasting [v1.0] (stage: pre_rtlopt, startdef: multiplier32FP, recur: true)
-Completed datapath recasting (accepts: 0, rejects: 0, runtime: 0.001s)
+Completed datapath recasting (accepts: 0, rejects: 0, runtime: 0.000s)
 Starting infer macro optimization [v1.0] (stage: pre_rtlopt, startdef: multiplier32FP, recur: true)
-Completed infer macro optimization (accepts: 0, rejects: 1, runtime: 0.002s)
+Completed infer macro optimization (accepts: 0, rejects: 1, runtime: 0.001s)
 Starting decode mux sandwich optimization [v2.0] (stage: pre_rtlopt, startdef: multiplier32FP, recur: true)
 Completed decode mux sandwich optimization (accepts: 0, rejects: 0, runtime: 0.000s)
 Starting decode mux optimization [v1.0] (stage: pre_rtlopt, startdef: multiplier32FP, recur: true)
-Completed decode mux optimization (accepts: 0, rejects: 0, runtime: 0.000s)
+Completed decode mux optimization (accepts: 0, rejects: 0, runtime: 0.001s)
 Starting chop wide muxes [v1.0] (stage: pre_rtlopt, startdef: multiplier32FP, recur: true)
 Completed chop wide muxes (accepts: 0, rejects: 0, runtime: 0.000s)
 Starting common data mux cascade opt [v1.0] (stage: pre_rtlopt, startdef: multiplier32FP, recur: true)
@@ -810,11 +808,11 @@ Completed common data mux cascade opt (accepts: 0, rejects: 0, runtime: 0.000s)
 Starting mux input consolidation [v1.0] (stage: pre_rtlopt, startdef: multiplier32FP, recur: true)
 Completed mux input consolidation (accepts: 0, rejects: 0, runtime: 0.000s)
 Starting priority mux optimization [v1.0] (stage: pre_rtlopt, startdef: multiplier32FP, recur: true)
-Completed priority mux optimization (accepts: 0, rejects: 0, runtime: 0.050s)
+Completed priority mux optimization (accepts: 0, rejects: 0, runtime: 0.054s)
 Starting constant-data mux optimization [v1.0] (stage: pre_rtlopt, startdef: multiplier32FP, recur: true)
 Completed constant-data mux optimization (accepts: 0, rejects: 0, runtime: 0.000s)
 Starting chain-to-tree inequality transform [v2.0] (stage: pre_rtlopt, startdef: multiplier32FP, recur: true)
-Completed chain-to-tree inequality transform (accepts: 0, rejects: 0, runtime: 0.003s)
+Completed chain-to-tree inequality transform (accepts: 0, rejects: 0, runtime: 0.004s)
 Starting reconvergence optimization [v1.0] (stage: pre_rtlopt, startdef: multiplier32FP, recur: true)
 Completed reconvergence optimization (accepts: 0, rejects: 0, runtime: 0.000s)
 Starting logic restructure optimization [v1.0] (stage: pre_rtlopt, startdef: multiplier32FP, recur: true)
@@ -844,9 +842,9 @@ Completed Unified Mux Engine Tricks
 --------------------------------------------------
 Number of big hc bmuxes before = 0
 Number of non-ctl's : 2
-g26 mux_next_state_63_15 
-SOP DEBUG : Module= multiplier32FP, Cluster= ctl_current_state_63_15, ctl= 1, Non-ctl= 2
-Selected impl_type 1 (pla_form1 (optimized)) for sop cluster ctl_current_state_63_15.
+g24 mux_next_state_72_15 
+SOP DEBUG : Module= multiplier32FP, Cluster= ctl_current_state_72_15, ctl= 1, Non-ctl= 2
+Selected impl_type 1 (pla_form1 (optimized)) for sop cluster ctl_current_state_72_15.
 Info    : Pre-processed datapath logic. [DPOPT-6]
         : Pre-processing optimizations applied to datapath logic in 'multiplier32FP':
           live_trim(2) sop(1) 
@@ -1166,7 +1164,7 @@ Completed mux data reorder optimization (accepts: 0, rejects: 0, runtime: 0.000s
 Starting mux speculation [v1.0] (stage: post_muxopt, startdef: multiplier32FP, recur: true)
 Starting speculation optimization
 Completed speculation optimization (accepts:0)
-Completed mux speculation (accepts: 0, rejects: 0, runtime: 0.046s)
+Completed mux speculation (accepts: 0, rejects: 0, runtime: 0.043s)
 ==================================
 Stage : to_generic 
 ==================================
@@ -1176,20 +1174,20 @@ Stage : to_generic
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 |     Id     |  Sev   |Count |                                                                                  Message Text                                                                                   |
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| CDFG-372   |Info    |    8 |Bitwidth mismatch in assignment.                                                                                                                                                 |
+| CDFG-372   |Info    |    7 |Bitwidth mismatch in assignment.                                                                                                                                                 |
 |            |        |      |Review and make sure the mismatch is unintentional. Genus can possibly issue bitwidth mismatch warning for explicit assignments present in RTL as-well-as for implicit           |
 |            |        |      | assignments inferred by the tool. For example, in case of enum declaration without value, the tool will implicitly assign value to the enum variables. It also issues the       |
 |            |        |      | warning for any bitwidth mismatch that appears in this implicit assignment.                                                                                                     |
-| CDFG-508   |Warning |    1 |Removing unused register.                                                                                                                                                        |
+| CDFG-508   |Warning |    2 |Removing unused register.                                                                                                                                                        |
 |            |        |      |Genus removes the flip-flop or latch inferred for an unused signal or variable. To preserve the flip-flop or latch, set the hdl_preserve_unused_registers attribute to true or   |
 |            |        |      | use a pragma in the RTL.                                                                                                                                                        |
 | CDFG-738   |Info    |    1 |Common subexpression eliminated.                                                                                                                                                 |
 | CDFG-739   |Info    |    1 |Common subexpression kept.                                                                                                                                                       |
 | CDFG-769   |Info    |    1 |Identified sum-of-products logic to be optimized during syn_generic.                                                                                                             |
 | CDFG-773   |Info    |    1 |Skip related conditional write and read sequence.                                                                                                                                |
-| CDFG2G-615 |Warning |    4 |Generated logic differs from the expected logic.                                                                                                                                 |
+| CDFG2G-615 |Warning |    2 |Generated logic differs from the expected logic.                                                                                                                                 |
 |            |        |      |The logic generated for an always_comb, always_latch or always_ff process may not match the behavior specified in the input HDL.                                                 |
-| CDFG2G-616 |Info    |    4 |Latch inferred. Check and revisit your RTL if this is not the intended behavior.                                                                                                 |
+| CDFG2G-616 |Info    |    2 |Latch inferred. Check and revisit your RTL if this is not the intended behavior.                                                                                                 |
 |            |        |      |Use the attributes 'set_attribute hdl_error_on_latch true'(LUI) or 'set_db hdl_error_on_latch true' (CUI)                                                                        |
 |            |        |      | to issue an error when a latch is inferred. Use the attributes 'set_attributes hdl_latch_keep_feedback true'(LUI) or 'set_db hdl_latch_keep_feedback true'(CUI)                 |
 |            |        |      | to infer combinational logic rather than a latch in case a variable is explicitly assigned to itself.                                                                           |
@@ -1331,25 +1329,25 @@ State Retention Synthesis Status
 
 Category                        Flops  Latches   Percentage
 -----------------------------------------------------------
-Total instances                    40       35        100.0
-Excluded from State Retention      40       35        100.0
-    - Will not convert             40       35        100.0
+Total instances                    40       33        100.0
+Excluded from State Retention      40       33        100.0
+    - Will not convert             40       33        100.0
       - Preserved                   0        0          0.0
-      - Power intent excluded      40       35        100.0
+      - Power intent excluded      40       33        100.0
     - Could not convert             0        0          0.0
       - Scan type                   0        0          0.0
       - No suitable cell            0        0          0.0
 State Retention instances           0        0          0.0
 -----------------------------------------------------------
 
-PBS_Generic_Opt-Post - Elapsed_Time 13, CPU_Time 12.648326
+PBS_Generic_Opt-Post - Elapsed_Time 12, CPU_Time 12.660721999999998
 stamp 'PBS_Generic_Opt-Post' being created for table 'pbs_debug'
 
   Total Time (Wall) |  Stage Time (Wall)  |   % (Wall)   |    Date - Time     |  Memory   | Stage
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:06(00:00:06) |  00:00:00(00:00:00) |   0.0(  0.0) |   12:21:21 (Feb27) |  477.3 MB | PBS_Generic-Start
+ 00:00:05(00:00:04) |  00:00:00(00:00:00) |   0.0(  0.0) |   15:13:27 (Feb27) |  489.2 MB | PBS_Generic-Start
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:19(00:00:19) |  00:00:12(00:00:13) | 100.0(100.0) |   12:21:34 (Feb27) |  783.8 MB | PBS_Generic_Opt-Post
+ 00:00:18(00:00:16) |  00:00:12(00:00:12) | 100.0(100.0) |   15:13:39 (Feb27) |  780.9 MB | PBS_Generic_Opt-Post
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
 Number of threads: 8 * 1   (id: pbs_debug, time_info v1.57)
 Info: (*N*) indicates data that was populated from previously saved time_info database
@@ -1359,11 +1357,11 @@ stamp 'PBS_Generic-Postgen HBO Optimizations' being created for table 'pbs_debug
 
   Total Time (Wall) |  Stage Time (Wall)  |   % (Wall)   |    Date - Time     |  Memory   | Stage
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:06(00:00:06) |  00:00:00(00:00:00) |   0.0(  0.0) |   12:21:21 (Feb27) |  477.3 MB | PBS_Generic-Start
+ 00:00:05(00:00:04) |  00:00:00(00:00:00) |   0.0(  0.0) |   15:13:27 (Feb27) |  489.2 MB | PBS_Generic-Start
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:19(00:00:19) |  00:00:12(00:00:13) | 100.0(100.0) |   12:21:34 (Feb27) |  783.8 MB | PBS_Generic_Opt-Post
+ 00:00:18(00:00:16) |  00:00:12(00:00:12) | 100.0(100.0) |   15:13:39 (Feb27) |  780.9 MB | PBS_Generic_Opt-Post
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:19(00:00:19) |  00:00:00(00:00:00) |   0.0(  0.0) |   12:21:34 (Feb27) |  783.8 MB | PBS_Generic-Postgen HBO Optimizations
+ 00:00:18(00:00:16) |  00:00:00(00:00:00) |   0.0(  0.0) |   15:13:39 (Feb27) |  780.9 MB | PBS_Generic-Postgen HBO Optimizations
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
 Number of threads: 8 * 1   (id: pbs_debug, time_info v1.57)
 Info: (*N*) indicates data that was populated from previously saved time_info database
@@ -1374,7 +1372,7 @@ Info: CPU time includes time of parent + longest thread
 ##>----------------------------------------------------------------------------------------
 ##>STEP                           Elapsed       WNS       TNS     Insts      Area    Memory
 ##>----------------------------------------------------------------------------------------
-##>G:Initial                            0         -         -      4278     12521       477
+##>G:Initial                            0         -         -      4276     12511       489
 ##>G:Setup                              0         -         -         -         -         -
 ##>G:Launch ST                          0         -         -         -         -         -
 ##>G:Design Partition                   0         -         -         -         -         -
@@ -1388,10 +1386,10 @@ Info: CPU time includes time of parent + longest thread
 ##>G:Timer                              0         -         -         -         -         -
 ##>G:Assembly                           0         -         -         -         -         -
 ##>G:DFT                                0         -         -         -         -         -
-##>G:Const Prop                         0         -         -      5265     14417       783
-##>G:Misc                              13
+##>G:Const Prop                         0         -         -      5263     14407       780
+##>G:Misc                              12
 ##>----------------------------------------------------------------------------------------
-##>Total Elapsed                       13
+##>Total Elapsed                       12
 ##>========================================================================================
 Info    : Done synthesizing. [SYNTH-2]
         : Done synthesizing 'multiplier32FP' to generic gates.
@@ -1469,31 +1467,31 @@ stamp 'PBS_TechMap-Start' being created for table 'pbs_debug'
 
   Total Time (Wall) |  Stage Time (Wall)  |   % (Wall)   |    Date - Time     |  Memory   | Stage
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:06(00:00:06) |  00:00:00(00:00:00) |   0.0(  0.0) |   12:21:21 (Feb27) |  477.3 MB | PBS_Generic-Start
+ 00:00:05(00:00:04) |  00:00:00(00:00:00) |   0.0(  0.0) |   15:13:27 (Feb27) |  489.2 MB | PBS_Generic-Start
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:19(00:00:19) |  00:00:12(00:00:13) | 100.0(100.0) |   12:21:34 (Feb27) |  783.8 MB | PBS_Generic_Opt-Post
+ 00:00:18(00:00:16) |  00:00:12(00:00:12) | 100.0( 92.3) |   15:13:39 (Feb27) |  780.9 MB | PBS_Generic_Opt-Post
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:19(00:00:19) |  00:00:00(00:00:00) |   0.0(  0.0) |   12:21:34 (Feb27) |  783.8 MB | PBS_Generic-Postgen HBO Optimizations
+ 00:00:18(00:00:16) |  00:00:00(00:00:00) |   0.0(  0.0) |   15:13:39 (Feb27) |  780.9 MB | PBS_Generic-Postgen HBO Optimizations
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:19(00:00:19) |  00:00:00(00:00:00) |   0.0(  0.0) |   12:21:34 (Feb27) |  783.8 MB | PBS_TechMap-Start
+ 00:00:18(00:00:17) |  00:00:00(00:00:01) |   0.0(  7.7) |   15:13:40 (Feb27) |  780.9 MB | PBS_TechMap-Start
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
 Number of threads: 8 * 1   (id: pbs_debug, time_info v1.57)
 Info: (*N*) indicates data that was populated from previously saved time_info database
 Info: CPU time includes time of parent + longest thread
-PBS_TechMap-Premap HBO Optimizations - Elapsed_Time 1, CPU_Time 0.0
+PBS_TechMap-Premap HBO Optimizations - Elapsed_Time 0, CPU_Time 0.0
 stamp 'PBS_TechMap-Premap HBO Optimizations' being created for table 'pbs_debug'
 
   Total Time (Wall) |  Stage Time (Wall)  |   % (Wall)   |    Date - Time     |  Memory   | Stage
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:06(00:00:06) |  00:00:00(00:00:00) |   0.0(  0.0) |   12:21:21 (Feb27) |  477.3 MB | PBS_Generic-Start
+ 00:00:05(00:00:04) |  00:00:00(00:00:00) |   0.0(  0.0) |   15:13:27 (Feb27) |  489.2 MB | PBS_Generic-Start
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:19(00:00:19) |  00:00:12(00:00:13) | 100.0( 92.9) |   12:21:34 (Feb27) |  783.8 MB | PBS_Generic_Opt-Post
+ 00:00:18(00:00:16) |  00:00:12(00:00:12) | 100.0( 92.3) |   15:13:39 (Feb27) |  780.9 MB | PBS_Generic_Opt-Post
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:19(00:00:19) |  00:00:00(00:00:00) |   0.0(  0.0) |   12:21:34 (Feb27) |  783.8 MB | PBS_Generic-Postgen HBO Optimizations
+ 00:00:18(00:00:16) |  00:00:00(00:00:00) |   0.0(  0.0) |   15:13:39 (Feb27) |  780.9 MB | PBS_Generic-Postgen HBO Optimizations
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:19(00:00:19) |  00:00:00(00:00:00) |   0.0(  0.0) |   12:21:34 (Feb27) |  783.8 MB | PBS_TechMap-Start
+ 00:00:18(00:00:17) |  00:00:00(00:00:01) |   0.0(  7.7) |   15:13:40 (Feb27) |  780.9 MB | PBS_TechMap-Start
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:19(00:00:20) |  00:00:00(00:00:01) |   0.0(  7.1) |   12:21:35 (Feb27) |  783.8 MB | PBS_TechMap-Premap HBO Optimizations
+ 00:00:18(00:00:17) |  00:00:00(00:00:00) |   0.0(  0.0) |   15:13:40 (Feb27) |  780.9 MB | PBS_TechMap-Premap HBO Optimizations
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
 Number of threads: 8 * 1   (id: pbs_debug, time_info v1.57)
 Info: (*N*) indicates data that was populated from previously saved time_info database
@@ -1590,7 +1588,7 @@ Global mapping status
                                   Tot Wrst 
                            Total  Weighted 
 Operation                   Area   Slacks  
- global_map                 6081        0 
+ global_map                 6069        0 
 
     Cost Group            Target    Slack    Diff.  Constr.
 -----------------------------------------------------------
@@ -1635,7 +1633,7 @@ Global incremental optimization status
                                   Tot Wrst 
                            Total  Weighted 
 Operation                   Area   Slacks  
- global_incr                5993        0 
+ global_incr                5981        0 
 
     Cost Group            Target    Slack    Diff.  Constr.
 -----------------------------------------------------------
@@ -1647,11 +1645,11 @@ State Retention Synthesis Status
 
 Category                        Flops  Latches   Percentage
 -----------------------------------------------------------
-Total instances                    40       35        100.0
-Excluded from State Retention      40       35        100.0
-    - Will not convert             40       35        100.0
+Total instances                    40       33        100.0
+Excluded from State Retention      40       33        100.0
+    - Will not convert             40       33        100.0
       - Preserved                   0        0          0.0
-      - Power intent excluded      40       35        100.0
+      - Power intent excluded      40       33        100.0
     - Could not convert             0        0          0.0
       - Scan type                   0        0          0.0
       - No suitable cell            0        0          0.0
@@ -1659,22 +1657,22 @@ State Retention instances           0        0          0.0
 -----------------------------------------------------------
 
 INFO: skipping constant propagation
-PBS_Techmap-Global Mapping - Elapsed_Time 10, CPU_Time 10.809346999999999
+PBS_Techmap-Global Mapping - Elapsed_Time 10, CPU_Time 10.803128000000001
 stamp 'PBS_Techmap-Global Mapping' being created for table 'pbs_debug'
 
   Total Time (Wall) |  Stage Time (Wall)  |   % (Wall)   |    Date - Time     |  Memory   | Stage
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:06(00:00:06) |  00:00:00(00:00:00) |   0.0(  0.0) |   12:21:21 (Feb27) |  477.3 MB | PBS_Generic-Start
+ 00:00:05(00:00:04) |  00:00:00(00:00:00) |   0.0(  0.0) |   15:13:27 (Feb27) |  489.2 MB | PBS_Generic-Start
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:19(00:00:19) |  00:00:12(00:00:13) |  53.9( 54.2) |   12:21:34 (Feb27) |  783.8 MB | PBS_Generic_Opt-Post
+ 00:00:18(00:00:16) |  00:00:12(00:00:12) |  54.0( 52.2) |   15:13:39 (Feb27) |  780.9 MB | PBS_Generic_Opt-Post
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:19(00:00:19) |  00:00:00(00:00:00) |   0.0(  0.0) |   12:21:34 (Feb27) |  783.8 MB | PBS_Generic-Postgen HBO Optimizations
+ 00:00:18(00:00:16) |  00:00:00(00:00:00) |   0.0(  0.0) |   15:13:39 (Feb27) |  780.9 MB | PBS_Generic-Postgen HBO Optimizations
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:19(00:00:19) |  00:00:00(00:00:00) |   0.0(  0.0) |   12:21:34 (Feb27) |  783.8 MB | PBS_TechMap-Start
+ 00:00:18(00:00:17) |  00:00:00(00:00:01) |   0.0(  4.3) |   15:13:40 (Feb27) |  780.9 MB | PBS_TechMap-Start
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:19(00:00:20) |  00:00:00(00:00:01) |   0.0(  4.2) |   12:21:35 (Feb27) |  783.8 MB | PBS_TechMap-Premap HBO Optimizations
+ 00:00:18(00:00:17) |  00:00:00(00:00:00) |   0.0(  0.0) |   15:13:40 (Feb27) |  780.9 MB | PBS_TechMap-Premap HBO Optimizations
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:30(00:00:30) |  00:00:10(00:00:10) |  46.1( 41.7) |   12:21:45 (Feb27) |  777.2 MB | PBS_Techmap-Global Mapping
+ 00:00:29(00:00:27) |  00:00:10(00:00:10) |  46.0( 43.5) |   15:13:50 (Feb27) |  772.3 MB | PBS_Techmap-Global Mapping
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
 Number of threads: 8 * 1   (id: pbs_debug, time_info v1.57)
 Info: (*N*) indicates data that was populated from previously saved time_info database
@@ -1683,87 +1681,88 @@ Warning : Command 'commit_power_intent' cannot proceed as there is no power inte
         : Command 'commit_power_intent' requires a valid power_intent to be loaded.
 Info    : Wrote formal verification information. [CFM-5]
         : Wrote 'fv/multiplier32FP/fv_map.fv.json' for netlist 'fv/multiplier32FP/fv_map.v.gz'.
+Info    : Existing dofile found. Copied as fv/multiplier32FP/rtl_to_fv_map.do~.
 Info    : Wrote dofile. [CFM-1]
         : Dofile is 'fv/multiplier32FP/rtl_to_fv_map.do'.
         : Alias mapping flow is enabled.
-PBS_TechMap-Datapath Postmap Operations - Elapsed_Time 1, CPU_Time 0.9925150000000009
+PBS_TechMap-Datapath Postmap Operations - Elapsed_Time 1, CPU_Time -0.007594000000000989
 stamp 'PBS_TechMap-Datapath Postmap Operations' being created for table 'pbs_debug'
 
   Total Time (Wall) |  Stage Time (Wall)  |   % (Wall)   |    Date - Time     |  Memory   | Stage
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:06(00:00:06) |  00:00:00(00:00:00) |   0.0(  0.0) |   12:21:21 (Feb27) |  477.3 MB | PBS_Generic-Start
+ 00:00:05(00:00:04) |  00:00:00(00:00:00) |   0.0(  0.0) |   15:13:27 (Feb27) |  489.2 MB | PBS_Generic-Start
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:19(00:00:19) |  00:00:12(00:00:13) |  51.7( 52.0) |   12:21:34 (Feb27) |  783.8 MB | PBS_Generic_Opt-Post
+ 00:00:18(00:00:16) |  00:00:12(00:00:12) |  54.0( 50.0) |   15:13:39 (Feb27) |  780.9 MB | PBS_Generic_Opt-Post
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:19(00:00:19) |  00:00:00(00:00:00) |   0.0(  0.0) |   12:21:34 (Feb27) |  783.8 MB | PBS_Generic-Postgen HBO Optimizations
+ 00:00:18(00:00:16) |  00:00:00(00:00:00) |   0.0(  0.0) |   15:13:39 (Feb27) |  780.9 MB | PBS_Generic-Postgen HBO Optimizations
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:19(00:00:19) |  00:00:00(00:00:00) |   0.0(  0.0) |   12:21:34 (Feb27) |  783.8 MB | PBS_TechMap-Start
+ 00:00:18(00:00:17) |  00:00:00(00:00:01) |   0.0(  4.2) |   15:13:40 (Feb27) |  780.9 MB | PBS_TechMap-Start
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:19(00:00:20) |  00:00:00(00:00:01) |   0.0(  4.0) |   12:21:35 (Feb27) |  783.8 MB | PBS_TechMap-Premap HBO Optimizations
+ 00:00:18(00:00:17) |  00:00:00(00:00:00) |   0.0(  0.0) |   15:13:40 (Feb27) |  780.9 MB | PBS_TechMap-Premap HBO Optimizations
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:30(00:00:30) |  00:00:10(00:00:10) |  44.2( 40.0) |   12:21:45 (Feb27) |  777.2 MB | PBS_Techmap-Global Mapping
+ 00:00:29(00:00:27) |  00:00:10(00:00:10) |  46.1( 41.7) |   15:13:50 (Feb27) |  772.3 MB | PBS_Techmap-Global Mapping
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:31(00:00:31) |  00:00:00(00:00:01) |   4.1(  4.0) |   12:21:46 (Feb27) |  771.6 MB | PBS_TechMap-Datapath Postmap Operations
+ 00:00:29(00:00:28) |  00:00:00(00:00:01) |  -0.0(  4.2) |   15:13:51 (Feb27) |  772.3 MB | PBS_TechMap-Datapath Postmap Operations
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
 Number of threads: 8 * 1   (id: pbs_debug, time_info v1.57)
 Info: (*N*) indicates data that was populated from previously saved time_info database
 Info: CPU time includes time of parent + longest thread
-PBS_TechMap-Postmap HBO Optimizations - Elapsed_Time 0, CPU_Time -0.00774200000000036
+PBS_TechMap-Postmap HBO Optimizations - Elapsed_Time 0, CPU_Time -0.0082550000000019
 stamp 'PBS_TechMap-Postmap HBO Optimizations' being created for table 'pbs_debug'
 
   Total Time (Wall) |  Stage Time (Wall)  |   % (Wall)   |    Date - Time     |  Memory   | Stage
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:06(00:00:06) |  00:00:00(00:00:00) |   0.0(  0.0) |   12:21:21 (Feb27) |  477.3 MB | PBS_Generic-Start
+ 00:00:05(00:00:04) |  00:00:00(00:00:00) |   0.0(  0.0) |   15:13:27 (Feb27) |  489.2 MB | PBS_Generic-Start
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:19(00:00:19) |  00:00:12(00:00:13) |  51.7( 52.0) |   12:21:34 (Feb27) |  783.8 MB | PBS_Generic_Opt-Post
+ 00:00:18(00:00:16) |  00:00:12(00:00:12) |  54.0( 50.0) |   15:13:39 (Feb27) |  780.9 MB | PBS_Generic_Opt-Post
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:19(00:00:19) |  00:00:00(00:00:00) |   0.0(  0.0) |   12:21:34 (Feb27) |  783.8 MB | PBS_Generic-Postgen HBO Optimizations
+ 00:00:18(00:00:16) |  00:00:00(00:00:00) |   0.0(  0.0) |   15:13:39 (Feb27) |  780.9 MB | PBS_Generic-Postgen HBO Optimizations
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:19(00:00:19) |  00:00:00(00:00:00) |   0.0(  0.0) |   12:21:34 (Feb27) |  783.8 MB | PBS_TechMap-Start
+ 00:00:18(00:00:17) |  00:00:00(00:00:01) |   0.0(  4.2) |   15:13:40 (Feb27) |  780.9 MB | PBS_TechMap-Start
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:19(00:00:20) |  00:00:00(00:00:01) |   0.0(  4.0) |   12:21:35 (Feb27) |  783.8 MB | PBS_TechMap-Premap HBO Optimizations
+ 00:00:18(00:00:17) |  00:00:00(00:00:00) |   0.0(  0.0) |   15:13:40 (Feb27) |  780.9 MB | PBS_TechMap-Premap HBO Optimizations
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:30(00:00:30) |  00:00:10(00:00:10) |  44.2( 40.0) |   12:21:45 (Feb27) |  777.2 MB | PBS_Techmap-Global Mapping
+ 00:00:29(00:00:27) |  00:00:10(00:00:10) |  46.1( 41.7) |   15:13:50 (Feb27) |  772.3 MB | PBS_Techmap-Global Mapping
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:31(00:00:31) |  00:00:00(00:00:01) |   4.1(  4.0) |   12:21:46 (Feb27) |  771.6 MB | PBS_TechMap-Datapath Postmap Operations
+ 00:00:29(00:00:28) |  00:00:00(00:00:01) |  -0.0(  4.2) |   15:13:51 (Feb27) |  772.3 MB | PBS_TechMap-Datapath Postmap Operations
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:31(00:00:31) |  00:00:00(00:00:00) |  -0.0(  0.0) |   12:21:46 (Feb27) |  771.6 MB | PBS_TechMap-Postmap HBO Optimizations
+ 00:00:29(00:00:28) |  00:00:00(00:00:00) |  -0.0(  0.0) |   15:13:51 (Feb27) |  772.3 MB | PBS_TechMap-Postmap HBO Optimizations
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
 Number of threads: 8 * 1   (id: pbs_debug, time_info v1.57)
 Info: (*N*) indicates data that was populated from previously saved time_info database
 Info: CPU time includes time of parent + longest thread
  Doing ConstProp on design:multiplier32FP ... 
 
-IOPT-REDREM: Performing redundancy removal: Detected 0 redundant wires. CPU time 0.024 seconds.
+IOPT-REDREM: Performing redundancy removal: Detected 0 redundant wires. CPU time 0.026 seconds.
 
 PBS_TechMap-Postmap Clock Gating - Elapsed_Time 0, CPU_Time 0.0
 stamp 'PBS_TechMap-Postmap Clock Gating' being created for table 'pbs_debug'
 
   Total Time (Wall) |  Stage Time (Wall)  |   % (Wall)   |    Date - Time     |  Memory   | Stage
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:06(00:00:06) |  00:00:00(00:00:00) |   0.0(  0.0) |   12:21:21 (Feb27) |  477.3 MB | PBS_Generic-Start
+ 00:00:05(00:00:04) |  00:00:00(00:00:00) |   0.0(  0.0) |   15:13:27 (Feb27) |  489.2 MB | PBS_Generic-Start
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:19(00:00:19) |  00:00:12(00:00:13) |  51.7( 52.0) |   12:21:34 (Feb27) |  783.8 MB | PBS_Generic_Opt-Post
+ 00:00:18(00:00:16) |  00:00:12(00:00:12) |  54.0( 50.0) |   15:13:39 (Feb27) |  780.9 MB | PBS_Generic_Opt-Post
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:19(00:00:19) |  00:00:00(00:00:00) |   0.0(  0.0) |   12:21:34 (Feb27) |  783.8 MB | PBS_Generic-Postgen HBO Optimizations
+ 00:00:18(00:00:16) |  00:00:00(00:00:00) |   0.0(  0.0) |   15:13:39 (Feb27) |  780.9 MB | PBS_Generic-Postgen HBO Optimizations
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:19(00:00:19) |  00:00:00(00:00:00) |   0.0(  0.0) |   12:21:34 (Feb27) |  783.8 MB | PBS_TechMap-Start
+ 00:00:18(00:00:17) |  00:00:00(00:00:01) |   0.0(  4.2) |   15:13:40 (Feb27) |  780.9 MB | PBS_TechMap-Start
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:19(00:00:20) |  00:00:00(00:00:01) |   0.0(  4.0) |   12:21:35 (Feb27) |  783.8 MB | PBS_TechMap-Premap HBO Optimizations
+ 00:00:18(00:00:17) |  00:00:00(00:00:00) |   0.0(  0.0) |   15:13:40 (Feb27) |  780.9 MB | PBS_TechMap-Premap HBO Optimizations
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:30(00:00:30) |  00:00:10(00:00:10) |  44.2( 40.0) |   12:21:45 (Feb27) |  777.2 MB | PBS_Techmap-Global Mapping
+ 00:00:29(00:00:27) |  00:00:10(00:00:10) |  46.1( 41.7) |   15:13:50 (Feb27) |  772.3 MB | PBS_Techmap-Global Mapping
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:31(00:00:31) |  00:00:00(00:00:01) |   4.1(  4.0) |   12:21:46 (Feb27) |  771.6 MB | PBS_TechMap-Datapath Postmap Operations
+ 00:00:29(00:00:28) |  00:00:00(00:00:01) |  -0.0(  4.2) |   15:13:51 (Feb27) |  772.3 MB | PBS_TechMap-Datapath Postmap Operations
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:31(00:00:31) |  00:00:00(00:00:00) |  -0.0(  0.0) |   12:21:46 (Feb27) |  771.6 MB | PBS_TechMap-Postmap HBO Optimizations
+ 00:00:29(00:00:28) |  00:00:00(00:00:00) |  -0.0(  0.0) |   15:13:51 (Feb27) |  772.3 MB | PBS_TechMap-Postmap HBO Optimizations
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:31(00:00:31) |  00:00:00(00:00:00) |   0.0(  0.0) |   12:21:46 (Feb27) |  771.6 MB | PBS_TechMap-Postmap Clock Gating
+ 00:00:29(00:00:28) |  00:00:00(00:00:00) |   0.0(  0.0) |   15:13:51 (Feb27) |  772.3 MB | PBS_TechMap-Postmap Clock Gating
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
 Number of threads: 8 * 1   (id: pbs_debug, time_info v1.57)
 Info: (*N*) indicates data that was populated from previously saved time_info database
 Info: CPU time includes time of parent + longest thread
 -------------------------------------------------------------------------------
- hi_fo_buf                  5993        0         0      5630        0
+ hi_fo_buf                  5981        0         0      5630        0
 
            Trick     Calls     Accepts   Attempts    Time(secs) 
 -----------------------------------------------------------
@@ -1776,7 +1775,7 @@ Incremental optimization status
                                   Tot Wrst     Total - - DRC Totals - -
                            Total  Weighted      Neg      Max       Max 
 Operation                   Area   Slacks      Slack    Trans      Cap 
- init_delay                 5993        0         0      5630        0
+ init_delay                 5981        0         0      5630        0
 
            Trick     Calls     Accepts   Attempts    Time(secs) 
 -----------------------------------------------------------
@@ -1801,7 +1800,7 @@ Local TNS optimization status
                                   Tot Wrst     Total - - DRC Totals - -
                            Total  Weighted      Neg      Max       Max 
 Operation                   Area   Slacks      Slack    Trans      Cap 
- init_tns                   5993        0         0      5630        0
+ init_tns                   5981        0         0      5630        0
 
            Trick     Calls     Accepts   Attempts    Time(secs) 
 -----------------------------------------------------------
@@ -1817,30 +1816,30 @@ Operation                   Area   Slacks      Slack    Trans      Cap
         setup_dn         0  (        0 /        0 )  0.00
         mb_split         0  (        0 /        0 )  0.00
 
-PBS_TechMap-Postmap Cleanup - Elapsed_Time 0, CPU_Time -0.007246999999999559
+PBS_TechMap-Postmap Cleanup - Elapsed_Time 0, CPU_Time -0.006755999999995765
 stamp 'PBS_TechMap-Postmap Cleanup' being created for table 'pbs_debug'
 
   Total Time (Wall) |  Stage Time (Wall)  |   % (Wall)   |    Date - Time     |  Memory   | Stage
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:06(00:00:06) |  00:00:00(00:00:00) |   0.0(  0.0) |   12:21:21 (Feb27) |  477.3 MB | PBS_Generic-Start
+ 00:00:05(00:00:04) |  00:00:00(00:00:00) |   0.0(  0.0) |   15:13:27 (Feb27) |  489.2 MB | PBS_Generic-Start
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:19(00:00:19) |  00:00:12(00:00:13) |  51.8( 52.0) |   12:21:34 (Feb27) |  783.8 MB | PBS_Generic_Opt-Post
+ 00:00:18(00:00:16) |  00:00:12(00:00:12) |  54.0( 50.0) |   15:13:39 (Feb27) |  780.9 MB | PBS_Generic_Opt-Post
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:19(00:00:19) |  00:00:00(00:00:00) |   0.0(  0.0) |   12:21:34 (Feb27) |  783.8 MB | PBS_Generic-Postgen HBO Optimizations
+ 00:00:18(00:00:16) |  00:00:00(00:00:00) |   0.0(  0.0) |   15:13:39 (Feb27) |  780.9 MB | PBS_Generic-Postgen HBO Optimizations
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:19(00:00:19) |  00:00:00(00:00:00) |   0.0(  0.0) |   12:21:34 (Feb27) |  783.8 MB | PBS_TechMap-Start
+ 00:00:18(00:00:17) |  00:00:00(00:00:01) |   0.0(  4.2) |   15:13:40 (Feb27) |  780.9 MB | PBS_TechMap-Start
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:19(00:00:20) |  00:00:00(00:00:01) |   0.0(  4.0) |   12:21:35 (Feb27) |  783.8 MB | PBS_TechMap-Premap HBO Optimizations
+ 00:00:18(00:00:17) |  00:00:00(00:00:00) |   0.0(  0.0) |   15:13:40 (Feb27) |  780.9 MB | PBS_TechMap-Premap HBO Optimizations
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:30(00:00:30) |  00:00:10(00:00:10) |  44.2( 40.0) |   12:21:45 (Feb27) |  777.2 MB | PBS_Techmap-Global Mapping
+ 00:00:29(00:00:27) |  00:00:10(00:00:10) |  46.1( 41.7) |   15:13:50 (Feb27) |  772.3 MB | PBS_Techmap-Global Mapping
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:31(00:00:31) |  00:00:00(00:00:01) |   4.1(  4.0) |   12:21:46 (Feb27) |  771.6 MB | PBS_TechMap-Datapath Postmap Operations
+ 00:00:29(00:00:28) |  00:00:00(00:00:01) |  -0.0(  4.2) |   15:13:51 (Feb27) |  772.3 MB | PBS_TechMap-Datapath Postmap Operations
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:31(00:00:31) |  00:00:00(00:00:00) |  -0.0(  0.0) |   12:21:46 (Feb27) |  771.6 MB | PBS_TechMap-Postmap HBO Optimizations
+ 00:00:29(00:00:28) |  00:00:00(00:00:00) |  -0.0(  0.0) |   15:13:51 (Feb27) |  772.3 MB | PBS_TechMap-Postmap HBO Optimizations
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:31(00:00:31) |  00:00:00(00:00:00) |   0.0(  0.0) |   12:21:46 (Feb27) |  771.6 MB | PBS_TechMap-Postmap Clock Gating
+ 00:00:29(00:00:28) |  00:00:00(00:00:00) |   0.0(  0.0) |   15:13:51 (Feb27) |  772.3 MB | PBS_TechMap-Postmap Clock Gating
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:31(00:00:31) |  00:00:00(00:00:00) |  -0.0(  0.0) |   12:21:46 (Feb27) |  771.6 MB | PBS_TechMap-Postmap Cleanup
+ 00:00:29(00:00:28) |  00:00:00(00:00:00) |  -0.0(  0.0) |   15:13:51 (Feb27) |  772.3 MB | PBS_TechMap-Postmap Cleanup
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
 Number of threads: 8 * 1   (id: pbs_debug, time_info v1.57)
 Info: (*N*) indicates data that was populated from previously saved time_info database
@@ -1850,27 +1849,27 @@ stamp 'PBS_Techmap-Post_MBCI' being created for table 'pbs_debug'
 
   Total Time (Wall) |  Stage Time (Wall)  |   % (Wall)   |    Date - Time     |  Memory   | Stage
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:06(00:00:06) |  00:00:00(00:00:00) |   0.0(  0.0) |   12:21:21 (Feb27) |  477.3 MB | PBS_Generic-Start
+ 00:00:05(00:00:04) |  00:00:00(00:00:00) |   0.0(  0.0) |   15:13:27 (Feb27) |  489.2 MB | PBS_Generic-Start
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:19(00:00:19) |  00:00:12(00:00:13) |  51.8( 52.0) |   12:21:34 (Feb27) |  783.8 MB | PBS_Generic_Opt-Post
+ 00:00:18(00:00:16) |  00:00:12(00:00:12) |  54.0( 50.0) |   15:13:39 (Feb27) |  780.9 MB | PBS_Generic_Opt-Post
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:19(00:00:19) |  00:00:00(00:00:00) |   0.0(  0.0) |   12:21:34 (Feb27) |  783.8 MB | PBS_Generic-Postgen HBO Optimizations
+ 00:00:18(00:00:16) |  00:00:00(00:00:00) |   0.0(  0.0) |   15:13:39 (Feb27) |  780.9 MB | PBS_Generic-Postgen HBO Optimizations
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:19(00:00:19) |  00:00:00(00:00:00) |   0.0(  0.0) |   12:21:34 (Feb27) |  783.8 MB | PBS_TechMap-Start
+ 00:00:18(00:00:17) |  00:00:00(00:00:01) |   0.0(  4.2) |   15:13:40 (Feb27) |  780.9 MB | PBS_TechMap-Start
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:19(00:00:20) |  00:00:00(00:00:01) |   0.0(  4.0) |   12:21:35 (Feb27) |  783.8 MB | PBS_TechMap-Premap HBO Optimizations
+ 00:00:18(00:00:17) |  00:00:00(00:00:00) |   0.0(  0.0) |   15:13:40 (Feb27) |  780.9 MB | PBS_TechMap-Premap HBO Optimizations
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:30(00:00:30) |  00:00:10(00:00:10) |  44.2( 40.0) |   12:21:45 (Feb27) |  777.2 MB | PBS_Techmap-Global Mapping
+ 00:00:29(00:00:27) |  00:00:10(00:00:10) |  46.1( 41.7) |   15:13:50 (Feb27) |  772.3 MB | PBS_Techmap-Global Mapping
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:31(00:00:31) |  00:00:00(00:00:01) |   4.1(  4.0) |   12:21:46 (Feb27) |  771.6 MB | PBS_TechMap-Datapath Postmap Operations
+ 00:00:29(00:00:28) |  00:00:00(00:00:01) |  -0.0(  4.2) |   15:13:51 (Feb27) |  772.3 MB | PBS_TechMap-Datapath Postmap Operations
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:31(00:00:31) |  00:00:00(00:00:00) |  -0.0(  0.0) |   12:21:46 (Feb27) |  771.6 MB | PBS_TechMap-Postmap HBO Optimizations
+ 00:00:29(00:00:28) |  00:00:00(00:00:00) |  -0.0(  0.0) |   15:13:51 (Feb27) |  772.3 MB | PBS_TechMap-Postmap HBO Optimizations
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:31(00:00:31) |  00:00:00(00:00:00) |   0.0(  0.0) |   12:21:46 (Feb27) |  771.6 MB | PBS_TechMap-Postmap Clock Gating
+ 00:00:29(00:00:28) |  00:00:00(00:00:00) |   0.0(  0.0) |   15:13:51 (Feb27) |  772.3 MB | PBS_TechMap-Postmap Clock Gating
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:31(00:00:31) |  00:00:00(00:00:00) |  -0.0(  0.0) |   12:21:46 (Feb27) |  771.6 MB | PBS_TechMap-Postmap Cleanup
+ 00:00:29(00:00:28) |  00:00:00(00:00:00) |  -0.0(  0.0) |   15:13:51 (Feb27) |  772.3 MB | PBS_TechMap-Postmap Cleanup
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
- 00:00:31(00:00:31) |  00:00:00(00:00:00) |   0.0(  0.0) |   12:21:46 (Feb27) |  771.6 MB | PBS_Techmap-Post_MBCI
+ 00:00:29(00:00:28) |  00:00:00(00:00:00) |   0.0(  0.0) |   15:13:51 (Feb27) |  772.3 MB | PBS_Techmap-Post_MBCI
 --------------------+---------------------+--------------+--------------------+-----------+----------------------
 Number of threads: 8 * 1   (id: pbs_debug, time_info v1.57)
 Info: (*N*) indicates data that was populated from previously saved time_info database
@@ -1880,8 +1879,8 @@ Info: CPU time includes time of parent + longest thread
 ##>----------------------------------------------------------------------------------------
 ##>STEP                           Elapsed       WNS       TNS     Insts      Area    Memory
 ##>----------------------------------------------------------------------------------------
-##>M:Initial                            0         -         -      5265     14417       783
-##>M:Pre Cleanup                        0         -         -      5265     14417       783
+##>M:Initial                            0         -         -      5263     14407       780
+##>M:Pre Cleanup                        0         -         -      5263     14407       780
 ##>M:Setup                              0         -         -         -         -         -
 ##>M:Launch ST                          0         -         -         -         -         -
 ##>M:Design Partition                   0         -         -         -         -         -
@@ -1895,14 +1894,14 @@ Info: CPU time includes time of parent + longest thread
 ##>M:Timer                              0         -         -         -         -         -
 ##>M:Assembly                           0         -         -         -         -         -
 ##>M:DFT                                0         -         -         -         -         -
-##>M:DP Operations                      1         -         -      1328      4038       771
-##>M:Const Prop                         0     95752         0      1328      4038       771
-##>M:Cleanup                            0     95752         0      1328      4038       771
-##>M:MBCI                               0         -         -      1328      4038       771
+##>M:DP Operations                      1         -         -      1327      4026       772
+##>M:Const Prop                         0     95752         0      1327      4026       772
+##>M:Cleanup                            0     95752         0      1327      4026       772
+##>M:MBCI                               0         -         -      1327      4026       772
 ##>M:Const Gate Removal                 0         -         -         -         -         -
-##>M:Misc                              11
+##>M:Misc                              10
 ##>----------------------------------------------------------------------------------------
-##>Total Elapsed                       12
+##>Total Elapsed                       11
 ##>========================================================================================
 Info    : Done mapping. [SYNTH-5]
         : Done mapping 'multiplier32FP'.
@@ -1912,7 +1911,7 @@ UM:*                                                                   syn_map
 @file(multiplier32FP.tcl) 106: report_design_rules ;# > ${RPT_DIR}/${HDL_NAME}_drc.rpt
 ============================================================
   Generated by:           Genus(TM) Synthesis Solution 21.10-p002_1
-  Generated on:           Feb 27 2025  12:21:47 pm
+  Generated on:           Feb 27 2025  03:13:51 pm
   Module:                 multiplier32FP
   Library domain:         worst
     Domain index:         0
@@ -1929,449 +1928,449 @@ UM:*                                                                   syn_map
 Max_transition design rule (violation total = 5630)
 Pin                                   Slew           Max     Violation
 ------------------------------------------------------------------------
-mul_88_52_g15009__1881/B               318           280            38
+mul_97_52_g15009__1881/B               318           280            38
   --> Other violations on net                  1241
-mul_88_52_g15002__2802/A0              318           280            38
+mul_97_52_g15002__2802/A0              318           280            38
   --> Other violations on net                  1241
-mul_88_52_g15318__6131/A               318           280            38
+mul_97_52_g15318__6131/A               318           280            38
   --> Other violations on net                  1241
-mul_88_52_g15319__1881/A               318           280            38
+mul_97_52_g15319__1881/A               318           280            38
   --> Other violations on net                  1241
-mul_88_52_g15320__5115/A               318           280            38
+mul_97_52_g15320__5115/A               318           280            38
   --> Other violations on net                  1241
-mul_88_52_g15321__7482/A               318           280            38
+mul_97_52_g15321__7482/A               318           280            38
   --> Other violations on net                  1241
-mul_88_52_g15322__4733/A               318           280            38
+mul_97_52_g15322__4733/A               318           280            38
   --> Other violations on net                  1241
-mul_88_52_g15334__6260/B1              318           280            38
+mul_97_52_g15334__6260/B1              318           280            38
   --> Other violations on net                  1241
-mul_88_52_g15335__4319/B1              318           280            38
+mul_97_52_g15335__4319/B1              318           280            38
   --> Other violations on net                  1241
-mul_88_52_g15336__8428/B1              318           280            38
+mul_97_52_g15336__8428/B1              318           280            38
   --> Other violations on net                  1241
-mul_88_52_g15337__5526/B1              318           280            38
+mul_97_52_g15337__5526/B1              318           280            38
   --> Other violations on net                  1241
-mul_88_52_g15338__6783/B1              318           280            38
+mul_97_52_g15338__6783/B1              318           280            38
   --> Other violations on net                  1241
-mul_88_52_g15339__3680/B1              318           280            38
+mul_97_52_g15339__3680/B1              318           280            38
   --> Other violations on net                  1241
-mul_88_52_g15341__2802/B1              318           280            38
+mul_97_52_g15341__2802/B1              318           280            38
   --> Other violations on net                  1241
-mul_88_52_g15342__1705/B1              318           280            38
+mul_97_52_g15342__1705/B1              318           280            38
   --> Other violations on net                  1241
-mul_88_52_g15343__5122/B1              318           280            38
+mul_97_52_g15343__5122/B1              318           280            38
   --> Other violations on net                  1241
-mul_88_52_g15344__8246/B1              318           280            38
+mul_97_52_g15344__8246/B1              318           280            38
   --> Other violations on net                  1241
-mul_88_52_g15346__6131/A               318           280            38
+mul_97_52_g15346__6131/A               318           280            38
   --> Other violations on net                  1241
-mul_88_52_g15347__1881/A               318           280            38
+mul_97_52_g15347__1881/A               318           280            38
   --> Other violations on net                  1241
-mul_88_52_g15348__5115/A               318           280            38
+mul_97_52_g15348__5115/A               318           280            38
   --> Other violations on net                  1241
-mul_88_52_g15349__7482/A               318           280            38
+mul_97_52_g15349__7482/A               318           280            38
   --> Other violations on net                  1241
-mul_88_52_g15350__4733/A               318           280            38
+mul_97_52_g15350__4733/A               318           280            38
   --> Other violations on net                  1241
-mul_88_52_g15359__6161/B               318           280            38
+mul_97_52_g15359__6161/B               318           280            38
   --> Other violations on net                  1241
-mul_88_52_g15360__9315/B               318           280            38
+mul_97_52_g15360__9315/B               318           280            38
   --> Other violations on net                  1241
-mul_88_52_g15361__9945/B               318           280            38
+mul_97_52_g15361__9945/B               318           280            38
   --> Other violations on net                  1241
-mul_88_52_g15362__2883/B               318           280            38
+mul_97_52_g15362__2883/B               318           280            38
   --> Other violations on net                  1241
-mul_88_52_g15363__2346/B               318           280            38
+mul_97_52_g15363__2346/B               318           280            38
   --> Other violations on net                  1241
-mul_88_52_g15364__1666/B               318           280            38
+mul_97_52_g15364__1666/B               318           280            38
   --> Other violations on net                  1241
-mul_88_52_g15365__7410/B               318           280            38
+mul_97_52_g15365__7410/B               318           280            38
   --> Other violations on net                  1241
-mul_88_52_g15366__6417/B               318           280            38
+mul_97_52_g15366__6417/B               318           280            38
   --> Other violations on net                  1241
-mul_88_52_g15367__5477/B               318           280            38
+mul_97_52_g15367__5477/B               318           280            38
   --> Other violations on net                  1241
-mul_88_52_g15368__2398/B               318           280            38
+mul_97_52_g15368__2398/B               318           280            38
   --> Other violations on net                  1241
-mul_88_52_g15643/B                     318           280            38
+mul_97_52_g15643/B                     318           280            38
   --> Other violations on net                  1241
-mul_88_52_g15672/Y                     318           280            38
+mul_97_52_g15672/Y                     318           280            38
   --> Other violations on net                  1241
-mul_88_52_g15344__8246/A0              312           280            32
+mul_97_52_g15344__8246/A0              312           280            32
   --> Other violations on net                  695
-mul_88_52_g15289__1881/A               312           280            32
+mul_97_52_g15289__1881/A               312           280            32
   --> Other violations on net                  695
-mul_88_52_g15366__6417/A               312           280            32
+mul_97_52_g15366__6417/A               312           280            32
   --> Other violations on net                  695
-mul_88_52_g15385__7482/B               312           280            32
+mul_97_52_g15385__7482/B               312           280            32
   --> Other violations on net                  695
-mul_88_52_g15386__4733/B               312           280            32
+mul_97_52_g15386__4733/B               312           280            32
   --> Other violations on net                  695
-mul_88_52_g15400__8428/B               312           280            32
+mul_97_52_g15400__8428/B               312           280            32
   --> Other violations on net                  695
-mul_88_52_g15413__7482/B               312           280            32
+mul_97_52_g15413__7482/B               312           280            32
   --> Other violations on net                  695
-mul_88_52_g15428__8428/B               312           280            32
+mul_97_52_g15428__8428/B               312           280            32
   --> Other violations on net                  695
-mul_88_52_g15449__7410/B               312           280            32
+mul_97_52_g15449__7410/B               312           280            32
   --> Other violations on net                  695
-mul_88_52_g15461__2802/B               312           280            32
+mul_97_52_g15461__2802/B               312           280            32
   --> Other violations on net                  695
-mul_88_52_g15474__2883/B               312           280            32
+mul_97_52_g15474__2883/B               312           280            32
   --> Other violations on net                  695
-mul_88_52_g15487__3680/B               312           280            32
+mul_97_52_g15487__3680/B               312           280            32
   --> Other violations on net                  695
-mul_88_52_g15536/B                     312           280            32
+mul_97_52_g15536/B                     312           280            32
   --> Other violations on net                  695
-mul_88_52_g15540/B                     312           280            32
+mul_97_52_g15540/B                     312           280            32
   --> Other violations on net                  695
-mul_88_52_g15572/B                     312           280            32
+mul_97_52_g15572/B                     312           280            32
   --> Other violations on net                  695
-mul_88_52_g15583/B                     312           280            32
+mul_97_52_g15583/B                     312           280            32
   --> Other violations on net                  695
-mul_88_52_g15584/B                     312           280            32
+mul_97_52_g15584/B                     312           280            32
   --> Other violations on net                  695
-mul_88_52_g15588/B                     312           280            32
+mul_97_52_g15588/B                     312           280            32
   --> Other violations on net                  695
-mul_88_52_g15589/B                     312           280            32
+mul_97_52_g15589/B                     312           280            32
   --> Other violations on net                  695
-mul_88_52_g15599/B                     312           280            32
+mul_97_52_g15599/B                     312           280            32
   --> Other violations on net                  695
-mul_88_52_g15605/B                     312           280            32
+mul_97_52_g15605/B                     312           280            32
   --> Other violations on net                  695
-mul_88_52_g15609/B                     312           280            32
+mul_97_52_g15609/B                     312           280            32
   --> Other violations on net                  695
-mul_88_52_g15670/Y                     312           280            32
+mul_97_52_g15670/Y                     312           280            32
   --> Other violations on net                  695
-mul_88_52_g15402__6783/A               319           280            39
+mul_97_52_g15402__6783/A               319           280            39
   --> Other violations on net                  472
-mul_88_52_g14890__2802/A               319           280            39
+mul_97_52_g14890__2802/A               319           280            39
   --> Other violations on net                  472
-mul_88_52_g15447__2346/A               319           280            39
+mul_97_52_g15447__2346/A               319           280            39
   --> Other violations on net                  472
-mul_88_52_g15456__8428/A               319           280            39
+mul_97_52_g15456__8428/A               319           280            39
   --> Other violations on net                  472
-mul_88_52_g15462__1705/A               319           280            39
+mul_97_52_g15462__1705/A               319           280            39
   --> Other violations on net                  472
-mul_88_52_g15467__1881/A               319           280            39
+mul_97_52_g15467__1881/A               319           280            39
   --> Other violations on net                  472
-mul_88_52_g15482__6260/A               319           280            39
+mul_97_52_g15482__6260/A               319           280            39
   --> Other violations on net                  472
-mul_88_52_g15516/A                     319           280            39
+mul_97_52_g15516/A                     319           280            39
   --> Other violations on net                  472
-mul_88_52_g15548/A                     319           280            39
+mul_97_52_g15548/A                     319           280            39
   --> Other violations on net                  472
-mul_88_52_g15577/A                     319           280            39
+mul_97_52_g15577/A                     319           280            39
   --> Other violations on net                  472
-mul_88_52_g15609/A                     319           280            39
+mul_97_52_g15609/A                     319           280            39
   --> Other violations on net                  472
-mul_88_52_g15621/A                     319           280            39
+mul_97_52_g15621/A                     319           280            39
   --> Other violations on net                  472
-mul_88_52_g15664/Y                     319           280            39
+mul_97_52_g15664/Y                     319           280            39
   --> Other violations on net                  472
-mul_88_52_g15382__6131/A               314           280            34
+mul_97_52_g15382__6131/A               314           280            34
   --> Other violations on net                  412
-mul_88_52_g15246__2398/B0              314           280            34
+mul_97_52_g15246__2398/B0              314           280            34
   --> Other violations on net                  412
-mul_88_52_g15401__5526/B               314           280            34
+mul_97_52_g15401__5526/B               314           280            34
   --> Other violations on net                  412
-mul_88_52_g15409__7098/A               314           280            34
+mul_97_52_g15409__7098/A               314           280            34
   --> Other violations on net                  412
-mul_88_52_g15415__6161/A               314           280            34
+mul_97_52_g15415__6161/A               314           280            34
   --> Other violations on net                  412
-mul_88_52_g15533/A                     314           280            34
+mul_97_52_g15533/A                     314           280            34
   --> Other violations on net                  412
-mul_88_52_g15534/A                     314           280            34
+mul_97_52_g15534/A                     314           280            34
   --> Other violations on net                  412
-mul_88_52_g15547/A                     314           280            34
+mul_97_52_g15547/A                     314           280            34
   --> Other violations on net                  412
-mul_88_52_g15558/A                     314           280            34
+mul_97_52_g15558/A                     314           280            34
   --> Other violations on net                  412
-mul_88_52_g15569/A                     314           280            34
+mul_97_52_g15569/A                     314           280            34
   --> Other violations on net                  412
-mul_88_52_g15595/A                     314           280            34
+mul_97_52_g15595/A                     314           280            34
   --> Other violations on net                  412
-mul_88_52_g15604/A                     314           280            34
+mul_97_52_g15604/A                     314           280            34
   --> Other violations on net                  412
-mul_88_52_g15682/Y                     314           280            34
+mul_97_52_g15682/Y                     314           280            34
   --> Other violations on net                  412
-mul_88_52_g15370__6260/A               314           280            34
+mul_97_52_g15370__6260/A               314           280            34
   --> Other violations on net                  412
-mul_88_52_g15008__6131/A               314           280            34
+mul_97_52_g15008__6131/A               314           280            34
   --> Other violations on net                  412
-mul_88_52_g15388__9315/A               314           280            34
+mul_97_52_g15388__9315/A               314           280            34
   --> Other violations on net                  412
-mul_88_52_g15397__5107/A               314           280            34
+mul_97_52_g15397__5107/A               314           280            34
   --> Other violations on net                  412
-mul_88_52_g15411__1881/A               314           280            34
+mul_97_52_g15411__1881/A               314           280            34
   --> Other violations on net                  412
-mul_88_52_g15444__9315/A               314           280            34
+mul_97_52_g15444__9315/A               314           280            34
   --> Other violations on net                  412
-mul_88_52_g15484__8428/A               314           280            34
+mul_97_52_g15484__8428/A               314           280            34
   --> Other violations on net                  412
-mul_88_52_g15511/A                     314           280            34
+mul_97_52_g15511/A                     314           280            34
   --> Other violations on net                  412
-mul_88_52_g15546/A                     314           280            34
+mul_97_52_g15546/A                     314           280            34
   --> Other violations on net                  412
-mul_88_52_g15571/A                     314           280            34
+mul_97_52_g15571/A                     314           280            34
   --> Other violations on net                  412
-mul_88_52_g15599/A                     314           280            34
+mul_97_52_g15599/A                     314           280            34
   --> Other violations on net                  412
-mul_88_52_g15619/A                     314           280            34
+mul_97_52_g15619/A                     314           280            34
   --> Other violations on net                  412
-mul_88_52_g15662/Y                     314           280            34
+mul_97_52_g15662/Y                     314           280            34
   --> Other violations on net                  412
-mul_88_52_g15450__6417/A               312           280            32
+mul_97_52_g15450__6417/A               312           280            32
   --> Other violations on net                  383
-mul_88_52_g15248__6260/B0              312           280            32
+mul_97_52_g15248__6260/B0              312           280            32
   --> Other violations on net                  383
-mul_88_52_g15487__3680/A               312           280            32
+mul_97_52_g15487__3680/A               312           280            32
   --> Other violations on net                  383
-mul_88_52_g15549/A                     312           280            32
+mul_97_52_g15549/A                     312           280            32
   --> Other violations on net                  383
-mul_88_52_g15551/A                     312           280            32
+mul_97_52_g15551/A                     312           280            32
   --> Other violations on net                  383
-mul_88_52_g15554/A                     312           280            32
+mul_97_52_g15554/A                     312           280            32
   --> Other violations on net                  383
-mul_88_52_g15557/A                     312           280            32
+mul_97_52_g15557/A                     312           280            32
   --> Other violations on net                  383
-mul_88_52_g15582/A                     312           280            32
+mul_97_52_g15582/A                     312           280            32
   --> Other violations on net                  383
-mul_88_52_g15593/A                     312           280            32
+mul_97_52_g15593/A                     312           280            32
   --> Other violations on net                  383
-mul_88_52_g15597/A                     312           280            32
+mul_97_52_g15597/A                     312           280            32
   --> Other violations on net                  383
-mul_88_52_g15602/A                     312           280            32
+mul_97_52_g15602/A                     312           280            32
   --> Other violations on net                  383
-mul_88_52_g15631/A                     312           280            32
+mul_97_52_g15631/A                     312           280            32
   --> Other violations on net                  383
-mul_88_52_g15681/Y                     312           280            32
+mul_97_52_g15681/Y                     312           280            32
   --> Other violations on net                  383
-mul_88_52_g15390__2883/A               312           280            32
+mul_97_52_g15390__2883/A               312           280            32
   --> Other violations on net                  383
-mul_88_52_g15253__3680/A0              312           280            32
+mul_97_52_g15253__3680/A0              312           280            32
   --> Other violations on net                  383
-mul_88_52_g15404__1617/A               312           280            32
+mul_97_52_g15404__1617/A               312           280            32
   --> Other violations on net                  383
-mul_88_52_g15422__6417/A               312           280            32
+mul_97_52_g15422__6417/A               312           280            32
   --> Other violations on net                  383
-mul_88_52_g15423__5477/A               312           280            32
+mul_97_52_g15423__5477/A               312           280            32
   --> Other violations on net                  383
-mul_88_52_g15474__2883/A               312           280            32
+mul_97_52_g15474__2883/A               312           280            32
   --> Other violations on net                  383
-mul_88_52_g15476__1666/A               312           280            32
+mul_97_52_g15476__1666/A               312           280            32
   --> Other violations on net                  383
-mul_88_52_g15541/A                     312           280            32
+mul_97_52_g15541/A                     312           280            32
   --> Other violations on net                  383
-mul_88_52_g15578/A                     312           280            32
+mul_97_52_g15578/A                     312           280            32
   --> Other violations on net                  383
-mul_88_52_g15586/A                     312           280            32
+mul_97_52_g15586/A                     312           280            32
   --> Other violations on net                  383
-mul_88_52_g15587/A                     312           280            32
+mul_97_52_g15587/A                     312           280            32
   --> Other violations on net                  383
-mul_88_52_g15632/A                     312           280            32
+mul_97_52_g15632/A                     312           280            32
   --> Other violations on net                  383
-mul_88_52_g15661/Y                     312           280            32
+mul_97_52_g15661/Y                     312           280            32
   --> Other violations on net                  383
-mul_88_52_g15384__5115/A               312           280            32
+mul_97_52_g15384__5115/A               312           280            32
   --> Other violations on net                  383
-mul_88_52_g15259__7098/B0              312           280            32
+mul_97_52_g15259__7098/B0              312           280            32
   --> Other violations on net                  383
-mul_88_52_g15391__2346/A               312           280            32
+mul_97_52_g15391__2346/A               312           280            32
   --> Other violations on net                  383
-mul_88_52_g15394__6417/A               312           280            32
+mul_97_52_g15394__6417/A               312           280            32
   --> Other violations on net                  383
-mul_88_52_g15424__2398/A               312           280            32
+mul_97_52_g15424__2398/A               312           280            32
   --> Other violations on net                  383
-mul_88_52_g15455__4319/A               312           280            32
+mul_97_52_g15455__4319/A               312           280            32
   --> Other violations on net                  383
-mul_88_52_g15517/A                     312           280            32
+mul_97_52_g15517/A                     312           280            32
   --> Other violations on net                  383
-mul_88_52_g15523/A                     312           280            32
+mul_97_52_g15523/A                     312           280            32
   --> Other violations on net                  383
-mul_88_52_g15538/A                     312           280            32
+mul_97_52_g15538/A                     312           280            32
   --> Other violations on net                  383
-mul_88_52_g15540/A                     312           280            32
+mul_97_52_g15540/A                     312           280            32
   --> Other violations on net                  383
-mul_88_52_g15575/A                     312           280            32
+mul_97_52_g15575/A                     312           280            32
   --> Other violations on net                  383
-mul_88_52_g15624/A                     312           280            32
+mul_97_52_g15624/A                     312           280            32
   --> Other violations on net                  383
-mul_88_52_g15660/Y                     312           280            32
+mul_97_52_g15660/Y                     312           280            32
   --> Other violations on net                  383
-mul_88_52_g15425__5107/A               312           280            32
+mul_97_52_g15425__5107/A               312           280            32
   --> Other violations on net                  383
-mul_88_52_g15249__4319/A0              312           280            32
+mul_97_52_g15249__4319/A0              312           280            32
   --> Other violations on net                  383
-mul_88_52_g15429__5526/A               312           280            32
+mul_97_52_g15429__5526/A               312           280            32
   --> Other violations on net                  383
-mul_88_52_g15436__8246/A               312           280            32
+mul_97_52_g15436__8246/A               312           280            32
   --> Other violations on net                  383
-mul_88_52_g15461__2802/A               312           280            32
+mul_97_52_g15461__2802/A               312           280            32
   --> Other violations on net                  383
-mul_88_52_g15473__9945/A               312           280            32
+mul_97_52_g15473__9945/A               312           280            32
   --> Other violations on net                  383
-mul_88_52_g15526/A                     312           280            32
+mul_97_52_g15526/A                     312           280            32
   --> Other violations on net                  383
-mul_88_52_g15531/A                     312           280            32
+mul_97_52_g15531/A                     312           280            32
   --> Other violations on net                  383
-mul_88_52_g15555/A                     312           280            32
+mul_97_52_g15555/A                     312           280            32
   --> Other violations on net                  383
-mul_88_52_g15566/A                     312           280            32
+mul_97_52_g15566/A                     312           280            32
   --> Other violations on net                  383
-mul_88_52_g15592/A                     312           280            32
+mul_97_52_g15592/A                     312           280            32
   --> Other violations on net                  383
-mul_88_52_g15626/A                     312           280            32
+mul_97_52_g15626/A                     312           280            32
   --> Other violations on net                  383
-mul_88_52_g15658/Y                     312           280            32
+mul_97_52_g15658/Y                     312           280            32
   --> Other violations on net                  383
-mul_88_52_g15295__9945/B0              289           280             9
+mul_97_52_g15295__9945/B0              289           280             9
   --> Other violations on net                  178
-mul_88_52_g15288__6131/B0              289           280             9
+mul_97_52_g15288__6131/B0              289           280             9
   --> Other violations on net                  178
-mul_88_52_g15296__2883/B0              289           280             9
+mul_97_52_g15296__2883/B0              289           280             9
   --> Other violations on net                  178
-mul_88_52_g15298__1666/B0              289           280             9
+mul_97_52_g15298__1666/B0              289           280             9
   --> Other violations on net                  178
-mul_88_52_g15299__7410/B0              289           280             9
+mul_97_52_g15299__7410/B0              289           280             9
   --> Other violations on net                  178
-mul_88_52_g15300__6417/B0              289           280             9
+mul_97_52_g15300__6417/B0              289           280             9
   --> Other violations on net                  178
-mul_88_52_g15301__5477/B0              289           280             9
+mul_97_52_g15301__5477/B0              289           280             9
   --> Other violations on net                  178
-mul_88_52_g15302__2398/B0              289           280             9
+mul_97_52_g15302__2398/B0              289           280             9
   --> Other violations on net                  178
-mul_88_52_g15303__5107/B0              289           280             9
+mul_97_52_g15303__5107/B0              289           280             9
   --> Other violations on net                  178
-mul_88_52_g15304__6260/B0              289           280             9
+mul_97_52_g15304__6260/B0              289           280             9
   --> Other violations on net                  178
-mul_88_52_g15305__4319/B0              289           280             9
+mul_97_52_g15305__4319/B0              289           280             9
   --> Other violations on net                  178
-mul_88_52_g15307__5526/B0              289           280             9
+mul_97_52_g15307__5526/B0              289           280             9
   --> Other violations on net                  178
-mul_88_52_g15309__3680/B0              289           280             9
+mul_97_52_g15309__3680/B0              289           280             9
   --> Other violations on net                  178
-mul_88_52_g15310__1617/B0              289           280             9
+mul_97_52_g15310__1617/B0              289           280             9
   --> Other violations on net                  178
-mul_88_52_g15311__2802/B0              289           280             9
+mul_97_52_g15311__2802/B0              289           280             9
   --> Other violations on net                  178
-mul_88_52_g15312__1705/B0              289           280             9
+mul_97_52_g15312__1705/B0              289           280             9
   --> Other violations on net                  178
-mul_88_52_g15313__5122/B0              289           280             9
+mul_97_52_g15313__5122/B0              289           280             9
   --> Other violations on net                  178
-mul_88_52_g15314__8246/B0              289           280             9
+mul_97_52_g15314__8246/B0              289           280             9
   --> Other violations on net                  178
-mul_88_52_g15650/A                     289           280             9
+mul_97_52_g15650/A                     289           280             9
   --> Other violations on net                  178
-mul_88_52_g15651/B                     289           280             9
+mul_97_52_g15651/B                     289           280             9
   --> Other violations on net                  178
-mul_88_52_g15680/Y                     289           280             9
+mul_97_52_g15680/Y                     289           280             9
   --> Other violations on net                  178
-mul_88_52_g15339__3680/A0              288           280             8
+mul_97_52_g15339__3680/A0              288           280             8
   --> Other violations on net                  166
-mul_88_52_g15308__6783/B1              288           280             8
+mul_97_52_g15308__6783/B1              288           280             8
   --> Other violations on net                  166
-mul_88_52_g15527/B                     288           280             8
+mul_97_52_g15527/B                     288           280             8
   --> Other violations on net                  166
-mul_88_52_g15534/B                     288           280             8
+mul_97_52_g15534/B                     288           280             8
   --> Other violations on net                  166
-mul_88_52_g15570/B                     288           280             8
+mul_97_52_g15570/B                     288           280             8
   --> Other violations on net                  166
-mul_88_52_g15608/B                     288           280             8
+mul_97_52_g15608/B                     288           280             8
   --> Other violations on net                  166
-mul_88_52_g15616/B                     288           280             8
+mul_97_52_g15616/B                     288           280             8
   --> Other violations on net                  166
-mul_88_52_g15617/B                     288           280             8
+mul_97_52_g15617/B                     288           280             8
   --> Other violations on net                  166
-mul_88_52_g15619/B                     288           280             8
+mul_97_52_g15619/B                     288           280             8
   --> Other violations on net                  166
-mul_88_52_g15620/B                     288           280             8
+mul_97_52_g15620/B                     288           280             8
   --> Other violations on net                  166
-mul_88_52_g15621/B                     288           280             8
+mul_97_52_g15621/B                     288           280             8
   --> Other violations on net                  166
-mul_88_52_g15623/B                     288           280             8
+mul_97_52_g15623/B                     288           280             8
   --> Other violations on net                  166
-mul_88_52_g15624/B                     288           280             8
+mul_97_52_g15624/B                     288           280             8
   --> Other violations on net                  166
-mul_88_52_g15626/B                     288           280             8
+mul_97_52_g15626/B                     288           280             8
   --> Other violations on net                  166
-mul_88_52_g15627/B                     288           280             8
+mul_97_52_g15627/B                     288           280             8
   --> Other violations on net                  166
-mul_88_52_g15629/B                     288           280             8
+mul_97_52_g15629/B                     288           280             8
   --> Other violations on net                  166
-mul_88_52_g15630/B                     288           280             8
+mul_97_52_g15630/B                     288           280             8
   --> Other violations on net                  166
-mul_88_52_g15631/B                     288           280             8
+mul_97_52_g15631/B                     288           280             8
   --> Other violations on net                  166
-mul_88_52_g15632/B                     288           280             8
+mul_97_52_g15632/B                     288           280             8
   --> Other violations on net                  166
-mul_88_52_g15650/B                     288           280             8
+mul_97_52_g15650/B                     288           280             8
   --> Other violations on net                  166
-mul_88_52_g15668/Y                     288           280             8
+mul_97_52_g15668/Y                     288           280             8
   --> Other violations on net                  166
-mul_88_52_g15376__1617/A               292           280            12
+mul_97_52_g15376__1617/A               292           280            12
   --> Other violations on net                  134
-mul_88_52_g15260__6131/A0              292           280            12
+mul_97_52_g15260__6131/A0              292           280            12
   --> Other violations on net                  134
-mul_88_52_g15398__6260/A               292           280            12
+mul_97_52_g15398__6260/A               292           280            12
   --> Other violations on net                  134
-mul_88_52_g15469__7482/A               292           280            12
+mul_97_52_g15469__7482/A               292           280            12
   --> Other violations on net                  134
-mul_88_52_g15512/A                     292           280            12
+mul_97_52_g15512/A                     292           280            12
   --> Other violations on net                  134
-mul_88_52_g15515/A                     292           280            12
+mul_97_52_g15515/A                     292           280            12
   --> Other violations on net                  134
-mul_88_52_g15520/A                     292           280            12
+mul_97_52_g15520/A                     292           280            12
   --> Other violations on net                  134
-mul_88_52_g15524/A                     292           280            12
+mul_97_52_g15524/A                     292           280            12
   --> Other violations on net                  134
-mul_88_52_g15576/A                     292           280            12
+mul_97_52_g15576/A                     292           280            12
   --> Other violations on net                  134
-mul_88_52_g15588/A                     292           280            12
+mul_97_52_g15588/A                     292           280            12
   --> Other violations on net                  134
-mul_88_52_g15601/A                     292           280            12
+mul_97_52_g15601/A                     292           280            12
   --> Other violations on net                  134
-mul_88_52_g15683/Y                     292           280            12
+mul_97_52_g15683/Y                     292           280            12
   --> Other violations on net                  134
-mul_88_52_g14967__6260/A               284           280             4
+mul_97_52_g14967__6260/A               284           280             4
   --> Other violations on net                  4
-mul_88_52_g15267__9945/Y               284           280             4
+mul_97_52_g15267__9945/Y               284           280             4
   --> Other violations on net                  4
-mul_88_52_g14940__4319/A               284           280             4
+mul_97_52_g14940__4319/A               284           280             4
   --> Other violations on net                  4
-mul_88_52_g15263__7482/Y               284           280             4
+mul_97_52_g15263__7482/Y               284           280             4
   --> Other violations on net                  4
-mul_88_52_g14924__1881/A               284           280             4
+mul_97_52_g14924__1881/A               284           280             4
   --> Other violations on net                  4
-mul_88_52_g15265__6161/Y               284           280             4
+mul_97_52_g15265__6161/Y               284           280             4
   --> Other violations on net                  4
-mul_88_52_g14941__8428/A               284           280             4
+mul_97_52_g14941__8428/A               284           280             4
   --> Other violations on net                  4
-mul_88_52_g15266__9315/Y               284           280             4
+mul_97_52_g15266__9315/Y               284           280             4
   --> Other violations on net                  4
-mul_88_52_g14895__6131/A               282           280             2
+mul_97_52_g14895__6131/A               282           280             2
   --> Other violations on net                  2
-mul_88_52_g15313__5122/Y               282           280             2
+mul_97_52_g15313__5122/Y               282           280             2
   --> Other violations on net                  2
-mul_88_52_g14915__6783/A               282           280             2
+mul_97_52_g14915__6783/A               282           280             2
   --> Other violations on net                  2
-mul_88_52_g15288__6131/Y               282           280             2
+mul_97_52_g15288__6131/Y               282           280             2
   --> Other violations on net                  2
-mul_88_52_g14932__2346/A               282           280             2
+mul_97_52_g14932__2346/A               282           280             2
   --> Other violations on net                  2
-mul_88_52_g15299__7410/Y               282           280             2
+mul_97_52_g15299__7410/Y               282           280             2
   --> Other violations on net                  2
-mul_88_52_g14873__9315/A               282           280             2
+mul_97_52_g14873__9315/A               282           280             2
   --> Other violations on net                  2
-mul_88_52_g15314__8246/Y               282           280             2
+mul_97_52_g15314__8246/Y               282           280             2
   --> Other violations on net                  2
-mul_88_52_g14960__2346/A               282           280             2
+mul_97_52_g14960__2346/A               282           280             2
   --> Other violations on net                  2
-mul_88_52_g15303__5107/Y               282           280             2
+mul_97_52_g15303__5107/Y               282           280             2
   --> Other violations on net                  2
-mul_88_52_g14968__4319/A               282           280             2
+mul_97_52_g14968__4319/A               282           280             2
   --> Other violations on net                  2
-mul_88_52_g15304__6260/Y               282           280             2
+mul_97_52_g15304__6260/Y               282           280             2
   --> Other violations on net                  2
 
 
@@ -2415,7 +2414,7 @@ Info   : PWRA-0007 [PwrInfo] Completed successfully.
        : Info=6, Warn=2, Error=0, Fatal=0
 Output file: /home/cinovador/Documents/course_files/physical_synthesis/synthesis/backend/synthesis/reports/multiplier32FP_power.rpt
 @file(multiplier32FP.tcl) 112: source ${SCRIPT_DIR}/common/sdf_width_wa.etf
-Sourcing '/home/cinovador/Documents/course_files/physical_synthesis/synthesis/backend/synthesis/scripts/common/sdf_width_wa.etf' (Thu Feb 27 12:21:47 -03 2025)...
+Sourcing '/home/cinovador/Documents/course_files/physical_synthesis/synthesis/backend/synthesis/scripts/common/sdf_width_wa.etf' (Thu Feb 27 15:13:51 -03 2025)...
 @file(multiplier32FP.tcl) 113: write_sdf -edge check_edge -setuphold merge_always -nonegchecks -recrem merge_always -version 3.0 -design ${HDL_NAME}  > ${DEV_DIR}/${HDL_NAME}_worst.sdf
 @file(multiplier32FP.tcl) 114: write_hdl ${HDL_NAME} > ${DEV_DIR}/${HDL_NAME}.v
 @file(multiplier32FP.tcl) 116: exit

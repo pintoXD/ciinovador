@@ -218,10 +218,6 @@ add mapped point product_o[28]/q product_o_reg[28]/Q  -type DFF DFF
 add mapped point product_o[29]/q product_o_reg[29]/Q  -type DFF DFF
 add mapped point product_o[30]/q product_o_reg[30]/Q  -type DFF DFF
 add mapped point product_o[31]/q product_o_reg[31]/Q  -type DFF DFF
-add mapped point signal_a/q signal_a_reg/Q  -type DLAT DLAT
-add mapped point signal_a/q signal_a_reg/QN  -type DLAT DLAT
-add mapped point signal_b/q signal_b_reg/Q  -type DLAT DLAT
-add mapped point signal_b/q signal_b_reg/QN  -type DLAT DLAT
 add mapped point underflow_o/q underflow_o_reg/Q  -type DFF DFF
 add mapped point current_state[1]/q current_state_reg[1]/Q  -type DFF DFF
 add mapped point current_state[1]/q current_state_reg[1]/QN  -type DFF DFF

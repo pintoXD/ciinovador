@@ -24,14 +24,16 @@ if [ $1 == "-xrun_raw" ]; then
     # Para executar o XCELIUM
     cd ${PROJECT_DIR}/frontend/work
     ### run HDL
-    xrun -64bit ${DESIGNS}.sv ${DESIGNS}_tb.sv -top ${DESIGNS}_tb -access +rwc -gui
+    xrun -timescale 1ns/10ps -64bit ${FRONTEND_DIR}/${DESIGNS}.sv ${FRONTEND_DIR}/${DESIGNS}_tb.sv -top ${DESIGNS}_tb -access +rwc
+    # xrun -64bit ${FRONTEND_DIR}/${DESIGNS}.sv ${FRONTEND_DIR}/${DESIGNS}_tb.sv -top ${DESIGNS}_tb -access +rwc -gui
 fi
 
 if [ $1 == "-xrun_compiled" ]; then
     # Para executar o XCELIUM
     cd ${PROJECT_DIR}/frontend/work
     ### run netlist (logic synthesis)
-    xrun -64bit ${LIB_VERILOG_FILES}/slow_vdd1v0_basicCells.v ${PROJECT_DIR}/backend/synthesis/deliverables/${DESIGNS}.v ${FRONTEND_DIR}/${DESIGNS}_tb.sv -top ${DESIGNS}_tb -access +rwc -gui
+    # xrun -64bit ${LIB_VERILOG_FILES}/slow_vdd1v0_basicCells.v ${PROJECT_DIR}/backend/synthesis/deliverables/${DESIGNS}.v ${FRONTEND_DIR}/${DESIGNS}_tb.sv -top ${DESIGNS}_tb -access +rwc -gui
+    xrun -timescale 1ns/10ps -64bit ${LIB_VERILOG_FILES}/slow_vdd1v0_basicCells.v ${PROJECT_DIR}/backend/synthesis/deliverables/${DESIGNS}.v ${FRONTEND_DIR}/${DESIGNS}_tb.sv -top ${DESIGNS}_tb -access +rwc
 fi
 
 if [ $1 == "-xrun_sdf" ]; then
@@ -41,14 +43,12 @@ if [ $1 == "-xrun_sdf" ]; then
     xmsdfc -iocondsort -compile ${PROJECT_DIR}/backend/synthesis/deliverables/${DESIGNS}_worst.sdf && \
     xrun -timescale 1ns/10ps -mess -64bit -noneg_tchk ${LIB_VERILOG_FILES}/slow_vdd1v0_basicCells.v \
     ${PROJECT_DIR}/backend/synthesis/deliverables/${DESIGNS}.v ${FRONTEND_DIR}/${DESIGNS}_tb.sv -top ${DESIGNS}_tb \
-    -access +rwc -sdf_cmd_file ${PROJECT_DIR}/frontend/sdf_cmd_file.cmd -gui 
+    -access +rwc -sdf_cmd_file ${PROJECT_DIR}/frontend/sdf_cmd_file.cmd 
 fi
 
 if [ $1 == "-genus" ]; then
     # Para executar o GENUS
     cd ${PROJECT_DIR}/backend/synthesis/work
-    ## apenas o programa
-    # genus -abort_on_error -lic_startup Genus_Synthesis -lic_startup_options Genus_Physical_Opt -log genus -overwrite
     # programa e carrega script para síntese automatizada
     genus -abort_on_error -lic_startup Genus_Synthesis -lic_startup_options Genus_Physical_Opt \
         -log ${BACKEND_DIR}/synthesis/work/genus/genus \
@@ -58,7 +58,6 @@ fi
 if [ $1 == "-innovus" ]; then
     # Para executar o INNOVUS
     cd ${PROJECT_DIR}/backend/layout/work
-    ## apenas o programa
     # innovus
     innovus -stylus -log ${BACKEND_DIR}/synthesis/work/innovus/ -file ${PROJECT_DIR}/backend/layout/scripts/layout.tcl
 fi

@@ -43,14 +43,22 @@ logic [7:0] exponent_a, exponent_b; //The 24th bit is unused until the multiplic
 logic [23:0] mantissa_a, mantissa_b; //The 24th bit is unused until the multiplication is computed
 logic [22:0] mantissa_product_o;
 logic [47:0] mantissa_temp;
+logic [47:0] mantissa_temp_ff;
 logic [9:0] exponent_temp;
+logic [9:0] exponent_temp_ff;
 
 
 always_ff @(posedge clk, negedge rst_n) begin : MULTIPLIER_STATE_CHANGER
-    if(!rst_n)
+    if(!rst_n)begin
         current_state <= INITIAL_STATE;
-    else
+        mantissa_temp_ff <= 48'b0;
+        exponent_temp_ff <= 10'b0;
+    end
+    else begin
         current_state <= next_state;
+        mantissa_temp_ff <= mantissa_temp;
+        exponent_temp_ff <= exponent_temp;
+    end
 end
 
 
@@ -58,7 +66,8 @@ always_comb begin : MULTIPLIER_COMB_BLOCK
     next_state = current_state;
 
     if(!rst_n)begin
-        is_multiplication_done = 0;
+        // mantissa_temp = 48'b0;
+        // exponent_temp = 10'b0;
     end else begin 
         case (current_state)
             INITIAL_STATE:
@@ -67,11 +76,11 @@ always_comb begin : MULTIPLIER_COMB_BLOCK
                 end 
 
             MULTIPLY_STEP: begin
-                    mantissa_temp = mantissa_temp; //the product_o is 0
-                    exponent_temp = exponent_temp; //the exponent is 0
-
-                    signal_a = a_i[31]; //extract the sign bit from a_i
-                    signal_b = b_i[31]; //extract the sign bit from b_i
+                    mantissa_temp = mantissa_temp_ff; //the product_o is 0
+                    exponent_temp = exponent_temp_ff; //the exponent is 0
+                    
+                    // mantissa_temp = mantissa_temp; //the product_o is 0
+                    // exponent_temp = exponent_temp; //the exponent is 0
 
                     exponent_a = a_i[30:23]; //extract the exponent from a_i
                     exponent_b = b_i[30:23]; //extract the exponent from b_i
@@ -99,7 +108,6 @@ always_comb begin : MULTIPLIER_COMB_BLOCK
             end
 
             RESULT_VERIFICATION_STEP: begin
-                // is_multiplication_done = 1;
                 next_state = DONE;
             end
             DONE:
@@ -136,7 +144,7 @@ always_ff @(posedge clk, negedge rst_n) begin : MULTIPLIER_FF_BLOCK
             end
             MULTIPLY_STEP: begin
                 done_o <= 1'b1;
-                product_o[31] <= signal_a ^ signal_b;    //XOR the sign bits to get the sign of the product_o
+                product_o[31] <= a_i[31] ^ b_i[31];    //XOR the sign bits to get the sign of the product_o
                 product_o[30:23] <=  exponent_temp[7:0]; //add the exponents and subtract the bias
                 product_o[22:0] <= mantissa_temp[45:23]; //extract the 24 most significant bits of the product_o
             end
