@@ -1,0 +1,11 @@
+xrun(64): 24.09-s001: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	24.09-s001: Started on Feb 27, 2025 at 12:06:35 -03
+xrun
+	-64bit
+	/home/tools/cadence/gpdk/gsclib045_all_v4.4/gsclib045/verilog/slow_vdd1v0_basicCells.v
+	/home/cinovador/Documents/course_files/physical_synthesis/synthesis/backend/synthesis/deliverables/multiplier32FP.v
+	-top multiplier32FP_tb
+	-access +rwc
+	-gui
+xrun: *E,FILEMIS: Cannot find the provided file /home/tools/cadence/gpdk/gsclib045_all_v4.4/gsclib045/verilog/slow_vdd1v0_basicCells.v.
+TOOL:	xrun(64)	24.09-s001: Exiting on Feb 27, 2025 at 12:06:35 -03  (total: 00:00:00)

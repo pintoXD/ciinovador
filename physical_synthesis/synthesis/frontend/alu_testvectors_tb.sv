@@ -61,7 +61,6 @@ module alu_testvectors_tb();
     initial begin
         // $dumpfile("alu_testvectors_tb.vcd");
         // $dumpvars(0, alu_testvectors_tb);
-        $readmemh("vetor.txt", testvectors);
         #100;
         file = $fopen("vetor.txt", "r");
         if (file == 0) begin
@@ -78,26 +77,8 @@ module alu_testvectors_tb();
 
         #100;
 
-        // // Display the contents of the array using foreach
-        
-        // Display the contents of the array
-        // for (i = 0; i < 100; i = i + 1) begin
-        //         $display("testvectors[%0d][0] = %h", i, testvectors[i][0]);
-        //         $display("testvectors[%0d][1] = %h", i, testvectors[i][1]);
-        // end
-        // $finish;
         vectornum = 0;
-        // errors = 0;
-    // end
-
-    // initial begin
-        // // Display the contents of the array
-        // for (i = 0; i < 100; i = i + 1) begin
-        //         $display("testvectors[%0d][0] = %h", i, testvectors[i][0]);
-        //         $display("testvectors[%0d][1] = %h", i, testvectors[i][1]);
-        // end
-
-        
+      
 
         #10;
         rst_n = 0;
@@ -108,7 +89,7 @@ module alu_testvectors_tb();
         #100;
 
         start_i = 1;
-        for (vectornum = 0; vectornum < 15; vectornum = vectornum + 1) begin
+        for (vectornum = 0; vectornum < 100; vectornum = vectornum + 1) begin
             a_i = testvectors[vectornum][0];
             b_i = testvectors[vectornum][1];
 
@@ -116,17 +97,10 @@ module alu_testvectors_tb();
             mock_b = $bitstoshortreal(testvectors[vectornum][1]);
             expected_result = mock_a * mock_b;
             
-            // $display("Multiplying %h * %h = %h", mock_a, mock_b, expected_result);
-            // expected_result = $bitstoreal(testvectors[vectornum][0]) * $bitstoreal(testvectors[vectornum][1]);
-
             @(posedge done_o);
             #10;
             if($bitstoshortreal(product_o) != expected_result) begin
                 $display("Line %d Error: Expected %h, got %h", vectornum + 1, $shortrealtobits(expected_result), product_o);
-                $display("Multiplying %f * %f = %f", mock_a, mock_b, expected_result);
-                $display("Expected %h, got %h", expected_result, product_o);
-                $display("Expected %f, got %f", expected_result, $bitstoshortreal(product_o));
-            // if(compare_floats($bitstoshortreal(product_o), expected_result)) begin
                 errors = errors + 1;
             end
         end
@@ -135,72 +109,5 @@ module alu_testvectors_tb();
         $finish;
 
     end
-
-
-
-/*
-    always @(posedge clk)
-    begin
-
-        if(!done_o)begin
-            #10;
-            a_i = testvectors[vectornum][0];
-            b_i = testvectors[vectornum][1];
-            expected_result = testvectors[vectornum][0] * testvectors[vectornum][1];
-        end else begin
-            if(product_o !== expected_result) begin
-                $display("Error: Expected %h, got %h", expected_result, product_o);
-                errors = errors + 1;
-            end
-
-            vectornum = vectornum + 1;
-
-            if(vectornum >= 100)
-                $finish;
-        end
-
-
-
-        #10; 
-        // if (testvectors[vectornum] === 8'bxx || testvectors[vectornum + 1] === 8'bxx || testvectors[vectornum + 2] === 8'bxx) begin
-        //     $display("Finished testing all vectors. %d errors found.", errors);
-        //     $finish;
-        // end
-    end
-*/  /*
-    always @(negedge clk) begin
-        #10;
-        
-        // expected_ALU_Out = testvectors[vectornum+3];
-        // expected_CarryOut = testvectors[vectornum+4];
-
-        // if (ALU_Out == 8'bx || CarryOut == 1'bx) begin
-        //     $display("Finished testing all vectors. %d errors found.", errors);
-        //     $finish;
-        // end
-        
-        // if ((ALU_Out !== expected_ALU_Out || CarryOut !== expected_CarryOut) && ALU_Sel != 4'b0011) begin
-        //     errors = errors + 1;
-        // end
-        
-        // for(i = 0; i < 2; i = i + 1) begin
-        //     $display("testvector[%d ] : %b", i, testvectors[0][i]);
-        //     $display("WAIT");
-        //     $display("testvector[%d ] : %b", i, testvectors[1][i]);
-        //     $finish;
-        // end
-        // $display("testvector[%d ] : %h", vectornum, testvectors[vectornum]);
-
-
-        // $display("testvector[%d ] : %h", vectornum, testvectors[vectornum][0]);
-
-        // vectornum = vectornum + 1;
-        
-        // if(vectornum >= 4)
-        //     $finish;
-
-    end
-
-    */
 
 endmodule
