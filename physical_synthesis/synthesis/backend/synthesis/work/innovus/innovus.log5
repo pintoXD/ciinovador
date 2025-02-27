@@ -1,0 +1,445 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v21.15-s110_1, built Fri Sep 23 13:08:12 PDT 2022
+Options:	-stylus -log /home/cinovador/Documents/course_files/physical_synthesis/synthesis/backend/synthesis/work/innovus/ -file /home/cinovador/Documents/course_files/physical_synthesis/synthesis/backend/layout/scripts/layout.tcl 
+Date:		Thu Feb 27 10:55:07 2025
+Host:		cinova05.lesc.ufc.br (x86_64 w/Linux 4.18.0-553.36.1.el8_10.x86_64) (14cores*20cpus*13th Gen Intel(R) Core(TM) i5-13500 24576KB)
+OS:		Rocky Linux release 8.10 (Green Obsidian)
+
+License:
+		[10:55:09.201633] Configured Lic search path (21.01-s002): 5280@192.168.0.10
+
+		invs	Innovus Implementation System	21.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use set_multi_cpu_usage to set your required CPU count.
+
+
+Create and set the environment variable TMPDIR to /tmp/innovus_temp_31795_cinova05.lesc.ufc.br_cinovador_VayxbJ.
+
+Change the soft stacksize limit to 0.2%RAM (63 mbytes). Set global soft_stack_size_limit to change the value.
+[INFO] Loading PVS 23.11 fill procedures
+
+**INFO:  MMMC transition support version v31-84 
+
+#@ Processing -files option
+@innovus 1> source /home/cinovador/Documents/course_files/physical_synthesis/synthesis/backend/layout/scripts/layout.tcl
+#@ Begin verbose source (pre): source /home/cinovador/Documents/course_files/physical_synthesis/synthesis/backend/layout/scripts/layout.tcl
+@file 1:
+@file 2: #-----------------------------------------------------------------------------
+@file 3: # Initial configurations
+@file 4: #-----------------------------------------------------------------------------
+@file 5: # see file ${PROJECT_DIR}/backend/synthesis/scripts/run_first.tcl
+@file 6:
+@file 7: #-----------------------------------------------------------------------------
+@file 8: # (!) same as $DESIGNS.tcl (!) Main Custom Variables Design Dependent (set local)
+@file 9: #-----------------------------------------------------------------------------
+@file 10: set PROJECT_DIR $env(PROJECT_DIR)
+@file 11: set TECH_DIR $env(TECH_DIR)
+@file 12: set DESIGNS $env(DESIGNS)
+@file 13: set HDL_NAME $env(HDL_NAME)
+@file 14: set VLOG_LIST $env(VLOG_LIST)
+@file 15: set INTERCONNECT_MODE ple
+@file 16:
+@file 17: #-----------------------------------------------------------------------------
+@file 18: # (!) same as $DESIGNS.tcl (!) MAIN Custom Variables to be used in SDC (constraints file)
+@file 19: #-----------------------------------------------------------------------------
+@file 20: set MAIN_CLOCK_NAME clk
+@file 21: set MAIN_RST_NAME rst_n
+@file 22: set BEST_LIB_OPERATING_CONDITION PVT_1P32V_0C
+@file 23: set WORST_LIB_OPERATING_CONDITION PVT_0P9V_125C
+@file 24: set period_clk 100.0  ;
+@file 24: # (100 ns = 10 MHz) (10 ns = 100 MHz) (2 ns = 500 MHz) (1 ns = 1 GHz)
+@file 25: set clk_uncertainty 0.05 ;
+@file 25: # ns (a guess)
+@file 26: set clk_latency 0.10 ;
+@file 26: # ns (a guess)
+@file 27: set in_delay 0.30 ;
+@file 27: # ns
+@file 28: set out_delay 0.30;
+@file 28: # ns
+@file 29: set out_load 0.045 ;
+@file 29: # pF
+@file 30: set slew "146 164 264 252" ;
+@file 30: # minimum rise, minimum fall, maximum rise and maximum fall
+@file 31: set slew_min_rise 0.146 ;
+@file 31: # ns
+@file 32: set slew_min_fall 0.164 ;
+@file 32: # ns
+@file 33: set slew_max_rise 0.264 ;
+@file 33: # ns
+@file 34: set slew_max_fall 0.252 ;
+@file 34: # ns
+@file 35: set NET_ZERO VSS ;
+@file 35: # power net: see the lef file
+@file 36: set NET_ONE VDD ;
+@file 36: # power net: see the lef file
+@file 37:
+@file 38: #-----------------------------------------------------------------------------
+@file 39: # Load Path File
+@file 40: #-----------------------------------------------------------------------------
+@file 41: source ${PROJECT_DIR}/backend/synthesis/scripts/common/path.tcl
+#@ Begin verbose source /home/cinovador/Documents/course_files/physical_synthesis/synthesis/backend/synthesis/scripts/common/path.tcl (pre)
+@file 1:
+@file 2: #-----------------------------------------------------------------------------
+@file 3: # Common path variables (directory structure dependent)
+@file 4: #-----------------------------------------------------------------------------
+@file 5: set BACKEND_DIR ${PROJECT_DIR}/backend
+@file 6: set SYNT_DIR ${BACKEND_DIR}/synthesis
+@file 7: set SCRIPT_DIR ${SYNT_DIR}/scripts
+@file 8: set RPT_DIR ${SYNT_DIR}/reports
+@file 9: set DEV_DIR ${SYNT_DIR}/deliverables
+@file 10: set LAYOUT_DIR ${BACKEND_DIR}/layout
+@file 11:
+@file 12: #-----------------------------------------------------------------------------
+@file 13: # Setting rtl search directories
+@file 14: #-----------------------------------------------------------------------------
+@file 15: set FRONTEND_DIR ${PROJECT_DIR}/frontend
+@file 16: set OTHERS ""
+@file 17: lappend FRONTEND_DIR $OTHERS
+@file 18:
+@file 19: #-----------------------------------------------------------------------------
+@file 20: # Setting technology directories - Uncomment the line from your university and comment out the lines from the others universities
+@file 21: #-----------------------------------------------------------------------------
+@file 22: # set LIB_DIR ${TECH_DIR}/gsclib045_svt_v4.4/gsclib045/timing
+@file 23: # The following set is only for UFC guys
+@file 24: set LIB_DIR ${TECH_DIR}/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing
+@file 25:
+@file 26: # The following set is only for UFCG guys
+@file 27: # set LIB_DIR ${TECH_DIR}/gsclib045_all_v4_4/gsclib045/timing
+@file 28:
+@file 29: # The following set is only for UFSM guys
+@file 30: # set LIB_DIR ${TECH_DIR}/gsclib045_all_v4.7/gsclib045/timing
+@file 31:
+@file 32: ##########################################################
+@file 33: ############### Setting the LEF_DIR PATH
+@file 34: # set LEF_DIR ${TECH_DIR}/gsclib045_svt_v4.4/gsclib045/lef
+@file 35: # The following set is only for UFC guys
+@file 36: set LEF_DIR ${TECH_DIR}/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/lef
+@file 37:
+@file 38: # The following set is only for UFCG guys
+@file 39: # set LEF_DIR ${TECH_DIR}/gsclib045_all_v4_4/gsclib045/lef
+@file 40:
+@file 41: # The following set is only for UFSM guys
+@file 42: # set LEF_DIR ${TECH_DIR}/gsclib045_all_v4.7/gsclib045/lef
+@file 43:
+@file 44:
+@file 45: ################ appeding the LEF_DIR path
+@file 46: # lappend LEF_DIR ${TECH_DIR}/giolib045_v3.3/lef
+@file 47:
+@file 48: # UFC guys
+@file 49: # lappend LEF_DIR ${TECH_DIR}/giolib045_v3.3/lef
+@file 50:
+@file 51: #UFCG guys
+#@ End verbose source /home/cinovador/Documents/course_files/physical_synthesis/synthesis/backend/synthesis/scripts/common/path.tcl
+@file 42:
+@file 43:
+@file 44: #-----------------------------------------------------------------------------
+@file 45: # set tech files to be used in ".globals" and ".view"
+@file 46: #-----------------------------------------------------------------------------
+@file 47: set WORST_LIST ${LIB_DIR}/slow_vdd1v0_basicCells.lib
+@file 48: set BEST_LIST ${LIB_DIR}/fast_vdd1v2_basicCells.lib
+@file 49: set LEF_INIT "${TECH_DIR}/gsclib045_svt_v4.4/gsclib045/lef/gsclib045_tech.lef ${TECH_DIR}/gsclib045_svt_v4.4/gsclib045/lef/gsclib045_macro.lef";
+@file 49: # ${TECH_DIR}/giolib045_v3.3/lef/giolib045.lef"
+@file 50: set CAP_MAX ${TECH_DIR}/gpdk045_v_6_0/soce/gpdk045.basic.CapTbl
+@file 51: set CAP_MIN ${TECH_DIR}/gpdk045_v_6_0/soce/gpdk045.basic.CapTbl
+@file 52: set QRC_LIST ${TECH_DIR}/gpdk045_v_6_0/qrc/rcworst/qrcTechFile
+@file 53:
+@file 54:
+@file 55: #-----------------------------------------------------------------------------
+@file 56: # Initiates the design files (netlist, LEFs, timing libraries)
+@file 57: #-----------------------------------------------------------------------------
+@@file 58: set_db init_power_nets $NET_ONE
+@@file 59: set_db init_ground_nets $NET_ZERO
+@@file 60: read_mmmc ${LAYOUT_DIR}/scripts/${DESIGNS}.view
+#@ Begin verbose source /home/cinovador/Documents/course_files/physical_synthesis/synthesis/backend/layout/scripts/multiplier32FP.view (pre)
+@file 1: # timing libraries
+@@file 2: create_library_set -name fast -timing $BEST_LIST
+@@file 3: create_library_set -name slow -timing $WORST_LIST
+@file 4:
+@file 5: # capacitance files
+@@file 6: create_rc_corner -name rc_best -cap_table $CAP_MIN -T 0
+@@file 7: create_rc_corner -name rc_worst -cap_table $CAP_MAX -T 125
+@file 8:
+@file 9: # operating conditions
+@@file 10: create_opcond -name oc_slow -process {1.0} -voltage {0.90} -temperature {125}
+@@file 11: create_opcond -name oc_fast -process {1.0} -voltage {1.32} -temperature {0}
+@file 12:
+@file 13: # timing conditions
+@@file 14: create_timing_condition -name slow_timing -library_sets [list slow] -opcond oc_slow
+@@file 15: create_timing_condition -name fast_timing -library_sets [list fast] -opcond oc_fast
+@file 16:
+@file 17: # creating delay corners
+@@file 18: create_delay_corner -name slow_max -timing_condition slow_timing -rc_corner rc_worst
+@@file 19: create_delay_corner -name fast_min -timing_condition fast_timing -rc_corner rc_best
+@file 20:
+@file 21: # adding constraints
+@@file 22: create_constraint_mode -name normal_genus_slow_max -sdc_files ${PROJECT_DIR}/backend/synthesis/constraints/$DESIGNS.sdc
+@file 23:
+@file 24: # creating analysis views
+@@file 25: create_analysis_view -name analysis_normal_slow_max -constraint_mode {normal_genus_slow_max} -delay_corner slow_max
+@@file 26: create_analysis_view -name analysis_normal_fast_min -constraint_mode {normal_genus_slow_max} -delay_corner fast_min
+@file 27:
+@file 28: # defining which views to use in hold and setup analyses
+@@file 29: set_analysis_view -setup [list analysis_normal_slow_max] -hold [list analysis_normal_fast_min]
+#@ End verbose source /home/cinovador/Documents/course_files/physical_synthesis/synthesis/backend/layout/scripts/multiplier32FP.view
+Reading slow timing library '/home/tools/cadence/gpdk/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib' ...
+**WARN: (TECHLIB-302):	No function defined for cell 'DECAP9'. The cell will only be used for analysis. (File /home/tools/cadence/gpdk/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'DECAP8'. The cell will only be used for analysis. (File /home/tools/cadence/gpdk/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'DECAP7'. The cell will only be used for analysis. (File /home/tools/cadence/gpdk/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'DECAP6'. The cell will only be used for analysis. (File /home/tools/cadence/gpdk/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'DECAP5'. The cell will only be used for analysis. (File /home/tools/cadence/gpdk/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'DECAP4'. The cell will only be used for analysis. (File /home/tools/cadence/gpdk/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'DECAP3'. The cell will only be used for analysis. (File /home/tools/cadence/gpdk/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'DECAP2'. The cell will only be used for analysis. (File /home/tools/cadence/gpdk/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'DECAP10'. The cell will only be used for analysis. (File /home/tools/cadence/gpdk/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /home/tools/cadence/gpdk/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing/slow_vdd1v0_basicCells.lib)
+Read 489 cells in library 'slow_vdd1v0' 
+Reading fast timing library '/home/tools/cadence/gpdk/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing/fast_vdd1v2_basicCells.lib' ...
+**WARN: (TECHLIB-302):	No function defined for cell 'DECAP9'. The cell will only be used for analysis. (File /home/tools/cadence/gpdk/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing/fast_vdd1v2_basicCells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'DECAP8'. The cell will only be used for analysis. (File /home/tools/cadence/gpdk/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing/fast_vdd1v2_basicCells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'DECAP7'. The cell will only be used for analysis. (File /home/tools/cadence/gpdk/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing/fast_vdd1v2_basicCells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'DECAP6'. The cell will only be used for analysis. (File /home/tools/cadence/gpdk/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing/fast_vdd1v2_basicCells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'DECAP5'. The cell will only be used for analysis. (File /home/tools/cadence/gpdk/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing/fast_vdd1v2_basicCells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'DECAP4'. The cell will only be used for analysis. (File /home/tools/cadence/gpdk/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing/fast_vdd1v2_basicCells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'DECAP3'. The cell will only be used for analysis. (File /home/tools/cadence/gpdk/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing/fast_vdd1v2_basicCells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'DECAP2'. The cell will only be used for analysis. (File /home/tools/cadence/gpdk/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing/fast_vdd1v2_basicCells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'DECAP10'. The cell will only be used for analysis. (File /home/tools/cadence/gpdk/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing/fast_vdd1v2_basicCells.lib)
+**WARN: (TECHLIB-302):	No function defined for cell 'ANTENNA'. The cell will only be used for analysis. (File /home/tools/cadence/gpdk/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing/fast_vdd1v2_basicCells.lib)
+Read 489 cells in library 'fast_vdd1v2' 
+@@file 61: read_physical -lef $LEF_INIT
+**ERROR: (IMPIMEX-10):	Specified file cannot be found: /home/tools/cadence/gpdk/gsclib045_svt_v4.4/gsclib045/lef/gsclib045_tech.lef.
+**ERROR: (IMPIMEX-10):	Specified file cannot be found: /home/tools/cadence/gpdk/gsclib045_svt_v4.4/gsclib045/lef/gsclib045_macro.lef.
+@@file 62: read_netlist ../../synthesis/deliverables/${DESIGNS}.v
+#% Begin Load netlist data ... (date=02/27 10:55:23, mem=1046.4M)
+*** Begin netlist parsing (mem=1232.8M) ***
+Created 489 new cells from 2 timing libraries.
+Reading netlist ...
+Backslashed names will retain backslash and a trailing blank character.
+Reading verilog netlist '../../synthesis/deliverables/multiplier32FP.v'
+
+*** Memory Usage v#1 (Current mem = 1232.816M, initial mem = 492.914M) ***
+*** End netlist parsing (cpu=0:00:00.0, real=0:00:00.0, mem=1232.8M) ***
+#% End Load netlist data ... (date=02/27 10:55:23, total cpu=0:00:00.0, real=0:00:00.0, peak res=1063.4M, current mem=1063.4M)
+Top level cell is multiplier32FP.
+Hooked 978 DB cells to tlib cells.
+Starting recursive module instantiation check.
+No recursion found.
+Building hierarchical netlist for Cell multiplier32FP ...
+*** Netlist is unique.
+**WARN: (IMPTRN-1100):	Cannot determine standard cell height.  Assume it 10 IGU.
+**WARN: (IMPTRN-1101):	Could not determine power-rail locations in cells. Use default value GNDOnBtm.
+**ERROR: (IMPREPO-102):	Instance \exponent_temp_reg[0]  of the cell TLATX1 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance \exponent_temp_reg[1]  of the cell TLATX1 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance \exponent_temp_reg[2]  of the cell TLATX1 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance \exponent_temp_reg[3]  of the cell TLATX1 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance \exponent_temp_reg[4]  of the cell TLATX1 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance \exponent_temp_reg[5]  of the cell TLATX1 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance \exponent_temp_reg[6]  of the cell TLATX1 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance \exponent_temp_reg[7]  of the cell TLATX1 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance \exponent_temp_reg[8]  of the cell TLATX1 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance \exponent_temp_reg[9]  of the cell TLATX1 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance \mantissa_temp_reg[23]  of the cell TLATX1 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance \mantissa_temp_reg[24]  of the cell TLATX1 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance \mantissa_temp_reg[25]  of the cell TLATX1 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance \mantissa_temp_reg[26]  of the cell TLATX1 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance \mantissa_temp_reg[27]  of the cell TLATX1 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance \mantissa_temp_reg[28]  of the cell TLATX1 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance \mantissa_temp_reg[29]  of the cell TLATX1 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance \mantissa_temp_reg[30]  of the cell TLATX1 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance \mantissa_temp_reg[31]  of the cell TLATX1 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**ERROR: (IMPREPO-102):	Instance \mantissa_temp_reg[32]  of the cell TLATX1 has no physical library or has wrong dimen-
+sion values (<=0). Check your design setup to make sure the physical
+ library is loaded in and the attributes specified in physical library are correct.
+Type 'man IMPREPO-102' for more detail.
+**WARN: (EMS-27):	Message (IMPREPO-102) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+** info: there are 979 modules.
+** info: there are 1297 stdCell insts.
+**ERROR: (IMPREPO-103):	There are 1297 instances (50 cells) with no dimension defined.
+
+*** Memory Usage v#1 (Current mem = 1291.230M, initial mem = 492.914M) ***
+@@file 63: init_design
+**ERROR: (IMPFP-1594):	No site specified. Check the LEF/OA file to make sure a site is specified for core cell.
+Type 'man IMPFP-1594' for more detail.
+**ERROR: (IMPSYC-1595):	No row created.
+Extraction setup Started 
+Initializing multi-corner RC extraction with 2 active RC Corners ...
+**ERROR: (IMPEXT-3466):	The technology layer information is not available. This can happen if either no LEF file is imported or an error occurs while reading the LEF file(s). The capacitance table file cannot be read without the layer information.
+**ERROR: (IMPEXT-2677):	Multi-corner RC initialization is aborted because of previously-reported errors. Use the reason provided in the error message(s) to resolve this issue and use the set_analysis_view command to invoke multi-corner initialization again.
+*Info: initialize multi-corner CTS.
+Reading timing constraints file '/home/cinovador/Documents/course_files/physical_synthesis/synthesis/backend/synthesis/constraints/multiplier32FP.sdc' ...
+Current (total cpu=0:00:13.2, real=0:00:17.0, peak res=1360.9M, current mem=1360.9M)
+multiplier32FP
+INFO (CTE): Constraints read successfully.
+Ending "Constraint file reading stats" (total cpu=0:00:00.1, real=0:00:00.0, peak res=1454.8M, current mem=1454.8M)
+Current (total cpu=0:00:13.3, real=0:00:17.0, peak res=1454.8M, current mem=1454.8M)
+Total number of combinational cells: 0
+Total number of sequential cells: 0
+Total number of tristate cells: 0
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+List of usable buffers:
+Total number of usable buffers: 0
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters:
+Total number of usable inverters: 0
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells:
+Total number of identified usable delay cells: 0
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+No delay cells were detected in the set of buffers. Buffers will be used to fix hold violations.
+**WARN: (IMPOPT-3000):	Buffer footprint is not defined or is an invalid buffer footprint.
+Type 'man IMPOPT-3000' for more detail.
+**WARN: (IMPOPT-3001):	Inverter footprint is not defined or is an invalid inverter footprint.
+Type 'man IMPOPT-3001' for more detail.
+Extraction setup Started 
+Initializing multi-corner RC extraction with 2 active RC Corners ...
+**ERROR: (IMPEXT-3466):	The technology layer information is not available. This can happen if either no LEF file is imported or an error occurs while reading the LEF file(s). The capacitance table file cannot be read without the layer information.
+**ERROR: (IMPEXT-2677):	Multi-corner RC initialization is aborted because of previously-reported errors. Use the reason provided in the error message(s) to resolve this issue and use the set_analysis_view command to invoke multi-corner initialization again.
+@@file 64: connect_global_net $NET_ONE -type pg_pin -pin_base_name $NET_ONE -inst_base_name *
+@@file 65: connect_global_net $NET_ZERO -type pg_pin -pin_base_name $NET_ZERO -inst_base_name *
+@file 66:
+@file 67: #-----------------------------------------------------------------------------
+@file 68: # Tells Innovus the technology being used
+@file 69: #-----------------------------------------------------------------------------
+@@file 70: set_db design_process_node 45
+##  Process: 45            (User Set)               
+##     Node: (not set)                           
+
+##  Check design process and node:  
+##  Design tech node is not set.
+
+Applying the recommended capacitance filtering threshold values for 45nm process node: total_c_th=0, relative_c_th=1 and coupling_c_th=0.1.
+	These values will be used by all post-route extraction engines, including TQuantus, IQuantus and Quantus QRC extraction.
+	Capacitance filtering mode(extract_rc_cap_filter_mode option of the set_db) is 'relative_and_coupling' for all engines.
+	The accuracy mode for post_route extract_rc_effort_level low extraction will be set to 'high'.
+	Default value for EffortLevel(extract_rc_effort_level option of the set_db) in post_route extraction mode will be 'medium' if Quantus QRC technology file is specified else 'low'.
+@file 71:
+@file 72: #-----------------------------------------------------------------------------
+@file 73: # Specify floorplan
+@file 74: #-----------------------------------------------------------------------------
+@file 75: # graphical or command
+@@file 76: create_floorplan -core_margins_by die -site CoreSite -core_density_size 1 0.7 2.5 2.5 2.5 2.5
+**ERROR: (IMPTCM-162):	"CoreSite" does not match any object in design for specified type "site " object in command "create_floorplan".
+
+Usage: create_floorplan [-help] [-core_margins_by {io die}] [-die_size_by_io_height {min max}] [-flip {n s f}] [-floorplan_origin {center llcorner}] [-match_to_site] [-no_resize] [-no_snap_to_grid] [-overlap_same_site_row] {-box_size <die_box io_box core_box> | -core_size <w h left bottom right top> | -die_size <w h left bottom right top> | -core_density_size <aspectratio [rowdensity [left bottom right top]]> | -stdcell_density_size <aspectratio [stdcelldensity [left bottom bight bop]]> | -keep_shape_density <util>} [-site <site> | -site_only <site>]
+
+**ERROR: (IMPTCM-4):	The value "CoreSite" specified for the object type of argument "-site" is not a valid object. Review the command specification and remove the argument or specify a legal value.
+**ERROR: (IMPSE-110):	File '/home/cinovador/Documents/course_files/physical_synthesis/synthesis/backend/layout/scripts/layout.tcl' line 76: errors out.
+#@ End verbose source /home/cinovador/Documents/course_files/physical_synthesis/synthesis/backend/layout/scripts/layout.tcl
+**ERROR: (IMPSYT-6692):	Invalid return code while executing '/home/cinovador/Documents/course_files/physical_synthesis/synthesis/backend/layout/scripts/layout.tcl' was returned and script processing was stopped. Review the following error in '/home/cinovador/Documents/course_files/physical_synthesis/synthesis/backend/layout/scripts/layout.tcl' then restart.
+Error info: /home/cinovador/Documents/course_files/physical_synthesis/synthesis/backend/layout/scripts/layout.tcl: 
+    while executing
+"create_floorplan -core_margins_by die -site CoreSite -core_density_size 1 0.7 2.5 2.5 2.5 2.5"
+    (file "/home/cinovador/Documents/course_files/physical_synthesis/synthesis/backend/layout/scripts/layout.tcl" line 76)
+    invoked from within
+"::se_source_orig /home/cinovador/Documents/course_files/physical_synthesis/synthesis/backend/layout/scripts/layout.tcl"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel [concat ::se_source_orig $args]"
+    invoked from within
+"if {[::SE::source_verbose_file_state $file_name] == 1} {
+              ::SE::source_verbose_start $file_name
+              set st [uplevel [concat ::s..."
+    invoked from within
+"if {$useTclVerbose} {
+          # use tcl internal method
+          set st ""
+          if {[::SE::source_verbose_file_state $file_name] == 1} {
+     ..."
+    invoked from within
+"if {$largeFile == 1} {
+    if {$enableVerbose == 0 && [::SE::isEchoFile] == 1} {
+      $putCmd "Sourcing $file_name"
+    }
+    set st [uplevel [concat..."
+    (procedure "source" line 157)
+    invoked from within
+"source /home/cinovador/Documents/course_files/physical_synthesis/synthesis/backend/layout/scripts/layout.tcl"
+    invoked from within
+"::se::run_command_from_console "source /home/cinovador/Documents/course_files/physical_synthesis/synthesis/backend/layout/scripts/layout.tcl""
+    invoked from within
+"eval_novus {::se::run_command_from_console "source /home/cinovador/Documents/course_files/physical_synthesis/synthesis/backend/layout/scripts/layout.t..."
+    (in namespace inscope "::" script line 1)
+    invoked from within
+"namespace inscope :: eval_novus "::se::run_command_from_console \"source $fileName\""".
+@innovus 2> gui_select -point {0.03700 0.03800}
+@innovus 3> gui_select -point {1.02500 6.33500}
+@innovus 4> 
+--------------------------------------------------------------------------------
+Exiting Innovus on Thu Feb 27 10:56:56 2025
+  Total CPU time:     0:00:19
+  Total real time:    0:01:50
+  Peak memory (main): 1547.58MB
+
+
+*** Memory Usage v#1 (Current mem = 1754.605M, initial mem = 492.914M) ***
+*** Message Summary: 24 warning(s), 1310 error(s)
+
+--- Ending "Innovus" (totcpu=0:00:19.3, real=0:01:49, mem=1754.6M) ---
