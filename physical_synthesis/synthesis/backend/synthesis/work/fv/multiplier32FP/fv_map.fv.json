@@ -663,20 +663,20 @@
 "object":"/designs/multiplier32FP/instances_seq/current_state_reg[1]",
 "type":"instance"},
 {"index": "1", 
- "date": "Fri Feb 28 04:07:52 UTC 2025",
- "seconds": 1740715672.239796,
+ "date": "Fri Feb 28 19:22:04 UTC 2025",
+ "seconds": 1740770524.584594,
  "netlist": "fv/multiplier32FP/fv_map.v.gz", 
  "netlist_exists": "1", 
  "netlist_normalize": "/home/cinovador/Documents/course_files/physical_synthesis/synthesis/backend/synthesis/work/fv/multiplier32FP/fv_map.v.gz", 
- "netlist_mtime": "1740715671", 
- "netlist_timestamp": "Fri Feb 28 04:07:51 UTC 2025", 
+ "netlist_mtime": "1740770524", 
+ "netlist_timestamp": "Fri Feb 28 19:22:04 UTC 2025", 
  "netlist_size": "22027", 
- "netlist_cksum": "1517185252", 
+ "netlist_cksum": "4224626704", 
  "design_name": "multiplier32FP", 
  "synth_workdir": "/home/cinovador/Documents/course_files/physical_synthesis/synthesis/backend/synthesis/work", 
  "synthesis_command":"",
  "current_label": "fv_map", 
  "previous_label": "rtl", 
- "write_verif_file_runtime": 0.38845399999999997 
+ "write_verif_file_runtime": 0.47963599999999995 
  }
 ]
