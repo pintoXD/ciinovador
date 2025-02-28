@@ -11,8 +11,8 @@ export FRONTEND_DIR=${PROJECT_DIR}/frontend
 # Alongside this environment variable, you'll also need to edit the backend/synthesis/scripts/common/path.tcl and backend/synthesis/layout/layout.tcl
 # scripts with the right path to the libarary files. There will be some commeantaries on these files to guide you through the process.
 export TECH_DIR=/home/tools/cadence/gpdk; # techonology dependant comand only valid for UFC guys. Uncomment this line if you are from UFC.
-# export TECH_DIR=/pdks/gpdk045_v_6_0;# techonology dependant comand only valid for UFCG guys. Uncomment this line if you are from UFCG.
-# export TECH_DIR=/home/tools/design_kits/cadence/gpdk045_v6/;# techonology dependant comand only valid for UFCG guys. Uncomment this line if you are from UFSM.
+# export TECH_DIR=/pdks/gpdk045_v_6_0;# techonology dependant comand only valid for UFCG. Uncomment this line if you are from UFCG.
+# export TECH_DIR=/home/tools/design_kits/cadence/gpdk045_v6/;# techonology dependant comand only valid for UFSM. Uncomment this line if you are from UFSM.
 
 export HDL_NAME=${DESIGNS}
 export VLOG_LIST="$BACKEND_DIR/synthesis/deliverables/${DESIGNS}.v  $BACKEND_DIR/synthesis/deliverables/${DESIGNS}_io.v  $BACKEND_DIR/synthesis/deliverables/${DESIGNS}_chip.v"
