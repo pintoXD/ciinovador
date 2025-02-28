@@ -1,9 +1,11 @@
 xrun(64): 24.09-s001: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	24.09-s001: Started on Feb 27, 2025 at 23:03:02 -03
+TOOL:	xrun(64)	24.09-s001: Started on Feb 28, 2025 at 15:29:43 -03
 xrun
-	multiplier32FP_MIN_tb.sv
+	multiplier32FP_MAX_tb.sv
 	multiplier32FP.sv
-file: multiplier32FP_MIN_tb.sv
+	+access+rw
+	+gui
+file: multiplier32FP_MAX_tb.sv
 	module worklib.multiplier32FP_tb:sv
 		errors: 0, warnings: 0
 file: multiplier32FP.sv
@@ -15,31 +17,34 @@ file: multiplier32FP.sv
 		multiplier32FP_tb
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.multiplier32FP:sv <0x4777de0e>
-			streams:  13, words:  7113
-		worklib.multiplier32FP_tb:sv <0x791abe48>
-			streams:   5, words:  8867
+		worklib.multiplier32FP:sv <0x1c806180>
+			streams:  15, words: 10987
+		worklib.multiplier32FP_tb:sv <0x5885625b>
+			streams:  15, words: 14364
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
 		              Instances  Unique
 		Modules:              2       2
-		Registers:           51      51
-		Scalar wires:         9       -
+		Registers:           52      52
+		Scalar wires:        13       -
 		Vectored wires:       4       -
 		Always blocks:        4       4
 		Initial blocks:       2       2
-		Pseudo assignments:   2       -
+		Pseudo assignments:  11       -
 		Process Clocks:       2       1
 	Writing initial simulation snapshot: worklib.multiplier32FP_tb:sv
-Loading snapshot worklib.multiplier32FP_tb:sv .................... Done
-xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
-xcelium> run
-xmsim: *W,DVEXACC: some objects excluded from $dumpvars due to access restrictions, use +access+r on command line for access to all objects.
-            File: ./multiplier32FP_MIN_tb.sv, line = 64, pos = 16
-           Scope: multiplier32FP_tb
-            Time: 0 FS + 0
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
 
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
+xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm multiplier32FP_tb.a multiplier32FP_tb.a_i multiplier32FP_tb.b multiplier32FP_tb.b_i multiplier32FP_tb.clk multiplier32FP_tb.clock_period multiplier32FP_tb.delay_time multiplier32FP_tb.done_o multiplier32FP_tb.end_time multiplier32FP_tb.errors multiplier32FP_tb.expected_result multiplier32FP_tb.file multiplier32FP_tb.i multiplier32FP_tb.inifinit_o multiplier32FP_tb.j multiplier32FP_tb.mock_a multiplier32FP_tb.mock_b multiplier32FP_tb.nan_o multiplier32FP_tb.overflow_o multiplier32FP_tb.product_o multiplier32FP_tb.r multiplier32FP_tb.rst_n multiplier32FP_tb.start_i multiplier32FP_tb.start_time multiplier32FP_tb.test multiplier32FP_tb.testvectors multiplier32FP_tb.underflow_o multiplier32FP_tb.vectornum
+Created probe 1
+xcelium> run
 Line           1 Error: Expected 7f800000, got 00000000
 Line           2 Error: Expected 7f800000, got 3b100000
 Line           3 Error: Expected 7f800000, got 00000000
@@ -100,7 +105,75 @@ Line          98 Error: Expected 3568b4f0, got 3568b4ef
 Line         100 Error: Expected dc84a4ce, got dc84a4cd
 Finished testing all vectors.          58 errors found.
 Total runtime: 40110 time units
-Simulation complete via $finish(1) at time 40110 NS + 0
-./multiplier32FP_MIN_tb.sv:117         $finish;
+Total delay time: 40110 time units
+Simulation complete via $finish(1) at time 80220 NS + 0
+./multiplier32FP_MAX_tb.sv:120         $finish;
+xcelium> reset
+Loaded snapshot worklib.multiplier32FP_tb:sv
+xcelium> run
+Line           1 Error: Expected 7f800000, got 00000000
+Line           2 Error: Expected 7f800000, got 3b100000
+Line           3 Error: Expected 7f800000, got 00000000
+Line           4 Error: Expected 7f800000, got 00000000
+Line           5 Error: Expected 7f800000, got 00000000
+Line           7 Error: Expected 42dc0000, got 00000000
+Line           9 Error: Expected 3f800000, got 00000000
+Line          11 Error: Expected 7f800000, got 00000000
+Line          13 Error: Expected 7fd00000, got 01ea0000
+Line          14 Error: Expected 42dc0000, got 00000000
+Line          15 Error: Expected 7f800000, got 7f8fffff
+Line          16 Error: Expected ca30bf1f, got ca30bf1e
+Line          20 Error: Expected 1f2e99d7, got 1f2e99d6
+Line          21 Error: Expected 7f800000, got 00000000
+Line          22 Error: Expected 7fd00000, got 877bf3a6
+Line          23 Error: Expected ff800000, got 86c80217
+Line          27 Error: Expected 3cedf1f5, got 3cedf1f4
+Line          29 Error: Expected c75ff506, got 80000000
+Line          31 Error: Expected 00000000, got 5e58031c
+Line          32 Error: Expected ffc364ef, got 53f0a118
+Line          33 Error: Expected bd824aca, got bd824ac9
+Line          34 Error: Expected 5106ef43, got 5106ef42
+Line          36 Error: Expected 800fb34c, got fefb34bf
+Line          37 Error: Expected 434beca9, got 434beca8
+Line          40 Error: Expected 7f800000, got 009c3fd7
+Line          41 Error: Expected 19b0696c, got 19b0696b
+Line          43 Error: Expected a785078f, got a785078e
+Line          44 Error: Expected 7fc8e1cb, got 62bc18e7
+Line          46 Error: Expected 888c74d1, got 888c74d0
+Line          47 Error: Expected 90416b10, got 90416b0f
+Line          48 Error: Expected c63371b3, got c63371b2
+Line          50 Error: Expected 4127dc10, got 4127dc0f
+Line          51 Error: Expected 80000000, got dc5b4cd9
+Line          55 Error: Expected 72b3d458, got 72b3d457
+Line          57 Error: Expected 00000000, got 646425a2
+Line          58 Error: Expected 3e5a2650, got 3e5a264f
+Line          59 Error: Expected c5ba7295, got c5ba7294
+Line          61 Error: Expected 80000493, got fa125150
+Line          62 Error: Expected 80000005, got f613d1b0
+Line          63 Error: Expected ff800000, got 857bf2f7
+Line          66 Error: Expected b491d810, got b491d80f
+Line          68 Error: Expected 3adb9ca7, got 3adb9ca6
+Line          69 Error: Expected 80000000, got cd8830da
+Line          72 Error: Expected 88ef38e6, got 88ef38e5
+Line          73 Error: Expected 00000000, got 588a4496
+Line          74 Error: Expected 8cbf1a7d, got 8cbf1a7c
+Line          77 Error: Expected 00000000, got 5f172172
+Line          79 Error: Expected 2697e0f0, got 2697e0ef
+Line          83 Error: Expected bf7ac3bb, got bf7ac3ba
+Line          85 Error: Expected 80000000, got d6a677e3
+Line          86 Error: Expected b123d660, got b123d65f
+Line          88 Error: Expected 6159bd48, got 6159bd47
+Line          89 Error: Expected 00000003, got 75be12f8
+Line          90 Error: Expected f61fc96b, got f61fc96a
+Line          91 Error: Expected 219544cb, got 219544ca
+Line          92 Error: Expected 80000000, got e650d352
+Line          98 Error: Expected 3568b4f0, got 3568b4ef
+Line         100 Error: Expected dc84a4ce, got dc84a4cd
+Finished testing all vectors.          58 errors found.
+Total runtime: 40110 time units
+Total delay time: 40110 time units
+Simulation complete via $finish(1) at time 80220 NS + 0
+./multiplier32FP_MAX_tb.sv:120         $finish;
+xcelium> ^C
 xcelium> exit
-TOOL:	xrun(64)	24.09-s001: Exiting on Feb 27, 2025 at 23:03:03 -03  (total: 00:00:01)
+TOOL:	xrun(64)	24.09-s001: Exiting on Feb 28, 2025 at 16:04:00 -03  (total: 00:34:17)

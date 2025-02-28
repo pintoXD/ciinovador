@@ -2562,3 +2562,505 @@ Info   : PWRA-0007 Completed successfully.
        : Info=6, Warn=0, Error=0, Fatal=0
 Output file: /home/cinovador/Documents/course_files/physical_synthesis/synthesis_100MHZ/backend/synthesis/reports/multiplier32FP_100MHZ_MIN_VCD_power.rpt
 @file(multiplier32FP.tcl) 123: exit
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    @genus:root: 25> help report_timing
+Commands:
+  report_timing: print a timing report 
+
+Usage: report_timing [-fields <string>] [-output_format <string>] [-path_type <string>] [-split_delay] [-stage_delay] [-hpins] [-nets]
+           [-exception_data] [-unconstrained] [-physical] [-user_derate] [-user_mean_derate] [-user_sigma_derate] [-incr_derate] [-gui]
+           [-max_paths <integer>] [-nworst <integer>] [-logic_levels <integer>] [-skip_buf] [-skip_inv] [-logic_levels_tcl_list]
+           [-max_slack <float>] [-min_slack <float>] [-paths <string>] [-domain <clock_domain>] [-views <analysis_view>+] [-collection]
+           [ -from <inst|hinst|external_delay|clock|port|pin|hpin>+ |
+             -from_rise <inst|hinst|external_delay|clock|port|pin|hpin>+ |
+             -from_fall <inst|hinst|external_delay|clock|port|pin|hpin>+ ]
+           [ -through <inst|hinst|hnet|port|pin|hpin>+ |
+             -through_rise <inst|hinst|hnet|port|pin|hpin>+ |
+             -through_fall <inst|hinst|hnet|port|pin|hpin>+ ]+
+           [ -not_through <inst|hinst|hnet|port|pin|hpin>+ |
+             -not_through_rise <inst|hinst|hnet|port|pin|hpin>+ |
+             -not_through_fall <inst|hinst|hnet|port|pin|hpin>+ ]
+           [ -to <inst|hinst|external_delay|clock|port|pin|hpin>+ |
+             -to_rise <inst|hinst|external_delay|clock|port|pin|hpin>+ |
+             -to_fall <inst|hinst|external_delay|clock|port|pin|hpin>+ ]
+           [ -capture_clock_pins <pin|hpin>+ |
+             -capture_clock_pins_rise_clock <pin|hpin>+ |
+             -capture_clock_pins_fall_clock <pin|hpin>+ |
+             -capture_clock_pins_rise_pin <pin|hpin>+ |
+             -capture_clock_pins_fall_pin <pin|hpin>+ ]
+           [-exceptions <exception>+] [-group <cost_group>+] [-timing_bin <timing_bin>] [-timing_path <timing_bin_path>] [<timing_path>+]
+           [> file]
+
+    [-fields <string>]:
+        fields 
+    [-output_format <string>]:
+        supported output format types are <gtd|text> 
+    [-path_type <string>]:
+        supported path types are <full|summary|full_clock|endpoint> 
+    [-split_delay]:
+        displays both drivers and loads in the data path 
+    [-stage_delay]:
+        displays only drivers in the data path 
+    [-hpins]:
+        displays hierarchical pins in the data path 
+    [-nets]:
+        displays nets in the data path 
+    [-exception_data]:
+        displays the exception cross-linking information 
+    [-unconstrained]:
+        displays the unconstrained paths 
+    [-physical]:
+        include physical information in report 
+    [-user_derate]:
+        show 'user_derate' column in timing reports 
+    [-user_mean_derate]:
+        show 'user_mean_derate' column in timing reports 
+    [-user_sigma_derate]:
+        show 'user_sigma_derate' column in timing reports 
+    [-incr_derate]:
+        show 'incr_derate' column in timing reports 
+    [-gui]:
+        invoke GUI timing report dialog 
+    [-max_paths <integer>]:
+        number of paths 
+    [-nworst <integer>]:
+        number of worst paths to each endpoint (inapplicable to path_type endpoint) 
+    [-logic_levels <integer>]:
+        number of paths to report in the output 
+    [-skip_buf]:
+        skip buffers when computing logic levels 
+    [-skip_inv]:
+        skip inverters when computing logic levels 
+    [-logic_levels_tcl_list]:
+        list output 
+    [-max_slack <float>]:
+        only paths with less than this slack 
+    [-min_slack <float>]:
+        only paths with greater than this slack 
+    [-paths <string>]:
+        a path identifier result from the specify_paths command 
+    [-domain <clock_domain>]:
+        a clock domain the paths should be restricted to 
+    [-views <analysis_view>+]:
+        a view the paths should be restricted to 
+    [-collection]:
+        return a collection of timing paths 
+    -from <inst|hinst|external_delay|clock|port|pin|hpin>+:
+        a set of startpoints for the paths 
+    -from_rise <inst|hinst|external_delay|clock|port|pin|hpin>+:
+        startpoints with a rise transition at the pin itself 
+    -from_fall <inst|hinst|external_delay|clock|port|pin|hpin>+:
+        startpoints with a fall transition at the pin itself 
+    -through <inst|hinst|hnet|port|pin|hpin>+:
+        specifies paths that pass through these pins or instances. This option can be repeated indicating that the path must go through at 
+        least one element of each through list (in the order the options were specified). Objects must be ports, hierarchical pins, pins on 
+        sequential/mapped combinational cells, or sequential/mapped combinational instances 
+    -through_rise <inst|hinst|hnet|port|pin|hpin>+:
+        this option specifies paths that contain a rise transition in one of these objects and it can be repeated and can be combined with 
+        -through and/or -through_fall_pin 
+    -through_fall <inst|hinst|hnet|port|pin|hpin>+:
+        this option specifies paths that contain a fall transition in one of these objects and it can be repeated and can be combined with 
+        -through and/or -through_rise_pin 
+    -not_through <inst|hinst|hnet|port|pin|hpin>+:
+        specifies paths that do not pass through these pins or instances. Objects must be ports, hierarchical pins, pins on sequential/mapped 
+        combinational cells, or sequential/mapped combinational instances 
+    -not_through_rise <inst|hinst|hnet|port|pin|hpin>+:
+        this option specifies paths that does not contain a rise transition in one of these objects 
+    -not_through_fall <inst|hinst|hnet|port|pin|hpin>+:
+        this option specifies paths that does not contain a fall transition in one of these objects 
+    -to <inst|hinst|external_delay|clock|port|pin|hpin>+:
+        a set of endpoints for the paths 
+    -to_rise <inst|hinst|external_delay|clock|port|pin|hpin>+:
+        endpoints with a rise transition at the pin itself 
+    -to_fall <inst|hinst|external_delay|clock|port|pin|hpin>+:
+        endpoints with a fall transition at the pin itself 
+    -capture_clock_pins <pin|hpin>+:
+        sequential clock pins at the path endpoint 
+    -capture_clock_pins_rise_clock <pin|hpin>+:
+        pins that capture with rising clock edge 
+    -capture_clock_pins_fall_clock <pin|hpin>+:
+        pins that capture with falling clock edge 
+    -capture_clock_pins_rise_pin <pin|hpin>+:
+        pins that capture with rise transition at the pin itself 
+    -capture_clock_pins_fall_pin <pin|hpin>+:
+        pins that capture with fall transition at the pin itself 
+    [-exceptions <exception>+]:
+        report paths for exceptions 
+    [-group <cost_group>+]:
+        report paths for the specified cost groups/path groups 
+    [-timing_bin <timing_bin>]:
+        timing bin to report 
+    [-timing_path <timing_bin_path>]:
+        timing path to report 
+    [<timing_path>+]:
+        path_collection 
+Fields presented are controlled by the '-fields' switch or the attribute
+'timing_report_fields' and 'timing_report_endpoint_fields'
+Valid full report fields are:
+  - timing_point:        names of pins
+  - flags:               flags associated with the column timing_point
+  - arc:                 timing arc for which timing information was applied
+  - edge:                rising/falling edge
+  - cell:                cell type, exception type, etc.
+  - fanout:              fanout of leaf cells
+  - load:                load of leaf cells
+  - transition:          slew of leaf cell outputs
+  - transition_mean:     mean slew of leaf cell outputs
+  - transition_sigma:    sigma slew of leaf cell outputs
+  - delay:               delay through a leaf cell
+  - delay_mean:          mean delay through a leaf cell
+  - delay_sigma:         sigma delay through a leaf cell
+  - arrival:             arrival time at a leaf cell
+  - arrival_mean:        mean arrival time at a leaf cell
+  - arrival_sigma:       sigma arrival time at a leaf cell
+  - lib_set:             display the library set of the cell
+  - user_derate:         derating information
+  - user_mean_derate:    mean derating information
+  - user_sigma_derate:   derating information
+  - total_derate:        total derating information
+  - incr_derate:        incr derating information
+  - aocv_derate:         aocv derating information
+  - socv_derate:         socv spatial derating information
+  - stage_count:         aocv stage depth
+  - power_domain:        power domain associated with the object
+  - wire_length:         wire length
+  - instance_location:       instance location
+  - pin_location:        pin location
+  - module:              name of the subdesign
+  - frc:                 file row column information
+  - voltage:             voltage information
+
+
+@genus:root: 26> report_timing -from product_o_reg[1]/CK -to product_o[1]_reg[1]/D
+Error   : A required object parameter could not be found. [TUI-61] [report_timing]
+        : An object of type 'inst|hinst|external_delay|clock|port|pin|hpin' named 'product_o[1]_reg[1]/D' could not be found.
+        : Check to make sure that the object exists and is of the correct type.  The 'what_is' command can be used to determine the type of an object.
+  report_timing: print a timing report 
+
+Usage: report_timing [-fields <string>] [-output_format <string>] [-path_type <string>] [-split_delay] [-stage_delay] [-hpins] [-nets]
+           [-exception_data] [-unconstrained] [-physical] [-user_derate] [-user_mean_derate] [-user_sigma_derate] [-incr_derate] [-gui]
+           [-max_paths <integer>] [-nworst <integer>] [-logic_levels <integer>] [-skip_buf] [-skip_inv] [-logic_levels_tcl_list]
+           [-max_slack <float>] [-min_slack <float>] [-paths <string>] [-domain <clock_domain>] [-views <analysis_view>+] [-collection]
+           [ -from <inst|hinst|external_delay|clock|port|pin|hpin>+ |
+             -from_rise <inst|hinst|external_delay|clock|port|pin|hpin>+ |
+             -from_fall <inst|hinst|external_delay|clock|port|pin|hpin>+ ]
+           [ -through <inst|hinst|hnet|port|pin|hpin>+ |
+             -through_rise <inst|hinst|hnet|port|pin|hpin>+ |
+             -through_fall <inst|hinst|hnet|port|pin|hpin>+ ]+
+           [ -not_through <inst|hinst|hnet|port|pin|hpin>+ |
+             -not_through_rise <inst|hinst|hnet|port|pin|hpin>+ |
+             -not_through_fall <inst|hinst|hnet|port|pin|hpin>+ ]
+           [ -to <inst|hinst|external_delay|clock|port|pin|hpin>+ |
+             -to_rise <inst|hinst|external_delay|clock|port|pin|hpin>+ |
+             -to_fall <inst|hinst|external_delay|clock|port|pin|hpin>+ ]
+           [ -capture_clock_pins <pin|hpin>+ |
+             -capture_clock_pins_rise_clock <pin|hpin>+ |
+             -capture_clock_pins_fall_clock <pin|hpin>+ |
+             -capture_clock_pins_rise_pin <pin|hpin>+ |
+             -capture_clock_pins_fall_pin <pin|hpin>+ ]
+           [-exceptions <exception>+] [-group <cost_group>+] [-timing_bin <timing_bin>] [-timing_path <timing_bin_path>] [<timing_path>+]
+           [> file]
+
+    [-fields <string>]:
+        fields 
+    [-output_format <string>]:
+        supported output format types are <gtd|text> 
+    [-path_type <string>]:
+        supported path types are <full|summary|full_clock|endpoint> 
+    [-split_delay]:
+        displays both drivers and loads in the data path 
+    [-stage_delay]:
+        displays only drivers in the data path 
+    [-hpins]:
+        displays hierarchical pins in the data path 
+    [-nets]:
+        displays nets in the data path 
+    [-exception_data]:
+        displays the exception cross-linking information 
+    [-unconstrained]:
+        displays the unconstrained paths 
+    [-physical]:
+        include physical information in report 
+    [-user_derate]:
+        show 'user_derate' column in timing reports 
+    [-user_mean_derate]:
+        show 'user_mean_derate' column in timing reports 
+    [-user_sigma_derate]:
+        show 'user_sigma_derate' column in timing reports 
+    [-incr_derate]:
+        show 'incr_derate' column in timing reports 
+    [-gui]:
+        invoke GUI timing report dialog 
+    [-max_paths <integer>]:
+        number of paths 
+    [-nworst <integer>]:
+        number of worst paths to each endpoint (inapplicable to path_type endpoint) 
+    [-logic_levels <integer>]:
+        number of paths to report in the output 
+    [-skip_buf]:
+        skip buffers when computing logic levels 
+    [-skip_inv]:
+        skip inverters when computing logic levels 
+    [-logic_levels_tcl_list]:
+        list output 
+    [-max_slack <float>]:
+        only paths with less than this slack 
+    [-min_slack <float>]:
+        only paths with greater than this slack 
+    [-paths <string>]:
+        a path identifier result from the specify_paths command 
+    [-domain <clock_domain>]:
+        a clock domain the paths should be restricted to 
+    [-views <analysis_view>+]:
+        a view the paths should be restricted to 
+    [-collection]:
+        return a collection of timing paths 
+    -from <inst|hinst|external_delay|clock|port|pin|hpin>+:
+        a set of startpoints for the paths 
+    -from_rise <inst|hinst|external_delay|clock|port|pin|hpin>+:
+        startpoints with a rise transition at the pin itself 
+    -from_fall <inst|hinst|external_delay|clock|port|pin|hpin>+:
+        startpoints with a fall transition at the pin itself 
+    -through <inst|hinst|hnet|port|pin|hpin>+:
+        specifies paths that pass through these pins or instances. This option can be repeated indicating that the path must go through at 
+        least one element of each through list (in the order the options were specified). Objects must be ports, hierarchical pins, pins on 
+        sequential/mapped combinational cells, or sequential/mapped combinational instances 
+    -through_rise <inst|hinst|hnet|port|pin|hpin>+:
+        this option specifies paths that contain a rise transition in one of these objects and it can be repeated and can be combined with 
+        -through and/or -through_fall_pin 
+    -through_fall <inst|hinst|hnet|port|pin|hpin>+:
+        this option specifies paths that contain a fall transition in one of these objects and it can be repeated and can be combined with 
+        -through and/or -through_rise_pin 
+    -not_through <inst|hinst|hnet|port|pin|hpin>+:
+        specifies paths that do not pass through these pins or instances. Objects must be ports, hierarchical pins, pins on sequential/mapped 
+        combinational cells, or sequential/mapped combinational instances 
+    -not_through_rise <inst|hinst|hnet|port|pin|hpin>+:
+        this option specifies paths that does not contain a rise transition in one of these objects 
+    -not_through_fall <inst|hinst|hnet|port|pin|hpin>+:
+        this option specifies paths that does not contain a fall transition in one of these objects 
+    -to <inst|hinst|external_delay|clock|port|pin|hpin>+:
+        a set of endpoints for the paths 
+    -to_rise <inst|hinst|external_delay|clock|port|pin|hpin>+:
+        endpoints with a rise transition at the pin itself 
+    -to_fall <inst|hinst|external_delay|clock|port|pin|hpin>+:
+        endpoints with a fall transition at the pin itself 
+    -capture_clock_pins <pin|hpin>+:
+        sequential clock pins at the path endpoint 
+    -capture_clock_pins_rise_clock <pin|hpin>+:
+        pins that capture with rising clock edge 
+    -capture_clock_pins_fall_clock <pin|hpin>+:
+        pins that capture with falling clock edge 
+    -capture_clock_pins_rise_pin <pin|hpin>+:
+        pins that capture with rise transition at the pin itself 
+    -capture_clock_pins_fall_pin <pin|hpin>+:
+        pins that capture with fall transition at the pin itself 
+    [-exceptions <exception>+]:
+        report paths for exceptions 
+    [-group <cost_group>+]:
+        report paths for the specified cost groups/path groups 
+    [-timing_bin <timing_bin>]:
+        timing bin to report 
+    [-timing_path <timing_bin_path>]:
+        timing path to report 
+    [<timing_path>+]:
+        path_collection 
+Fields presented are controlled by the '-fields' switch or the attribute
+'timing_report_fields' and 'timing_report_endpoint_fields'
+Valid full report fields are:
+  - timing_point:        names of pins
+  - flags:               flags associated with the column timing_point
+  - arc:                 timing arc for which timing information was applied
+  - edge:                rising/falling edge
+  - cell:                cell type, exception type, etc.
+  - fanout:              fanout of leaf cells
+  - load:                load of leaf cells
+  - transition:          slew of leaf cell outputs
+  - transition_mean:     mean slew of leaf cell outputs
+  - transition_sigma:    sigma slew of leaf cell outputs
+  - delay:               delay through a leaf cell
+  - delay_mean:          mean delay through a leaf cell
+  - delay_sigma:         sigma delay through a leaf cell
+  - arrival:             arrival time at a leaf cell
+  - arrival_mean:        mean arrival time at a leaf cell
+  - arrival_sigma:       sigma arrival time at a leaf cell
+  - lib_set:             display the library set of the cell
+  - user_derate:         derating information
+  - user_mean_derate:    mean derating information
+  - user_sigma_derate:   derating information
+  - total_derate:        total derating information
+  - incr_derate:        incr derating information
+  - aocv_derate:         aocv derating information
+  - socv_derate:         socv spatial derating information
+  - stage_count:         aocv stage depth
+  - power_domain:        power domain associated with the object
+  - wire_length:         wire length
+  - instance_location:       instance location
+  - pin_location:        pin location
+  - module:              name of the subdesign
+  - frc:                 file row column information
+  - voltage:             voltage information
+1
+@genus:root: 27> whatis
+@genus:root: 28> whatis product_o[1]_reg[1]/D
+@genus:root: 29> report_timing
+============================================================
+  Generated by:           Genus(TM) Synthesis Solution 21.10-p002_1
+  Generated on:           Feb 28 2025  04:11:46 pm
+  Module:                 multiplier32FP
+  Operating conditions:   PVT_0P9V_125C 
+  Operating conditions:   PVT_1P32V_0C 
+  Interconnect mode:      global
+  Area mode:              physical library
+============================================================
+
+
+Path 1: MET (6427 ps) Setup Check with Pin product_o_reg[30]/CK->D
+          Group: clk
+     Startpoint: (R) product_o_reg[16]/CK
+          Clock: (R) clk
+       Endpoint: (R) product_o_reg[30]/D
+          Clock: (R) clk
+
+                     Capture       Launch     
+        Clock Edge:+   10000            0     
+       Src Latency:+       0            0     
+       Net Latency:+     105 (I)      105 (I) 
+           Arrival:=   10105          105     
+                                              
+             Setup:-     171                  
+       Uncertainty:-      44                  
+     Required Time:=    9890                  
+      Launch Clock:-     105                  
+         Data Path:-    3358                  
+             Slack:=    6427                  
+
+#---------------------------------------------------------------------------------------------
+#    Timing Point      Flags   Arc   Edge   Cell     Fanout Load Trans Delay Arrival Instance 
+#                                                           (fF)  (ps)  (ps)   (ps)  Location 
+#---------------------------------------------------------------------------------------------
+  product_o_reg[16]/CK -       -     R     (arrival)     40    -     0     0     105    (-,-) 
+  product_o_reg[16]/Q  -       CK->Q F     DFFRHQX1       1  3.6   101   247     352    (-,-) 
+  g5300/Y              -       A->Y  F     BUFX8          3 51.9   194   205     556    (-,-) 
+  g5249__5122/Y        -       A->Y  R     NOR4X2         1  3.3   240   296     853    (-,-) 
+  g5231__2346/Y        -       B->Y  F     NAND2BX1       1  3.1   219   254    1107    (-,-) 
+  g5222__7482/Y        -       D->Y  F     OR4X1          1  3.1   112   326    1432    (-,-) 
+  g5213__2802/Y        -       D->Y  F     OR4X1          1  3.1   112   282    1715    (-,-) 
+  g5187__7098/Y        -       D->Y  F     OR4X1          2  5.4   168   313    2028    (-,-) 
+  g5162__5122/Y        -       B->Y  R     NOR2BX1        2  5.0   259   238    2265    (-,-) 
+  g5120__1705/Y        -       B0->Y F     AOI21X1        1  3.2   223   211    2476    (-,-) 
+  g5118__1617/Y        -       B->Y  R     NOR2BX1        1  3.7   209   234    2711    (-,-) 
+  g5116__3680/Y        -       A->Y  R     OR3X8         32 59.8   177   285    2996    (-,-) 
+  g5106__7410/Y        -       A0->Y F     AOI22X1        1  3.2   258   273    3269    (-,-) 
+  g5074__9945/Y        -       B->Y  R     NAND2X1        1  3.2   126   195    3464    (-,-) 
+  product_o_reg[30]/D  <<<     -     R     DFFRHQX1       1    -     -     0    3464    (-,-) 
+#---------------------------------------------------------------------------------------------
+
+@genus:root: 30> whatis product_o_rg
+@genus:root: 31> whatis product_o_rrg
+@genus:root: 32> whatis product_o_reg
+@genus:root: 33> report_timing -from product_o_reg[1]/CK -to product_o_reg[1]/D
+============================================================
+  Generated by:           Genus(TM) Synthesis Solution 21.10-p002_1
+  Generated on:           Feb 28 2025  04:12:32 pm
+  Module:                 multiplier32FP
+  Operating conditions:   PVT_0P9V_125C 
+  Operating conditions:   PVT_1P32V_0C 
+  Interconnect mode:      global
+  Area mode:              physical library
+============================================================
+
+
+Path 1: MET (6868 ps) Setup Check with Pin product_o_reg[1]/CK->D
+          Group: clk
+     Startpoint: (R) product_o_reg[1]/CK
+          Clock: (R) clk
+       Endpoint: (R) product_o_reg[1]/D
+          Clock: (R) clk
+
+                     Capture       Launch     
+        Clock Edge:+   10000            0     
+       Src Latency:+       0            0     
+       Net Latency:+     105 (I)      105 (I) 
+           Arrival:=   10105          105     
+                                              
+             Setup:-     171                  
+       Uncertainty:-      44                  
+     Required Time:=    9890                  
+      Launch Clock:-     105                  
+         Data Path:-    2917                  
+             Slack:=    6868                  
+
+#--------------------------------------------------------------------------------------------
+#    Timing Point     Flags   Arc   Edge   Cell     Fanout Load Trans Delay Arrival Instance 
+#                                                          (fF)  (ps)  (ps)   (ps)  Location 
+#--------------------------------------------------------------------------------------------
+  product_o_reg[1]/CK <<<     -     R     (arrival)     40    -     0     0     105    (-,-) 
+  product_o_reg[1]/Q  -       CK->Q F     DFFRHQX1       1  3.6   101   247     352    (-,-) 
+  g5285/Y             -       A->Y  F     BUFX8          3 51.4   192   204     556    (-,-) 
+  g5227__9945/Y       -       A->Y  F     OR4X1          1  3.1   112   395     950    (-,-) 
+  g5219__1881/Y       -       D->Y  F     OR4X1          1  3.1   112   282    1233    (-,-) 
+  g5187__7098/Y       -       C->Y  F     OR4X1          2  5.4   168   354    1587    (-,-) 
+  g5162__5122/Y       -       B->Y  R     NOR2BX1        2  5.0   259   238    1824    (-,-) 
+  g5120__1705/Y       -       B0->Y F     AOI21X1        1  3.2   223   211    2035    (-,-) 
+  g5118__1617/Y       -       B->Y  R     NOR2BX1        1  3.7   209   234    2270    (-,-) 
+  g5116__3680/Y       -       A->Y  R     OR3X8         32 59.8   177   285    2554    (-,-) 
+  g5108__5477/Y       -       A0->Y F     AOI22X1        1  3.2   258   273    2828    (-,-) 
+  g5075__2883/Y       -       B->Y  R     NAND2X1        1  3.2   126   194    3022    (-,-) 
+  product_o_reg[1]/D  <<<     -     R     DFFRHQX1       1    -     -     0    3022    (-,-) 
+#--------------------------------------------------------------------------------------------
+
+
+Another Ctrl-C within 1 second will terminate the tool.
+CURRENT RESOURCES: RT {elapsed: 60026s, ST: 750s, FG: 750s, CPU: 4.0%}, MEM {curr: 1.6G, peak: 1.7G, phys curr: 0.9G, phys peak: 0.9G}, SYS {load: 0.3, cpu: 20, total: 30.8G, free: 14.6G}
+@genus:root: 34> report_timing -from product_o_reg[1]/CK -to product_o_reg[1]/D
+============================================================
+  Generated by:           Genus(TM) Synthesis Solution 21.10-p002_1
+  Generated on:           Feb 28 2025  04:15:04 pm
+  Module:                 multiplier32FP
+  Operating conditions:   PVT_0P9V_125C 
+  Operating conditions:   PVT_1P32V_0C 
+  Interconnect mode:      global
+  Area mode:              physical library
+============================================================
+
+
+Path 1: MET (6868 ps) Setup Check with Pin product_o_reg[1]/CK->D
+          Group: clk
+     Startpoint: (R) product_o_reg[1]/CK
+          Clock: (R) clk
+       Endpoint: (R) product_o_reg[1]/D
+          Clock: (R) clk
+
+                     Capture       Launch     
+        Clock Edge:+   10000            0     
+       Src Latency:+       0            0     
+       Net Latency:+     105 (I)      105 (I) 
+           Arrival:=   10105          105     
+                                              
+             Setup:-     171                  
+       Uncertainty:-      44                  
+     Required Time:=    9890                  
+      Launch Clock:-     105                  
+         Data Path:-    2917                  
+             Slack:=    6868                  
+
+#--------------------------------------------------------------------------------------------
+#    Timing Point     Flags   Arc   Edge   Cell     Fanout Load Trans Delay Arrival Instance 
+#                                                          (fF)  (ps)  (ps)   (ps)  Location 
+#--------------------------------------------------------------------------------------------
+  product_o_reg[1]/CK <<<     -     R     (arrival)     40    -     0     0     105    (-,-) 
+  product_o_reg[1]/Q  -       CK->Q F     DFFRHQX1       1  3.6   101   247     352    (-,-) 
+  g5285/Y             -       A->Y  F     BUFX8          3 51.4   192   204     556    (-,-) 
+  g5227__9945/Y       -       A->Y  F     OR4X1          1  3.1   112   395     950    (-,-) 
+  g5219__1881/Y       -       D->Y  F     OR4X1          1  3.1   112   282    1233    (-,-) 
+  g5187__7098/Y       -       C->Y  F     OR4X1          2  5.4   168   354    1587    (-,-) 
+  g5162__5122/Y       -       B->Y  R     NOR2BX1        2  5.0   259   238    1824    (-,-) 
+  g5120__1705/Y       -       B0->Y F     AOI21X1        1  3.2   223   211    2035    (-,-) 
+  g5118__1617/Y       -       B->Y  R     NOR2BX1        1  3.7   209   234    2270    (-,-) 
+  g5116__3680/Y       -       A->Y  R     OR3X8         32 59.8   177   285    2554    (-,-) 
+  g5108__5477/Y       -       A0->Y F     AOI22X1        1  3.2   258   273    2828    (-,-) 
+  g5075__2883/Y       -       B->Y  R     NAND2X1        1  3.2   126   194    3022    (-,-) 
+  product_o_reg[1]/D  <<<     -     R     DFFRHQX1       1    -     -     0    3022    (-,-) 
+#--------------------------------------------------------------------------------------------
+
+@genus:root: 35> exit
+Normal exit.

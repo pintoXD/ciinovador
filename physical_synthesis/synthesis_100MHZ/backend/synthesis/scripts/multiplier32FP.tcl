@@ -106,6 +106,7 @@ get_db insts .base_cell.name -u ;# List all cell names used in the current desig
 report_design_rules ;# > ${RPT_DIR}/${HDL_NAME}_drc.rpt
 report_area > ${RPT_DIR}/${HDL_NAME}_100MHZ_area.rpt
 report_timing > ${RPT_DIR}/${HDL_NAME}_100MHZ_timing.rpt
+report_timing -from product_o_reg[1]/CK -to product_o_reg[1]/D > ${RPT_DIR}/${HDL_NAME}_100MHZ_timing_product_o_reg.rpt
 report_gates > ${RPT_DIR}/${HDL_NAME}_100MHZ_gates.rpt
 report_qor > ${RPT_DIR}/${HDL_NAME}_100MHZ_qor.rpt
 report_power -unit uW > ${RPT_DIR}/${HDL_NAME}_100MHZ_power.rpt
