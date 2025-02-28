@@ -1,9 +1,9 @@
 xrun(64): 24.09-s001: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	24.09-s001: Started on Feb 27, 2025 at 22:34:46 -03
+TOOL:	xrun(64)	24.09-s001: Started on Feb 27, 2025 at 22:47:05 -03
 xrun
-	multiplier32FP_MIN_tb.sv
+	multiplier32FP_MAX_tb.sv
 	multiplier32FP.sv
-file: multiplier32FP_MIN_tb.sv
+file: multiplier32FP_MAX_tb.sv
 	module worklib.multiplier32FP_tb:sv
 		errors: 0, warnings: 0
 file: multiplier32FP.sv
@@ -17,14 +17,14 @@ file: multiplier32FP.sv
 	Generating native compiled code:
 		worklib.multiplier32FP:sv <0x4777de0e>
 			streams:  13, words:  7113
-		worklib.multiplier32FP_tb:sv <0x791abe48>
-			streams:   5, words:  8867
+		worklib.multiplier32FP_tb:sv <0x4a3c0c2f>
+			streams:   5, words:  9383
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
 		              Instances  Unique
 		Modules:              2       2
-		Registers:           51      51
+		Registers:           52      52
 		Scalar wires:         9       -
 		Vectored wires:       4       -
 		Always blocks:        4       4
@@ -36,7 +36,7 @@ Loading snapshot worklib.multiplier32FP_tb:sv .................... Done
 xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
 xcelium> run
 xmsim: *W,DVEXACC: some objects excluded from $dumpvars due to access restrictions, use +access+r on command line for access to all objects.
-            File: ./multiplier32FP_MIN_tb.sv, line = 64, pos = 16
+            File: ./multiplier32FP_MAX_tb.sv, line = 64, pos = 16
            Scope: multiplier32FP_tb
             Time: 0 FS + 0
 
@@ -99,8 +99,8 @@ Line          92 Error: Expected 80000000, got e650d352
 Line          98 Error: Expected 3568b4f0, got 3568b4ef
 Line         100 Error: Expected dc84a4ce, got dc84a4cd
 Finished testing all vectors.          58 errors found.
-Total runtime: 20210 time units
-Simulation complete via $finish(1) at time 20210 NS + 0
-./multiplier32FP_MIN_tb.sv:117         $finish;
+Total runtime: 40110 time units
+Simulation complete via $finish(1) at time 120330 NS + 0
+./multiplier32FP_MAX_tb.sv:119         $finish;
 xcelium> exit
-TOOL:	xrun(64)	24.09-s001: Exiting on Feb 27, 2025 at 22:34:57 -03  (total: 00:00:11)
+TOOL:	xrun(64)	24.09-s001: Exiting on Feb 27, 2025 at 22:47:05 -03  (total: 00:00:00)
