@@ -5,12 +5,21 @@ export USER=$USER;# put here YOUR user name at this machine
 export PROJECT_DIR=${PWD}
 export BACKEND_DIR=${PROJECT_DIR}/backend
 export FRONTEND_DIR=${PROJECT_DIR}/frontend
+
+
+# TECH_DIR must be set according to the location of your gpdk library. It's usually the paths described below. 
+# Alongside this environment variable, you'll also need to edit the backend/synthesis/scripts/common/path.tcl and backend/synthesis/layout/layout.tcl
+# scripts with the right path to the libarary files. There will be some commeantaries on these files to guide you through the process.
 export TECH_DIR=/home/tools/cadence/gpdk; # techonology dependant comand only valid for UFC guys. Uncomment this line if you are from UFC.
 # export TECH_DIR=/pdks/gpdk045_v_6_0;# techonology dependant comand only valid for UFCG guys. Uncomment this line if you are from UFCG.
 # export TECH_DIR=/home/tools/design_kits/cadence/gpdk045_v6/;# techonology dependant comand only valid for UFCG guys. Uncomment this line if you are from UFSM.
 
 export HDL_NAME=${DESIGNS}
 export VLOG_LIST="$BACKEND_DIR/synthesis/deliverables/${DESIGNS}.v  $BACKEND_DIR/synthesis/deliverables/${DESIGNS}_io.v  $BACKEND_DIR/synthesis/deliverables/${DESIGNS}_chip.v"
+
+# The following env vars LIB_DIR and LIB_VERILOG_FILES must be configured according to the path of ouyr gpdk library.
+# Once you've set the TECH_DIR, enter this dreictory and search for the timing and verilog folders, retrieve its aboslute path and
+# edit the following env vars according to the retrieved path. 
 export LIB_DIR=${TECH_DIR}/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing
 export LIB_VERILOG_FILES=${TECH_DIR}/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/verilog
 
