@@ -6,6 +6,9 @@ export PROJECT_DIR=${PWD}
 export BACKEND_DIR=${PROJECT_DIR}/backend
 export FRONTEND_DIR=${PROJECT_DIR}/frontend
 export TECH_DIR=/home/tools/cadence/gpdk; # techonology dependant comand only valid for UFC guys. Uncomment this line if you are from UFC.
+# export TECH_DIR=/pdks/gpdk045_v_6_0;# techonology dependant comand only valid for UFCG guys. Uncomment this line if you are from UFCG.
+# export TECH_DIR=/home/tools/design_kits/cadence/gpdk045_v6/;# techonology dependant comand only valid for UFCG guys. Uncomment this line if you are from UFSM.
+
 export HDL_NAME=${DESIGNS}
 export VLOG_LIST="$BACKEND_DIR/synthesis/deliverables/${DESIGNS}.v  $BACKEND_DIR/synthesis/deliverables/${DESIGNS}_io.v  $BACKEND_DIR/synthesis/deliverables/${DESIGNS}_chip.v"
 export LIB_DIR=${TECH_DIR}/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing
@@ -21,19 +24,17 @@ fi
 
 if [ $1 == "-clear_work" ]; then
     # Para limpar a pasta de trabalho
-    # rm -r ${PROJECT_DIR}/frontend/work/*
+    rm -r ${PROJECT_DIR}/frontend/work/*
     rm -r ${PROJECT_DIR}/backend/synthesis/work/*
     rm -r ${PROJECT_DIR}/backend/layout/work/*
+    cp ${FRONTEND_DIR}/vetor.txt ${FRONTEND_DIR}/work/vetor.txt
 fi
 
 if [ $1 == "-touch_work" ]; then
-    # Para limpar a pasta de trabalho
     touch ${PROJECT_DIR}/frontend/work/teste.txt
     touch ${PROJECT_DIR}/backend/synthesis/work/teste.txt
     touch ${PROJECT_DIR}/backend/layout/work/teste.txt
 fi
-
-
 
 if [ $1 == "-xrun_raw" ]; then
     # Para executar o XCELIUM
