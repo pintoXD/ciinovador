@@ -1,4 +1,0 @@
-#e1(24Feb2025:09:16:28): source ./xcelium.d/env.d/env.history.24Feb2025_09_16_28
-s1(24Feb2025:09:16:28):  xrun -64bit ieee754multiplier_tb.sv ieee754multiplier.sv 
-#e2(24Feb2025:09:17:12): source ./xcelium.d/env.d/env.history.24Feb2025_09_17_12
-s2(24Feb2025:09:17:12):  xrun -64bit ieee754multiplier_tb.sv ieee754multiplier.sv +gui +access+rw 
