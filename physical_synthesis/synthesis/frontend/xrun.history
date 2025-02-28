@@ -260,3 +260,7 @@ s129(27Feb2025:14:35:48):  xrun multiplier32FP_tb.sv multiplier32FP.sv
 s130(27Feb2025:14:38:31):  xrun multiplier32FP_tb.sv multiplier32FP.sv 
 #e131(27Feb2025:16:54:30): source ./xcelium.d/env.d/env.history.27Feb2025_16_54_30
 s131(27Feb2025:16:54:30):  xrun multiplier32FP_MAX_tb.sv multiplier32FP.sv 
+#e132(27Feb2025:22:33:18): source ./xcelium.d/env.d/env.history.27Feb2025_22_33_18
+s132(27Feb2025:22:33:18):  xrun multiplier32FP_MAX_tb.sv multiplier32FP.sv 
+#e133(27Feb2025:22:34:46): source ./xcelium.d/env.d/env.history.27Feb2025_22_34_46
+s133(27Feb2025:22:34:46):  xrun multiplier32FP_MIN_tb.sv multiplier32FP.sv 
