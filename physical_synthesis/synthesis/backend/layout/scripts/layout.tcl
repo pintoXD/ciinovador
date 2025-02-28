@@ -48,7 +48,13 @@ source ${PROJECT_DIR}/backend/synthesis/scripts/common/path.tcl
 #-----------------------------------------------------------------------------
 set WORST_LIST ${LIB_DIR}/slow_vdd1v0_basicCells.lib
 set BEST_LIST ${LIB_DIR}/fast_vdd1v2_basicCells.lib
+# Here you'll need to set the right path to the LEF files. 
+# The current LEF INI is set to work with UFC workstations
 set LEF_INIT "${TECH_DIR}/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/lef/gsclib045_tech.lef ${TECH_DIR}/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/lef/gsclib045_macro.lef" ;# LEF_LIST
+# The following is the LEF_DIR location for UFCG guys
+# set LEF_DIR ${TECH_DIR}/gsclib045_all_v4_4/gsclib045/lef
+# The following is the LEF_DIR location for UFSM guys
+# set LEF_DIR ${TECH_DIR}/gsclib045_all_v4.7/gsclib045/lef
 set CAP_MAX ${TECH_DIR}/gpdk045_v_6_0/soce/gpdk045.basic.CapTbl
 set CAP_MIN ${TECH_DIR}/gpdk045_v_6_0/soce/gpdk045.basic.CapTbl
 set QRC_LIST ${TECH_DIR}/gpdk045_v_6_0/qrc/rcworst/qrcTechFile
@@ -297,23 +303,6 @@ report_power -power_unit uW > ${BACKEND_DIR}/layout/deliverables/reports/power_r
 
 report_area > ${BACKEND_DIR}/layout/deliverables/reports/report_area.rpt
 report_timing > ${BACKEND_DIR}/layout/deliverables/reports/report_timing.rpt
-
-
-# #
-# read_activity_file -format VCD -scope somador_tb(verification)/DUV ${FRONTEND_DIR}/vcd/${DESIGNS}_layout_10kns.vcd
-# report_power -power_unit uW > ${BACKEND_DIR}/layout/deliverables/reports/power_report_VCD_10kns.rpt
-# #
-# read_activity_file -format VCD -scope somador_tb(verification)/DUV ${FRONTEND_DIR}/vcd/${DESIGNS}_layout_5kns.vcd -reset
-# report_power -power_unit uW > ${BACKEND_DIR}/layout/deliverables/reports/power_report_VCD_5kns.rpt
-# #
-# read_activity_file -format VCD -scope somador_tb(verification)/DUV ${FRONTEND_DIR}/vcd/${DESIGNS}_layout_10kns_minimum.vcd -reset
-# report_power -power_unit uW > ${BACKEND_DIR}/layout/deliverables/reports/power_report_VCD_10kns_minimum.rpt
-# #
-# read_activity_file -format VCD -scope somador_tb(verification)/DUV ${FRONTEND_DIR}/vcd/${DESIGNS}_layout_5kns_minimum.vcd -reset
-# report_power -power_unit uW > ${BACKEND_DIR}/layout/deliverables/reports/power_report_VCD_5kns_minimum.rpt
-
-
-
 
 
 #-----------------------------------------------------------------------------
