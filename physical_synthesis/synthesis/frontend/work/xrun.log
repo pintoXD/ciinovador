@@ -1,5 +1,5 @@
 xrun(64): 24.09-s001: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	24.09-s001: Started on Feb 27, 2025 at 22:49:25 -03
+TOOL:	xrun(64)	24.09-s001: Started on Feb 27, 2025 at 23:04:10 -03
 xrun
 	-timescale 1ns/10ps
 	-mess
@@ -21,8 +21,8 @@ file: /home/cinovador/Documents/course_files/physical_synthesis/synthesis/fronte
 xmelab: *W,FLFFNF: Compiled SDF file (../backend/synthesis/deliverables/multiplier32FP_worst.sdf.X) not found, specified in SDF annotation command file /home/cinovador/Documents/course_files/physical_synthesis/synthesis/frontend/sdf_cmd_file.cmd, line 8.
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
-		worklib.multiplier32FP_tb:sv <0x2e5ef32b>
-			streams:  15, words: 14044
+		worklib.multiplier32FP_tb:sv <0x36903003>
+			streams:  15, words: 14629
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
@@ -104,7 +104,8 @@ Line          98 Error: Expected 3568b4f0, got 3568b4ef
 Line         100 Error: Expected dc84a4ce, got dc84a4cd
 Finished testing all vectors.          58 errors found.
 Total runtime: 4011000 time units
-Simulation complete via $finish(1) at time 120330 NS + 0
-../multiplier32FP_MAX_tb.sv:119         $finish;
+Total delay time: 4011000 time units
+Simulation complete via $finish(1) at time 80220 NS + 0
+../multiplier32FP_MAX_tb.sv:120         $finish;
 xcelium> exit
-TOOL:	xrun(64)	24.09-s001: Exiting on Feb 27, 2025 at 22:49:26 -03  (total: 00:00:01)
+TOOL:	xrun(64)	24.09-s001: Exiting on Feb 27, 2025 at 23:04:11 -03  (total: 00:00:01)

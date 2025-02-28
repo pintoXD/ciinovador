@@ -1,0 +1,120 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+Version: 21.10-p002_1, built Fri Aug 20 06:13:13 PDT 2021
+Options: 
+Date:    Thu Feb 27 23:28:20 2025
+Host:    cinova05.lesc.ufc.br (x86_64 w/Linux 4.18.0-553.36.1.el8_10.x86_64) (14cores*20cpus*1physical cpu*13th Gen Intel(R) Core(TM) i5-13500 24576KB) (32333796KB)
+PID:     293597
+OS:      Rocky Linux release 8.10 (Green Obsidian)
+
+Checking out license: Genus_Synthesis
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Loading tool scripts...
+Finished loading tool scripts (5 seconds elapsed).
+
+WARNING: This version of the tool is 1287 days old.
+@genus:root: 1> clear
+@genus:root: 2> ls
+backend
+frontend
+genus.cmd
+genus.log
+innovus.cmd
+innovus.log
+innovus.logv
+pvsUI_ipvs.log
+run_first.sh
+@genus:root: 3> read_vcd
+Error   : A required argument was not specified. [TUI-202] [parse_options]
+        : An argument of type '<string>' was not specified.
+        : Rerun the command specifying all required arguments.
+  read_vcd: reads in Value Change Dump (VCD) file for power analysis 
+
+Usage: read_vcd [-static] [-scale <string>] [-start_time <float>] [-end_time <float>] [-time_window <float>] [-activity_profile]
+           [-vcd_scope <string>] [-hinst <string>] [-simvision] [-write_sst2 <string>] [-nocase] [-scale_to_sdc_frequency] <string>
+
+    [-static]:
+        do static VCD analysis 
+    [-scale <string>]:
+        the scaling factor 
+    [-start_time <float>]:
+        time in picoseconds at which VCD analysis starts 
+    [-end_time <float>]:
+        time in picoseconds at which VCD analysis ends 
+    [-time_window <float>]:
+        period in picoseconds for doing incremental analysis 
+    [-activity_profile]:
+        monitor switching activity of objects in VCD file 
+    [-vcd_scope <string>]:
+        the instance for VCD parsing 
+    [-hinst <string>]:
+        the instance in the design hierarchy corresponding to the instance in the VCD selected for parsing 
+    [-simvision]:
+        generate SST2 database for running simvision (default false) 
+    [-write_sst2 <string>]:
+        SST2 database file name for viewing in other waveform viewers 
+    [-nocase]:
+        ignore the case for finding design objects (default false) 
+    [-scale_to_sdc_frequency]:
+        scales activities to sdc activities 
+    <string>:
+        the name of the VCD file 
+@genus:root: 4> help read_vcd
+Commands:
+  read_vcd: reads in Value Change Dump (VCD) file for power analysis 
+
+Usage: read_vcd [-static] [-scale <string>] [-start_time <float>] [-end_time <float>] [-time_window <float>] [-activity_profile]
+           [-vcd_scope <string>] [-hinst <string>] [-simvision] [-write_sst2 <string>] [-nocase] [-scale_to_sdc_frequency] <string>
+
+    [-static]:
+        do static VCD analysis 
+    [-scale <string>]:
+        the scaling factor 
+    [-start_time <float>]:
+        time in picoseconds at which VCD analysis starts 
+    [-end_time <float>]:
+        time in picoseconds at which VCD analysis ends 
+    [-time_window <float>]:
+        period in picoseconds for doing incremental analysis 
+    [-activity_profile]:
+        monitor switching activity of objects in VCD file 
+    [-vcd_scope <string>]:
+        the instance for VCD parsing 
+    [-hinst <string>]:
+        the instance in the design hierarchy corresponding to the instance in the VCD selected for parsing 
+    [-simvision]:
+        generate SST2 database for running simvision (default false) 
+    [-write_sst2 <string>]:
+        SST2 database file name for viewing in other waveform viewers 
+    [-nocase]:
+        ignore the case for finding design objects (default false) 
+    [-scale_to_sdc_frequency]:
+        scales activities to sdc activities 
+    <string>:
+        the name of the VCD file 
+
+
+@genus:root: 5> read_activity_file
+invalid command name "read_activity_file"
+
+Another Ctrl-C within 1 second will terminate the tool.
+CURRENT RESOURCES: RT {elapsed: 138s, ST: 6s, FG: 6s, CPU: 3.7%}, MEM {curr: 1.1G, peak: 1.1G, phys curr: 0.3G, phys peak: 0.3G}, SYS {load: 0.2, cpu: 20, total: 30.8G, free: 15.6G}
+
+Another Ctrl-C within 1 second will terminate the tool.
+CURRENT RESOURCES: RT {elapsed: 139s, ST: 6s, FG: 6s, CPU: 3.7%}, MEM {curr: 1.1G, peak: 1.1G, phys curr: 0.3G, phys peak: 0.3G}, SYS {load: 0.2, cpu: 20, total: 30.8G, free: 15.6G}
+
+Another Ctrl-C within 1 second will terminate the tool.
+CURRENT RESOURCES: RT {elapsed: 141s, ST: 6s, FG: 6s, CPU: 3.8%}, MEM {curr: 1.1G, peak: 1.1G, phys curr: 0.3G, phys peak: 0.3G}, SYS {load: 0.2, cpu: 20, total: 30.8G, free: 15.6G}
+
+Another Ctrl-C within 1 second will terminate the tool.
+CURRENT RESOURCES: RT {elapsed: 142s, ST: 6s, FG: 6s, CPU: 3.8%}, MEM {curr: 1.1G, peak: 1.1G, phys curr: 0.3G, phys peak: 0.3G}, SYS {load: 0.2, cpu: 20, total: 30.8G, free: 15.6G}
+Abnormal exit.

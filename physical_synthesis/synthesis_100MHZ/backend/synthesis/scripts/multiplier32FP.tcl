@@ -113,6 +113,13 @@ source ${SCRIPT_DIR}/common/sdf_width_wa.etf
 write_sdf -edge check_edge -setuphold merge_always -nonegchecks -recrem merge_always -version 3.0 -design ${HDL_NAME}  > ${DEV_DIR}/${HDL_NAME}_worst.sdf
 write_hdl ${HDL_NAME} > ${DEV_DIR}/${HDL_NAME}.v
 
+read_vcd -static -vcd_scope ${DESIGNS}_tb/DUT ${PROJECT_DIR}/frontend/work/${DESIGNS}_MAX_tb.vcd
+report_power -unit uW > ${RPT_DIR}/${HDL_NAME}_100MHZ_MAX_VCD_power.rpt
+
+read_vcd -static -vcd_scope ${DESIGNS}_tb/DUT ${PROJECT_DIR}/frontend/work/${DESIGNS}_MIN_tb.vcd
+report_power -unit uW > ${RPT_DIR}/${HDL_NAME}_100MHZ_MIN_VCD_power.rpt
+
+
 exit
 
 
