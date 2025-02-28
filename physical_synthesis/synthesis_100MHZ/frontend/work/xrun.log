@@ -1,5 +1,5 @@
 xrun(64): 24.09-s001: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	24.09-s001: Started on Feb 27, 2025 at 19:16:51 -03
+TOOL:	xrun(64)	24.09-s001: Started on Feb 27, 2025 at 23:09:04 -03
 xrun
 	-timescale 1ns/10ps
 	-mess
@@ -22,7 +22,7 @@ xmelab: *W,FLFFNF: Compiled SDF file (../backend/synthesis/deliverables/multipli
 	Building instance overlay tables: .................... Done
 	Generating native compiled code:
 		worklib.multiplier32FP_tb:sv <0x2e5ef32b>
-			streams:  15, words: 14044
+			streams:  15, words: 13971
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
@@ -104,7 +104,7 @@ Line          98 Error: Expected 3568b4f0, got 3568b4ef
 Line         100 Error: Expected dc84a4ce, got dc84a4cd
 Finished testing all vectors.          58 errors found.
 Total runtime: 431000 time units
-Simulation complete via $finish(1) at time 12930 NS + 0
+Simulation complete via $finish(1) at time 8620 NS + 0
 ../multiplier32FP_MAX_tb.sv:119         $finish;
 xcelium> exit
-TOOL:	xrun(64)	24.09-s001: Exiting on Feb 27, 2025 at 19:16:52 -03  (total: 00:00:01)
+TOOL:	xrun(64)	24.09-s001: Exiting on Feb 27, 2025 at 23:09:05 -03  (total: 00:00:01)

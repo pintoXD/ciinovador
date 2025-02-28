@@ -13,25 +13,25 @@ Begin Processing Timing Library for Power Calculation
 
 Begin Processing Power Net/Grid for Power Calculation
 
-Ended Processing Power Net/Grid for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1992.19MB/3913.13MB/1992.19MB)
+Ended Processing Power Net/Grid for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1977.06MB/3871.23MB/1977.06MB)
 
 Begin Processing Timing Window Data for Power Calculation
 
 CK: assigning clock clk to net clk
-Ended Processing Timing Window Data for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1992.19MB/3913.13MB/1992.19MB)
+Ended Processing Timing Window Data for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1977.06MB/3871.23MB/1977.06MB)
 
 Begin Processing User Attributes
 
-Ended Processing User Attributes: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1992.19MB/3913.13MB/1992.19MB)
+Ended Processing User Attributes: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1977.06MB/3871.23MB/1977.06MB)
 
 Begin Processing Signal Activity
 
 
 Starting Activity Propagation
-2025-Feb-27 19:18:17 (2025-Feb-27 22:18:17 GMT)
+2025-Feb-27 23:10:48 (2025-Feb-28 02:10:48 GMT)
 
 Finished Activity Propagation
-2025-Feb-27 19:18:17 (2025-Feb-27 22:18:17 GMT)
+2025-Feb-27 23:10:48 (2025-Feb-28 02:10:48 GMT)
 
 Activity annotation summary:
         Primary Inputs : 67/67 = 100%
@@ -40,7 +40,7 @@ Activity annotation summary:
       Tristate outputs : 0/0 = 0%
             Total Nets : 1811/1842 = 98.317%
 
-Ended Processing Signal Activity: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1992.19MB/3913.13MB/1992.19MB)
+Ended Processing Signal Activity: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1977.06MB/3871.23MB/1977.06MB)
 
 Begin Power Computation
 
@@ -53,39 +53,39 @@ Begin Power Computation
 
 
 Starting Calculating power
-2025-Feb-27 19:18:17 (2025-Feb-27 22:18:17 GMT)
+2025-Feb-27 23:10:48 (2025-Feb-28 02:10:48 GMT)
  ... Calculating switching power
-2025-Feb-27 19:18:17 (2025-Feb-27 22:18:17 GMT): 10%
-2025-Feb-27 19:18:17 (2025-Feb-27 22:18:17 GMT): 20%
-2025-Feb-27 19:18:17 (2025-Feb-27 22:18:17 GMT): 30%
-2025-Feb-27 19:18:17 (2025-Feb-27 22:18:17 GMT): 40%
-2025-Feb-27 19:18:17 (2025-Feb-27 22:18:17 GMT): 50%
+2025-Feb-27 23:10:48 (2025-Feb-28 02:10:48 GMT): 10%
+2025-Feb-27 23:10:48 (2025-Feb-28 02:10:48 GMT): 20%
+2025-Feb-27 23:10:48 (2025-Feb-28 02:10:48 GMT): 30%
+2025-Feb-27 23:10:48 (2025-Feb-28 02:10:48 GMT): 40%
+2025-Feb-27 23:10:48 (2025-Feb-28 02:10:48 GMT): 50%
  ... Calculating internal and leakage power
-2025-Feb-27 19:18:17 (2025-Feb-27 22:18:17 GMT): 60%
-2025-Feb-27 19:18:17 (2025-Feb-27 22:18:17 GMT): 70%
-2025-Feb-27 19:18:17 (2025-Feb-27 22:18:17 GMT): 80%
-2025-Feb-27 19:18:17 (2025-Feb-27 22:18:17 GMT): 90%
+2025-Feb-27 23:10:48 (2025-Feb-28 02:10:48 GMT): 60%
+2025-Feb-27 23:10:48 (2025-Feb-28 02:10:48 GMT): 70%
+2025-Feb-27 23:10:48 (2025-Feb-28 02:10:48 GMT): 80%
+2025-Feb-27 23:10:48 (2025-Feb-28 02:10:48 GMT): 90%
 
 Finished Calculating power
-2025-Feb-27 19:18:17 (2025-Feb-27 22:18:17 GMT)
+2025-Feb-27 23:10:48 (2025-Feb-28 02:10:48 GMT)
       # of MSMV cell(s) missing power_level: 0
-Ended Power Computation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1992.19MB/3913.13MB/1992.19MB)
+Ended Power Computation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1977.06MB/3871.23MB/1977.06MB)
 
 Begin Processing User Attributes
 
-Ended Processing User Attributes: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1992.19MB/3913.13MB/1992.19MB)
+Ended Processing User Attributes: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1977.06MB/3871.23MB/1977.06MB)
 
-Ended Power Analysis: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1992.19MB/3913.13MB/1992.19MB)
+Ended Power Analysis: (cpu=0:00:00, real=0:00:02, mem(process/total/peak)=1977.06MB/3871.23MB/1977.06MB)
 
 Begin Boundary Leakage Calculation
 Ended Boundary Leakage Calculation: (cpu=0:00:00, real=0:00:00,
-mem(process/total/peak)=1992.19MB/3913.13MB/1992.19MB)
+mem(process/total/peak)=1977.06MB/3871.23MB/1977.06MB)
 Begin Static Power Report Generation
 *----------------------------------------------------------------------------------------
 *	Innovus 21.15-s110_1 (64bit) 09/23/2022 13:08 (Linux 3.10.0-693.el7.x86_64)
 *	
 *
-* 	Date & Time:	2025-Feb-27 19:18:17 (2025-Feb-27 22:18:17 GMT)
+* 	Date & Time:	2025-Feb-27 23:10:50 (2025-Feb-28 02:10:50 GMT)
 *
 *----------------------------------------------------------------------------------------
 *
@@ -130,37 +130,37 @@ Begin Static Power Report Generation
 
 Total Power
 -----------------------------------------------------------------------------------------
-Total Internal Power:       48.99773849 	   48.5714%
-Total Switching Power:      51.32103795 	   50.8745%
-Total Leakage Power:         0.55901265 	    0.5541%
-Total Power:               100.87778909
+Total Internal Power:       53.89381394 	   48.6839%
+Total Switching Power:      56.24942724 	   50.8118%
+Total Leakage Power:         0.55818791 	    0.5042%
+Total Power:               110.70142909
 -----------------------------------------------------------------------------------------
 
 
 Group                           Internal   Switching     Leakage       Total  Percentage 
                                 Power      Power         Power         Power  (%)        
 -----------------------------------------------------------------------------------------
-Sequential                         31.37       1.372     0.05042   3.279e+04       32.51
+Sequential                         31.54         1.4     0.05041   3.299e+04        29.8
 Macro                                  0           0           0           0           0
 IO                                     0           0           0           0           0
-Combinational                      17.63       49.95      0.5086   6.808e+04       67.49
+Combinational                      22.36       54.85      0.5078   7.772e+04        70.2
 Clock (Combinational)                  0           0           0           0           0
 Clock (Sequential)                     0           0           0           0           0
 -----------------------------------------------------------------------------------------
-Total                            4.9e+04   5.132e+04         559   1.009e+05       1e+05
+Total                          5.389e+04   5.625e+04       558.2   1.107e+05       1e+05
 -----------------------------------------------------------------------------------------
 
 
 Rail                  Voltage   Internal   Switching     Leakage       Total  Percentage 
                                 Power      Power         Power         Power  (%)        
 -----------------------------------------------------------------------------------------
-VDD                      1.32    4.9e+04   5.132e+04         559   1.009e+05       1e+05
+VDD                      1.32  5.389e+04   5.625e+04       558.2   1.107e+05       1e+05
  
  
 -----------------------------------------------------------------------------------------
 *	Power Distribution Summary: 
-*              Highest Average Power:     FE_OFC14_product_o_28 (CLKBUFX8):             2.07
-*              Highest Leakage Power:     FE_OFC14_product_o_28 (CLKBUFX8):        0.0008945
+*              Highest Average Power:           FE_OFC95_done_o (CLKINVX6):            2.026
+*              Highest Leakage Power:     FE_OFC14_product_o_28 (CLKBUFX8):        0.0008902
 *                Total Cap:      5.51615e-12 F
 *                Total instances in design:  1428
 *                Total instances in design with no power:     0
@@ -172,5 +172,5 @@ VDD                      1.32    4.9e+04   5.132e+04         559   1.009e+05    
 ** INFO:  (VOLTUS_POWR-3465): There are 0 decaps and 0 fillers in the design
 
 Ended Static Power Report Generation: (cpu=0:00:00, real=0:00:00,
-mem(process/total/peak)=1992.19MB/3913.13MB/1992.19MB)
+mem(process/total/peak)=1977.06MB/3871.23MB/1977.06MB)
 

@@ -114,7 +114,7 @@ module multiplier32FP_tb();
         end_time = $time;
         $display("Finished testing all vectors. %d errors found.", errors);
         $display("Total runtime: %0t time units", end_time - start_time);
-        delay_time = 2*(end_time - start_time);
+        delay_time = (end_time - start_time);
         #delay_time;
         $finish;
 
