@@ -1,0 +1,56 @@
+#e1(22Jan2025:11:05:38): source ./xcelium.d/env.d/env.history.22Jan2025_11_05_38
+s1(22Jan2025:11:05:38):  xrun -64bit main_control_tb.sv main_control.sv 
+#e2(22Jan2025:11:06:31): source ./xcelium.d/env.d/env.history.22Jan2025_11_06_31
+s2(22Jan2025:11:06:31):  xrun -64bit main_control_tb.sv main_control.sv 
+#e3(22Jan2025:11:07:07): source ./xcelium.d/env.d/env.history.22Jan2025_11_07_07
+s3(22Jan2025:11:07:07):  xrun -64bit main_control_tb.sv main_control.sv 
+#e4(22Jan2025:11:07:10): source ./xcelium.d/env.d/env.history.22Jan2025_11_07_10
+s4(22Jan2025:11:07:10):  xrun -64bit main_control_tb.sv main_control.sv 
+#e5(22Jan2025:11:09:36): source ./xcelium.d/env.d/env.history.22Jan2025_11_09_36
+s5(22Jan2025:11:09:36):  xrun -64bit main_control_tb.sv main_control.sv 
+#e6(22Jan2025:11:09:39): source ./xcelium.d/env.d/env.history.22Jan2025_11_09_39
+s6(22Jan2025:11:09:39):  xrun -64bit main_control_tb.sv main_control.sv 
+#e7(22Jan2025:11:09:59): source ./xcelium.d/env.d/env.history.22Jan2025_11_09_59
+s7(22Jan2025:11:09:59):  xrun -64bit main_control_tb.sv main_control.sv 
+#e8(22Jan2025:11:10:02): source ./xcelium.d/env.d/env.history.22Jan2025_11_10_02
+s8(22Jan2025:11:10:02):  xrun -64bit main_control_tb.sv main_control.sv 
+#e9(22Jan2025:11:10:32): source ./xcelium.d/env.d/env.history.22Jan2025_11_10_32
+s9(22Jan2025:11:10:32):  xrun -64bit main_control_tb.sv main_control.sv 
+#e10(22Jan2025:11:11:23): source ./xcelium.d/env.d/env.history.22Jan2025_11_11_23
+s10(22Jan2025:11:11:23):  xrun -64bit main_control_tb.sv main_control.sv 
+#e11(22Jan2025:11:14:25): source ./xcelium.d/env.d/env.history.22Jan2025_11_14_25
+s11(22Jan2025:11:14:25):  xrun -64bit main_control_tb.sv main_control.sv 
+#e12(22Jan2025:11:14:42): source ./xcelium.d/env.d/env.history.22Jan2025_11_14_42
+s12(22Jan2025:11:14:42):  xrun -64bit main_control_tb.sv main_control.sv +gui +acess+rw 
+#e13(22Jan2025:11:15:51): source ./xcelium.d/env.d/env.history.22Jan2025_11_15_51
+s13(22Jan2025:11:15:51):  xrun -64bit main_control_tb.sv main_control.sv +gui +access+rw 
+#e14(22Jan2025:11:20:37): source ./xcelium.d/env.d/env.history.22Jan2025_11_20_37
+s14(22Jan2025:11:20:37):  xrun -64bit main_control_tb.sv main_control.sv +gui +access+rw 
+#e15(22Jan2025:11:47:04): source ./xcelium.d/env.d/env.history.22Jan2025_11_47_04
+s15(22Jan2025:11:47:04):  xrun ALU-control_tb.sv ALU_control.sv 
+#e16(22Jan2025:11:47:30): source ./xcelium.d/env.d/env.history.22Jan2025_11_47_30
+s16(22Jan2025:11:47:30):  xrun -64bit ALU-control_tb.sv ALU_control.sv 
+#e17(22Jan2025:11:52:56): source ./xcelium.d/env.d/env.history.22Jan2025_11_52_56
+s17(22Jan2025:11:52:56):  xrun -64bit ALU-control_tb.sv ALU_control.sv 
+#e18(22Jan2025:11:54:27): source ./xcelium.d/env.d/env.history.22Jan2025_11_54_27
+s18(22Jan2025:11:54:27):  xrun -64bit ALU-control_tb.sv ALU_control.sv 
+#e19(22Jan2025:11:55:32): source ./xcelium.d/env.d/env.history.22Jan2025_11_55_32
+s19(22Jan2025:11:55:32):  xrun -64bit ALU-control_tb.sv ALU_control.sv 
+#e20(22Jan2025:11:56:08): source ./xcelium.d/env.d/env.history.22Jan2025_11_56_08
+s20(22Jan2025:11:56:08):  xrun -64bit ALU-control_tb.sv ALU_control.sv 
+#e21(22Jan2025:11:56:17): source ./xcelium.d/env.d/env.history.22Jan2025_11_56_17
+s21(22Jan2025:11:56:17):  xrun -64bit ALU-control_tb.sv ALU_control.sv 
+#e22(22Jan2025:11:57:46): source ./xcelium.d/env.d/env.history.22Jan2025_11_57_46
+s22(22Jan2025:11:57:46):  xrun -64bit ALU-control_tb.sv ALU_control.sv 
+#e23(22Jan2025:11:58:04): source ./xcelium.d/env.d/env.history.22Jan2025_11_58_04
+s23(22Jan2025:11:58:04):  xrun -64bit ALU-control_tb.sv ALU_control.sv 
+#e24(22Jan2025:11:58:33): source ./xcelium.d/env.d/env.history.22Jan2025_11_58_33
+s24(22Jan2025:11:58:33):  xrun -64bit ALU-control_tb.sv ALU_control.sv 
+#e25(22Jan2025:11:59:15): source ./xcelium.d/env.d/env.history.22Jan2025_11_59_15
+s25(22Jan2025:11:59:15):  xrun -64bit ALU-control_tb.sv ALU_control.sv 
+#e26(22Jan2025:11:59:57): source ./xcelium.d/env.d/env.history.22Jan2025_11_59_57
+s26(22Jan2025:11:59:57):  xrun -64bit ALU-control_tb.sv ALU_control.sv 
+#e27(22Jan2025:12:02:01): source ./xcelium.d/env.d/env.history.22Jan2025_12_02_01
+s27(22Jan2025:12:02:01):  xrun -64bit ALU-control_tb.sv ALU_control.sv 
+#e28(22Jan2025:12:02:52): source ./xcelium.d/env.d/env.history.22Jan2025_12_02_52
+s28(22Jan2025:12:02:52):  xrun -64bit ALU-control_tb.sv ALU_control.sv 

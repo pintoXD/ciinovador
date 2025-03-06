@@ -1,0 +1,39 @@
+xrun(64): 24.09-s001: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	24.09-s001: Started on Jan 22, 2025 at 12:02:51 -03
+xrun
+	-64bit
+	ALU-control_tb.sv
+	ALU_control.sv
+Recompiling... reason: file './ALU_control.sv' is newer than expected.
+	expected: Wed Jan 22 12:00:08 2025
+	actual:   Wed Jan 22 12:02:38 2025
+file: ALU_control.sv
+	module worklib.ALU_control:sv
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Top level design units:
+		ALU_control_tb
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.ALU_control:sv <0x3381b0c5>
+			streams:   1, words:  1255
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 2       2
+		Registers:              11      11
+		Vectored wires:          4       -
+		Always blocks:           1       1
+		Initial blocks:          1       1
+		Pseudo assignments:      3       -
+		Assertions:              7       7
+		Simulation timescale:  1ns
+	Writing initial simulation snapshot: worklib.ALU_control_tb:sv
+Loading snapshot worklib.ALU_control_tb:sv .................... Done
+xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
+xcelium> run
+xmsim: *W,RNQUIE: Simulation is complete.
+xcelium> exit
+TOOL:	xrun(64)	24.09-s001: Exiting on Jan 22, 2025 at 12:02:52 -03  (total: 00:00:01)
