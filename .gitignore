@@ -1,2 +1,11 @@
 **/*/xcelium.d/**
 **/*/obj_dir/**
+**/**/01_power.enc/**/*
+**/**/02_placement.enc/**/*
+**/**/03_cts.enc/**/*
+**/**/*.fp.*.gz
+**/**/*.db.da.gz
+**/**/*_postRoute.*.gz
+**/**/*_postRoute_*.*.gz
+**/**/*_postCTS_*.*.gz
+**/**/*_postCTS.*.gz
