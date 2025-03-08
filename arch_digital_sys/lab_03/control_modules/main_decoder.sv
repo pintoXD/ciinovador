@@ -1,5 +1,5 @@
 `timescale 1us/1ns
-module main_control (
+module main_decoder (
     input logic [5:0] opcode,
     output logic RegDst,
     output logic ALUSrc,

@@ -14,7 +14,7 @@ module control(
 );
 
 
-    main_control main_control_inst(
+    main_decoder main_decoder_inst(
     .opcode(ctrl_opcode),
     .RegDst(ctrl_RegDst),
     .ALUSrc(ctrl_ALUSrc),
