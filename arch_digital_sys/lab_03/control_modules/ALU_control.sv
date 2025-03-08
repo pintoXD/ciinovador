@@ -12,7 +12,7 @@ module ALU_control (
                 ALUcontrol_output = 4'b0010;
             2'b01: //Handles BEQ instructions
                 ALUcontrol_output = 4'b0110;
-            2'b10: begin
+            2'b10: begin //According to the literature, this should act like a "Look at the Funct Field" case.
                 if(Funct_Field == 6'b100000)
                     ALUcontrol_output = 4'b0010;   
                 else if(Funct_Field == 6'b100010)

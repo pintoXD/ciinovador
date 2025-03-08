@@ -8,8 +8,7 @@ module main_decoder (
     output logic MemRead,
     output logic MemWrite,
     output logic Branch,
-    output logic ALUOp1,
-    output logic ALUOp0
+    output logic [1:0] ALUOp
 );
 
 always_comb begin : control_unit
@@ -23,8 +22,8 @@ always_comb begin : control_unit
             MemRead = 0;
             MemWrite = 0;
             Branch = 0;
-            ALUOp1 = 1;
-            ALUOp0 = 0;
+            ALUOp[1] = 1;
+            ALUOp[0] = 0;
         end
 
         6'b100011: begin //lw
@@ -35,8 +34,8 @@ always_comb begin : control_unit
             MemRead = 1;
             MemWrite = 0;
             Branch = 0;
-            ALUOp1 = 0;
-            ALUOp0 = 0;
+            ALUOp[1] = 0;
+            ALUOp[0] = 0;
         end
         6'b101011: begin //sw
             RegDst = 1'bx;
@@ -46,8 +45,8 @@ always_comb begin : control_unit
             MemRead = 0;
             MemWrite = 1;
             Branch = 0;
-            ALUOp1 = 0;
-            ALUOp0 = 0;
+            ALUOp[1] = 0;
+            ALUOp[0] = 0;
         end
         6'b000100: begin //beq
             RegDst = 1'bx;
@@ -57,8 +56,8 @@ always_comb begin : control_unit
             MemRead = 0;
             MemWrite = 0;
             Branch = 1;
-            ALUOp1 = 0;
-            ALUOp0 = 1;
+            ALUOp[1] = 0;
+            ALUOp[0] = 1;
         end
         default: begin //Defaults to an R-Type instruction.
             RegDst = 1;
@@ -68,14 +67,12 @@ always_comb begin : control_unit
             MemRead = 0;
             MemWrite = 0;
             Branch = 0;
-            ALUOp1 = 1;
-            ALUOp0 = 0;
+            ALUOp[1] = 1;
+            ALUOp[0] = 0;
         end
     
     endcase
 end
-
-
 
 
 endmodule

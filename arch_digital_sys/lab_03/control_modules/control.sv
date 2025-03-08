@@ -1,3 +1,4 @@
+`timescale 1us/1ns
 module control(
     input logic [5:0] ctrl_Funct_Field,
     input logic [5:0] ctrl_opcode,
@@ -8,8 +9,7 @@ module control(
     output logic ctrl_MemRead,
     output logic ctrl_MemWrite,
     output logic ctrl_Branch,
-    output logic ctrl_ALUOp1,
-    output logic ctrl_ALUOp0,
+    output logic [1:0] ctrl_ALUOp,
     output logic [3:0] ctrl_ALUcontrol_output
 );
 
@@ -23,12 +23,11 @@ module control(
     .MemRead(ctrl_MemRead),
     .MemWrite(ctrl_MemWrite),
     .Branch(ctrl_Branch),
-    .ALUOp1(ctrl_ALUOp1),
-    .ALUOp0(ctrl_ALUOp0)
+    .ALUOp(ctrl_ALUOp)
     );
 
     ALU_control ALU_control_inst(
-        .ALUop(ctrl_ALUop),
+        .ALUop(ctrl_ALUOp),
         .Funct_Field(ctrl_Funct_Field),
         .ALUcontrol_output(ctrl_ALUcontrol_output)
     );
