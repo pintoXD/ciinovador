@@ -24,7 +24,7 @@ generate
     end
 endgenerate
 
-always_ff @(posedge clk) begin
+always_ff @(posedge clk, negedge rst) begin
     if(~rst) begin
         /*
             This If-Else block is exectuted whenever the rst signal is put the LOW state.
