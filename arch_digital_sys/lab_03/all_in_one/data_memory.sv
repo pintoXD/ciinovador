@@ -1,5 +1,6 @@
 `timescale 1ns/1ps
 /* verilator lint_off WIDTHTRUNC */
+/* verilator lint_off UNUSEDSIGNAL */
 module data_memory(
     input logic clk, we,
     input logic [31:0] data_in, addr,

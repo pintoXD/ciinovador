@@ -1,5 +1,4 @@
 `timescale 1ns/1ps
-`timescale 1us/1ns
 module control(
     input logic [5:0] ctrl_Funct_Field, ctrl_opcode,
     input logic ctrl_Zero,

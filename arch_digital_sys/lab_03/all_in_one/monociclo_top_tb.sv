@@ -1,3 +1,4 @@
+/* verilator lint_off INITIALDLY */
 `timescale 1ns/1ps
 module monociclo_top_tb();
 

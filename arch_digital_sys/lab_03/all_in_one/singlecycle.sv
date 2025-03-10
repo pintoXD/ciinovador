@@ -10,8 +10,7 @@ module singlecycle(
 );
 
 
-logic aux_MemToReg, aux_PCSrc, aux_ALUSrc, aux_RegDst, aux_RegWrite;
-logic aux_MemWrite, aux_Jump, aux_Zero;
+logic aux_MemToReg, aux_ALUSrc, aux_RegDst, aux_RegWrite, aux_Jump, aux_PCSrc, aux_Zero;
 logic [2:0] aux_ALUControl;
 
 
@@ -22,7 +21,7 @@ control ControlUnit(
     .ctrl_Funct_Field(SC_Instruction_Word[5:0]), 
     .ctrl_Zero(aux_Zero),
     .ctrl_MemtoReg(aux_MemToReg), 
-    .ctrl_MemWrite(aux_MemWrite),
+    .ctrl_MemWrite(SC_MemWrite),
     .ctrl_PCSrc(aux_PCSrc), 
     .ctrl_ALUSrc(aux_ALUSrc),
     .ctrl_RegDst(aux_RegDst), 
@@ -35,14 +34,14 @@ control ControlUnit(
 datapath DatapathUnit(
     .clk(clk),
     .reset(reset),
-    .DP_MemtoReg(aux_MemToReg),
+    .DP_MemToReg(aux_MemToReg),
     .DP_PCSrc(aux_PCSrc),
     .DP_ALUSrc(aux_ALUSrc),
     .DP_RegDst(aux_RegDst),
     .DP_RegWrite(aux_RegWrite),
     .DP_Jump(aux_Jump),
     .DP_ALUControl(aux_ALUControl),
-    .DP_InstructionWord(SC_Instruction_Word),
+    .DP_Instruction_Word(SC_Instruction_Word),
     .DP_ReadData(SC_ReadData),
     .DP_Zero(aux_Zero),
     .DP_ProgramCounter(SC_ProgramCounter),

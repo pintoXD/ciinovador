@@ -1,5 +1,4 @@
 `timescale 1ns/1ps
-`timescale 1us/1ns
 module control_tb (
 );
     logic [5:0] mock_ctrl_Funct_Field;

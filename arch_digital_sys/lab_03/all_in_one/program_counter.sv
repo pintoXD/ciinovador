@@ -2,7 +2,7 @@
 module program_counter(
     input logic clk, rst,
     input logic [31:0] in_word,
-    input logic [31:0] out_word
+    output logic [31:0] out_word
 );
 
 always_ff @( posedge clk, posedge rst ) begin : blockName

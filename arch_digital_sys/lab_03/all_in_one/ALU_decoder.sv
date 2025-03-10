@@ -1,5 +1,4 @@
 `timescale 1ns/1ps
-`timescale 1us/1ns
 module ALU_decoder (
     input logic [5:0] Funct_Field,
     input logic [1:0] ALUop,
