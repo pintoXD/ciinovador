@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 module singlecycle(
     input logic clk, reset,
     output logic [31:0] SC_ProgramCounter,

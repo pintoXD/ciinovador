@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 module monociclo_top(
     input logic clk, reset,
     output logic [31:0] TOP_WriteData, TOP_DataAddr,

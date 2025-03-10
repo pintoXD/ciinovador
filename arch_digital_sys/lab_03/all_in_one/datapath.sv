@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 module datapath(
     input logic clk, reset,
     input logic DP_MemToReg, DP_PCSrc,
@@ -127,7 +128,7 @@ alu32 ALU(
     .SrcB(SrcB),
     .ALUControl(DP_ALUControl),
     .ALUResult(DP_ALUResult),
-    .Zero(DP_Zero)
+    .FlagZ(DP_Zero)
 );
 
 

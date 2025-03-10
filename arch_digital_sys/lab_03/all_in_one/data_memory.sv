@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 /* verilator lint_off WIDTHTRUNC */
 module data_memory(
     input logic clk, we,

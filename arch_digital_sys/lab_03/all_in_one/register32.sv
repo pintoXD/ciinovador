@@ -1,4 +1,5 @@
 `timescale 1ns/1ps
+`timescale 1ns/1ps
 module register32(
     input logic clk, rst,
     input logic [31:0]in_word,

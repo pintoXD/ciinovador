@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 module sign_extend(
     input [15:0] in_word,
     output [31:0] out_word

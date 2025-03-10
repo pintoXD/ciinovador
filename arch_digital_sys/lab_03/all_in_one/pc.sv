@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 module pc(
     input logic clk, rst,
     input logic [31:0] next_addr,

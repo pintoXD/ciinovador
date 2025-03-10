@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 module instr_memory (
     input logic [5:0] addr,
     output logic [31:0] instr
