@@ -8,6 +8,9 @@ logic [31:0] mem_data [63:0];
 
 initial begin
     $readmemh("memfile.dat", mem_data);
+    $display("Instr Memory loaded: %0h", mem_data[0]);
+    #1;
+    $display("Instr Memory loaded: %0h", mem_data[17]);
 end
 
 assign instr = mem_data[addr];

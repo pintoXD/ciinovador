@@ -32,6 +32,7 @@ module monociclo_top_tb();
   // check results
   always @(negedge clk)
     begin
+      $display("dataadr = %d, writedata = %d, memwrite = %d", dataadr, writedata, memwrite);
       if(memwrite) begin
         if(dataadr === 84 & writedata === 7) begin
           $display("Simulation succeeded");
