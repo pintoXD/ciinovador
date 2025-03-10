@@ -10,7 +10,7 @@ module control(
 );
 
     logic [1:0] ctrl_ALUOp;
-    logic branch;
+    logic ctrl_Branch;
 
     main_decoder main_decoder_inst(
     .opcode(ctrl_opcode),
@@ -31,6 +31,6 @@ module control(
         .ALUcontrol_output(ctrl_ALUcontrol_output)
     );
 
-    assign ctrl_PCSrc = branch & ctrl_Zero;
+    assign ctrl_PCSrc = ctrl_Branch & ctrl_Zero;
 
 endmodule

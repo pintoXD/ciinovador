@@ -3,8 +3,6 @@ module alu32_add(
     output logic [31:0] ALUResult
 );
 
-    always_comb begin
-        ALUResult = SrcA + SrcB;
-        FlagZ = (ALUResult == 32'b0) ? 1'b1 : 1'b0;
-    end
+    assign ALUResult = SrcA + SrcB;
+
 endmodule

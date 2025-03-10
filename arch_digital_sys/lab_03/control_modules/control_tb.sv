@@ -3,27 +3,27 @@ module control_tb (
 );
     logic [5:0] mock_ctrl_Funct_Field;
     logic [5:0] mock_opcode;
-    logic OUT_ctrl_RegDst;
-    logic OUT_ctrl_ALUSrc;
+    logic mock_ctrl_Zero;
     logic OUT_ctrl_MemtoReg;
-    logic OUT_ctrl_RegWrite;
-    logic OUT_ctrl_MemRead;
     logic OUT_ctrl_MemWrite;
-    logic OUT_ctrl_Branch;
-    logic [1:0] OUT_ctrl_ALUOp;
-    logic [3:0] OUT_ctrl_ALUcontrol_output;
+    logic OUT_ctrl_PCSrc;
+    logic OUT_ctrl_ALUSrc;
+    logic OUT_ctrl_RegDst;
+    logic OUT_ctrl_RegWrite;
+    logic OUT_ctrl_Jump;
+    logic [2:0] OUT_ctrl_ALUcontrol_output;
 
 control DUT(
     .ctrl_Funct_Field(mock_ctrl_Funct_Field),
     .ctrl_opcode(mock_opcode),
-    .ctrl_RegDst(OUT_ctrl_RegDst),
-    .ctrl_ALUSrc(OUT_ctrl_ALUSrc),
+    .ctrl_Zero(mock_ctrl_Zero),
     .ctrl_MemtoReg(OUT_ctrl_MemtoReg),
-    .ctrl_RegWrite(OUT_ctrl_RegWrite),
-    .ctrl_MemRead(OUT_ctrl_MemRead),
     .ctrl_MemWrite(OUT_ctrl_MemWrite),
-    .ctrl_Branch(OUT_ctrl_Branch),
-    .ctrl_ALUOp(OUT_ctrl_ALUOp),
+    .ctrl_PCSrc(OUT_ctrl_PCSrc),
+    .ctrl_ALUSrc(OUT_ctrl_ALUSrc),
+    .ctrl_RegDst(OUT_ctrl_RegDst),
+    .ctrl_RegWrite(OUT_ctrl_RegWrite),
+    .ctrl_Jump(OUT_ctrl_Jump),
     .ctrl_ALUcontrol_output(OUT_ctrl_ALUcontrol_output)
 );
 
@@ -32,11 +32,10 @@ function void display_output();
     $display("OUT_ctrl_ALUSrc = %0b", OUT_ctrl_ALUSrc);
     $display("OUT_ctrl_MemtoReg = %0b", OUT_ctrl_MemtoReg);
     $display("OUT_ctrl_RegWrite = %0b", OUT_ctrl_RegWrite);
-    $display("OUT_ctrl_MemRead = %0b", OUT_ctrl_MemRead);
     $display("OUT_ctrl_MemWrite = %0b", OUT_ctrl_MemWrite);
-    $display("OUT_ctrl_Branch = %0b", OUT_ctrl_Branch);
-    $display("OUT_ctrl_ALUOp = %0b", OUT_ctrl_ALUOp);
+    $display("OUT_ctrl_Jump = %0b", OUT_ctrl_Jump);
     $display("OUT_ctrl_ALUcontrol_output = %0b", OUT_ctrl_ALUcontrol_output);
+    $display("OUT_ctrl_PCSrc = %0b", OUT_ctrl_PCSrc);
 endfunction
 
 initial begin
@@ -44,6 +43,7 @@ initial begin
 
     mock_ctrl_Funct_Field = 6'b100000;
     mock_opcode = 6'b000000;
+    mock_ctrl_Zero = 1'b0;
     #1;
     $display("Trying ADD instruction");
     $display("Test 1: Inputing opcode 6'b%0b and Funct_Field 6'b%0b", mock_opcode, mock_ctrl_Funct_Field);

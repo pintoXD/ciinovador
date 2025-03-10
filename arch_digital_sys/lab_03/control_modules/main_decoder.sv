@@ -49,8 +49,8 @@ always_comb begin : main_decoder_unit
         6'b000100: begin //beq
             RegWrite = 0;
             RegDst = 0;
-            ALUSrc = 1;
-            Branch = 0;
+            ALUSrc = 0;
+            Branch = 1;
             MemWrite = 0;
             MemtoReg = 0;
             Jump = 0;

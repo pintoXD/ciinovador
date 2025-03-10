@@ -1,6 +1,7 @@
 `timescale 1ns/1ps
 module register32_bank(
-    input logic clk, rst, we5,
+    input logic clk, 
+    input logic we5,
     input logic [4:0]wa5, 
     input logic [4:0]ra1, ra2,
     input logic [31:0]wd32, //Input for a 32-bit word
@@ -8,45 +9,31 @@ module register32_bank(
 
 );
 
-logic [31:0]X32_in_word [31:0]; // Thirty two 32-bit arrays in a UNPACKED way a.k.a not in a contiguous interval of memory;
-logic [31:0]X32_out_word [31:0]; // Thirty two 32-bit arrays in a UNPACKED way a.k.a not in a contiguous interval of memory;
+logic [31:0] reg_bank[31:0];
 
-/*
-    The following generate block creates 32 instances of the register32 module.
-    Its input are the X32_in_word unpacked array and its output is the X32_out_word unpacked array.
-*/
-genvar i;
-generate
-    for(i=0; i<32; i=i+1) begin
-        // In the following step we are creating an instance of the register32 module.
-        // This register32 is being addressed according to the index i. So if i = 2, the address of register X2 will be 2 or 8'h2.
-        register32 X(.clk(clk), .reset(1'b1), .in_word(X32_in_word[i]), .out_word(X32_out_word[i]));
+always_ff @(clk) begin
+    if (we5) begin
+        reg_bank[wa5] <= wd32;
     end
-endgenerate
 
-always_ff @(posedge clk, negedge rst) begin
-    if(~rst) begin
-        /*
-            This If-Else block is exectuted whenever the rst signal is put the LOW state.
-            The X32_in_word is filled with 0's. 
-            As this array is also the input of the instantiated register8 modules, its values are reseted as well.
-        */
-            int indexer;
-            for(indexer = 0; indexer < 32; indexer = indexer + 1) begin
-                X32_in_word[indexer] <= 32'h0;
-            end
-    end
-     
-    else if(we5 && wa5 != 5'h00) begin
-        X32_in_word[wa5] <= wd32;
-    end
 end
 
+always_comb begin
+    //This if block is necessary to comply with the requirement
+    //that no word is written on address 0, and this address is already
+    //loaded with 0 value.
+    if(ra1 != 0) begin
+        rd1 = reg_bank[ra1];
+    end else begin
+        rd1 = 32'b0;
+    end
 
-always_comb 
-begin
-    rd1 = X32_out_word[ra1];
-    rd2 = X32_out_word[ra2];
+
+    if(ra2 != 0) begin
+        rd2 = reg_bank[ra2];
+    end else begin
+        rd2 = 32'b0;
+    end
 end
 
 
