@@ -1,0 +1,146 @@
+xrun(64): 22.09-s013: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	22.09-s013: Started on Mar 10, 2025 at 15:53:31 -03
+xrun
+	-64bit
+	alu32_add.sv
+	alu32.sv
+	ALU_decoder.sv
+	control.sv
+	data_memory.sv
+	datapath.sv
+	instr_memory.sv
+	leftshift2.sv
+	main_decoder.sv
+	monociclo_top.sv
+	monociclo_top_tb.sv
+	mux2to1_32bit.sv
+	mux2to1_5bit.sv
+	program_counter.sv
+	register32_bank.sv
+	sign_extend.sv
+	singlecycle.sv
+	-top monociclo_top_tb
+file: alu32_add.sv
+	module worklib.alu32_add:sv
+		errors: 0, warnings: 0
+file: alu32.sv
+	module worklib.alu32:sv
+		errors: 0, warnings: 0
+file: ALU_decoder.sv
+	module worklib.ALU_decoder:sv
+		errors: 0, warnings: 0
+file: control.sv
+	module worklib.control:sv
+		errors: 0, warnings: 0
+file: data_memory.sv
+	module worklib.data_memory:sv
+		errors: 0, warnings: 0
+file: datapath.sv
+	module worklib.datapath:sv
+		errors: 0, warnings: 0
+file: instr_memory.sv
+	module worklib.instr_memory:sv
+		errors: 0, warnings: 0
+file: leftshift2.sv
+	module worklib.leftshift2:sv
+		errors: 0, warnings: 0
+file: main_decoder.sv
+	module worklib.main_decoder:sv
+		errors: 0, warnings: 0
+file: monociclo_top.sv
+	module worklib.monociclo_top:sv
+		errors: 0, warnings: 0
+file: monociclo_top_tb.sv
+	module worklib.monociclo_top_tb:sv
+		errors: 0, warnings: 0
+file: mux2to1_32bit.sv
+	module worklib.mux2to1_32bit:sv
+		errors: 0, warnings: 0
+file: mux2to1_5bit.sv
+	module worklib.mux2to1_5bit:sv
+		errors: 0, warnings: 0
+file: program_counter.sv
+	module worklib.program_counter:sv
+		errors: 0, warnings: 0
+file: register32_bank.sv
+	module worklib.register32_bank:sv
+		errors: 0, warnings: 0
+file: sign_extend.sv
+	module worklib.sign_extend:sv
+		errors: 0, warnings: 0
+file: singlecycle.sv
+	module worklib.singlecycle:sv
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+	Top level design units:
+		monociclo_top_tb
+xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+	Building instance overlay tables: ...................
+    $readmemh("memfile.dat", mem_data);
+                                    |
+xmelab: *W,MEMODR (./instr_memory.sv,10|36): $readmem default memory order incompatible with IEEE1364.
+. Done
+	Generating native compiled code:
+		worklib.data_memory:sv <0x2c125f06>
+			streams:   3, words:  1055
+		worklib.instr_memory:sv <0x10f0706c>
+			streams:   2, words:  1696
+		worklib.alu32:sv <0x368aa5eb>
+			streams:   1, words:  2291
+		worklib.mux2to1_5bit:sv <0x65e0db3a>
+			streams:   1, words:   337
+		worklib.register32_bank:sv <0x6300ad76>
+			streams:   3, words:  1547
+		worklib.mux2to1_32bit:sv <0x78ac4eab>
+			streams:   1, words:   206
+		worklib.leftshift2:sv <0x192c3762>
+			streams:   1, words:   128
+		worklib.sign_extend:sv <0x46dbbab4>
+			streams:   1, words:   256
+		worklib.alu32_add:sv <0x4d73145c>
+			streams:   1, words:   152
+		worklib.program_counter:sv <0x6c5c65ef>
+			streams:   2, words:   415
+		worklib.datapath:sv <0x794ee96a>
+			streams:  29, words:  6280
+		worklib.ALU_decoder:sv <0x20f81b83>
+			streams:   1, words:   737
+		worklib.main_decoder:sv <0x34398e80>
+			streams:   1, words:  5084
+		worklib.control:sv <0x006b4bf1>
+			streams:  11, words:  3676
+		worklib.singlecycle:sv <0x6c7778ee>
+			streams:  22, words:  5173
+		worklib.monociclo_top:sv <0x014c3865>
+			streams:  12, words:  2789
+		worklib.monociclo_top_tb:sv <0x560a6009>
+			streams:  10, words:  4024
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                21      17
+		Registers:              75      71
+		Scalar wires:           47       -
+		Expanded wires:         32       1
+		Vectored wires:         87       -
+		Always blocks:           9       9
+		Initial blocks:          3       3
+		Cont. assignments:      12       8
+		Pseudo assignments:     77      77
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.monociclo_top_tb:sv
+Loading snapshot worklib.monociclo_top_tb:sv .................... Done
+xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
+xcelium> run
+Instr Memory loaded: 20020005
+Instr Memory loaded: ac020054
+Simulation failed
+Simulation stopped via $stop(1) at time 10005 NS + 1
+./monociclo_top_tb.sv:49         $stop;
+xcelium> 
+xmsim: *W,CMUSEX: Control-D in interactive input - one more to exit.
+xcelium> exit
+TOOL:	xrun(64)	22.09-s013: Exiting on Mar 10, 2025 at 15:53:53 -03  (total: 00:00:22)

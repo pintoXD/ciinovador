@@ -29,10 +29,11 @@ module monociclo_top_tb();
       clk <= 1; # 5; clk <= 0; # 5;
     end
 
+  int count = 0; 
   // check results
   always @(negedge clk)
     begin
-      $display("dataadr = %d, writedata = %d, memwrite = %d", dataadr, writedata, memwrite);
+      // $display("dataadr = %d, writedata = %d, memwrite = %d", dataadr, writedata, memwrite);
       if(memwrite) begin
         if(dataadr === 84 & writedata === 7) begin
           $display("Simulation succeeded");
@@ -41,6 +42,11 @@ module monociclo_top_tb();
           $display("Simulation failed");
           $stop;
         end
+      end 
+      count = count + 1;
+      if(count > 1000) begin
+        $display("Simulation failed");
+        $stop;
       end
     end
 endmodule
