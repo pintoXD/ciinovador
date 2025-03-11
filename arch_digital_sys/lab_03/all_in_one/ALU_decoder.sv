@@ -19,7 +19,16 @@ module ALU_decoder (
                     ALUcontrol_output = 3'b110;
             end
             default: begin
-                ALUcontrol_output = 3'b000; //Defaults to an AND operation.
+                case(Funct_Field)
+                    6'b100100: //ANDs
+                        ALUcontrol_output = 3'b000;
+                    6'b100101: //ORs
+                        ALUcontrol_output = 3'b001;
+                    6'b101010: //Sets less than (SLT)
+                        ALUcontrol_output = 3'b111;
+                    default: //Illegal operation
+                        ALUcontrol_output = 3'bxxx;
+                endcase
             end
         endcase
     end

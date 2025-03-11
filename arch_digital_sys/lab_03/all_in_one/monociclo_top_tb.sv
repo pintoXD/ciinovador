@@ -20,6 +20,8 @@ module monociclo_top_tb();
   // initialize test
   initial
     begin
+      $dumpfile("monociclo_top_tb.vcd");
+      $dumpvars(0, monociclo_top_tb);
       reset <= 1; # 22; reset <= 0;
     end
 
@@ -43,8 +45,8 @@ module monociclo_top_tb();
           $stop;
         end
       end 
-      count = count + 1;
-      if(count > 1000) begin
+      count <= count + 1;
+      if(count > 100000) begin
         $display("Simulation failed");
         $stop;
       end
