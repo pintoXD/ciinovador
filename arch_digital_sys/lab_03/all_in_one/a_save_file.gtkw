@@ -1,0 +1,88 @@
+[*]
+[*] GTKWave Analyzer v3.3.116 (w)1999-2023 BSI
+[*] Tue Mar 11 04:18:42 2025
+[*]
+[dumpfile] "/home/otto/Documentos/repos/ciinovador/arch_digital_sys/lab_03/all_in_one/monociclo_top_tb.vcd"
+[dumpfile_mtime] "Tue Mar 11 03:12:49 2025"
+[dumpfile_size] 20310
+[savefile] "/home/otto/Documentos/repos/ciinovador/arch_digital_sys/lab_03/all_in_one/a_save_file.gtkw"
+[timestart] 48420
+[size] 1920 993
+[pos] -51 -51
+*-13.042294 75030 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] TOP.
+[treeopen] TOP.monociclo_top_tb.
+[treeopen] TOP.monociclo_top_tb.DUT.
+[treeopen] TOP.monociclo_top_tb.DUT.mips.
+[treeopen] TOP.monociclo_top_tb.DUT.mips.DatapathUnit.
+[sst_width] 239
+[signals_width] 323
+[sst_expanded] 1
+[sst_vpaned_height] 296
+@28
+TOP.monociclo_top_tb.DUT.mips.clk
+TOP.monociclo_top_tb.DUT.mips.reset
+TOP.monociclo_top_tb.DUT.mips.aux_ALUControl[2:0]
+@22
+TOP.monociclo_top_tb.DUT.mips.SC_ALUResult[31:0]
+@28
+TOP.monociclo_top_tb.DUT.mips.aux_ALUSrc
+@22
+TOP.monociclo_top_tb.DUT.mips.SC_Instruction_Word[31:0]
+@28
+TOP.monociclo_top_tb.DUT.mips.aux_Jump
+TOP.monociclo_top_tb.DUT.mips.aux_MemToReg
+TOP.monociclo_top_tb.DUT.mips.SC_MemWrite
+@22
+TOP.monociclo_top_tb.DUT.mips.SC_ProgramCounter[31:0]
+@28
+TOP.monociclo_top_tb.DUT.mips.aux_PCSrc
+@22
+TOP.monociclo_top_tb.DUT.mips.SC_ReadData[31:0]
+@28
+TOP.monociclo_top_tb.DUT.mips.aux_RegDst
+TOP.monociclo_top_tb.DUT.mips.aux_RegWrite
+@22
+TOP.monociclo_top_tb.DUT.mips.SC_WriteData[31:0]
+@28
+TOP.monociclo_top_tb.DUT.mips.aux_Zero
+@200
+-
+-
+-dasdasd
+@28
+TOP.monociclo_top_tb.DUT.mips.DatapathUnit.ALU.ALUControl[2:0]
+@22
+TOP.monociclo_top_tb.DUT.mips.DatapathUnit.ALU.ALUResult[31:0]
+@28
+TOP.monociclo_top_tb.DUT.mips.DatapathUnit.ALU.FlagZ
+@22
+TOP.monociclo_top_tb.DUT.mips.DatapathUnit.ALU.SrcA[31:0]
+TOP.monociclo_top_tb.DUT.mips.DatapathUnit.ALU.SrcB[31:0]
+@200
+-
+-
+@28
+TOP.monociclo_top_tb.DUT.mips.DatapathUnit.Register_Bank.clk
+@22
+TOP.monociclo_top_tb.DUT.mips.DatapathUnit.Register_Bank.ra1[4:0]
+TOP.monociclo_top_tb.DUT.mips.DatapathUnit.Register_Bank.ra2[4:0]
+TOP.monociclo_top_tb.DUT.mips.DatapathUnit.Register_Bank.rd1[31:0]
+TOP.monociclo_top_tb.DUT.mips.DatapathUnit.Register_Bank.rd2[31:0]
+TOP.monociclo_top_tb.DUT.mips.DatapathUnit.Register_Bank.wa5[4:0]
+TOP.monociclo_top_tb.DUT.mips.DatapathUnit.Register_Bank.wd32[31:0]
+@29
+TOP.monociclo_top_tb.DUT.mips.DatapathUnit.Register_Bank.we5
+@22
+TOP.monociclo_top_tb.DUT.mips.DatapathUnit.Register_Bank.reg_bank[0][31:0]
+TOP.monociclo_top_tb.DUT.mips.DatapathUnit.Register_Bank.reg_bank[1][31:0]
+TOP.monociclo_top_tb.DUT.mips.DatapathUnit.Register_Bank.reg_bank[2][31:0]
+TOP.monociclo_top_tb.DUT.mips.DatapathUnit.Register_Bank.reg_bank[3][31:0]
+TOP.monociclo_top_tb.DUT.mips.DatapathUnit.Register_Bank.reg_bank[4][31:0]
+TOP.monociclo_top_tb.DUT.mips.DatapathUnit.Register_Bank.reg_bank[5][31:0]
+TOP.monociclo_top_tb.DUT.mips.DatapathUnit.Register_Bank.reg_bank[6][31:0]
+TOP.monociclo_top_tb.DUT.mips.DatapathUnit.Register_Bank.reg_bank[7][31:0]
+TOP.monociclo_top_tb.DUT.mips.DatapathUnit.Register_Bank.reg_bank[8][31:0]
+TOP.monociclo_top_tb.DUT.mips.DatapathUnit.Register_Bank.reg_bank[9][31:0]
+[pattern_trace] 1
+[pattern_trace] 0

@@ -30,7 +30,7 @@ module alu32(
                 end
             3'b111: //Sets less than (SLT)
                 begin
-                    ALUResult = (SrcA < SrcB) ? 32'hFFFF : 32'h00;
+                    ALUResult = (SrcA < SrcB) ? 32'h1 : 32'h00;
                     FlagZ = (ALUResult == 32'b0) ? 1'b1 : 1'b0;
                 end
             default:

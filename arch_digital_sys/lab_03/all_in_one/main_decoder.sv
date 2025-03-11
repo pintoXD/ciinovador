@@ -57,16 +57,38 @@ always_comb begin : main_decoder_unit
             ALUOp[1] = 0;
             ALUOp[0] = 1;
         end
-        default: begin //Defaults to an R-Type instruction.
+        6'b001000: begin //addi
             RegWrite = 1;
-            RegDst = 1;
-            ALUSrc = 0;
+            RegDst = 0;
+            ALUSrc = 1;
             Branch = 0;
             MemWrite = 0;
             MemtoReg = 0;
             Jump = 0;
-            ALUOp[1] = 1;
+            ALUOp[1] = 0;
             ALUOp[0] = 0;
+        end
+        6'b000010: begin //j
+            RegWrite = 0;
+            RegDst = 0;
+            ALUSrc = 0;
+            Branch = 0;
+            MemWrite = 0;
+            MemtoReg = 0;
+            Jump = 1;
+            ALUOp[1] = 0;
+            ALUOp[0] = 0;
+        end
+        default: begin //Defaults to an R-Type instruction.
+            RegWrite = 1'bx;
+            RegDst = 1'bx;
+            ALUSrc = 1'bx;
+            Branch = 1'bx;
+            MemWrite = 1'bx;
+            MemtoReg = 1'bx;
+            Jump = 1'bx;
+            ALUOp[1] = 1'bx;
+            ALUOp[0] = 1'bx;
         end
     
     endcase

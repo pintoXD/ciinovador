@@ -11,7 +11,7 @@ logic [31:0] mem_data [63:0];
 
 assign data_out = mem_data[addr[31:2]];
 
-always_ff @(clk) begin
+always_ff @(posedge clk) begin
     if (we) begin
         mem_data[addr[31:2]] <= data_in;
     end

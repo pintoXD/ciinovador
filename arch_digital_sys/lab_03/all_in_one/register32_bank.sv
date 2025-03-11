@@ -11,7 +11,7 @@ module register32_bank(
 
 logic [31:0] reg_bank[31:0];
 
-always_ff @(clk) begin
+always_ff @(posedge clk) begin
     if (we5) begin
         reg_bank[wa5] <= wd32;
     end

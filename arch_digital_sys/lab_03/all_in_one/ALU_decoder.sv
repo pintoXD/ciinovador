@@ -12,14 +12,12 @@ module ALU_decoder (
                 ALUcontrol_output = 3'b010;
             2'b01: //Handles BEQ instructions
                 ALUcontrol_output = 3'b110;
-            2'b10: begin //According to the literature, this should act like a "Look at the Funct Field" case.
-                if(Funct_Field == 6'b100000)
-                    ALUcontrol_output = 3'b010;   
-                else if(Funct_Field == 6'b100010)
-                    ALUcontrol_output = 3'b110;
-            end
             default: begin
                 case(Funct_Field)
+                    6'b100000: //ADDs
+                        ALUcontrol_output = 3'b010;
+                    6'b100010: //SUBs
+                        ALUcontrol_output = 3'b110;
                     6'b100100: //ANDs
                         ALUcontrol_output = 3'b000;
                     6'b100101: //ORs
