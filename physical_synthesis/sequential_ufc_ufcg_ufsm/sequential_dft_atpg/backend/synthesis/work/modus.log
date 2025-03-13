@@ -1,0 +1,92 @@
+
+ 
+Copyright (C) 2002-2022 Cadence Design Systems Inc. All Rights Reserved. 
+Cadence and the Cadence logo are registered trademarks and Modus is a trademark 
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+Type 'help legal_notices' for third party license notices. 
+Version : 22.12-s028_1, built Jul 11 2023 (linux26_64)
+Options : -no_gui
+Date    : Thu, March 13 16:26:30 2025
+Host    : cinova05.lesc.ufc.br (x86_64 Linux 4.18.0-553.36.1.el8_10.x86_64) (14*13th Gen Intel(R) Core(TM) i5-13500 24576KB)
+OS      : Rocky Linux release 8.10 (Green Obsidian)
+@modus:root:/ 1> ls
+@modus:root:/ 2> cd ../devliverables
+couldn't change working directory to "../devliverables": no such file or directory
+@modus:root:/ 3> pwd
+/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work
+@modus:root:/ 4> cd ../deliverables/
+@modus:root:/ 5> pwd
+/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/deliverables
+@modus:root:/ 6> build_model -workdir ../work/ -designsource sequential.v
+Starting Command: build_model 
+
+INFO (TDA-015): Log File: ../work//testresults/logs/log_build_model_031325162937-462423000 [end TDA_015]
+
+INFO (TEI-195): Build Model - Controller starting: [end TEI_195] 
+
+
+Search Order  1:  "sequential.v"
+
+
+
+Reading Verilog data from sequential.v
+
+Verilog Parser complete - 1 modules, 0 gates, 0 user defined primitives.
+
+INFO (TEI-003): The 'cell sequential' was selected as the top cell.   [end TEI_003] 
+ERROR (TEI-002): The 'cell SDFFQX1' was not found in the design source file(s) specified. Missing cell instance name: \State_r_reg[1], parent cell: sequential. Note that for Verilog, a change has been made to no longer automatically search the directories for explicitly specified files. Therefore it may now be necessary to add the directory of this missing cell to build the complete design.  [end TEI_002] 
+ERROR (TEI-002): The 'cell SDFFQX2' was not found in the design source file(s) specified. Missing cell instance name: \State_r_reg[0], parent cell: sequential. Note that for Verilog, a change has been made to no longer automatically search the directories for explicitly specified files. Therefore it may now be necessary to add the directory of this missing cell to build the complete design.  [end TEI_002] 
+ERROR (TEI-002): The 'cell NOR2X1' was not found in the design source file(s) specified. Missing cell instance name: g301__2398, parent cell: sequential. Note that for Verilog, a change has been made to no longer automatically search the directories for explicitly specified files. Therefore it may now be necessary to add the directory of this missing cell to build the complete design.  [end TEI_002] 
+ERROR (TEI-002): The 'cell AOI32X1' was not found in the design source file(s) specified. Missing cell instance name: g303__5107, parent cell: sequential. Note that for Verilog, a change has been made to no longer automatically search the directories for explicitly specified files. Therefore it may now be necessary to add the directory of this missing cell to build the complete design.  [end TEI_002] 
+ERROR (TEI-002): The 'cell AOI21X1' was not found in the design source file(s) specified. Missing cell instance name: g302__6260, parent cell: sequential. Note that for Verilog, a change has been made to no longer automatically search the directories for explicitly specified files. Therefore it may now be necessary to add the directory of this missing cell to build the complete design.  [end TEI_002] 
+ERROR (TEI-002): The 'cell XNOR2X1' was not found in the design source file(s) specified. Missing cell instance name: g306__4319, parent cell: sequential. Note that for Verilog, a change has been made to no longer automatically search the directories for explicitly specified files. Therefore it may now be necessary to add the directory of this missing cell to build the complete design.  [end TEI_002] 
+ERROR (TEI-002): The 'cell NAND3BXL' was not found in the design source file(s) specified. Missing cell instance name: g304__8428, parent cell: sequential. Note that for Verilog, a change has been made to no longer automatically search the directories for explicitly specified files. Therefore it may now be necessary to add the directory of this missing cell to build the complete design.  [end TEI_002] 
+ERROR (TEI-002): The 'cell MXI2XL' was not found in the design source file(s) specified. Missing cell instance name: g305__5526, parent cell: sequential. Note that for Verilog, a change has been made to no longer automatically search the directories for explicitly specified files. Therefore it may now be necessary to add the directory of this missing cell to build the complete design.  [end TEI_002] 
+ERROR (TEI-002): The 'cell INVX1' was not found in the design source file(s) specified. Missing cell instance name: g307, parent cell: sequential. Note that for Verilog, a change has been made to no longer automatically search the directories for explicitly specified files. Therefore it may now be necessary to add the directory of this missing cell to build the complete design.  [end TEI_002] 
+ERROR (TEI-400): Build Model FAILED:
+  Cell named 'SDFFQX1' could not be resolved
+  Cell named 'SDFFQX2' could not be resolved
+  Cell named 'NOR2X1' could not be resolved
+  Cell named 'AOI32X1' could not be resolved
+  Cell named 'AOI21X1' could not be resolved
+  Cell named 'XNOR2X1' could not be resolved
+  Cell named 'NAND3BXL' could not be resolved
+  Cell named 'MXI2XL' could not be resolved
+  Cell named 'INVX1' could not be resolved
+  Unexpected Model Build Failure
+  [end TEI_400] 
+
+INFO (TDA-001): Maximum Memory used during the run and Cumulative Time in hours:minutes:seconds:
+
+                  Total Memory =           38,871,488  bytes
+
+                      CPU Time =    0:00:00.01
+                  Elapsed Time =    0:00:00.52                    [end TDA_001]
+
+
+
+INFO (TEI-200): Build Model - Controller completed. [end TEI_200] 
+
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+      1 INFO (TEI-003): The 'cell sequential' was selected as the top cell.    
+      1 INFO (TEI-195): Build Model - Controller starting:  
+      1 INFO (TEI-200): Build Model - Controller completed.  
+
+  ERROR Messages...
+      9 ERROR (TEI-002): The 'cell SDFFQX1' was not found in the design source file(s) specified. Missing cell instance name: \State_r_reg[1], parent cell: sequential. Note that for Verilog, a change has been made to no longer automatically search the directories for explicitly specified files. Therefore it may now be necessary to add the directory of this missing cell to build the complete design.   
+      1 ERROR (TEI-400): Build Model FAILED:
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------
+5

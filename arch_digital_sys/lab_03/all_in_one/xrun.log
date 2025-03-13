@@ -1,5 +1,5 @@
 xrun(64): 22.09-s013: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	22.09-s013: Started on Mar 10, 2025 at 15:53:31 -03
+TOOL:	xrun(64)	22.09-s013: Started on Mar 11, 2025 at 16:32:58 -03
 xrun
 	-64bit
 	alu32_add.sv
@@ -20,57 +20,8 @@ xrun
 	sign_extend.sv
 	singlecycle.sv
 	-top monociclo_top_tb
-file: alu32_add.sv
-	module worklib.alu32_add:sv
-		errors: 0, warnings: 0
-file: alu32.sv
-	module worklib.alu32:sv
-		errors: 0, warnings: 0
-file: ALU_decoder.sv
-	module worklib.ALU_decoder:sv
-		errors: 0, warnings: 0
-file: control.sv
-	module worklib.control:sv
-		errors: 0, warnings: 0
-file: data_memory.sv
-	module worklib.data_memory:sv
-		errors: 0, warnings: 0
-file: datapath.sv
-	module worklib.datapath:sv
-		errors: 0, warnings: 0
-file: instr_memory.sv
-	module worklib.instr_memory:sv
-		errors: 0, warnings: 0
-file: leftshift2.sv
-	module worklib.leftshift2:sv
-		errors: 0, warnings: 0
-file: main_decoder.sv
-	module worklib.main_decoder:sv
-		errors: 0, warnings: 0
-file: monociclo_top.sv
-	module worklib.monociclo_top:sv
-		errors: 0, warnings: 0
-file: monociclo_top_tb.sv
-	module worklib.monociclo_top_tb:sv
-		errors: 0, warnings: 0
-file: mux2to1_32bit.sv
-	module worklib.mux2to1_32bit:sv
-		errors: 0, warnings: 0
-file: mux2to1_5bit.sv
-	module worklib.mux2to1_5bit:sv
-		errors: 0, warnings: 0
-file: program_counter.sv
-	module worklib.program_counter:sv
-		errors: 0, warnings: 0
-file: register32_bank.sv
-	module worklib.register32_bank:sv
-		errors: 0, warnings: 0
-file: sign_extend.sv
-	module worklib.sign_extend:sv
-		errors: 0, warnings: 0
-file: singlecycle.sv
-	module worklib.singlecycle:sv
-		errors: 0, warnings: 0
+	+gui
+	+access+rw
 	Elaborating the design hierarchy:
 		Caching library 'worklib' ....... Done
 	Top level design units:
@@ -82,40 +33,40 @@ xmelab: *W,DSEMEL: This SystemVerilog design will be simulated as per IEEE 1800-
 xmelab: *W,MEMODR (./instr_memory.sv,10|36): $readmem default memory order incompatible with IEEE1364.
 . Done
 	Generating native compiled code:
-		worklib.data_memory:sv <0x2c125f06>
-			streams:   3, words:  1055
-		worklib.instr_memory:sv <0x10f0706c>
-			streams:   2, words:  1696
-		worklib.alu32:sv <0x368aa5eb>
-			streams:   1, words:  2291
-		worklib.mux2to1_5bit:sv <0x65e0db3a>
-			streams:   1, words:   337
-		worklib.register32_bank:sv <0x6300ad76>
-			streams:   3, words:  1547
-		worklib.mux2to1_32bit:sv <0x78ac4eab>
-			streams:   1, words:   206
-		worklib.leftshift2:sv <0x192c3762>
-			streams:   1, words:   128
-		worklib.sign_extend:sv <0x46dbbab4>
+		worklib.data_memory:sv <0x6b4cf5d4>
+			streams:   3, words:  1161
+		worklib.instr_memory:sv <0x03a05ba5>
+			streams:   2, words:  1747
+		worklib.alu32:sv <0x03aba8a0>
+			streams:   1, words:  2758
+		worklib.mux2to1_5bit:sv <0x1c614681>
+			streams:   1, words:   375
+		worklib.register32_bank:sv <0x0f3922d1>
+			streams:   3, words:  1752
+		worklib.mux2to1_32bit:sv <0x012dd310>
+			streams:   1, words:   244
+		worklib.leftshift2:sv <0x36c43ecc>
+			streams:   1, words:   172
+		worklib.sign_extend:sv <0x1c8fb512>
 			streams:   1, words:   256
-		worklib.alu32_add:sv <0x4d73145c>
-			streams:   1, words:   152
-		worklib.program_counter:sv <0x6c5c65ef>
-			streams:   2, words:   415
-		worklib.datapath:sv <0x794ee96a>
-			streams:  29, words:  6280
-		worklib.ALU_decoder:sv <0x20f81b83>
-			streams:   1, words:   737
-		worklib.main_decoder:sv <0x34398e80>
-			streams:   1, words:  5084
-		worklib.control:sv <0x006b4bf1>
-			streams:  11, words:  3676
-		worklib.singlecycle:sv <0x6c7778ee>
-			streams:  22, words:  5173
-		worklib.monociclo_top:sv <0x014c3865>
-			streams:  12, words:  2789
-		worklib.monociclo_top_tb:sv <0x560a6009>
-			streams:  10, words:  4024
+		worklib.alu32_add:sv <0x431b8b3d>
+			streams:   1, words:   189
+		worklib.program_counter:sv <0x279f49af>
+			streams:   2, words:   453
+		worklib.datapath:sv <0x0f250704>
+			streams:  29, words:  6974
+		worklib.ALU_decoder:sv <0x0cd3c2d0>
+			streams:   1, words:   836
+		worklib.main_decoder:sv <0x6cf3a888>
+			streams:   1, words:  9402
+		worklib.control:sv <0x7df92c26>
+			streams:  11, words:  4066
+		worklib.singlecycle:sv <0x78cffc8f>
+			streams:  20, words:  5268
+		worklib.monociclo_top:sv <0x61fabf95>
+			streams:  12, words:  3023
+		worklib.monociclo_top_tb:sv <0x0717aeb4>
+			streams:  12, words:  4936
 	Building instance specific data structures.
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
@@ -124,23 +75,28 @@ xmelab: *W,MEMODR (./instr_memory.sv,10|36): $readmem default memory order incom
 		Registers:              75      71
 		Scalar wires:           47       -
 		Expanded wires:         32       1
-		Vectored wires:         87       -
+		Vectored wires:         85       -
 		Always blocks:           9       9
 		Initial blocks:          3       3
 		Cont. assignments:      12       8
-		Pseudo assignments:     77      77
+		Pseudo assignments:     76      76
 		Simulation timescale:  1ps
 	Writing initial simulation snapshot: worklib.monociclo_top_tb:sv
-Loading snapshot worklib.monociclo_top_tb:sv .................... Done
+xmsim: *W,NOMTDGUI: Multi-Threaded Dumping is disabled for interactive debug mode.
 xmsim: *W,DSEM2009: This SystemVerilog design is simulated as per IEEE 1800-2009 SystemVerilog simulation semantics. Use -disable_sem2009 option for turning off SV 2009 simulation semantics.
+
+-------------------------------------
+Relinquished control to SimVision...
+xcelium> 
 xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
+xcelium> database -open waves -into waves.shm -default
+Created default SHM database waves
+xcelium> probe -create -shm monociclo_top_tb.DUT.TOP_DataAddr monociclo_top_tb.DUT.TOP_MemWrite monociclo_top_tb.DUT.TOP_WriteData monociclo_top_tb.DUT.aux_Instruction_Word monociclo_top_tb.DUT.aux_PC monociclo_top_tb.DUT.aux_ReadData monociclo_top_tb.DUT.clk monociclo_top_tb.DUT.reset
+Created probe 1
 xcelium> run
 Instr Memory loaded: 20020005
 Instr Memory loaded: ac020054
-Simulation failed
-Simulation stopped via $stop(1) at time 10005 NS + 1
-./monociclo_top_tb.sv:49         $stop;
-xcelium> 
-xmsim: *W,CMUSEX: Control-D in interactive input - one more to exit.
-xcelium> exit
-TOOL:	xrun(64)	22.09-s013: Exiting on Mar 10, 2025 at 15:53:53 -03  (total: 00:00:22)
+Simulation succeeded
+Simulation stopped via $stop(1) at time 175 NS + 1
+xcelium> xmsim: *W,NCTERM: Simulation received SIGTERM signal from process 1, user id 0 (/usr/lib/systemd/systemd).
+TOOL:	xrun(64)	22.09-s013: Exiting on Mar 12, 2025 at 11:43:21 -03  (total: 19:10:23)
