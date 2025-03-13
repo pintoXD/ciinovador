@@ -109,6 +109,7 @@ create_scanchain_tests -workdir ${PROJECT_DIR}/backend/synthesis/work \
 # Modus: Create Logic Test
 #-----------------------------------------------------------------------------
 create_logic_tests -workdir ${PROJECT_DIR}/backend/synthesis/work \
+                   -testmode FULLSCAN \
                    -experiment logic -effort high
 
 

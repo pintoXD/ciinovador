@@ -1,0 +1,108 @@
+
+INFO (TDA-005): Command Line Invocation: 
+            build_faultmodel -cellinternal yes -workdir /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work -fullfault yes  [end TDA_005]
+
+INFO (TDA-014): Cadence(R) Modus(TM) DFT Software Solution, Version 22.12-s028_1, built Jul 11 2023 (linux26_64) [end TDA_014]
+
+INFO (TDA-015): Log File: /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/testresults/logs/log_build_faultmodel_031325185700-432322000 [end TDA_015]
+
+INFO (TDA-007): Job Information:
+            Date Started: Thursday Mar 13 18:57:00 2025  -03
+            Host machine is cinova05.lesc.ufc.br, x86_64 running Linux 4.18.0-553.36.1.el8_10.x86_64.
+            This job is process number 213477.
+[end TDA_007]
+
+INFO (TDA-009): Options/Values information.
+            (options marked with '*' have program generated values,
+             options marked with '+' were specified to default.)
+
+            -WORKDIR /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work
+
+            -cellinternal yes
+            -LOGFILE /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/testresults/logs/log_build_faultmodel_031325185700-432322000
+[end TDA_009]
+INFO (TFM-099): Build Fault Model started.  [end TFM_099] 
+INFO (TLM-190): PFLT/TFLT attribute for LATCH instance udp_latch of cell altos_dff_err is IGNORED. PFLT/TFLT overrides not supported for LATCH instances.  [end TLM_190] 
+INFO (TFM-102): Creating faultModel file /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/tbdata/faultModel.  [end TFM_102] 
+
+Global Ignored Static Fault Count                 0
+Global Ignored Dynamic Fault Count                0
+
+
+                            Global Statistics
+
+                    ATCov  ----------------------- Global Faults --------------------------
+                   Global        Total       Tested     Possibly    Redundant     Untested
+
+Total Static         0.00          142            0            0            0          142
+Collapsed Static     0.00           86            0            0            0           86
+PI Static            0.00           14            0            0            0           14
+PO Static            0.00            6            0            0            0            6
+
+Total Dynamic        0.00          168            0            0            0          168
+Collapsed Dynamic    0.00          112            0            0            0          112
+PI Dynamic           0.00           14            0            0            0           14
+PO Dynamic           0.00            6            0            0            0            6
+
+Parametric        
+
+IDDq                 0.00          142            0                                    142
+
+
+
+INFO (TFM-103): Creating faultStatus file /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/tbdata/faultStatus.  [end TFM_103] 
+
+                           Testmode Statistics: FULLSCAN
+
+                 ---- ATCov ---- ------------------------ Testmode Faults ----------------------- ------------------------- Global Faults ------------------------
+                 Testmode Global        Total       Tested     Possibly    Redundant     Untested        Total       Tested     Possibly    Redundant     Untested
+
+Total Static         0.00   0.00          142            0            0            0          142          142            0            0            0          142
+Collapsed Static     0.00   0.00           86            0            0            0           86           86            0            0            0           86
+PI Static            0.00   0.00           14            0            0            0           14           14            0            0            0           14
+PO Static            0.00   0.00            6            0            0            0            6            6            0            0            0            6
+
+Total Dynamic        0.00   0.00          154            0            0            0          154          168            0            0            0          168
+Collapsed Dynamic    0.00   0.00          102            0            0            0          102          112            0            0            0          112
+PI Dynamic           0.00   0.00           12            0            0            0           12           14            0            0            0           14
+PO Dynamic           0.00   0.00            6            0            0            0            6            6            0            0            0            6
+
+Parametric        
+
+IDDq                 0.00   0.00          142            0                                    142          142            0                                    142
+
+Path                 0.00   0.00            0            0                                      0            0            0                                      0
+
+
+
+INFO (TFM-704): Maximum Global Test Coverage Statistics: 
+
+                  %Active      #Faults      #Active    #Inactive
+Total Static       100.00          142          142            0
+Collapsed Static   100.00           86           86            0
+PI Static          100.00           14           14            0
+PO Static          100.00            6            6            0
+
+Total Dynamic       91.67          168          154           14
+Collapsed Dynamic   91.07          112          102           10
+PI Dynamic          85.71           14           12            2
+PO Dynamic         100.00            6            6            0
+
+Parametric        
+
+There are 1 test mode(s) defined:
+      FULLSCAN
+
+[end TFM_704]
+INFO (TFM-109): Build Fault Model has completed with highest level severity message of INFO.  [end TFM_109] 
+
+INFO (TDA-001): Maximum Memory used during the run and Cumulative Time in hours:minutes:seconds:
+
+                  Total Memory =            6,308,784  bytes
+
+                      CPU Time =    0:00:00.01
+                  Elapsed Time =    0:00:00.01                    [end TDA_001]
+
+     Date Ended:  Thursday Mar 13 18:57:02 2025  -03
+
+

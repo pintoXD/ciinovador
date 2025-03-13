@@ -1,15 +1,16 @@
+Starting Command: build_model 
 
 INFO (TDA-005): Command Line Invocation: 
             build_model -designtop sequential -workdir /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work -designsource /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/test_scripts/sequential.test_netlist.v -techlib /home/tools/cadence/gpdk/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing/../verilog//slow_vdd1v0_basicCells.v  [end TDA_005]
 
 INFO (TDA-014): Cadence(R) Modus(TM) DFT Software Solution, Version 22.12-s028_1, built Jul 11 2023 (linux26_64) [end TDA_014]
 
-INFO (TDA-015): Log File: /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/testresults/logs/log_build_model_031325185645-061777000 [end TDA_015]
+INFO (TDA-015): Log File: /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/testresults/logs/log_build_model_031325185427-992722000 [end TDA_015]
 
 INFO (TDA-007): Job Information:
-            Date Started: Thursday Mar 13 18:56:45 2025  -03
+            Date Started: Thursday Mar 13 18:54:28 2025  -03
             Host machine is cinova05.lesc.ufc.br, x86_64 running Linux 4.18.0-553.36.1.el8_10.x86_64.
-            This job is process number 213173.
+            This job is process number 210971.
 [end TDA_007]
 
 INFO (TDA-009): Options/Values information.
@@ -20,7 +21,7 @@ INFO (TDA-009): Options/Values information.
 
             -designtop sequential
             -TECHLIB /home/tools/cadence/gpdk/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing/../verilog//slow_vdd1v0_basicCells.v
-            -LOGFILE /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/testresults/logs/log_build_model_031325185645-061777000
+            -LOGFILE /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/testresults/logs/log_build_model_031325185427-992722000
             -DESIGNSOURCE /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/test_scripts/sequential.test_netlist.v
 [end TDA_009]
 INFO (TEI-195): Build Model - Controller starting: [end TEI_195] 
@@ -111,13 +112,36 @@ INFO (TEI-199): Build Model - Flat Model Build completed.  [end TEI_199]
 
 INFO (TDA-001): Maximum Memory used during the run and Cumulative Time in hours:minutes:seconds:
 
-                  Total Memory =          101,943,936  bytes
+                  Total Memory =          101,905,200  bytes
 
-                      CPU Time =    0:00:00.25
-                  Elapsed Time =    0:00:00.59                    [end TDA_001]
+                      CPU Time =    0:00:00.26
+                  Elapsed Time =    0:00:00.61                    [end TDA_001]
 
 
 
 INFO (TEI-200): Build Model - Controller completed. [end TEI_200] 
 
 
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+      1 INFO (TEI-195): Build Model - Controller starting:  
+      1 INFO (TEI-196): Build Model - Hierarchical Model Build starting:  
+      1 INFO (TEI-197): Build Model - Hierarchical Model Build completed.  
+      1 INFO (TEI-198): Build Model - Flat Model Build starting:  
+      1 INFO (TEI-199): Build Model - Flat Model Build completed.   
+      1 INFO (TEI-200): Build Model - Controller completed.  
+      1 INFO (TLM-055): Design Summary
+
+  WARNING Messages...
+      2 WARNING (TEI-110): Pin 'P01DATA' of 'cell LATCH_udp_2' has no external net connection for any usage in the design. Cell contents file: '/home/tools/cadence/gpdk/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing/../verilog//slow_vdd1v0_basicCells.v'.   
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------

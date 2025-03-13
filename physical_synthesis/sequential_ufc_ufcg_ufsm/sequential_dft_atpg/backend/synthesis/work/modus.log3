@@ -1,0 +1,792 @@
+
+ 
+Copyright (C) 2002-2022 Cadence Design Systems Inc. All Rights Reserved. 
+Cadence and the Cadence logo are registered trademarks and Modus is a trademark 
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+Type 'help legal_notices' for third party license notices. 
+Version : 22.12-s028_1, built Jul 11 2023 (linux26_64)
+Options : -file /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/sequential_atpg.tcl
+Date    : Thu, March 13 18:54:27 2025
+Host    : cinova05.lesc.ufc.br (x86_64 Linux 4.18.0-553.36.1.el8_10.x86_64) (14*13th Gen Intel(R) Core(TM) i5-13500 24576KB)
+OS      : Rocky Linux release 8.10 (Green Obsidian)
+
+INFO (TUI-300): Detected the presence of Modus database in present working directory. The 'workdir' root attribute is set to '/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work'. [end TUI_300]
+#@ Processing -files option
+@modus:root:/ 1>  source /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/sequential_atpg.tcl
+#@ Begin verbose source /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/sequential_atpg.tcl
+@file(/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/sequential_atpg.tcl) 8: puts "  "
+  
+@file(/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/sequential_atpg.tcl) 9: puts "  "
+  
+@file(/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/sequential_atpg.tcl) 10: puts "  "
+  
+@file(/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/sequential_atpg.tcl) 11: puts "  "
+  
+@file(/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/sequential_atpg.tcl) 16: set PROJECT_DIR $env(PROJECT_DIR)
+@file(/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/sequential_atpg.tcl) 17: set TECH_DIR $env(TECH_DIR)
+@file(/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/sequential_atpg.tcl) 18: set DESIGNS $env(DESIGNS)
+@file(/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/sequential_atpg.tcl) 19: set HDL_NAME $env(HDL_NAME)
+@file(/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/sequential_atpg.tcl) 42: set WORST_LIST {slow_vdd1v0_basicCells.lib} 
+@file(/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/sequential_atpg.tcl) 43: set BEST_LIST {fast_vdd1v2_basicCells.lib} 
+@file(/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/sequential_atpg.tcl) 44: set LEF_LIST {gsclib045_tech.lef gsclib045_macro.lef}
+@file(/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/sequential_atpg.tcl) 45: set WORST_CAP_LIST ${TECH_DIR}/gpdk045_v_6_0/soce/gpdk045.basic.CapTbl
+@file(/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/sequential_atpg.tcl) 46: set QRC_LIST ${TECH_DIR}/gpdk045_v_6_0/qrc/rcworst/qrcTechFile
+@file(/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/sequential_atpg.tcl) 53: source ${PROJECT_DIR}/backend/synthesis/scripts/common/path.tcl
+#@ Begin verbose source /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/common/path.tcl
+@file(/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/common/path.tcl) 5: set BACKEND_DIR ${PROJECT_DIR}/backend
+@file(/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/common/path.tcl) 6: set SYNT_DIR ${BACKEND_DIR}/synthesis
+@file(/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/common/path.tcl) 7: set SCRIPT_DIR ${SYNT_DIR}/scripts
+@file(/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/common/path.tcl) 8: set RPT_DIR ${SYNT_DIR}/reports
+@file(/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/common/path.tcl) 9: set DEV_DIR ${SYNT_DIR}/deliverables
+@file(/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/common/path.tcl) 10: set LAYOUT_DIR ${BACKEND_DIR}/layout
+@file(/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/common/path.tcl) 15: set FRONTEND_DIR ${PROJECT_DIR}/frontend
+@file(/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/common/path.tcl) 16: set OTHERS ""
+@file(/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/common/path.tcl) 17: lappend FRONTEND_DIR $OTHERS
+@file(/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/common/path.tcl) 24: set LIB_DIR ${TECH_DIR}/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing
+@file(/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/common/path.tcl) 36: set LEF_DIR ${TECH_DIR}/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/lef
+#@ End verbose source /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/common/path.tcl
+@file(/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/sequential_atpg.tcl) 54: puts $LIB_DIR
+/home/tools/cadence/gpdk/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing
+@file(/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/sequential_atpg.tcl) 61: set LIB_SRC ${LIB_DIR}/../verilog/
+@file(/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/sequential_atpg.tcl) 67: build_model -workdir ${PROJECT_DIR}/backend/synthesis/work \
+            -designsource ${PROJECT_DIR}/backend/synthesis/work/test_scripts/${HDL_NAME}.test_netlist.v \
+            -techlib ${LIB_SRC}/slow_vdd1v0_basicCells.v -designtop ${HDL_NAME}
+INFO (TUI-772): The command 'build_model' will release the currently acquired resources. [end TUI_772] 
+
+Starting Command: build_model 
+
+INFO (TDA-015): Log File: /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/testresults/logs/log_build_model_031325185427-992722000 [end TDA_015]
+
+INFO (TEI-195): Build Model - Controller starting: [end TEI_195] 
+
+
+Search Order  1:  "/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/test_scripts/sequential.test_netlist.v"
+Search Order  2:  "/home/tools/cadence/gpdk/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing/../verilog//slow_vdd1v0_basicCells.v"
+
+
+
+Reading Verilog data from /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/test_scripts/sequential.test_netlist.v
+
+Verilog Parser complete - 1 modules, 0 gates, 0 user defined primitives.
+
+
+Reading Verilog data from /home/tools/cadence/gpdk/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing/../verilog//slow_vdd1v0_basicCells.v
+
+Verilog Parser complete - 489 modules, 1844 gates, 14 user defined primitives.
+
+
+
+INFO (TEI-196): Build Model - Hierarchical Model Build starting: [end TEI_196] 
+
+WARNING (TEI-110): Pin 'P01DATA' of 'cell LATCH_udp_2' has no external net connection for any usage in the design. Cell contents file: '/home/tools/cadence/gpdk/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing/../verilog//slow_vdd1v0_basicCells.v'.  [end TEI_110] 
+WARNING (TEI-110): Pin 'v' of 'cell altos_dff' has no external net connection for any usage in the design. Cell contents file: '/home/tools/cadence/gpdk/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/verilog/slow_vdd1v0_basicCells.v'.  [end TEI_110] 
+
+
+Number of blocks in the hierarchical model is: 70.
+
+Number of technology library cell instances in the hierarchical model is: 10.
+
+
+INFO (TEI-197): Build Model - Hierarchical Model Build completed. [end TEI_197] 
+
+
+
+INFO (TEI-198): Build Model - Flat Model Build starting: [end TEI_198] 
+
+ defaultTIE = X
+ defaultDFN = T
+
+
+INFO (TLM-055): Design Summary
+                --------------
+
+Hierarchical Model:                  Flattened Model:
+             70  Blocks                          52  Blocks
+            203  Pins                            52  Nodes
+            128  Nets
+
+Primary Inputs:                      Primary Outputs:
+          7  Input Only                         3  Output Only
+          0  Input/Output                       0  Input/Output
+          7  Total Inputs                       3  Total Outputs
+
+Tied Nets:                           Dotted Nets:
+          0  Tied to 0                          0  Two-State
+          0  Tied to 1                          0  Three-State
+          0  Tied to X                          0  Total Dotted Nets
+          0  Total Tied Nets
+
+Selected Primitive Functions:
+          0  Clock Chopper (CHOP) primitives 
+          0  RAMs
+          0  ROMs
+          0  TSDs
+          0  Resistors
+          0  Transistors
+          0  Latches
+
+
+          2  Rising  Edge Flop
+          2  Total Flops
+
+         10  Technology Library Cell Instances
+
+[end TLM_055] 
+Optimization removed logic for 2 of 13 cells in this design.
+
+Optimization removed a total of 0 tied Latch Ports.
+Optimization removed a total of 0 non-controlling inputs.
+Optimization removed a total of 14 dangling logic nodes.
+
+
+
+INFO (TEI-199): Build Model - Flat Model Build completed.  [end TEI_199] 
+
+
+INFO (TDA-001): Maximum Memory used during the run and Cumulative Time in hours:minutes:seconds:
+
+                  Total Memory =          101,905,200  bytes
+
+                      CPU Time =    0:00:00.26
+                  Elapsed Time =    0:00:00.61                    [end TDA_001]
+
+
+
+INFO (TEI-200): Build Model - Controller completed. [end TEI_200] 
+
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+      1 INFO (TEI-195): Build Model - Controller starting:  
+      1 INFO (TEI-196): Build Model - Hierarchical Model Build starting:  
+      1 INFO (TEI-197): Build Model - Hierarchical Model Build completed.  
+      1 INFO (TEI-198): Build Model - Flat Model Build starting:  
+      1 INFO (TEI-199): Build Model - Flat Model Build completed.   
+      1 INFO (TEI-200): Build Model - Controller completed.  
+      1 INFO (TLM-055): Design Summary
+
+  WARNING Messages...
+      2 WARNING (TEI-110): Pin 'P01DATA' of 'cell LATCH_udp_2' has no external net connection for any usage in the design. Cell contents file: '/home/tools/cadence/gpdk/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing/../verilog//slow_vdd1v0_basicCells.v'.   
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------
+@file(/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/sequential_atpg.tcl) 74: build_testmode -workdir ${PROJECT_DIR}/backend/synthesis/work \
+               -testmode FULLSCAN \
+               -assignfile ${PROJECT_DIR}/backend/synthesis/work/test_scripts/${HDL_NAME}.FULLSCAN.pinassign
+Starting Command: build_testmode 
+
+INFO (TDA-015): Log File: /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/testresults/logs/log_build_testmode_FULLSCAN_031325185432-096771000 [end TDA_015]
+
+MODEDEFPATH set to:  /home/tools/cadence/installs/MODUS221/tools.lnx86/tb/defaults/rules/modedef 
+TDRPATH set to: /home/tools/cadence/installs/MODUS221/tools.lnx86/tb/defaults/rules/tdr 
+
+Modus Build Test Mode(s) beginning...
+
+   TDR NAME      =  dummy.tdr 
+
+   SCAN_TYPE     =  GSD 
+   BOUNDARY      =  NONE 
+   IN            =  PI 
+   OUT           =  PO 
+
+INFO (TTM-391): A default modeinit sequence will be generated.   [end TTM_391] 
+INFO (TTM-387): A default scanop sequence will be generated.   [end TTM_387] 
+INFO (THM-814): Testmode contains 100.00% active logic,  0.00% inactive logic and  0.00% constraint logic.   [end THM_814] 
+INFO (TTM-357): There are 1 scan chains which are controllable and observable.   [end TTM_357] 
+
+There are no PPIs for Test Mode:  FULLSCAN
+
+Information for Test Mode:  FULLSCAN
+-------------------------
+
+         Scan Type = GSD
+
+
+ Latch Summary for Test Mode:  FULLSCAN
+ Latch Type                #Active   #Inactive       Total
+ ---------------------   ---------   ---------   ---------
+ Test Constraint (TC)            0           0           0 
+ Scan Enable     (SE)            0           0           0 
+ Fixed Value     (FV)            0           0           0 
+ Floating                        0           0           0 
+ Finite State    (FSM)           0           0           0 
+
+INFO (TTM-800): build_testmode has created mode FULLSCAN. [end TTM_800] 
+
+Test Function Pin Information for Test Mode:  FULLSCAN
+-------------------------------------------
+
+          1  SC    (System  Clock)             Pins
+          0  PC    (P Shift Clock)             Pins
+          1  EC    (E Shift Clock)             Pins
+
+          0  OSC   (Oscillator)                Pins
+
+          0  TI    (Test Inhibit)              Pins
+          1  SE    (Scan Enable)               Pins
+          0  CI    (Clock Isolation)           Pins
+          0  OI    (Output Inhibit)            Pins
+
+          1  SI    (Scan Input)                Pins
+          1  SO    (Scan Output)               Pins
+
+  Pin Index    Type Test Function                         Pin Name / Net Name
+  ---------    ---- ----------------------------------    -------------------
+          4      PI  -EC  -SC                             clk / clk
+          3      PI  +SE                                  SE / SE
+          6      PI   SI                                  scan_in / scan_in
+          9      PO   SO                                  scan_out / scan_out
+
+
+            Cumulative Time in hours:minutes:seconds:
+                   CPU Time =   0:00:00.08
+               Elapsed Time =   0:00:02.61
+
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+      1 INFO (THM-814): Testmode contains 100.00% active logic,  0.00% inactive logic and  0.00% constraint logic.    
+      1 INFO (TTM-357): There are 1 scan chains which are controllable and observable.    
+      1 INFO (TTM-387): A default scanop sequence will be generated.    
+      1 INFO (TTM-391): A default modeinit sequence will be generated.    
+      1 INFO (TTM-800): build_testmode has created mode FULLSCAN.  
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------
+@file(/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/sequential_atpg.tcl) 82: verify_test_structures -workdir ${PROJECT_DIR}/backend/synthesis/work \
+                       -testmode FULLSCAN
+Starting Command: verify_test_structures 
+
+INFO (TDA-015): Log File: /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/testresults/logs/log_verify_test_structures_FULLSCAN_031325185435-972217000 [end TDA_015]
+
+INFO (TSV-900): verify_test_structures processing has started Thu Mar 13 18:54:36 2025    [end TSV_900] 
+------------------- verify_test_structures Process Preview ---------------------
+  apply constraints ...................................... constraints=yes    
+  Print 1 message per source of clock race ............... limitcisource=yes  
+  Print 1 Message per capture of clock race .............. limitcicapture=yes 
+  Check for mutually exclusive gating logic (MEG) ........ megraces=yes       
+  Use raise message severity attributes if they exist .... raisemsgsev=no    
+  Reporting options ...................................... report[option]=yes/no 
+    Process Preview ......................................   preview=yes     
+    Circuit Statistics ...................................   circuit=yes      
+    Message Summary ......................................   summary=yes      
+    Specific Messages ....................................   specific=yes     
+    Tests Status .........................................   status=no       
+    Output File Names and Size ...........................   filestats=yes    
+    Display messages for cloaked objects .................   cloakedobj=no   
+  Re-run verify_test_structures test(s) ................... reruntests=no     
+  Use message suppression attributes if they exist ....... suppressmsg=no    
+  Test selected .......................................... test[option]=yes/no 
+    Analyze test clock control of memory elements ........   testclockusage=yes 
+    Analyze three-state drivers for contention ...........   tsdcontention=yes 
+    Analyze feedback loops and keeper devices ............   feedback=yes 
+    Analyze clock choppers ...............................   clockchopper=yes 
+    Analyze flip-flop and latch scan characteristics .....   latchusage=yes 
+    Analyze explicit fixed value latches .................   explicitfvlatch=yes 
+    Analyze potential clock signal races .................   clocksignalraces=yes 
+    Analyze internal scan chains .........................   internalscanchains=yes 
+
+--------------------Circuit Statistics--------------------
+
+INFO (TLM-055): Design Summary
+                --------------
+
+Hierarchical Model:                  Flattened Model:
+             70  Blocks                          52  Blocks
+            203  Pins                            52  Nodes
+            128  Nets
+
+Primary Inputs:                      Primary Outputs:
+          7  Input Only                         3  Output Only
+          0  Input/Output                       0  Input/Output
+          7  Total Inputs                       3  Total Outputs
+
+Tied Nets:                           Dotted Nets:
+          0  Tied to 0                          0  Two-State
+          0  Tied to 1                          0  Three-State
+          0  Tied to X                          0  Total Dotted Nets
+          0  Total Tied Nets
+
+Selected Primitive Functions:
+          0  Clock Chopper (CHOP) primitives 
+          0  RAMs
+          0  ROMs
+          0  TSDs
+          0  Resistors
+          0  Transistors
+          0  Latches
+
+
+          2  Rising  Edge Flop
+          2  Total Flops
+
+         10  Technology Library Cell Instances
+
+[end TLM_055] 
+
+Test Function Pin Information for Test Mode:  FULLSCAN
+-------------------------------------------
+
+          1  SC    (System  Clock)             Pins
+          0  PC    (P Shift Clock)             Pins
+          1  EC    (E Shift Clock)             Pins
+
+          0  OSC   (Oscillator)                Pins
+
+          0  TI    (Test Inhibit)              Pins
+          1  SE    (Scan Enable)               Pins
+          0  CI    (Clock Isolation)           Pins
+          0  OI    (Output Inhibit)            Pins
+
+          1  SI    (Scan Input)                Pins
+          1  SO    (Scan Output)               Pins
+
+  Pin Index    Type Test Function                         Pin Name / Net Name
+  ---------    ---- ----------------------------------    -------------------
+          4      PI  -EC  -SC                             clk / clk
+          3      PI  +SE                                  SE / SE
+          6      PI   SI                                  scan_in / scan_in
+          9      PO   SO                                  scan_out / scan_out
+
+  
+   Analyze test clocks' control of memory elements    
+
+Analyze test clocks' control of memory elements process has completed.
+                             CPU time =  0:00:00.00  Elapsed time =  0:00:00.00
+  
+   Analyze three-state drivers for contention 
+
+Analyze three-state drivers for contention process has completed.
+                             CPU time =  0:00:00.00  Elapsed time =  0:00:00.00
+  
+   Analyze feedback loops and keeper devices          
+
+Analyze feedback loops and keeper devices process has completed.
+                             CPU time =  0:00:00.00  Elapsed time =  0:00:00.00
+  
+   Analyze clock choppers                             
+
+Analyze clock choppers process has completed.
+                             CPU time =  0:00:00.00  Elapsed time =  0:00:00.00
+  
+   Analyze flip-flop and latch scan characteristics   
+INFO (TSV-068): The length of the longest scan chain is 2 bit positions, which is 100% of the average scan chain length 2 (based on 2 total scan chain bits and 1 valid scan chains).   [end TSV_068] 
+INFO (TSV-378): Scan chain beginning at 'pin scan_in' and ending at 'pin scan_out' is controllable and observable. The length of the scan chain is 2 bit positions.   [end TSV_378] 
+INFO (TSV-567): There are 1 controllable scan chains fed by Scan In (SI) primary inputs.   [end TSV_567] 
+INFO (TSV-568): There are 1 observable scan chains feeding to Scan Out (SO) primary outputs.   [end TSV_568] 
+INFO (TSV-569): There are 0 controllable scan chains fed by on-product Pattern Generator(s).   [end TSV_569] 
+INFO (TSV-570): There are 0 observable scan chains feeding to on-product Multiple-Input Signature Register (MISRs).   [end TSV_570] 
+
+Analyze flip-flop and latch scan characteristics process has completed.
+                             CPU time =  0:00:00.00  Elapsed time =  0:00:00.00
+  
+   Analyze explicit fixed value latches 
+
+Analyze explicit fixed value latches process has completed.
+                             CPU time =  0:00:00.00  Elapsed time =  0:00:00.00
+  
+   Analyze potential clock signal races               
+   Check for mutually exclusive gating logic (MEG)    
+
+Analyze potential clock signal races process has completed.
+                             CPU time =  0:00:00.00  Elapsed time =  0:00:00.02
+  
+   Analyze internal scan chains 
+
+Analyze channel inputs for validity process has completed.
+                             CPU time =  0:00:00.00  Elapsed time =  0:00:00.00
+
+--------------------File Information----------------------
+          57344 /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/tbdata/TSVmessageFile.FULLSCAN 
+
+INFO (TSV-908): verify_test_structures processing complete.   [end TSV_908] 
+
+INFO (TDA-001): Maximum Memory used during the run and Cumulative Time in hours:minutes:seconds:
+
+                  Total Memory =            5,818,928  bytes
+
+                      CPU Time =    0:00:00.01
+                  Elapsed Time =    0:00:02.52                    [end TDA_001]
+
+     Date Ended:  Thursday Mar 13 18:54:38 2025  -03
+
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+      1 INFO (TLM-055): Design Summary
+      1 INFO (TSV-068): The length of the longest scan chain is 2 bit positions, which is 100% of the average scan chain length 2 (based on 2 total scan chain bits and 1 valid scan chains).    
+      1 INFO (TSV-378): Scan chain beginning at 'pin scan_in' and ending at 'pin scan_out' is controllable and observable. The length of the scan chain is 2 bit positions.    
+      1 INFO (TSV-567): There are 1 controllable scan chains fed by Scan In (SI) primary inputs.    
+      1 INFO (TSV-568): There are 1 observable scan chains feeding to Scan Out (SO) primary outputs.    
+      1 INFO (TSV-569): There are 0 controllable scan chains fed by on-product Pattern Generator(s).    
+      1 INFO (TSV-570): There are 0 observable scan chains feeding to on-product Multiple-Input Signature Register (MISRs).    
+      1 INFO (TSV-900): verify_test_structures processing has started Thu Mar 13 18:54:36 2025     
+      1 INFO (TSV-908): verify_test_structures processing complete.    
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------
+@file(/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/sequential_atpg.tcl) 89: report_test_structures -workdir ${PROJECT_DIR}/backend/synthesis/work \
+                       -testmode FULLSCAN
+Starting Command: report_test_structures 
+
+INFO (TDA-015): Log File: /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/testresults/logs/log_report_test_structures_FULLSCAN_031325185439-710415000 [end TDA_015]
+
+
+INFO (TLM-055): Design Summary
+                --------------
+
+Hierarchical Model:                  Flattened Model:
+             70  Blocks                          52  Blocks
+            203  Pins                            52  Nodes
+            128  Nets
+
+Primary Inputs:                      Primary Outputs:
+          7  Input Only                         3  Output Only
+          0  Input/Output                       0  Input/Output
+          7  Total Inputs                       3  Total Outputs
+
+Tied Nets:                           Dotted Nets:
+          0  Tied to 0                          0  Two-State
+          0  Tied to 1                          0  Three-State
+          0  Tied to X                          0  Total Dotted Nets
+          0  Total Tied Nets
+
+Selected Primitive Functions:
+          0  Clock Chopper (CHOP) primitives 
+          0  RAMs
+          0  ROMs
+          0  TSDs
+          0  Resistors
+          0  Transistors
+          0  Latches
+
+
+          2  Rising  Edge Flop
+          2  Total Flops
+
+         10  Technology Library Cell Instances
+
+[end TLM_055] 
+
+Information for Test Mode:  FULLSCAN
+-------------------------
+
+         Scan Type = GSD
+
+
+
+
+Control/Observe Chain Information for Test Mode:  FULLSCAN
+-----------------------------------------------
+
+     1 Control Chains (0 Control Only)
+     1 Observe Chains (0 Observe Only)
+     1 Chains are Control and Observe
+
+  Longest Scan Chain: 2 bits
+  Average Scan Chain Length: 2 bits
+
+
+  Control Chain: 1
+    Fed by: Scan-In
+    Number of Control Points: 1
+      Control Point Pin Index/Name           6/port:scan_in    Pipeline Stages: 0 
+    Load Point Pin Index/Name  6/port:scan_in
+    Length: 2
+    Scan Section: Scan_Section_Sequence
+  Observe Chain: 1
+    Number of Observe Points: 1
+      Observe Point Pin Index/Name           9/port:scan_out    Pipeline Stages: 0 
+    Unload Point Pin Index/Name  9/port:scan_out
+    Unload Point In Phase with Load Point
+    Length: 2
+    Scan Section: Scan_Section_Sequence
+
+
+Report completed.
+
+
+INFO (TDA-001): Maximum Memory used during the run and Cumulative Time in hours:minutes:seconds:
+
+                  Total Memory =            5,697,360  bytes
+
+                      CPU Time =    0:00:00.00
+                  Elapsed Time =    0:00:00.00                    [end TDA_001]
+
+     Date Ended:  Thursday Mar 13 18:54:41 2025  -03
+
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+      1 INFO (TLM-055): Design Summary
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------
+@file(/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/sequential_atpg.tcl) 97: build_faultmodel -workdir ${PROJECT_DIR}/backend/synthesis/work \
+                 -fullfault yes
+INFO (TUI-772): The command 'build_faultmodel' will release the currently acquired resources. [end TUI_772] 
+
+Starting Command: build_faultmodel 
+
+INFO (TDA-015): Log File: /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/testresults/logs/log_build_faultmodel_031325185443-413888000 [end TDA_015]
+
+INFO (TFM-099): Build Fault Model started.  [end TFM_099] 
+INFO (TLM-190): PFLT/TFLT attribute for LATCH instance udp_latch of cell altos_dff_err is IGNORED. PFLT/TFLT overrides not supported for LATCH instances.  [end TLM_190] 
+INFO (TFM-102): Creating faultModel file /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/tbdata/faultModel.  [end TFM_102] 
+
+Global Ignored Static Fault Count                 0
+Global Ignored Dynamic Fault Count                0
+
+
+                            Global Statistics
+
+                    ATCov  ----------------------- Global Faults --------------------------
+                   Global        Total       Tested     Possibly    Redundant     Untested
+
+Total Static         0.00          142            0            0            0          142
+Collapsed Static     0.00           86            0            0            0           86
+PI Static            0.00           14            0            0            0           14
+PO Static            0.00            6            0            0            0            6
+
+Total Dynamic        0.00          168            0            0            0          168
+Collapsed Dynamic    0.00          112            0            0            0          112
+PI Dynamic           0.00           14            0            0            0           14
+PO Dynamic           0.00            6            0            0            0            6
+
+Parametric        
+
+IDDq                 0.00          142            0                                    142
+
+
+
+INFO (TFM-103): Creating faultStatus file /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/tbdata/faultStatus.  [end TFM_103] 
+
+                           Testmode Statistics: FULLSCAN
+
+                 ---- ATCov ---- ------------------------ Testmode Faults ----------------------- ------------------------- Global Faults ------------------------
+                 Testmode Global        Total       Tested     Possibly    Redundant     Untested        Total       Tested     Possibly    Redundant     Untested
+
+Total Static         0.00   0.00          142            0            0            0          142          142            0            0            0          142
+Collapsed Static     0.00   0.00           86            0            0            0           86           86            0            0            0           86
+PI Static            0.00   0.00           14            0            0            0           14           14            0            0            0           14
+PO Static            0.00   0.00            6            0            0            0            6            6            0            0            0            6
+
+Total Dynamic        0.00   0.00          154            0            0            0          154          168            0            0            0          168
+Collapsed Dynamic    0.00   0.00          102            0            0            0          102          112            0            0            0          112
+PI Dynamic           0.00   0.00           12            0            0            0           12           14            0            0            0           14
+PO Dynamic           0.00   0.00            6            0            0            0            6            6            0            0            0            6
+
+Parametric        
+
+IDDq                 0.00   0.00          142            0                                    142          142            0                                    142
+
+Path                 0.00   0.00            0            0                                      0            0            0                                      0
+
+
+
+INFO (TFM-704): Maximum Global Test Coverage Statistics: 
+
+                  %Active      #Faults      #Active    #Inactive
+Total Static       100.00          142          142            0
+Collapsed Static   100.00           86           86            0
+PI Static          100.00           14           14            0
+PO Static          100.00            6            6            0
+
+Total Dynamic       91.67          168          154           14
+Collapsed Dynamic   91.07          112          102           10
+PI Dynamic          85.71           14           12            2
+PO Dynamic         100.00            6            6            0
+
+Parametric        
+
+There are 1 test mode(s) defined:
+      FULLSCAN
+
+[end TFM_704]
+INFO (TFM-109): Build Fault Model has completed with highest level severity message of INFO.  [end TFM_109] 
+
+INFO (TDA-001): Maximum Memory used during the run and Cumulative Time in hours:minutes:seconds:
+
+                  Total Memory =            6,299,088  bytes
+
+                      CPU Time =    0:00:00.00
+                  Elapsed Time =    0:00:00.03                    [end TDA_001]
+
+     Date Ended:  Thursday Mar 13 18:54:45 2025  -03
+
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+      1 INFO (TFM-099): Build Fault Model started.   
+      1 INFO (TFM-102): Creating faultModel file /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/tbdata/faultModel.   
+      1 INFO (TFM-103): Creating faultStatus file /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/tbdata/faultStatus.   
+      1 INFO (TFM-109): Build Fault Model has completed with highest level severity message of INFO.   
+      1 INFO (TFM-704): Maximum Global Test Coverage Statistics: 
+      1 INFO (TLM-190): PFLT/TFLT attribute for LATCH instance udp_latch of cell altos_dff_err is IGNORED. PFLT/TFLT overrides not supported for LATCH instances.   
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------
+@file(/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/sequential_atpg.tcl) 104: create_scanchain_tests -workdir ${PROJECT_DIR}/backend/synthesis/work \
+                       -testmode FULLSCAN -experiment SCAN
+Starting Command: create_scanchain_tests 
+
+INFO (TDA-015): Log File: /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/testresults/logs/log_create_scanchain_tests_FULLSCAN_SCAN_031325185447-173513000 [end TDA_015]
+
+
+
+****************************************************************************************************
+Coverage Definitions:
+ #Faults  : Number of Active Faults (observable).
+ #Tested  : Number of Active Faults marked tested.
+ #Possibly: Number of Active Faults marked possibly tested
+            (good value is 0 or 1; fault value is X).
+ #Redund  : Number of Active Faults untestable due to redundancy.
+ #Untested: Number of Active Faults untested.
+ %TCov  (%Test Coverage)                      : #Tested / #Faults
+ %ATCov (%Adjusted TCov)                      : #Tested / (#Faults-#Redund)
+****************************************************************************************************
+****************************************************************************************************
+                           Testmode Statistics: FULLSCAN
+
+                           #Faults      #Tested    #Possibly      #Redund    #Untested  %TCov %ATCov
+Total Static                   142            0            0            0          142   0.00   0.00
+Total Dynamic                  154            0            0            0          154   0.00   0.00
+
+                            Global Statistics
+
+                           #Faults      #Tested    #Possibly      #Redund    #Untested  %TCov %ATCov
+Total Static                   142            0            0            0          142   0.00   0.00
+Total Dynamic                  168            0            0            0          168   0.00   0.00
+****************************************************************************************************
+
+*************************************************************************************************************
+INFO (TTC-110): Starting Scan Test generation                                                   [end TTC_110] 
+
+INFO (TDA-220):   --- Tests ---   Faults     ---- ATCov ----   -- Faults --   - Elapsed Time -  [end TDA_220] 
+INFO (TDA-220):    Sim.    Eff.  Detected    Tmode    Global     Untested                       [end TDA_220] 
+INFO (TDA-220):      1       1         49    34.51%   34.51%           93           00:02.32    [end TDA_220] 
+INFO (TTC-110): Ending Scan Test generation                                                     [end TTC_110] 
+*************************************************************************************************************
+
+****************************************************************************************************
+                           Testmode Statistics: FULLSCAN
+
+                           #Faults      #Tested    #Possibly      #Redund    #Untested  %TCov %ATCov
+Total Static                   142           49            0            0           93  34.51  34.51
+Total Dynamic                  154           38            0            0          116  24.68  24.68
+
+                            Global Statistics
+
+                           #Faults      #Tested    #Possibly      #Redund    #Untested  %TCov %ATCov
+Total Static                   142           49            0            0           93  34.51  34.51
+Total Dynamic                  168           38            0            0          130  22.62  22.62
+****************************************************************************************************
+
+
+              ----Final Pattern Statistics----
+
+ Test Section Type                       # Test Sequences
+----------------------------------------------------------
+ Scan                                           1
+----------------------------------------------------------
+ Total                                          1
+
+(I) File(s) generated (bytes and name):
+
+          61440 /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/tbdata/faultStatus.FULLSCAN.SCAN
+           3565 /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/tbdata/TBDbin.FULLSCAN.SCAN
+
+INFO (TDA-001): Maximum Memory used during the run and Cumulative Time in hours:minutes:seconds:
+
+                  Total Memory =            6,270,720  bytes
+
+                      CPU Time =    0:00:00.03
+                  Elapsed Time =    0:00:02.32                    [end TDA_001]
+
+     Date Ended:  Thursday Mar 13 18:54:49 2025  -03
+
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+      3 INFO (TDA-220):   --- Tests ---   Faults     ---- ATCov ----   -- Faults --   - Elapsed Time -   
+      2 INFO (TTC-110): Starting Scan Test generation                                                    
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------
+@file(/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/sequential_atpg.tcl) 111: create_logic_tests -workdir ${PROJECT_DIR}/backend/synthesis/work \
+                   -experiment logic -effort high
+Starting Command: create_logic_tests 
+
+INFO (TDA-015): Log File: /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/testresults/logs/log_create_logic_tests_logic_031325185451-392174000 [end TDA_015]
+
+ERROR (TFW-901): Required option -TESTMODE must be specified.  [end TFW_901] 
+
+ERROR (TFW-926): Syntax checking detected terminating errors.  Correct the errors noted in preceding messages and rerun.  [end TFW_926] 
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  ERROR Messages...
+      1 ERROR (TFW-901): Required option -TESTMODE must be specified.   
+      1 ERROR (TFW-926): Syntax checking detected terminating errors.  Correct the errors noted in preceding messages and rerun.   
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------
+File '/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/sequential_atpg.tcl' line 111: errors out.
+#@ End verbose source /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/sequential_atpg.tcl
+@modus:root:/ 2> exit

@@ -1,0 +1,44 @@
+Starting Command: create_logic_tests 
+
+INFO (TDA-005): Command Line Invocation: 
+            create_logic_tests -experiment logic -effort high -workdir /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work  [end TDA_005]
+
+INFO (TDA-014): Cadence(R) Modus(TM) DFT Software Solution, Version 22.12-s028_1, built Jul 11 2023 (linux26_64) [end TDA_014]
+
+INFO (TDA-015): Log File: /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/testresults/logs/log_create_logic_tests_logic_031325185451-392174000 [end TDA_015]
+
+INFO (TDA-007): Job Information:
+            Date Started: Thursday Mar 13 18:54:51 2025  -03
+            Host machine is cinova05.lesc.ufc.br, x86_64 running Linux 4.18.0-553.36.1.el8_10.x86_64.
+            This job is process number 211442.
+[end TDA_007]
+
+INFO (TDA-009): Options/Values information.
+            (options marked with '*' have program generated values,
+             options marked with '+' were specified to default.)
+
+            -WORKDIR /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work
+            -EXPERIMENT logic
+
+            -LOGFILE /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/testresults/logs/log_create_logic_tests_logic_031325185451-392174000
+          + -effort high
+[end TDA_009]
+ERROR (TFW-901): Required option -TESTMODE must be specified.  [end TFW_901] 
+
+ERROR (TFW-926): Syntax checking detected terminating errors.  Correct the errors noted in preceding messages and rerun.  [end TFW_926] 
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  ERROR Messages...
+      1 ERROR (TFW-901): Required option -TESTMODE must be specified.   
+      1 ERROR (TFW-926): Syntax checking detected terminating errors.  Correct the errors noted in preceding messages and rerun.   
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------

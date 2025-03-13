@@ -1,15 +1,16 @@
+Starting Command: build_testmode 
 
 INFO (TDA-005): Command Line Invocation: 
             build_testmode -assignfile /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/test_scripts/sequential.FULLSCAN.pinassign -testmode FULLSCAN -workdir /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work  [end TDA_005]
 
 INFO (TDA-014): Cadence(R) Modus(TM) DFT Software Solution, Version 22.12-s028_1, built Jul 11 2023 (linux26_64) [end TDA_014]
 
-INFO (TDA-015): Log File: /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/testresults/logs/log_build_testmode_FULLSCAN_031325185649-170467000 [end TDA_015]
+INFO (TDA-015): Log File: /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/testresults/logs/log_build_testmode_FULLSCAN_031325185432-096771000 [end TDA_015]
 
 INFO (TDA-007): Job Information:
-            Date Started: Thursday Mar 13 18:56:49 2025  -03
+            Date Started: Thursday Mar 13 18:54:32 2025  -03
             Host machine is cinova05.lesc.ufc.br, x86_64 running Linux 4.18.0-553.36.1.el8_10.x86_64.
-            This job is process number 213289.
+            This job is process number 211084.
 [end TDA_007]
 
 INFO (TDA-009): Options/Values information.
@@ -20,7 +21,7 @@ INFO (TDA-009): Options/Values information.
             -TESTMODE FULLSCAN
 
             -ASSIGNFILE /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/test_scripts/sequential.FULLSCAN.pinassign
-            -LOGFILE /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/testresults/logs/log_build_testmode_FULLSCAN_031325185649-170467000
+            -LOGFILE /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/testresults/logs/log_build_testmode_FULLSCAN_031325185432-096771000
 [end TDA_009]
 MODEDEFPATH set to:  /home/tools/cadence/installs/MODUS221/tools.lnx86/tb/defaults/rules/modedef 
 TDRPATH set to: /home/tools/cadence/installs/MODUS221/tools.lnx86/tb/defaults/rules/tdr 
@@ -84,7 +85,25 @@ Test Function Pin Information for Test Mode:  FULLSCAN
 
 
             Cumulative Time in hours:minutes:seconds:
-                   CPU Time =   0:00:00.09
-               Elapsed Time =   0:00:02.60
+                   CPU Time =   0:00:00.08
+               Elapsed Time =   0:00:02.61
 
 
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+      1 INFO (THM-814): Testmode contains 100.00% active logic,  0.00% inactive logic and  0.00% constraint logic.    
+      1 INFO (TTM-357): There are 1 scan chains which are controllable and observable.    
+      1 INFO (TTM-387): A default scanop sequence will be generated.    
+      1 INFO (TTM-391): A default modeinit sequence will be generated.    
+      1 INFO (TTM-800): build_testmode has created mode FULLSCAN.  
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------
