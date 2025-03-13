@@ -7,9 +7,11 @@ of Cadence Design Systems, Inc. in the United States and other countries.
 Type 'help legal_notices' for third party license notices. 
 Version : 22.12-s028_1, built Jul 11 2023 (linux26_64)
 Options : -file /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/sequential_atpg.tcl
-Date    : Thu, March 13 17:43:07 2025
+Date    : Thu, March 13 18:31:42 2025
 Host    : cinova05.lesc.ufc.br (x86_64 Linux 4.18.0-553.36.1.el8_10.x86_64) (14*13th Gen Intel(R) Core(TM) i5-13500 24576KB)
 OS      : Rocky Linux release 8.10 (Green Obsidian)
+
+INFO (TUI-300): Detected the presence of Modus database in present working directory. The 'workdir' root attribute is set to '/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work'. [end TUI_300]
 #@ Processing -files option
 @modus:root:/ 1>  source /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/sequential_atpg.tcl
 #@ Begin verbose source /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/sequential_atpg.tcl
@@ -50,9 +52,11 @@ OS      : Rocky Linux release 8.10 (Green Obsidian)
 @file(/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/sequential_atpg.tcl) 67: build_model -workdir ${PROJECT_DIR}/backend/synthesis/work \
             -designsource ${PROJECT_DIR}/backend/synthesis/deliverables/${HDL_NAME}.v \
             -techlib ${LIB_SRC}/slow_vdd1v0_basicCells.v -designtop ${HDL_NAME}
+INFO (TUI-772): The command 'build_model' will release the currently acquired resources. [end TUI_772] 
+
 Starting Command: build_model 
 
-INFO (TDA-015): Log File: /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/testresults/logs/log_build_model_031325174308-740094000 [end TDA_015]
+INFO (TDA-015): Log File: /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/testresults/logs/log_build_model_031325183143-064707000 [end TDA_015]
 
 INFO (TEI-195): Build Model - Controller starting: [end TEI_195] 
 
@@ -64,7 +68,7 @@ Search Order  2:  "/home/tools/cadence/gpdk/gsclib045_svt_v4.4/lan/flow/t1u1/ref
 
 Reading Verilog data from /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/deliverables/sequential.v
 
-Verilog Parser complete - 1 modules, 0 gates, 0 user defined primitives.
+Verilog Parser complete - 1 modules, 2 gates, 0 user defined primitives.
 
 
 Reading Verilog data from /home/tools/cadence/gpdk/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing/../verilog//slow_vdd1v0_basicCells.v
@@ -79,7 +83,7 @@ WARNING (TEI-110): Pin 'P01DATA' of 'cell LATCH_udp_2' has no external net conne
 WARNING (TEI-110): Pin 'v' of 'cell altos_dff' has no external net connection for any usage in the design. Cell contents file: '/home/tools/cadence/gpdk/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/verilog/slow_vdd1v0_basicCells.v'.  [end TEI_110] 
 
 
-Number of blocks in the hierarchical model is: 70.
+Number of blocks in the hierarchical model is: 72.
 
 Number of technology library cell instances in the hierarchical model is: 10.
 
@@ -98,20 +102,20 @@ INFO (TLM-055): Design Summary
                 --------------
 
 Hierarchical Model:                  Flattened Model:
-             70  Blocks                          52  Blocks
+             72  Blocks                          52  Blocks
             203  Pins                            52  Nodes
-            128  Nets
+            130  Nets
 
 Primary Inputs:                      Primary Outputs:
-          7  Input Only                         3  Output Only
+          6  Input Only                         2  Output Only
           0  Input/Output                       0  Input/Output
-          7  Total Inputs                       3  Total Outputs
+          6  Total Inputs                       2  Total Outputs
 
 Tied Nets:                           Dotted Nets:
-          0  Tied to 0                          0  Two-State
+          2  Tied to 0                          0  Two-State
           0  Tied to 1                          0  Three-State
           0  Tied to X                          0  Total Dotted Nets
-          0  Total Tied Nets
+          2  Total Tied Nets
 
 Selected Primitive Functions:
           0  Clock Chopper (CHOP) primitives 
@@ -142,10 +146,10 @@ INFO (TEI-199): Build Model - Flat Model Build completed.  [end TEI_199]
 
 INFO (TDA-001): Maximum Memory used during the run and Cumulative Time in hours:minutes:seconds:
 
-                  Total Memory =          101,867,264  bytes
+                  Total Memory =          101,873,728  bytes
 
-                      CPU Time =    0:00:00.23
-                  Elapsed Time =    0:00:00.55                    [end TDA_001]
+                      CPU Time =    0:00:00.24
+                  Elapsed Time =    0:00:00.58                    [end TDA_001]
 
 
 
@@ -176,16 +180,32 @@ INFO (TEI-200): Build Model - Controller completed. [end TEI_200]
 
 -------------------------------------------------------------------------------
 @file(/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/sequential_atpg.tcl) 74: build_testmode -workdir ${PROJECT_DIR}/backend/synthesis/work \
-               -testmode FULLSCAN -assignfile ${HDL_NAME}.FULLSCAN.pinassign
+               -testmode FULLSCAN \
+               -assignfile ${PROJECT_DIR}/backend/synthesis/work/test_scripts/${HDL_NAME}.FULLSCAN.pinassign
 Starting Command: build_testmode 
 
-INFO (TDA-015): Log File: /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/testresults/logs/log_build_testmode_FULLSCAN_031325174312-719019000 [end TDA_015]
+INFO (TDA-015): Log File: /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/testresults/logs/log_build_testmode_FULLSCAN_031325183147-128143000 [end TDA_015]
 
 MODEDEFPATH set to:  /home/tools/cadence/installs/MODUS221/tools.lnx86/tb/defaults/rules/modedef 
 TDRPATH set to: /home/tools/cadence/installs/MODUS221/tools.lnx86/tb/defaults/rules/tdr 
 
 Modus Build Test Mode(s) beginning...
-ERROR (TTM-003): Unable to resolve file sequential.FULLSCAN.pinassign from 'ASSIGNFILE' option.  [end TTM_003] 
+ERROR (TTM-051): Illegal ASSIGN PIN statement value: 
+      CHECK pin name: scan_in to ensure it exists, CHECK flag value: SI0 for compatibility.  [end TTM_051] 
+Statement number 3, beginning on line 3, filename /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/test_scripts/sequential.FULLSCAN.pinassign.
+
+INFO (TTM-803): ASSIGN PIN statement not processed - reference previous message(s).
+   [end TTM_803] 
+Statement number 3, beginning on line 3, filename /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/test_scripts/sequential.FULLSCAN.pinassign.
+
+ERROR (TTM-051): Illegal ASSIGN PIN statement value: 
+      CHECK pin name: scan_out to ensure it exists, CHECK flag value: SO0 for compatibility.  [end TTM_051] 
+Statement number 4, beginning on line 4, filename /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/test_scripts/sequential.FULLSCAN.pinassign.
+
+INFO (TTM-803): ASSIGN PIN statement not processed - reference previous message(s).
+   [end TTM_803] 
+Statement number 4, beginning on line 4, filename /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/test_scripts/sequential.FULLSCAN.pinassign.
+
 
 ERROR (TTM-801): Test mode FULLSCAN has NOT been created -
            see preceding message(s) for details. [end TTM_801] 
@@ -194,7 +214,7 @@ ERROR (TTM-801): Test mode FULLSCAN has NOT been created -
 Modus Build Test Mode(s) completed. Highest severity is (ERROR).
 
             Cumulative Time in hours:minutes:seconds:
-                   CPU Time =   0:00:00.01
+                   CPU Time =   0:00:00.02
                Elapsed Time =   0:00:00.01
 
 
@@ -206,8 +226,11 @@ Modus Build Test Mode(s) completed. Highest severity is (ERROR).
  Count  Number             First Instance of Message Text
 ------- ------             ------------------------------
 
+  INFO Messages...
+      2 INFO (TTM-803): ASSIGN PIN statement not processed - reference previous message(s).
+
   ERROR Messages...
-      1 ERROR (TTM-003): Unable to resolve file sequential.FULLSCAN.pinassign from 'ASSIGNFILE' option.   
+      2 ERROR (TTM-051): Illegal ASSIGN PIN statement value: 
       1 ERROR (TTM-801): Test mode FULLSCAN has NOT been created -
 
  For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
@@ -215,4 +238,60 @@ Modus Build Test Mode(s) completed. Highest severity is (ERROR).
 -------------------------------------------------------------------------------
 File '/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/sequential_atpg.tcl' line 74: errors out.
 #@ End verbose source /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/sequential_atpg.tcl
-@modus:root:/ 2> exit
+ ==> build_testmode -workdir ${PROJECT_DIR}/backend/synthesis/work  -testmode FULLSCAN  -assignfile ${PROJECT_DIR}/backend/synthesis/work/test_scripts/${HDL_NAME}.FULLSCAN.pinassign
+Starting Command: build_testmode 
+
+INFO (TDA-015): Log File: /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/testresults/logs/log_build_testmode_FULLSCAN_031325183549-296440000 [end TDA_015]
+
+MODEDEFPATH set to:  /home/tools/cadence/installs/MODUS221/tools.lnx86/tb/defaults/rules/modedef 
+TDRPATH set to: /home/tools/cadence/installs/MODUS221/tools.lnx86/tb/defaults/rules/tdr 
+
+Modus Build Test Mode(s) beginning...
+ERROR (TTM-051): Illegal ASSIGN PIN statement value: 
+      CHECK pin name: scan_in to ensure it exists, CHECK flag value: SI0 for compatibility.  [end TTM_051] 
+Statement number 3, beginning on line 3, filename /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/test_scripts/sequential.FULLSCAN.pinassign.
+
+INFO (TTM-803): ASSIGN PIN statement not processed - reference previous message(s).
+   [end TTM_803] 
+Statement number 3, beginning on line 3, filename /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/test_scripts/sequential.FULLSCAN.pinassign.
+
+ERROR (TTM-051): Illegal ASSIGN PIN statement value: 
+      CHECK pin name: scan_out to ensure it exists, CHECK flag value: SO0 for compatibility.  [end TTM_051] 
+Statement number 4, beginning on line 4, filename /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/test_scripts/sequential.FULLSCAN.pinassign.
+
+INFO (TTM-803): ASSIGN PIN statement not processed - reference previous message(s).
+   [end TTM_803] 
+Statement number 4, beginning on line 4, filename /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/test_scripts/sequential.FULLSCAN.pinassign.
+
+
+ERROR (TTM-801): Test mode FULLSCAN has NOT been created -
+           see preceding message(s) for details. [end TTM_801] 
+
+
+Modus Build Test Mode(s) completed. Highest severity is (ERROR).
+
+            Cumulative Time in hours:minutes:seconds:
+                   CPU Time =   0:00:00.02
+               Elapsed Time =   0:00:00.00
+
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+      2 INFO (TTM-803): ASSIGN PIN statement not processed - reference previous message(s).
+
+  ERROR Messages...
+      2 ERROR (TTM-051): Illegal ASSIGN PIN statement value: 
+      1 ERROR (TTM-801): Test mode FULLSCAN has NOT been created -
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------
+5
+@modus:root:/ 3> exit

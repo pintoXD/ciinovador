@@ -65,18 +65,60 @@ set LIB_SRC ${LIB_DIR}/../verilog/
 # Modus: Build Model
 #-----------------------------------------------------------------------------
 build_model -workdir ${PROJECT_DIR}/backend/synthesis/work \
-            -designsource ${PROJECT_DIR}/backend/synthesis/deliverables/${HDL_NAME}.v \
+            -designsource ${PROJECT_DIR}/backend/synthesis/work/test_scripts/${HDL_NAME}.test_netlist.v \
             -techlib ${LIB_SRC}/slow_vdd1v0_basicCells.v -designtop ${HDL_NAME}
 
 #-----------------------------------------------------------------------------
 # Modus: Test Mode
 #-----------------------------------------------------------------------------
 build_testmode -workdir ${PROJECT_DIR}/backend/synthesis/work \
-               -testmode FULLSCAN -assignfile ${HDL_NAME}.FULLSCAN.pinassign
+               -testmode FULLSCAN \
+               -assignfile ${PROJECT_DIR}/backend/synthesis/work/test_scripts/${HDL_NAME}.FULLSCAN.pinassign
+
+
+#-----------------------------------------------------------------------------
+# Modus: Verify Test Structures
+#-----------------------------------------------------------------------------
+verify_test_structures -workdir ${PROJECT_DIR}/backend/synthesis/work \
+                       -testmode FULLSCAN
+                       
+
+#-----------------------------------------------------------------------------
+# Modus: Report Test Structures
+#-----------------------------------------------------------------------------
+report_test_structures -workdir ${PROJECT_DIR}/backend/synthesis/work \
+                       -testmode FULLSCAN
 
 
 
-exit
+#-----------------------------------------------------------------------------
+# Modus: Build Fault Model
+#-----------------------------------------------------------------------------
+build_faultmodel -workdir ${PROJECT_DIR}/backend/synthesis/work \
+                 -fullfault yes
+
+
+#-----------------------------------------------------------------------------
+# Modus: Create Scan Test
+#-----------------------------------------------------------------------------
+create_scanchain_tests -workdir ${PROJECT_DIR}/backend/synthesis/work \
+                       -testmode FULLSCAN -experiment SCAN
+
+
+#-----------------------------------------------------------------------------
+# Modus: Create Logic Test
+#-----------------------------------------------------------------------------
+create_logic_tests -workdir ${PROJECT_DIR}/backend/synthesis/work \
+                   -experiment logic -effort high
+
+
+
+write_vectors -workdir ${PROJECT_DIR}/backend/synthesis/work \
+              -testmode FULLSCAN -inexperiment logic -language verilog \
+              -scanformat serial -outputfilename ${HDL_NAME}_test_results
+
+
+# exit
 #-----------------------------------------------------------------------------
 # Load Tech File
 #-----------------------------------------------------------------------------

@@ -1,3 +1,4 @@
+Starting Command: build_model 
 
 INFO (TDA-005): Command Line Invocation: 
             build_model -designtop sequential -workdir /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work -designsource /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/test_scripts/sequential.test_netlist.v -techlib /home/tools/cadence/gpdk/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing/../verilog//slow_vdd1v0_basicCells.v  [end TDA_005]
@@ -121,3 +122,26 @@ INFO (TDA-001): Maximum Memory used during the run and Cumulative Time in hours:
 INFO (TEI-200): Build Model - Controller completed. [end TEI_200] 
 
 
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+      1 INFO (TEI-195): Build Model - Controller starting:  
+      1 INFO (TEI-196): Build Model - Hierarchical Model Build starting:  
+      1 INFO (TEI-197): Build Model - Hierarchical Model Build completed.  
+      1 INFO (TEI-198): Build Model - Flat Model Build starting:  
+      1 INFO (TEI-199): Build Model - Flat Model Build completed.   
+      1 INFO (TEI-200): Build Model - Controller completed.  
+      1 INFO (TLM-055): Design Summary
+
+  WARNING Messages...
+      2 WARNING (TEI-110): Pin 'P01DATA' of 'cell LATCH_udp_2' has no external net connection for any usage in the design. Cell contents file: '/home/tools/cadence/gpdk/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing/../verilog//slow_vdd1v0_basicCells.v'.   
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------

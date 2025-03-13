@@ -18,7 +18,7 @@ export HDL_NAME=${DESIGNS}
 
 
 # Para executar o GENUS
-# cd ${PROJECT_DIR}/backend/synthesis/work/
+cd ${PROJECT_DIR}/backend/synthesis/work/
 # apenas o programa
 #genus -abort_on_error -lic_startup Genus_Synthesis -lic_startup_options Genus_Physical_Opt -log genus -overwrite
 # programar e carregar script para síntese automatizada

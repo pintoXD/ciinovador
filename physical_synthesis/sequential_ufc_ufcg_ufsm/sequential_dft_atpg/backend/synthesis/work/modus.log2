@@ -7,9 +7,11 @@ of Cadence Design Systems, Inc. in the United States and other countries.
 Type 'help legal_notices' for third party license notices. 
 Version : 22.12-s028_1, built Jul 11 2023 (linux26_64)
 Options : -file /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/sequential_atpg.tcl
-Date    : Thu, March 13 17:43:07 2025
+Date    : Thu, March 13 18:39:23 2025
 Host    : cinova05.lesc.ufc.br (x86_64 Linux 4.18.0-553.36.1.el8_10.x86_64) (14*13th Gen Intel(R) Core(TM) i5-13500 24576KB)
 OS      : Rocky Linux release 8.10 (Green Obsidian)
+
+INFO (TUI-300): Detected the presence of Modus database in present working directory. The 'workdir' root attribute is set to '/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work'. [end TUI_300]
 #@ Processing -files option
 @modus:root:/ 1>  source /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/sequential_atpg.tcl
 #@ Begin verbose source /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/sequential_atpg.tcl
@@ -48,21 +50,23 @@ OS      : Rocky Linux release 8.10 (Green Obsidian)
 /home/tools/cadence/gpdk/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing
 @file(/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/sequential_atpg.tcl) 61: set LIB_SRC ${LIB_DIR}/../verilog/
 @file(/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/sequential_atpg.tcl) 67: build_model -workdir ${PROJECT_DIR}/backend/synthesis/work \
-            -designsource ${PROJECT_DIR}/backend/synthesis/deliverables/${HDL_NAME}.v \
+            -designsource ${PROJECT_DIR}/backend/synthesis/work/test_scripts/${HDL_NAME}.test_netlist.v \
             -techlib ${LIB_SRC}/slow_vdd1v0_basicCells.v -designtop ${HDL_NAME}
+INFO (TUI-772): The command 'build_model' will release the currently acquired resources. [end TUI_772] 
+
 Starting Command: build_model 
 
-INFO (TDA-015): Log File: /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/testresults/logs/log_build_model_031325174308-740094000 [end TDA_015]
+INFO (TDA-015): Log File: /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/testresults/logs/log_build_model_031325183924-138186000 [end TDA_015]
 
 INFO (TEI-195): Build Model - Controller starting: [end TEI_195] 
 
 
-Search Order  1:  "/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/deliverables/sequential.v"
+Search Order  1:  "/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/test_scripts/sequential.test_netlist.v"
 Search Order  2:  "/home/tools/cadence/gpdk/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing/../verilog//slow_vdd1v0_basicCells.v"
 
 
 
-Reading Verilog data from /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/deliverables/sequential.v
+Reading Verilog data from /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/test_scripts/sequential.test_netlist.v
 
 Verilog Parser complete - 1 modules, 0 gates, 0 user defined primitives.
 
@@ -142,10 +146,10 @@ INFO (TEI-199): Build Model - Flat Model Build completed.  [end TEI_199]
 
 INFO (TDA-001): Maximum Memory used during the run and Cumulative Time in hours:minutes:seconds:
 
-                  Total Memory =          101,867,264  bytes
+                  Total Memory =          101,884,528  bytes
 
-                      CPU Time =    0:00:00.23
-                  Elapsed Time =    0:00:00.55                    [end TDA_001]
+                      CPU Time =    0:00:00.27
+                  Elapsed Time =    0:00:00.60                    [end TDA_001]
 
 
 
@@ -176,26 +180,76 @@ INFO (TEI-200): Build Model - Controller completed. [end TEI_200]
 
 -------------------------------------------------------------------------------
 @file(/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/sequential_atpg.tcl) 74: build_testmode -workdir ${PROJECT_DIR}/backend/synthesis/work \
-               -testmode FULLSCAN -assignfile ${HDL_NAME}.FULLSCAN.pinassign
+               -testmode FULLSCAN \
+               -assignfile ${PROJECT_DIR}/backend/synthesis/work/test_scripts/${HDL_NAME}.FULLSCAN.pinassign
 Starting Command: build_testmode 
 
-INFO (TDA-015): Log File: /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/testresults/logs/log_build_testmode_FULLSCAN_031325174312-719019000 [end TDA_015]
+INFO (TDA-015): Log File: /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/testresults/logs/log_build_testmode_FULLSCAN_031325183928-204756000 [end TDA_015]
 
 MODEDEFPATH set to:  /home/tools/cadence/installs/MODUS221/tools.lnx86/tb/defaults/rules/modedef 
 TDRPATH set to: /home/tools/cadence/installs/MODUS221/tools.lnx86/tb/defaults/rules/tdr 
 
 Modus Build Test Mode(s) beginning...
-ERROR (TTM-003): Unable to resolve file sequential.FULLSCAN.pinassign from 'ASSIGNFILE' option.  [end TTM_003] 
 
-ERROR (TTM-801): Test mode FULLSCAN has NOT been created -
-           see preceding message(s) for details. [end TTM_801] 
+   TDR NAME      =  dummy.tdr 
+
+   SCAN_TYPE     =  GSD 
+   BOUNDARY      =  NONE 
+   IN            =  PI 
+   OUT           =  PO 
+
+INFO (TTM-391): A default modeinit sequence will be generated.   [end TTM_391] 
+INFO (TTM-387): A default scanop sequence will be generated.   [end TTM_387] 
+INFO (THM-814): Testmode contains 100.00% active logic,  0.00% inactive logic and  0.00% constraint logic.   [end THM_814] 
+INFO (TTM-357): There are 1 scan chains which are controllable and observable.   [end TTM_357] 
+
+There are no PPIs for Test Mode:  FULLSCAN
+
+Information for Test Mode:  FULLSCAN
+-------------------------
+
+         Scan Type = GSD
 
 
-Modus Build Test Mode(s) completed. Highest severity is (ERROR).
+ Latch Summary for Test Mode:  FULLSCAN
+ Latch Type                #Active   #Inactive       Total
+ ---------------------   ---------   ---------   ---------
+ Test Constraint (TC)            0           0           0 
+ Scan Enable     (SE)            0           0           0 
+ Fixed Value     (FV)            0           0           0 
+ Floating                        0           0           0 
+ Finite State    (FSM)           0           0           0 
+
+INFO (TTM-800): build_testmode has created mode FULLSCAN. [end TTM_800] 
+
+Test Function Pin Information for Test Mode:  FULLSCAN
+-------------------------------------------
+
+          1  SC    (System  Clock)             Pins
+          0  PC    (P Shift Clock)             Pins
+          1  EC    (E Shift Clock)             Pins
+
+          0  OSC   (Oscillator)                Pins
+
+          0  TI    (Test Inhibit)              Pins
+          1  SE    (Scan Enable)               Pins
+          0  CI    (Clock Isolation)           Pins
+          0  OI    (Output Inhibit)            Pins
+
+          1  SI    (Scan Input)                Pins
+          1  SO    (Scan Output)               Pins
+
+  Pin Index    Type Test Function                         Pin Name / Net Name
+  ---------    ---- ----------------------------------    -------------------
+          4      PI  -EC  -SC                             clk / clk
+          3      PI  +SE                                  SE / SE
+          6      PI   SI                                  scan_in / scan_in
+          9      PO   SO                                  scan_out / scan_out
+
 
             Cumulative Time in hours:minutes:seconds:
-                   CPU Time =   0:00:00.01
-               Elapsed Time =   0:00:00.01
+                   CPU Time =   0:00:00.09
+               Elapsed Time =   0:00:02.64
 
 
 
@@ -206,13 +260,16 @@ Modus Build Test Mode(s) completed. Highest severity is (ERROR).
  Count  Number             First Instance of Message Text
 ------- ------             ------------------------------
 
-  ERROR Messages...
-      1 ERROR (TTM-003): Unable to resolve file sequential.FULLSCAN.pinassign from 'ASSIGNFILE' option.   
-      1 ERROR (TTM-801): Test mode FULLSCAN has NOT been created -
+  INFO Messages...
+      1 INFO (THM-814): Testmode contains 100.00% active logic,  0.00% inactive logic and  0.00% constraint logic.    
+      1 INFO (TTM-357): There are 1 scan chains which are controllable and observable.    
+      1 INFO (TTM-387): A default scanop sequence will be generated.    
+      1 INFO (TTM-391): A default modeinit sequence will be generated.    
+      1 INFO (TTM-800): build_testmode has created mode FULLSCAN.  
 
  For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
 
 -------------------------------------------------------------------------------
-File '/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/sequential_atpg.tcl' line 74: errors out.
 #@ End verbose source /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/sequential_atpg.tcl
+0
 @modus:root:/ 2> exit

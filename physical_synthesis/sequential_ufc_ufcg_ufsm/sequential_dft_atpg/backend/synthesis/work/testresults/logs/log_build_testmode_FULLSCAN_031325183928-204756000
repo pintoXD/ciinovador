@@ -1,3 +1,4 @@
+Starting Command: build_testmode 
 
 INFO (TDA-005): Command Line Invocation: 
             build_testmode -assignfile /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/test_scripts/sequential.FULLSCAN.pinassign -testmode FULLSCAN -workdir /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work  [end TDA_005]
@@ -88,3 +89,21 @@ Test Function Pin Information for Test Mode:  FULLSCAN
                Elapsed Time =   0:00:02.64
 
 
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+      1 INFO (THM-814): Testmode contains 100.00% active logic,  0.00% inactive logic and  0.00% constraint logic.    
+      1 INFO (TTM-357): There are 1 scan chains which are controllable and observable.    
+      1 INFO (TTM-387): A default scanop sequence will be generated.    
+      1 INFO (TTM-391): A default modeinit sequence will be generated.    
+      1 INFO (TTM-800): build_testmode has created mode FULLSCAN.  
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------
