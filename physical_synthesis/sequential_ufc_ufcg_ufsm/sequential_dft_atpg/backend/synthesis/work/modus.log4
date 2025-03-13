@@ -946,3 +946,4 @@ INFO (TVE-002): Verilog write vectors has completed.   [end TVE_002]
 -------------------------------------------------------------------------------
 #@ End verbose source /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/sequential_atpg.tcl
 0
+@modus:root:/ 2> exit
