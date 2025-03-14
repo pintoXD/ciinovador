@@ -1,0 +1,51 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v21.15-s110_1, built Fri Sep 23 13:08:12 PDT 2022
+Options:	
+Date:		Fri Mar 14 13:32:52 2025
+Host:		cinova05.lesc.ufc.br (x86_64 w/Linux 4.18.0-553.36.1.el8_10.x86_64) (14cores*20cpus*13th Gen Intel(R) Core(TM) i5-13500 24576KB)
+OS:		Rocky Linux release 8.10 (Green Obsidian)
+
+License:
+		[13:32:54.201617] Configured Lic search path (21.01-s002): 5280@192.168.0.10
+
+		invs	Innovus Implementation System	21.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+Change the soft stacksize limit to 0.2%RAM (63 mbytes). Set global soft_stack_size_limit to change the value.
+
+**INFO:  MMMC transition support version v31-84 
+
+<CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+<CMD> suppressMessage ENCEXT-2799
+<CMD> getVersion
+[INFO] Loading PVS 23.11 fill procedures
+<CMD> win
+**ERROR: Design must be in memory before running "write_dft_atpg"
+Design must be in memory before running "write_dft_atpg"
+<CMD> help write_dft_atpg
+No help is available for 'write_dft_atpg'.
+      You might have typed the command name incorrectly
+      (command names are case sensitive), or this is an
+      unknown or unsupported command.
+
+<CMD> help write_scandef
+No help is available for 'write_scandef'.
+      You might have typed the command name incorrectly
+      (command names are case sensitive), or this is an
+      unknown or unsupported command.
+
+<CMD> help write_hdl
+No help is available for 'write_hdl'.
+      You might have typed the command name incorrectly
+      (command names are case sensitive), or this is an
+      unknown or unsupported command.
+
+invalid command name "write_hdl"
+invalid command name "quit"
+
+*** Memory Usage v#1 (Current mem = 1193.043M, initial mem = 491.887M) ***
+*** Message Summary: 0 warning(s), 0 error(s)
+
+--- Ending "Innovus" (totcpu=0:00:19.6, real=0:03:28, mem=1193.0M) ---

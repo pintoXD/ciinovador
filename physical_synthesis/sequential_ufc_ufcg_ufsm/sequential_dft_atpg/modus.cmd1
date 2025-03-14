@@ -1,5 +1,0 @@
-# Cadence Modus
-#   Cadence(R) Modus(TM) DFT Software Solution, Version 22.12-s028_1, built Jul 11 2023 (linux26_64)
-#   Date: Thursday, March 13, 2025
-source /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/scripts/sequential_atpg.tcl
-exit

@@ -1,0 +1,207 @@
+
+ 
+Copyright (C) 2002-2022 Cadence Design Systems Inc. All Rights Reserved. 
+Cadence and the Cadence logo are registered trademarks and Modus is a trademark 
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+Type 'help legal_notices' for third party license notices. 
+Version : 22.12-s028_1, built Jul 11 2023 (linux26_64)
+Options : -file runmodus.atpg.tcl
+Date    : Fri, March 14 12:16:18 2025
+Host    : cinova05.lesc.ufc.br (x86_64 Linux 4.18.0-553.36.1.el8_10.x86_64) (14*13th Gen Intel(R) Core(TM) i5-13500 24576KB)
+OS      : Rocky Linux release 8.10 (Green Obsidian)
+#@ Processing -files option
+@modus:root:/ 1>  source runmodus.atpg.tcl
+#@ Begin verbose source runmodus.atpg.tcl
+@file(runmodus.atpg.tcl) 13: set_db workdir ./test_scripts;
+@file(runmodus.atpg.tcl) 14: set   WORKDIR [get_db workdir]
+@file(runmodus.atpg.tcl) 17: set_option stdout     summary;                                # Only print a summary for each command to the terminal
+@file(runmodus.atpg.tcl) 19: set ::env(CDS_LIC_REPORT) yes
+@file(runmodus.atpg.tcl) 21: source  $::env(Install_Dir)/bin/64bit/test_checks.tcl;    # Load test_checks.tcl from Modus installation - provides check_log below
+#@ Begin verbose source /home/tools/cadence/installs/MODUS221/tools.lnx86/tb/bin/64bit/test_checks.tcl
+@file(/home/tools/cadence/installs/MODUS221/tools.lnx86/tb/bin/64bit/test_checks.tcl) 4: proc check_log {infile}  {
+
+    global STOP_ON_MSG_SEV
+    global LOGDIR
+
+    set SEPARATOR "-------------------------------------------------------------------------------"
+
+    puts $SEPARATOR
+
+    if { [info exists LOGDIR] } {
+       # Get LOGDIR from global variable - Do Nothing
+    } else {
+       # Default value
+       set LOGDIR [get_db workdir]/testresults/logs
+    }
+
+    if { [info exists STOP_ON_MSG_SEV] } {
+       # Get STOP_ON_MSG_SEV from global variable
+
+       # Verify set to valid value
+        if { $STOP_ON_MSG_SEV eq "ERROR" } {
+           # Continue Valid
+       } elseif { $STOP_ON_MSG_SEV eq "WARNING_SEVERE" } {
+          # Continue Valid
+       } elseif { $STOP_ON_MSG_SEV eq "WARNING" } {
+          # Continue Valid
+       } else {
+          puts "ERROR: Global variable STOP_ON_MSG_SEV set to invalid value $STOP_ON_MSG_SEV. Valid values are WARNING, WARNING_SEVERE, or ERROR."
+          exit -1
+       }
+
+    } else {
+       # Do Nothing if global variable not set
+       puts "WARNING: check_log proc is ignored. STOP_ON_MSG_SEV not set. "
+       return 0
+    }
+
+
+   puts "Checking Log: $infile"
+
+   if [ file exists $LOGDIR/$infile ] {
+      #---------------------------------------------------
+      # tac   - Print file in reverse to allow only looking at last log if appended
+      # sed   - Stop printing when (TDA-009) found. Used to identify start of last log if logs are appended
+      # egrep - Lines conntaining "ERROR (???-???): ?..."
+      #
+      # egrep/grep uses its exit status to indicate presence/absence of a match. If no matches the exit status is 1
+      # Tcl's exec treats any non-zero exist status as an execption.
+      # Therfore a catch is used to store the results in a variable.
+      #
+      # Do not look for "ERROR" at start of line because "-log summary" includes only a summary which includes the number of messages first.
+      # The space detailed characters in the search string are intended to prevent detecting design nodes containing the string.
+      #---------------------------------------------------
+
+      # Always check for Errors (always stop on errors)
+      # matchStatus = 0 if command succeeded = found a match for egrep
+      set matchStatus [catch {exec tac $LOGDIR/$infile | sed -e {/(TDA-009):/q} | egrep {ERROR \([A-Z]+-[0-9]+\): .+}}]
+      if {$matchStatus == 0} {
+         puts "ERROR found. STOP_ON_MSG_SEVERITY exceeded. Processing Terminated."
+         exit -1
+      }
+      #--------------------------------------------------
+      # Check for Warning Severe if set to WARNING_SEVERE or WARNING (otherwise don't stop)
+      if {($STOP_ON_MSG_SEV eq "WARNING_SEVERE") || ($STOP_ON_MSG_SEV eq "WARNING")} {
+         set matchStatus [catch {exec tac $LOGDIR/$infile | sed -e {/(TDA-009):/q} | egrep {WARNING \([A-Z]+-[0-9]+\): \[Severe\] .+}}]
+         if {$matchStatus == 0} {
+            puts "WARNING \[Severe\] found. STOP_ON_MSG_SEVERITY exceeded. Processing Terminated."
+            exit -1
+         }
+      }
+      #---------------------------------------------------
+      # Check for Warning if set to Warning (otherwise don't stop)
+      if {$STOP_ON_MSG_SEV eq "WARNING"} {
+         set matchStatus [catch {exec tac $LOGDIR/$infile | sed -e {/(TDA-009):/q} | egrep {WARNING \([A-Z]+-[0-9]+\): .+}}]
+         if {$matchStatus == 0} {
+            puts "WARNING found. STOP_ON_MSG_SEVERITY exceeded. Processing Terminated."
+            exit -1
+         }
+      }
+      #---------------------------------------------------
+      # STOP_ON_MSG_SEV not exceeded, continue processing
+      puts "STOP_ON_MSG_SEVERITY not exceeded. Processing Continues."
+      puts $SEPARATOR
+      return 0
+
+   } else {
+       puts "ERROR: check_log unable to find specified log at $LOGDIR/$infile"
+       exit -1
+   }
+
+}
+#@ End verbose source /home/tools/cadence/installs/MODUS221/tools.lnx86/tb/bin/64bit/test_checks.tcl
+@file(runmodus.atpg.tcl) 22: set STOP_ON_MSG_SEV ERROR;                                # Messagee severity for check_log to stop at (ERROR, WARNING_SEVERE, WARNING)
+@file(runmodus.atpg.tcl) 23: set LOGDIR          $WORKDIR/testresults/logs;            # Location of logs for check_log
+@file(runmodus.atpg.tcl) 25: file delete -force $WORKDIR/tbdata;                       # Delete Test Database
+@file(runmodus.atpg.tcl) 26: file delete -force $WORKDIR/testresults;                  # Delete Test Output Files/Logs
+@file(runmodus.atpg.tcl) 33: build_model \
+    -cell	 sequential \
+    -techlib	 /home/tools/cadence/gpdk/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing/../verilog//slow_vdd1v0_basicCells.v \
+    -designsource	 $WORKDIR/sequential.test_netlist.v \
+    -allowmissingmodules	 no \
+    -messagecounteach	 100 \
+
+check_log log_build_model
+INFO (TUI-772): The command 'build_model' will release the currently acquired resources. [end TUI_772] 
+
+Starting Command: build_model 
+INFO (TDA-014): Cadence(R) Modus(TM) DFT Software Solution, Version 22.12-s028_1, built Jul 11 2023 (linux26_64) [end TDA_014]
+INFO (TDA-009): Options/Values information.
+            (options marked with '*' have program generated values,
+             options marked with '+' were specified to default.)
+
+            -WORKDIR /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/test_scripts/test_scripts
+
+            -designtop sequential
+            -TECHLIB /home/tools/cadence/gpdk/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing/../verilog//slow_vdd1v0_basicCells.v
+            -LOGFILE /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/test_scripts/test_scripts/testresults/logs/log_build_model_031425121619-847121000
+            -STDOUT summary
+            -messagecounteach 100
+            -DESIGNSOURCE /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/test_scripts/test_scripts/sequential.test_netlist.v
+          + -allowmissingmodules no
+[end TDA_009]
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+      1 INFO (TEI-195): Build Model - Controller starting:  
+      1 INFO (TEI-200): Build Model - Controller completed.  
+      1 INFO (TFW-117): Modus checked out a modus_atpg license.   
+      1 INFO (TFW-119): Modus checked in a modus_atpg license.   
+
+  ERROR Messages...
+      1 ERROR (TEI-023): Build Model: unable to read file '/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/test_scripts/test_scripts/sequential.test_netlist.v'. Specify a valid file or path name with proper permissions.   
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------
+File 'runmodus.atpg.tcl' line 33: errors out.
+#@ End verbose source runmodus.atpg.tcl
+ ==> build_model  -cell sequential  -techlib  /home/tools/cadence/gpdk/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing/../verilog//slow_vdd1v0_basicCells.v  -designsource  $WORKDIR/sequential.test_netlist.v  -allowmissingmodules  no  -messagecounteach 100  
+
+INFO (TUI-772): The command 'build_model' will release the currently acquired resources. [end TUI_772] 
+
+Starting Command: build_model 
+INFO (TDA-014): Cadence(R) Modus(TM) DFT Software Solution, Version 22.12-s028_1, built Jul 11 2023 (linux26_64) [end TDA_014]
+INFO (TDA-009): Options/Values information.
+            (options marked with '*' have program generated values,
+             options marked with '+' were specified to default.)
+
+            -WORKDIR /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/test_scripts/test_scripts
+
+            -designtop sequential
+            -TECHLIB /home/tools/cadence/gpdk/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing/../verilog//slow_vdd1v0_basicCells.v
+            -LOGFILE /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/test_scripts/test_scripts/testresults/logs/log_build_model_031425121647-376710000
+            -STDOUT summary
+            -messagecounteach 100
+            -DESIGNSOURCE /home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/test_scripts/test_scripts/sequential.test_netlist.v
+          + -allowmissingmodules no
+[end TDA_009]
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+      1 INFO (TEI-195): Build Model - Controller starting:  
+      1 INFO (TEI-200): Build Model - Controller completed.  
+      1 INFO (TFW-117): Modus checked out a modus_atpg license.   
+      1 INFO (TFW-119): Modus checked in a modus_atpg license.   
+
+  ERROR Messages...
+      1 ERROR (TEI-023): Build Model: unable to read file '/home/cinovador/Documents/course_files/physical_synthesis/sequential_ufc_ufcg_ufsm/sequential_dft_atpg/backend/synthesis/work/test_scripts/test_scripts/sequential.test_netlist.v'. Specify a valid file or path name with proper permissions.   
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------
+5
+@modus:root:/ 3> exit
