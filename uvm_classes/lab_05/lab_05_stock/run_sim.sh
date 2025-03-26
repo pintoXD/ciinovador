@@ -2,8 +2,8 @@ irun -access +r -uvm +uvm_set_config_int="*",recording_detail,1 -coverage all -c
 
 sleep 1
 
-# simvision -NOCOPYRIGHT -input simvision.svcf
+simvision -NOCOPYRIGHT -input simvision.svcf
 
 sleep 1
 
-imc -load cov_work/scope/test
+# imc -load cov_work/scope/test

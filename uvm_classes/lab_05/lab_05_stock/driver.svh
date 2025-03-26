@@ -41,18 +41,15 @@ class driver_master extends uvm_driver #(a_tr);
           seq_item_port.get_next_item(tr_sequencer); // get transaction
 
           // wiggle interface signals
-          // @(posedge a_vi.clock);
-          @(negedge a_vi.clock);
+          @(posedge a_vi.clock);
           a_vi.valid <= 1;
           a_vi.a <= tr_sequencer.a;
 
           seq_item_port.item_done(); // notify sequencer that transaction is completed
 
-          // @(posedge a_vi.clock);
-          @(negedge a_vi.clock);
+          @(posedge a_vi.clock);
           a_vi.valid <= 0;
-          // @(posedge a_vi.clock);
-          @(negedge a_vi.clock);
+          @(posedge a_vi.clock);
 
         end
    endtask

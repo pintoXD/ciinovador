@@ -8,7 +8,7 @@ module dut (a_if.inp in,
      end
      else if(in.valid) begin
         out.valid <= 1;
-        out.a <= in.a + 300;
+        out.a <= in.a + 100;
      end
      else out.valid <= 0;
 

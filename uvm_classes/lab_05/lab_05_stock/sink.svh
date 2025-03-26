@@ -12,11 +12,7 @@ class sink extends uvm_component;
 
    task put (a_tr tr);
       // Here, we have received the transaction from source
-      string msg;
-      msg = $sformatf("Received transaction with value: %0d", tr.a); // Format the message
-      // `uvm_info("SINK", msg, UVM_MEDIUM); // Use the formatted string in the UVM info macro
-
-      // `uvm_info("SINK", "Transaction Received",  UVM_MEDIUM)
+      `uvm_info("SINK                          ", "Transaction received\n", UVM_MEDIUM)
       #10; // let the transaction take some time do be completed
       `bvm_end_tr(tr)
    endtask

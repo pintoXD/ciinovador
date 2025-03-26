@@ -1,0 +1,139 @@
+xrun(64): 24.09-s001: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	24.09-s001: Started on Mar 21, 2025 at 15:28:32 -03
+irun
+	-access +r
+	-uvm
+	+uvm_set_config_int=*,recording_detail,1
+	-coverage all
+	-covoverwrite
+	-DSYSTEM_CLOCK_UNITS_PER_SECOND=100 ../bvm/system_clock.c
+	+incdir+../bvm
+	../bvm/bvm_pkg.sv
+	dut.sv
+	interface.sv
+	test_pkg.sv
+	top.sv
+	+UVM_VERBOSITY=HIGH
+
+   User defined plus("+") options:
+	+uvm_set_config_int=*,recording_detail,1
+	+UVM_VERBOSITY=HIGH
+
+xrun: *W,NCEXDEP: Executable (irun) is deprecated. Use (xrun) instead.
+Loading snapshot worklib.top:sv .................... Done
+SVSEED default: 1
+xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
+xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/methodology/UVM/CDNS-1.1d/additions/sv/files/tcl/uvm_sim.tcl
+xcelium> run
+----------------------------------------------------------------
+CDNS-UVM-1.1d (24.09-s001)
+(C) 2007-2013 Mentor Graphics Corporation
+(C) 2007-2013 Cadence Design Systems, Inc.
+(C) 2006-2013 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test test...
+UVM_INFO @ 0: reporter [UVM_CMDLINE_PROC] Applying config setting from the command line: +uvm_set_config_int=*,recording_detail,1
+SDI/Verilog Transaction Recording Facility Version 24.09-s001
+UVM_INFO ../bvm/bvm_cover.svh(60) @ 35: uvm_test_top.env_h.coverage_in_h [coverage_in] Coverage:  0%       
+UVM_INFO sink.svh(15) @ 55: uvm_test_top.env_h.sink_h [SINK                          ] Transaction received
+
+UVM_INFO sink.svh(15) @ 85: uvm_test_top.env_h.sink_h [SINK                          ] Transaction received
+
+UVM_INFO sink.svh(15) @ 115: uvm_test_top.env_h.sink_h [SINK                          ] Transaction received
+
+UVM_INFO sink.svh(15) @ 145: uvm_test_top.env_h.sink_h [SINK                          ] Transaction received
+
+UVM_INFO sink.svh(15) @ 175: uvm_test_top.env_h.sink_h [SINK                          ] Transaction received
+
+UVM_INFO sink.svh(15) @ 205: uvm_test_top.env_h.sink_h [SINK                          ] Transaction received
+
+UVM_INFO sink.svh(15) @ 235: uvm_test_top.env_h.sink_h [SINK                          ] Transaction received
+
+UVM_INFO sink.svh(15) @ 265: uvm_test_top.env_h.sink_h [SINK                          ] Transaction received
+
+UVM_INFO sink.svh(15) @ 295: uvm_test_top.env_h.sink_h [SINK                          ] Transaction received
+
+UVM_INFO sink.svh(15) @ 325: uvm_test_top.env_h.sink_h [SINK                          ] Transaction received
+
+UVM_INFO sink.svh(15) @ 355: uvm_test_top.env_h.sink_h [SINK                          ] Transaction received
+
+UVM_INFO sink.svh(15) @ 385: uvm_test_top.env_h.sink_h [SINK                          ] Transaction received
+
+UVM_INFO sink.svh(15) @ 415: uvm_test_top.env_h.sink_h [SINK                          ] Transaction received
+
+UVM_INFO sink.svh(15) @ 445: uvm_test_top.env_h.sink_h [SINK                          ] Transaction received
+
+UVM_INFO sink.svh(15) @ 475: uvm_test_top.env_h.sink_h [SINK                          ] Transaction received
+
+UVM_INFO sink.svh(15) @ 505: uvm_test_top.env_h.sink_h [SINK                          ] Transaction received
+
+UVM_INFO sink.svh(15) @ 535: uvm_test_top.env_h.sink_h [SINK                          ] Transaction received
+
+UVM_INFO sink.svh(15) @ 565: uvm_test_top.env_h.sink_h [SINK                          ] Transaction received
+
+UVM_INFO sink.svh(15) @ 595: uvm_test_top.env_h.sink_h [SINK                          ] Transaction received
+
+UVM_INFO sink.svh(15) @ 625: uvm_test_top.env_h.sink_h [SINK                          ] Transaction received
+
+UVM_INFO sink.svh(15) @ 655: uvm_test_top.env_h.sink_h [SINK                          ] Transaction received
+
+UVM_INFO sink.svh(15) @ 685: uvm_test_top.env_h.sink_h [SINK                          ] Transaction received
+
+UVM_INFO sink.svh(15) @ 715: uvm_test_top.env_h.sink_h [SINK                          ] Transaction received
+
+UVM_INFO ../bvm/bvm_cover.svh(60) @ 725: uvm_test_top.env_h.coverage_in_h [coverage_in] Coverage: 100%       
+UVM_INFO /home/tools/cadence/installs/XCELIUM2209/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_objection.svh(1268) @ 725: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO ../bvm/bvm_cover.svh(82) @ 725: uvm_test_top.env_h.coverage_in_h [coverage_in] Coverage: 100%
+
+--- UVM Report catcher Summary ---
+
+
+Number of demoted UVM_FATAL reports  :    0
+Number of demoted UVM_ERROR reports  :    0
+Number of demoted UVM_WARNING reports:    0
+Number of caught UVM_FATAL reports   :    0
+Number of caught UVM_ERROR reports   :    0
+Number of caught UVM_WARNING reports :    0
+
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :   29
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[RNTST]     1
+[SINK                          ]    23
+[TEST_DONE]     1
+[UVM_CMDLINE_PROC]     1
+[coverage_in]     3
+Simulation complete via $finish(1) at time 725 NS + 45
+/home/tools/cadence/installs/XCELIUM2209/tools/methodology/UVM/CDNS-1.1d/sv/src/base/uvm_root.svh:457     $finish;
+xcelium> exit
+xmsim: *N,COVCGN: Coverage configuration file command "set_covergroup -new_instance_reporting" can be specified to improve the scoping and naming of covergroup instances. It may be noted that subsequent merging of a coverage database saved with this command and a coverage database saved without this command is not allowed.
+
+coverage setup:
+  workdir  :  ./cov_work
+  dutinst  :  top(top)
+  scope    :  scope
+  testname :  test
+
+coverage files:
+  model(design data) :  ./cov_work/scope/icc_084d708d_79f8523e.ucm (reused)
+  data               :  ./cov_work/scope/test/icc_084d708d_79f8523e.ucd
+TOOL:	xrun(64)	24.09-s001: Exiting on Mar 21, 2025 at 15:28:33 -03  (total: 00:00:01)
