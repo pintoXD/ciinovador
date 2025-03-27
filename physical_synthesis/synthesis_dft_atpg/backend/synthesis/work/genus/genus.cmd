@@ -6,3 +6,4 @@
 
 source /home/cinovador/Documents/course_files/physical_synthesis/synthesis_dft_atpg/backend/synthesis/scripts/multiplier32FP.tcl
 pwd
+exit

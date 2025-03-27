@@ -2877,3 +2877,5 @@ To simulate the ATPG generated test vectors in FULLSCAN mode:
 WARNING: This version of the tool is 1314 days old.
 @genus:design:multiplier32FP 2> pwd
 /home/cinovador/Documents/course_files/physical_synthesis/synthesis_dft_atpg/backend/synthesis/work
+@genus:design:multiplier32FP 3> exit
+Normal exit.

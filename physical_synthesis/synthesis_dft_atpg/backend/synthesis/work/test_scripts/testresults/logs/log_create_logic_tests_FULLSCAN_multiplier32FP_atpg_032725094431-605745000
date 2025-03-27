@@ -1,0 +1,152 @@
+Starting Command: create_logic_tests 
+
+INFO (TDA-005): Command Line Invocation: 
+            create_logic_tests -testmode FULLSCAN -experiment multiplier32FP_atpg -workdir /home/cinovador/Documents/course_files/physical_synthesis/synthesis_dft_atpg/backend/synthesis/work/test_scripts -stdout summary  [end TDA_005]
+
+INFO (TDA-014): Cadence(R) Modus(TM) DFT Software Solution, Version 22.12-s028_1, built Jul 11 2023 (linux26_64) [end TDA_014]
+
+INFO (TDA-015): Log File: /home/cinovador/Documents/course_files/physical_synthesis/synthesis_dft_atpg/backend/synthesis/work/test_scripts/testresults/logs/log_create_logic_tests_FULLSCAN_multiplier32FP_atpg_032725094431-605745000 [end TDA_015]
+
+INFO (TDA-007): Job Information:
+            Date Started: Thursday Mar 27 09:44:31 2025  -03
+            Host machine is cinova05.lesc.ufc.br, x86_64 running Linux 4.18.0-553.44.1.el8_10.x86_64.
+            This job is process number 395977.
+[end TDA_007]
+
+INFO (TDA-009): Options/Values information.
+            (options marked with '*' have program generated values,
+             options marked with '+' were specified to default.)
+
+            -WORKDIR /home/cinovador/Documents/course_files/physical_synthesis/synthesis_dft_atpg/backend/synthesis/work/test_scripts
+            -TESTMODE FULLSCAN
+            -EXPERIMENT multiplier32FP_atpg
+
+            -LOGFILE /home/cinovador/Documents/course_files/physical_synthesis/synthesis_dft_atpg/backend/synthesis/work/test_scripts/testresults/logs/log_create_logic_tests_FULLSCAN_multiplier32FP_atpg_032725094431-605745000
+            -STDOUT summary
+[end TDA_009]
+
+
+INFO (TFW-117): Modus checked out a modus_atpg license.  [end TFW_117] 
+****************************************************************************************************
+Coverage Definitions:
+ #Faults  : Number of Active Faults (observable).
+ #Tested  : Number of Active Faults marked tested.
+ #Possibly: Number of Active Faults marked possibly tested
+            (good value is 0 or 1; fault value is X).
+ #Redund  : Number of Active Faults untestable due to redundancy.
+ #Untested: Number of Active Faults untested.
+ %TCov  (%Test Coverage)                      : #Tested / #Faults
+ %ATCov (%Adjusted TCov)                      : #Tested / (#Faults-#Redund)
+****************************************************************************************************
+****************************************************************************************************
+                           Testmode Statistics: FULLSCAN
+
+                           #Faults      #Tested    #Possibly      #Redund    #Untested  %TCov %ATCov
+Total Static                 11062            0            0            0        11062   0.00   0.00
+
+                            Global Statistics
+
+                           #Faults      #Tested    #Possibly      #Redund    #Untested  %TCov %ATCov
+Total Static                 11062            0            0            0        11062   0.00   0.00
+****************************************************************************************************
+
+*************************************************************************************************************
+INFO (TTC-110): Starting Scan Test generation                                                   [end TTC_110] 
+
+INFO (TDA-220):   --- Tests ---   Faults     ---- ATCov ----   -- Faults --   - Elapsed Time -  [end TDA_220] 
+INFO (TDA-220):    Sim.    Eff.  Detected    Tmode    Global     Untested                       [end TDA_220] 
+INFO (TDA-220):      1       1        328     2.97%    2.97%        10734           00:02.01    [end TDA_220] 
+INFO (TTC-110): Ending Scan Test generation                                                     [end TTC_110] 
+*************************************************************************************************************
+
+*************************************************************************************************************
+INFO (TTC-110): Starting Reset/Set Test Generation                                              [end TTC_110] 
+
+INFO (TDA-220):   --- Tests ---   Faults     ---- ATCov ----   -- Faults --   - Elapsed Time -  [end TDA_220] 
+INFO (TDA-220):    Sim.    Eff.  Detected    Tmode    Global     Untested                       [end TDA_220] 
+INFO (TDA-220):      1       1         41     3.34%    3.34%        10693           00:02.03    [end TDA_220] 
+INFO (TTC-110): Ending Reset/Set Test Generation                                                [end TTC_110] 
+*************************************************************************************************************
+
+*************************************************************************************************************
+INFO (TTC-110): Starting Static Logic Test generation                                           [end TTC_110] 
+
+INFO (TDA-220):   --- Tests ---   Faults     ---- ATCov ----   -- Faults --   - Elapsed Time -  [end TDA_220] 
+INFO (TDA-220):    Sim.    Eff.  Detected    Tmode    Global     Untested                       [end TDA_220] 
+INFO (TDA-220):     16      16       7971    75.39%   75.39%         2653           00:19.10    [end TDA_220] 
+INFO (TDA-220):     20      20        292    78.03%   78.03%         2361           00:29.35    [end TDA_220] 
+INFO (TDA-220):     22      20          0    78.03%   78.03%         2361           00:29.35    [end TDA_220] 
+INFO (TDA-220):     38      36        942    86.55%   86.55%         1417           00:29.35    [end TDA_220] 
+INFO (TDA-220):     54      52        543    91.46%   91.46%          874           00:29.36    [end TDA_220] 
+INFO (TDA-220):     70      67        252    93.74%   93.74%          622           00:29.36    [end TDA_220] 
+INFO (TDA-220):     86      83        118    94.80%   94.80%          502           00:29.36    [end TDA_220] 
+INFO (TDA-220):    102      99         65    95.39%   95.39%          437           00:29.37    [end TDA_220] 
+INFO (TDA-220):    118     115         83    96.14%   96.14%          354           00:29.37    [end TDA_220] 
+INFO (TDA-220):    134     130         18    96.30%   96.30%          336           00:29.37    [end TDA_220] 
+INFO (TDA-220):    150     146         32    96.59%   96.59%          305           00:29.37    [end TDA_220] 
+INFO (TDA-220):    166     162         36    96.92%   96.92%          268           00:29.37    [end TDA_220] 
+INFO (TDA-220):    182     176         36    97.24%   97.24%          232           00:29.37    [end TDA_220] 
+INFO (TDA-220):    198     192         25    97.47%   97.47%          207           00:29.38    [end TDA_220] 
+INFO (TDA-220):    214     208         30    97.74%   97.74%          177           00:29.38    [end TDA_220] 
+INFO (TDA-220):    216     210          4    97.78%   97.78%          173           00:29.38    [end TDA_220] 
+INFO (TDA-221):    216     210          0    97.78%   97.78%          173           00:29.38    [end TDA_221] 
+INFO (TDA-220):    216     210         36    98.13%   98.13%          170           00:30.41    [end TDA_220] 
+INFO (TTC-110): Ending Static Logic Test generation                                             [end TTC_110] 
+*************************************************************************************************************
+
+****************************************************************************************************
+                           Testmode Statistics: FULLSCAN
+
+                           #Faults      #Tested    #Possibly      #Redund    #Untested  %TCov %ATCov
+Total Static                 11062        10852           37            3          170  98.10  98.13
+
+                            Global Statistics
+
+                           #Faults      #Tested    #Possibly      #Redund    #Untested  %TCov %ATCov
+Total Static                 11062        10852           37            3          170  98.10  98.13
+****************************************************************************************************
+
+
+              ----Final Pattern Statistics----
+
+ Test Section Type                       # Test Sequences
+----------------------------------------------------------
+ Scan                                           1
+ Logic                                          211
+----------------------------------------------------------
+ Total                                          212
+
+(I) File(s) generated (bytes and name):
+
+         102400 /home/cinovador/Documents/course_files/physical_synthesis/synthesis_dft_atpg/backend/synthesis/work/test_scripts/tbdata/faultStatus.FULLSCAN.multiplier32FP_atpg
+         219129 /home/cinovador/Documents/course_files/physical_synthesis/synthesis_dft_atpg/backend/synthesis/work/test_scripts/tbdata/TBDbin.FULLSCAN.multiplier32FP_atpg
+
+INFO (TDA-001): Maximum Memory used during the run and Cumulative Time in hours:minutes:seconds:
+
+                  Total Memory =           12,828,928  bytes
+
+                      CPU Time =    0:00:27.92
+                  Elapsed Time =    0:00:30.42                    [end TDA_001]
+
+     Date Ended:  Thursday Mar 27 09:45:02 2025  -03
+
+INFO (TFW-119): Modus checked in a modus_atpg license.  [end TFW_119] 
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+     25 INFO (TDA-220):   --- Tests ---   Faults     ---- ATCov ----   -- Faults --   - Elapsed Time -   
+      1 INFO (TDA-221):    216     210          0    97.78%   97.78%          173           00:29.38     
+      1 INFO (TFW-117): Modus checked out a modus_atpg license.   
+      1 INFO (TFW-119): Modus checked in a modus_atpg license.   
+      6 INFO (TTC-110): Starting Scan Test generation                                                    
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------

@@ -1,0 +1,122 @@
+Starting Command: build_faultmodel 
+
+INFO (TDA-005): Command Line Invocation: 
+            build_faultmodel -includedynamic no -workdir /home/cinovador/Documents/course_files/physical_synthesis/synthesis_dft_atpg/backend/synthesis/work/test_scripts -stdout summary  [end TDA_005]
+
+INFO (TDA-014): Cadence(R) Modus(TM) DFT Software Solution, Version 22.12-s028_1, built Jul 11 2023 (linux26_64) [end TDA_014]
+
+INFO (TDA-015): Log File: /home/cinovador/Documents/course_files/physical_synthesis/synthesis_dft_atpg/backend/synthesis/work/test_scripts/testresults/logs/log_build_faultmodel_032725094427-477143000 [end TDA_015]
+
+INFO (TDA-007): Job Information:
+            Date Started: Thursday Mar 27 09:44:27 2025  -03
+            Host machine is cinova05.lesc.ufc.br, x86_64 running Linux 4.18.0-553.44.1.el8_10.x86_64.
+            This job is process number 395928.
+[end TDA_007]
+
+INFO (TDA-009): Options/Values information.
+            (options marked with '*' have program generated values,
+             options marked with '+' were specified to default.)
+
+            -WORKDIR /home/cinovador/Documents/course_files/physical_synthesis/synthesis_dft_atpg/backend/synthesis/work/test_scripts
+
+            -LOGFILE /home/cinovador/Documents/course_files/physical_synthesis/synthesis_dft_atpg/backend/synthesis/work/test_scripts/testresults/logs/log_build_faultmodel_032725094427-477143000
+            -STDOUT summary
+            -includedynamic no
+[end TDA_009]
+INFO (TFW-117): Modus checked out a modus_atpg license.  [end TFW_117] 
+INFO (TFM-099): Build Fault Model started.  [end TFM_099] 
+INFO (TFM-102): Creating faultModel file /home/cinovador/Documents/course_files/physical_synthesis/synthesis_dft_atpg/backend/synthesis/work/test_scripts/tbdata/faultModel.  [end TFM_102] 
+
+Global Ignored Static Fault Count                66
+Global Ignored Dynamic Fault Count                0
+
+
+                            Global Statistics
+
+                    ATCov  ----------------------- Global Faults --------------------------
+                   Global        Total       Tested     Possibly    Redundant     Untested
+
+Total Static         0.00        11062            0            0            0        11062
+Collapsed Static     0.00         7389            0            0            0         7389
+PI Static            0.00          138            0            0            0          138
+PO Static            0.00           76            0            0            0           76
+
+Total Dynamic                        0
+
+Parametric        
+
+IDDq                 0.00        11062            0                                  11062
+
+
+
+INFO (TFM-103): Creating faultStatus file /home/cinovador/Documents/course_files/physical_synthesis/synthesis_dft_atpg/backend/synthesis/work/test_scripts/tbdata/faultStatus.  [end TFM_103] 
+
+                           Testmode Statistics: FULLSCAN
+
+                 ---- ATCov ---- ------------------------ Testmode Faults ----------------------- ------------------------- Global Faults ------------------------
+                 Testmode Global        Total       Tested     Possibly    Redundant     Untested        Total       Tested     Possibly    Redundant     Untested
+
+Total Static         0.00   0.00        11062            0            0            0        11062        11062            0            0            0        11062
+Collapsed Static     0.00   0.00         7389            0            0            0         7389         7389            0            0            0         7389
+PI Static            0.00   0.00          138            0            0            0          138          138            0            0            0          138
+PO Static            0.00   0.00           76            0            0            0           76           76            0            0            0           76
+
+Total Dynamic                               0
+
+Parametric        
+
+IDDq                 0.00   0.00        11062            0                                  11062        11062            0                                  11062
+
+Path                 0.00   0.00            0            0                                      0            0            0                                      0
+
+
+
+INFO (TFM-704): Maximum Global Test Coverage Statistics: 
+
+                  %Active      #Faults      #Active    #Inactive
+Total Static       100.00        11062        11062            0
+Collapsed Static   100.00         7389         7389            0
+PI Static          100.00          138          138            0
+PO Static          100.00           76           76            0
+
+Total Dynamic                        0
+
+Parametric        
+
+There are 1 test mode(s) defined:
+      FULLSCAN
+
+[end TFM_704]
+INFO (TFM-109): Build Fault Model has completed with highest level severity message of INFO.  [end TFM_109] 
+
+INFO (TDA-001): Maximum Memory used during the run and Cumulative Time in hours:minutes:seconds:
+
+                  Total Memory =           10,530,208  bytes
+
+                      CPU Time =    0:00:00.00
+                  Elapsed Time =    0:00:00.02                    [end TDA_001]
+
+     Date Ended:  Thursday Mar 27 09:44:29 2025  -03
+
+INFO (TFW-119): Modus checked in a modus_atpg license.  [end TFW_119] 
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+      1 INFO (TFM-099): Build Fault Model started.   
+      1 INFO (TFM-102): Creating faultModel file /home/cinovador/Documents/course_files/physical_synthesis/synthesis_dft_atpg/backend/synthesis/work/test_scripts/tbdata/faultModel.   
+      1 INFO (TFM-103): Creating faultStatus file /home/cinovador/Documents/course_files/physical_synthesis/synthesis_dft_atpg/backend/synthesis/work/test_scripts/tbdata/faultStatus.   
+      1 INFO (TFM-109): Build Fault Model has completed with highest level severity message of INFO.   
+      1 INFO (TFM-704): Maximum Global Test Coverage Statistics: 
+      1 INFO (TFW-117): Modus checked out a modus_atpg license.   
+      1 INFO (TFW-119): Modus checked in a modus_atpg license.   
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------

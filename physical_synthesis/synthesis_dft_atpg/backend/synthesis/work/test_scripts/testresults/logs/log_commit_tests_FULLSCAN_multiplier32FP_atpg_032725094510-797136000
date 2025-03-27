@@ -1,0 +1,122 @@
+Starting Command: commit_tests 
+
+INFO (TDA-005): Command Line Invocation: 
+            commit_tests -inexperiment multiplier32FP_atpg -testmode FULLSCAN -workdir /home/cinovador/Documents/course_files/physical_synthesis/synthesis_dft_atpg/backend/synthesis/work/test_scripts -stdout summary  [end TDA_005]
+
+INFO (TDA-014): Cadence(R) Modus(TM) DFT Software Solution, Version 22.12-s028_1, built Jul 11 2023 (linux26_64) [end TDA_014]
+
+INFO (TDA-015): Log File: /home/cinovador/Documents/course_files/physical_synthesis/synthesis_dft_atpg/backend/synthesis/work/test_scripts/testresults/logs/log_commit_tests_FULLSCAN_multiplier32FP_atpg_032725094510-797136000 [end TDA_015]
+
+INFO (TDA-007): Job Information:
+            Date Started: Thursday Mar 27 09:45:10 2025  -03
+            Host machine is cinova05.lesc.ufc.br, x86_64 running Linux 4.18.0-553.44.1.el8_10.x86_64.
+            This job is process number 396324.
+[end TDA_007]
+
+INFO (TDA-009): Options/Values information.
+            (options marked with '*' have program generated values,
+             options marked with '+' were specified to default.)
+
+            -WORKDIR /home/cinovador/Documents/course_files/physical_synthesis/synthesis_dft_atpg/backend/synthesis/work/test_scripts
+            -TESTMODE FULLSCAN
+
+            -INEXPERIMENT multiplier32FP_atpg
+            -LOGFILE /home/cinovador/Documents/course_files/physical_synthesis/synthesis_dft_atpg/backend/synthesis/work/test_scripts/testresults/logs/log_commit_tests_FULLSCAN_multiplier32FP_atpg_032725094510-797136000
+            -STDOUT summary
+[end TDA_009]
+INFO (TFW-117): Modus checked out a modus_atpg license.  [end TFW_117] 
+
+INFO (TBD-806): Input test vector File(s) (bytes, name):  [end TBD_806] 
+         219129 /home/cinovador/Documents/course_files/physical_synthesis/synthesis_dft_atpg/backend/synthesis/work/test_scripts/tbdata/TBDbin.FULLSCAN.multiplier32FP_atpg
+
+INFO (TBD-807): Experiment multiplier32FP_atpg odometers prior to commit_tests: 1.1.1.2.1 thru 1.2.1.17.2 (Relative test numbers 1 thru 212).  [end TBD_807] 
+
+Testmode and Global statistics prior to commit_tests
+
+                 ---- ATCov ---- ------------------------ Testmode Faults ----------------------- ------------------------- Global Faults ------------------------
+                 Testmode Global        Total       Tested     Possibly    Redundant     Untested        Total       Tested     Possibly    Redundant     Untested
+
+Total Static         0.00   0.00        11062            0            0            0        11062        11062            0            0            0        11062
+Collapsed Static     0.00   0.00         7389            0            0            0         7389         7389            0            0            0         7389
+PI Static            0.00   0.00          138            0            0            0          138          138            0            0            0          138
+PO Static            0.00   0.00           76            0            0            0           76           76            0            0            0           76
+
+Total Dynamic                               0
+
+Parametric        
+
+IDDq                 0.00   0.00        11062            0                                  11062        11062            0                                  11062
+
+Path                 0.00   0.00            0            0                                      0            0            0                                      0
+
+
+
+
+Testmode and Global statistics after commit_tests
+
+                 ---- ATCov ---- ------------------------ Testmode Faults ----------------------- ------------------------- Global Faults ------------------------
+                 Testmode Global        Total       Tested     Possibly    Redundant     Untested        Total       Tested     Possibly    Redundant     Untested
+
+Total Static        98.13  98.13        11062        10852           37            3          170        11062        10852           37            3          170
+Collapsed Static    97.92  97.92         7389         7234           37            1          117         7389         7234           37            1          117
+PI Static          100.00 100.00          138          138            0            0            0          138          138            0            0            0
+PO Static          100.00 100.00           76           76            0            0            0           76           76            0            0            0
+
+Total Dynamic                               0
+
+Parametric        
+
+IDDq                 0.00   0.00        11062            0                                  11062        11062            0                                  11062
+
+Path                 0.00   0.00            0            0                                      0            0            0                                      0
+
+
+
+INFO (TBD-810): Experiment multiplier32FP_atpg is saved to the master test vectors odometers: 1.1.1.2.1 to 1.2.1.17.2 (Relative test numbers 1 to 212).  [end TBD_810] 
+
+INFO (TBD-809): Master test vector file statistics:  [end TBD_809]   
+  experiments     = 1
+  test sections   = 2
+  tester loops    = 2
+  test procedures = 19
+  test sequence   = 212
+  init sequencess = 2
+
+INFO (TBD-805): File(s) generated (bytes and name):  [end TBD_805] 
+         219129 /home/cinovador/Documents/course_files/physical_synthesis/synthesis_dft_atpg/backend/synthesis/work/test_scripts/tbdata/TBDbin.FULLSCAN 
+         147456 /home/cinovador/Documents/course_files/physical_synthesis/synthesis_dft_atpg/backend/synthesis/work/test_scripts/tbdata/faultStatus 
+
+INFO (TBD-831): commit_tests completed successfully.  [end TBD_831] 
+
+INFO (TDA-001): Maximum Memory used during the run and Cumulative Time in hours:minutes:seconds:
+
+                  Total Memory =            7,566,176  bytes
+
+                      CPU Time =    0:00:00.01
+                  Elapsed Time =    0:00:00.01                    [end TDA_001]
+
+     Date Ended:  Thursday Mar 27 09:45:13 2025  -03
+
+INFO (TFW-119): Modus checked in a modus_atpg license.  [end TFW_119] 
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+      1 INFO (TBD-805): File(s) generated (bytes and name):   
+      1 INFO (TBD-806): Input test vector File(s) (bytes, name):   
+      1 INFO (TBD-807): Experiment multiplier32FP_atpg odometers prior to commit_tests: 1.1.1.2.1 thru 1.2.1.17.2 (Relative test numbers 1 thru 212).   
+      1 INFO (TBD-809): Master test vector file statistics:     
+      1 INFO (TBD-810): Experiment multiplier32FP_atpg is saved to the master test vectors odometers: 1.1.1.2.1 to 1.2.1.17.2 (Relative test numbers 1 to 212).   
+      1 INFO (TBD-831): commit_tests completed successfully.   
+      1 INFO (TFW-117): Modus checked out a modus_atpg license.   
+      1 INFO (TFW-119): Modus checked in a modus_atpg license.   
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------

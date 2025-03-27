@@ -1,0 +1,172 @@
+Starting Command: report_test_structures 
+
+INFO (TDA-005): Command Line Invocation: 
+            report_test_structures -reportscanchain all -testmode FULLSCAN -workdir /home/cinovador/Documents/course_files/physical_synthesis/synthesis_dft_atpg/backend/synthesis/work/test_scripts -stdout summary  [end TDA_005]
+
+INFO (TDA-014): Cadence(R) Modus(TM) DFT Software Solution, Version 22.12-s028_1, built Jul 11 2023 (linux26_64) [end TDA_014]
+
+INFO (TDA-015): Log File: /home/cinovador/Documents/course_files/physical_synthesis/synthesis_dft_atpg/backend/synthesis/work/test_scripts/testresults/logs/log_report_test_structures_FULLSCAN_032725094420-021040000 [end TDA_015]
+
+INFO (TDA-007): Job Information:
+            Date Started: Thursday Mar 27 09:44:20 2025  -03
+            Host machine is cinova05.lesc.ufc.br, x86_64 running Linux 4.18.0-553.44.1.el8_10.x86_64.
+            This job is process number 395834.
+[end TDA_007]
+
+INFO (TDA-009): Options/Values information.
+            (options marked with '*' have program generated values,
+             options marked with '+' were specified to default.)
+
+            -WORKDIR /home/cinovador/Documents/course_files/physical_synthesis/synthesis_dft_atpg/backend/synthesis/work/test_scripts
+            -TESTMODE FULLSCAN
+
+            -LOGFILE /home/cinovador/Documents/course_files/physical_synthesis/synthesis_dft_atpg/backend/synthesis/work/test_scripts/testresults/logs/log_report_test_structures_FULLSCAN_032725094420-021040000
+            -STDOUT summary
+            -reportscanchain all
+[end TDA_009]
+INFO (TFW-117): Modus checked out a modus_atpg license.  [end TFW_117] 
+
+INFO (TLM-055): Design Summary
+                --------------
+
+Hierarchical Model:                  Flattened Model:
+          6,570  Blocks                       5,813  Blocks
+         20,681  Pins                         5,813  Nodes
+         11,552  Nets
+
+Primary Inputs:                      Primary Outputs:
+         69  Input Only                        38  Output Only
+          0  Input/Output                       0  Input/Output
+         69  Total Inputs                      38  Total Outputs
+
+Tied Nets:                           Dotted Nets:
+         40  Tied to 0                          0  Two-State
+          0  Tied to 1                          0  Three-State
+          0  Tied to X                          0  Total Dotted Nets
+         40  Total Tied Nets
+
+Selected Primitive Functions:
+          0  Clock Chopper (CHOP) primitives 
+          0  RAMs
+          0  ROMs
+          0  TSDs
+          0  Resistors
+          0  Transistors
+         33  Latches
+
+
+         40  Rising  Edge Flop w/Reset Port
+         40  Total Flops
+
+      1,333  Technology Library Cell Instances
+
+[end TLM_055] 
+
+Information for Test Mode:  FULLSCAN
+-------------------------
+
+         Scan Type = GSD
+
+
+
+
+Control/Observe Chain Information for Test Mode:  FULLSCAN
+-----------------------------------------------
+
+     1 Control Chains (0 Control Only)
+     1 Observe Chains (0 Observe Only)
+     1 Chains are Control and Observe
+
+  Longest Scan Chain: 40 bits
+  Average Scan Chain Length: 40 bits
+
+
+  Control Chain: 1
+    Fed by: Scan-In
+    Number of Control Points: 1
+      Control Point Pin Index/Name          67/port:scan_in    Pipeline Stages: 0 
+    Load Point Pin Index/Name  67/port:scan_in
+    Length: 40
+    Scan Section: Scan_Section_Sequence
+  Observe Chain: 1
+    Number of Observe Points: 1
+      Observe Point Pin Index/Name         105/port:scan_out    Pipeline Stages: 0 
+    Unload Point Pin Index/Name  105/port:scan_out
+    Unload Point In Phase with Load Point
+    Length: 40
+    Scan Section: Scan_Section_Sequence
+
+    Position     Type  Block Index  IO Phase  ObserveChn  ObservePos  Block Name
+    --------  -------  -----------  --------  ----------  ----------  ----------
+           1   rDFF_c            1        ++           1          40  inst:\current_state_reg[0]
+           2   rDFF_c           27        ++           1          39  inst:\current_state_reg[1]
+           3   rDFF_c           53        ++           1          38  inst:\current_state_reg[2]
+           4   rDFF_c         1208        ++           1          37  inst:done_o_reg
+           5   rDFF_c         1944        ++           1          36  inst:inifinit_o_reg
+           6   rDFF_c         6492        ++           1          35  inst:nan_o_reg
+           7   rDFF_c         6518        ++           1          34  inst:overflow_o_reg
+           8   rDFF_c          376        ++           1          33  inst:\product_o_reg[0]
+           9   rDFF_c          662        ++           1          32  inst:\product_o_reg[1]
+          10   rDFF_c          948        ++           1          31  inst:\product_o_reg[2]
+          11   rDFF_c         1026        ++           1          30  inst:\product_o_reg[3]
+          12   rDFF_c         1052        ++           1          29  inst:\product_o_reg[4]
+          13   rDFF_c         1078        ++           1          28  inst:\product_o_reg[5]
+          14   rDFF_c         1104        ++           1          27  inst:\product_o_reg[6]
+          15   rDFF_c         1130        ++           1          26  inst:\product_o_reg[7]
+          16   rDFF_c         1156        ++           1          25  inst:\product_o_reg[8]
+          17   rDFF_c         1182        ++           1          24  inst:\product_o_reg[9]
+          18   rDFF_c          402        ++           1          23  inst:\product_o_reg[10]
+          19   rDFF_c          428        ++           1          22  inst:\product_o_reg[11]
+          20   rDFF_c          454        ++           1          21  inst:\product_o_reg[12]
+          21   rDFF_c          480        ++           1          20  inst:\product_o_reg[13]
+          22   rDFF_c          506        ++           1          19  inst:\product_o_reg[14]
+          23   rDFF_c          532        ++           1          18  inst:\product_o_reg[15]
+          24   rDFF_c          558        ++           1          17  inst:\product_o_reg[16]
+          25   rDFF_c          584        ++           1          16  inst:\product_o_reg[17]
+          26   rDFF_c          610        ++           1          15  inst:\product_o_reg[18]
+          27   rDFF_c          636        ++           1          14  inst:\product_o_reg[19]
+          28   rDFF_c          688        ++           1          13  inst:\product_o_reg[20]
+          29   rDFF_c          714        ++           1          12  inst:\product_o_reg[21]
+          30   rDFF_c          740        ++           1          11  inst:\product_o_reg[22]
+          31   rDFF_c          766        ++           1          10  inst:\product_o_reg[23]
+          32   rDFF_c          792        ++           1           9  inst:\product_o_reg[24]
+          33   rDFF_c          818        ++           1           8  inst:\product_o_reg[25]
+          34   rDFF_c          844        ++           1           7  inst:\product_o_reg[26]
+          35   rDFF_c          870        ++           1           6  inst:\product_o_reg[27]
+          36   rDFF_c          896        ++           1           5  inst:\product_o_reg[28]
+          37   rDFF_c          922        ++           1           4  inst:\product_o_reg[29]
+          38   rDFF_c          974        ++           1           3  inst:\product_o_reg[30]
+          39   rDFF_c         1000        ++           1           2  inst:\product_o_reg[31]
+          40   rDFF_c         6544        ++           1           1  inst:underflow_o_reg
+
+
+Report completed.
+
+
+INFO (TDA-001): Maximum Memory used during the run and Cumulative Time in hours:minutes:seconds:
+
+                  Total Memory =            7,630,640  bytes
+
+                      CPU Time =    0:00:00.01
+                  Elapsed Time =    0:00:00.01                    [end TDA_001]
+
+     Date Ended:  Thursday Mar 27 09:44:22 2025  -03
+
+INFO (TFW-119): Modus checked in a modus_atpg license.  [end TFW_119] 
+
+
+
+-------------------------------------------------------------------------------
+*                      Message Summary                                        *
+-------------------------------------------------------------------------------
+ Count  Number             First Instance of Message Text
+------- ------             ------------------------------
+
+  INFO Messages...
+      1 INFO (TFW-117): Modus checked out a modus_atpg license.   
+      1 INFO (TFW-119): Modus checked in a modus_atpg license.   
+      1 INFO (TLM-055): Design Summary
+
+ For a detailed explanation of a message and a suggested user response execute 'msgHelp <message id>'.  For example: msgHelp TDA-009
+
+-------------------------------------------------------------------------------
