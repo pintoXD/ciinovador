@@ -1,0 +1,33 @@
+xrun(64): 24.09-s001: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	24.09-s001: Started on Mar 27, 2025 at 10:37:00 -03
+xrun
+	+access+rwc
+	+xmstatus
+	+xm64bit
+	+TESTFILE1=./test_scripts/testresults/verilog/VER.FULLSCAN_TIMED.multiplier32FP_atpg.data.scan.ex1.ts1.verilog
+	+TESTFILE2=./test_scripts/testresults/verilog/VER.FULLSCAN_TIMED.multiplier32FP_atpg.data.logic.ex1.ts2.verilog
+	+HEARTBEAT
+	+FAILSET
+	+xmtimescale+1ns/1ps
+	+xmoverride_timescale
+	+libext+.v+.V+.z+.Z+.gz
+	+define+simvision
+	+define+sdf_annotate
+	+sdf_verbose
+	+sdf_file+DEFAULT.sdf
+	+xmerror+CUSFNF
+	+define+TIMING
+	+xmlibdirname+./test_scripts/Inca_libs_12_36_29
+	-l ./test_scripts/ncverilog_FULLSCAN_TIMED.log
+	-v /home/tools/cadence/gpdk/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing/../verilog//slow_vdd1v0_basicCells.v
+	./test_scripts/multiplier32FP.test_netlist.v
+	./test_scripts/testresults/verilog/VER.FULLSCAN_TIMED.multiplier32FP_atpg.mainsim.v
+
+   User defined plus("+") options:
+	+TESTFILE1=./test_scripts/testresults/verilog/VER.FULLSCAN_TIMED.multiplier32FP_atpg.data.scan.ex1.ts1.verilog
+	+TESTFILE2=./test_scripts/testresults/verilog/VER.FULLSCAN_TIMED.multiplier32FP_atpg.data.logic.ex1.ts2.verilog
+	+HEARTBEAT
+	+FAILSET
+
+xrun: *E,FILEMIS: Cannot find the provided file ./test_scripts/testresults/verilog/VER.FULLSCAN_TIMED.multiplier32FP_atpg.mainsim.v.
+TOOL:	xrun(64)	24.09-s001: Exiting on Mar 27, 2025 at 10:37:01 -03  (total: 00:00:01)

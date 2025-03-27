@@ -112,7 +112,3 @@ define VIEW_MAP ( $VIEW_MAP \
 , .gz.gz => gz \
 , .gz.Z => gz \
 )
-define ELAB_SNAPSHOT
-define SNAPSHOT worklib.test_scripts_FULLSCAN_multiplier32FP_atpg:v
-define ELAB_SNAPSHOT
-define SNAPSHOT worklib.test_scripts_FULLSCAN_multiplier32FP_atpg:v

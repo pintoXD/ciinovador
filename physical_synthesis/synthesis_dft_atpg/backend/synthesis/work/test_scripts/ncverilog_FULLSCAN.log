@@ -1,5 +1,5 @@
 xrun(64): 24.09-s001: (c) Copyright 1995-2024 Cadence Design Systems, Inc.
-TOOL:	xrun(64)	24.09-s001: Started on Mar 27, 2025 at 09:51:45 -03
+TOOL:	xrun(64)	24.09-s001: Started on Mar 27, 2025 at 10:37:25 -03
 xrun
 	+access+rwc
 	+xmstatus
@@ -27,160 +27,6 @@ xrun
 xrun: *W,LEXTSF: Unknown suffix (.z) found in a libext option.  The suffixes will be mapped to Verilog.
 xrun: *W,LEXTSF: Unknown suffix (.Z) found in a libext option.  The suffixes will be mapped to Verilog.
 xrun: *W,LEXTSF: Unknown suffix (.gz) found in a libext option.  The suffixes will be mapped to Verilog.
-file: ./test_scripts/multiplier32FP.test_netlist.v
-	module worklib.multiplier32FP:v
-		errors: 0, warnings: 0
-file: ./test_scripts/testresults/verilog/VER.FULLSCAN.multiplier32FP_atpg.mainsim.v
-	module worklib.test_scripts_FULLSCAN_multiplier32FP_atpg:v
-		errors: 0, warnings: 0
-file: /home/tools/cadence/gpdk/gsclib045_svt_v4.4/lan/flow/t1u1/reference_libs/GPDK045/gsclib045_svt_v4.4/gsclib045/timing/../verilog//slow_vdd1v0_basicCells.v
-	module slow_vdd1v0_basicCells.ADDFX1:v
-		errors: 0, warnings: 0
-	module slow_vdd1v0_basicCells.ADDHX1:v
-		errors: 0, warnings: 0
-	module slow_vdd1v0_basicCells.AND2X1:v
-		errors: 0, warnings: 0
-	module slow_vdd1v0_basicCells.AND2X2:v
-		errors: 0, warnings: 0
-	module slow_vdd1v0_basicCells.AND2X4:v
-		errors: 0, warnings: 0
-	module slow_vdd1v0_basicCells.AND3X6:v
-		errors: 0, warnings: 0
-	module slow_vdd1v0_basicCells.AO21X1:v
-		errors: 0, warnings: 0
-	module slow_vdd1v0_basicCells.AO22X1:v
-		errors: 0, warnings: 0
-	module slow_vdd1v0_basicCells.AOI21X1:v
-		errors: 0, warnings: 0
-	module slow_vdd1v0_basicCells.AOI22X1:v
-		errors: 0, warnings: 0
-	module slow_vdd1v0_basicCells.AOI22X2:v
-		errors: 0, warnings: 0
-	module slow_vdd1v0_basicCells.BUFX2:v
-		errors: 0, warnings: 0
-	module slow_vdd1v0_basicCells.BUFX6:v
-		errors: 0, warnings: 0
-	module slow_vdd1v0_basicCells.CLKINVX4:v
-		errors: 0, warnings: 0
-	module slow_vdd1v0_basicCells.CLKINVX6:v
-		errors: 0, warnings: 0
-	module slow_vdd1v0_basicCells.CLKINVX8:v
-		errors: 0, warnings: 0
-	module slow_vdd1v0_basicCells.CLKXOR2X1:v
-		errors: 0, warnings: 0
-	module slow_vdd1v0_basicCells.INVX1:v
-		errors: 0, warnings: 0
-	module slow_vdd1v0_basicCells.INVX2:v
-		errors: 0, warnings: 0
-	module slow_vdd1v0_basicCells.INVX3:v
-		errors: 0, warnings: 0
-	module slow_vdd1v0_basicCells.INVX6:v
-		errors: 0, warnings: 0
-	module slow_vdd1v0_basicCells.INVXL:v
-		errors: 0, warnings: 0
-	module slow_vdd1v0_basicCells.MX2X1:v
-		errors: 0, warnings: 0
-	module slow_vdd1v0_basicCells.MXI2X1:v
-		errors: 0, warnings: 0
-	module slow_vdd1v0_basicCells.NAND2BX1:v
-		errors: 0, warnings: 0
-	module slow_vdd1v0_basicCells.NAND2X1:v
-		errors: 0, warnings: 0
-	module slow_vdd1v0_basicCells.NAND3BX2:v
-		errors: 0, warnings: 0
-	module slow_vdd1v0_basicCells.NAND3X2:v
-		errors: 0, warnings: 0
-	module slow_vdd1v0_basicCells.NOR2BX2:v
-		errors: 0, warnings: 0
-	module slow_vdd1v0_basicCells.NOR2X1:v
-		errors: 0, warnings: 0
-	module slow_vdd1v0_basicCells.NOR2X2:v
-		errors: 0, warnings: 0
-	module slow_vdd1v0_basicCells.NOR3X2:v
-		errors: 0, warnings: 0
-	module slow_vdd1v0_basicCells.OA21X1:v
-		errors: 0, warnings: 0
-	module slow_vdd1v0_basicCells.OA22X4:v
-		errors: 0, warnings: 0
-	module slow_vdd1v0_basicCells.OAI21X1:v
-		errors: 0, warnings: 0
-	module slow_vdd1v0_basicCells.OAI22X1:v
-		errors: 0, warnings: 0
-	module slow_vdd1v0_basicCells.OAI2BB1X1:v
-		errors: 0, warnings: 0
-	module slow_vdd1v0_basicCells.OAI31X1:v
-		errors: 0, warnings: 0
-	module slow_vdd1v0_basicCells.OAI32X2:v
-		errors: 0, warnings: 0
-	module slow_vdd1v0_basicCells.OR2X1:v
-		errors: 0, warnings: 0
-	module slow_vdd1v0_basicCells.OR2X6:v
-		errors: 0, warnings: 0
-	module slow_vdd1v0_basicCells.OR3X1:v
-		errors: 0, warnings: 0
-	module slow_vdd1v0_basicCells.OR3X8:v
-		errors: 0, warnings: 0
-	module slow_vdd1v0_basicCells.OR4X1:v
-		errors: 0, warnings: 0
-	module slow_vdd1v0_basicCells.OR4X8:v
-		errors: 0, warnings: 0
-	module slow_vdd1v0_basicCells.SDFFRHQX1:v
-		errors: 0, warnings: 0
-	module slow_vdd1v0_basicCells.SDFFRHQX2:v
-		errors: 0, warnings: 0
-	module slow_vdd1v0_basicCells.TLATNXL:v
-		errors: 0, warnings: 0
-	module slow_vdd1v0_basicCells.XNOR2X1:v
-		errors: 0, warnings: 0
-	module slow_vdd1v0_basicCells.XNOR2X4:v
-		errors: 0, warnings: 0
-	primitive slow_vdd1v0_basicCells.altos_latch:v
-		errors: 0, warnings: 0
-	primitive slow_vdd1v0_basicCells.altos_dff_r_err:v
-		errors: 0, warnings: 0
-	primitive slow_vdd1v0_basicCells.altos_dff_r:v
-		errors: 0, warnings: 0
-xmvlog: Memory Usage - Current physical: 30.4M, Current virtual: 97.7M, Peak physical: 30.4M
-xmvlog: CPU Usage - 0.0s system + 0.0s user = 0.0s total (0.1s, 32.6% cpu)
-xmelab: *N,INFSUD: -NOSPECIFY is automatically used with -SEQ_UDP_DELAY.
-		Caching library 'slow_vdd1v0_basicCells' ....... Done
-		Caching library 'worklib' ....... Done
-	Elaborating the design hierarchy:
-	Top level design units:
-		test_scripts_FULLSCAN_multiplier32FP_atpg
-	Building instance overlay tables: .................... Done
-	Generating native compiled code:
-		slow_vdd1v0_basicCells.TLATNXL:v <0x2d0860ea>
-			streams:   0, words:     0
-		slow_vdd1v0_basicCells.SDFFRHQX2:v <0x16090c79>
-			streams:   0, words:     0
-		slow_vdd1v0_basicCells.SDFFRHQX1:v <0x554396e2>
-			streams:   0, words:     0
-		slow_vdd1v0_basicCells.SDFFRHQX1:v <0x0acc15ce>
-			streams:   0, words:     0
-		slow_vdd1v0_basicCells.SDFFRHQX1:v <0x78f3a55a>
-			streams:   0, words:     0
-		worklib.test_scripts_FULLSCAN_multiplier32FP_atpg:v <0x5303ce18>
-			streams:  53, words: 156753
-	Building instance specific data structures.
-	Loading native compiled code:     .................... Done
-	Design hierarchy summary:
-		                     Instances  Unique
-		Modules:                 1,335      52
-		UDPs:                      113       3
-		Primitives:              4,344       5
-		Registers:                 159      92
-		Scalar wires:              373       -
-		Expanded wires:             64       2
-		Initial blocks:              1       1
-		Cont. assignments:          42       3
-		Pseudo assignments:          1       -
-		Timing checks:             612       -
-		Delayed tcheck signals:    226       -
-		Simulation timescale:      1ps
-	Writing initial simulation snapshot: worklib.test_scripts_FULLSCAN_multiplier32FP_atpg:v
-xmelab: Memory Usage - Final: 76.6M, Peak: 76.6M, Peak virtual: 194.4M
-xmelab: CPU Usage - 0.0s system + 0.1s user = 0.2s total (0.7s, 27.2% cpu)
 Loading snapshot worklib.test_scripts_FULLSCAN_multiplier32FP_atpg:v .................... Done
 xcelium> source /home/tools/cadence/installs/XCELIUM2209/tools/xcelium/files/xmsimrc
 xcelium> run
@@ -2348,6 +2194,6 @@ INFO (TVE-209): Cumulative Results:
 Simulation complete via $finish(1) at time 51760 NS + 0
 ./test_scripts/testresults/verilog/VER.FULLSCAN.multiplier32FP_atpg.mainsim.v:414       $finish; 
 xcelium> exit
-xmsim: Memory Usage - Final: 74.3M, Peak: 74.3M, Peak virtual: 388.8M
-xmsim: CPU Usage - 0.0s system + 0.0s user = 0.1s total (11.0s, 0.7% cpu)
-TOOL:	xrun(64)	24.09-s001: Exiting on Mar 27, 2025 at 09:51:57 -03  (total: 00:00:12)
+xmsim: Memory Usage - Final: 75.0M, Peak: 75.0M, Peak virtual: 388.7M
+xmsim: CPU Usage - 0.0s system + 0.0s user = 0.1s total (41.8s, 0.2% cpu)
+TOOL:	xrun(64)	24.09-s001: Exiting on Mar 27, 2025 at 10:38:07 -03  (total: 00:00:42)
