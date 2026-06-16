@@ -1,0 +1,2 @@
+#e1(31Mar2025:14:18:43): source ./xcelium.d/env.d/env.history.31Mar2025_14_18_43
+s1(31Mar2025:14:18:43):  xrun -64bit sqrt_tb.sv sqrt.sv 
